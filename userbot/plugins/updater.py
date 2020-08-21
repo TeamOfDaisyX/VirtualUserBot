@@ -147,7 +147,7 @@ async def deploy_start(bot, message, refspec, remote):
     os.execl(sys.executable, sys.executable, *sys.argv)
 
     
-@borg.on(admin_cmd(pattern=r"update", allow_sudo=True))
+@borg.on(admin_cmd(pattern=r"sudoupdate", allow_sudo=True))
 async def updater(message):
     try:
         repo = git.Repo()
