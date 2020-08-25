@@ -19,7 +19,7 @@ from ..utils import admin_cmd, sudo_cmd, edit_or_reply
 async def apk(event):
     app_name = event.pattern_match.group(1)
     event = await edit_or_reply(event ,"Searching!")
-   try:
+    try:
         remove_space = app_name.split(' ')
         final_name = '+'.join(remove_space)
         page = requests.get("https://play.google.com/store/search?q="+final_name+"&c=apps")
@@ -49,7 +49,7 @@ async def apk(event):
 async def apkr(event):
     app_name = event.pattern_match.group(1)
     event = await edit_or_reply(event ,"searching!")
-  try:
+    try:
         remove_space = app_name.split(' ')
         final_name = '+'.join(remove_space)
         page = requests.get("https://play.google.com/store/search?q="+final_name+"&c=apps")
