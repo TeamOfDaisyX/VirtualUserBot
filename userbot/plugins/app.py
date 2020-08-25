@@ -9,7 +9,7 @@ import re
 from telethon import *
 from userbot import CMD_HELP
 from userbot.events import register
-from userbot.utils import admin_cmd
+from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 
 
 @borg.on(admin_cmd(pattern="app (.*)"))
