@@ -16,6 +16,16 @@ import os
 import sys
 from telethon.sessions import StringSession
 from telethon import TelegramClient
+from var import Var
+from pylast import LastFMNetwork, md5
+from logging import basicConfig, getLogger, INFO, DEBUG
+from distutils.util import strtobool as sb
+from pySmartDL import SmartDL
+from dotenv import load_dotenv
+import asyncio
+import pylast
+from requests import get
+import time
 
 from var import Var
 
@@ -38,13 +48,6 @@ LOAD_PLUG = {}
 ENV = os.environ.get("ENV", False)
 """ PPE initialization. """
 
-from logging import basicConfig, getLogger, INFO, DEBUG
-from distutils.util import strtobool as sb
-import asyncio
-
-import pylast
-from pySmartDL import SmartDL
-from requests import get
 # Bot Logs setup:
 if bool(ENV):
     CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
@@ -174,6 +177,7 @@ USERS = {}
 COUNT_PM = {}
 LASTMSG = {}
 CMD_HELP = {}
+
 ISAFK = False
 AFKREASON = None
 # End of PaperPlaneExtended Support Vars
