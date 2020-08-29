@@ -19,6 +19,7 @@ from userbot.utils import admin_cmd
 
 HEROKU_APP_NAME = Var.HEROKU_APP_NAME
 HEROKU_API_KEY = Var.HEROKU_API_KEY
+
 UPSTREAM_REPO_BRANCH = "master"
 UPSTREAM_REPO_URL = "https://github.com/starkgang/FridayUserbot"
 
@@ -32,7 +33,7 @@ async def gen_chlog(repo, diff):
     for c in repo.iter_commits(diff):
         ch_log += (
             f"[⌨️ {c.count} \n⏳{c.committed_datetime.strftime(d_form)}]: "
-            f"[{c.summary}]({Config.UPSTREAM_REPO_URL.rstrip('/')}/commit/{c})
+            f"[{c.summary}]({UPSTREAM_REPO_URL.rstrip('/')}/commit/{c})
             f"✍️ {c.author}\n"
         )
     return ch_log
