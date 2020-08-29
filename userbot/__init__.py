@@ -112,6 +112,7 @@ if bool(ENV):
 
     # Pm Permit Img
     PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
+    AUTONAME = os.environ.get("AUTONAME", None)
 
 
 
