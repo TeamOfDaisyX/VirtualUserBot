@@ -28,7 +28,7 @@ async def _(event):
             return
         if event.is_private:
          
-         PM_TXT = ("`Hello. You are accessing the availabe menu of my peru master,`"
+         SADLYF = ("`Hello. You are accessing the availabe menu of my peru master,`"
                f"{DEFAULTUSER}.\n"
                "__Let's make this smooth and let me know why you are here ! So Select A Reason And Send it's Number__\n"
                "**Choose one of the following reasons why you are here:**\n\n"
@@ -44,7 +44,7 @@ async def _(event):
          LWARN = ("**This is your last warning. DO NOT send another message else you will be blocked and reported. Keep patience. My master will respond you ASAP.**\n__Use__ `/start` __to go back to the main menu.__")
      
         async with borg.conversation(chat) as conv:
-         await borg.send_message(chat, PM_TXT)
+         await borg.send_message(chat, SADLYF)
          chat_id = event.from_id
          response = await conv.get_response(chat)
          y = response.text
