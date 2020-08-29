@@ -27,6 +27,8 @@ import pylast
 from requests import get
 import time
 
+Lastupdate = time.time()
+
 from var import Var
 
 os.system("pip install --upgrade pip")
