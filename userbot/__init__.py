@@ -108,6 +108,10 @@ if bool(ENV):
     HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
     HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
 
+    # Pm Permit Img
+    PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
+
+
 
     # OpenWeatherMap API Key
     OPEN_WEATHER_MAP_APPID = os.environ.get("OPEN_WEATHER_MAP_APPID", None)
