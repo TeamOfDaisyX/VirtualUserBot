@@ -1,15 +1,9 @@
 {
-  "name": "Friday Userbot",
-  "description": "A Pluggable Userbot Made By @StarkxD",
-  "logo": "https://telegra.ph/file/b4e1e36c6b1fcb32dd997.jpg",
-  "keywords": [
-    "telegram",
-    "userbot",
-    "plugin",
-    "modular",
-    "productivity"
-  ],
-  "repository": "https://github.com/Starkgang/FridayUserbot",
+  "name": "Friday-Userbot",
+  "description": "A Userbot Based On Telethon By @StarkXD",
+  "logo": "https://telegra.ph/file/b6cd017959adc2814db5f.jpg",
+  "keywords": ["telegram", "userbot", "plugin", "modular", "productivity"],
+  "repository": "https://github.com/starkgang/FridayUserbot",
   "website": "#TODO",
   "success_url": "#TODO",
   "env": {
@@ -22,6 +16,10 @@
       "value": "./userbot/DOWNLOADS/",
       "required": false
     },
+    "ALIVE_NAME": {
+      "description": "Enter Username Here ",
+      "value": ""
+    },
     "APP_ID": {
       "description": "Get this value from my.telegram.org! Please do not steal",
       "value": ""
@@ -30,24 +28,17 @@
       "description": "Get this value from my.telegram.org! Please do not steal",
       "value": ""
     },
-    "STRING_SESSION": {
-      "description": "Get this value by running python3 telesetup.py locally",
+    "PLUGIN_CHANNEL": {
+      "description": "Channel Where You Save Your Plugins",
       "value": ""
     },
-    "MAX_FLOOD_IN_P_M_s": {
-      "description": "Maximum number of messages a person can send in pm before getting blocked. Value must be an integer. 3 by default.",
-      "value": "3",
-      "required": false
+    "PRIVATE_GROUP_ID": {
+      "description": "A Group ID Where You Want Logging Feature",
+      "value": ""
     },
-    "OCR_SPACE_API_KEY": {
-      "description": "Required for OCR functionality. Get from https://ocr.space/ocrapi",
-      "value": "",
-      "required": false
-    },
-    "REM_BG_API_KEY": {
-      "description": "Required for Removing image background functionality. Get from https://www.remove.bg/",
-      "value": "",
-      "required": false
+    "STRING_SESSION": {
+      "description": "Get From Repl.run Or Run Locally",
+      "value": ""
     },
     "GITHUB_ACCESS_TOKEN": {
       "description": "Your Github Access Token for gitcommit plugin.Google 'Github access token' to find.",
@@ -64,10 +55,17 @@
       "value": "",
       "required": false
     },
+    "HEROKU_API_KEY": {
+      "description": "Go to https://dashboard.heroku.com/account, scroll down and press Reveal API.Required for updater to work.",
+      "value": ""
+    },
+    "HEROKU_APP_NAME": {
+      "description": "The Value of App Name you filled in right on top.Required for updater to work.",
+      "value": ""
+    },
     "TG_BOT_TOKEN_BF_HER": {
-      "description": "Needed for inline buttons maker. Make a bot at http://telegram.dog/BotFather and get the token of your bot.Worth it. Get it.",
-      "value": "",
-      "required": false
+      "description": "Needed for inline buttons maker. Make a bot at [BotFather](http://telegram.dog/BotFather) and get the token of your bot.Worth it. Get it.",
+      "value": ""
     },
     "CHROME_BIN": {
       "description": "For Carbon.py. Leave as it is. ",
@@ -80,9 +78,8 @@
       "required": false
     },
     "TG_BOT_USER_NAME_BF_HER": {
-      "description": "Needed for inline buttons maker. Make a bot at http://telegram.dog/BotFather and get the username of your bot",
-      "value": "",
-      "required": false
+      "description": "Needed for inline buttons maker. Make a bot at [BotFather](http://telegram.dog/BotFather) and get the username of your bot",
+      "value": ""
     },
     "DOWNLOAD_PFP_URL_CLOCK": {
       "description": "Needed for autopic module. A url that is a preview link of your Profile Pic",
@@ -90,28 +87,37 @@
       "required": false
     },
     "TZ": {
-      "description": "Required for Correct Time on autopic/get time. Know your timezone from http://www.timezoneconverter.com/cgi-bin/findzone.tzc",
+      "description": "Required for Correct Time on autopic",
       "value": "Asia/Kolkata",
       "required": false
     }
   },
-  "addons": [{
-    "plan": "heroku-postgresql",
-    "options": {
-      "version": "9.7"
+  "addons": [
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "9.6"
+      }
     }
-  }],
-  "buildpacks": [{
-    "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
-  },{
-    "url":"https://github.com/amivin/aria2-heroku.git"
-  },{
-    "url":"https://github.com/heroku/heroku-buildpack-google-chrome"
-  },{
-    "url":"https://github.com/heroku/heroku-buildpack-chromedriver"
-  },{
-    "url": "https://github.com/opendoor-labs/heroku-buildpack-p7zip"
-  },{
-    "url": "heroku/python"
-  }]
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    },
+    {
+      "url": "https://github.com/amivin/aria2-heroku.git"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-google-chrome"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-chromedriver"
+    },
+    {
+      "url": "https://github.com/opendoor-labs/heroku-buildpack-p7zip"
+    },
+    {
+      "url": "heroku/python"
+    }
+  ]
 }
