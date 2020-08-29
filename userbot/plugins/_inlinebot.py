@@ -1,3 +1,6 @@
+"""Copy Right By Xtra-Telegram 2020 
+Fixed And Customized By @StarkXD 
+Don't Edit Before This Line"""
 from math import ceil
 import asyncio
 import json

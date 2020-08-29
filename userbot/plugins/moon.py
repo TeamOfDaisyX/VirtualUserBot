@@ -14,11 +14,11 @@ from telethon import events
 
 import asyncio
 
-from uniborg.util import admin_cmd
 
 
 
-@borg.on(admin_cmd(pattern=r"smoon"))
+
+@borg.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
 
 async def _(event):
 
@@ -26,17 +26,17 @@ async def _(event):
 
         return
 
-    animation_interval = 1
+    animation_interval = 0.1
 
-    animation_ttl = range(0, 32)
+    animation_ttl = range(0, 101)
 
-    #input_str = event.pattern_match.group(1)
+    input_str = event.pattern_match.group(1)
 
-   # if input_str == "smoon":
+    if input_str == "smoon":
 
-    await event.edit("moon")
+        await event.edit(input_str)
 
-    animation_chars = [
+        animation_chars = [
 
             "🌗🌗🌗🌗🌗\n🌓🌓🌓🌓🌓\n🌗🌗🌗🌗🌗\n🌓🌓🌓🌓🌓\n🌗🌗🌗🌗🌗",
             "🌘🌘🌘🌘🌘\n🌔🌔🌔🌔🌔\n🌘🌘🌘🌘🌘\n🌔🌔🌔🌔🌔\n🌘🌘🌘🌘🌘",    
@@ -48,15 +48,15 @@ async def _(event):
             "🌖🌖🌖🌖🌖\n🌒🌒🌒🌒🌒\n🌖🌖🌖🌖🌖\n🌒🌒🌒🌒🌒\n🌖🌖🌖🌖🌖"
         ]
 
-    for i in animation_ttl:
+        for i in animation_ttl:
 
-        await asyncio.sleep(animation_interval)
+            await asyncio.sleep(animation_interval)
 
-        await event.edit(animation_chars[i % 8])
+            await event.edit(animation_chars[i % 8])
 
 
 
-@borg.on(admin_cmd(pattern=r"tmoon"))
+@borg.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
 
 async def _(event):
 
@@ -64,17 +64,17 @@ async def _(event):
 
         return
 
-    animation_interval = 1
+    animation_interval = 0.1
 
-    animation_ttl = range(0, 33)
+    animation_ttl = range(0, 117)
 
-   # input_str = event.pattern_match.group(1)
+    input_str = event.pattern_match.group(1)
 
-    #if input_str == "tmoon":
+    if input_str == "tmoon":
 
-    await event.edit("moon")
+        await event.edit(input_str)
 
-    animation_chars = [
+        animation_chars = [
 
             "🌗",
             "🌘",    
@@ -110,9 +110,9 @@ async def _(event):
             "🌖"
         ]
 
-    for i in animation_ttl:
+        for i in animation_ttl:
 
-        await asyncio.sleep(animation_interval)
+            await asyncio.sleep(animation_interval)
 
-        await event.edit(animation_chars[i % 33])
+            await event.edit(animation_chars[i % 117])
 

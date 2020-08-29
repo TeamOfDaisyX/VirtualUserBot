@@ -22,7 +22,7 @@ from telethon.tl.types import MessageEntityMentionName
 from cowpy import cow
 
 from userbot import CMD_HELP,YOUTUBE_API_KEY
-from userbot.utils import register,admin_cmd
+from userbot.utils import register
 
 # ================= CONSTANT =================
 RENDISTR = [
@@ -43,7 +43,6 @@ RENDISTR = [
 ]
 NOOBSTR = [
     "`YOU PRO NIMBA DONT MESS WIDH MEH`",
-    "`Haha yes`",
     "`NOOB NIMBA TRYING TO BE FAMOUS KEK`",
     "`Sometimes one middle finger isn’t enough to let someone know how you feel. That’s why you have two hands`",
     "`Some Nimbas need to open their small minds instead of their big mouths`",
@@ -357,53 +356,39 @@ RUNSREACTS = [
     "`Runs far, far away from earth`",
     "`Running faster than supercomputer, cuzwhynot`",
     "`Runs to SunnyLeone`",
-    "Where do you think you're going?",
-    "Huh? what? did they get away?",
-    "ZZzzZZzz... Huh? what? oh, just them again, nevermind.",
-    "Get back here!",
-    "Not so fast...",
-    "Look out for the wall!",
+    "`ZZzzZZzz... Huh? what? oh, just them again, nevermind.`",
+    "`Look out for the wall!`",
     "Don't leave me alone with them!!",
-    "You run, you die.",
-    "Jokes on you, I'm everywhere",
-    "You're gonna regret that...",
+    "`You run, you die.`",
+    "`Jokes on you, I'm everywhere`",
     "You could also try /kickme, I hear that's fun.",
-    "Go bother someone else, no-one here cares.",
-    "You can run, but you can't hide.",
-    "Is that all you've got?",
+    "`You can run, but you can't hide.`",
     "I'm behind you...",
-    "You've got company!",
     "We can do this the easy way, or the hard way.",
     "You just don't get it, do you?",
     "Yeah, you better run!",
-    "Please, remind me how much I care?",
     "I'd run faster if I were you.",
-    "That's definitely the droid we're looking for.",
     "May the odds be ever in your favour.",
     "Famous last words.",
     "And they disappeared forever, never to be seen again.",
     "\"Oh, look at me! I'm so cool, I can run from a bot!\" - this person",
     "Yeah yeah, just tap /kickme already.",
     "Here, take this ring and head to Mordor while you're at it.",
+    "Here, take this ring and head to Mordor while you're at it.",
+    "Here, take this ring and head to Mordor while you're at it.",
+    "Here, take this ring and head to Mordor while you're at it.",
     "Legend has it, they're still running...",
     "Unlike Harry Potter, your parents can't protect you from me.",
     "Fear leads to anger. Anger leads to hate. Hate leads to suffering. If you keep running in fear, you might "
     "be the next Vader.",
-    "Multiple calculations later, I have decided my interest in your shenanigans is exactly 0.",
-    "Legend has it, they're still running.",
     "Keep it up, not sure we want you here anyway.",
     "You're a wiza- Oh. Wait. You're not Harry, keep moving.",
     "NO RUNNING IN THE HALLWAYS!",
     "Hasta la vista, baby.",
     "Who let the dogs out?",
-    "It's funny, because no one cares.",
-    "Ah, what a waste. I liked that one.",
-    "Frankly, my dear, I don't give a damn.",
     "My milkshake brings all the boys to yard... So run faster!",
-    "You can't HANDLE the truth!",
     "A long time ago, in a galaxy far far away... Someone would've cared about that. Not anymore though.",
     "Hey, look at them! They're running from the inevitable banhammer... Cute.",
-    "Han shot first. So will I.",
     "What are you running after, a white rabbit?",
     "As The Doctor would say... RUN!",
     "`Running a marathon...there's an app for that.`",
@@ -462,20 +447,6 @@ CHU_STRINGS = [
      "`Dil ke armaa ansuon me beh jaye tum bskd ke chutiye hi reh gye.`",
      "`Ishq Se Tabiyat Ne Zeest Ka Mazaa aya maine is lodu ko randi khane me paya.`",
      "`Mirza galib ki yeh khani hai tu bhosdika hai yeh sab ki jubani hai.`",
-     "`Ek dora hai ek nora hai charo taraf kohra hi kohra hai ye sabse bada behan ka lawda hai.`",
-     "`Phool murjhate achhe nahi lagte aap land khujate acche nahi lagte yehi umar hai chodne ki yaaro aap bathroom mein hilaate acche nahi lagte.`",
-     "`Badi hasrat thi ki khole iski maa ki salwaar ka  nara par iski maa ki berukhi dekho ki aagayi nangi dobara.`",
-     "`Na jaane konsi shilajit hai iski maa ki yadon mein jab bhi sochta hun jhanajhana jaata hun.`",
-     "`Yaara Teri Yaari Pe Mujhe Shak Nahi Tha; Lekin Sabne Teri Gaand Maari, Kya Mera Koi Haq Nahi Tha.`",
-     "`Yehi to kamal hai hamara baap bante ho tum aur naam aata hai humara.`",
-     "`Chinti chadi pahad pe angrejon ka jamana tha lund ki pistol thi chut pe nishana tha.`",
-     "`Bhola khada bich bazaar fut fut kr roye  gaand  Maar Sab Chal Diyo Paisa Diyo N Koye.`",
-     "`Pani kam hain  matke mein gand mardunga jhatke mein.`",
-     "`Duniya haseeno ka mela fir bhi mera chutiya dost akela.`",
-     "`8 ko kehte hain hindi mein aath ja bsdk tu ja ke kutiya ki chaat.`",
-     "`Purani baatein bhool ja mera lund pakad ke jhool ja.`",
-     "`Permanent hai pakka tera baap chaka.`",
-     "`Yaar azab tera nakhra ghazab tera style hai gand dhone ki tameez nahi haath mein mobile hain.`",
 ]
 FUK_STRINGS = [
    "`It's better to let someone think you are an Idiot than to open your mouth and prove it.`",
@@ -521,6 +492,28 @@ ABUSEHARD_STRING = [
         "`Gand mare gandu Chut mare Chutiya Sabse accha mutti 2 mint me chutti😛`",
         "`Marzi Ka Sex Pap Nahi Hota.. Piche Se Dalne Wala Kabhi Baap Nahi Hota.. Condom Zarur Lagana Mere Dost Qki.. Sex K Waqt Popat Ke Pass Dimag Nahi Hota.`",
         "`Uss Ne Hothon Se Chhu Kar Lowd* Pe Nasha Kar Diya; Lu*D Ki Baat To Aur Thi, Uss Ne To Jhato* Ko Bhi Khada Kar Diya!`",
+]
+HELLOSTR = [
+    "`Hi !`",
+    "`‘Ello, gov'nor!`",
+    "`What’s crackin’?`",
+    "`‘Sup, homeslice?`",
+    "`Howdy, howdy ,howdy!`",
+    "`Hello, who's there, I'm talking.`",
+    "`You know who this is.`",
+    "`Yo!`",
+    "`Whaddup.`",
+    "`Greetings and salutations!`",
+    "`Hello, sunshine!`",
+    "`Hey, howdy, hi!`",
+    "`What’s kickin’, little chicken?`",
+    "`Peek-a-boo!`",
+    "`Howdy-doody!`",
+    "`Hey there, freshman!`",
+    "`I come in peace!`",
+    "`Ahoy, matey!`",
+    "`Hiya!`",
+    "`Oh retarded gey! Well Hello`",
 ]
 
 SHGS = [
@@ -654,8 +647,7 @@ HIT = [
 # ===========================================
 
 
-#@register(outgoing=True, pattern=r"^.(\w+)say (.*)")
-@borg.on(admin_cmd(pattern=r"(\w+)say (.*)"))
+@register(outgoing=True, pattern=r"^.(\w+)say (.*)")
 async def univsaye(cowmsg):
     """ For .cowsay module, userbot wrapper for cow which says things. """
     if not cowmsg.text[0].isalpha() and cowmsg.text[0] not in ("/", "#", "@", "!"):
@@ -672,7 +664,7 @@ async def univsaye(cowmsg):
         await cowmsg.edit(f"`{cheese.milk(text).replace('`', '´')}`")
 
 
-@register(outgoing=True, pattern="^.:/$")
+@register(outgoing=True, pattern="^:/$")
 async def kek(keks):
     if not keks.text[0].isalpha() and keks.text[0] not in ("/", "#", "@", "!"):
         """ Check yourself ;)"""
@@ -681,6 +673,31 @@ async def kek(keks):
             time.sleep(0.3)
             await keks.edit(":" + uio[i % 2])
 
+@register(outgoing=True, pattern=r"^.coinflip (.*)")
+async def _(event):
+    if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
+        if event.fwd_from:
+            return
+        r = random.randint(1, 100)
+        input_str = event.pattern_match.group(1)
+        if input_str:
+            input_str = input_str.lower()
+        if r % 2 == 1:
+            if input_str == "heads":
+                await event.edit("The coin landed on: **Heads**.\nYou were correct.")
+            elif input_str == "tails":
+                await event.edit("The coin landed on: **Heads**.\nYou weren't correct, try again ...")
+            else:
+                await event.edit("The coin landed on: **Heads**.")
+        elif r % 2 == 0:
+            if input_str == "tails":
+                await event.edit("The coin landed on: **Tails**.\nYou were correct.")
+            elif input_str == "heads":
+                await event.edit("The coin landed on: **Tails**.\nYou weren't correct, try again ...")
+            else:
+                await event.edit("The coin landed on: **Tails**.")
+        else:
+            await event.edit("Gimme another coin, this one fake AF !!")
 
 @register(pattern="^.slap(?: |$)(.*)", outgoing=True)
 async def who(event):
@@ -754,7 +771,7 @@ async def slap(replied_user, event):
 
     return caption
 
-@register(outgoing=True, pattern="^.-_-$")
+@register(outgoing=True, pattern="^-_-$")
 async def lol(lel):
     if not lel.text[0].isalpha() and lel.text[0] not in ("/", "#", "@", "!"):
         """ Ok... """
@@ -763,8 +780,24 @@ async def lol(lel):
             okay = okay[:-1] + "_-"
             await lel.edit(okay)
 
- 
-@register(outgoing=True, pattern="^.;_;$")
+@register(outgoing=True, pattern="^.decide$")
+async def _(event):
+    if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
+        if event.fwd_from:
+            return
+        message_id = event.message.id
+        if event.reply_to_msg_id:
+            message_id = event.reply_to_msg_id
+        r = requests.get("https://yesno.wtf/api").json()
+        await event.client.send_message(
+            event.chat_id,
+            str(r["answer"]).upper(),
+            reply_to=message_id,
+            file=r["image"]
+        )
+        await event.delete()
+
+@register(outgoing=True, pattern="^;_;$")
 async def fun(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         t = ";__;"
@@ -847,15 +880,11 @@ async def vapor(vpr):
 
 			  
 @register(outgoing=True, pattern="^.repo$")
-async def repo(e):
+async def source(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        await e.edit("Hey ! I am Using [Friday Userbot](https://github.com/StarkGang/FridayUserbot) !")
-
-@register(outgoing=True, pattern="^.fridayuserbot$")
-async def source(sed):
-    if not sed.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        await sed.edit("View Source Code By Clicking [Here](https://github.com/StarkGang/FridayUserbot) !")
-				  
+        await e.edit("Click [here](https://github.com/Dark-Princ3/X-tra-Telegram) to open this lit af repo.")
+			  
+			  
 @register(outgoing=True, pattern="^.str(?: |$)(.*)")
 async def stretch(stret):
     """ Stretch it."""
@@ -918,14 +947,21 @@ async def zal(zgfy):
             reply_text.append(charac)
 
         await zgfy.edit("".join(reply_text))
+
+
+@register(outgoing=True, pattern="^.hi$")
+async def hoi(hello):
+    """ Greet everyone! """
+    if not hello.text[0].isalpha() and hello.text[0] not in ("/", "#", "@", "!"):
+        await hello.edit(random.choice(HELLOSTR))
 			  
-@register(outgoing=True, pattern="^.pkill$")
+@register(outgoing=True, pattern="^.kill$")
 async def killing (killed):
     """ Dont Kill Too much -_-"""
     if not killed.text[0].isalpha() and killed.text[0] not in ("/", "#", "@", "!"):
         if await killed.get_reply_message():
             await killed.edit(
-                "`My Master killed targeted user by Headshot 😈......`\n"
+                "`Targeted user killed by Headshot 😈......`\n"
 		"#Sad_Reacts_Onli\n"
             )
 			  
@@ -959,7 +995,7 @@ async def proo (pros):
 async def chutiya (fuks):
     """ String for fhu only -_-"""
     if not fuks.text[0].isalpha() and fuks.text[0] not in ("/", "#", "@", "!"):
-        index = random.randint(0, len(FUK_STRINGS) - 1)
+        index = random.randint(0, len(CHU_STRINGS) - 1)
         reply_text = FUK_STRINGS[index]
         await fuks.edit(reply_text)
 
@@ -979,7 +1015,7 @@ async def thanos (thanos):
         reply_text = THANOS_STRINGS[index]
         await thanos.edit(reply_text)	
 			  
-@register(outgoing=True, pattern="^.hardabuse$")
+@register(outgoing=True, pattern="^.abusehard$")
 async def fuckedd (abusehard):
     """ Dont Use this Too much bsdk -_-"""
     if not abusehard.text[0].isalpha() and abusehard.text[0] not in ("/", "#", "@", "!"):
@@ -1044,7 +1080,11 @@ async def shrugger(shg):
         await shg.edit(random.choice(SHGS))
 
 
-
+@register(outgoing=True, pattern="^.runs$")
+async def runner_lol(run):
+    """ Run, run, RUNNN! """
+    if not run.text[0].isalpha() and run.text[0] not in ("/", "#", "@", "!"):
+        await run.edit(random.choice(RUNSREACTS))
 
 @register(outgoing=True, pattern="^.noob$")
 async def metoo(hahayes):
@@ -1071,8 +1111,27 @@ async def iqless(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("♿")
 
+@register(outgoing=True, pattern="^.moon$")
+async def _(event):
+    if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
+	    if event.fwd_from:
+		    return
+	    deq = deque(list("🌗🌘🌑🌒🌓🌔🌕🌖"))
+	    for _ in range(32):
+		    await asyncio.sleep(0.1)
+		    await event.edit("".join(deq))
+		    deq.rotate(1)
 
-
+@register(outgoing=True, pattern="^.clock$")
+async def _(event):
+    if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
+	    if event.fwd_from:
+		    return
+	    deq = deque(list("🕙🕘🕗🕖🕕🕔🕓🕒🕑🕐🕛"))
+	    for _ in range(32):
+		    await asyncio.sleep(0.1)
+		    await event.edit("".join(deq))
+		    deq.rotate(1)
 
 @register(outgoing=True, pattern="^.mock(?: |$)(.*)")
 async def spongemocktext(mock):
@@ -1118,6 +1177,15 @@ async def claptext(memereview):
         await memereview.edit(reply_text)
 
 
+@register(outgoing=True, pattern="^.bt$")
+async def bluetext(bt_e):
+    """ Believe me, you will find this useful. """
+    if not bt_e.text[0].isalpha() and bt_e.text[0] not in ("/", "#", "@", "!"):
+        if await bt_e.get_reply_message():
+            await bt_e.edit(
+                "`BLUETEXT MUST CLICK.`\n"
+                "`Are you a stupid animal which is attracted to colours?`"
+            )
 
 
 @register(outgoing=True, pattern="^.smk (.*)")
@@ -1139,7 +1207,12 @@ async def smrk(smk):
              await smk.edit(reply_text)
 
 
-
+@register(outgoing=True, pattern=r"\.f (.*)")
+async def payf(e):
+    if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
+        paytext = e.pattern_match.group(1)
+        pay = "{}\n{}\n{}\n{}\n{}\n{}\n{}".format(paytext*5, paytext*1,paytext*1, paytext*4, paytext*1, paytext*1, paytext*1)
+        await e.edit(pay)
 
 
 @register(outgoing=True, pattern="^.lfy (.*)",)
@@ -1164,12 +1237,104 @@ async def let_me_google_that_for_you(lmgtfy_q):
             )
 
 
+@register(outgoing=True, pattern=r".yt_dl (\S*) ?(\S*)")
+async def download_video(v_url):
+    """ For .yt_dl command, download videos from YouTube. """
+    if not v_url.text[0].isalpha() and v_url.text[0] not in ("/", "#", "@", "!"):
+        url = v_url.pattern_match.group(1)
+        quality = v_url.pattern_match.group(2)
 
-               
-			  
+        await v_url.edit("**Fetching...**")
 
-            
+        video = YouTube(url)
+
+        if quality:
+            video_stream = video.streams.filter(
+                progressive=True,
+                subtype="mp4",
+                res=quality
+            ).first()
+        else:
+            video_stream = video.streams.filter(
+                progressive=True,
+                subtype="mp4"
+            ).first()
+
+        if video_stream is None:
+            all_streams = video.streams.filter(
+                progressive=True,
+                subtype="mp4"
+            ).all()
+            available_qualities = ""
+
+            for item in all_streams[:-1]:
+                available_qualities += f"{item.resolution}, "
+            available_qualities += all_streams[-1].resolution
+
+            await v_url.edit(
+                "**A stream matching your query wasn't found. Try again with different options.\n**"
+                "**Available Qualities:**\n"
+                f"{available_qualities}"
+            )
+            return
+
+        video_size = video_stream.filesize / 1000000
+
+        if video_size >= 50:
+            await v_url.edit(
+                ("**File larger than 50MB. Sending the link instead.\n**"
+                 f"Get the video [here]({video_stream.url})\n\n"
+                 "**If the video plays instead of downloading, right click(or long press on touchscreen) and "
+                 "press 'Save Video As...'(may depend on the browser) to download the video.**")
+            )
+            return
+
+        await v_url.edit("**Downloading...**")
+
+        video_stream.download(filename=video.title)
+
+        url = f"https://img.youtube.com/vi/{video.video_id}/maxresdefault.jpg"
+        resp = get(url)
+        with open('thumbnail.jpg', 'wb') as file:
+            file.write(resp.content)
+
+        await v_url.edit("**Uploading...**")
+        await v_url.client.send_file(
+            v_url.chat_id,
+            f'{safe_filename(video.title)}.mp4',
+            caption=f"{video.title}",
+            thumb="thumbnail.jpg"
+        )
+
+        os.remove(f"{safe_filename(video.title)}.mp4")
+        os.remove('thumbnail.jpg')
+        await v_url.delete()
 			  
+@register(pattern='.type(?: |$)(.*)')
+async def typewriter(typew):
+    """ Just a small command to make your keyboard become a typewriter! """
+    if not typew.text[0].isalpha() and typew.text[0] not in ("/", "#", "@", "!"):
+        textx = await typew.get_reply_message()
+        message = typew.pattern_match.group(1)
+        if message:
+            pass
+        elif textx:
+            message = textx.text
+        else:
+            await typew.edit("`Give a text to type!`")
+            return
+        sleep_time = 0.03
+        typing_symbol = "|"
+        old_text = ''
+        await typew.edit(typing_symbol)
+        await asyncio.sleep(sleep_time)
+        for character in message:
+            old_text = old_text + "" + character
+            typing_text = old_text + "" + typing_symbol
+            await typew.edit(typing_text)
+            await asyncio.sleep(sleep_time)
+            await typew.edit(old_text)
+            await asyncio.sleep(sleep_time)
 
 CMD_HELP.update({
     "memes": ".cowsay\

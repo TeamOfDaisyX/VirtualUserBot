@@ -1,3 +1,17 @@
+# (c) Shrimadhav U K
+#
+# This file is part of @UniBorg
+#
+# @UniBorg is free software; you cannot redistribute it and/or modify
+# it under the terms of the GNU General Public License as published
+# by the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# @UniBorg is not distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
 """Remove.BG Plugin for @UniBorg
 Syntax: .rmbg https://link.to/image.extension
 Syntax: .rmbg as reply to a media"""
@@ -25,7 +39,7 @@ async def _(event):
         message_id = event.reply_to_msg_id
         reply_message = await event.get_reply_message()
         # check if media message
-        await event.edit("Connecting to official Friday server and analysing that img ...")
+        await event.edit("`Parsing the image.`")
         try:
             downloaded_file_name = await borg.download_media(
                 reply_message,
@@ -47,7 +61,7 @@ async def _(event):
     contentType = output_file_name.headers.get("content-type")
     if "image" in contentType:
         with io.BytesIO(output_file_name.content) as remove_bg_image:
-            remove_bg_image.name = "@FridayOT.png"
+            remove_bg_image.name = "BG_less.png"
             await borg.send_file(
                 event.chat_id,
                 remove_bg_image,
@@ -58,9 +72,9 @@ async def _(event):
             )
         end = datetime.now()
         ms = (end - start).seconds
-        await event.edit("Removed dat annoying Backgroup in {} seconds, powered by Friday Userbot".format(ms))
+        await event.edit("Removed image's Background in {} seconds, powered by @XtraTgBot".format(ms))
     else:
-        await event.edit("ReMove.BG API returned Errors. Please report to @FridayOt Support Group\n`{}".format(output_file_name.content.decode("UTF-8")))
+        await event.edit("ReMove.BG API returned Errors. Please report to @XtraTgBot\n`{}".format(output_file_name.content.decode("UTF-8")))
 
 
 # this method will call the API, and return in the appropriate format

@@ -1,6 +1,6 @@
 """Send Chat Actions
-Syntax: .sca <option> <time in sec>
-        sca options: Options for sca 
+Syntax: .scha <option> <time in sec>
+        scha options: Options for sca 
 
 typing
 contact
@@ -17,7 +17,7 @@ import asyncio
 from uniborg.util import admin_cmd
  
  
-@borg.on(admin_cmd("sca ?(.*)"))
+@borg.on(admin_cmd("scha ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

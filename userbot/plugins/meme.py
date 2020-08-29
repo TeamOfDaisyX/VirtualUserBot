@@ -8,9 +8,9 @@ from telethon import events
 import asyncio
 import os
 import sys
-from uniborg.util import admin_cmd
 
-@borg.on(admin_cmd(pattern=r"meme"))
+
+@borg.on(events.NewMessage(pattern=r"\.meme", outgoing=True))
 async def meme(event):
     if event.fwd_from:
         return   
@@ -19,33 +19,19 @@ async def meme(event):
     memeVar = memeVar[6:] 
            
     await event.edit("-------------"+memeVar)
-    await asyncio.sleep(sleepValue)
     await event.edit("------------"+memeVar+"-")
-    await asyncio.sleep(sleepValue)
     await event.edit("-----------"+memeVar+"--")
-    await asyncio.sleep(sleepValue)
     await event.edit("----------"+memeVar+"---")
-    await asyncio.sleep(sleepValue)
-    await event.edit("---------"+memeVar+"----")   
-    await asyncio.sleep(sleepValue) 
+    await event.edit("---------"+memeVar+"----")    
     await event.edit("--------"+memeVar+"-----")
-    await asyncio.sleep(sleepValue)
     await event.edit("-------"+memeVar+"------")
-    await asyncio.sleep(sleepValue)
     await event.edit("------"+memeVar+"-------")
-    await asyncio.sleep(sleepValue)
     await event.edit("-----"+memeVar+"--------")
-    await asyncio.sleep(sleepValue)
     await event.edit("----"+memeVar+"---------")
-    await asyncio.sleep(sleepValue)
     await event.edit("---"+memeVar+"----------")
-    await asyncio.sleep(sleepValue)
     await event.edit("--"+memeVar+"-----------")
-    await asyncio.sleep(sleepValue)
     await event.edit("-"+memeVar+"------------")
-    await asyncio.sleep(sleepValue)
     await event.edit(memeVar+"-------------")
-    await asyncio.sleep(sleepValue)
     await event.edit(memeVar)
     await asyncio.sleep(sleepValue)
 
@@ -54,7 +40,7 @@ Bonus : Flower Boquee Generater
 usage:- .flower
 
 """
-@borg.on(admin_cmd(pattern=r"flower"))
+@borg.on(events.NewMessage(pattern=r"\.flower", outgoing=True))
 async def meme(event):
     if event.fwd_from:
         return   
@@ -62,23 +48,13 @@ async def meme(event):
     sleepValue = 5
            
     await event.edit(flower+"        ")
-    await asyncio.sleep(sleepValue)
     await event.edit(flower+flower+"       ")
-    await asyncio.sleep(sleepValue)
     await event.edit(flower+flower+flower+"      ")
-    await asyncio.sleep(sleepValue)
     await event.edit(flower+flower+flower+flower+"     ")
-    await asyncio.sleep(sleepValue)
     await event.edit(flower+flower+flower+flower+flower+"    ")
-    await asyncio.sleep(sleepValue)
-    await event.edit(flower+flower+flower+flower+flower+flower+"   ")
-    await asyncio.sleep(sleepValue)
     await event.edit(flower+flower+flower+flower+flower+flower+flower+"   ")
-    await asyncio.sleep(sleepValue)
     await event.edit(flower+flower+flower+flower+flower+flower+flower+flower+"  ")
-    await asyncio.sleep(sleepValue)
     await event.edit(flower+flower+flower+flower+flower+flower+flower+flower+flower+" ")
-    await asyncio.sleep(sleepValue)
     await event.edit(flower+flower+flower+flower+flower+flower+flower+flower+flower+flower)
     await asyncio.sleep(sleepValue)
         

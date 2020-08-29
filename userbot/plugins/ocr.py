@@ -7,11 +7,9 @@ from telethon import events
 import os
 import requests
 import logging
-from userbot import bot, CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
-from userbot.utils import admin_cmd
-from userbot.uniborgConfig import Config
+from userbot import bot, OCR_SPACE_API_KEY, CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
+from userbot.utils import register
 
-OCR_SPACE_API_KEY = Config.OCR_SPACE_API_KEY
 
 async def ocr_space_file(filename,
                          overlay=False,
@@ -44,7 +42,7 @@ async def ocr_space_file(filename,
     return r.json()
 
 
-@borg.on(admin_cmd(pattern="ocr(?: |$)(.*)", outgoing=True))
+@register(pattern="^.ocr(?: |$)(.*)", outgoing=True)
 async def ocr(event):
     await event.edit("`Reading...`")
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):

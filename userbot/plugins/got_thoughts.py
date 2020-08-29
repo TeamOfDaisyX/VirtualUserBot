@@ -15,10 +15,10 @@ import os
 import sys
 
 import random
-from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd(pattern=r"gott", outgoing=True))
+
+@borg.on(events.NewMessage(pattern=r"\.gott", outgoing=True))
 
 async def _(event):
 

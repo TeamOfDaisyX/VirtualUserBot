@@ -1,33 +1,63 @@
 import sys
-import time
-import os
-"""Available Commands:
-.mf"""
-
 from telethon import events, functions, __version__
-
-import asyncio
-
 from userbot.utils import admin_cmd
 
-@borg.on(admin_cmd("(.*)"))
 
+@borg.on(admin_cmd(pattern="mf ?(.*)", allow_sudo=True))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
-    animation_interval = 1
-    animation_ttl = range(0,27)
-    input_str = event.pattern_match.group(1)
-    if input_str == "mf":
-        await event.edit(input_str)
-        animation_chars = [
-            "\n......................................../´¯/)\n......................................,/¯../ \n...................................../..../ \n..................................../´.¯/\n..................................../´¯/\n..................................,/¯../ \n................................../..../ \n................................./´¯./\n................................/´¯./\n..............................,/¯../\n............................./..../ \n............................/´¯/\n........................../´¯./\n........................,/¯../ \n......................./..../ \n....................../´¯/\n....................,/¯../ \n.................../..../ \n............./´¯/'...'/´¯¯`·¸ \n........../'/.../..../......./¨¯\ \n........('(...´...´.... ¯~/'...') \n.........\.................'...../ \n..........''...\.......... _.·´ \n............\..............( \n..............\.............\..."
-        ]
+    splugin_name = event.pattern_match.group(1)
+    if splugin_name in borg._plugins:
+        s_help_string = borg._plugins[splugin_name].__doc__
+    else:
+        s_help_string = ""
+    help_string = """
+......................................../´¯/) 
+......................................,/¯../ 
+...................................../..../ 
+..................................../´.¯/
+..................................../´¯/
+..................................,/¯../ 
+................................../..../ 
+................................./´¯./
+................................/´¯./
+..............................,/¯../ 
+............................./..../ 
+............................/´¯/
+........................../´¯./
+........................,/¯../ 
+......................./..../ 
+....................../´¯/
+....................,/¯../ 
+.................../..../ 
+............./´¯/'...'/´¯¯`·¸ 
+........../'/.../..../......./¨¯\ 
+........('(...´...´.... ¯~/'...') 
+.........\.................'...../ 
+..........''...\.......... _.·´ 
+............\..............( 
+..............\.............\...
+    """.format(
+        sys.version,
+        __version__
+    )
+    tgbotusername = Config.TG_BOT_USER_NAME_BF_HER  # pylint:disable=E0602
+    if tgbotusername is not None:
+        results = await borg.inline_query(  # pylint:disable=E0602
+            tgbotusername,
+            help_string + "\n\n" + s_help_string
+        )
+        await results[0].click(
+            event.chat_id,
+            reply_to=event.reply_to_msg_id,
+            hide_via=True
+        )
+        await event.delete()
+    else:
+        await event.reply(help_string + "\n\n" + s_help_string)
+        await event.delete()
 
-        for i in animation_ttl:
-          
-            await asyncio.sleep(animation_interval)
-            await event.edit(animation_chars[i %27 ])
 
 @borg.on(admin_cmd(pattern="dc"))  # pylint:disable=E0602
 async def _(event):
@@ -44,4 +74,4 @@ async def _(event):
     result = await borg(functions.help.GetConfigRequest())  # pylint:disable=E0602
     result = result.stringify()
     logger.info(result)  # pylint:disable=E0602
-    await event.edit("""Telethon UserBot powered by @FRIDAYSUPPORTOFFICIAL""")
+    await event.edit("""Telethon UserBot powered by @UniBorg""")

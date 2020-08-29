@@ -1,8 +1,15 @@
-# Credits ;- @mrconfused
+"""
+Syntax : .gps <location name>
+credits :@mrconfused
+"""
+
+#help from @sunda005 and @SpEcHIDe
+# don't edit credits 
+
 from geopy.geocoders import Nominatim
 from userbot.utils import admin_cmd
 from telethon.tl import types
-from userbot import CMD_HELP 
+
 
 
 @borg.on(admin_cmd(pattern="gps ?(.*)"))
@@ -15,11 +22,11 @@ async def gps(event):
     input_str = event.pattern_match.group(1)
 
     if not input_str:
-        return await event.edit("Boss ! Give A Place To Search 😔 !.")
+        return await event.edit("what should i find give me location.")
 
-    await event.edit("Finding This Location In Maps Server.....")
+    await event.edit("finding")
 
-    geolocator = Nominatim(user_agent="F.R.I.D.A.Y USERBOT")
+    geolocator = Nominatim(user_agent="catuserbot")
     geoloc = geolocator.geocode(input_str)
 
     if geoloc:
@@ -36,9 +43,5 @@ async def gps(event):
         await event.delete()
     else:
         await event.edit("i coudn't find it")
-
-
-CMD_HELP.update({"gps": "`.gps` <location name> :\
-      \nUSAGE: Sends you the given location name\
-      "
-})
+        
+        

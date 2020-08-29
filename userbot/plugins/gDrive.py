@@ -9,7 +9,7 @@ import time
 import math
 from datetime import datetime
 from telethon import events
-from userbot.utils import admin_cmd, progress
+from uniborg.util import admin_cmd, progress
 #
 from googleapiclient.discovery import build
 from apiclient.http import MediaFileUpload
@@ -34,8 +34,7 @@ parent_id = Var.GDRIVE_FOLDER_ID
 G_DRIVE_DIR_MIME_TYPE = "application/vnd.google-apps.folder"
 
 
-#@command(pattern="^.ugdrive ?(.*)")
-@borg.on(admin_cmd(pattern=r"ugdrive ?(.*)"))
+@command(pattern="^.ugdrive ?(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -100,8 +99,7 @@ async def _(event):
     else:
         await mone.edit("File Not found in local server. Give me a file path :((")
 
-#@command(pattern="^.drivesch ?(.*)")
-@borg.on(admin_cmd(pattern=r"drivesch ?(.*)"))
+@command(pattern="^.drivesch ?(.*)")
 async def sch(event):
     if event.fwd_from:
         return
@@ -151,8 +149,7 @@ async def gsearch(http,query,filename):
     return msg        
 
 
-#@command(pattern="^.gdrivedir ?(.*)")
-@borg.on(admin_cmd(pattern=r"gdrivedir ?(.*)"))
+@command(pattern="^.gdrivedir ?(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -321,8 +318,7 @@ async def upload_file(http, file_path, file_name, mime_type, event, parent_id):
     return download_url
 
 
-#@command(pattern="^.gfolder ?(.*)")
-@borg.on(admin_cmd(pattern=r"gfolder ?(.*)"))
+@command(pattern="^.gfolder ?(.*)")
 async def _(event):
     if event.fwd_from:
         return
