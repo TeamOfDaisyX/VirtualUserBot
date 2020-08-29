@@ -9,7 +9,7 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/Dark-Princ3/X-tra-Telegram/",
+  "repository": "https://github.com/Starkgang/FridayUserbot",
   "website": "#TODO",
   "success_url": "#TODO",
   "env": {
@@ -98,7 +98,7 @@
   "addons": [{
     "plan": "heroku-postgresql",
     "options": {
-      "version": "9.6"
+      "version": "9.7"
     }
   }],
   "buildpacks": [{
