@@ -31,9 +31,9 @@ async def gen_chlog(repo, diff):
     ch_log = ""
     d_form = "%d/%m/%y"
     for c in repo.iter_commits(diff):
-        ch_log += (f"[⌨️ {c.count} \n⏳{c.committed_datetime.strftime(d_form)}]: "
-            f"[{c.summary}]({UPSTREAM_REPO_URL}/commit/{c})"
-            f"✍️ {c.author}\n")
+        ch_log += (f"💻 {c.count} \n⏳ {c.committed_datetime.strftime(d_form)}"
+            f"\n📃 [{c.summary}]({UPSTREAM_REPO_URL}/commit/{c})"
+            f"\n✍️ {c.author}\n")
     return ch_log
 
 async def print_changelogs(event, ac_br, changelog):
