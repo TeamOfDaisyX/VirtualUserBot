@@ -1,11 +1,11 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
-# credits to @AvinashReddy3108 and Userge 
+# credits to @AvinashReddy3108 and Userge & @Mrconfused
 
 """
 This module updates the userbot based on upstream revision
-Modified By @Mrconfused
+Modified By @StarkXD
 """
 
 import asyncio
