@@ -2,7 +2,8 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
-# credits to @AvinashReddy3108
+# credits to @AvinashReddy3108 and Userge 🤣
+
 """
 This module updates the userbot based on upstream revision
 Modified By @Mrconfused
@@ -31,7 +32,8 @@ async def gen_chlog(repo, diff):
     for c in repo.iter_commits(diff):
         ch_log += (
             f"[⌨️ {c.count} \n⏳{c.committed_datetime.strftime(d_form)}]: "
-            f"📃{c.summary} \n✍️ {c.author}\n"
+            f"[{c.summary}]({Config.UPSTREAM_REPO_URL.rstrip('/')}/commit/{c})
+            f"✍️ {c.author}\n"
         )
     return ch_log
 
