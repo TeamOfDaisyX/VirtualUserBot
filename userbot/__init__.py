@@ -1,4 +1,4 @@
-#   Copyright 2019 - 2020 DarkPrinc3
+#   Copyright 2019 - 2020 Starkgang ( Orginaly By Anubis )
 
 #   Licensed under the Apache License, Version 2.0 (the "License");
 #   you may not use this file except in compliance with the License.
@@ -102,6 +102,13 @@ if bool(ENV):
     CHROME_DRIVER = os.environ.get("CHROME_DRIVER", None)
     GOOGLE_CHROME_BIN = os.environ.get("GOOGLE_CHROME_BIN", None)
 
+
+    # Heroku Credentials for updater.
+    HEROKU_MEMEZ = sb(os.environ.get("HEROKU_MEMEZ", "False"))
+    HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
+    HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
+
+
     # OpenWeatherMap API Key
     OPEN_WEATHER_MAP_APPID = os.environ.get("OPEN_WEATHER_MAP_APPID", None)
 
@@ -176,6 +183,7 @@ COUNT_MSG = 0
 USERS = {}
 COUNT_PM = {}
 LASTMSG = {}
+SUDO_LIST = {}
 CMD_HELP = {}
 
 ISAFK = False
