@@ -20,7 +20,7 @@ from telethon.tl import functions
 import asyncio
 import shutil
 
-FONT_FILE_TO_USE = "fonts/go3v2.ttf"
+FONT_FILE_TO_USE = "fonts/digital.ttf"
 
 @command(pattern="^.autopic", outgoing=True)
 async def autopic(event):
