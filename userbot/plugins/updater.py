@@ -164,7 +164,7 @@ def generate_change_log(git_repo, diff_marker):
     d_form = "%d/%m/%y"
     for repo_change in git_repo.iter_commits(diff_marker):
         out_put_str += (f"#{c.count()} : "
-            f"\n📃 [{c.summary}]({UPSTREAM_REPO_URL}/commit/{c})"
+            f"\n📃 [{c.summary}]({OFFICIAL_UPSTREAM_REPO}/commit/{c})"
             f"\n👩‍🎨 __{c.author}__\n\n")
     return out_put_str
 
