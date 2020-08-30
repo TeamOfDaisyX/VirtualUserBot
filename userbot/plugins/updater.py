@@ -28,14 +28,14 @@ async def gen_chlog(repo, diff):
     ch_log = ""
     d_form = "%d/%m/%y"
     for c in repo.iter_commits(diff):
-        ch_log += (f"#{c.count()} : "
+        ch_log += (f"#{c.count()} "
             f"\n📃 [{c.summary}]({UPSTREAM_REPO_URL}/commit/{c})"
             f"\n👩‍🎨 __{c.author}__\n\n")
     return ch_log
 
 async def print_changelogs(event, ac_br, changelog):
     changelog_str = (
-        f"**New UPDATE available for {ac_br}:\n\nCHANGELOG:**\n`{changelog}`"
+        f"**I Have Found Some New Updates For {ac_br} Branch Here Check The Updates 📃\n{changelog}"
     )
     if len(changelog_str) > 4096:
         await event.edit("`Changelog is too big, view the file to see it.`")
@@ -73,8 +73,8 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         heroku_applications = heroku.apps()
         if HEROKU_APP_NAME is None:
             await event.edit(
-                "`[HEROKU]`\n`Please set up the` **HEROKU_APP_NAME** `variable"
-                " to be able to deploy your userbot...`"
+                "`Please set up the` **HEROKU_APP_NAME** `variable"
+                "Visit @FridayOT For More Support `"
             )
             repo.__del__()
             return
@@ -88,7 +88,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             )
             return repo.__del__()
         await event.edit(
-            "`[HEROKU]`" "\n`Userbot dyno build in progress, please wait...`"
+            "`Updation In Progress.....`" "\n`Trying To Rebuild The Dyno ⚙️`"
         )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
@@ -191,7 +191,7 @@ async def upstream(event):
         return
     if changelog == "" and not force_update:
         await event.edit(
-            "\n`CATUSERBOT is`  **up-to-date**  `with`  "
+            "\n`Friday is`  **up-to-date**  `with`  "
             f"**{UPSTREAM_REPO_BRANCH}**\n"
         )
         return repo.__del__()
