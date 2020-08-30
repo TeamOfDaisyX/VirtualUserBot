@@ -29,9 +29,9 @@ async def gen_chlog(repo, diff):
     ch_log = ""
     d_form = "%d/%m/%y"
     for c in repo.iter_commits(diff):
-        ch_log += (f"**#{c.count()}** : "
+        ch_log += (f"#{c.count()} : "
             f"\n📃 [{c.summary}]({UPSTREAM_REPO_URL}/commit/{c})"
-            f"\n✍️ __{c.author}__\n\n")
+            f"\n👩‍🎨 __{c.author}__\n\n")
     return ch_log
 
 async def print_changelogs(event, ac_br, changelog):
