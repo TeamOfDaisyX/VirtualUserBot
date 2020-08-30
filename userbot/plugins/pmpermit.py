@@ -31,7 +31,7 @@ USER_BOT_NO_WARN = ("`Hello ! This is` **F.R.I.D.A.Y**\n"
 
 if Var.PRIVATE_GROUP_ID is not None:
     @command(pattern="^.a ?(.*)")
-    async def approve_p_m(event):
+    async def block(event):
         if event.fwd_from:
            return
         replied_user = await event.client(GetFullUserRequest(event.chat_id))
