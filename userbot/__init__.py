@@ -123,7 +123,7 @@ if bool(ENV):
     # Anti Spambot Config
     ANTI_SPAMBOT = sb(os.environ.get("ANTI_SPAMBOT", "False"))
     # Log It
-    PRIVATE_GROUP_BOT_API_ID = is.environ.get("PRIVATE_GROUP_BOT_API_ID", None)
+    PRIVATE_GROUP_BOT_API_ID = os.environ.get("PRIVATE_GROUP_BOT_API_ID", None)
 
     ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "False"))
 
