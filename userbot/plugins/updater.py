@@ -30,13 +30,13 @@ async def gen_chlog(repo, diff):
     d_form = "%d/%m/%y"
     for c in repo.iter_commits(diff):
         ch_log += (f"**#{c.count()}** : "
-            f"\n\n📃 [{c.summary}]({UPSTREAM_REPO_URL}/commit/{c})"
+            f"\n📃 [{c.summary}]({UPSTREAM_REPO_URL}/commit/{c})"
             f"\n✍️ __{c.author}__\n\n")
     return ch_log
 
 async def print_changelogs(event, ac_br, changelog):
     changelog_str = (
-        f"**New UPDATE available for {ac_br}:\n\nCHANGELOG:**\n{changelog}"
+        f"**Boss I Have Found Updates For {ac_br} Branch Updates : **\n{changelog}"
     )
     if len(changelog_str) > 4096:
         await event.edit("`Changelog is too big, view the file to see it.`")
@@ -198,7 +198,7 @@ async def upstream(event):
     if conf == "" and force_update is False:
         await print_changelogs(event, ac_br, changelog)
         await event.delete()
-        return await event.respond('do "[.update now] or [.update deploy]" to update')
+        return await event.respond('To Pull These Updates And To Push To Heroku Do `.update now` Else `.update deploy`')
 
     if force_update:
         await event.edit(
