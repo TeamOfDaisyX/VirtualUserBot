@@ -135,7 +135,7 @@ async def update(event, repo, ups_rem, ac_br):
     execle(sys.executable, *args, environ)
     return
 
-@bot.on(admin_cmd(outgoing=True, pattern=r"update($| (now|deploy))"))
+@bot.on(admin_cmd(outgoing=True, pattern=r"update($| (push|deploy))"))
 async def upstream(event):
     "For .update command, check if the bot is up to date, update if specified"
     await event.edit("`Checking for updates, please wait....`")
@@ -158,7 +158,7 @@ async def upstream(event):
                 f"`Unfortunately, the directory {error} "
                 "does not seem to be a git repository.\n"
                 "But we can fix that by force updating the userbot using "
-                ".update now.`"
+                ".update push.`"
             )
         repo = Repo.init()
         origin = repo.create_remote("upstream", off_repo)
@@ -198,13 +198,13 @@ async def upstream(event):
     if conf == "" and force_update is False:
         await print_changelogs(event, ac_br, changelog)
         await event.delete()
-        return await event.respond('To Pull These Updates And To Push To Heroku Do `.update now` Else `.update deploy`')
+        return await event.respond('To Pull These Updates And To Push To Heroku Do `.update push` Else `.update deploy`')
 
     if force_update:
         await event.edit(
             "`Force-Syncing to latest stable userbot code, please wait...`"
         )
-    if conf == "now":
+    if conf == "push":
         await event.edit("`Updating userbot, please wait....`")
         await update(event, repo, ups_rem, ac_br)
     return
@@ -213,7 +213,7 @@ CMD_HELP.update({
         "updater": "**Syntax : **`.update`"
         "\n**Usage :** Checks if the main userbot repository has any updates "
         "and shows a changelog if so."
-        "\n\n**Syntax : **`.update now`"
+        "\n\n**Syntax : **`.update push`"
         "\n**Usage :** Update your userbot, "
         "if there are any updates in your userbot repository.if you restart these goes back to last time when you deployed"
         "\n\n**Syntax : **`.update deploy`"
