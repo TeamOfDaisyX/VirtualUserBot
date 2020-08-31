@@ -5,6 +5,7 @@
   "keywords": ["telegram", "userbot", "plugin", "modular", "productivity"],
   "repository": "https://github.com/starkgang/FridayUserbot",
   "website": "#TODO",
+  "stack": "container",
   "success_url": "#TODO",
   "env": {
     "ENV": {
