@@ -33,6 +33,10 @@
       "description": "Channel Where You Save Your Plugins",
       "value": ""
     },
+    "PRIVATE_GROUP_BOT_API_ID" : { 
+      "description": "Group ID Where You Want Logging Feature PRIVATE_GROUP_ID AND PRIVATE_GROUP_BOT_API_ID SHOULD HAVE SAME VALUE",
+      "value": ""
+    },
     "PRIVATE_GROUP_ID": {
       "description": "A Group ID Where You Want Logging Feature",
       "value": ""
@@ -74,12 +78,12 @@
       "required": false
     },
     "CHROME_DRIVER": {
-      "description": "For Carbon.py. Leave as it is. ",
+      "description": "Chrome Driver For Carbon Leave As It is",
       "value": "/app/.chromedriver/bin/chromedriver",
       "required": false
     },
     "TG_BOT_USER_NAME_BF_HER": {
-      "description": "Needed for inline buttons maker. Make a bot at [BotFather](http://telegram.dog/BotFather) and get the username of your bot",
+      "description": "You Telegram Bot API Key Here. Needed For Help Module And Cbutton.",
       "value": ""
     },
     "DOWNLOAD_PFP_URL_CLOCK": {
@@ -116,9 +120,6 @@
     },
     {
       "url": "https://github.com/opendoor-labs/heroku-buildpack-p7zip"
-    },
-    {
-      "url": "heroku/python"
     }
   ]
 }
