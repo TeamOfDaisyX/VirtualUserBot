@@ -1,70 +1,76 @@
+#  creates a layer from the base Docker image.
 FROM alpine:edge
-
-# We have to uncomment Community repo for some packages
-RUN sed -e 's;^#http\(.*\)/edge/community;http\1/edge/community;g' -i /etc/apk/repositories
-
-# install ca-certificates so that HTTPS works consistently
-# other runtime dependencies for Python are installed later
-RUN apk add --no-cache ca-certificates
-
-# Installing Packages
-RUN apk add --no-cache --update \
-    bash \
-    build-base \
-    bzip2-dev \
+ 
+# https://shouldiblamecaching.com/
+ENV PIP_NO_CACHE_DIR 1
+ 
+# fix "ephimeral" / "AWS" file-systems
+RUN sed -i.bak 's/us-west-2\.ec2\.//' /etc/apt/sources.list
+# to resynchronize the package index files from their sources.
+RUN apt -qq update
+# base required pre-requisites before proceeding ...
+RUN apt -qq install -y --no-install-recommends \
     curl \
-    coreutils \
-    figlet \
-    gcc \
-    g++ \
     git \
-    aria2 \
-    util-linux \
-    libevent \
-    libjpeg-turbo-dev \
-    chromium \
-    chromium-chromedriver \
-    jpeg-dev \
-    libc-dev \
-    libffi-dev \
-    libpq \
-    libwebp-dev \
-    libxml2-dev \
-    libxslt-dev \
-    linux-headers \
-    musl-dev \
-    neofetch \
-    openssl-dev \
-    postgresql-client \
-    postgresql-dev \
-    pv \
-    jq \
-    wget \
-    python3-dev \
-    readline-dev \
-    ffmpeg \
-    sqlite-dev \
-    sudo \
-    zlib-dev \
-    python-dev
-
-
-RUN python3 -m ensurepip \
-    && pip3 install --upgrade pip setuptools \
-    && rm -r /usr/lib/python*/ensurepip && \
-    if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi && \
-    if [[ ! -e /usr/bin/python ]]; then ln -sf /usr/bin/python3 /usr/bin/python; fi && \
-    rm -r /root/.cache
-
-#
-# Clone repo and prepare working directory
-#
-RUN git clone https://github.com/Starkgang/FridayUserbot /root/userbot
+    gnupg2 \
+    unzip \
+    wget
+# add required files to sources.list
+RUN wget -q -O - https://mkvtoolnix.download/gpg-pub-moritzbunkus.txt | apt-key add - && \
+    wget -qO - https://ftp-master.debian.org/keys/archive-key-10.asc | apt-key add -
+RUN sh -c 'echo "deb https://mkvtoolnix.download/debian/ buster main" >> /etc/apt/sources.list.d/bunkus.org.list' && \
+    sh -c 'echo deb http://deb.debian.org/debian buster main contrib non-free | tee -a /etc/apt/sources.list'
+# to resynchronize the package index files from their sources.
+RUN apt -qq update
+# SeD
+ENV LANG C.UTF-8
+ 
+# we don't have an interactive xTerm
+ENV DEBIAN_FRONTEND noninteractive
+ 
+# install google chrome
+RUN mkdir -p /tmp/ && \
+    cd /tmp/ && \
+    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
+    # -f ==> is required to --fix-missing-dependancies
+    dpkg -i ./google-chrome-stable_current_amd64.deb; apt -fqqy install && \
+    # clean up the container "layer", after we are done
+    rm ./google-chrome-stable_current_amd64.deb
+ 
+# install chromedriver
+RUN mkdir -p /tmp/ && \
+    cd /tmp/ && \
+    wget -O /tmp/chromedriver.zip http://chromedriver.storage.googleapis.com/$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE)/chromedriver_linux64.zip  && \
+    unzip /tmp/chromedriver.zip chromedriver -d /usr/bin/ && \
+    # clean up the container "layer", after we are done
+    rm /tmp/chromedriver.zip
+ 
+# install required packages
+RUN apt -qq install -y --no-install-recommends \
+    # this package is required to fetch "contents" via "TLS"
+    apt-transport-https \
+    # install coreutils
+    coreutils aria2 jq pv gcc g++ \
+    # install encoding tools
+    ffmpeg mediainfo rclone \
+    # miscellaneous
+    neofetch python3-dev \
+    # install extraction tools
+    mkvtoolnix \
+    p7zip rar unrar zip \
+    # miscellaneous helpers
+    megatools mediainfo rclone && \
+    # clean up the container "layer", after we are done
+    rm -rf /var/lib/apt/lists /var/cache/apt/archives /tmp
+ 
+# For Upgrading Setup Tool
+RUN pip3 install --upgrade pip setuptools
+# adds files from your Docker client’s current directory.
+RUN git clone https://github.com/StarkGang/FridayUserbot /root/userbot
 RUN mkdir /root/userbot/bin/
 WORKDIR /root/userbot/
-
-#
-# Install requirements
-#
+RUN chmod +x /usr/local/bin/*
+# install requirements, inside the container
 RUN pip3 install -r requirements.txt
-CMD ["python3","-m","userbot"]
+# specifies what command to run within the container.
+CMD ["python3", "-m", "userbot"]
