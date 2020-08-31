@@ -1,5 +1,5 @@
 #  creates a layer from the base Docker image.
-FROM alpine:edge
+FROM python:3.8.5-slim-buster
  
 # https://shouldiblamecaching.com/
 ENV PIP_NO_CACHE_DIR 1
