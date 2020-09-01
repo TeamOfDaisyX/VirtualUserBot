@@ -65,7 +65,7 @@
       "value": ""
     },
     "TG_BOT_TOKEN_BF_HER": {
-      "description": "Needed for inline buttons maker. Make a bot at [BotFather](http://telegram.dog/BotFather) and get the token of your bot.Worth it. Get it.",
+      "description": "Needed for inline buttons maker. Make a bot at @BotFather and get the token of your bot. Get it.",
       "value": ""
     },
     "CHROME_BIN": {
@@ -75,7 +75,7 @@
     },
     "CHROME_DRIVER": {
       "description": "Chrome Driver For Carbon Leave As It is",
-      "value": "/app/.chromedriver/bin/chromedriver",
+      "value": "usr/bin/google-chrome",
       "required": false
     },
     "TG_BOT_USER_NAME_BF_HER": {
