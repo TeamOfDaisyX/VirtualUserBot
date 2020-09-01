@@ -81,7 +81,7 @@
     "TG_BOT_USER_NAME_BF_HER": {
       "description": "You Telegram Bot API Key Here. Needed For Help Module And Cbutton.",
       "value": ""
-    }
+    },
     "DOWNLOAD_PFP_URL_CLOCK": {
       "description": "Needed for autopic module. A url that is a preview link of your Profile Pic",
       "value": "",
