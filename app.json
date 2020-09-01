@@ -70,7 +70,7 @@
     },
     "CHROME_BIN": {
       "description": "For Carbon.py. Leave as it is. ",
-      "value": "/app/.apt/usr/bin/google-chrome",
+      "value": "usr/bin/google-chrome",
       "required": false
     },
     "CHROME_DRIVER": {
@@ -81,7 +81,7 @@
     "TG_BOT_USER_NAME_BF_HER": {
       "description": "You Telegram Bot API Key Here. Needed For Help Module And Cbutton.",
       "value": ""
-    },
+    }
     "DOWNLOAD_PFP_URL_CLOCK": {
       "description": "Needed for autopic module. A url that is a preview link of your Profile Pic",
       "value": "",
