@@ -30,7 +30,6 @@ humanize
 lxml
 lyricsgenius
 oauth2client
-psycopg2
 psycopg2-binary
 PyLyrics
 PyPDF2
