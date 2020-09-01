@@ -2,11 +2,11 @@
   "name": "Friday-Userbot",
   "description": "A Userbot Based On Telethon By @StarkXD",
   "logo": "https://telegra.ph/file/b4e1e36c6b1fcb32dd997.jpg",
-  "keywords": ["telegram", "userbot", "plugin", "modular", "productivity"],
+  "keywords": ["telegram", "userbot", "plugin", "telegram-userbot", "productivity"],
   "repository": "https://github.com/starkgang/FridayUserbot",
-  "website": "#TODO",
+  "website": "StarkGang.ml",
   "stack": "container",
-  "success_url": "#TODO",
+  "success_url": "t.me/FridayOT",
   "env": {
     "ENV": {
       "description": "Setting this to ANYTHING will enable heroku.",
@@ -33,10 +33,6 @@
       "description": "Channel Where You Save Your Plugins",
       "value": ""
     },
-    "PRIVATE_GROUP_BOT_API_ID" : { 
-      "description": "Group ID Where You Want Logging Feature PRIVATE_GROUP_ID AND PRIVATE_GROUP_BOT_API_ID SHOULD HAVE SAME VALUE",
-      "value": ""
-    },
     "PRIVATE_GROUP_ID": {
       "description": "A Group ID Where You Want Logging Feature",
       "value": ""
@@ -46,12 +42,12 @@
       "value": ""
     },
     "GITHUB_ACCESS_TOKEN": {
-      "description": "Your Github Access Token for gitcommit plugin.Google 'Github access token' to find.",
+      "description": "Your Github Access Token for GitHub Commit Plugin. Google 'Github access token' to find more About It.",
       "value": "",
       "required": false
     },
     "GIT_REPO_NAME": {
-      "description": "Your repo name Example: Total-Noob-69/X-Tra-Telegram, but GITHUB_ACCESS_TOKEN must be setup first.",
+      "description": "Your repo name Example: Midhunkm1294/FridayUserbot, but GITHUB_ACCESS_TOKEN must be setup first.",
       "value": "",
       "required": false
     },
