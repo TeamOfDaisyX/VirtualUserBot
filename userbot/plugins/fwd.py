@@ -11,11 +11,11 @@ from userbot.utils import admin_cmd
 async def _(event):
     if event.fwd_from:
         return
-    if Config.PRIVATE_GROUP_BOT_API_ID is None:
-        await event.edit("Please set the required environment variable `PRIVATE_GROUP_BOT_API_ID` for this plugin to work")
+    if Config.PRIVATE_GROUP_ID is None:
+        await event.edit("Please set the required environment variable `PRIVATE_GROUP_ID` for this plugin to work")
         return
     try:
-        e = await borg.get_entity(Config.PRIVATE_GROUP_BOT_API_ID)
+        e = await borg.get_entity(Config.PRIVATE_GROUP_ID)
     except Exception as e:
         await event.edit(str(e))
     else:
