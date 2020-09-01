@@ -179,7 +179,7 @@ async def _(givelogs):
         await givelogs.client.send_file(
             givelogs.chat_id,
             "logs.txt",
-            reply_to=dyno.id,
+            reply_to=givelogs.id,
             caption="Logs Collected Using Heroku",
         )
         await givelogs.edit("Trying To Send Logs.....")
