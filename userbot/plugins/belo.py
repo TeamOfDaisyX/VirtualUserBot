@@ -15,7 +15,7 @@ import sys
 
 import random
 
-from uniborg.util import admin_cmd, sudo_cmd, edit_or_reply
+from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 
 
 
