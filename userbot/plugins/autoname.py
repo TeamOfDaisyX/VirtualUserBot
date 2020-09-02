@@ -54,4 +54,4 @@ async def _(event):
 
         await asyncio.sleep(DEL_TIME_OUT)
 
-    await edit_or_reply(f"Auto Name has been started Master") 
+    await edit_or_reply(f"Auto Name has been started my Master") 
