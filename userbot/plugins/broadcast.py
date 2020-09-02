@@ -153,7 +153,7 @@ async def add_ch(event):
     if event.fwd_from:
         return
     if event.reply_to_msg_id:
-        await event.edit("Adding...")
+        await edit_or_reply("Adding...")
         previous_message = await event.get_reply_message()
         raw_text = previous_message.text
         lines = raw_text.split("\n")
@@ -162,7 +162,7 @@ async def add_ch(event):
             channel_id = lines[line_number][4:-1]
             if not in_channels(channel_id):
                 add_channel(channel_id)
-        await event.edit("Channels added!")
+        await edit_or_reply("Channels added!")
         await asyncio.sleep(3)
         await event.delete()
         return
@@ -174,11 +174,11 @@ async def add_ch(event):
         pass
     if not in_channels(chat_id):
         add_channel(chat_id)
-        await event.edit("`Added Successfuly To List`")
+        await edit_or_reply("`Added Successfuly To List`")
         await asyncio.sleep(3)
         await event.delete()
     elif in_channels(chat_id):
-        await event.edit("`Channel is already is database!`")
+        await edit_or_reply("`Channel is already is database!`")
         await asyncio.sleep(3)
         await event.delete()
 
