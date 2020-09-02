@@ -34,7 +34,7 @@ class Var(object):
         t_file = open(TEMP_DOWNLOAD_DIRECTORY+"auth_token.txt","w")
         t_file.write(AUTH_TOKEN_DATA)
         t_file.close()
-    PRIVATE_GROUP_ID = int(os.environ.get("PLUGIN_CHANNEL", None))
+    PRIVATE_GROUP_ID = int(os.environ.get("PRIVATE_GROUP_ID", None))
 class Development(Var):
     LOGGER = True
     # Here for later purposes
