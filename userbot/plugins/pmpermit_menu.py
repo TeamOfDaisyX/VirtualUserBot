@@ -41,7 +41,7 @@ async def _(event):
          FOUR = ("`Okay ! I See You Can Request Your Demands ! Please Wait Untill My Master Approves You` !")
          FIVE = ("`Okay. please have the basic manners as to not bother my master too much. If he wishes to help you, he will respond to you soon.`\n**Kindly Do not ask repeatdly else you will be blocked and reported.**")
          LWARN = ("**This is your last warning. DO NOT send another message else you will be blocked and reported. Keep patience. My master will respond you ASAP.**\n__Use__ `/start` __to go back to the main menu.__")
-     
+        global SADLYF
         async with borg.conversation(chat) as conv:
          await borg.send_message(chat, SADLYF)
          chat_id = event.from_id
