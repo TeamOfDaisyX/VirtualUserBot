@@ -13,7 +13,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "FridayUserbot"
 @borg.on(admin_cmd(pattern="autoname"))  # pylint:disable=E0602
 @borg.on(sudo_cmd(pattern="autoname", allow_sudo=True))
 async def _(event): 
-    event = await edit_or_reply(event ,"`Starting AutoName Please Wait`")
+    sed = await edit_or_reply(event ,"`Starting AutoName Please Wait`")
     if event.fwd_from:
          return
 
@@ -55,4 +55,4 @@ async def _(event):
 
         await asyncio.sleep(DEL_TIME_OUT)
 
-    await event.edit(f"Auto Name has been started my Master") 
+    await sed.edit(f"Auto Name has been started my Master") 
