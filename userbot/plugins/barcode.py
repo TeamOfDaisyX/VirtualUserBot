@@ -17,7 +17,7 @@ from uniborg.util import admin_cmd, sudo_cmd, edit_or_reply
 async def _(event):
     if event.fwd_from:
         return
-    await edit_or_reply("...")
+    await edit_or_reply(event, "...")
     start = datetime.now()
     input_str = event.pattern_match.group(1)
     message = "SYNTAX: `.barcode <long text to include>`"
@@ -59,6 +59,6 @@ async def _(event):
         return
     end = datetime.now()
     ms = (end - start).seconds
-    await edit_or_reply("Created BarCode in {} seconds".format(ms))
+    await edit_or_reply(event, "Created BarCode in {} seconds".format(ms))
     await asyncio.sleep(5)
     await event.delete()
