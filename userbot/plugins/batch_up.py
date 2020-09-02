@@ -9,10 +9,11 @@ import os
 import asyncio
 from uniborg.util import admin_cmd
 from telethon import events
-from userbot.utils import admin_cmd
+from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 
 
-@borg.on(admin_cmd(pattern=r"upb", allow_sudo=True))
+@borg.on(admin_cmd(pattern=r"upb"))
+@borg.on(sudo_cmd(pattern=r"upb", allow_sudo=True))
 async def batch_upload(event):
 	if event.fwd_from:
 		return   
@@ -20,7 +21,7 @@ async def batch_upload(event):
 	if os.path.exists(temp_dir):    
 		files = os.listdir(temp_dir)
 		files.sort()
-		await event.edit("Uploading Files on Telegram...")
+		await edit_or_reply("Uploading Files on Telegram...")
 		for file in files:
 			required_file_name = temp_dir+"/"+file
 			print(required_file_name)
@@ -30,6 +31,6 @@ async def batch_upload(event):
 					force_document=True
 				)	
 	else:
-		await event.edit("Directory Not Found.")
+		await edit_or_reply("Directory Not Found.")
 		return		
-	await event.edit("Successfull.")	
+	await edit_or_reply("Successfull.")	
