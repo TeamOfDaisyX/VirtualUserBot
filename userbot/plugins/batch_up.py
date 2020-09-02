@@ -21,7 +21,7 @@ async def batch_upload(event):
 	if os.path.exists(temp_dir):    
 		files = os.listdir(temp_dir)
 		files.sort()
-		await edit_or_reply("Uploading Files on Telegram...")
+		await edit_or_reply(event, "Uploading Files on Telegram...")
 		for file in files:
 			required_file_name = temp_dir+"/"+file
 			print(required_file_name)
@@ -31,6 +31,6 @@ async def batch_upload(event):
 					force_document=True
 				)	
 	else:
-		await edit_or_reply("Directory Not Found.")
+		await edit_or_reply(event, "Directory Not Found.")
 		return		
-	await edit_or_reply("Successfull.")	
+	await edit_or_reply(event, "Successfull.")	
