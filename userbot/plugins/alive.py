@@ -21,6 +21,7 @@ pm_caption += "Copyright : By [StarkGang@Github](GitHub.com/StarkGang)\n"
 pm_caption += " [Deploy FridayUserbot](https://telegra.ph/FRIDAY-06-15)"
 
 @borg.on(admin_cmd(pattern=r"alive"))
+@borg.on(sudo_cmd(pattern=r"alive", allow_sudo=True))
 async def friday(alive):
     chat = await alive.get_chat()
     """ For .alive command, check if the bot is running.  """
