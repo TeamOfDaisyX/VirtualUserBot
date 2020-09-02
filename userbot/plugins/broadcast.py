@@ -29,10 +29,10 @@ async def forw(event):
   if event.fwd_from:
     return
   if not event.is_reply:
-    await edit_or_reply("Reply to a message to broadcast.")
+    await edit_or_reply(event, "Reply to a message to broadcast.")
     return
   channels = get_all_channels()
-  await edit_or_reply("Sending...")
+  await edit_or_reply(event, "Sending...")
   error_count = 0
   sent_count = 0 
   if event.reply_to_msg_id:
@@ -44,24 +44,24 @@ async def forw(event):
     try:
       await borg.forward_messages(int(channel.chat_id), previous_message)
       sent_count += 1
-      await edit_or_reply(f"Sent : {sent_count}\nError : {error_count}\nTotal : {len(channels)}")
+      await edit_or_reply(event, f"Sent : {sent_count}\nError : {error_count}\nTotal : {len(channels)}")
     except Exception as error:
       try:
         await borg.send_message(logs_id, f"Error in sending at {channel.chat_id}.")
         await borg.send_message(logs_id, "Error! " + str(error))
         if error == "The message cannot be empty unless a file is provided":
-            edit_or_reply("For sending files, upload in Saved Messages and reply .forward to in.")
+            edit_or_reply(event, "For sending files, upload in Saved Messages and reply .forward to in.")
             return
       except:
         pass
       error_count+=1
-      await edit_or_reply(f"Sent : {sent_count}\nError : {error_count}")
-  await edit_or_reply(f"{sent_count} messages sent with {error_count} errors.")
+      await edit_or_reply(event, f"Sent : {sent_count}\nError : {error_count}")
+  await edit_or_reply(event, f"{sent_count} messages sent with {error_count} errors.")
   if error_count > 0:
     try:
         await borg.send_message(logs_id, f"{error_count} Errors")
     except:
-        await edit_or_reply("Set up log channel for checking errors.")
+        await edit_or_reply(event, "Set up log channel for checking errors.")
     
     
 @borg.on(admin_cmd("broadcast ?(.*)"))
@@ -70,19 +70,19 @@ async def _(event):
   if event.fwd_from:
         return
   if not event.is_reply:
-    await edit_or_reply("Reply to a message to broadcast.")
+    await edit_or_reply(event, "Reply to a message to broadcast.")
     return
   channels = get_all_channels()
   error_count = 0
   sent_count = 0
-  await edit_or_reply("Sending....")
+  await edit_or_reply(event, "Sending....")
   if event.reply_to_msg_id:
     previous_message = await event.get_reply_message()
     if previous_message.sticker or previous_message.poll:
-        await edit_or_reply("Reply .forward for stickers and polls.")
+        await edit_or_reply(event, "Reply .forward for stickers and polls.")
         return
     if previous_message.gif or previous_message.audio or previous_message.voice or previous_message.video or previous_message.video_note or previous_message.contact or previous_message.game or previous_message.geo or previous_message.invoice:     # Written by @HeisenbergTheDanger
-        await edit_or_reply("Not supported. Try .forward")
+        await edit_or_reply(event, "Not supported. Try .forward")
         return
     if not previous_message.web_preview and previous_message.photo:
       file = await borg.download_file(previous_message.media)
@@ -102,7 +102,7 @@ async def _(event):
                             )
         
             sent_count += 1
-            await edit_or_reply(f"Sent : {sent_count}\nError : {error_count}\nTotal : {len(channels)}")
+            await edit_or_reply(event, f"Sent : {sent_count}\nError : {error_count}\nTotal : {len(channels)}")
         except Exception as error:
           try:
             await borg.send_message(logs_id, f"Error in sending at {chat_id}.")
@@ -114,7 +114,7 @@ async def _(event):
             pass
           error_count += 1
           await event.edit(f"Sent : {sent_count}\nError : {error_count}\nTotal : {len(channels)}")
-      await edit_or_reply(f"{sent_count} messages sent with {error_count} errors.")
+      await edit_or_reply(event, f"{sent_count} messages sent with {error_count} errors.")
       if error_count > 0:
         try:
             await borg.send_message(logs_id, f"{error_count} Errors")
@@ -126,24 +126,24 @@ async def _(event):
         try:
           await borg.send_message(int(channel.chat_id), raw_text, link_preview = False)
           sent_count += 1
-          await edit_or_reply(f"Sent : {sent_count}\nError : {error_count}\nTotal : {len(channels)}")
+          await edit_or_reply(event, f"Sent : {sent_count}\nError : {error_count}\nTotal : {len(channels)}")
         except Exception as error:
           try:
             await borg.send_message(logs_id, f"Error in sending at {channel.chat_id}.")
             await borg.send_message(logs_id, "Error! " + str(error))
             if error == "The message cannot be empty unless a file is provided":
-                edit_or_reply("For sending files, upload in Saved Messages and reply .forward to in.")
+                edit_or_reply(event, "For sending files, upload in Saved Messages and reply .forward to in.")
                 return
           except:
             pass
           error_count+=1
           await event.edit(f"Sent : {sent_count}\nError : {error_count}\nTotal : {len(channels)}")
-      await edit_or_reply(f"{sent_count} messages sent with {error_count} errors.")
+      await edit_or_reply(event, f"{sent_count} messages sent with {error_count} errors.")
       if error_count > 0:
         try:
             await borg.send_message(logs_id, f"{error_count} Errors")
         except:
-            await edit_or_reply("Set up log channel for checking errors.")
+            await edit_or_reply(event, "Set up log channel for checking errors.")
 
 # Written by @HeisenbergTheDanger
 
@@ -153,7 +153,7 @@ async def add_ch(event):
     if event.fwd_from:
         return
     if event.reply_to_msg_id:
-        await edit_or_reply("Adding...")
+        await edit_or_reply(event, "Adding...")
         previous_message = await event.get_reply_message()
         raw_text = previous_message.text
         lines = raw_text.split("\n")
@@ -162,7 +162,7 @@ async def add_ch(event):
             channel_id = lines[line_number][4:-1]
             if not in_channels(channel_id):
                 add_channel(channel_id)
-        await edit_or_reply("Channels added!")
+        await edit_or_reply(event, "Channels added!")
         await asyncio.sleep(3)
         await event.delete()
         return
@@ -174,11 +174,11 @@ async def add_ch(event):
         pass
     if not in_channels(chat_id):
         add_channel(chat_id)
-        await edit_or_reply("`Added Successfuly To List`")
+        await edit_or_reply(event, "`Added Successfuly To List`")
         await asyncio.sleep(3)
         await event.delete()
     elif in_channels(chat_id):
-        await edit_or_reply("`Channel is already is database!`")
+        await edit_or_reply(event, "`Channel is already is database!`")
         await asyncio.sleep(3)
         await event.delete()
 
@@ -190,25 +190,25 @@ async def remove_ch(event):
         return
     chat_id = event.pattern_match.group(1)
     if chat_id == "all":
-        await edit_or_reply("Removing...")
+        await edit_or_reply(event, "Removing...")
         channels = get_all_channels()
         for channel in channels:
             rm_channel(channel.chat_id)
-        await edit_or_reply("Database cleared.")
+        await edit_or_reply(event, "Database cleared.")
         return
         
     if in_channels(chat_id):
         rm_channel(chat_id)
-        await edit_or_reply("Removed from database")
+        await edit_or_reply(event, "Removed from database")
         await asyncio.sleep(3)
         await event.delete()
     elif in_channels(event.chat_id):
         rm_channel(event.chat_id)
-        await edit_or_reply("Removed from database")
+        await edit_or_reply(event, "Removed from database")
         await asyncio.sleep(3)
         await event.delete()
     elif not in_channels(event.chat_id):
-        await edit_or_reply("Channel is already removed from database. ")
+        await edit_or_reply(event, "Channel is already removed from database. ")
         await asyncio.sleep(3)
         await event.delete()
         
@@ -235,4 +235,4 @@ async def list(event):
             )
             await event.delete()
     else:
-        await edit_or_reply(msg)
+        await edit_or_reply(event, msg)
