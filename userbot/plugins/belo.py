@@ -20,7 +20,7 @@ from uniborg.util import admin_cmd, sudo_cmd, edit_or_reply
 
 
 @borg.on(admin_cmd(pattern=r"belo", allow_sudo=True))
-
+@borg.on(sudo_cmd(patter=r"belo", allow_sudo=True))
 async def _(event):
 
     if event.fwd_from:
