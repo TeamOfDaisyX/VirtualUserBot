@@ -37,4 +37,4 @@ class Var(object):
     PRIVATE_GROUP_ID = int(os.environ.get("PRIVATE_GROUP_ID", None))
 class Development(Var):
     LOGGER = True
-    # Here for later purposes
+    # Here for later purposes like uniborg config
