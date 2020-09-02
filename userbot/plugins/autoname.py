@@ -1,4 +1,4 @@
-"""Auto Profile Updation Commands
+﻿"""Auto Profile Updation Commands
 .autoname"""
 from telethon import events
 import asyncio
@@ -12,7 +12,8 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "FridayUserbot"
 
 @borg.on(admin_cmd(pattern="autoname"))  # pylint:disable=E0602
 @borg.on(sudo_cmd(pattern="autoname", allow_sudo=True))
-async def _(event):
+async def _(event): 
+    event = await edit_or_reply(event ,"`Checking for updates, please wait....`")
     if event.fwd_from:
          return
 
@@ -54,4 +55,4 @@ async def _(event):
 
         await asyncio.sleep(DEL_TIME_OUT)
 
-    await edit_or_reply(f"Auto Name has been started my Master") 
+    await event.edit(f"Auto Name has been started my Master") 
