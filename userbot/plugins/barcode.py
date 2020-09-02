@@ -9,14 +9,15 @@ import os
 import time
 from barcode.writer import ImageWriter
 from datetime import datetime
-from uniborg.util import admin_cmd
+from uniborg.util import admin_cmd, sudo_cmd, edit_or_reply
 
 
-@borg.on(admin_cmd(pattern="barcode ?(.*)", allow_sudo=True))
+@borg.on(admin_cmd(pattern="barcode ?(.*)"))
+@borg.on(sudo_cmd(pattern="barcode ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
-    await event.edit("...")
+    await edit_or_reply("...")
     start = datetime.now()
     input_str = event.pattern_match.group(1)
     message = "SYNTAX: `.barcode <long text to include>`"
@@ -58,6 +59,6 @@ async def _(event):
         return
     end = datetime.now()
     ms = (end - start).seconds
-    await event.edit("Created BarCode in {} seconds".format(ms))
+    await edit_or_reply("Created BarCode in {} seconds".format(ms))
     await asyncio.sleep(5)
     await event.delete()
