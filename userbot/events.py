@@ -52,10 +52,10 @@ def register(**args):
 
     def decorator(func):
         async def wrapper(check):
-            if not LOGSPAMMER:
+            if not PRIVATE_GROUP_ID:
                 send_to = check.chat_id
             else:
-                send_to = BOTLOG_CHATID
+                send_to = PRIVATE_GROUP_ID
 
             if not trigger_on_fwd and check.fwd_from:
                 return
