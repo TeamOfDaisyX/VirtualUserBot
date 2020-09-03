@@ -10,6 +10,7 @@ from asyncio import sleep
 from os import remove
 from telethon import events
 import asyncio
+from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 from datetime import datetime
 from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import ChatBannedRights
@@ -72,42 +73,42 @@ UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 # ================================================
 
 
-@register(outgoing=True, pattern="^.setgpic$")
+@borg.on(admin_cmd(pattern=r"setgpic"))
 @errors_handler
-async def set_group_photo(gpic):
+async def set_group_photo(event):
     """ For .setgpic command, changes the picture of a group """
-    if not gpic.is_group:
-        await gpic.edit("`I don't think this is a group.`")
+    if not event.is_group:
+        await edit_or_reply(event, "`I don't think this is a group.`")
         return
-    replymsg = await gpic.get_reply_message()
-    chat = await gpic.get_chat()
+    replymsg = await event.get_reply_message()
+    chat = await event.get_chat()
     admin = chat.admin_rights
     creator = chat.creator
     photo = None
 
     if not admin and not creator:
-        await gpic.edit(NO_ADMIN)
+        await reply_or_edit(event, NO_ADMIN)
         return
 
     if replymsg and replymsg.media:
         if isinstance(replymsg.media, MessageMediaPhoto):
-            photo = await gpic.client.download_media(message=replymsg.photo)
+            photo = await event.client.download_media(message=replymsg.photo)
         elif "image" in replymsg.media.document.mime_type.split('/'):
-            photo = await gpic.client.download_file(replymsg.media.document)
+            photo = await event.client.download_file(replymsg.media.document)
         else:
-            await gpic.edit(INVALID_MEDIA)
+            await reply_or_edit(event, INVALID_MEDIA)
 
     if photo:
         try:
-            await gpic.client(
-                EditPhotoRequest(gpic.chat_id, await
-                                 gpic.client.upload_file(photo)))
-            await gpic.edit(CHAT_PP_CHANGED)
+            await event.client(
+                EditPhotoRequest(event.chat_id, await
+                                 event.client.upload_file(photo)))
+            await reply_or_edit(event, CHAT_PP_CHANGED)
 
         except PhotoCropSizeSmallError:
-            await gpic.edit(PP_TOO_SMOL)
+            await reply_or_edit(event, PP_TOO_SMOL)
         except ImageProcessFailedError:
-            await gpic.edit(PP_ERROR)
+            await reply_or_edit(event, PP_ERROR)
 
 
 @register(outgoing=True, pattern="^.promote(?: |$)(.*)")
