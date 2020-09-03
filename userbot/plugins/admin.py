@@ -88,7 +88,7 @@ async def set_group_photo(event):
     photo = None
 
     if not admin and not creator:
-        await reply_or_edit(event, NO_ADMIN)
+        await reply_or_edit(event, "Not Enough Rights")
         return
 
     if replymsg and replymsg.media:
@@ -97,19 +97,19 @@ async def set_group_photo(event):
         elif "image" in replymsg.media.document.mime_type.split('/'):
             photo = await event.client.download_file(replymsg.media.document)
         else:
-            await reply_or_edit(event, INVALID_MEDIA)
+            await reply_or_edit(event, "Only Photos Supported")
 
     if photo:
         try:
             await event.client(
                 EditPhotoRequest(event.chat_id, await
                                  event.client.upload_file(photo)))
-            await reply_or_edit(event, CHAT_PP_CHANGED)
+            await reply_or_edit(event, "I Have Changed Pic To This Beautiful Ones")
 
         except PhotoCropSizeSmallError:
-            await reply_or_edit(event, PP_TOO_SMOL)
+            await reply_or_edit(event, "Very Small Image Brah!")
         except ImageProcessFailedError:
-            await reply_or_edit(event, PP_ERROR)
+            await reply_or_edit(event, "Some Error :( Retry")
 
 
 @register(outgoing=True, pattern="^.promote(?: |$)(.*)")
