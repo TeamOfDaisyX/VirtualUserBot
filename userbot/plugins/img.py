@@ -7,19 +7,20 @@ from userbot.googol_images import googleimagesdownload
 import os
 import shutil
 from re import findall
-from userbot.utils import admin_cmd
+from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 
 
 @borg.on(admin_cmd(pattern="img ?(.*)"))
+@borg.on(sudo_cmd(pattern="img ?(.*)", allow_sudo=True))
 async def img_sampler(event):
-    await event.edit("`Processing...`")
+    await edit_or_reply("`Processing...`")
     reply = await event.get_reply_message()
     if event.pattern_match.group(1):
         query = event.pattern_match.group(1)
     elif reply:
         query = reply.message
     else:
-    	await event.edit("`um, mind mentioning what I actually need to search for ;_;`")
+    	await edit_or_reply("`um, mind mentioning what I actually need to search for ;_;`")
     	return
         
     lim = findall(r"lim=\d+", query)
