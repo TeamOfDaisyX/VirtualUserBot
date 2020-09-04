@@ -13,7 +13,6 @@ from userbot.utils import admin_cmd, sudo_cmd
 from asyncio import sleep
 from random import choice
 import re
-from userbot.plugins import deEmojify
 from telethon import events
 from userbot import CMD_HELP, bot
 import pybase64
@@ -135,3 +134,8 @@ async def get_font_file(client, channel_id, search_kw=""):
     font_file_message = random.choice(font_file_message_s)
     # download and return the file path
     return await client.download_media(font_file_message)
+
+def deEmojify(inputString: str) -> str:
+    """Remove emojis and other non-safe characters from string"""
+    return re.sub(EMOJI_PATTERN, '', inputString)
+
