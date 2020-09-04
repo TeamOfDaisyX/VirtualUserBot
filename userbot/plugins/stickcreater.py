@@ -135,6 +135,10 @@ async def get_font_file(client, channel_id, search_kw=""):
     # download and return the file path
     return await client.download_media(font_file_message)
 
+EMOJI_PATTERN = re.compile(
+    """Remove emojis and other non-safe characters from string"""
+    return re.sub(EMOJI_PATTERN, '', inputString)
+
 def deEmojify(inputString: str) -> str:
     """Remove emojis and other non-safe characters from string"""
     return re.sub(EMOJI_PATTERN, '', inputString)
