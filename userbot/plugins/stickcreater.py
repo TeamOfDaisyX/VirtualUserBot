@@ -41,7 +41,7 @@ async def sticklet(event):
         reply_message = await event.get_reply_message()
     # delete the userbot command,
     # i don't know why this is required
-   # await event.delete()
+      await event.delete()
     #sticktext = deEmojify(sticktext)
     # https://docs.python.org/3/library/textwrap.html#textwrap.wrap
     sticktext = textwrap.wrap(sticktext, width=10)
