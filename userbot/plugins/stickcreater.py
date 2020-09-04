@@ -15,7 +15,6 @@ from random import choice
 import re
 from telethon import events
 from userbot import CMD_HELP, bot
-from userbot.plugins import waifutxt , deEmojify
 import pybase64
 from telethon.tl.functions.messages import ImportChatInviteRequest
 # RegEx by https://t.me/c/1220993104/500653 ( @SnapDragon7410 )
