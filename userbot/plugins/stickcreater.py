@@ -13,6 +13,7 @@ from userbot.utils import admin_cmd, sudo_cmd
 from asyncio import sleep
 from random import choice
 import re
+from userbot.plugins import deEmojify
 from telethon import events
 from userbot import CMD_HELP, bot
 import pybase64
