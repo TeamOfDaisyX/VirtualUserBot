@@ -1,6 +1,6 @@
 from telethon import events
 import random, re
-from uniborg.util import admin_cmd
+from uniborg.util import admin_cmd, sudo_cmd, edit_or_reply
 
 METOOSTR = [
     "`Me too thanks`",
@@ -88,70 +88,77 @@ INSULT_STRINGS = [
                           
 
 @borg.on(admin_cmd(pattern="run ?(.*)"))
+@borg.on(sudo_cmd(pattern="run ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
          return
     bro = random.randint(0, len(RUNSREACTS) - 1)    
     input_str = event.pattern_match.group(1)
     reply_text = RUNSREACTS[bro]
-    await event.edit(reply_text)
+    await edit_or_reply(event, reply_text)
 
 
 @borg.on(admin_cmd(pattern="metoo ?(.*)"))
+@borg.on(sudo_cmd(pattern="metoo ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
          return
     bro = random.randint(0, len(METOOSTR) - 1)    
     input_str = event.pattern_match.group(1)
     reply_text = METOOSTR[bro]
-    await event.edit(reply_text)
+    await edit_or_reply(event, reply_text)
 
 
 @borg.on(admin_cmd(pattern="rapee ?(.*)"))
+@borg.on(sudo_cmd(pattern="rapee ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
          return
     bro = random.randint(0, len(RAPE_STRINGS) - 1)    
     input_str = event.pattern_match.group(1)
     reply_text = RAPE_STRINGS[bro]
-    await event.edit(reply_text)
+    await edit_or_reply(event, reply_text)
 			  
                           
 @borg.on(admin_cmd(pattern="insultt ?(.*)"))
+@borg.on(sudo_cmd(pattern="insultt ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
          return
     bro = random.randint(0, len(INSULT_STRINGS) - 1)    
     input_str = event.pattern_match.group(1)
     reply_text = INSULT_STRINGS[bro]
-    await event.edit(reply_text)
+    await edit_or_reply(event, reply_text)
 			  
 			  
 @borg.on(admin_cmd(pattern="proo ?(.*)"))
+@borg.on(sudo_cmd(pattern="proo ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
          return
     bro = random.randint(0, len(PRO_STRINGS) - 1)    
     input_str = event.pattern_match.group(1)
     reply_text = PRO_STRINGS[bro]
-    await event.edit(reply_text)
+    await edit_or_reply(event, reply_text)
 			  
 			  
 @borg.on(admin_cmd(pattern="abusee ?(.*)"))
+@borg.on(sudo_cmd(pattern="abusee ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
          return
     bro = random.randint(0, len(ABUSE_STRINGS) - 1)    
     input_str = event.pattern_match.group(1)
     reply_text = ABUSE_STRINGS[bro]
-    await event.edit(reply_text)
+    await edit_or_reply(event, reply_text)
 			  
 			  
 @borg.on(admin_cmd(pattern="geyy ?(.*)"))
+@borg.on(sudo_cmd(pattern="geyy ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
          return
     bro = random.randint(0, len(GEY_STRINGS) - 1)    
     input_str = event.pattern_match.group(1)
     reply_text = GEY_STRINGS[bro]
-    await event.edit(reply_text) 
+    await edit_or_reply(event, reply_text) 
