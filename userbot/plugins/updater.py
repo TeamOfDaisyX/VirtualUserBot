@@ -30,12 +30,12 @@ async def gen_chlog(repo, diff):
     for c in repo.iter_commits(diff):
         ch_log += (f"#{c.count()} "
             f"\n📃 [{c.summary}]({UPSTREAM_REPO_URL}/commit/{c})"
-            f"\n👩‍🎨 __{c.author}__\n\n")
+            f"\n🎨 __{c.author}__\n\n")
     return ch_log
 
 async def print_changelogs(event, ac_br, changelog):
     changelog_str = (
-        f"**I Have Found Some New Updates For {ac_br} Branch Here Check The Updates 📃\n{changelog}"
+        f"**I Have Found Some New Updates For {ac_br} Branch Here Check The Updates 📃**\n{changelog}"
     )
     if len(changelog_str) > 4096:
         await event.edit("`Changelog is too big, view the file to see it.`")
@@ -116,7 +116,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             await event.edit("`Successfully deployed!\n" "Restarting, please wait...`")
     else:
         await event.edit(
-            "`[HEROKU]`\n" "`Please set up`  **HEROKU_API_KEY**  `variable...`"
+            "`Please set up`  **HEROKU_API_KEY**  `variable...`"
         )
     return
 
@@ -198,11 +198,11 @@ async def upstream(event):
     if conf == "" and force_update is False:
         await print_changelogs(event, ac_br, changelog)
         await event.delete()
-        return await event.respond('do "[`.update now`] or [`.update deploy`]" to update.Check `.info updater` for details')
+        return await event.respond('Update Friday Userbot By `.update deploy` // `.update now`')
 
     if force_update:
         await event.edit(
-            "`Force-Syncing to latest stable userbot code, please wait...`"
+            "`Force-Sync to latest stable userbot code, please wait...`"
         )
     if conf == "now":
         await event.edit("`Updating userbot, please wait....`")
