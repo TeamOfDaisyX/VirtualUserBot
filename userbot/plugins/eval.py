@@ -10,15 +10,15 @@ import traceback
 import asyncio
 import sys
 import io
-from uniborg.util import admin_cmd
+from uniborg.util import admin_cmd, sudo_cmd, edit_or_reply
 
 
-@borg.on(admin_cmd("eval", allow_sudo=True))
 @borg.on(admin_cmd("eval"))
+@borg.on(sudo_cmd("eval", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
-    await event.edit("Processing ...")
+    await edit_or_reply(event, "Processing ...")
     cmd = event.text.split(" ", maxsplit=1)[1]
     reply_to_id = event.message.id
     if event.reply_to_msg_id:
@@ -65,7 +65,7 @@ async def _(event):
             )
             await event.delete()
     else:
-        await event.edit(final_output)
+        await edit_or_reply(event, final_output)
 
 
 async def aexec(code, event):
