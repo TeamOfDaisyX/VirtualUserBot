@@ -34,7 +34,7 @@ async def telegraphs(grop):
 
                 result = await grop.client(functions.messages.CreateChatRequest(  # pylint:disable=E0602
 
-                    users=["@Serena_Robot"],
+                    users=["@meikobot"],
 
                     # Not enough users (to create a chat, for example)
 
