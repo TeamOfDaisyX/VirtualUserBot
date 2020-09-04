@@ -2,7 +2,7 @@
 import os
 import lyricsgenius
 import random
-from userbot.utils import admin_cmd
+from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot import CMD_HELP, LOGS
 from tswift import Song
 from telethon import events
@@ -17,8 +17,9 @@ GENIUS = os.environ.get("GENIUS_API_TOKEN", None)
 
 
 @borg.on(admin_cmd(outgoing=True, pattern="lyrics (.*)"))
+@borg.on(sudo_cmd(pattern="lyrics (.*)", allow_sudo=True))
 async def _(event):
-    await event.edit("Searching For Lyrics.....")
+    await edit_or_reply(event, "Searching For Lyrics.....")
     reply_to_id = event.message.id
     if event.reply_to_msg_id:
         reply_to_id = event.reply_to_msg_id
@@ -28,7 +29,7 @@ async def _(event):
     elif reply.text:
         query = reply.message
     else:
-    	await event.edit("`What I am Supposed to find `")
+    	await edit_or_reply("`What I am Supposed to find `")
     	return
     
     song = ""
@@ -54,7 +55,7 @@ async def _(event):
             )
             await event.delete()
     else:
-        await event.edit(reply)       
+        await edit_or_reply(reply)       
 
 @borg.on(admin_cmd(outgoing=True, pattern="glyrics(?: |$)(.*)"))
 async def lyrics(lyric):
