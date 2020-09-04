@@ -13,14 +13,14 @@ from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 @borg.on(admin_cmd(pattern="img ?(.*)"))
 @borg.on(sudo_cmd(pattern="img ?(.*)", allow_sudo=True))
 async def img_sampler(event):
-    await edit_or_reply("`Processing...`")
+    await edit_or_reply(event, "`Processing...`")
     reply = await event.get_reply_message()
     if event.pattern_match.group(1):
         query = event.pattern_match.group(1)
     elif reply:
         query = reply.message
     else:
-    	await edit_or_reply("`um, mind mentioning what I actually need to search for ;_;`")
+    	await edit_or_reply(event, "`um, mind mentioning what I actually need to search for ;_;`")
     	return
         
     lim = findall(r"lim=\d+", query)
