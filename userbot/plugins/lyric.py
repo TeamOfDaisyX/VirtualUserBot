@@ -29,7 +29,7 @@ async def _(event):
     elif reply.text:
         query = reply.message
     else:
-    	await edit_or_reply("`What I am Supposed to find `")
+    	await edit_or_reply(event, "`What I am Supposed to find `")
     	return
     
     song = ""
@@ -55,7 +55,7 @@ async def _(event):
             )
             await event.delete()
     else:
-        await edit_or_reply(reply)       
+        await edit_or_reply(event, reply)       
 
 @borg.on(admin_cmd(outgoing=True, pattern="glyrics(?: |$)(.*)"))
 async def lyrics(lyric):
