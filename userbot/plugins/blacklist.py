@@ -30,7 +30,7 @@ async def on_new_message(event):
             break
 
 
-@borg.on(admin_cmd("addblacklist ((.|\n)*)"))
+@borg.on(admin_cmd("textblacklist ((.|\n)*)"))
 async def on_add_black_list(event):
     text = event.pattern_match.group(1)
     to_blacklist = list(set(trigger.strip() for trigger in text.split("\n") if trigger.strip()))
