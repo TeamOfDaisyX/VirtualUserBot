@@ -6,7 +6,7 @@ Available Commands:
 .emoji -_-"""
 
 from telethon import events
-from userbot.utils import sudo_cmd, edit_or_reply
+from userbot.utils import sudo_cmd, edit_or_reply, admin_cmd
 
 import asyncio
 
@@ -14,7 +14,7 @@ import asyncio
 
 
 
-@borg.on(events.NewMessage(pattern=r"hack$", outgoing=True))
+@borg.on(admin_cmd(pattern=r"hack$", outgoing=True))
 @borg.on(sudo_cmd(pattern=r"hack$", allow_sudo=True))
 async def _(event):
     sed = await edit_or_reply(event ,"`Hacking.....`")
