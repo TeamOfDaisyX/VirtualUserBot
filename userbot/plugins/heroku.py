@@ -10,7 +10,7 @@ import os
 import requests
 import math
 from userbot.utils import register
-from userbot.utils import admin_cmd, allow_sudo, edit_or_reply
+from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 
 
 Heroku = heroku3.from_key(Var.HEROKU_API_KEY)
