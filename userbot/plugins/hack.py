@@ -16,7 +16,7 @@ import asyncio
 @borg.on(admin_cmd(pattern=r"hack$", outgoing=True))
 @borg.on(sudo_cmd(pattern=r"hack$", allow_sudo=True))
 async def _(event):
-    sed = await edit_or_reply(event ,"`Hacking.....`")
+    sed = await edit_or_reply(event, "`Hacking.....`")
     if event.fwd_from:
         return
     animation_interval = 2
