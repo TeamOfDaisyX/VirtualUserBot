@@ -14,26 +14,16 @@ import asyncio
 
 
 
-@borg.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
-@borg.on(sudo_cmd(pattern=r"\.(.*)", allow_sudo=True))
+@borg.on(events.NewMessage(pattern=r"hack$", outgoing=True))
+@borg.on(sudo_cmd(pattern=r"hack$", allow_sudo=True))
 async def _(event):
     sed = await edit_or_reply(event ,"`Hacking.....`")
     if event.fwd_from:
-
         return
-
     animation_interval = 2
-
     animation_ttl = range(0, 11)
-
-    input_str = event.pattern_match.group(1)
-
-    if input_str == "hack":
-
-        await sed.edit(event, input_str)
-
+        await sed.edit("Me Bhill Hack You")
         animation_chars = [
-        
             "`Connecting To Hacked Private Server...`",
             "`Target Selected.`",
             "`Hacking... 0%\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
