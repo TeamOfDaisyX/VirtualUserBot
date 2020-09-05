@@ -21,7 +21,7 @@ async def _(event):
         return
     animation_interval = 2
     animation_ttl = range(0, 11)
-        sed.edit("Me Bhill Hack You")
+       await sed.edit("Me Bhill Hack You")
         animation_chars = [
             "`Connecting To Hacked Private Server...`",
             "`Target Selected.`",
@@ -40,4 +40,4 @@ async def _(event):
 
             await asyncio.sleep(animation_interval)
 
-            sed.edit(animation_chars[i % 11])
+            await sed.edit(animation_chars[i % 11])
