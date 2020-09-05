@@ -95,12 +95,13 @@ async def variable(var):
             return await edit_or_reply(var, f"**{variable}**  `is not exists`")
 
 
-@register(outgoing=True, pattern=r"^\.usage(?: |$)")
+@borg.on(admin_cmd(pattern="usage$", outgoing=True))
+@borg.on(sudo_cmd(pattern="usage$", allow_sudo=True))
 async def dyno_usage(dyno):
     """
         Get your account Dyno Usage
     """
-    await dyno.edit("`Processing...`")
+    await edit_or_reply(dyno, "`Trying To Fetch Dyno Usage....`")
     useragent = ('Mozilla/5.0 (Linux; Android 10; SM-G975F) '
                  'AppleWebKit/537.36 (KHTML, like Gecko) '
                  'Chrome/80.0.3987.149 Mobile Safari/537.36'
@@ -114,7 +115,7 @@ async def dyno_usage(dyno):
     path = "/accounts/" + user_id + "/actions/get-quota"
     r = requests.get(heroku_api + path, headers=headers)
     if r.status_code != 200:
-        return await dyno.edit("`Error: something bad happened`\n\n"
+        return await edit_or_reply(dyno, "`Error: something bad happened`\n\n"
                                f">.`{r.reason}`\n")
     result = r.json()
     quota = result['account_quota']
@@ -142,14 +143,14 @@ async def dyno_usage(dyno):
 
     await asyncio.sleep(1.5)
 
-    return await dyno.edit("**Dyno Usage**:\n\n"
-                           f" -> `Dyno usage for`  **{Var.HEROKU_APP_NAME}**:\n"
-                           f"     •  `{AppHours}`**h**  `{AppMinutes}`**m**  "
-                           f"**|**  [`{AppPercentage}`**%**]"
+    return await edit_or_reply(dyno, "**Dyno Usage Data**:\n\n"
+                           f"✗ **APP NAME =>** `{Var.HEROKU_APP_NAME}` \n"
+                           f"✗ **Usage in Hours And Minutes =>** `{AppHours}h`  `{AppMinutes}m`"
+                           f"✗ **Usage Percentage =>** [`{AppPercentage} %`]"
                            "\n\n"
-                           " -> `Dyno hours quota remaining this month`:\n"
-                           f"     •  `{hours}`**h**  `{minutes}`**m**  "
-                           f"**|**  [`{percentage}`**%**]"
+                           "✗ **Dyno Remaining This Months 📆:**\n"
+                           f"✗ `{hours}`**h**  `{minutes}`**m**  "
+                           f"✗ **Percentage :-** [`{percentage}`**%**]"
                            )
 
 
@@ -167,23 +168,24 @@ def prettyjson(obj, indent=2, maxlinelength=80):
     return indentitems(items, indent, level=0)
 
 
-@register(outgoing=True, pattern=r"^\.logs")
+@borg.on(admin_cmd(pattern="logs$", outgoing=True))
+@borg.on(sudo_cmd(pattern="logs$", allow_sudo=True))
 async def _(givelogs):        
         try:
              Heroku = heroku3.from_key(Var.HEROKU_API_KEY)                         
              app = Heroku.app(Var.HEROKU_APP_NAME)
         except:
   	       return await givelogs.reply(" Please make sure your Heroku API Key, Your App name are configured correctly in the heroku var !")
-        await givelogs.edit("Downloading Logs..")
+        await edit_or_reply(givelogs, "`Trying To Fetch Logs...`")
         with open('logs.txt', 'w') as log:
             log.write(app.get_log())
         await givelogs.client.send_file(
             givelogs.chat_id,
             "logs.txt",
             reply_to=givelogs.id,
-            caption="Logs Collected Using Heroku",
+            caption="Logs Collected Using Heroku /n For More Support Visit @FridayOT",
         )
-        await givelogs.edit("Trying To Send Logs.....")
+        await edit_or_reply(givelogs, "`Fetched Logs ! Now Trying To Send Here`")
         await asyncio.sleep(5)
         await givelogs.delete()
         return os.remove('logs.txt')
