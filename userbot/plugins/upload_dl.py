@@ -77,8 +77,8 @@ def time_formatter(milliseconds: int) -> str:
         ((str(milliseconds) + " millisecond(s), ") if milliseconds else "")
     return tmp[:-2]
 
-@borg.on(admin_cmd(pattern="dl (?: |$)(.*)", outgoing=True))
-@borg.on(sudo_cmd(pattern="dl (?: |$)(.*)", allow_sudo=True))
+@borg.on(admin_cmd(pattern="download(?: |$)(.*)", outgoing=True))
+@borg.on(sudo_cmd(pattern="download(?: |$)(.*)", allow_sudo=True))
 async def download(target_file):
     """ For .dl command, download files to the userbot's server. """
     await edit_or_reply(target_file, "Processing using userbot server ( ◜‿◝ )♡")
