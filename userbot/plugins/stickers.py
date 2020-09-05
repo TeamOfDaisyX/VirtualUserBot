@@ -59,7 +59,7 @@ async def _(event):
     else:
         packname = f"{user.username}'s {pack}"
         packshortname = f"FRIDAY_{userid}_Pack"
-    await moods.edit(("`Wew ! I Love That Sticker ! Mind If i Kang It ?`")
+    await moods.edit("`Wew ! I Love That Sticker ! Mind If i Kang It ?`")
 
     is_a_s = is_it_animated_sticker(reply_message)
     file_ext_ns_ion = "@FRIDAYOT.png"
@@ -89,14 +89,14 @@ async def _(event):
         now = datetime.datetime.now()
         dt = now + datetime.timedelta(minutes=1)
         if not await stickerset_exists(bot_conv, packshortname):
-            await moods.edit(("`Creating a new pack!`")
+            await moods.edit("`Creating a new pack!`")
             await silently_send_message(bot_conv, "/cancel")
             if is_a_s:
                 response = await silently_send_message(bot_conv, "/newanimated")
             else:
                 response = await silently_send_message(bot_conv, "/newpack")
             if "Yay!" not in response.text:
-                await moods.edit((event, f"**Error**! @Stickers replied: {response.text}")
+                await moods.edit(event, f"**Error**! @Stickers replied: {response.text}")
                 return
             response = await silently_send_message(bot_conv, packname)
             if not response.text.startswith("Alright!"):
@@ -148,7 +148,7 @@ async def _(event):
                         else:
                             response = await silently_send_message(bot_conv, "/newpack")
                         if "Yay!" not in response.text:
-                            await moods.edit((f"**Error**! @Stickers replied: {response.text}")
+                            await moods.edit(f"**Error**! @Stickers replied: {response.text}")
                             return
                         response = await silently_send_message(bot_conv, packname)
                         if not response.text.startswith("Alright!"):
