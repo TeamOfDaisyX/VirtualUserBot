@@ -146,10 +146,10 @@ async def dyno_usage(dyno):
     return await edit_or_reply(dyno, "**Dyno Usage Data**:\n\n"
                            f"✗ **APP NAME =>** `{Var.HEROKU_APP_NAME}` \n"
                            f"✗ **Usage in Hours And Minutes =>** `{AppHours}h`  `{AppMinutes}m`"
-                           f"✗ **Usage Percentage =>** [`{AppPercentage} %`]"
+                           f"✗ **Usage Percentage =>** [`{AppPercentage} %`]\n"
                            "\n\n"
                            "✗ **Dyno Remaining This Months 📆:**\n"
-                           f"✗ `{hours}`**h**  `{minutes}`**m**  "
+                           f"✗ `{hours}`**h**  `{minutes}`**m** \n"
                            f"✗ **Percentage :-** [`{percentage}`**%**]"
                            )
 
