@@ -6,6 +6,7 @@ Available Commands:
 .emoji -_-"""
 
 from telethon import events
+from userbot.utils import sudo_cmd, edit_or_reply
 
 import asyncio
 
@@ -14,7 +15,7 @@ import asyncio
 
 
 @borg.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
-
+@borg.on(sudo_cmd(pattern=r"\.(.*)", allow_sudo=True))
 async def _(event):
 
     if event.fwd_from:
@@ -29,7 +30,7 @@ async def _(event):
 
     if input_str == "hack":
 
-        await event.edit(input_str)
+        await edit_or_reply(event, input_str)
 
         animation_chars = [
         
