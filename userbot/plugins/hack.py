@@ -17,7 +17,7 @@ import asyncio
 @borg.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
 @borg.on(sudo_cmd(pattern=r"\.(.*)", allow_sudo=True))
 async def _(event):
-
+    sed = await edit_or_reply(event ,"`Hacking.....`")
     if event.fwd_from:
 
         return
@@ -30,7 +30,7 @@ async def _(event):
 
     if input_str == "hack":
 
-        await edit_or_reply(event, input_str)
+        await sed.edit(event, input_str)
 
         animation_chars = [
         
@@ -51,4 +51,4 @@ async def _(event):
 
             await asyncio.sleep(animation_interval)
 
-            await event.edit(animation_chars[i % 11])
+            await sed.edit(animation_chars[i % 11])
