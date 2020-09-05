@@ -45,7 +45,7 @@ async def _(event):
     input_str = event.pattern_match.group(1)
     if input_str:
         sticker_emoji = input_str
-    moods = await edit_or_reply("`HeHe , Me Gonna Steal`")
+    moods = await edit_or_reply(event, "`HeHe , Me Gonna Steal`")
     user = await bot.get_me()
     if not user.username:
         user.username = user.id
