@@ -183,9 +183,9 @@ async def _(givelogs):
             givelogs.chat_id,
             "logs.txt",
             reply_to=givelogs.id,
-            caption="Logs Collected Using Heroku /n For More Support Visit @FridayOT",
+            caption="Logs Collected Using Heroku \n For More Support Visit @FridayOT",
         )
-        await edit_or_reply(givelogs, "`Fetched Logs ! Now Trying To Send Here`")
+        await edit_or_reply(givelogs, "`Logs Send Sucessfully ! `")
         await asyncio.sleep(5)
         await givelogs.delete()
         return os.remove('logs.txt')
