@@ -10,7 +10,7 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 from google_images_download import google_images_download
-from userbot.utils import admin_cmd
+from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 
 
 def progress(current, total):
@@ -18,11 +18,13 @@ def progress(current, total):
 
 
 @borg.on(admin_cmd(pattern="google search (.*)"))
+@borg.on(sudo_cmd(pattern="google search (.*)", allow_sudo=True))
 async def _(event):
+    stark = await edit_or_reply(event, "`Processing Your Request`")
     if event.fwd_from:
         return
     start = datetime.now()
-    await event.edit("Processing ...")
+    await stark.edit("`Trying To Connect...`")
     # SHOW_DESCRIPTION = False
     input_str = event.pattern_match.group(1) # + " -inurl:(htm|html|php|pls|txt) intitle:index.of \"last modified\" (mkv|mp4|avi|epub|pdf|mp3)"
     input_url = "https://bots.shrimadhavuk.me/search/?q={}".format(input_str)
@@ -34,12 +36,12 @@ async def _(event):
         url = result.get("url")
         description = result.get("description")
         image = result.get("image")
-        output_str += " 👉🏻  [{}]({}) \n\n".format(text, url)
+        output_str += "📃  [{}]({}) \n\n".format(text, url)
     end = datetime.now()
     ms = (end - start).seconds
-    await event.edit("searched Google for {} in {} seconds. \n{}".format(input_str, ms, output_str), link_preview=False)
+    await stark.edit("searched Google for {} in {} seconds. \n{}".format(input_str, ms, output_str), link_preview=False)
     await asyncio.sleep(5)
-    await event.edit("Google: {}\n{}".format(input_str, output_str), link_preview=False)
+    await stark.edit("Google: {}\n{}".format(input_str, output_str), link_preview=False)
 
 
 @borg.on(admin_cmd(pattern="google image (.*)"))
