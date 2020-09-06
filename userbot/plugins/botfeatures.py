@@ -5,7 +5,7 @@ from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from userbot.utils import admin_cmd
 import asyncio
 
-@borg.on(admin_cmd(pattern=("sg ?(.*)")))
+@borg.on(admin_cmd(pattern=("sang ?(.*)")))
 async def _(event):
    if event.fwd_from:
       return 
