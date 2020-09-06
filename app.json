@@ -2,7 +2,13 @@
   "name": "Friday-Userbot",
   "description": "A Userbot Based On Telethon By @StarkXD",
   "logo": "https://telegra.ph/file/b4e1e36c6b1fcb32dd997.jpg",
-  "keywords": ["telegram", "userbot", "plugin", "telegram-userbot", "productivity"],
+  "keywords": [
+    "telegram",
+    "userbot",
+    "plugin",
+    "telegram-userbot",
+    "productivity"
+  ],
   "repository": "https://github.com/starkgang/FridayUserbot",
   "website": "StarkGang.ml",
   "stack": "container",
@@ -87,7 +93,7 @@
     {
       "plan": "heroku-postgresql",
       "options": {
-        "version": "9.6"
+        "version": "12"
       }
     }
   ],
