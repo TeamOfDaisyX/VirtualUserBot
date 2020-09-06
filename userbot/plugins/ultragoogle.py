@@ -17,8 +17,8 @@ def progress(current, total):
     logger.info("Downloaded {} of {}\nCompleted {}".format(current, total, (current / total) * 100))
 
 
-@borg.on(admin_cmd(pattern="google search (.*)"))
-@borg.on(sudo_cmd(pattern="google search (.*)", allow_sudo=True))
+@borg.on(admin_cmd(pattern="search (.*)"))
+@borg.on(sudo_cmd(pattern="search (.*)", allow_sudo=True))
 async def _(event):
     stark = await edit_or_reply(event, "`Processing Your Request`")
     if event.fwd_from:
@@ -44,7 +44,7 @@ async def _(event):
     await stark.edit("Google: {}\n{}".format(input_str, output_str), link_preview=False)
 
 
-@borg.on(admin_cmd(pattern="google image (.*)"))
+@borg.on(admin_cmd(pattern="image (.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -85,7 +85,7 @@ async def _(event):
     await event.delete()
 
 
-@borg.on(admin_cmd(pattern="google reverse search"))
+@borg.on(admin_cmd(pattern="grs"))
 async def _(event):
     if event.fwd_from:
         return
