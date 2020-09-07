@@ -5,11 +5,13 @@ import asyncio
 import json
 import requests
 from urllib.parse import quote
-from uniborg.util import admin_cmd
+from uniborg.util import admin_cmd, sudo_cmd, edit_or_reply
 
 
 @borg.on(admin_cmd(pattern="xkcd ?(.*)"))
+@borg.on(sudo_cmd(pattern="xkcd ?(.*)", allow_sudo=True))
 async def _(event):
+    livinglegend = await edit_or_reply(event, "Oh SeD Pls Wait")
     if event.fwd_from:
         return
     input_str = event.pattern_match.group(1)
@@ -50,6 +52,6 @@ Alt: {}
 Day: {}
 Month: {}
 Year: {}""".format(img, input_str, xkcd_link, safe_title, alt, day, month, year)
-        await event.edit(output_str, link_preview=True)
+        await livinglegend.edit(output_str, link_preview=True)
     else:
-        await event.edit("xkcd n.{} not found!".format(xkcd_id))
+        await livinglegend.edit("xkcd n.{} not found!".format(xkcd_id))
