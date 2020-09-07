@@ -6,6 +6,7 @@ from uniborg.util import admin_cmd, sudo_cmd, edit_or_reply
 
 
 @borg.on(admin_cmd(pattern="wikimedia (.*)"))
+@borg.on(sudo_cmd(pattern="wikimedia (.*)", allow_sudo=True))
 async def _(event):
     wewsosmart = await edit_or_reply(event, "Wait Finding This Bleeding Media xD")
     if event.fwd_from:
