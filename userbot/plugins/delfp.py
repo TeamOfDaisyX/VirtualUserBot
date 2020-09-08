@@ -1,22 +1,17 @@
 from telethon.errors import ImageProcessFailedError, PhotoCropSizeSmallError
-
 from telethon.errors.rpcerrorlist import (PhotoExtInvalidError,
                                           UsernameOccupiedError)
-
 from telethon.tl.functions.account import (UpdateProfileRequest,
                                            UpdateUsernameRequest)
-
 from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest
-
 from telethon.tl.functions.photos import (DeletePhotosRequest,
                                           GetUserPhotosRequest,
                                           UploadProfilePhotoRequest)
-
 from telethon.tl.types import InputPhoto, MessageMediaPhoto, User, Chat, Channel
-
-from uniborg.util import admin_cmd
+from uniborg.util import admin_cmd, sudo_cmd, edit_or_reply
 
 @borg.on(admin_cmd(pattern="delpfp ?(.*)"))
+@borg.on(sudo_cmd(pattern="delpfp ?(.*)", allow_sudo=True))
 async def remove_profilepic(delpfp):
     """ For .delpfp command, delete your current profile picture in Telegram. """
     group = delpfp.text[8:]
@@ -39,5 +34,4 @@ async def remove_profilepic(delpfp):
                        access_hash=sep.access_hash,
                        file_reference=sep.file_reference))
     await delpfp.client(DeletePhotosRequest(id=input_photos))
-    await delpfp.edit(
-        f"`Successfully deleted {len(input_photos)} profile picture(s).`")
+    await edit_or_reply(delpfp, f"`Successfully deleted {len(input_photos)} profile picture(s).`")
