@@ -1,5 +1,3 @@
-
-
 import requests
 import re
 import random
@@ -20,19 +18,12 @@ import asyncio
 from time import sleep
 
 COLLECTION_STRINGZ = [
-
     "Vietnam-War-Wallpapers",
-
     "War-of-the-Worlds-Wallpaper",
-
     "War-Plane-Wallpaper",
-
     "World-War-Ii-Wallpaper",
-
     "Cool-War-Wallpapers",
-
-    "World-War-2-Wallpaper-HD"
-
+    "World-War-2-Wallpaper-HD",
 ]
 
 
@@ -46,18 +37,20 @@ async def animepp():
 
     pc = requests.get("http://getwallpapers.com/collection/" + pack).text
 
-    f = re.compile('/\w+/full.+.jpg')
+    f = re.compile("/\w+/full.+.jpg")
 
     f = f.findall(pc)
 
-    fy = "http://getwallpapers.com"+random.choice(f)
+    fy = "http://getwallpapers.com" + random.choice(f)
 
     print(fy)
 
     if not os.path.exists("f.ttf"):
 
         urllib.request.urlretrieve(
-            "https://github.com/rebel6969/mym/raw/master/Rebel-robot-Regular.ttf", "f.ttf")
+            "https://github.com/rebel6969/mym/raw/master/Rebel-robot-Regular.ttf",
+            "f.ttf",
+        )
 
     urllib.request.urlretrieve(fy, "donottouch.jpg")
 
@@ -65,7 +58,9 @@ async def animepp():
 @borg.on(admin_cmd(pattern="fire ?(.*)"))
 async def main(event):
 
-    await event.edit("**Uplaoding Walpapers \n please wait...\n\nDone !!! Check Your DP")
+    await event.edit(
+        "**Uplaoding Walpapers \n please wait...\n\nDone !!! Check Your DP"
+    )
 
     while True:
 

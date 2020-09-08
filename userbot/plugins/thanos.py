@@ -21,7 +21,7 @@ async def _(event):
             "JINGLE BELLS",
             "THANOS SMELL LOKI NECKED SNAPPED AWAY",
             "PETER DIED SensibleUserbot CRIED NOBODY SAVED THE DAY HEY!!",
-            "Jingle bells Thanos smells Loki's necked snapped away Peter died SensibleUserbot cried And nobody saved the day"
+            "Jingle bells Thanos smells Loki's necked snapped away Peter died SensibleUserbot cried And nobody saved the day",
         ]
         for i in animation_ttl:
             await asyncio.sleep(animation_interval)

@@ -33,7 +33,6 @@ async def _(event):
         await event.edit(input_str)
 
         animation_chars = [
-
             "`Connecting To Telegram Headquarters...`",
             "`Call Connected.`",
             "`Telegram: Hello This is Telegram HQ. Who is this?`",
@@ -51,7 +50,7 @@ async def _(event):
             "`Pavel: Yes Sur, There Is A Bug In Telegram v69.6.9.\nI Am Not Able To Fix It. If Possible, Please Help Fix The Bug.`",
             "`Me: Send Me The App On My Telegram Account, I Will Fix The Bug & Send You.`",
             "`Pavel: Sure Sur \nTC Bye Bye :)`",
-            "`Private Call Disconnected.`"
+            "`Private Call Disconnected.`",
         ]
 
         for i in animation_ttl:

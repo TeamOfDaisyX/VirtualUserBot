@@ -18,17 +18,11 @@ from userbot.utils import admin_cmd
 import asyncio
 
 COLLECTION_STRING = [
-
     "indian-actress-wallpapers",
-
     "latest-bollywood-actress-wallpapers-2018-hd",
-
     "bollywood-actress-wallpaper",
-
     "hd-wallpapers-of-bollywood-actress",
-
-    "new-bollywood-actress-wallpaper-2018"
-
+    "new-bollywood-actress-wallpaper-2018",
 ]
 
 
@@ -42,18 +36,20 @@ async def animepp():
 
     pc = requests.get("http://getwallpapers.com/collection/" + pack).text
 
-    f = re.compile('/\w+/full.+.jpg')
+    f = re.compile("/\w+/full.+.jpg")
 
     f = f.findall(pc)
 
-    fy = "http://getwallpapers.com"+random.choice(f)
+    fy = "http://getwallpapers.com" + random.choice(f)
 
     print(fy)
 
     if not os.path.exists("f.ttf"):
 
         urllib.request.urlretrieve(
-            "https://github.com/rebel6969/mym/raw/master/Rebel-robot-Regular.ttf", "f.ttf")
+            "https://github.com/rebel6969/mym/raw/master/Rebel-robot-Regular.ttf",
+            "f.ttf",
+        )
 
     urllib.request.urlretrieve(fy, "donottouch.jpg")
 
@@ -61,7 +57,9 @@ async def animepp():
 @borg.on(admin_cmd(pattern="actressdp ?(.*)"))
 async def main(event):
 
-    await event.edit("**Starting Actress Profile Pic...\n\nDone !!! Check Your DP in 5 seconds. \n By [TeleBot](https://github.com/xditya/TeleBot)**")
+    await event.edit(
+        "**Starting Actress Profile Pic...\n\nDone !!! Check Your DP in 5 seconds. \n By [TeleBot](https://github.com/xditya/TeleBot)**"
+    )
 
     while True:
 
