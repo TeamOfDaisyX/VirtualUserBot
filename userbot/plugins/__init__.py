@@ -14,13 +14,13 @@ heroku_api = "https://api.heroku.com"
 HEROKU_APP_NAME = Config.HEROKU_APP_NAME
 HEROKU_API_KEY = Config.HEROKU_API_KEY
 deEmojify = catdef.deEmojify
-trumptweet = catdef.trumptweet 
+trumptweet = catdef.trumptweet
 changemymind = catdef.changemymind
 kannagen = catdef.kannagen
 moditweet = catdef.moditweet
 tweets = catdef.tweets
 waifutxt = catdef.waifutxt
-catmusic = catdef.catmusic 
+catmusic = catdef.catmusic
 catmusicvideo = catdef.catmusicvideo
 admin_groups = catdef.admin_groups
 
@@ -124,4 +124,3 @@ async def catalive():
                   \nDyno : {dyno}\
                   "
     return conclusion
-

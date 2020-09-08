@@ -9,7 +9,9 @@ from userbot import ALIVE_NAME, CMD_HELP
 
 DEL_TIME_OUT = 60
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
+DEFAULTUSER = str(
+    ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
+
 
 @borg.on(admin_cmd(pattern="cname"))  # pylint:disable=E0602
 async def _(event):
@@ -22,7 +24,7 @@ async def _(event):
         logger.info(name)
         try:
             await borg(functions.account.UpdateProfileRequest(  # pylint:disable=E0602
-                last_name = name
+                last_name=name
             ))
         except FloodWaitError as ex:
             logger.warning(str(e))

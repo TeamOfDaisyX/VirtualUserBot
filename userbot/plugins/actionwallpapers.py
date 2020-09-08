@@ -1,8 +1,11 @@
 
 
-import requests , re , random 
+import requests
+import re
+import random
 
-import urllib , os 
+import urllib
+import os
 
 from telethon.tl import functions
 
@@ -18,19 +21,20 @@ from time import sleep
 
 COLLECTION_STRINGZ = [
 
-  "Vietnam-War-Wallpapers",
+    "Vietnam-War-Wallpapers",
 
-  "War-of-the-Worlds-Wallpaper",
+    "War-of-the-Worlds-Wallpaper",
 
-  "War-Plane-Wallpaper",
+    "War-Plane-Wallpaper",
 
-  "World-War-Ii-Wallpaper",
+    "World-War-Ii-Wallpaper",
 
-  "Cool-War-Wallpapers",
+    "Cool-War-Wallpapers",
 
-  "World-War-2-Wallpaper-HD"
+    "World-War-2-Wallpaper-HD"
 
 ]
+
 
 async def animepp():
 
@@ -52,24 +56,25 @@ async def animepp():
 
     if not os.path.exists("f.ttf"):
 
-        urllib.request.urlretrieve("https://github.com/rebel6969/mym/raw/master/Rebel-robot-Regular.ttf","f.ttf")
+        urllib.request.urlretrieve(
+            "https://github.com/rebel6969/mym/raw/master/Rebel-robot-Regular.ttf", "f.ttf")
 
-    urllib.request.urlretrieve(fy,"donottouch.jpg")
+    urllib.request.urlretrieve(fy, "donottouch.jpg")
+
 
 @borg.on(admin_cmd(pattern="fire ?(.*)"))
-
 async def main(event):
 
-    await event.edit("**Uplaoding Walpapers \n please wait...\n\nDone !!! Check Your DP") 
+    await event.edit("**Uplaoding Walpapers \n please wait...\n\nDone !!! Check Your DP")
 
     while True:
 
         await animepp()
 
-        file = await event.client.upload_file("donottouch.jpg")  
+        file = await event.client.upload_file("donottouch.jpg")
 
-        await event.client(functions.photos.UploadProfilePhotoRequest( file))
+        await event.client(functions.photos.UploadProfilePhotoRequest(file))
 
         os.system("rm -rf donottouch.jpg")
 
-        await asyncio.sleep(60) #Edit this to your required needs
+        await asyncio.sleep(60)  # Edit this to your required needs

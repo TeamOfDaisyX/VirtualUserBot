@@ -9,6 +9,7 @@ from asyncio import wait, sleep
 from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
 from userbot.utils import admin_cmd
 
+
 @borg.on(admin_cmd(pattern="picspam"))
 async def tiny_pic_spam(e):
     message = e.text
@@ -25,6 +26,6 @@ async def tiny_pic_spam(e):
 
 CMD_HELP.update({
     "spam":
-".picspam <count> <link to image/gif>\
+    ".picspam <count> <link to image/gif>\
 \nUsage: As if text spam was not enough !!\""
 })

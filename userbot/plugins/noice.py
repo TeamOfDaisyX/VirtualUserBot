@@ -1,5 +1,5 @@
 """Available Commands 
-Read code in noice.py """ 
+Read code in noice.py """
 
 # .cowsay cow which says things.\
 # :/Usage: Check yourself
@@ -21,10 +21,9 @@ Read code in noice.py """
 # .clap Praise people!
 # .f <emoji/character> Pay Respects.
 # .bt Believe me, you will find this useful.
-# .smk <text/reply>A shit module for ツ , who cares. 
+# .smk <text/reply>A shit module for ツ , who cares.
 # .lgfy Let me Google that for you real quick !!
 # Thanks to 🅱️ottom🅱️ext🅱️ot (@NotAMemeBot) for some of these.
-
 
 
 import asyncio
@@ -307,7 +306,7 @@ HELLOSTR = [
     "`I come in peace!`",
     "`Ahoy, matey!`",
     "`Hiya!`",
-     "`Oh retarded gey! Well Hello`",
+    "`Oh retarded gey! Well Hello`",
 ]
 
 SHGS = [
@@ -380,7 +379,7 @@ DISABLE_ROON = False
 # ===========================================
 
 
-@borg.on(events.NewMessage(outgoing=True, pattern="^:/$")) 
+@borg.on(events.NewMessage(outgoing=True, pattern="^:/$"))
 async def kek(keks):
     """ Check yourself ;)"""
     uio = ["/", "\\"]
@@ -405,19 +404,22 @@ async def fun(e):
         t = t[:-1] + "_;"
         await e.edit(t)
 
-@borg.on(admin_cmd(pattern="cri", outgoing=True)) 
+
+@borg.on(admin_cmd(pattern="cri", outgoing=True))
 async def cri(e):
     """ y u du dis, i cry everytime !! """
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit(random.choice(CRI))
 
-@borg.on(admin_cmd(pattern="insut", outgoing=True)) 
+
+@borg.on(admin_cmd(pattern="insut", outgoing=True))
 async def cry(e):
     """ y u du dis, i cry everytime !! """
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit(random.choice(INSULT_STRINGS))
 
-@borg.on(admin_cmd(pattern="cp(?: |$)(.*)", outgoing=True)) 
+
+@borg.on(admin_cmd(pattern="cp(?: |$)(.*)", outgoing=True))
 async def copypasta(cp_e):
     """ Copypasta the famous meme """
     if not cp_e.text[0].isalpha() and cp_e.text[0] not in ("/", "#", "@", "!"):
@@ -453,7 +455,7 @@ async def copypasta(cp_e):
         await cp_e.edit(reply_text)
 
 
-@borg.on(admin_cmd(pattern="vapor(?: |$)(.*)", outgoing=True)) 
+@borg.on(admin_cmd(pattern="vapor(?: |$)(.*)", outgoing=True))
 async def vapor(vpr):
     """ Vaporize everything! """
     if not vpr.text[0].isalpha() and vpr.text[0] not in ("/", "#", "@", "!"):
@@ -479,7 +481,7 @@ async def vapor(vpr):
         await vpr.edit("".join(reply_text))
 
 
-@borg.on(admin_cmd(pattern="str(?: |$)(.*)", outgoing=True)) 
+@borg.on(admin_cmd(pattern="str(?: |$)(.*)", outgoing=True))
 async def stretch(stret):
     """ Stretch it."""
     if not stret.text[0].isalpha() and stret.text[0] not in ("/", "#", "@", "!"):
@@ -503,7 +505,7 @@ async def stretch(stret):
         await stret.edit(reply_text)
 
 
-@borg.on(admin_cmd(pattern="izal(?: |$)(.*)", outgoing=True)) 
+@borg.on(admin_cmd(pattern="izal(?: |$)(.*)", outgoing=True))
 async def izal(zgfy):
     """ Invoke the feeling of chaos. """
     if not zgfy.text[0].isalpha() and zgfy.text[0] not in ("/", "#", "@", "!"):
@@ -543,11 +545,12 @@ async def izal(zgfy):
         await zgfy.edit("".join(reply_text))
 
 
-@borg.on(admin_cmd(pattern="hi", outgoing=True)) 
+@borg.on(admin_cmd(pattern="hi", outgoing=True))
 async def hoi(hello):
     """ Greet everyone! """
     if not hello.text[0].isalpha() and hello.text[0] not in ("/", "#", "@", "!"):
         await hello.edit(random.choice(HELLOSTR))
+
 
 @borg.on(admin_cmd(pattern="irand", outgoing=True))
 async def irand(randi):
@@ -555,7 +558,8 @@ async def irand(randi):
     if not randi.text[0].isalpha() and randi.text[0] not in ("/", "#", "@", "!"):
         await randi.edit(random.choice(RENDISTR))
 
-@borg.on(admin_cmd(pattern="owo(?: |$)(.*)", outgoing=True)) 
+
+@borg.on(admin_cmd(pattern="owo(?: |$)(.*)", outgoing=True))
 async def faces(owo):
     """ UwU """
     if not owo.text[0].isalpha() and owo.text[0] not in ("/", "#", "@", "!"):
@@ -578,14 +582,15 @@ async def faces(owo):
         reply_text += " " + random.choice(UWUS)
         await owo.edit(reply_text)
 
-@borg.on(admin_cmd(pattern="shrug", outgoing=True)) 
+
+@borg.on(admin_cmd(pattern="shrug", outgoing=True))
 async def shrugger(shg):
     r""" ¯\_(ツ)_/¯ """
     if not shg.text[0].isalpha() and shg.text[0] not in ("/", "#", "@", "!"):
         await shg.edit(random.choice(SHGS))
 
 
-@borg.on(admin_cmd(pattern="roon", outgoing=True)) 
+@borg.on(admin_cmd(pattern="roon", outgoing=True))
 async def runner_lol(roon):
     """ Run, run, RUNNN! """
     if not DISABLE_ROON:
@@ -593,7 +598,7 @@ async def runner_lol(roon):
             await roon.edit(random.choice(RUN_REACTS))
 
 
-@borg.on(admin_cmd(pattern="disable roon", outgoing=True)) 
+@borg.on(admin_cmd(pattern="disable roon", outgoing=True))
 async def disable_roon(noroon):
     """ Some people don't like running... """
     if not noroon.text[0].isalpha() and noroon.text[0] not in ("/", "#", "@", "!"):
@@ -602,7 +607,7 @@ async def disable_roon(noroon):
         await noroon.edit("```Disabled .runs !!```")
 
 
-@borg.on(admin_cmd(pattern="enable roon", outgoing=True)) 
+@borg.on(admin_cmd(pattern="enable roon", outgoing=True))
 async def enable_roon(roon):
     """ But some do! """
     if not roon.text[0].isalpha() and roon.text[0] not in ("/", "#", "@", "!"):
@@ -610,12 +615,14 @@ async def enable_roon(roon):
         DISABLE_ROON = False
         await roon.edit("```Enabled .run !!```")
 
-@borg.on(admin_cmd(pattern="10iq", outgoing=True))  
+
+@borg.on(admin_cmd(pattern="10iq", outgoing=True))
 async def iqless(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("♿")
 
-@borg.on(admin_cmd(pattern="mock(?: |$)(.*)", outgoing=True)) 
+
+@borg.on(admin_cmd(pattern="mock(?: |$)(.*)", outgoing=True))
 async def spongemocktext(mock):
     """ Do it and find the real fun. """
     if not mock.text[0].isalpha() and mock.text[0] not in ("/", "#", "@", "!"):
@@ -640,7 +647,7 @@ async def spongemocktext(mock):
         await mock.edit("".join(reply_text))
 
 
-@borg.on(admin_cmd(pattern="clap(?: |$)(.*)", outgoing=True)) 
+@borg.on(admin_cmd(pattern="clap(?: |$)(.*)", outgoing=True))
 async def claptext(memereview):
     """ Praise people! """
     if not memereview.text[0].isalpha() and memereview.text[0] not in ("/", "#", "@", "!"):
@@ -658,6 +665,7 @@ async def claptext(memereview):
         reply_text += " 👏"
         await memereview.edit(reply_text)
 
+
 @borg.on(admin_cmd(pattern="bt", outgoing=True))
 async def bluetext(bt_e):
     """ Believe me, you will find this useful. """
@@ -669,30 +677,32 @@ async def bluetext(bt_e):
             )
 
 
-@borg.on(admin_cmd(pattern="smk (.*)", outgoing=True ))
+@borg.on(admin_cmd(pattern="smk (.*)", outgoing=True))
 async def smrk(smk):
-        if not smk.text[0].isalpha() and smk.text[0] not in ("/", "#", "@", "!"):
-            textx = await smk.get_reply_message()
-            message = smk.text
-        if message[5:]:
-            message = str(message[5:])
-        elif textx:
-            message = textx
-            message = str(message.message)
-        if message == 'dele':
-            await smk.edit( message +'te the hell' + "ツ" )
-            await smk.edit("ツ")
-        else:
-             smirk = " ツ"
-             reply_text = message + smirk
-             await smk.edit(reply_text)
+    if not smk.text[0].isalpha() and smk.text[0] not in ("/", "#", "@", "!"):
+        textx = await smk.get_reply_message()
+        message = smk.text
+    if message[5:]:
+        message = str(message[5:])
+    elif textx:
+        message = textx
+        message = str(message.message)
+    if message == 'dele':
+        await smk.edit(message + 'te the hell' + "ツ")
+        await smk.edit("ツ")
+    else:
+        smirk = " ツ"
+        reply_text = message + smirk
+        await smk.edit(reply_text)
 
 
 @borg.on(admin_cmd(pattern="f (.*)", outgoing=True))
 async def payf(e):
     paytext = e.pattern_match.group(1)[0]
-    pay = "{}\n{}\n{}\n{}\n{}\n{}\n{}".format(paytext*5, paytext*1,paytext*1, paytext*4, paytext*1, paytext*1, paytext*1)
+    pay = "{}\n{}\n{}\n{}\n{}\n{}\n{}".format(
+        paytext*5, paytext*1, paytext*1, paytext*4, paytext*1, paytext*1, paytext*1)
     await e.edit(pay)
+
 
 @borg.on(admin_cmd(pattern="lgfy (.*)", outgoing=True))
 async def let_me_google_that_for_you(lmgtfy_q):

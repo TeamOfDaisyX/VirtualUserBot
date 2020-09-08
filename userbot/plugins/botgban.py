@@ -7,6 +7,7 @@ from telethon import events
 import asyncio
 from userbot.utils import admin_cmd
 
+
 @borg.on(admin_cmd(pattern="bgban ?(.*)"))
 async def _(event):
     if Config.G_BAN_LOGGER_GROUP is None:
