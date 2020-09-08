@@ -6,7 +6,7 @@ import asyncio
 from datetime import datetime
 import os
 import requests
-from userbot.utils import admin_cmd
+from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 
 
 def progress(current, total):
@@ -14,7 +14,9 @@ def progress(current, total):
 
 
 @borg.on(admin_cmd(pattern="iffuci ?(.*)"))
+@borg.on(sudo_cmd(pattern="iffuci ?(.*)", allow_sudo=True))
 async def _(event):
+    crackexy = await edit_or_reply(event, "Processing")
     if event.fwd_from:
         return
     start = datetime.now()
@@ -50,6 +52,6 @@ async def _(event):
     ms = (end - start).seconds
     if r["isUrl"]:
         nurl = f"https://iffuci.tk/v/{r['key']}"
-        await event.edit("code is pasted to {} in {} seconds. GoTo Original URL: {}".format(url, ms, nurl))
+        await crackexy.edit("code is pasted to {} in {} seconds. GoTo Original URL: {}".format(url, ms, nurl))
     else:
-        await event.edit("code is pasted to {} in {} seconds".format(url, ms))
+        await crackexy.edit("code is pasted to {} in {} seconds".format(url, ms))

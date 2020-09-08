@@ -2,11 +2,13 @@
 Syntax: .get_admin"""
 from telethon import events
 from telethon.tl.types import ChannelParticipantsAdmins, ChannelParticipantAdmin, ChannelParticipantCreator
-from userbot.utils import admin_cmd
+from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 
 
 @borg.on(admin_cmd("get_ad?(m)in ?(.*)"))
+@borg.on(sudo_cmd("get_ad?(m)in ?(.*)", allow_sudo=True))
 async def _(event):
+    admeme = await edit_or_reply(event, "Processing")
     if event.fwd_from:
         return
     mentions = "**Admins in this Channel**: \n"
@@ -51,4 +53,4 @@ async def _(event):
             await event.reply(mentions)
         await event.delete()
     else:
-        await event.edit(mentions)
+        await admeme.edit(mentions)

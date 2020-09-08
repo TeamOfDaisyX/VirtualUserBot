@@ -6,11 +6,12 @@ from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from userbot.utils import admin_cmd
 
 @borg.on(admin_cmd("frybot ?(.*)"))
-async def _(event):
+async def _(event):\
+    avengers = await edit_or_reply(event, "Processing")
     if event.fwd_from:
         return 
     if not event.reply_to_msg_id:
-       await event.edit("```Reply to any user message.```")
+       await avengers.edit("```Reply to any user message.```")
        return
     reply_message = await event.get_reply_message() 
     if not reply_message.media:
@@ -19,18 +20,18 @@ async def _(event):
     chat = "@image_deepfrybot"
     sender = reply_message.sender
     if reply_message.sender.bot:
-       await event.edit("```Reply to actual users message.```")
+       await avengers.edit("```Reply to actual users message.```")
        return
-    await event.edit("```Processing```")
+    await avengers.edit("```Processing```")
     async with borg.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=432858024))
               await borg.forward_messages(chat, reply_message)
               response = await response 
           except YouBlockedUserError: 
-              await event.reply("```Please unblock @sangmatainfo_bot and try again```")
+              await event.reply("```Please unblock DEEPFRY BOT and try again```")
               return
           if response.text.startswith("Forward"):
-              await event.edit("```can you kindly disable your forward privacy settings for good?```")
+              await avengers.edit("```can you kindly disable your forward privacy settings for good?```")
           else: 
               await borg.send_file(event.chat_id, response.message.media)

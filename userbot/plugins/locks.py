@@ -5,11 +5,13 @@ DB Options: bots, commands, email, forward, url"""
 
 from telethon import events, functions, types
 from userbot.plugins.sql_helper.locks_sql import update_lock, is_locked, get_locks
-from userbot.utils import admin_cmd
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
 @borg.on(admin_cmd("lock( (?P<target>\S+)|$)"))
+@borg.on(sudo_cmd("lock( (?P<target>\S+)|$)", allow_sudo=True))
 async def _(event):
+     mrhackerguy = await edit_or_reply(event, "Processing")
      # Space weirdness in regex required because argument is optional and other
      # commands start with ".lock"
     if event.fwd_from:
@@ -18,7 +20,7 @@ async def _(event):
     peer_id = event.chat_id
     if input_str in (("bots", "commands", "email", "forward", "url")):
         update_lock(peer_id, input_str, True)
-        await event.edit(
+        await mrhackerguy.edit(
             "Locked {}".format(input_str)
         )
     else:
@@ -75,32 +77,36 @@ async def _(event):
                 )
             )
         except Exception as e:  # pylint:disable=C0103,W0703
-            await event.edit(str(e))
+            await mrhackerguy.edit(str(e))
         else:
-            await event.edit(
+            await mrhackerguy.edit(
                 "Current Chat Default Permissions Changed Successfully, in API"
             )
 
 
 @borg.on(admin_cmd("unlock ?(.*)"))
+@borg.on(sudo_cmd("unlock ?(.*)", allow_sudo=True))
 async def _(event):
+    starkgang = await edit_or_reply(event, "Processing")
     if event.fwd_from:
         return
     input_str = event.pattern_match.group(1)
     peer_id = event.chat_id
     if input_str in (("bots", "commands", "email", "forward", "url")):
         update_lock(peer_id, input_str, False)
-        await event.edit(
+        await starkgang.edit(
             "UnLocked {}".format(input_str)
         )
     else:
-        await event.edit(
+        await starkgang.edit(
             "Use `.lock` without any parameters to unlock API locks"
         )
 
 
 @borg.on(admin_cmd("curenabledlocks"))
+@borg.on(admin_cmd("curenabledlocks", allow_sudo=True))
 async def _(event):
+    pikachu = await edit_or_reply(event, "Processing")
     if event.fwd_from:
         return
     res = ""
@@ -131,7 +137,7 @@ async def _(event):
         res += "👉 `adduser`: `{}`\n".format(current_api_locks.invite_users)
         res += "👉 `cpin`: `{}`\n".format(current_api_locks.pin_messages)
         res += "👉 `changeinfo`: `{}`\n".format(current_api_locks.change_info)
-    await event.edit(res)
+    await pikachu.edit(res)
 
 
 @borg.on(events.MessageEdited())  # pylint:disable=E0602
