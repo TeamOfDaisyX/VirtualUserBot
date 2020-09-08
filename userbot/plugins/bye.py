@@ -1,4 +1,3 @@
-# For @UniBorg
 # Courtesy @yasirsiddiqui
 
 """
