@@ -7,14 +7,16 @@
 # License: MPL and OSSRPL
 """ Userbot module for getiing info about any user on Telegram(including you!). """
 
-import os
 import html
+import os
+
 from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
+
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
-from userbot.utils import register, admin_cmd
+from userbot.utils import admin_cmd, register
 
 
 @borg.on(admin_cmd(pattern="userinfo(?: |$)(.*)"))

@@ -1,10 +1,11 @@
 """Malayalam Calendar plugin for @UniBorg
 SYNTAX: .calendar YYYY-MM-DD"""
-from telethon import events
 import asyncio
-from datetime import datetime
-import requests
 import json
+from datetime import datetime
+
+import requests
+from telethon import events
 from uniborg.util import admin_cmd
 
 

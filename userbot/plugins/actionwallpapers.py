@@ -1,21 +1,16 @@
-import requests
-import re
-import random
-
-import urllib
+import asyncio
 import os
+import random
+import re
+import urllib
+from datetime import datetime
+from time import sleep
 
+import requests
+from PIL import Image, ImageDraw, ImageFont
 from telethon.tl import functions
 
-from datetime import datetime
-
-from PIL import Image, ImageDraw, ImageFont
-
 from userbot.utils import admin_cmd
-
-import asyncio
-
-from time import sleep
 
 COLLECTION_STRINGZ = [
     "Vietnam-War-Wallpapers",

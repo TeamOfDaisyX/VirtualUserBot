@@ -3,8 +3,10 @@ Group Administrations bots where you are SUDO
 Available Commands:
 .gban REASON
 .ungban REASON"""
-from telethon import events
 import asyncio
+
+from telethon import events
+
 from userbot.utils import admin_cmd
 
 

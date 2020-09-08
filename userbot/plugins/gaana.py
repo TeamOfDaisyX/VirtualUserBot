@@ -2,14 +2,15 @@
 # modified by @hellboi_atul
 # Copyright (C) 2020.
 
-from telethon import events
 import asyncio
+import os
 
+from telethon import events
+from telethon.errors.rpcerrorlist import YouBlockedUserError
+
+from userbot import CMD_HELP, bot
 # from userbot.utils import admin_cmd
 from userbot.events import register
-from userbot import bot, CMD_HELP
-from telethon.errors.rpcerrorlist import YouBlockedUserError
-import os
 
 try:
     import subprocess

@@ -2,11 +2,11 @@
 # Telegram Group: http://t.me/linux_repo
 
 
-from telethon import events
-
 import asyncio
-from uniborg.util import admin_cmd
+
+from telethon import events
 from telethon.tl.functions.users import GetFullUserRequest
+from uniborg.util import admin_cmd
 
 
 @borg.on(admin_cmd(pattern=r"ophack"))

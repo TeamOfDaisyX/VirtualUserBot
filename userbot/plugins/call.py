@@ -10,9 +10,9 @@ Available Commands:
 
 .emoji -_-"""
 
-from telethon import events
-
 import asyncio
+
+from telethon import events
 
 
 @borg.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
