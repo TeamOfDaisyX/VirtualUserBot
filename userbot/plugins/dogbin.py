@@ -5,7 +5,7 @@ import asyncio
 from datetime import datetime
 import os
 import requests
-from userbot.utils import admin_cmd
+from userbot.utils import admin_cmd, sudo_cmd, edit_or_Reply
 
 
 def progress(current, total):
@@ -13,7 +13,9 @@ def progress(current, total):
 
 
 @borg.on(admin_cmd("paste ?(.*)"))
+@borg.on(sudo_cmd("paste ?(.*)", allow_sudo=True))
 async def _(event):
+    mepaste = await edit_or_reply(event, "Pasting This")
     if event.fwd_from:
         return
     start = datetime.now()
@@ -49,6 +51,6 @@ async def _(event):
     ms = (end - start).seconds
     if r["isUrl"]:
         nurl = f"https://del.dog/v/{r['key']}"
-        await event.edit("Dogged to {} in {} seconds. GoTo Original URL: {}".format(url, ms, nurl))
+        await mepaste.edit("Dogged to {} in {} seconds. GoTo Original URL: {}".format(url, ms, nurl))
     else:
-        await event.edit("Dogged to {} in {} seconds".format(url, ms))
+        await mepaste.edit("Dogged to {} in {} seconds".format(url, ms))
