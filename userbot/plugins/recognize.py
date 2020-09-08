@@ -29,8 +29,7 @@ async def _(event):
     async with event.client.conversation(chat) as conv:
         try:
             response = conv.wait_event(
-                events.NewMessage(incoming=True, from_users=461083923)
-            )
+                events.NewMessage(incoming=True, from_users=461083923))
             await event.client.forward_messages(chat, reply_message)
             response = await response
         except YouBlockedUserError:
@@ -39,8 +38,7 @@ async def _(event):
             return
         if response.text.startswith("See next message."):
             response = conv.wait_event(
-                events.NewMessage(incoming=True, from_users=461083923)
-            )
+                events.NewMessage(incoming=True, from_users=461083923))
             response = await response
             cat = response.message.message
             await event.edit(cat)
@@ -49,10 +47,9 @@ async def _(event):
             await event.edit("sorry, I couldnt find it")
 
 
-CMD_HELP.update(
-    {
-        "recognize": "`.recognize` reply this to any media file\
+CMD_HELP.update({
+    "recognize":
+    "`.recognize` reply this to any media file\
     \nUSAGE : Get information about an image using AWS Rekognition.\
     \nFind out information including detected labels, faces. text and moderation tags."
-    }
-)
+})

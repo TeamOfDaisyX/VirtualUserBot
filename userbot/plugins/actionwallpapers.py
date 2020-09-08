@@ -56,8 +56,7 @@ async def animepp():
 async def main(event):
 
     await event.edit(
-        "**Uplaoding Walpapers \n please wait...\n\nDone !!! Check Your DP"
-    )
+        "**Uplaoding Walpapers \n please wait...\n\nDone !!! Check Your DP")
 
     while True:
 

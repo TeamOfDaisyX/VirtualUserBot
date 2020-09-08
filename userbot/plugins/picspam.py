@@ -24,13 +24,12 @@ async def tiny_pic_spam(e):
         await e.client.send_file(e.chat_id, link)
     if BOTLOG:
         await e.client.send_message(
-            BOTLOG_CHATID, "#PICSPAM\n" "PicSpam was executed successfully"
-        )
+            BOTLOG_CHATID, "#PICSPAM\n"
+            "PicSpam was executed successfully")
 
 
-CMD_HELP.update(
-    {
-        "spam": '.picspam <count> <link to image/gif>\
+CMD_HELP.update({
+    "spam":
+    '.picspam <count> <link to image/gif>\
 \nUsage: As if text spam was not enough !!"'
-    }
-)
+})

@@ -433,9 +433,8 @@ async def copypasta(cp_e):
             return
 
         reply_text = random.choice(EMOJIS)
-        b_char = random.choice(
-            message
-        ).lower()  # choose a random character in the message to be substituted with 🅱️
+        b_char = random.choice(message).lower(
+        )  # choose a random character in the message to be substituted with 🅱️
         for owo in message:
             if owo == " ":
                 reply_text += random.choice(EMOJIS)
@@ -482,7 +481,8 @@ async def vapor(vpr):
 @borg.on(admin_cmd(pattern="str(?: |$)(.*)", outgoing=True))
 async def stretch(stret):
     """ Stretch it."""
-    if not stret.text[0].isalpha() and stret.text[0] not in ("/", "#", "@", "!"):
+    if not stret.text[0].isalpha() and stret.text[0] not in ("/", "#", "@",
+                                                             "!"):
         textx = await stret.get_reply_message()
         message = stret.text
         message = stret.pattern_match.group(1)
@@ -495,9 +495,8 @@ async def stretch(stret):
             return
 
         count = random.randint(3, 10)
-        reply_text = re.sub(
-            r"([aeiouAEIOUａｅｉｏｕＡＥＩＯＵаеиоуюяыэё])", (r"\1" * count), message
-        )
+        reply_text = re.sub(r"([aeiouAEIOUａｅｉｏｕＡＥＩＯＵаеиоуюяыэё])",
+                            (r"\1" * count), message)
         await stret.edit(reply_text)
 
 
@@ -527,11 +526,14 @@ async def izal(zgfy):
                 randint = random.randint(0, 2)
 
                 if randint == 0:
-                    charac = charac.strip() + random.choice(ZALG_LIST[0]).strip()
+                    charac = charac.strip() + random.choice(
+                        ZALG_LIST[0]).strip()
                 elif randint == 1:
-                    charac = charac.strip() + random.choice(ZALG_LIST[1]).strip()
+                    charac = charac.strip() + random.choice(
+                        ZALG_LIST[1]).strip()
                 else:
-                    charac = charac.strip() + random.choice(ZALG_LIST[2]).strip()
+                    charac = charac.strip() + random.choice(
+                        ZALG_LIST[2]).strip()
 
             reply_text.append(charac)
 
@@ -541,14 +543,16 @@ async def izal(zgfy):
 @borg.on(admin_cmd(pattern="hi", outgoing=True))
 async def hoi(hello):
     """ Greet everyone! """
-    if not hello.text[0].isalpha() and hello.text[0] not in ("/", "#", "@", "!"):
+    if not hello.text[0].isalpha() and hello.text[0] not in ("/", "#", "@",
+                                                             "!"):
         await hello.edit(random.choice(HELLOSTR))
 
 
 @borg.on(admin_cmd(pattern="irand", outgoing=True))
 async def irand(randi):
     """ur a Randi! """
-    if not randi.text[0].isalpha() and randi.text[0] not in ("/", "#", "@", "!"):
+    if not randi.text[0].isalpha() and randi.text[0] not in ("/", "#", "@",
+                                                             "!"):
         await randi.edit(random.choice(RENDISTR))
 
 
@@ -587,14 +591,16 @@ async def shrugger(shg):
 async def runner_lol(roon):
     """ Run, run, RUNNN! """
     if not DISABLE_ROON:
-        if not roon.text[0].isalpha() and roon.text[0] not in ("/", "#", "@", "!"):
+        if not roon.text[0].isalpha() and roon.text[0] not in ("/", "#", "@",
+                                                               "!"):
             await roon.edit(random.choice(RUN_REACTS))
 
 
 @borg.on(admin_cmd(pattern="disable roon", outgoing=True))
 async def disable_roon(noroon):
     """ Some people don't like running... """
-    if not noroon.text[0].isalpha() and noroon.text[0] not in ("/", "#", "@", "!"):
+    if not noroon.text[0].isalpha() and noroon.text[0] not in ("/", "#", "@",
+                                                               "!"):
         global DISABLE_ROON
         DISABLE_ROON = True
         await noroon.edit("```Disabled .runs !!```")
@@ -644,10 +650,10 @@ async def spongemocktext(mock):
 async def claptext(memereview):
     """ Praise people! """
     if not memereview.text[0].isalpha() and memereview.text[0] not in (
-        "/",
-        "#",
-        "@",
-        "!",
+            "/",
+            "#",
+            "@",
+            "!",
     ):
         textx = await memereview.get_reply_message()
         message = memereview.pattern_match.group(1)
@@ -671,8 +677,7 @@ async def bluetext(bt_e):
         if await bt_e.get_reply_message():
             await bt_e.edit(
                 "`BLUETEXT MUST CLICK.`\n"
-                "`Are you a stupid animal which is attracted to colours?`"
-            )
+                "`Are you a stupid animal which is attracted to colours?`")
 
 
 @borg.on(admin_cmd(pattern="smk (.*)", outgoing=True))
@@ -711,7 +716,8 @@ async def payf(e):
 
 @borg.on(admin_cmd(pattern="lgfy (.*)", outgoing=True))
 async def let_me_google_that_for_you(lmgtfy_q):
-    if not lmgtfy_q.text[0].isalpha() and lmgtfy_q.text[0] not in ("/", "#", "@", "!"):
+    if not lmgtfy_q.text[0].isalpha() and lmgtfy_q.text[0] not in ("/", "#",
+                                                                   "@", "!"):
         textx = await lmgtfy_q.get_reply_message()
         query = lmgtfy_q.text
         if query[5:]:

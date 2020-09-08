@@ -20,9 +20,9 @@ async def _(event):
                 try:
                     await borg(
                         functions.messages.AddChatUserRequest(
-                            chat_id=event.chat_id, user_id=user_id, fwd_limit=1000000
-                        )
-                    )
+                            chat_id=event.chat_id,
+                            user_id=user_id,
+                            fwd_limit=1000000))
                 except Exception as e:
                     await event.reply(str(e))
             await event.edit("Invited Successfully")
@@ -32,9 +32,7 @@ async def _(event):
                 try:
                     await borg(
                         functions.channels.InviteToChannelRequest(
-                            channel=event.chat_id, users=[user_id]
-                        )
-                    )
+                            channel=event.chat_id, users=[user_id]))
                 except Exception as e:
                     await event.reply(str(e))
             await event.edit("Invited Successfully")

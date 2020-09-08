@@ -16,8 +16,7 @@ async def monu(mkc):
         "Sale randi ke aulad \n"
         "{name} Madharjatt \n"
         "Tere khandan ko kutta chode \n"
-        "Randi Jatt {name} ki MKC \n"
-    )
+        "Randi Jatt {name} ki MKC \n")
 
     await mkc.edit(f)
 
