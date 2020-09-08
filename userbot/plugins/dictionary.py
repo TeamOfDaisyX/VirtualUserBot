@@ -7,7 +7,9 @@ from uniborg.util import admin_cmd
 
 
 @borg.on(admin_cmd("meaning (.*)"))
+@borg.on(sudo_cmd("meaning (.*)", allow_sudo=True))
 async def _(event):
+    stark = await edit_or_reply(event, "Finding Meaning.....")
     if event.fwd_from:
         return
     input_str = event.pattern_match.group(1)
@@ -41,4 +43,4 @@ async def _(event):
         )
     except:
         pass
-    await event.edit(caption_str)
+    await stark.edit(caption_str)
