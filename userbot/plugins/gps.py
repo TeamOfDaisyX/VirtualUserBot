@@ -7,12 +7,13 @@ credits :@mrconfused
 # don't edit credits 
 
 from geopy.geocoders import Nominatim
-from userbot.utils import admin_cmd
+from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 from telethon.tl import types
 
 
 
 @borg.on(admin_cmd(pattern="gps ?(.*)"))
+@borg.on(sudo_cmd(pattern="gps ?(.*)", allow_sudo=True))
 async def gps(event):
     starkislub = await edit_or_reply(event, "Processing")
     if event.fwd_from:
