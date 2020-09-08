@@ -1,4 +1,4 @@
-"""Available Commands 
+"""Available Commands
 Read code in noice.py """
 # .cowsay cow which says things.\
 # :/Usage: Check yourself
