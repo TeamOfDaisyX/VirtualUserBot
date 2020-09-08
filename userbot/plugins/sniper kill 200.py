@@ -1,7 +1,6 @@
 """Emoji
 Available Commands:
 .snkill"""
-
 import asyncio
 
 from telethon import events

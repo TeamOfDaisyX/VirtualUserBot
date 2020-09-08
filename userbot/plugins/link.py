@@ -3,16 +3,18 @@
 """
 Userbot module to help you manage a group
 """
-
 from asyncio import sleep
 from os import remove
 
-from telethon.errors import BadRequestError, UserAdminInvalidError
+from telethon.errors import BadRequestError
+from telethon.errors import UserAdminInvalidError
 from telethon.errors.rpcerrorlist import UserIdInvalidError
-from telethon.tl.types import (ChannelParticipantsAdmins,
-                               ChannelParticipantsBots, ChatAdminRights,
-                               ChatBannedRights, MessageEntityMentionName,
-                               PeerChannel)
+from telethon.tl.types import ChannelParticipantsAdmins
+from telethon.tl.types import ChannelParticipantsBots
+from telethon.tl.types import ChatAdminRights
+from telethon.tl.types import ChatBannedRights
+from telethon.tl.types import MessageEntityMentionName
+from telethon.tl.types import PeerChannel
 
 from userbot.utils import admin_cmd
 

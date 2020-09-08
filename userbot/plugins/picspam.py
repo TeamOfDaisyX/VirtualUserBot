@@ -4,9 +4,12 @@
 # you may not use this file except in compliance with the License.
 # Usage:- .picspam <count> <pic link>
 import asyncio
-from asyncio import sleep, wait
+from asyncio import sleep
+from asyncio import wait
 
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
+from userbot import BOTLOG
+from userbot import BOTLOG_CHATID
+from userbot import CMD_HELP
 from userbot.utils import admin_cmd
 
 

@@ -1,6 +1,5 @@
 """Available Commands 
 Read code in noice.py """
-
 # .cowsay cow which says things.\
 # :/Usage: Check yourself
 # -_- Ok...
@@ -24,8 +23,6 @@ Read code in noice.py """
 # .smk <text/reply>A shit module for ツ , who cares.
 # .lgfy Let me Google that for you real quick !!
 # Thanks to 🅱️ottom🅱️ext🅱️ot (@NotAMemeBot) for some of these.
-
-
 import asyncio
 import random
 import re

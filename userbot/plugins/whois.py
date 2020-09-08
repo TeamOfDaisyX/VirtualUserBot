@@ -6,7 +6,6 @@
 # The entire source code is OSSRPL except 'whois' which is MPL
 # License: MPL and OSSRPL
 """ Userbot module for getiing info about any user on Telegram(including you!). """
-
 import html
 import os
 
@@ -15,8 +14,10 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
 
-from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
-from userbot.utils import admin_cmd, register
+from userbot import CMD_HELP
+from userbot import TEMP_DOWNLOAD_DIRECTORY
+from userbot.utils import admin_cmd
+from userbot.utils import register
 
 
 @borg.on(admin_cmd(pattern="userinfo(?: |$)(.*)"))

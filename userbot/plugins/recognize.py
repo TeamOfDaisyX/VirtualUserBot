@@ -1,5 +1,4 @@
 # credits: @Mr_Hops
-
 import datetime
 
 from telethon import events

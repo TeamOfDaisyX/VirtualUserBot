@@ -3,7 +3,6 @@
 Available Commands:
 
 .owner"""
-
 import asyncio
 
 from telethon import events

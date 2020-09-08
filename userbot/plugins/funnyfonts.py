@@ -7,7 +7,8 @@ import time
 import requests
 from telethon import events
 
-from userbot import CMD_HELP, fonts
+from userbot import CMD_HELP
+from userbot import fonts
 from userbot.utils import admin_cmd
 
 

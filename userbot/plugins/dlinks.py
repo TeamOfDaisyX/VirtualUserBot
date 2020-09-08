@@ -2,16 +2,14 @@
 #
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
-
 # Re-written by @its_xditya for TeleBot
-
 """ Userbot module containing various sites direct links generators"""
-
 import json
 import re
 import urllib.parse
 from random import choice
-from subprocess import PIPE, Popen
+from subprocess import PIPE
+from subprocess import Popen
 
 import requests
 from bs4 import BeautifulSoup

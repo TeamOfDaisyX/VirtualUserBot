@@ -4,19 +4,19 @@
 # you may not use this file except in compliance with the License.
 #
 # Credits to Hitalo-Sama and FTG Modules
-
 from datetime import datetime
 from math import sqrt
 
 from emoji import emojize
-from telethon.errors import (ChannelInvalidError, ChannelPrivateError,
-                             ChannelPublicGroupNaError)
-from telethon.tl.functions.channels import (GetFullChannelRequest,
-                                            GetParticipantsRequest)
-from telethon.tl.functions.messages import (GetFullChatRequest,
-                                            GetHistoryRequest)
-from telethon.tl.types import (ChannelParticipantsAdmins,
-                               MessageActionChannelMigrateFrom)
+from telethon.errors import ChannelInvalidError
+from telethon.errors import ChannelPrivateError
+from telethon.errors import ChannelPublicGroupNaError
+from telethon.tl.functions.channels import GetFullChannelRequest
+from telethon.tl.functions.channels import GetParticipantsRequest
+from telethon.tl.functions.messages import GetFullChatRequest
+from telethon.tl.functions.messages import GetHistoryRequest
+from telethon.tl.types import ChannelParticipantsAdmins
+from telethon.tl.types import MessageActionChannelMigrateFrom
 from telethon.utils import get_input_location
 
 from userbot import CMD_HELP

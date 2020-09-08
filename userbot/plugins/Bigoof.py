@@ -4,14 +4,13 @@ Credits to @T3b0N3
 
    Ultroid
 """
-
 import asyncio
 
-# Main Credits Goes to @T3b0N3
-# He Worked Very Hard to do this, So Please Respect Him!!
 from telethon import events
 
 from userbot.utils import admin_cmd
+# Main Credits Goes to @T3b0N3
+# He Worked Very Hard to do this, So Please Respect Him!!
 
 
 @borg.on(admin_cmd("bigoof"))

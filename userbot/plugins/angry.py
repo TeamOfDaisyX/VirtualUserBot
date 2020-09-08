@@ -1,7 +1,6 @@
 """Emoji
 Available Commands:
 .angry"""
-
 import asyncio
 
 from telethon import events

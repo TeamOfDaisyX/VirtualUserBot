@@ -1,9 +1,7 @@
 # Ported from other Telegram UserBots for TeleBot//Made for TeleBot
 # Kangers, don't remove this line
 # @its_xditya
-
 # Usage .actressdp Im Not Responsible For Any Ban caused By This
-
 import asyncio
 import os
 import random
