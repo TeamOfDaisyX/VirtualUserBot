@@ -14,6 +14,7 @@ from telethon.tl import types
 
 @borg.on(admin_cmd(pattern="gps ?(.*)"))
 async def gps(event):
+    starkislub = await edit_or_reply(event, "Processing")
     if event.fwd_from:
         return
     reply_to_id = event.message
@@ -22,9 +23,9 @@ async def gps(event):
     input_str = event.pattern_match.group(1)
 
     if not input_str:
-        return await event.edit("what should i find give me location.")
+        return await starkislub.edit("what should i find give me location.")
 
-    await event.edit("finding")
+    await starkislub.edit("finding")
 
     geolocator = Nominatim(user_agent="catuserbot")
     geoloc = geolocator.geocode(input_str)
@@ -42,6 +43,6 @@ async def gps(event):
         )
         await event.delete()
     else:
-        await event.edit("i coudn't find it")
+        await starkislub.edit("i coudn't find it")
         
         
