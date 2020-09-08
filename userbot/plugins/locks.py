@@ -98,13 +98,15 @@ async def _(event):
             "UnLocked {}".format(input_str)
         )
     else:
-        await event.edit(
+        await starkgang.edit(
             "Use `.lock` without any parameters to unlock API locks"
         )
 
 
 @borg.on(admin_cmd("curenabledlocks"))
+@borg.on(admin_cmd("curenabledlocks", allow_sudo=True))
 async def _(event):
+    pikachu = await edit_or_reply(event, "Processing")
     if event.fwd_from:
         return
     res = ""
@@ -135,7 +137,7 @@ async def _(event):
         res += "👉 `adduser`: `{}`\n".format(current_api_locks.invite_users)
         res += "👉 `cpin`: `{}`\n".format(current_api_locks.pin_messages)
         res += "👉 `changeinfo`: `{}`\n".format(current_api_locks.change_info)
-    await event.edit(res)
+    await pikachu.edit(res)
 
 
 @borg.on(events.MessageEdited())  # pylint:disable=E0602
