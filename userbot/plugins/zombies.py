@@ -117,9 +117,9 @@ async def rm_deletedacc(show):
     await sleep(2)
     await show.delete()
     
-    if PRIVATE_GROUP_ID:
+    if BOTLOG:
         await show.client.send_message(
-            PRIVATE_GROUP_ID, "#CLEANUP\n"
+            BOTLOG_CHATID, "#CLEANUP\n"
             f"Cleaned **{del_u}** deleted account(s) !!\
             \nCHAT: {show.chat.title}(`{show.chat_id}`)")
 
