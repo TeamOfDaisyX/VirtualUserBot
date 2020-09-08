@@ -6,7 +6,7 @@ from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 @borg.on(admin_cmd("frybot ?(.*)"))
-async def _(event):\
+async def _(event):
     avengers = await edit_or_reply(event, "Processing")
     if event.fwd_from:
         return 
