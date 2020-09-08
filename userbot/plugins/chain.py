@@ -9,7 +9,7 @@ from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 @borg.on(admin_cmd(pattern="chain"))
 @borg.on(sudo_cmd(pattern="chain", allow_sudo=True))
 async def _(event):
-  pokemonlub = await edit_or_reply(event, "Counting...")
+    pokemonlub = await edit_or_reply(event, "Counting...")
     count = -1
     message = event.message
     while message:
