@@ -25,7 +25,7 @@ from telethon.tl.types import (ChannelParticipantsAdmins, ChatAdminRights,
 from userbot import CMD_HELP, bot 
 # 
 BOTLOG = True
-BOTLOG_CHATID = Config.PRIVATE_GROUP_BOT_API_ID
+BOTLOG_CHATID = Config.PRIVATE_GROUP_ID
 
 # =================== CONSTANT ===================
 
@@ -117,7 +117,7 @@ async def rm_deletedacc(show):
     await sleep(2)
     await show.delete()
     
-    if BOTLOG:
+    if PRIVATE_GROUP_ID:
         await show.client.send_message(
             BOTLOG_CHATID, "#CLEANUP\n"
             f"Cleaned **{del_u}** deleted account(s) !!\
@@ -136,9 +136,9 @@ async def rm_deletedacc(show):
     del_status = "`No deleted accounts found, Group is clean`"
 
     if con != "clean":
-        cat = await show.reply("`Searching for ghost/deleted/zombie accounts...`")
+        avengers = await show.reply("`Searching for ghost/deleted/zombie accounts...`")
         await asyncio.sleep(2)
-        await cat.delete()
+        await avengers.delete()
         async for user in show.client.iter_participants(show.chat_id):
 
             if user.deleted:
@@ -160,9 +160,9 @@ async def rm_deletedacc(show):
         await show.reply("`I am not an admin here!`")
         return
 
-    cat2 = await show.reply("`Deleting deleted accounts...\nOh I can do that?!?!`")
+    avengers2 = await show.reply("`Deleting deleted accounts...\nOh I can do that?!?!`")
     await asyncio.sleep(2)
-    await cat2.delete()
+    await avengers2.delete()
     del_u = 0
     del_a = 0
 
@@ -190,9 +190,9 @@ async def rm_deletedacc(show):
         \n**{del_a}** deleted admin accounts are not removed"
 
 
-    cat3 = await show.reply(del_status)
+    avengers3 = await show.reply(del_status)
     await sleep(2)
-    await cat3.delete()
+    await avengers3.delete()
 
 CMD_HELP.update({
     "zombies":
