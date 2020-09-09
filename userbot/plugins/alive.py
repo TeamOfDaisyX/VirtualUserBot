@@ -29,29 +29,3 @@ async def friday(alive):
     """ For .alive command, check if the bot is running.  """
     await borg.send_file(alive.chat_id, PM_IMG,caption=pm_caption)
     await alive.delete()
-
-@borg.on(admin_cmd(outgoing=True, pattern="ialive$"))
-@borg.on(sudo_cmd(pattern="ialive$",allow_sudo = True))
-async def amireallyalive(alive):
-    if alive.fwd_from:
-        return
-    tgbotusername = Var.TG_BOT_USER_NAME_BF_HER
-    reply_to_id = alive.message
-    if alive.reply_to_msg_id:
-        reply_to_id = await alive.get_reply_message()
-    hmm = bot.uid
-    sed_caption  = f"__**Test**__\n"
-    sed_caption += f"**  -Telethon version :** `oof\n`"
-    sed_caption += f"**  -Rest Version :** `2.0`\n"
-    sed_caption += f"**  -Python Version :** `Test\n`"
-    sed_caption += f"**  -My peru Master:** [{DEFAULTUSER}](tg://user?id={hmm})\n"
-    results = await bot.inline_query(  # pylint:disable=E0602
-                tgbotusername,
-                sed_caption
-            )
-    await results[0].click(
-                alive.chat_id,
-                reply_to=reply_to_id,
-                hide_via=True
-            )
-    await alive.delete()
