@@ -11,7 +11,7 @@ from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 @borg.on(admin_cmd("lock( (?P<target>\S+)|$)"))
 @borg.on(sudo_cmd("lock( (?P<target>\S+)|$)", allow_sudo=True))
 async def _(event):
-     mrhackerguy = await edit_or_reply(event, "Processing")
+    mrhackerguy = await edit_or_reply(event, "Processing")
      # Space weirdness in regex required because argument is optional and other
      # commands start with ".lock"
     if event.fwd_from:
