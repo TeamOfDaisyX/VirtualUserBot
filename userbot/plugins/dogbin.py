@@ -15,7 +15,7 @@ def progress(current, total):
 @borg.on(admin_cmd("paste ?(.*)"))
 @borg.on(sudo_cmd("paste ?(.*)", allow_sudo=True))
 async def _(event):
-    mepaste = await edit_or_reply(event, "Pasting This")
+    mepaste = await edit_or_reply(event, "Pasting This...")
     if event.fwd_from:
         return
     start = datetime.now()
