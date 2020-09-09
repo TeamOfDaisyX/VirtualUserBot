@@ -65,8 +65,10 @@ async def on_snip(event):
                 last_triggered_filters[event.chat_id].remove(name)
 
 
-@command(pattern="^.savefilter (.*)")
+@borg.on(admin_cmd(pattern="filter (.*)"))
+@borg.on(sudo_cmd(pattern="filter (.*)", allow_sudo=True))
 async def on_snip_save(event):
+    hitler = await edit_or_reply(event, "Processing....")
     name = event.pattern_match.group(1)
     msg = await event.get_reply_message()
     if msg:
@@ -84,13 +86,15 @@ async def on_snip_save(event):
                 snip['hash'] = media.access_hash
                 snip['fr'] = media.file_reference
         add_filter(event.chat_id, name, snip['text'], snip['type'], snip.get('id'), snip.get('hash'), snip.get('fr'))
-        await event.edit(f"filter {name} saved successfully. Get it with {name}")
+        await hitler.edit(f"filter {name} saved successfully. Get it with {name}")
     else:
-        await event.edit("Reply to a message with `savefilter keyword` to save the filter")
+        await hitler.edit("Reply to a message with `savefilter keyword` to save the filter")
 
 
-@command(pattern="^.listfilters$")
+@borg.on(admin_cmd(pattern="filters$"))
+@borg.on(sudo_cmd(pattern="filters$", allow_sudo=True))
 async def on_snip_list(event):
+    indiaislove = await edit_or_reply(event, "Processing....")
     all_snips = get_all_filters(event.chat_id)
     OUT_STR = "Available Filters in the Current Chat:\n"
     if len(all_snips) > 0:
@@ -111,17 +115,21 @@ async def on_snip_list(event):
             )
             await event.delete()
     else:
-        await event.edit(OUT_STR)
+        await indiaislove.edit(OUT_STR)
 
 
-@command(pattern="^.clearfilter (.*)")
+@borg.on(admin_cmd(pattern="stop (.*)"))
+@borg.on(sudo_cmd(pattern="stop (.*)",allow_sudo=True))
 async def on_snip_delete(event):
+    iloveindia = await edit_or_reply(event, "Processing...")
     name = event.pattern_match.group(1)
     remove_filter(event.chat_id, name)
-    await event.edit(f"filter {name} deleted successfully")
+    await iloveindia.edit(f"filter {name} deleted successfully")
 
 
-@command(pattern="^.clearallfilters$")
+@borg.on(admin_cmd(pattern="rmfilters$"))
+@borg.on(sudo_cmd(pattern="rmfilters$", allow_sudo=True))
 async def on_all_snip_delete(event):
+    sadnesses = await edit_or_reply(event,"Processing....")
     remove_all_filters(event.chat_id)
-    await event.edit(f"filters **in current chat** deleted successfully")
+    await sadness.edit(f"filters **in current chat** deleted successfully")
