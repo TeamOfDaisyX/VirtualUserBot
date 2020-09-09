@@ -1,5 +1,6 @@
 import pyfiglet
 from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+
 @borg.on(admin_cmd(pattern="figlet ?(.*)", outgoing=True))
 @borg.on(sudo_cmd(pattern="figlet ?(.*)", allow_sudo=True))
 async def figlet(event):
