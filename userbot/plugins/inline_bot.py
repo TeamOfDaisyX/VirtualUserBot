@@ -20,10 +20,10 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             buttons = [(custom.Button.inline("Stats", data="statstext"),
                         Button.url("License" , "https://github.com/StarkGang/FridayUserbot/blob/master/LICENSE"),
                         Button.url("Deploy Friday" , "github.com/Starkgang/FridayUserbot"))]
-            botisalive = builder.article(
+            results = builder.article(
                          title = "",
                          text = query,
                          buttons = buttons
                          )
-            await event.answer([botisalive] if result else None)
+            await event.answer([results] if result else None)
         
