@@ -1,5 +1,6 @@
 """Check if userbot alive. If you change these, you become the gayest gay such that even the gay world will disown you."""
 #IMG CREDITS: @WhySooSerious
+# 
 import asyncio
 from telethon import events
 from uniborg.util import admin_cmd, sudo_cmd, edit_or_reply
@@ -48,7 +49,7 @@ async def amireallyalive(alive):
                 tgbotusername,
                 sed_caption
             )
-    await botisalive[0].click(
+    await results[0].click(
                 alive.chat_id,
                 reply_to=reply_to_id,
                 hide_via=True
