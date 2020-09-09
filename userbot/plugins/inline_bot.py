@@ -25,5 +25,5 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                          text = query,
                          buttons = buttons
                          )
-            await event.answer([result] if result else None)
+            await event.answer([botisalive] if result else None)
         
