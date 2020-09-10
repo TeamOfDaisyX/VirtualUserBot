@@ -80,8 +80,8 @@ Fortunately there are no Mandatory vars for the UniBorg Support Config.
 - The userbot will not work without setting the mandatory vars.
 
 ## Credits
-Thanks To All Contributers For This Project 
-$ Full Repo - X-Tra Telegram 
-$ Lyrics Plugin // Inline Fix - @MrConfused
-$ Sudo Credits - Uniborg , @MrConfused
-$ Some Bug Fixes - @Adarsh_xD , @Aid_3n 
+- Thanks To All Contributers For This Project 
+- $ Full Repo - X-Tra Telegram 
+- $ Lyrics Plugin // Inline Fix - @MrConfused
+- $ Sudo Credits - Uniborg , @MrConfused
+- $ Some Bug Fixes - @Adarsh_xD , @Aid_3n 
