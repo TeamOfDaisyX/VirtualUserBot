@@ -84,4 +84,4 @@ Fortunately there are no Mandatory vars for the UniBorg Support Config.
 - $ Full Repo - X-Tra Telegram 
 - $ Lyrics Plugin // Inline Fix - @MrConfused
 - $ Sudo Credits - Uniborg , @MrConfused
-- $ Some Bug Fixes - @Adarsh_xD , @Aid_3n
+- $ Some Bug Fixes - @Adarsh_xD , @Aid_3n, @Everythingsuckz, @PureindiaLover 
