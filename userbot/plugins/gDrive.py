@@ -38,7 +38,7 @@ REDIRECT_URI = "urn:ietf:wg:oauth:2.0:oob"
 
 # global variable to indicate mimeType of directories in gDrive
 G_DRIVE_DIR_MIME_TYPE = "application/vnd.google-apps.folder"
-BOTLOG_CHATID = Config.PRIVATE_GROUP_BOT_API_ID
+BOTLOG_CHATID = Config.PRIVATE_GROUP_ID
 BOTLOG = True
 
 @borg.on(admin_cmd(pattern=r"ugdrive(?: |$)(.*)"))
