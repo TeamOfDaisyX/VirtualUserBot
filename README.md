@@ -79,4 +79,9 @@ Fortunately there are no Mandatory vars for the UniBorg Support Config.
     - `API_HASH`:   You can get this value from https://my.telegram.org
 - The userbot will not work without setting the mandatory vars.
 
-## xD
+## Credits
+Thanks To All Contributers For This Project 
+$ Full Repo - X-Tra Telegram 
+$ Lyrics Plugin // Inline Fix - @MrConfused
+$ Sudo Credits - Uniborg , @MrConfused
+$ Some Bug Fixes - @Adarsh_xD , @Aid_3n 
