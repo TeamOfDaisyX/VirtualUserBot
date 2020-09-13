@@ -17,7 +17,7 @@ STARK_SOCKS5 = "https://api.proxyscrape.com/?request=getproxies&proxytype=socks5
 SOCKS5_TXT = ("**Proxy Info** \nType: __SOCKS4__ \nTimeOut: __10000__ \nCountry: __All__ \nSsl: __Only For Http Proxy__ \nAnonymity: __Only For Http__ \n[Click Here To View Or Download File Manually](https://api.proxyscrape.com/?request=getproxies&proxytype=socks5&timeout=10000&country=all) \nUploaded By [Friday](https://github.com/starkgang/FridayUserBot) \n**Here Is Your Proxy** 👇")
 sedpng = "https://soon.proxyscrape.com/asset/img/service/downloadicon.svg"
 
-@borg.on(admin_cmd(pattern="proxyhttp")) 
+@borg.on(admin_cmd(pattern="http$")) 
 async def starkxD(event): 
     chat = await event.get_chat() 
     file_name = "proxy_http.txt"
@@ -30,9 +30,10 @@ async def starkxD(event):
         force_document=True,
         thumb=sedpng,
         caption=HTTP_TXT,
-        reply_to=message_id) 
+        reply_to=message_id
+     ) 
     
-@borg.on(admin_cmd(pattern="proxysocks4")) 
+@borg.on(admin_cmd(pattern="socks4$")) 
 async def starkgang(event): 
     chat = await event.get_chat() 
     file_name = "proxy_socks4.txt"
@@ -50,7 +51,7 @@ async def starkgang(event):
         reply_to=message_id
     )
  
-@borg.on(admin_cmd(pattern="proxysocks5")) 
+@borg.on(admin_cmd(pattern="socks5$")) 
 async def friday(event): 
     chat = await event.get_chat() 
     file_name = "proxy_socks5.txt"
