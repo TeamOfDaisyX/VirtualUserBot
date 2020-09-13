@@ -18,14 +18,9 @@ import os
 
 @borg.on(admin_cmd("ipa (.*)"))
 async def install(event):
-    replymsg = await event.get_reply_message()
-    if event.pattern_match.group(1):
-        chat = event.pattern_match.group(1)
-    elif replymsg.text:
-        chat = replymsg.message
-    else:
-    	await event.edit("`Give A Channel Name Please ! `")
-    	return
+        if event.fwd_from:
+        return
+    chat = event.pattern_match.group(1)
     documentss = await borg.get_messages(chat, None , filter=InputMessagesFilterDocument)
     total = int(documentss.total)
     total_doxx = range(0, total)
