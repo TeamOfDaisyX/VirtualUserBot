@@ -16,13 +16,13 @@ import asyncio
 import traceback
 import os
 
-@borg.on(admin_cmd("installall (.*)"))
+@borg.on(admin_cmd("ipa (.*)"))
 async def install(event):
     replymsg = await event.get_reply_message()
     if event.pattern_match.group(1):
-        chnnlname = event.pattern_match.group(1)
+        chat = event.pattern_match.group(1)
     elif replymsg.text:
-        chnnlname = replymsg.message
+        chat = replymsg.message
     else:
     	await event.edit("`Give A Channel Name Please ! `")
     	return
@@ -37,8 +37,8 @@ async def install(event):
             path1 = Path(downloaded_file_name)
             shortname = path1.stem
             load_module(shortname.replace(".py", ""))
-            await borg.send_message(event.chat_id, f"Starting To Install Plugins From {chnnlname} ! Check PRIVATE GROUP for More Info !")
-            sed = f"Installing Plugins From {chnnlname}"
+            await borg.send_message(event.chat_id, f"Starting To Install Plugins From {chat} ! Check PRIVATE GROUP for More Info !")
+            sed = f"Installing Plugins From {chat}"
             logger.info(sed)
             await borg.send_message(
             Config.PRIVATE_GROUP_ID,
