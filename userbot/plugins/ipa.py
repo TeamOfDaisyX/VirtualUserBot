@@ -18,7 +18,7 @@ import os
 
 @borg.on(admin_cmd("ipa (.*)"))
 async def install(event):
-        if event.fwd_from:
+    if event.fwd_from:
         return
     chat = event.pattern_match.group(1)
     documentss = await borg.get_messages(chat, None , filter=InputMessagesFilterDocument)
