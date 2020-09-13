@@ -24,7 +24,7 @@ async def install(event):
     elif replymsg.text:
         chnnlname = replymsg.message
     else:
-    	await edit_or_reply(event, "`Give A Channel Name Please ! `")
+    	await event.edit("`Give A Channel Name Please ! `")
     	return
     documentss = await borg.get_messages(chat, None , filter=InputMessagesFilterDocument)
     total = int(documentss.total)
