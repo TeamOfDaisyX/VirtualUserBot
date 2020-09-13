@@ -34,9 +34,6 @@ async def install(event):
             load_module(shortname.replace(".py", ""))
             sed = f"Installing Plugins From {chat}"
             logger.info(sed)
-            await borg.send_message(
-            Config.PRIVATE_GROUP_ID,
-            "Installed Plugin `{}` successfully.".format(os.path.basename(downloaded_file_name))
-             )
+            await borg.send_message(event.chat_id, "Installed Plugin `{}` successfully.".format(os.path.basename(downloaded_file_name)))
         else:
-            await borg.send_message(Config.PRIVATE_GROUP_ID, "Plugin `{}` has been pre-installed and cannot be installed.".format(os.path.basename(downloaded_file_name)))
+            await borg.send_message(event.chat_id, "Plugin `{}` has been pre-installed and cannot be installed.".format(os.path.basename(downloaded_file_name)))
