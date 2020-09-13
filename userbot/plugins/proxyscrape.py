@@ -26,7 +26,7 @@ async def starkxD(event):
     downloader.start(blocking=False) 
     await event.client.send_file(
         event.chat_id
-        downloaded_file_name
+        downloaded_file_name,
         force_document=True,
         thumb=sedpng,
         caption=HTTP_TXT,
