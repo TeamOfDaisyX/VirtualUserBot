@@ -5,6 +5,7 @@
 # Usage : For Http Proxy : .proxyhttp , For Socks4 : .proxysocks4 , For socks5 : .proxysocks5 
 
 from telethon import events
+from pathlib import Path
 from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 from pySmartDL import SmartDL
 import os
