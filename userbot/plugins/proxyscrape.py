@@ -25,7 +25,7 @@ async def starkxD(event):
     downloader = SmartDL( f"{STARK_HTTP}" , downloaded_file_name, progress_bar=False)
     downloader.start(blocking=False) 
     await event.client.send_file(
-        event.chat_id
+        event.chat_id,
         downloaded_file_name,
         force_document=True,
         thumb=sedpng,
