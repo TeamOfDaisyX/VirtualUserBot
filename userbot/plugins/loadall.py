@@ -11,7 +11,7 @@ import asyncio
 import traceback
 import os
 
-@command(pattern="^.vl", outgoing=True)
+@command(pattern="^.loadall", outgoing=True)
 async def install(event):
     if event.fwd_from:
         return
