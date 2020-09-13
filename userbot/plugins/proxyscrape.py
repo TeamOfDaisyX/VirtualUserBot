@@ -30,8 +30,7 @@ async def starkxD(event):
         downloaded_file_name,
         force_document=True,
         thumb=sedpng,
-        caption=HTTP_TXT,
-        reply_to=message_id
+        caption=HTTP_TXT
      ) 
     
 @borg.on(admin_cmd(pattern="socks4$")) 
@@ -42,15 +41,14 @@ async def starkgang(event):
     downloaded_file_name = os.path.join(Config.TMP_DOWNLOAD_DIRECTORY , file_name)
     downloader = SmartDL( f"{STARK_SOCKS4}" , downloaded_file_name, progress_bar=False)
     downloader.start(blocking=False) 
-    await borg.send_message(event.chat_id , SOCKS4_TXT)
+    #await borg.send_message(event.chat_id , SOCKS4_TXT)
     await event.client.send_file(
         event.chat_id , 
         downloaded_file_name,
         thumb=sedpng,
         caption=SOCKS4_TXT,
         allow_cache=False,
-        force_document=True,
-        reply_to=message_id
+        force_document=True
     )
  
 @borg.on(admin_cmd(pattern="socks5$")) 
@@ -61,13 +59,12 @@ async def friday(event):
     downloaded_file_name = os.path.join(Config.TMP_DOWNLOAD_DIRECTORY , file_name)
     downloader = SmartDL( f"{STARK_SOCKS5}" , downloaded_file_name, progress_bar=False)
     downloader.start(blocking=False) 
-    await borg.send_message(event.chat_id , SOCKS5_TXT)
+    #await borg.send_message(event.chat_id , SOCKS5_TXT)
     await event.client.send_file(
         event.chat_id , 
         downloaded_file_name,
         thumb=sedpng,
         caption=SOCKS5_TXT,
         allow_cache=False,
-        force_document=True,
-        reply_to=message_id
+        force_document=True
     )
