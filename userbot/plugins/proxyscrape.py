@@ -28,7 +28,7 @@ async def starkxD(event):
     await event.client.send_file(
         event.chat_id,
         downloaded_file_name,
-        force_document=True,
+        force_document=False,
         thumb=sedpng,
         caption=HTTP_TXT
      ) 
@@ -48,7 +48,7 @@ async def starkgang(event):
         thumb=sedpng,
         caption=SOCKS4_TXT,
         allow_cache=False,
-        force_document=True
+        force_document=False
     )
  
 @borg.on(admin_cmd(pattern="socks5$")) 
@@ -66,5 +66,5 @@ async def friday(event):
         thumb=sedpng,
         caption=SOCKS5_TXT,
         allow_cache=False,
-        force_document=True
+        force_document=False
     )
