@@ -37,7 +37,7 @@ async def install(event):
             path1 = Path(downloaded_file_name)
             shortname = path1.stem
             load_module(shortname.replace(".py", ""))
-            await borg.send_message(event.chat_id, f"Starting To Install Plugins From {chat} ! Check PRIVATE GROUP for More Info !")
+            await event.edit(f"Starting To Install Plugins From {chat} ! Check PRIVATE GROUP for More Info !")
             sed = f"Installing Plugins From {chat}"
             logger.info(sed)
             await borg.send_message(
