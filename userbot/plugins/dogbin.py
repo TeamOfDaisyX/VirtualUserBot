@@ -1,28 +1,32 @@
 """IX.IO pastebin like site
-Syntax: .paste"""
-from telethon import events
-import asyncio
+Syntax: .paste
+From Pornhub"""
+from uniborg.util import admin_cmd
 from datetime import datetime
-import os
 import requests
-from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
+import os
+import logging
+logging.basicConfig(
+    format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
+    level=logging.WARNING)
 
 
 def progress(current, total):
-    logger.info("Downloaded {} of {}\nCompleted {}".format(current, total, (current / total) * 100))
-
+    logger.info(
+        "Downloaded {} of {}\nCompleted {}".format(
+            current,
+            total,
+            (current / total) * 100))
 
 @borg.on(admin_cmd("paste ?(.*)"))
 @borg.on(sudo_cmd("paste ?(.*)", allow_sudo=True))
 async def _(event):
-    mepaste = await edit_or_reply(event, "Pasting This...")
     if event.fwd_from:
         return
-    start = datetime.now()
+    datetime.now()
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     input_str = event.pattern_match.group(1)
-    message = "SYNTAX: `.paste <long text to include>`"
     if input_str:
         message = input_str
     elif event.reply_to_msg_id:
@@ -38,19 +42,40 @@ async def _(event):
                 m_list = fd.readlines()
             message = ""
             for m in m_list:
-                message += m.decode("UTF-8") + "\r\n"
+                # message += m.decode("UTF-8") + "\r\n"
+                message += m.decode("UTF-8")
             os.remove(downloaded_file_name)
         else:
             message = previous_message.message
     else:
-        message = "SYNTAX: `.paste <long text to include>`"
-    url = "https://del.dog/documents"
-    r = requests.post(url, data=message.encode("UTF-8")).json()
-    url = f"https://del.dog/{r['key']}"
-    end = datetime.now()
-    ms = (end - start).seconds
-    if r["isUrl"]:
-        nurl = f"https://del.dog/v/{r['key']}"
-        await mepaste.edit("Dogged to {} in {} seconds. GoTo Original URL: {}".format(url, ms, nurl))
+        await event.edit("Give Some Text Or File To Paste")
+    py_file = ""
+    name = "ok"
+    if previous_message.media:
+        name = await borg.download_media(
+            previous_message,
+            Config.TMP_DOWNLOAD_DIRECTORY,
+            progress_callback=progress
+        )
+    downloaded_file_name = name
+    if downloaded_file_name.endswith(".py"):
+        py_file += ".py"
+        data = message
+        key = requests.post(
+            'https://nekobin.com/api/documents',
+            json={
+                "content": data}).json().get('result').get('key')
+        url = f'https://nekobin.com/{key}{py_file}'
+        raw = f'https://nekobin.com/raw/{key}{py_file}'
+        reply_text = f'Pasted Text [neko]({url})\n Raw ? [View Raw]({raw})'
+        await event.edit(reply_text)
     else:
-        await mepaste.edit("Dogged to {} in {} seconds".format(url, ms))
+        data = message
+        key = requests.post(
+            'https://nekobin.com/api/documents',
+            json={
+                "content": data}).json().get('result').get('key')
+        url = f'https://nekobin.com/{key}'
+        raw = f'https://nekobin.com/raw/{key}'
+        reply_text = f'Pasted Text [neko]({url})\n Raw ? [View Raw]({raw})'
+        await event.edit(reply_text)
