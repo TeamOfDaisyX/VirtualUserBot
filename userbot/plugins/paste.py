@@ -1,7 +1,7 @@
 """IX.IO pastebin like site
 Syntax: .paste
 From Pornhub"""
-from uniborg.util import admin_cmd
+from uniborg.util import admin_cmd, sudo_cmd
 from datetime import datetime
 import requests
 import os
