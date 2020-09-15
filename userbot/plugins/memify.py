@@ -1,6 +1,7 @@
 """Reply to an image/sticker with .mmf` 'text on top' ; 'text on bottom
 base by: @r4v4n4
 created by: @A_Dark_Princ3
+
 if you change these, you gay.
 """
 
@@ -40,13 +41,13 @@ async def _(event):
     if event.fwd_from:
         return 
     if not event.reply_to_msg_id:
-       await event.edit("`Syntax: reply to an image with .mms` 'text on top' ; 'text on bottom' ")
+       await event.edit("`Syntax: reply to an image with .mmf And Text `")
        return
     reply_message = await event.get_reply_message() 
     if not reply_message.media:
        await event.edit("```reply to a image/sticker/gif```")
        return
-    chat = "@MemeAutobot"
+    chat = "@MemeCreatorBot"
     sender = reply_message.sender
     file_ext_ns_ion = "@memetime.png"
     uploaded_gif = None
@@ -57,7 +58,7 @@ async def _(event):
        await event.edit("```Transfiguration Time! Mwahaha memifying this image! (」ﾟﾛﾟ)｣ ```")
     file = await borg.download_file(reply_message.media)
     
-    async with borg.conversation("@MemeAutobot") as bot_conv:
+    async with borg.conversation("@MemeCreatorBot") as bot_conv:
           try:
             memeVar = event.pattern_match.group(1)
             await silently_send_message(bot_conv, "/start")
@@ -66,7 +67,7 @@ async def _(event):
             await borg.send_file(chat, reply_message.media)
             response = await bot_conv.get_response()
           except YouBlockedUserError: 
-              await event.reply("```Please unblock @MemeAutobot and try again```")
+              await event.reply("```Please unblock @MemeCreatorBot and try again```")
               return
           if response.text.startswith("Forward"):
               await event.edit("```can you kindly disable your forward privacy settings for good nibba?```")
@@ -112,11 +113,11 @@ async def _(event):
                 event.chat_id,
                 requires_file_name,
                 supports_streaming=False,
-                caption="Userbot: Powered by @x-tra-telegram",
+                caption="@FridayOT",
                 # Courtesy: @A_Dark_Princ3
             )
             await event.delete()
-            sax = await borg.send_message(event.chat_id, "`☠️☠️10 Points to Griffindor!🔥🔥`")
+            sax = await borg.send_message(event.chat_id, "Memeify Sucess !")
             await asyncio.sleep(4)
             sax.delete()
           elif not is_message_image(reply_message):
