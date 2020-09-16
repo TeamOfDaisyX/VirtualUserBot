@@ -27,3 +27,30 @@ async def noobishere(event):
     starkxd = f"Trump Has Tweeted {ipman}"
     await edit_or_reply(event, "Trump : Wait I Am Tweeting Your Texts")
     await event.client.send_file(event.chat_id, tweetimg, caption=starkxd, reply_to=reply_to_id) 
+
+
+@borg.on(admin_cmd("tweet ?(.*)"))
+@borg.on(sudo_cmd("tweet ?(.*)", allow_sudo=True))
+async def noobishere(event):
+    reply_to_id = event.message.id
+    text = event.pattern_match.group(1)
+    input_str = event.pattern_match.group(1)
+    if text:
+        if ":" in text:
+            stark = input_str.split(":",1)
+        else:
+            await event.reply("You Are Using Invalid Syntax ! Make Sure To Use tweetusername:text Regex")
+            return
+    if (len(stark) != 2):
+        await event.reply("You Are Using Invalid Syntax ! Make Sure To Use tweetusername:text Regex")
+        return
+
+    starky = stark[0]
+    ipman = stark[1]
+    url = f"https://nekobot.xyz/api/imagegen?type=tweet&username={starky}&text={ipman}"
+    starkgang = requests.get(url=url).json()
+    meikobot = starkgang.get("message")
+    tweetimg = meikobot
+    starkxd = f"{starky} Has Tweeted {ipman}"
+    await edit_or_reply(event, "{starky} : Wait I Am Tweeting Your Texts")
+    await event.client.send_file(event.chat_id, tweetimg, caption=starkxd, reply_to=reply_to_id) 
