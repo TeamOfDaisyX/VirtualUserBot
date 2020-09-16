@@ -52,5 +52,5 @@ async def noobishere(event):
     meikobot = starkgang.get("message")
     tweetimg = meikobot
     starkxd = f"{starky} Has Tweeted {ipman}"
-    await edit_or_reply(event, "{starky} : Wait I Am Tweeting Your Texts")
+    await edit_or_reply(event, f"{starky} : Wait I Am Tweeting Your Texts")
     await event.client.send_file(event.chat_id, tweetimg, caption=starkxd, reply_to=reply_to_id) 
