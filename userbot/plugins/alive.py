@@ -1,11 +1,25 @@
 """Check if userbot alive. If you change these, you become the gayest gay such that even the gay world will disown you."""
 #IMG CREDITS: @WhySooSerious
-# 
 import asyncio
 from telethon import events
 from uniborg.util import admin_cmd, sudo_cmd, edit_or_reply
 from userbot import ALIVE_NAME
 from telethon.tl.types import ChannelParticipantsAdmins
+
+issudousing = Config.SUDO_USERS
+islogokay = Config.PRIVATE_GROUP_ID
+currentversion = "3.0"
+
+if issudousing:
+    amiusingsudo = 'Active ✅'
+else:
+    amiusingsudo = 'Inactive ❌'
+
+if islogokay:
+    logchat = 'Connected ✅'
+else:
+    logchat = 'Dis-Connected ❌'
+
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Unknown"
 PM_IMG = "https://telegra.ph/file/22535f8051a58af113586.jpg"
 pm_caption = "`FRIDAY IS:` **ONLINE**\n\n"
@@ -13,7 +27,9 @@ pm_caption += "**SYSTEMS STATS**\n"
 pm_caption += "`Telethon Version:` **1.15.0**\n`Python:` **3.7.4**\n"
 pm_caption += "`Database Status:` **Functional**\n"
 pm_caption += "**Current Branch** : `Master`\n"
-pm_caption += "**Version** : `3.0`\n"
+pm_caption += f"**Version** : `{currentversion}`\n"
+pm_caption += f"**Sudo** : `{amiusingsudo}`\n"
+pm_cation  += f"**Log Connections** : `{logchat}` \n"
 pm_caption += "**Current Sat** : `StarkGangSat-2.25`\n"
 pm_caption += f"**My Boss** : {DEFAULTUSER} \n"
 pm_caption += "**Heroku Database** : `AWS - Working Properly`\n\n"
