@@ -9,7 +9,6 @@ from telethon.tl.types import ChannelParticipantsAdmins
 
 issudousing = Config.SUDO_USERS
 islogokay = Config.PRIVATE_GROUP_ID
-UPTIME = datetime.now()
 currentversion = "3.0"
 
 if issudousing:
@@ -30,8 +29,7 @@ pm_caption += "`Telethon Version:` **1.15.0**\n`Python:` **3.7.4**\n"
 pm_caption += "`Database Status:` **Functional**\n"
 pm_caption += "**Current Branch** : `Master`\n"
 pm_caption += f"**Version** : `{currentversion}`\n"
-pm_caption += f"**Sudo** : `{amiusingsudo}`\n"
-pm_caption += f"**Uptime** : `{str(datetime.now() - UPTIME).split('.')[0]}`\n"                                                                      
+pm_caption += f"**Sudo** : `{amiusingsudo}`\n"                                                                      
 pm_cation  += f"**Log Connections** : `{logchat}` \n"
 pm_caption += "**Current Sat** : `StarkGangSat-2.25`\n"
 pm_caption += f"**My Boss** : {DEFAULTUSER} \n"
