@@ -1,6 +1,7 @@
 """Check if userbot alive. If you change these, you become the gayest gay such that even the gay world will disown you."""
 #IMG CREDITS: @WhySooSerious
 import asyncio
+import datetime
 from telethon import events
 from uniborg.util import admin_cmd, sudo_cmd, edit_or_reply
 from userbot import ALIVE_NAME
@@ -8,8 +9,8 @@ from telethon.tl.types import ChannelParticipantsAdmins
 
 issudousing = Config.SUDO_USERS
 islogokay = Config.PRIVATE_GROUP_ID
+UPTIME = datetime.now()
 currentversion = "3.0"
-
 if issudousing:
     amiusingsudo = 'Active ✅'
 else:
@@ -29,6 +30,7 @@ pm_caption += "`Database Status:` **Functional**\n"
 pm_caption += "**Current Branch** : `Master`\n"
 pm_caption += f"**Version** : `{currentversion}`\n"
 pm_caption += f"**Sudo** : `{amiusingsudo}`\n"
+pm_caption += f"**Uptime** : `{str(datetime.now() - START_TIME).split('.')[0]}`\n"                                                                      
 pm_cation  += f"**Log Connections** : `{logchat}` \n"
 pm_caption += "**Current Sat** : `StarkGangSat-2.25`\n"
 pm_caption += f"**My Boss** : {DEFAULTUSER} \n"
