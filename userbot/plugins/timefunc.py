@@ -1,6 +1,6 @@
 import time
 
-uptime = time.time()
+uptimebot = time.time()
 
 
 def get_readable_time(seconds: int) -> str:
