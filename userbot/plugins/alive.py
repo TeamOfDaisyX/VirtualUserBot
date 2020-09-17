@@ -1,7 +1,7 @@
 """Check if userbot alive. If you change these, you become the gayest gay such that even the gay world will disown you."""
 #IMG CREDITS: @WhySooSerious
 import asyncio
-import datetime
+from datetime import datetime
 from telethon import events
 from uniborg.util import admin_cmd, sudo_cmd, edit_or_reply
 from userbot import ALIVE_NAME
