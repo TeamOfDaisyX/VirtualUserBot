@@ -1,12 +1,14 @@
 """Check if userbot alive. If you change these, you become the gayest gay such that even the gay world will disown you."""
 #IMG CREDITS: @WhySooSerious
 import asyncio
-from datetime import datetime
+import time
+from userbot.plugins.timefunc import uptimebot, get_readable_time
 from telethon import events
 from uniborg.util import admin_cmd, sudo_cmd, edit_or_reply
 from userbot import ALIVE_NAME
 from telethon.tl.types import ChannelParticipantsAdmins
 
+uptime = get_readable_time((time.time() - uptimebot))
 issudousing = Config.SUDO_USERS
 islogokay = Config.PRIVATE_GROUP_ID
 currentversion = "3.0"
@@ -37,6 +39,7 @@ pm_caption += "**Heroku Database** : `AWS - Working Properly`\n\n"
 pm_caption += "**License** : [GNU General Public License v3.0](github.com/StarkGang/FridayUserbot/blob/master/LICENSE)\n"
 pm_caption += "Copyright : By [StarkGang@Github](GitHub.com/StarkGang)\n"
 pm_caption += "**OS** : `Slim Buster` \n"
+pm_caption += f"**Uptime** : `{uptime}` \n"
 pm_caption += " [Deploy FridayUserbot](https://telegra.ph/FRIDAY-06-15)"
 
 @borg.on(admin_cmd(pattern=r"alive"))
