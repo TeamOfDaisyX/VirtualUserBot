@@ -69,7 +69,7 @@ async def _(event):
               return
           if response.text.startswith("Forward"):
               await event.edit("```can you kindly disable your forward privacy settings for good nibba?```")
-          if "" in response.text:
+          if "Send" in response.text:
             await event.edit("```🤨 NANI?! This is not an image! This will take sum tym to convert to image owo 🧐```")
             thumb = None
             if os.path.exists(thumb_image_path):
