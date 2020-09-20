@@ -23,8 +23,8 @@ CUSTOM_MIDDLE_PMP = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "Protection By 
 USER_BOT_WARN_ZERO = "You Have Attempted To Spam Masters Inbox So Inorder To Avoid Over Spam , You Have Been Blocked By Userbot"
 USER_BOT_NO_WARN = ("**Hello My Friend, This A Automated Message From Friday Security Service 🇮🇳** \n\n"
                     f"__User {DEFAULTUSER} Is Currently Offline !__ \n\n"
-                    "`You Can Kindly Wait Till He Approves You 💫` \n\n"
-                    "__And Don't Attempt To Spam His Inbox ! You May Get Blocked And Reported__ \n\n"
+                    "`You Can Kindly Wait Till He Approves You 💫` And Don't Attempt To Spam His Inbox \n\n"
+                    "__You May Get Blocked And Reported__ \n\n"
                     f"{CUSTOM_MIDDLE_PMP}")
 
 
