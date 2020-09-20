@@ -10,7 +10,7 @@
     "productivity"
   ],
   "repository": "https://github.com/starkgang/FridayUserbot",
-  "website": "StarkGang.ml",
+  "website": "starkgang.ml",
   "stack": "container",
   "success_url": "t.me/FridayOT",
   "env": {
@@ -37,6 +37,10 @@
     },
     "PLUGIN_CHANNEL": {
       "description": "Channel Where You Save Your Plugins",
+      "value": ""
+    },
+    "NEWS_CHANNEL_ID": {
+      "description": "Channel Where You Want News To Be Sent.",
       "value": ""
     },
     "PRIVATE_GROUP_ID": {
