@@ -35,7 +35,6 @@ if Var.PRIVATE_GROUP_ID is not None:
            return
         replied_user = await event.client(GetFullUserRequest(event.chat_id))
         firstname = replied_user.user.first_name
-        reason = event.pattern_match.group(1)
         chat = await event.get_chat()
         if event.is_private:
             if not pmpermit_sql.is_approved(chat.id):
@@ -44,7 +43,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                 if chat.id in PREV_REPLY_MESSAGE:
                     await PREV_REPLY_MESSAGE[chat.id].delete()
                     del PREV_REPLY_MESSAGE[chat.id]
-                pmpermit_sql.approve(chat.id, reason)
+                pmpermit_sql.approve(chat.id, "Approved Another Nibba")
                 await event.edit("Approved to pm [{}](tg://user?id={})".format(firstname, chat.id))
                 await asyncio.sleep(3)
                 await event.delete()
@@ -56,7 +55,6 @@ if Var.PRIVATE_GROUP_ID is not None:
             return
         replied_user = await event.client(GetFullUserRequest(event.chat_id))
         firstname = replied_user.user.first_name
-        reason = event.pattern_match.group(1)
         chat = await event.get_chat()
         if event.is_private:
             if pmpermit_sql.is_approved(chat.id):
@@ -71,7 +69,6 @@ if Var.PRIVATE_GROUP_ID is not None:
             return
         replied_user = await event.client(GetFullUserRequest(event.chat_id))
         firstname = replied_user.user.first_name
-        reason = event.pattern_match.group(1)
         chat = await event.get_chat()
         if event.is_private:
             if pmpermit_sql.is_approved(chat.id):
