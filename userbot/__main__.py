@@ -31,7 +31,7 @@ else:
             api_hash=Var.API_HASH
         ).start(bot_token=Var.TG_BOT_TOKEN_BF_HER)
         print("Initialisation finished with no errors")
-        print("Starting Userbot")
+        print("Starting To Install Inline In Bot")
         bot.loop.run_until_complete(add_bot(Var.TG_BOT_USER_NAME_BF_HER))
         print("Startup Completed")
     else:
@@ -49,7 +49,8 @@ for name in files:
 
 import userbot._core
 
-print("Enabled Friday ! ")
+print("Friday Have Been Installed Successfully !")
+print("You Can Visit @FridayOT For Any Support Or Doubts")
 
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
