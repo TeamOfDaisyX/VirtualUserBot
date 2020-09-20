@@ -20,6 +20,7 @@ geopy
 gitpython
 google-api-python-client==1.8.0
 google-auth-oauthlib
+git+https://github.com/artyshko/smd.git
 google_images_download>=2.7.1
 googletrans>=2.4.0
 gsearch
