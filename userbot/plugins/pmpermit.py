@@ -19,18 +19,17 @@ PREV_REPLY_MESSAGE = {}
 
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
-CUSTOM_MIDDLE_PMP = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "**YOU HAVE TRESPASSED TO MY MASTERS INBOX** \n`THIS IS ILLEGAL AND REGARDED AS A CRIME`"
-USER_BOT_WARN_ZERO = "`You were spamming my Boss's inbox, henceforth your retarded lame ass has been blocked by my master's userbot.` "
-USER_BOT_NO_WARN = ("`Hello ! This is` **F.R.I.D.A.Y**\n"
-                    "`Private Messaging Security Protocol ⚠️`\n\n"
-                    "**Currently My Boss**\n"
-                    f"{DEFAULTUSER} is Busy ! So Better Don't Spam His Inbox !\n\n"
-                    f"{CUSTOM_MIDDLE_PMP} \n\n"
-                    "**Now You Are In Trouble So Send** 🍁 `/start` 🍁  **To Start A Valid Conversation!!**")
+CUSTOM_MIDDLE_PMP = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "Protection By Friday 🇮🇳"
+USER_BOT_WARN_ZERO = "You Have Attempted To Spam Masters Inbox So Inorder To Avoid Over Spam , You Have Been Blocked By Userbot"
+USER_BOT_NO_WARN = ("Hello My Friend, This A Automated Message From Friday Security Service \n"
+                    f"User {DEFAULTUSER} Is Currently Offline !\n"
+                    "You Can Kindly Wait Till He Approves You \n"
+                    "And Don't Attempt To Spam His Inbox ! You May Get Blocked And Reported \n"
+                    f"{CUSTOM_MIDDLE_PMP}")
 
 
 if Var.PRIVATE_GROUP_ID is not None:
-    @command(pattern="^.a ?(.*)")
+    @command(pattern="^.a$")
     async def block(event):
         if event.fwd_from:
            return
@@ -51,7 +50,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                 await event.delete()
 
 
-    @command(pattern="^.block ?(.*)")
+    @command(pattern="^.block$")
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -66,7 +65,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                 await asyncio.sleep(3)
                 await event.client(functions.contacts.BlockRequest(chat.id))
 
-    @command(pattern="^.da ?(.*)")
+    @command(pattern="^.da$")
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -80,7 +79,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                 await event.edit("Disapproved User [{}](tg://user?id={})".format(firstname, chat.id))
                 await event.delete()
 
-    @command(pattern="^.listapproved")
+    @command(pattern="^.listapproved$")
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -200,5 +199,5 @@ async def hehehe(event):
     if event.is_private:
         if not pmpermit_sql.is_approved(chat.id):
             pmpermit_sql.approve(chat.id, "**My Boss Is Best🔥**")
-            await borg.send_message(chat, "**This User Is My Dev ! So Auto Approved !!!!**")
+            await borg.send_message(chat, "**User Detected As Developer ! Auto Approved**")
            
