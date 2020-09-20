@@ -25,7 +25,6 @@ class Var(object):
     DOWNLOAD_PFP_URL_CLOCK = os.environ.get("DOWNLOAD_PFP_URL_CLOCK", None)
     G_DRIVE_CLIENT_ID = os.environ.get("G_DRIVE_CLIENT_ID", None)
     G_DRIVE_CLIENT_SECRET = os.environ.get("G_DRIVE_CLIENT_SECRET", None)
-    NEWS_CHANNEL_ID = int(os.environ.get("NEWS_CHANNEL_ID", -100))
     GDRIVE_FOLDER_ID = os.environ.get("GDRIVE_FOLDER_ID", "root")
     AUTH_TOKEN_DATA = os.environ.get("AUTH_TOKEN_DATA", None)
     MAX_FLOOD_IN_P_M_s = int(os.environ.get("MAX_FLOOD_IN_P_M_s", 3))
@@ -38,4 +37,5 @@ class Var(object):
     PRIVATE_GROUP_ID = int(os.environ.get("PRIVATE_GROUP_ID", None))
 class Development(Var):
     LOGGER = True
-    # Here for later purposes like uniborg config
+    # Hm
+    NEWS_CHANNEL_ID = int(os.environ.get("NEWS_CHANNEL_ID", -100))
