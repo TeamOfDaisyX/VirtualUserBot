@@ -105,14 +105,16 @@ def load_module(shortname):
         mod.logger = logging.getLogger(shortname)
         # support for uniborg
         sys.modules["uniborg.util"] = userbot.utils
+        sys.modules["friday.util"] = userbot.utils
         mod.Config = Config
         mod.borg = bot
+        mod.friday = bot
         # support for paperplaneextended
         sys.modules["userbot.events"] = userbot.utils
         spec.loader.exec_module(mod)
         # for imports
         sys.modules["userbot.plugins."+shortname] = mod
-        print("Successfully (re)imported "+shortname)
+        print("Successfully imported "+shortname)
 
 def remove_plugin(shortname):
     try:
@@ -353,7 +355,7 @@ class Loader():
     def __init__(self, func=None, **args):
         self.Var = Var
         bot.add_event_handler(func, events.NewMessage(**args))
-#© and Credit to ==> π$ ( @MrConfused // Sandeep ) 
+
 def sudo_cmd(pattern=None, **args):
     args["func"] = lambda e: e.via_bot_id is None
     stack = inspect.stack()
@@ -398,7 +400,6 @@ def sudo_cmd(pattern=None, **args):
     is_message_enabled = True
     return events.NewMessage(**args)
 
-#© and Credit to ==> π$ ( @MrConfused // Sandeep ) 
 async def edit_or_reply(event, text):
     if event.from_id in Config.SUDO_USERS:
         reply_to = await event.get_reply_message()
