@@ -4,6 +4,7 @@
 # Test
 
 import requests
+from var import Var
 from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 
 newslog = Var.NEWS_CHANNEL_ID
