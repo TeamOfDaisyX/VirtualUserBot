@@ -5,7 +5,6 @@
 import requests
 from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 
-
 newslog = Var.NEWS_CHANNEL_ID
 
 @borg.on(admin_cmd("news (.*)"))
