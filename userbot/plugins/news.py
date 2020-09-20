@@ -27,7 +27,7 @@ async def _(event):
             results.append(ar["content"])
             for item in starknews["data"]:
                 sedlyf = item["content"]
-                img = item["imgUrl"]
+                img = item["imageUrl"]
                 writter = item["author"]
                 dateis = item["date"]
                 readthis = item["readMoreUrl"]
