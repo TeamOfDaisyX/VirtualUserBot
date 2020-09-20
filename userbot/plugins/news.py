@@ -26,7 +26,7 @@ async def _(event):
                 sedlyf = item["content"]
                 img = item["imgUrl"]
                 writter = item["author"]
-                dateis = item["date"] I
+                dateis = item["date"]
                 readthis = item["readMoreUrl"]
                 titles = item["title"]
                 sed1 = img
