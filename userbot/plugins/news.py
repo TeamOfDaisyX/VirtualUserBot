@@ -8,6 +8,7 @@ from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 newslog = Var.NEWS_CHANNEL_ID
 
 @borg.on(admin_cmd("news (.*)"))
+@borg.on(sudo_cmd("news (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
