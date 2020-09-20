@@ -35,7 +35,6 @@ class Var(object):
         t_file.write(AUTH_TOKEN_DATA)
         t_file.close()
     PRIVATE_GROUP_ID = int(os.environ.get("PRIVATE_GROUP_ID", None))
+    NEWS_CHANNEL_ID = int(os.environ.get("NEWS_CHANNEL_ID", -100))
 class Development(Var):
     LOGGER = True
-    # Hm
-    NEWS_CHANNEL_ID = int(os.environ.get("NEWS_CHANNEL_ID", -100))
