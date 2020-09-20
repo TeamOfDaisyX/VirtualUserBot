@@ -1,6 +1,6 @@
 # Copyright (C) By StarkGang [@STARKXD]
 # Don't edit credits
-# Works On Bases Of Cyberboysumanjay's Inshorts News Api 
+# Works On Bases Of Cyberboysumanjay's Inshorts News Api
 # Test
 
 import requests
@@ -14,13 +14,16 @@ newslog = Var.NEWS_CHANNEL_ID
 async def _(event):
     if event.fwd_from:
         return
-        infintyvar = event.pattern_match.group(1)
-        main_url = f"https://inshortsapi.vercel.app/news?category={infintyvar}"
-        await edit_or_reply(event, f"Ok ! Fectching {infintyvar} From inshortsapi Server And Sending To News Channel")
-        starknews = requests.get(main_url).json()
-        article = starknews["data"]
-        results = []
-        for ar in article:
+    if Var.NEWS_CHANNEL_ID is None:
+        await edit_or_reply(event, "`Please ADD NEWS_CHANNEL_ID For This Module To Work`")
+        return
+    infintyvar = event.pattern_match.group(1)
+    main_url = f"https://inshortsapi.vercel.app/news?category={infintyvar}"
+    await edit_or_reply(event, f"Ok ! Fectching {infintyvar} From inshortsapi Server And Sending To News Channel")
+    starknews = requests.get(main_url).json()
+    article = starknews["data"]
+    results = []
+    for ar in article:
             results.append(ar["content"])
             for item in starknews["data"]:
                 sedlyf = item["content"]
