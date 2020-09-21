@@ -11,7 +11,7 @@ W_CHAT = Var.WHITE_CHATS
 
 
 if SPAM_PROTECT == "ENABLE":
-@borg.on(events.ChatAction)
+@bot.on(events.ChatAction)
 async def spamwatch(event): 
    if event.user_joined or event.user_added and not event.chat_id in W_CHAT and SPAM_PROTECT and spamwatchapi and not event.is_private:
        chat = await event.get_chat()
