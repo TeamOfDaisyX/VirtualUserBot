@@ -131,7 +131,7 @@ if bool(ENV):
 
     # Spamwatch Module 
     SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)
-    ANTISPAM_SYSTEM = os.environ.get("ANTISPAM_SYSTEM", "Disable")
+    ANTISPAM_SYSTEM = os.environ.get("ANTISPAM_SYSTEM", "DISABLE")
     WHITE_CHAT = PRIVATE_GROUP_ID = int(os.environ.get("WHITE_CHAT", False))
 
     # Last.fm Module
