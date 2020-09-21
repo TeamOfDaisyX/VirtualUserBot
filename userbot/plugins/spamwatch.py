@@ -5,7 +5,7 @@ import spamwatch
 from var import Var
 
 spamwatchapi = Var.SPAMWATCH_API 
-SPAM_PROTECT = Var.ANTISPAM_SYSTEM
+SPAM_PROTECT = "ENABLE"
 W_CHAT = Var.WHITE_CHAT
 
 
