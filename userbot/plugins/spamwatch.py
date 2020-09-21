@@ -3,6 +3,7 @@ import spamwatch
 import os
 import asyncio
 from telethon import events
+import var as Var
 
 spamwatchapi = Var.SPAMWATCH_API 
 SPAM_PROTECT = Var.ANTISPAM_SYSTEM
