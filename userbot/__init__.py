@@ -129,6 +129,11 @@ if bool(ENV):
     # Clean Welcome
     CLEAN_WELCOME = sb(os.environ.get("CLEAN_WELCOME", "True"))
 
+    # Spamwatch Module 
+    SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)
+    ANTISPAM_SYSTEM = os.environ.get("ANTISPAM_SYSTEM", "Disable")
+    WHITE_CHAT = PRIVATE_GROUP_ID = int(os.environ.get("WHITE_CHAT", False))
+
     # Last.fm Module
     BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
     DEFAULT_BIO = os.environ.get("DEFAULT_BIO", None)
