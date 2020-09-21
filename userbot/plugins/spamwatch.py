@@ -19,7 +19,7 @@ if SPAM_PROTECT == "ENABLE":
        creator = chat.creator   
        if admin or creator:
            return
-       sw = spamwatch.borg(spamwatchapi)
+       sw = spamwatch.Client(spamwatchapi)
        whoistheguy = await event.get_user()      
        try:
            sswatch = sw.get_ban(whoistheguy.id) 
