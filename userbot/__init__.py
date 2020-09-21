@@ -26,6 +26,7 @@ import asyncio
 import pylast
 from requests import get
 import time
+from .function import fridayfunction as topfunc
 
 Lastupdate = time.time()
 
