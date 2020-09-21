@@ -38,6 +38,6 @@ class Var(object):
     NEWS_CHANNEL_ID = int(os.environ.get("NEWS_CHANNEL_ID", -100))
     SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)
     ANTISPAM_SYSTEM = os.environ.get("ANTISPAM_SYSTEM", "DISABLE")
-    WHITE_CHAT = PRIVATE_GROUP_ID = int(os.environ.get("WHITE_CHAT", None))
+    WHITE_CHAT = set(int(x) for x in os.environ.get("WHITE_CHAT", "").split())
 class Development(Var):
     LOGGER = True
