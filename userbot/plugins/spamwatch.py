@@ -7,7 +7,7 @@ from var import Var
 
 spamwatchapi = Var.SPAMWATCH_API 
 SPAM_PROTECT = Var.ANTISPAM_SYSTEM
-W_CHAT = Var.WHITE_CHATS
+W_CHAT = Var.WHITE_CHAT
 
 
 if SPAM_PROTECT == "ENABLE":
