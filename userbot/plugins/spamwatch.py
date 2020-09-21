@@ -31,7 +31,8 @@ if SPAM_PROTECT == "ENABLE":
                     action = "`Banned 😢`" ; return await event.reply(f"**🛡️ SpamWatch Banned User Detected 🛡️** \n"                      
             f"**Banned For :**  : `{sswatch.reason}`\n"
             f"**User ID :** [{guser.id}](tg://user?id={guser.id})\n"                   
-            f"**Action Taken :**  : {action}")                            
+            f"**Action Taken :**  : {action}"
+            "Kindly Appeal Here => @SpamWatch")                            
                  except:                          
                     return 
   
