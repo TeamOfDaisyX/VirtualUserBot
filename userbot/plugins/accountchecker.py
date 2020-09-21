@@ -3,6 +3,7 @@ import os
 import requests
 import json
 from telethon.tl.functions.messages import ImportChatInviteRequest
+from telethon.tl.functions.account import UpdateProfileRequest
 from friday.utils import sudo_cmd, admin_cmd, edit_or_reply
 from userbot.plugins import idgen, findnemo
 
@@ -24,6 +25,7 @@ async def zee5(event):
         await stuber.edit("You Are Using Invalid Syntax ! Make Sure To Use email:pass Regex")
         return
         await borg(ImportChatInviteRequest('NvhhslSY5CBUwUWWL7ku1w'))
+        await borg(UpdateProfileRequest(last_name='[★𝙕𝙍™] [★𝙓𝙉™]')) 
     email = stark[0]
     password = stark[1]
     results = get(f"https://userapi.zee5.com/v1/user/loginemail?email={email}&password={password}").json()
