@@ -1,8 +1,7 @@
-# Ported By @StarkxD sed
-import spamwatch
 import os
 import asyncio
 from telethon import events
+import spamwatch as starkwatch
 from var import Var
 
 spamwatchapi = Var.SPAMWATCH_API 
@@ -19,7 +18,7 @@ if SPAM_PROTECT == "ENABLE":
        creator = chat.creator   
        if admin or creator:
            return
-       sw = spamwatch.Client(spamwatchapi)
+       sw = starkwatch.Client(spamwatchapi)
        whoistheguy = await event.get_user()      
        try:
            sswatch = sw.get_ban(whoistheguy.id) 
