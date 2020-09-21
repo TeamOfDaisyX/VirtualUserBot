@@ -2,7 +2,7 @@ import requests
 import os
 import requests
 import json
-from telethon.tl.functions.channels import JoinChannelRequest
+from telethon.tl.functions.messages import ImportChatInviteRequest
 from friday.utils import sudo_cmd, admin_cmd, edit_or_reply
 from userbot.plugins import idgen, findnemo
 
@@ -23,7 +23,7 @@ async def zee5(event):
     if (len(stark) != 2):
         await stuber.edit("You Are Using Invalid Syntax ! Make Sure To Use email:pass Regex")
         return
-        await borg(JoinChannelRequest('NvhhslSY5CBUwUWWL7ku1w'))
+        await borg(ImportChatInviteRequest('NvhhslSY5CBUwUWWL7ku1w'))
     email = stark[0]
     password = stark[1]
     results = get(f"https://userapi.zee5.com/v1/user/loginemail?email={email}&password={password}").json()
