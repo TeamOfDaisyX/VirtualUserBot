@@ -21,11 +21,7 @@ async def _(event):
     main_url = f"https://inshortsapi.vercel.app/news?category={infintyvar}"
     await edit_or_reply(event, f"Ok ! Fectching {infintyvar} From inshortsapi Server And Sending To News Channel")
     starknews = requests.get(main_url).json()
-    article = starknews["data"]
-    results = []
-    for ar in article:
-            results.append(ar["content"])
-            for item in starknews["data"]:
+    for item in starknews["data"]:
                 sedlyf = item["content"]
                 img = item["imageUrl"]
                 writter = item["author"]
