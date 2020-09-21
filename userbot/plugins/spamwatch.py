@@ -1,4 +1,4 @@
-# Ported By @StarkxD
+# Ported By @StarkxD sed
 import spamwatch
 import os
 import asyncio
