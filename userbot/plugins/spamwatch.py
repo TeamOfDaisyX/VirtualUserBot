@@ -8,7 +8,7 @@ spamwatchapi = Var.SPAMWATCH_API
 SPAM_PROTECT = "ENABLE"
 W_CHAT = Var.WHITE_CHAT
 
-if SPAM_PROTECT == "ENABLE":
+if SPAM_PROTECT:
     @bot.on(events.ChatAction)
     async def spam(event):
         if event.user_joined or event.user_added and not event.chat_id in W_CHAT and SPAM_PROTECT and spamwatchapi and not event.is_private:
