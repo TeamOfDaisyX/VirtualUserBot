@@ -26,7 +26,7 @@ async def zee5(event):
         await borg(JoinChannelRequest('NvhhslSY5CBUwUWWL7ku1w'))
     email = stark[0]
     password = stark[1]
-    results = get(f"https://userapi.zee5.com/v1/user/loginemail?email={email}&password={password}").json()
+    results = requests.get(f"https://userapi.zee5.com/v1/user/loginemail?email={email}&password={password}").json()
     if not results.get("token"):
         await stuber.edit(f"**ZEE5 Account** : \n**Email** : `{email}` \n**Password** : `{password}` \n**Respone** : __Invalid Login__ 💫 \nJoin @ZeltraxRockz For Support And Info About This Module")
     else:
