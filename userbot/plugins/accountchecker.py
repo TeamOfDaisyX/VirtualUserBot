@@ -4,6 +4,7 @@ import requests
 import json
 from telethon.tl.functions.channels import JoinChannelRequest
 from friday.utils import sudo_cmd, admin_cmd, edit_or_reply
+from userbot.plugins import idgen, findnemo
 
 
 @borg.on(admin_cmd("zee5 (.*)"))
