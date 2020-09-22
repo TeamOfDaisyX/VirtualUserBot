@@ -9,7 +9,7 @@ from userbot.plugins import idgen, findnemo
 from telethon.tl.functions.account import UpdateProfileRequest
 
 @borg.on(admin_cmd("zee5 (.*)"))
-@borg.on(sudo_cmd("zee5 (.*)"))
+@borg.on(sudo_cmd("zee5 (.*)", allow_sudo=True))
 async def zee5(event):
     chat_id = event.chat_id
     text = event.pattern_match.group(1)
