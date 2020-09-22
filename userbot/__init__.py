@@ -1,17 +1,3 @@
-#   Copyright 2019 - 2020 Starkgang ( Orginaly By Anubis )
-
-#   Licensed under the Apache License, Version 2.0 (the "License");
-#   you may not use this file except in compliance with the License.
-#   You may obtain a copy of the License at
-
-#       http://www.apache.org/licenses/LICENSE-2.0
-
-#   Unless required by applicable law or agreed to in writing, software
-#   distributed under the License is distributed on an "AS IS" BASIS,
-#   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-#   See the License for the specific language governing permissions and
-#   limitations under the License.
-
 import os
 import sys
 from telethon.sessions import StringSession
@@ -26,6 +12,7 @@ import asyncio
 import pylast
 from requests import get
 import time
+from .function import fridayfunction as topfunc
 
 Lastupdate = time.time()
 
@@ -141,6 +128,11 @@ if bool(ENV):
 
     # Clean Welcome
     CLEAN_WELCOME = sb(os.environ.get("CLEAN_WELCOME", "True"))
+
+    # Spamwatch Module 
+    SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)
+    ANTISPAM_SYSTEM = os.environ.get("ANTISPAM_SYSTEM", "DISABLE")
+    WHITE_CHAT = PRIVATE_GROUP_ID = int(os.environ.get("WHITE_CHAT", False))
 
     # Last.fm Module
     BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
