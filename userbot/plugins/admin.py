@@ -2,11 +2,11 @@
 Available Commands:
 .create (b|g) GroupName"""
 from telethon.tl import functions, types
-from uniborg import util
+from userbot.utils import admin_cmd, sudo_cmd
 from telethon.tl.functions.channels import EditAdminRequest
 
 
-@borg.on(util.admin_cmd("create (b|g|c) (.*)"))  # pylint:disable=E0602
+@borg.on(admin_cmd("create (b|g|c) (.*)"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
