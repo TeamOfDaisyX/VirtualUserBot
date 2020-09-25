@@ -55,6 +55,7 @@
       "description": "Your Github Access Token for GitHub Commit Plugin. Google 'Github access token' to find more About It.",
       "value": "",
       "required": false
+Error For 
     },
     "GIT_REPO_NAME": {
       "description": "Your repo name Example: Midhunkm1294/FridayUserbot, but GITHUB_ACCESS_TOKEN must be setup first.",
@@ -116,3 +117,4 @@
     }
   ]
 }
+Added A Error 
