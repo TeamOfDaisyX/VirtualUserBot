@@ -34,15 +34,12 @@ RUN apt-get install -y\
     python3-dev \
     python3-pip \
     libreadline-dev \
-    zipalign \
     sqlite \
-    ffmpeg \
     libsqlite3-dev \
     axel \
     zlib1g-dev \
     recoverjpeg \
     zip \
-    megatools \
     libfreetype6-dev \
     procps \
     policykit-1
