@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu
 
 RUN apt-get update && apt upgrade -y && apt-get install sudo -y
 
@@ -50,5 +50,5 @@ RUN git clone https://github.com/Starkgang/FridayUserbot -b master /root/userbot
 RUN mkdir /root/userbot/bin/
 WORKDIR /root/userbot/
 RUN chmod +x /usr/local/bin/*
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 CMD ["python3","-m","userbot"]
