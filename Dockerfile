@@ -22,7 +22,6 @@ RUN apt-get install -y\
     libxml2-dev \
     libxslt-dev \
     musl \
-    neofetch \
     libcurl4-openssl-dev \
     postgresql \
     postgresql-client \
