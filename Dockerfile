@@ -2,39 +2,35 @@ FROM alpine:edge
 
 RUN sed -e 's;^#http\(.*\)/edge/community;http\1/edge/community;g' -i /etc/apk/repositories
 
-RUN apk add --no-cache ca-certificates
+RUN apt-get update && apt upgrade -y && apt-get install sudo -y
 
-RUN apk add --no-cache --update \
-    bash \
-    build-base \
-    bzip2-dev \
-    curl \
+RUN apt-get install -y\
     coreutils \
+    bash \
+    nodejs \
+    bzip2 \
+    curl \
     figlet \
     gcc \
     g++ \
     git \
-    aria2 \
     util-linux \
-    libevent \
-    libjpeg-turbo-dev \
-    chromium \
-    chromium-chromedriver \
-    jpeg-dev \
-    libc-dev \
+    libevent-dev \
+    libjpeg-dev \
     libffi-dev \
-    libpq \
+    libpq-dev \
     libwebp-dev \
+    libxml2 \
     libxml2-dev \
     libxslt-dev \
-    linux-headers \
-    musl-dev \
+    musl \
     neofetch \
-    openssl-dev \
+    libcurl4-openssl-dev \
+    postgresql \
     postgresql-client \
-    postgresql-dev \
-    pv \
-    jq \
+    postgresql-server-dev-all \
+    openssl \
+    mediainfo \
     wget \
     python3 \
     python3-dev \
@@ -52,7 +48,6 @@ RUN apk add --no-cache --update \
     libfreetype6-dev \
     procps \
     policykit-1
-
 
 
 
