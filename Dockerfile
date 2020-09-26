@@ -36,13 +36,24 @@ RUN apk add --no-cache --update \
     pv \
     jq \
     wget \
+    python3 \
     python3-dev \
-    readline-dev \
+    python3-pip \
+    libreadline-dev \
+    zipalign \
+    sqlite \
     ffmpeg \
-    sqlite-dev \
-    sudo \
-    zlib-dev \
-    python-dev
+    libsqlite3-dev \
+    axel \
+    zlib1g-dev \
+    recoverjpeg \
+    zip \
+    megatools \
+    libfreetype6-dev \
+    procps \
+    policykit-1
+
+
 
 
 RUN pip3 install --upgrade pip setuptools 
