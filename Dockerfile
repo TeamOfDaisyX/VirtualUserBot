@@ -1,76 +1,59 @@
-#  creates a layer from the base Docker image.
-FROM python:3.8.5-slim-buster
- 
-# https://shouldiblamecaching.com/
-ENV PIP_NO_CACHE_DIR 1
- 
-# fix "ephimeral" / "AWS" file-systems
-RUN sed -i.bak 's/us-west-2\.ec2\.//' /etc/apt/sources.list
-# to resynchronize the package index files from their sources.
-RUN apt -qq update
-# base required pre-requisites before proceeding ...
-RUN apt -qq install -y --no-install-recommends \
+FROM alpine:edge
+
+RUN sed -e 's;^#http\(.*\)/edge/community;http\1/edge/community;g' -i /etc/apk/repositories
+
+RUN apk add --no-cache ca-certificates
+
+RUN apk add --no-cache --update \
+    bash \
+    build-base \
+    bzip2-dev \
     curl \
+    coreutils \
+    figlet \
+    gcc \
+    g++ \
     git \
-    gnupg2 \
-    unzip \
-    wget
-# add required files to sources.list
-RUN wget -q -O - https://mkvtoolnix.download/gpg-pub-moritzbunkus.txt | apt-key add - && \
-    wget -qO - https://ftp-master.debian.org/keys/archive-key-10.asc | apt-key add -
-RUN sh -c 'echo "deb https://mkvtoolnix.download/debian/ buster main" >> /etc/apt/sources.list.d/bunkus.org.list' && \
-    sh -c 'echo deb http://deb.debian.org/debian buster main contrib non-free | tee -a /etc/apt/sources.list'
-# to resynchronize the package index files from their sources.
-RUN apt -qq update
-# SeD
-ENV LANG C.UTF-8
- 
-# we don't have an interactive xTerm
-ENV DEBIAN_FRONTEND noninteractive
- 
-# install google chrome
-RUN mkdir -p /tmp/ && \
-    cd /tmp/ && \
-    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
-    # -f ==> is required to --fix-missing-dependancies
-    dpkg -i ./google-chrome-stable_current_amd64.deb; apt -fqqy install && \
-    # clean up the container "layer", after we are done
-    rm ./google-chrome-stable_current_amd64.deb
- 
-# install chromedriver
-RUN mkdir -p /tmp/ && \
-    cd /tmp/ && \
-    wget -O /tmp/chromedriver.zip http://chromedriver.storage.googleapis.com/$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE)/chromedriver_linux64.zip  && \
-    unzip /tmp/chromedriver.zip chromedriver -d /usr/bin/ && \
-    # clean up the container "layer", after we are done
-    rm /tmp/chromedriver.zip
- 
-# install required packages
-RUN apt -qq install -y --no-install-recommends \
-    # this package is required to fetch "contents" via "TLS"
-    apt-transport-https \
-    # install coreutils
-    coreutils aria2 jq pv gcc g++ \
-    # install encoding tools
-    ffmpeg mediainfo rclone \
-    # miscellaneous
-    neofetch python3-dev \
-    # install extraction tools
-    mkvtoolnix \
-    p7zip rar unrar zip \
-    # miscellaneous helpers
-    megatools mediainfo rclone && \
-    # clean up the container "layer", after we are done
-    rm -rf /var/lib/apt/lists /var/cache/apt/archives /tmp
- 
-# For Upgrading Setup Tool
-RUN pip3 install --upgrade pip setuptools
-# adds files from your Docker client’s current directory.
-RUN git clone https://github.com/StarkGang/FridayUserbot -b master /root/userbot
+    aria2 \
+    util-linux \
+    libevent \
+    libjpeg-turbo-dev \
+    chromium \
+    chromium-chromedriver \
+    jpeg-dev \
+    libc-dev \
+    libffi-dev \
+    libpq \
+    libwebp-dev \
+    libxml2-dev \
+    libxslt-dev \
+    linux-headers \
+    musl-dev \
+    neofetch \
+    openssl-dev \
+    postgresql-client \
+    postgresql-dev \
+    pv \
+    jq \
+    wget \
+    python3-dev \
+    readline-dev \
+    ffmpeg \
+    sqlite-dev \
+    sudo \
+    zlib-dev \
+    python-dev
+
+
+RUN pip3 install --upgrade pip setuptools 
+RUN if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi 
+RUN if [ ! -e /usr/bin/python ]; then ln -sf /usr/bin/python3 /usr/bin/python; fi 
+RUN rm -r /root/.cache
+RUN axel https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && apt install -y ./google-chrome-stable_current_amd64.deb && rm google-chrome-stable_current_amd64.deb
+RUN axel https://chromedriver.storage.googleapis.com/84.0.4147.30/chromedriver_linux64.zip && unzip chromedriver_linux64.zip && chmod +x chromedriver && mv -f chromedriver /usr/bin/ && rm chromedriver_linux64.zip
+RUN git clone https://github.com/Starkgang/FridayUserbot -b master /root/userbot
 RUN mkdir /root/userbot/bin/
 WORKDIR /root/userbot/
 RUN chmod +x /usr/local/bin/*
-# install requirements, inside the container
 RUN pip3 install -U -r requirements.txt
-# specifies what command to run within the container.
-CMD ["python3", "-m", "userbot"]
+CMD ["python3","-m","userbot"]
