@@ -1,9 +1,10 @@
-# Copyright (c) By Midhun KM [@StarkXD] 
-# I Am Noob 
+# Copyright (c) By Midhun KM [@StarkXD]
+# I Am Noob
 # Official Web : nekobot.xyz
 # "Copy It As You Want But Don't Edit Credits"
 import requests
-from uniborg.util import admin_cmd, sudo_cmd, edit_or_reply
+from uniborg.util import admin_cmd, edit_or_reply, sudo_cmd
+
 
 @borg.on(admin_cmd("ttt ?(.*)"))
 @borg.on(sudo_cmd("ttt ?(.*)", allow_sudo=True))
@@ -17,16 +18,18 @@ async def noobishere(event):
     elif reply.text:
         ipman = reply.message
     else:
-     await edit_or_reply(event, "Trump : What Should I Tweet For You ?")
-     return
-    
+        await edit_or_reply(event, "Trump : What Should I Tweet For You ?")
+        return
+
     url = f"https://nekobot.xyz/api/imagegen?type=trumptweet&text={ipman}"
     starkgang = requests.get(url=url).json()
     meikobot = starkgang.get("message")
     tweetimg = meikobot
     starkxd = f"Trump Has Tweeted {ipman}"
     await edit_or_reply(event, "Trump : Wait I Am Tweeting Your Texts")
-    await event.client.send_file(event.chat_id, tweetimg, caption=starkxd, reply_to=reply_to_id) 
+    await event.client.send_file(
+        event.chat_id, tweetimg, caption=starkxd, reply_to=reply_to_id
+    )
 
 
 @borg.on(admin_cmd("tweet ?(.*)"))
@@ -37,12 +40,16 @@ async def noobishere(event):
     input_str = event.pattern_match.group(1)
     if text:
         if ":" in text:
-            stark = input_str.split(":",1)
+            stark = input_str.split(":", 1)
         else:
-            await event.reply("You Are Using Invalid Syntax ! Make Sure To Use tweetusername:text Regex")
+            await event.reply(
+                "You Are Using Invalid Syntax ! Make Sure To Use tweetusername:text Regex"
+            )
             return
-    if (len(stark) != 2):
-        await event.reply("You Are Using Invalid Syntax ! Make Sure To Use tweetusername:text Regex")
+    if len(stark) != 2:
+        await event.reply(
+            "You Are Using Invalid Syntax ! Make Sure To Use tweetusername:text Regex"
+        )
         return
 
     starky = stark[0]
@@ -53,4 +60,6 @@ async def noobishere(event):
     tweetimg = meikobot
     starkxd = f"{starky} Has Tweeted {ipman}"
     await edit_or_reply(event, f"{starky} : Wait I Am Tweeting Your Texts")
-    await event.client.send_file(event.chat_id, tweetimg, caption=starkxd, reply_to=reply_to_id) 
+    await event.client.send_file(
+        event.chat_id, tweetimg, caption=starkxd, reply_to=reply_to_id
+    )

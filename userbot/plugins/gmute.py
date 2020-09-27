@@ -1,5 +1,7 @@
-from userbot.plugins.sql_helper.mute_sql import is_muted, mute, unmute
 import asyncio
+
+from userbot.plugins.sql_helper.mute_sql import is_muted, mute, unmute
+
 
 @command(outgoing=True, pattern=r"^.gmute ?(\d+)?")
 async def startgmute(event):
@@ -18,9 +20,11 @@ async def startgmute(event):
     elif private is True:
         userid = event.chat_id
     else:
-        return await event.edit("Please reply to a user or add their into the command to gmute them.")
-    chat_id = event.chat_id
-    chat = await event.get_chat()
+        return await event.edit(
+            "Please reply to a user or add their into the command to gmute them."
+        )
+    event.chat_id
+    await event.get_chat()
     if is_muted(userid, "gmute"):
         return await event.edit("This user is already gmuted")
     try:
@@ -29,6 +33,7 @@ async def startgmute(event):
         await event.edit("Error occured!\nError is " + str(e))
     else:
         await event.edit("Successfully gmuted that person")
+
 
 @command(outgoing=True, pattern=r"^.ungmute ?(\d+)?")
 async def endgmute(event):
@@ -47,8 +52,10 @@ async def endgmute(event):
     elif private is True:
         userid = event.chat_id
     else:
-        return await event.edit("Please reply to a user or add their into the command to ungmute them.")
-    chat_id = event.chat_id
+        return await event.edit(
+            "Please reply to a user or add their into the command to ungmute them."
+        )
+    event.chat_id
     if not is_muted(userid, "gmute"):
         return await event.edit("This user is not gmuted")
     try:
@@ -57,6 +64,7 @@ async def endgmute(event):
         await event.edit("Error occured!\nError is " + str(e))
     else:
         await event.edit("Successfully ungmuted that person")
+
 
 @command(outgoing=True, pattern=r"^.gmute ?(\d+)?", allow_sudo=True)
 async def startgmute(event):
@@ -75,9 +83,11 @@ async def startgmute(event):
     elif private is True:
         userid = event.chat_id
     else:
-        return await event.edit("Please reply to a user or add their into the command to gmute them.")
-    chat_id = event.chat_id
-    chat = await event.get_chat()
+        return await event.edit(
+            "Please reply to a user or add their into the command to gmute them."
+        )
+    event.chat_id
+    await event.get_chat()
     if is_muted(userid, "gmute"):
         return await event.edit("This user is already gmuted")
     try:
@@ -86,6 +96,7 @@ async def startgmute(event):
         await event.edit("Error occured!\nError is " + str(e))
     else:
         await event.edit("Successfully gmuted that person")
+
 
 @command(outgoing=True, pattern=r"^.ungmute ?(\d+)?", allow_sudo=True)
 async def endgmute(event):
@@ -104,8 +115,10 @@ async def endgmute(event):
     elif private is True:
         userid = event.chat_id
     else:
-        return await event.edit("Please reply to a user or add their into the command to ungmute them.")
-    chat_id = event.chat_id
+        return await event.edit(
+            "Please reply to a user or add their into the command to ungmute them."
+        )
+    event.chat_id
     if not is_muted(userid, "gmute"):
         return await event.edit("This user is not gmuted")
     try:
@@ -114,6 +127,7 @@ async def endgmute(event):
         await event.edit("Error occured!\nError is " + str(e))
     else:
         await event.edit("Successfully ungmuted that person")
+
 
 @command(incoming=True)
 async def watcher(event):

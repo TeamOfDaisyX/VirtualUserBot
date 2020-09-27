@@ -1,14 +1,9 @@
-import os
-import time
-import asyncio
-import shutil
-from bs4 import BeautifulSoup
-import re
 from re import findall
+
 from search_engine_parser import GoogleSearch
-from asyncio import sleep
+
 from userbot.utils import register
-from telethon.tl.types import DocumentAttributeAudio
+
 
 @register(outgoing=True, pattern=r"^\.gs (.*)")
 async def gsearch(q_event):
@@ -33,6 +28,6 @@ async def gsearch(q_event):
             msg += f"[{title}]({link})\n`{desc}`\n\n"
         except IndexError:
             break
-    await q_event.edit("**Search Query:**\n`" + match + "`\n\n**Results:**\n" +
-                       msg,
-                       link_preview=False)
+    await q_event.edit(
+        "**Search Query:**\n`" + match + "`\n\n**Results:**\n" + msg, link_preview=False
+    )
