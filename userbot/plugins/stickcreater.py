@@ -1,29 +1,26 @@
 # Random RGB Sticklet by @PhycoNinja13b
 # modified by @UniBorg
-#imported from ppe-remix by @heyworld & @DeletedUser420
-#modified by @mrconfused
+# imported from ppe-remix by @heyworld & @DeletedUser420
+# modified by @mrconfused
 
 import io
 import os
 import random
 import textwrap
+
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import InputMessagesFilterDocument
+
 from userbot.utils import admin_cmd, sudo_cmd
-from asyncio import sleep
-from random import choice
-import re
-from telethon import events
-from userbot import CMD_HELP, bot
-import pybase64
-from telethon.tl.functions.messages import ImportChatInviteRequest
+
 # RegEx by https://t.me/c/1220993104/500653 ( @SnapDragon7410 )
+
 
 @borg.on(admin_cmd(pattern="stcr ?(?:(.*?) \| )?(.*)", outgoing=True))
 async def sticklet(event):
-    R = random.randint(0,256)
-    G = random.randint(0,256)
-    B = random.randint(0,256)
+    R = random.randint(0, 256)
+    G = random.randint(0, 256)
+    B = random.randint(0, 256)
     reply_message = event.message
     # get the input text
     # the text on which we would like to do the magic on
@@ -45,7 +42,7 @@ async def sticklet(event):
     # https://docs.python.org/3/library/textwrap.html#textwrap.wrap
     sticktext = textwrap.wrap(sticktext, width=10)
     # converts back the list to a string
-    sticktext = '\n'.join(sticktext)
+    sticktext = "\n".join(sticktext)
     image = Image.new("RGBA", (512, 512), (255, 255, 255, 0))
     draw = ImageDraw.Draw(image)
     fontsize = 230
@@ -55,25 +52,32 @@ async def sticklet(event):
         fontsize -= 3
         font = ImageFont.truetype(FONT_FILE, size=fontsize)
     width, height = draw.multiline_textsize(sticktext, font=font)
-    draw.multiline_text(((512-width)/2,(512-height)/2), sticktext, font=font, fill=(R, G, B))
+    draw.multiline_text(
+        ((512 - width) / 2, (512 - height) / 2), sticktext, font=font, fill=(R, G, B)
+    )
     image_stream = io.BytesIO()
     image_stream.name = "@friday.webp"
     image.save(image_stream, "WebP")
     image_stream.seek(0)
     # finally, reply the sticker
-    await event.client.send_file(event.chat_id, image_stream, caption="FridayOT", reply_to=event.message.reply_to_msg_id)
+    await event.client.send_file(
+        event.chat_id,
+        image_stream,
+        caption="FridayOT",
+        reply_to=event.message.reply_to_msg_id,
+    )
     # cleanup
     try:
         os.remove(FONT_FILE)
     except:
         pass
-    
-    
+
+
 @borg.on(sudo_cmd(pattern="stcr ?(?:(.*?) \| )?(.*)", allow_sudo=True))
 async def sticklet(event):
-    R = random.randint(0,256)
-    G = random.randint(0,256)
-    B = random.randint(0,256)
+    R = random.randint(0, 256)
+    G = random.randint(0, 256)
+    B = random.randint(0, 256)
     reply_message = event.message
     # get the input text
     # the text on which we would like to do the magic on
@@ -95,7 +99,7 @@ async def sticklet(event):
     # https://docs.python.org/3/library/textwrap.html#textwrap.wrap
     sticktext = textwrap.wrap(sticktext, width=10)
     # converts back the list to a string
-    sticktext = '\n'.join(sticktext)
+    sticktext = "\n".join(sticktext)
     image = Image.new("RGBA", (512, 512), (255, 255, 255, 0))
     draw = ImageDraw.Draw(image)
     fontsize = 230
@@ -105,19 +109,27 @@ async def sticklet(event):
         fontsize -= 3
         font = ImageFont.truetype(FONT_FILE, size=fontsize)
     width, height = draw.multiline_textsize(sticktext, font=font)
-    draw.multiline_text(((512-width)/2,(512-height)/2), sticktext, font=font, fill=(R, G, B))
+    draw.multiline_text(
+        ((512 - width) / 2, (512 - height) / 2), sticktext, font=font, fill=(R, G, B)
+    )
     image_stream = io.BytesIO()
     image_stream.name = "@friday.webp"
     image.save(image_stream, "WebP")
     image_stream.seek(0)
     # finally, reply the sticker
-    await event.client.send_file(event.chat_id, image_stream, caption="FridayOT", reply_to=event.message.reply_to_msg_id)
+    await event.client.send_file(
+        event.chat_id,
+        image_stream,
+        caption="FridayOT",
+        reply_to=event.message.reply_to_msg_id,
+    )
     # cleanup
     try:
         os.remove(FONT_FILE)
     except:
         pass
-    
+
+
 async def get_font_file(client, channel_id, search_kw=""):
     # first get the font messages
     font_file_message_s = await client.get_messages(
@@ -126,7 +138,7 @@ async def get_font_file(client, channel_id, search_kw=""):
         # this might cause FLOOD WAIT,
         # if used too many times
         limit=None,
-        search=search_kw
+        search=search_kw,
     )
     # get a random font from the list of fonts
     # https://docs.python.org/3/library/random.html#random.choice
@@ -134,11 +146,11 @@ async def get_font_file(client, channel_id, search_kw=""):
     # download and return the file path
     return await client.download_media(font_file_message)
 
-#EMOJI_PATTERN = re.compile(
-   # """Remove emojis and other non-safe characters from string"""
-   # return re.sub(EMOJI_PATTERN, '', inputString)
 
-#def deEmojify(inputString: str) -> str:
-  #  """Remove emojis and other non-safe characters from string"""
-    #return re.sub(EMOJI_PATTERN, '', inputString)
+# EMOJI_PATTERN = re.compile(
+# """Remove emojis and other non-safe characters from string"""
+# return re.sub(EMOJI_PATTERN, '', inputString)
 
+# def deEmojify(inputString: str) -> str:
+#  """Remove emojis and other non-safe characters from string"""
+# return re.sub(EMOJI_PATTERN, '', inputString)

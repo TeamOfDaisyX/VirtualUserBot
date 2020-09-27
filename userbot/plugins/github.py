@@ -1,8 +1,8 @@
 """Get information about an user on GitHub
 Syntax: .github USERNAME"""
-from telethon import events
 import requests
-from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
+
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
 @borg.on(admin_cmd("github (.*)"))
@@ -32,11 +32,13 @@ Company: {}
 Blog: {}
 Location: {}
 Bio: {}
-Profile Created: {}""".format(name, html_url, gh_type, company, blog, location, bio, created_at),
+Profile Created: {}""".format(
+                name, html_url, gh_type, company, blog, location, bio, created_at
+            ),
             file=avatar_url,
             force_document=False,
             allow_cache=False,
-            reply_to=event
+            reply_to=event,
         )
         await event.delete()
     else:

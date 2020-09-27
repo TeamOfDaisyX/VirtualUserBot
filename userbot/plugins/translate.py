@@ -5,7 +5,8 @@ Available Commands:
 
 import emoji
 from googletrans import Translator
-from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
+
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
 @borg.on(admin_cmd("tr ?(.*)"))
@@ -38,9 +39,7 @@ async def _(event):
          Source **( {} )**
          Translation **( {} )**
          {}""".format(
-            translated.src,
-            lan,
-            after_tr_text
+            translated.src, lan, after_tr_text
         )
         await edit_or_reply(event, output_str)
     except Exception as exc:

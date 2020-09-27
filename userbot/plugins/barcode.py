@@ -4,12 +4,12 @@ By @snappy101
 """
 
 import asyncio
-import barcode
 import os
-import time
-from barcode.writer import ImageWriter
 from datetime import datetime
-from uniborg.util import admin_cmd, sudo_cmd, edit_or_reply
+
+import barcode
+from barcode.writer import ImageWriter
+from uniborg.util import admin_cmd, edit_or_reply, sudo_cmd
 
 
 @borg.on(admin_cmd(pattern="barcode ?(.*)"))

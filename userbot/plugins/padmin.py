@@ -4,16 +4,12 @@ Available Commands:
 
 .padmin"""
 
-from telethon import events
-
 import asyncio
 
-
-
+from telethon import events
 
 
 @borg.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
-
 async def _(event):
 
     if event.fwd_from:
@@ -31,7 +27,6 @@ async def _(event):
         await event.edit(input_str)
 
         animation_chars = [
-        
             "**Promoting User As Admin...**",
             "**Enabling All Permissions To User...**",
             "**(1) Send Messages: ☑️**",
@@ -39,7 +34,7 @@ async def _(event):
             "**(2) Send Media: ☑️**",
             "**(2) Send Media: ✅**",
             "**(3) Send Stickers & GIFs: ☑️**",
-            "**(3) Send Stickers & GIFs: ✅**",    
+            "**(3) Send Stickers & GIFs: ✅**",
             "**(4) Send Polls: ☑️**",
             "**(4) Send Polls: ✅**",
             "**(5) Embed Links: ☑️**",
@@ -51,9 +46,8 @@ async def _(event):
             "**(8) Change Chat Info: ☑️**",
             "**(8) Change Chat Info: ✅**",
             "**Permission Granted Successfully**",
-            "**Congo ! You Are An Admin ! Give Party Else Gey**"
-
- ]
+            "**Congo ! You Are An Admin ! Give Party Else Gey**",
+        ]
 
         for i in animation_ttl:
 

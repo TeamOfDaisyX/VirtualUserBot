@@ -1,5 +1,7 @@
 import pyfiglet
+
 from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+
 
 @borg.on(admin_cmd(pattern="figlet ?(.*)", outgoing=True))
 @borg.on(sudo_cmd(pattern="figlet ?(.*)", allow_sudo=True))
@@ -7,7 +9,21 @@ async def figlet(event):
     arjun = await edit_or_reply(event, "`Figleting This Text xD`")
     if event.fwd_from:
         return
-    CMD_FIG = {"slant": "slant", "3D": "3-d", "5line": "5lineoblique", "alpha": "alphabet", "banner": "banner3-D", "doh": "doh", "iso": "isometric1", "letter": "letters", "allig": "alligator", "dotm": "dotmatrix", "bubble": "bubble", "bulb": "bulbhead", "digi": "digital"}
+    CMD_FIG = {
+        "slant": "slant",
+        "3D": "3-d",
+        "5line": "5lineoblique",
+        "alpha": "alphabet",
+        "banner": "banner3-D",
+        "doh": "doh",
+        "iso": "isometric1",
+        "letter": "letters",
+        "allig": "alligator",
+        "dotm": "dotmatrix",
+        "bubble": "bubble",
+        "bulb": "bulbhead",
+        "digi": "digital",
+    }
     input_str = event.pattern_match.group(1)
     if "|" in input_str:
         text, cmd = input_str.split("|", maxsplit=1)

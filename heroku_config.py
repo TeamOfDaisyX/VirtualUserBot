@@ -1,5 +1,6 @@
 import os
 
+
 class Var(object):
     APP_ID = int(os.environ.get("APP_ID", 6))
     # 6 is a placeholder
@@ -28,10 +29,10 @@ class Var(object):
     GDRIVE_FOLDER_ID = os.environ.get("GDRIVE_FOLDER_ID", "root")
     AUTH_TOKEN_DATA = os.environ.get("AUTH_TOKEN_DATA", None)
     MAX_FLOOD_IN_P_M_s = int(os.environ.get("MAX_FLOOD_IN_P_M_s", 3))
-    if AUTH_TOKEN_DATA != None:
+    if AUTH_TOKEN_DATA is not None:
         if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
             os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
-        t_file = open(TEMP_DOWNLOAD_DIRECTORY+"auth_token.txt","w")
+        t_file = open(TEMP_DOWNLOAD_DIRECTORY + "auth_token.txt", "w")
         t_file.write(AUTH_TOKEN_DATA)
         t_file.close()
     PRIVATE_GROUP_ID = int(os.environ.get("PRIVATE_GROUP_ID", None))
@@ -39,5 +40,7 @@ class Var(object):
     SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)
     ANTISPAM_SYSTEM = os.environ.get("ANTISPAM_SYSTEM", "DISABLE")
     WHITE_CHAT = set(int(x) for x in os.environ.get("WHITE_CHAT", "").split())
+
+
 class Development(Var):
     LOGGER = True
