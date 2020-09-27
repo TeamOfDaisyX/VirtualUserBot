@@ -6,32 +6,17 @@ Syntax: .update
 from os import remove
 from os import execl
 import sys
-
-# from git import Repo
-# from git.exc import GitCommandError
-# from git.exc import InvalidGitRepositoryError
-# from git.exc import NoSuchPathError
-
-# from .. import bot
-# from userbot.utils import register
-
 import git
 import asyncio
 import random
 import re
 import time
-
 from collections import deque
-
 import requests
-
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon import events
-
 from userbot.utils import admin_cmd
-
-
 from contextlib import suppress
 import os
 import sys
@@ -100,7 +85,7 @@ async def updater(message):
     )
 
     if not changelog:
-        await message.edit("`Updating...`")
+        await message.edit("`Updation in Progress......`")
         await asyncio.sleep(8)
  
     message_one = NEW_BOT_UP_DATE_FOUND.format(
@@ -168,7 +153,7 @@ def generate_change_log(git_repo, diff_marker):
 
 async def deploy_start(tgbot, message, refspec, remote):
     await message.edit(RESTARTING_APP)
-    await message.edit("Updating and Deploying New Branch. Please wait for 5 minutes then use `.alive` to check if i'm working or not.")
+    await message.edit("Updation Sucessfull ! Now Restarting To Finish This Process. Try `.alive` To Check If I Am Alive \n© @FRIDAYOT")
     await remote.push(refspec=refspec)
     await tgbot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
