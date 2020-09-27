@@ -39,7 +39,7 @@
       "value": ""
     },
     "SUDO_USERS": {
-      "description": "Enter A User Id Which You Would Liketo Use To Control Sudo. Don't Give Your Own ID Or ID Of Users You Don't Trust.",
+      "description": "Enter A User Id Which You Would Liketo Use To Control Sudo ! Don't Give Your Own ID Or ID Of Users You Don't Trust.",
       "value": ""
       "required": false
     },
