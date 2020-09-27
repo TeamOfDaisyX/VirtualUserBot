@@ -18,13 +18,12 @@ async def gspider(userbot):
     me = await userbot.client.get_me()
     await friday.edit(f"Global Ban Is Coming ! Wait And Watch You Nigga")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
-    my_username = f"@{me.username}" if me.username else my_mention
-    chat = await userbot.get_chat()
+    f"@{me.username}" if me.username else my_mention
+    await userbot.get_chat()
     a = b = 0
     if userbot.is_private:
         user = userbot.chat
         reason = userbot.pattern_match.group(1)
-        chat_title = "PM"
     else:
         userbot.chat.title
     try:
@@ -86,13 +85,12 @@ async def gspider(userbot):
     me = await userbot.client.get_me()
     await friday.edit(f"Trying To Ungban User !")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
-    my_username = f"@{me.username}" if me.username else my_mention
-    chat = await userbot.get_chat()
+    f"@{me.username}" if me.username else my_mention
+    await userbot.get_chat()
     a = b = 0
     if userbot.is_private:
         user = userbot.chat
         reason = userbot.pattern_match.group(1)
-        chat_title = "PM"
     else:
         userbot.chat.title
     try:
