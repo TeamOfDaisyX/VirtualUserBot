@@ -1,2 +1,2 @@
 telethon==1.15.0
--r requirements-new.iptxt
+-r requirements-new.txt
