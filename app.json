@@ -1,4 +1,4 @@
-
+{
   "name": "Friday-Userbot",
   "description": "A Userbot Based On Telethon By @StarkXD",
   "logo": "https://telegra.ph/file/b4e1e36c6b1fcb32dd997.jpg",
@@ -11,7 +11,6 @@
   ],
   "repository": "https://github.com/starkgang/FridayUserbot",
   "website": "starkgang.ml",
-  "stack": "container",
   "success_url": "t.me/FridayOT",
   "env": {
     "ENV": {
