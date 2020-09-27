@@ -38,8 +38,8 @@
       "description": "Channel Where You Save Your Plugins",
       "value": ""
     },
-    "NEWS_CHANNEL_ID": {
-      "description": "Channel Where You Want News To Be Sent.",
+    "SUDO_USERS": {
+      "description": "Enter A User Id Which You Would Like To Controll Sudo. Don't Give Your Own ID Or ID Of Users You Don't Trust",
       "value": ""
     },
     "PRIVATE_GROUP_ID": {
