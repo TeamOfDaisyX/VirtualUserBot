@@ -5,7 +5,7 @@ from uniborg.util import admin_cmd, sudo_cmd
 from userbot import ALIVE_NAME
 from datetime import datetime
 from userbot import Lastupdate
-
+from userbot.plugins import currentversion
 uptime = get_readable_time((time.time() - Lastupdate))
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Unknown"
 PM_IMG = "https://telegra.ph/file/22535f8051a58af113586.jpg"
