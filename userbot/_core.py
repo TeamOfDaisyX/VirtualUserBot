@@ -77,6 +77,7 @@ async def send(event):
     await event.delete()
 
 
+
 @command(pattern="^.unload (?P<shortname>\w+)$", outgoing=True)
 async def unload(event):
     if event.fwd_from:
