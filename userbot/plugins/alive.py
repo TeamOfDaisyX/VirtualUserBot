@@ -35,7 +35,7 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-
+uptime = get_readable_time((time.time() - Lastupdate))
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Unknown"
 PM_IMG = "https://telegra.ph/file/22535f8051a58af113586.jpg"
 pm_caption = "➥ **FRIDAY IS:** `ONLINE`\n\n"
@@ -59,6 +59,5 @@ pm_caption += "[🇮🇳 Deploy FridayUserbot 🇮🇳](https://telegra.ph/FRIDA
 async def friday(alive):
     await alive.get_chat()
     """ For .alive command, check if the bot is running.  """
-    uptime = get_readable_time((time.time() - Lastupdate))
     await borg.send_file(alive.chat_id, PM_IMG, caption=pm_caption)
     await alive.delete()
