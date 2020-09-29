@@ -3,9 +3,9 @@ import asyncio
 import os
 from datetime import datetime
 from pathlib import Path
-
-@borg.on(admin_cmd(pattern="snd ?(.*)"))
-@borg.on(sudo_cmd(pattern="snd ?(.*)", allow_sudo=True))
+fridaythumb = 'friday.png'
+@borg.on(admin_cmd(pattern="send ?(.*)"))
+@borg.on(sudo_cmd(pattern="send ?(.*)", allow_sudo=True))
 async def send(event):
     if event.fwd_from:
         return
@@ -17,6 +17,7 @@ async def send(event):
         event.chat_id,
         the_plugin_file,
         force_document=True,
+        thumb=fridaythumb,
         allow_cache=False,
         reply_to=message_id,
     )
