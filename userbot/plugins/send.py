@@ -16,7 +16,7 @@ async def send(event):
     the_plugin_file = "./userbot/plugins/{}.py".format(input_str)
     end = datetime.now()
     time_taken_in_ms = (end - start).seconds
-    men = (f"Plugin Send Sucessfully. \nPlugin Name -> {input_str}.py \nTime Taken -> {time_taken_in_ms} ")
+    men = (f"Plugin Name - {input_str}.py \nUploaded By Friday")
     await event.client.send_file(  # pylint:disable=E0602
         event.chat_id,
         the_plugin_file,
