@@ -7,6 +7,7 @@ from telethon.tl.types import (
 from telethon.utils import get_display_name
 from userbot.utils import admin_cmd, sudo_cmd
 from userbot.uniborgConfig import Config
+from telethon import events
 
 @tgbot.on(events.NewMessage(pattern="^/start"))
 async def start(event):
