@@ -26,6 +26,5 @@ async def send(event):
         allow_cache=False,
         reply_to=message_id,
     )
-    await event.edit("Uploaded {} in {} seconds".format(input_str, time_taken_in_ms))
     await asyncio.sleep(5)
     await event.delete()
