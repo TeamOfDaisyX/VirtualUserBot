@@ -111,7 +111,7 @@ async def _(event):
     try:
         translated = translator.translate(text, dest=lan)
         after_tr_text = translated.text
-    output_str = """**Translated By Friday Assistant Bot** 
+        output_str = """**Translated By Friday Assistant Bot** 
          Source **( {} )**
          Translation **( {} )**
          {}""".format(
