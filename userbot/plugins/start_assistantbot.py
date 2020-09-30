@@ -2,7 +2,7 @@
 # 
 # Please Don't Kang Without Credits
 # A Plugin For Assistant Bot 
-
+# x0x
 
 from telethon import events, custom, Button
 from telethon.tl.types import (
