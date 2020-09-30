@@ -15,13 +15,18 @@ async def start(event):
     starttext = ("Hi! This Bot is Part of @FridayOT \nThis Bot is Used For "
                  "Some Features That Can Be Used Via Bot. \nIf you want your"
                  "Own Assistant Bot Then Deploy From Button Bellow")
-
-    await tgbot.send_message(
-        vent,
-        message=starttext,
-        link_preview=False,
-        buttons = [
-        [Button.url("Repo 🛡️", "https://github.com/StarkGang/FridayUserbot")],
-        [Button.url("Join Channel 📃", "t.me/Fridayot")]
-    ]
-    )
+    if vent=bot.uid:
+        await tgbot.send_message(
+           vent,
+           message="Test",
+           )
+    else:
+        await tgbot.send_message(
+           vent,
+           message=starttext,
+           link_preview=False,
+           buttons = [
+           [Button.url("Repo 🛡️", "https://github.com/StarkGang/FridayUserbot")],
+           [Button.url("Join Channel 📃", "t.me/Fridayot")]
+       ]
+      )
