@@ -6,7 +6,8 @@ from PIL import Image, ImageFont, ImageDraw
 import textwrap
 import os
 from userbot.utils import admin_cmd, sudo_cmd
-
+# how a lazy guy ports
+client = borg
 @borg.on(admin_cmd("memify ?(.*)"))
 async def handler(event):
     if event.fwd_from:
