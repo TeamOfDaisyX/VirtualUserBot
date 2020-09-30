@@ -112,7 +112,7 @@ async def _(event):
     elif "|" in input_str:
         lan, text = input_str.split("|")
     else:
-        await edit_or_reply(event, "`.tr LanguageCode` as reply to a message")
+        await tgbot.send_message(event.chat_id, "`.tr LanguageCode` as reply to a message")
         return
     text = emoji.demojize(text.strip())
     lan = lan.strip()
