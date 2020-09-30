@@ -105,6 +105,15 @@ async def _(event):
 @tgbot.on(events.NewMessage(pattern="^/tr ?(.*)"))
 async def _(event):
     input_str = event.pattern_match.group(1)
+    if event.reply_to_msg_id:
+        previous_message = await event.get_reply_message()
+        text = previous_message.message
+        lan = input_str or "gu"
+    elif "|" in input_str:
+        lan, text = input_str.split("|")
+    else:
+        await edit_or_reply(event, "`.tr LanguageCode` as reply to a message")
+        return
     text = emoji.demojize(text.strip())
     lan = lan.strip()
     translator = Translator()
