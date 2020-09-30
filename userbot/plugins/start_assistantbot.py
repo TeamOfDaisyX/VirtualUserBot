@@ -10,6 +10,10 @@ from telethon.tl.types import (
     Chat,
     User
 )
+
+import emoji
+from googletrans import Translator
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 from telethon.utils import get_display_name
 from userbot.utils import admin_cmd, sudo_cmd
 from userbot.uniborgConfig import Config
@@ -98,16 +102,15 @@ async def _(event):
      )
 
 
-
-import emoji
-from googletrans import Translator
-
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
-
-
 @tgbot.on(events.NewMessage(pattern="^/tr ?(.*)"))
 async def _(event):
     input_str = event.pattern_match.group(1)
+    text = emoji.demojize(text.strip())
+    lan = lan.strip()
+    translator = Translator()
+    try:
+        translated = translator.translate(text, dest=lan)
+        after_tr_text = translated.text
     output_str = """**Translated By Friday Assistant Bot** 
          Source **( {} )**
          Translation **( {} )**
