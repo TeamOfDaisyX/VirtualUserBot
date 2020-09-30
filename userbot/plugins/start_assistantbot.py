@@ -15,11 +15,11 @@ from userbot import Lastupdate
 
 @tgbot.on(events.NewMessage(pattern="^/start"))
 async def start(event):
-    vent = await event.client.get_entity(event.from_id)
+    vent = event.chat_id
     starttext = ("Hi! This Bot is Part of @FridayOT \nThis Bot is Used For "
                  "Some Features That Can Be Used Via Bot. \nIf you want your"
                  "Own Assistant Bot Then Deploy From Button Bellow")
-    if vent == bot.uid:
+    if vent.user_id == bot.uid:
         await tgbot.send_message(
            vent,
            message="Hi Master, It's Me Your Assistant.",
