@@ -107,28 +107,8 @@ from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 @tgbot.on(events.NewMessage(pattern="^/tr ?(.*)"))
 async def _(event):
-    if "trim" in event.raw_text:
-        # https://t.me/c/1220993104/192075
-        return
     input_str = event.pattern_match.group(1)
-    if event.reply_to_msg_id:
-        previous_message = await event.get_reply_message()
-        text = previous_message.message
-        lan = input_str or "gu"
-    if "|" in input_str:
-        lan, text = input_str.split("|")
-    else:
-        await tgbot.send_message(event.chat_id, "`.tr LanguageCode` as reply to a message")
-        return
-    text = emoji.demojize(text.strip())
-    lan = lan.strip()
-    translator = Translator()
-    try:
-        translated = translator.translate(text, dest=lan)
-        after_tr_text = translated.text
-        # TODO: emojify the :
-        # either here, or before translation
-        output_str = """**Translated By Friday Assistant Bot** 
+    output_str = """**Translated By Friday Assistant Bot** 
          Source **( {} )**
          Translation **( {} )**
          {}""".format(
