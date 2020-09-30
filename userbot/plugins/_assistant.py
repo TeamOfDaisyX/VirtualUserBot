@@ -1,3 +1,7 @@
+# Copyright (C) By @StarkxD
+# 
+
+
 from telethon import events, custom, Button
 from telethon.tl.types import (
     Channel,
