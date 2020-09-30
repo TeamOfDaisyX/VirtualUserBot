@@ -15,7 +15,7 @@ from userbot import Lastupdate
 
 @tgbot.on(events.NewMessage(pattern="^/start"))
 async def start(event):
-    vent = event.chat_id
+    vent = await event.client.get_entity(event.from_id)
     starttext = ("Hi! This Bot is Part of @FridayOT \nThis Bot is Used For "
                  "Some Features That Can Be Used Via Bot. \nIf you want your"
                  "Own Assistant Bot Then Deploy From Button Bellow")
@@ -30,7 +30,7 @@ async def start(event):
            )
     else:
         await tgbot.send_message(
-           vent,
+           event.chat_id,
            message=starttext,
            link_preview=False,
            buttons = [
@@ -82,7 +82,7 @@ async def _(event):
         await tgbot.send_message(event.chat_id, f"**█▀█ █▀█ █▄░█ █▀▀ █ \n█▀▀ █▄█ █░▀█ █▄█ ▄**\n ➲ `{ms}` \n ➲ `{uptime}`")
     else:
         await tgbot.send_message(
-           vent,
+           event.chat_id,
            message=starttext,
            link_preview=False,
            buttons = [
