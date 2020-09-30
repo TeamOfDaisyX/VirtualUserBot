@@ -115,7 +115,7 @@ async def _(event):
         previous_message = await event.get_reply_message()
         text = previous_message.message
         lan = input_str or "gu"
-    elif "|" in input_str:
+    if "|" in input_str:
         lan, text = input_str.split("|")
     else:
         await tgbot.send_message(event.chat_id, "`.tr LanguageCode` as reply to a message")
