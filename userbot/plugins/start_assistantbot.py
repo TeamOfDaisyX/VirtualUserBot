@@ -116,7 +116,7 @@ async def _(event):
         )
     if event.from_id == bot.uid:
         await tgbot.send_message(event.chat_id, output_str)
-    elif:
+    elif event.from_id is not bot.uid:
         await tgbot.send_message(event.chat_id, "You Can't Access Me")
     else:
         await tgbot.send_message(event.chat_id, "Something Went Wrong 🤔")
