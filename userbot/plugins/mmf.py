@@ -6,6 +6,7 @@ from PIL import Image, ImageFont, ImageDraw
 import textwrap
 import os
 from userbot.utils import admin_cmd, sudo_cmd
+from var import Var
 # how a lazy guy ports
 client = borg
 @borg.on(admin_cmd("memify ?(.*)"))
@@ -90,7 +91,7 @@ async def drawText(image_path, text):
                 text=l_text, font=m_font, fill=(255, 255, 255))
             current_h += u_height + pad
     image_name = "memify.webp"
-    webp_file = os.path.join(ENV.DOWNLOAD_DIRECTORY, image_name)
+    webp_file = os.path.join(Var.TEMP_DOWNLOAD_DIRECTORY, image_name)
     img.save(webp_file, "webp")
     return webp_file
 
