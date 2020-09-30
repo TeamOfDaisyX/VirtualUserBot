@@ -118,5 +118,5 @@ async def _(event):
         await tgbot.send_message(event.chat_id, output_str)
     else:
         await tgbot.send_message(event.chat_id, "You Can't Access Me")
-    except Exception as exc:
-        await tgbot.send_message(event.chat_id, str(exc))
+    else:
+        await tgbot.send_message(event.chat_id, "Something Went Wrong 🤔")
