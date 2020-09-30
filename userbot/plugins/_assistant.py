@@ -1,7 +1,3 @@
-# Copyright (C) By @StarkxD
-# 
-
-
 from telethon import events, custom, Button
 from telethon.tl.types import (
     Channel,
@@ -17,15 +13,25 @@ from telethon import events
 async def start(event):
     vent = event.chat_id
     starttext = ("Hi! This Bot is Part of @FridayOT \nThis Bot is Used For "
-                 "Some Features That Can Be Used Via Bot. \nIf you want your "
+                 "Some Features That Can Be Used Via Bot. \nIf you want your"
                  "Own Assistant Bot Then Deploy From Button Bellow")
-
-    await tgbot.send_message(
-        vent,
-        message=starttext,
-        link_preview=False,
-        buttons = [
-        [Button.url("Repo 🛡️", "https://github.com/StarkGang/FridayUserbot")],
-        [Button.url("Join Channel 📃", "t.me/Fridayot")]
-    ]
-    )
+    if vent == bot.uid:
+        await tgbot.send_message(
+           vent,
+           message="Hi Master, Your Assistant In Service.",
+           link_preview=False,
+           buttons = [
+           [Button.url("Repo 🛡️", "https://github.com/StarkGang/FridayUserbot")],
+           [Button.url("Join Channel 📃", "t.me/Fridayot")]
+        ]
+       )
+    else:
+        await tgbot.send_message(
+           vent,
+           message=starttext,
+           link_preview=False,
+           buttons = [
+           [Button.url("Repo 🛡️", "https://github.com/StarkGang/FridayUserbot")],
+           [Button.url("Join Channel 📃", "t.me/Fridayot")]
+       ]
+      )
