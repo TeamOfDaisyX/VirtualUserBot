@@ -114,9 +114,9 @@ async def _(event):
          {}""".format(
             translated.src, lan, after_tr_text
         )
-    elif event.from_id == bot.uid:
+    if event.from_id == bot.uid:
         await tgbot.send_message(event.chat_id, output_str)
-    else:
+    elif:
         await tgbot.send_message(event.chat_id, "You Can't Access Me")
     else:
         await tgbot.send_message(event.chat_id, "Something Went Wrong 🤔")
