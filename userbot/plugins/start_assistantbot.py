@@ -110,10 +110,8 @@ async def _(event):
     translator = Translator()
     translated = translator.translate(text, dest=lan)
     after_tr_text = translated.text
-    output_str = ("**Translated By Friday Assistant Bot** 
-    Source **( {} )**
-    Translation **( {} )**
-    {}").format(translated.src, lan, after_tr_text)
+    output_str = ("**Translated By Friday Assistant Bot** \n"
+                  "Source {translated.src} \nTranslation {lan} & {after_tr_text}")
     if event.from_id == bot.uid:
         await tgbot.send_message(event.chat_id, output_str)
     elif event.from_id is not bot.uid:
