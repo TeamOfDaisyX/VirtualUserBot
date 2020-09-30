@@ -19,7 +19,7 @@ async def start(event):
     starttext = ("Hi! This Bot is Part of @FridayOT \nThis Bot is Used For "
                  "Some Features That Can Be Used Via Bot. \nIf you want your"
                  "Own Assistant Bot Then Deploy From Button Bellow")
-    if event.user_id == bot.uid:
+    if event.from_id == bot.uid:
         await tgbot.send_message(
            vent,
            message="Hi Master, It's Me Your Assistant.",
