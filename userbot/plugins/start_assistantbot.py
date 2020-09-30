@@ -1,3 +1,9 @@
+# Copyright (C) Midhun KM 
+# 
+# Please Don't Kang Without Credits
+# A Plugin For Assistant Bot 
+
+
 from telethon import events, custom, Button
 from telethon.tl.types import (
     Channel,
@@ -78,7 +84,7 @@ async def _(event):
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     uptime = get_readable_time((time.time() - Lastupdate))
-    if vent == bot.uid:
+    if event.from_id == bot.uid:
         await tgbot.send_message(event.chat_id, f"**█▀█ █▀█ █▄░█ █▀▀ █ \n█▀▀ █▄█ █░▀█ █▄█ ▄**\n ➲ `{ms}` \n ➲ `{uptime}`")
     else:
         await tgbot.send_message(
