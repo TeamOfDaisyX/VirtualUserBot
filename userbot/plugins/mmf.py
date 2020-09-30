@@ -20,7 +20,7 @@ async def handler(event):
     if not reply_message.media:
         await event.edit("```Reply to a image/sticker.```")
         return
-    file = await client.download_media(reply_message, ENV.DOWNLOAD_DIRECTORY)
+    file = await client.download_media(reply_message, Var.TEMP_DOWNLOAD_DIRECTORY)
     await event.edit("```Memifying this image! (」ﾟﾛﾟ)｣ ```")
     text = str(event.pattern_match.group(1)).strip()
     if len(text) < 1:
