@@ -25,7 +25,7 @@ async def start(event):
     starttext = ("Hi! This Bot is Part of @FridayOT \nThis Bot is Used For "
                  "Some Features That Can Be Used Via Bot. \nIf you want your"
                  "Own Assistant Bot Then Deploy From Button Bellow")
-    if vent == bot.uid:
+    if event.from_id == bot.uid:
         await tgbot.send_message(
            vent,
            message="Hi Master, It's Me Your Assistant.",
@@ -36,7 +36,7 @@ async def start(event):
            )
     else:
         await tgbot.send_message(
-           vent,
+           event.chat_id,
            message=starttext,
            link_preview=False,
            buttons = [
@@ -84,11 +84,11 @@ async def _(event):
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     uptime = get_readable_time((time.time() - Lastupdate))
-    if vent == bot.uid:
+    if event.from_id == bot.uid:
         await tgbot.send_message(event.chat_id, f"**█▀█ █▀█ █▄░█ █▀▀ █ \n█▀▀ █▄█ █░▀█ █▄█ ▄**\n ➲ `{ms}` \n ➲ `{uptime}`")
     else:
         await tgbot.send_message(
-           vent,
+           event.chat_id,
            message=starttext,
            link_preview=False,
            buttons = [
