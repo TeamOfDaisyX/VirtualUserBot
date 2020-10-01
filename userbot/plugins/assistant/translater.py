@@ -42,9 +42,9 @@ async def _(event):
     after_tr_text = translated.text
     output_str = (f"**Translated By Friday Assistant Bot** \n"
                   f"Source {translated.src} \nTranslation {lan} \nWhat I Can Translate From This {after_tr_text}")
-    if event.from_id == bot.uid:
-        await tgbot.send_message(event.chat_id, output_str)
-    elif event.from_id is not bot.uid:
+    if event.from_id is not bot.uid:
         await tgbot.send_message(event.chat_id, "You Can't Access Me")
+    elif event.from_id == bot.uid:
+        await tgbot.send_message(event.chat_id, output_str)
     else:
         await tgbot.send_message(event.chat_id, "Something Went Wrong 🤔")
