@@ -43,7 +43,6 @@ for name in files:
         shortname = path1.stem
         load_module(shortname.replace(".py", ""))
 
-print("Starting To Install Assistant Bot")
 path = "userbot/plugins/assistant/*.py"
 files = glob.glob(path)
 for name in files:
