@@ -34,7 +34,7 @@ else:
 
 
 import glob
-
+print("-----------+----------")
 path = "userbot/plugins/*.py"
 files = glob.glob(path)
 for name in files:
@@ -42,7 +42,8 @@ for name in files:
         path1 = Path(f.name)
         shortname = path1.stem
         load_module(shortname.replace(".py", ""))
-
+# Done.
+print("----------+----------")
 path = "userbot/plugins/assistant/*.py"
 files = glob.glob(path)
 for name in files:
