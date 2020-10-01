@@ -121,7 +121,7 @@ def load_module(shortname):
         spec.loader.exec_module(mod)
         # for imports
         sys.modules["userbot.plugins." + shortname] = mod
-        print("--------------+------------ \nSuccessfully imported " + shortname)
+        print("Successfully imported " + shortname)
 
 
 def remove_plugin(shortname):
@@ -450,4 +450,4 @@ def start_assistant(shortname):
         mod.tgbot = bot.tgbot
         spec.loader.exec_module(mod)
         sys.modules["userbot.plugins.assistant" + shortname] = mod
-        print("--------------+----------------- \nAssistant Has imported " + shortname)
+        print("Assistant Has imported " + shortname)
