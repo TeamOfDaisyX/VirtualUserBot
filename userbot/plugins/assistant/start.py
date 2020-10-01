@@ -21,7 +21,7 @@ from telethon import events
 from datetime import datetime
 from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 import time
-from userbot import Lastupdate
+from userbot import Lastupdate, bot
 
 @tgbot.on(events.NewMessage(pattern="^/start"))
 async def start(event):
