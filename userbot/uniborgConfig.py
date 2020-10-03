@@ -136,7 +136,7 @@ if ENV:
         PRIVATE_GROUP_ID = int(os.environ.get("PRIVATE_GROUP_ID", False))
         PLUGIN_CHANNEL = int(os.environ.get("PLUGIN_CHANNEL", False))
         NEWS_CHANNEL_ID = int(os.environ.get("NEWS_CHANNEL_ID", False))
-        PM_DATA = os.environ.get("PM_DATA", "ON")
+        PM_DATA = os.environ.get("PM_DATA", "ENABLE")
 
 else:
 
