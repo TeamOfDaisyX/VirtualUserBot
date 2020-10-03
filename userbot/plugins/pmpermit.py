@@ -159,7 +159,7 @@ if Var.PRIVATE_GROUP_ID is not None:
 
             return
         
-        if PM_ON_OFF == "ON":
+        if PM_ON_OFF == "DISABLE":
             return
         
         if not pmpermit_sql.is_approved(chat_id):
