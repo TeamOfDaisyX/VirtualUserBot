@@ -1,7 +1,7 @@
 import asyncio
 import io
 import os
-
+from userbot.uniborgConfig import Config
 from telethon import events, functions
 from telethon.tl.functions.users import GetFullUserRequest
 
@@ -17,6 +17,7 @@ else:
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
 
+PM_ON_OFF = Config.PM_DATA
 
 DEFAULTUSER = (
     str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
@@ -156,6 +157,9 @@ if Var.PRIVATE_GROUP_ID is not None:
 
             # don't log verified accounts
 
+            return
+        
+        if PM_ON_OFF == "ON":
             return
         
         if not pmpermit_sql.is_approved(chat_id):
