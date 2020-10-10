@@ -171,11 +171,11 @@ async def sedlyfsir(event):
     for starkcast in userstobc:
         try:
             sent_count += 1
-            await tgbot.send_message(int(starkcast.chat_id), msgtobroadcast)
+            await tgbot.send_message(int(starkcast.friday_id), msgtobroadcast)
             await asyncio.sleep(0.2)
         except Exception as e:
             try:
-                 logger.info(f"Error : {error_count}\nError : {e} \nUsers : {chat_id}"
+                 logger.info(f"Error : {error_count}\nError : {e} \nUsers : {friday_id}"
                  )
             except:
                  pass
