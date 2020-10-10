@@ -24,7 +24,7 @@ from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 import time
 from userbot import Lastupdate
 
-@tgbot.on(events.NewMessage(pattern="^/tr ?(.*)", func=lambda e: e.sender_id == bot.uid))
+@tgbot.on(events.NewMessage(pattern="^/tr ?(.*)"))
 async def _(event):
     input_str = event.pattern_match.group(1)
     if event.reply_to_msg_id:
