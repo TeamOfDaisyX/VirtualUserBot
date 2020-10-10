@@ -61,6 +61,10 @@ async def start(event):
             ]
            )
     else:
+        add_usersid_in_db(
+            event.from_id
+        )
+
         await tgbot.send_message(
            event.chat_id,
            message=starttext,
@@ -85,9 +89,6 @@ async def help(event):
                 [Button.url("Deploy Tutorial 📺", "https://youtu.be/xfHcm_e92eQ")],
                 [Button.url("Need Help ❓", "t.me/FridaySupportOfficial")]
                  ]
-                )
-                add_usersid_in_db(
-                event.from_id
                 )
 
 
