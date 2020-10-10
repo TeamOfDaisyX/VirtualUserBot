@@ -50,25 +50,10 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-@tgbot.on(events.NewMessage(pattern="^/ping"))
+@tgbot.on(events.NewMessage(pattern="^/ping", func=lambda e: e.sender_id == bot.uid))
 async def _(event):
     start = datetime.now()
-    vent = event.chat_id
-    starttext = ("Hi! This Bot is Part of @FridayOT \nThis Bot is Used For "
-                 "Some Features That Can Be Used Via Bot. \nIf you want your"
-                 "Own Assistant Bot Then Deploy From Button Bellow")
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     uptime = get_readable_time((time.time() - Lastupdate))
-    if event.from_id == bot.uid:
-        await tgbot.send_message(event.chat_id, f"**█▀█ █▀█ █▄░█ █▀▀ █ \n█▀▀ █▄█ █░▀█ █▄█ ▄**\n ➲ `{ms}` \n ➲ `{uptime}`")
-    else:
-        await tgbot.send_message(
-           event.chat_id,
-           message=starttext,
-           link_preview=False,
-           buttons = [
-           [Button.url("Repo 🛡️", "https://github.com/StarkGang/FridayUserbot")],
-           [Button.url("Join Channel 📃", "t.me/Fridayot")]
-      ]
-     )
+    await tgbot.send_message(event.chat_id, f"**█▀█ █▀█ █▄░█ █▀▀ █ \n█▀▀ █▄█ █░▀█ █▄█ ▄**\n ➲ `{ms}` \n ➲ `{uptime}`")
