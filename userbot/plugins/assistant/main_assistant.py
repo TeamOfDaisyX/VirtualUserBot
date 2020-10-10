@@ -45,8 +45,11 @@ from userbot.plugins.sql_helper.idadder_sql import add_usersid_in_db, get_all_us
 async def start(event):
     starkbot = await tgbot.get_me()
     bot_id = starkbot.first_name
+    bot_username = starkbot.username
+    replied_user = await event.client(GetFullUserRequest(event.chat_id))
+    firstname = replied_user.user.first_name
     vent = event.chat_id
-    starttext = (f"Hello, I am {bot_id} , An Powerfull Assistant Bot to Serve My [Master](tg://user?id={bot.uid}) \nAll Messages That you Send here is forwarded to my master \nPlease Be Polite To My Master Else You Know !")
+    starttext = (f"Hello, {firstname} ! Nice To Meet You, Well I Am {bot_id}, An Powerfull Assistant Bot. \n\nMy Master is ➤ [Master](tg://user?id={bot.uid}) \nYou Can Talk/Contact My Master Using This Bot. \n\nIf You Want Your Own Assistant You Can Deploy From Button Below. \n\nPowered By [Friday Userbot](t.me/FridayOT)")
     if event.from_id == bot.uid:
         await tgbot.send_message(
            vent,
@@ -54,7 +57,7 @@ async def start(event):
            buttons = [
            [custom.Button.inline("Show Users 🔥", data="users")],
            [custom.Button.inline("Commands For Assistant", data="gibcmd")],
-           [Button.url("Join Channel 📃", "t.me/Fridayot")]
+           [Button.url("Add Me to Group 👥", f"t.me/{bot_username}?startgroup=true")]
             ]
            )
     else:
