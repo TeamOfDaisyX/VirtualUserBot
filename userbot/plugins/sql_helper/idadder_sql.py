@@ -17,14 +17,14 @@ class Moidata(BASE):
         self.chat_id = chat_id
 
 
-moidata.__table__.create(checkfirst=True)
+Moidata.__table__.create(checkfirst=True)
 
 def add_usersid_in_db(chat_id: int):
-    id_user = moidata(str(chat_id))
+    id_user = Moidata(str(chat_id))
     SESSION.add(id_user)
     SESSION.commit()
 
 def get_all_users():
-    stark = SESSION.query(moidata).all()
+    stark = SESSION.query(Moidata).all()
     SESSION.close()
     return stark
