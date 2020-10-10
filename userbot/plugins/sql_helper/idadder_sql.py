@@ -9,18 +9,18 @@ from . import (
 )
 
 
-class moidata(BASE):
-    __tablename__ = "keklyf"
-    friday_id = Column(String(14), primary_key=True)
+class Moidata(BASE):
+    __tablename__ = "moidata"
+    chat_id = Column(String(14), primary_key=True)
 
-    def __init__(self, friday_id):
-        self.friday_id = friday_id
+    def __init__(self, chat_id):
+        self.chat_id = chat_id
 
 
 moidata.__table__.create(checkfirst=True)
 
-def add_usersid_in_db(friday_id: int):
-    id_user = moidata(str(friday_id))
+def add_usersid_in_db(chat_id: int):
+    id_user = moidata(str(chat_id))
     SESSION.add(id_user)
     SESSION.commit()
 
