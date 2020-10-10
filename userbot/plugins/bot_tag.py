@@ -19,9 +19,8 @@ from telethon.tl.types import (
     User
 )
 from telethon.utils import get_display_name
-from userbot.utils import admin_cmd, sudo_cmd
+from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.uniborgConfig import Config
-
 
 @borg.on(events.NewMessage(
     incoming=True,
@@ -31,9 +30,11 @@ from userbot.uniborgConfig import Config
     )
 ))
 async def all_messages_catcher(event):
+    if Config.TAG_FEATURE == "DISABLE":
+        pass
+        return
     # the bot might not have the required access_hash to mention the appropriate PM
     await event.forward_to(Config.TG_BOT_USER_NAME_BF_HER)
-
     # construct message
     # the message format is stolen from @MasterTagAlertBot
     ammoca_message = ""
