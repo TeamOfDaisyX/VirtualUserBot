@@ -15,7 +15,7 @@ wttrapi = Config.OPEN_WEATHER_MAP_APPID
 rmbg = Config.REM_BG_API_KEY
 hmmok = Config.LYDIA_API
 currentversion = "3.0"
-
+getstark = sedfunc.get_full_user
 if issudousing:
     amiusingsudo = "Active ✅"
 else:
