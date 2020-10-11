@@ -16,6 +16,7 @@ from telethon.sessions import StringSession
 from var import Var
 
 from .function import fridayfunction as topfunc
+from .function import getuser as sedfunc
 
 Lastupdate = time.time()
 
