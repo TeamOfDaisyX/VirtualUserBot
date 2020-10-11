@@ -66,7 +66,7 @@ async def gspider(userbot):
         if not reason:
             reason = "Private"
     except:
-        return await friday.edit(f"**You Cant Use In Pvt Chats // Group!**")
+        return await friday.edit(f"**Something W3NT Wrong 🤔**")
     if user:
         if user.id == 1263617196:
             return await friday.edit(
