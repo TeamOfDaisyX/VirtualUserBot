@@ -28,3 +28,11 @@ def get_all_users():
     stark = SESSION.query(Moidata).all()
     SESSION.close()
     return stark
+
+def already_added(chat_id):
+    try:
+        return SESSION.query(Moidata).filter(Moidata.chat_id == str(chat_id)).one()
+    except:
+        return None
+    finally:
+        SESSION.close()
