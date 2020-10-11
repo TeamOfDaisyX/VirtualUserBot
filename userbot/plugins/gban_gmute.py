@@ -6,7 +6,7 @@ from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
-
+from telethon.events import ChatAction
 
 async def get_full_user(event):  
     args = event.pattern_match.group(1).split(':', 1)
@@ -180,7 +180,7 @@ async def gspider(userbot):
 
 
 
-@bot.on(events.ChatAction())
+@borg.on(ChatAction)
 async def handler(rkG): 
    if rkG.user_joined or rkG.user_added:      
        try:       	
