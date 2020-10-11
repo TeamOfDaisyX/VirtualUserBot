@@ -39,7 +39,7 @@ from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from userbot import Lastupdate, bot
 from userbot.plugins.sql_helper.botusers_sql import add_me_in_db, his_userid
-from userbot.plugins.sql_helper.idadder_sql import add_usersid_in_db, get_all_users
+from userbot.plugins.sql_helper.idadder_sql import add_usersid_in_db, get_all_users, already_added
 
 @tgbot.on(events.NewMessage(pattern="^/start"))
 async def start(event):
@@ -61,10 +61,12 @@ async def start(event):
             ]
            )
     else:
-        add_usersid_in_db(
-            event.from_id
-        )
-
+        if already_added(event.from_id):
+            pass
+        elif not already_added(event.from_id):
+            add_usersid_in_db(
+                event.from_id
+             )
         await tgbot.send_message(
            event.chat_id,
            message=starttext,
