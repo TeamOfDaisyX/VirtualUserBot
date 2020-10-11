@@ -192,18 +192,3 @@ async def get_full_user(event):
                 return replied_user, None
             except Exception as e:
                 return None, e
-
-CMD_HELP.update(
-    {
-        "gban-gmute": ".gban <username> / <userid> / <reply to a user>\
-\n**Usage**: Globel ban the person in all groups, channels , block in pm , add gban watch (use with solution) \
-\n\n.ungban <username> / <userid> / <reply to a user>\
-\n**Usage**: unban user from all groups, channels , remove user from gban watch.\
-\n\n.gmute <username> / <userid> / <reply to a user>\
-\n**Usage**: Globel mute the user  \
-\n\n.ungmute <username> / <userid> / <reply to a user>\
-\n**Usage**: Remove user form gmute list \
-\n\n**All commands support sudo**\
-"
-    }
-)
