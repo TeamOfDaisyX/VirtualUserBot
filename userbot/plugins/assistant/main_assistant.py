@@ -150,19 +150,20 @@ async def all_messages_catcher(event):
 
 @tgbot.on(events.NewMessage(func=lambda e: e.is_private))
 async def sed(event):
-    if event.raw_text.startswith("/"):
-        pass
     msg = await event.get_reply_message()
     real_nigga = msg.id
     msg_s = event.raw_text
     user_id, reply_message_id = his_userid(
         msg.id
         )
-    if event.from_id is bot.uid:
-        await tgbot.send_message(
-        user_id,
-        msg_s
-        )
+    if event.from_id == bot.uid:
+        if event.raw_text.startswith("/"):
+            pass
+        else:
+            await tgbot.send_message(
+            user_id,
+            msg_s
+            )
 
 # broadcast
 @tgbot.on(events.NewMessage(pattern="^/broadcast ?(.*)", func=lambda e: e.sender_id == bot.uid))
