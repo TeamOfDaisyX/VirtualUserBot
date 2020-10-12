@@ -131,9 +131,9 @@ async def all_messages_catcher(event):
         await event.reply("You iz Blacklisted")
         return
     if event.raw_text.startswith("/"):
-        pass
+        return
     elif event.from_id == bot.uid:
-        pass
+        return
     else:
         sender = await event.get_sender()
         chat_id = event.chat_id
