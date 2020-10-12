@@ -165,7 +165,7 @@ async def sed(event):
         pass
 
 # broadcast
-@tgbot.on(events.NewMessage(pattern="^/broadcast ?(.*)", func=lambda e: e.is_private and e.sender_id == bot.uid))
+@tgbot.on(events.NewMessage(pattern="^/broadcast ?(.*)", func=lambda e: e.sender_id == bot.uid))
 async def sedlyfsir(event):
     msgtobroadcast = event.pattern_match.group(1)
     userstobc = get_all_users()
@@ -186,3 +186,9 @@ async def sedlyfsir(event):
         event.chat_id,
         f"Broadcast Done in {sent_count} Group/Users and I got {error_count} Error and Total Number Was {len(userstobc)}"
         )
+
+
+@tgbot.on(events.NewMessage(pattern="^/stats ?(.*)", func=lambda e: e.sender_id == bot.uid))
+async def starkisnoob(event):
+    starkisnoob = get_all_users()
+    await event.reply(f"Total Users in Bot => {len(starkisnoob)}")
