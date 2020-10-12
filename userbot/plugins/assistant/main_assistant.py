@@ -40,6 +40,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 from userbot import Lastupdate, bot
 from userbot.plugins.sql_helper.botusers_sql import add_me_in_db, his_userid
 from userbot.plugins.sql_helper.idadder_sql import add_usersid_in_db, get_all_users, already_added
+from userbot.plugins.sql_helper.blacklist_assistant import add_nibba_in_db, get_all_nibba, is_he_added, removenibba
 
 @tgbot.on(events.NewMessage(pattern="^/start"))
 async def start(event):
@@ -150,13 +151,15 @@ async def all_messages_catcher(event):
 async def sed(event):
     if event.raw_text.startswith("/"):
         pass
-    elif event.from_id == bot.uid:
-        msg = await event.get_reply_message()
-        real_nigga = msg.id
-        msg_s = event.raw_text
-        user_id, reply_message_id = his_userid(
+    msg = await event.get_reply_message()
+    real_nigga = msg.id
+    msg_s = event.raw_text
+    user_id, reply_message_id = his_userid(
         msg.id
         )
+    elif is_he_added(user_id):
+        pass
+    elif event.from_id == bot.uid:
         await tgbot.send_message(
         user_id,
         msg_s
@@ -192,3 +195,37 @@ async def sedlyfsir(event):
 async def starkisnoob(event):
     starkisnoob = get_all_users()
     await event.reply(f"Total Users in Bot => {len(starkisnoob)}")
+
+@tgbot.on(events.NewMessage(pattern="^/block ?(.*)", func=lambda e: e.sender_id == bot.uid))
+async def starkisnoob(event):
+    if event.from_id == bot.uid:
+        msg = await event.get_reply_message()
+        real_nigga = msg.id
+        msg_s = event.raw_text
+        user_id, reply_message_id = his_userid(
+        msg.id
+        )
+    if is_he_added(user_id):
+        await event.reply("Already Blacklisted")
+    elif not is_he_added(user_id):
+        add_nibba_in_db(
+            user_id
+          )
+        await event.reply("Blacklisted This Dumb Person")
+
+@tgbot.on(events.NewMessage(pattern="^/unblock ?(.*)", func=lambda e: e.sender_id == bot.uid))
+async def starkisnoob(event):
+    if event.from_id == bot.uid:
+        msg = await event.get_reply_message()
+        real_nigga = msg.id
+        msg_s = event.raw_text
+        user_id, reply_message_id = his_userid(
+        msg.id
+        )
+    if not is_he_added(user_id):
+        await event.reply("Not Even. Blacklisted 🤦")
+    elif is_he_added(user_id):
+        removenibba(
+            user_id
+          )
+        await event.reply("DisBlacklisted This Dumb Person")
