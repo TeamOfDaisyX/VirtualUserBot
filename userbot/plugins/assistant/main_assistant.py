@@ -150,6 +150,8 @@ async def all_messages_catcher(event):
 
 @tgbot.on(events.NewMessage(func=lambda e: e.is_private))
 async def sed(event):
+    if event.from_id is not bot.uid:
+        pass
     if event.raw_text.startswith("/"):
         pass
     msg = await event.get_reply_message()
