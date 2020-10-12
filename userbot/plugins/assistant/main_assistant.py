@@ -148,7 +148,6 @@ async def all_messages_catcher(event):
 
 
 
-# Test 
 @tgbot.on(events.NewMessage(func=lambda e: e.is_private))
 async def sed(event):
     if event.raw_text.startswith("/"):
@@ -159,7 +158,7 @@ async def sed(event):
     user_id, reply_message_id = his_userid(
         msg.id
         )
-    if event.from_id == bot.uid:
+    elif event.from_id == bot.uid:
         await tgbot.send_message(
         user_id,
         msg_s
@@ -215,7 +214,7 @@ async def starkisnoob(event):
             user_id
           )
         await event.reply("Blacklisted This Dumb Person")
-        await send_message(user_id, "You Have Been Blacklisted And You Can't Message My Master Now.")
+        await tgbot.send_message(user_id, "You Have Been Blacklisted And You Can't Message My Master Now.")
 
 @tgbot.on(events.NewMessage(pattern="^/unblock ?(.*)", func=lambda e: e.sender_id == bot.uid))
 async def starkisnoob(event):
@@ -233,4 +232,4 @@ async def starkisnoob(event):
             user_id
           )
         await event.reply("DisBlacklisted This Dumb Person")
-        await send_message(user_id, "Congo! You Have Been Unblacklisted By My Master.")
+        await tgbot.send_message(user_id, "Congo! You Have Been Unblacklisted By My Master.")
