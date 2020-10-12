@@ -157,15 +157,13 @@ async def sed(event):
     user_id, reply_message_id = his_userid(
         msg.id
         )
-    elif is_he_added(user_id):
+    if is_he_added(user_id):
         pass
     elif event.from_id == bot.uid:
         await tgbot.send_message(
         user_id,
         msg_s
         )
-    else:
-        pass
 
 # broadcast
 @tgbot.on(events.NewMessage(pattern="^/broadcast ?(.*)", func=lambda e: e.sender_id == bot.uid))
