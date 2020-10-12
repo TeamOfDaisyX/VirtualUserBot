@@ -227,7 +227,7 @@ async def starkisnoob(event):
         msg.id
         )
     if not is_he_added(user_id):
-        await event.reply("Not Even. Blacklisted 🤦")
+        await event.reply("Not Even. Blacklisted 🤦🚶")
     elif is_he_added(user_id):
         removenibba(
             user_id
