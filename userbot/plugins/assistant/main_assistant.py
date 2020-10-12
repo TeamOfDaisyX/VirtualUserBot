@@ -127,6 +127,9 @@ async def users(event):
 # Bot Permit.
 @tgbot.on(events.NewMessage(func=lambda e: e.is_private))
 async def all_messages_catcher(event):
+    if is_he_added(event.from_id):
+        await event.reply("You iz Blacklisted")
+        return
     if event.raw_text.startswith("/"):
         pass
     elif event.from_id == bot.uid:
@@ -135,7 +138,6 @@ async def all_messages_catcher(event):
         sender = await event.get_sender()
         chat_id = event.chat_id
         sed = await event.forward_to(bot.uid)
-
 # Add User To Database ,Later For Broadcast Purpose
 # (C) @SpecHide
         add_me_in_db(
@@ -157,8 +159,6 @@ async def sed(event):
     user_id, reply_message_id = his_userid(
         msg.id
         )
-    if is_he_added(user_id):
-        pass
     elif event.from_id == bot.uid:
         await tgbot.send_message(
         user_id,
