@@ -42,7 +42,7 @@ async def _(event):
     input_str = event.pattern_match.group(1)
     if input_str:
         sticker_emoji = input_str
-    moods = await edit_or_reply(event, "`HeHe , Me Gonna Steal`")
+    moods = await edit_or_reply(event, "`Hello, This Sticker Looks Noice. Mind if I steal it`")
     user = await bot.get_me()
     if not user.username:
         user.username = user.id
@@ -54,9 +54,9 @@ async def _(event):
         packname = f"@StarkGang Packs 🎭"
         packshortname = "StarkGangPack"
     else:
-        packname = f"{user.username}'s {pack}"
+        packname = f"@{user.username} KangPack {pack}"
         packshortname = f"FRIDAY_{userid}_Pack"
-    await moods.edit("`Wew ! I Love That Sticker ! Mind If i Kang It ?`")
+    await moods.edit("`This Sticker is Gonna Get Stolen.....`")
 
     is_a_s = is_it_animated_sticker(reply_message)
     file_ext_ns_ion = "@FRIDAYOT.png"
@@ -69,7 +69,7 @@ async def _(event):
             packname = f"StarkGang Ka Pack"
             packshortname = "StarkGangisgreat"
         else:
-            packname = f"{user.username}'s {pack}"
+            packname = f"@{user.username} KangPack {pack}"
             packshortname = f"FRIDAY_{userid}"  # format: Uni_Borg_userid
     elif not is_message_image(reply_message):
         await moods.edit("Invalid message type")
@@ -82,7 +82,7 @@ async def _(event):
                 sticker, file_name=file_ext_ns_ion
             )
 
-    await moods.edit("Packing To Your Pack ! Please Wait!")
+    await moods.edit("`Inviting This Sticker To Your Pack 🚶`")
 
     async with borg.conversation("@Stickers") as bot_conv:
         now = datetime.datetime.now()
@@ -213,7 +213,7 @@ async def _(event):
                 await silently_send_message(bot_conv, sticker_emoji)
                 await silently_send_message(bot_conv, "/done")
     await moods.edit(
-        f"**Sticker Has Been Kanged SucessFully And Can Be Found** [Here](t.me/addstickers/{packshortname})"
+        f"`This Sticker Has Came To Your Pack.` \n**Check It Out** [Here](t.me/addstickers/{packshortname})"
     )
 
 
