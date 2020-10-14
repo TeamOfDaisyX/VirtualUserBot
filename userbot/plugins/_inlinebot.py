@@ -50,7 +50,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             result = builder.article(
                 title="PM Test",
                 content=WARN_PIC,
-                text=query,
+                caption=query,
                 buttons=[
                     [
                         custom.Button.inline("I Am Here For Spamming",
