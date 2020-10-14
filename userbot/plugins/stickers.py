@@ -220,7 +220,7 @@ async def _(event):
 @borg.on(admin_cmd(pattern="packinfo"))
 @borg.on(sudo_cmd(pattern="packinfo ?(.*)", allow_sudo=True))
 async def _(event):
-    moods = await edit_or_reply("`HeHe , Me Gonna Leech Pack Info`")
+    moods = await edit_or_reply(event, "`HeHe , Me Gonna Leech Pack Info`")
     if event.fwd_from:
         return
     if not event.is_reply:
