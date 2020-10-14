@@ -7,7 +7,7 @@ Available Commands:
 # file, You can obtain one at https://www.gnu.org/licenses/gpl-3.0.en.html
 import os
 import sys
-
+import asyncio
 from userbot.utils import admin_cmd
 
 
@@ -34,3 +34,13 @@ async def _(event):
         return
     await event.edit("Turning off ...Manually turn me on later")
     await borg.disconnect()
+
+@borg.on(admin_cmd("sleep ?(.*)"))
+async def xcv(event):
+    if event.fwd_from:
+        return
+    sed = event.pattern_match.group(1)
+    await event.edit(f"**Ok, Sleeping For** `{sed}s`")
+    await asyncio.sleep(sed)
+
+
