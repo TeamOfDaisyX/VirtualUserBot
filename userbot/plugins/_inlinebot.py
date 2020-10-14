@@ -13,6 +13,11 @@ from userbot.plugins import inlinestats
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Friday"
 if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
+PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
+if PMPERMIT_PIC is None:
+    WARN_PIC = "https://telegra.ph/file/53aed76a90e38779161b1.jpg"
+else:
+    WARN_PIC = PMPERMIT_PIC
 
     @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
     async def inline_handler(event):
@@ -47,6 +52,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             result = builder.article(
                 title="PM Test",
                 text=query,
+                photo=WARN_PIC,
                 buttons=[
                     [
                         custom.Button.inline("I Am Here For Spamming",
