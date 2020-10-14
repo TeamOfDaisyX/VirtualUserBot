@@ -6,7 +6,7 @@ from telethon import custom
 from telethon import events
 from telethon import functions
 from telethon.tl.functions.users import GetFullUserRequest
-
+import os
 from userbot import ALIVE_NAME
 from userbot import CMD_LIST
 from userbot.plugins import inlinestats
