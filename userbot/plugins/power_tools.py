@@ -35,12 +35,3 @@ async def _(event):
     await event.edit("Turning off ...Manually turn me on later")
     await borg.disconnect()
 
-@borg.on(admin_cmd("sleep ?(.*)"))
-async def xcv(event):
-    if event.fwd_from:
-        return
-    sed = event.pattern_match.group(1)
-    await event.edit(f"**Ok, Sleeping For** `{sed}s`")
-    await asyncio.sleep(sed)
-
-
