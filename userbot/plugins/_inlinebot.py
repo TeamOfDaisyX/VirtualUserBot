@@ -43,7 +43,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                             "Repo 🇮🇳",
                             "https://github.com/StarkGang/FridayUserbot")
                     ],
-                    [Button.url("Join Channel 😬", "t.me/Fridayot")],
+                    [Button.url("Join Channel ❤️", "t.me/Fridayot")],
                 ],
             )
         if event.query.user_id == bot.uid and query.startswith("**Hello"):
@@ -52,16 +52,16 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 text=query,
                 buttons=[
                     [
-                        custom.Button.inline("I Am Here For Spamming",
+                        custom.Button.inline("❌ I Am Here For Spamming❌ ",
                                              data="dontspamnigga")
                     ],
                     [
                         custom.Button.inline(
-                            "I Here For Talking With Your Master",
+                            "🗣️ I Am Here For Talking With Your Master 🗣️",
                             data="whattalk")
                     ],
                     [
-                        custom.Button.inline("I Am Here For Asking Something",
+                        custom.Button.inline("🙏 I Am Here For Asking Something 🙏",
                                              data="askme")
                     ],
                 ],
@@ -176,7 +176,7 @@ def paginate_help(page_number, loaded_plugins, prefix):
             helpable_plugins.append(p)
     helpable_plugins = sorted(helpable_plugins)
     modules = [
-        custom.Button.inline("{} {} {}".format("🍩", x, "😬"),
+        custom.Button.inline("{} {} {}".format("🔶", x, "🔶"),
                              data="us_plugin_{}".format(x))
         for x in helpable_plugins
     ]
