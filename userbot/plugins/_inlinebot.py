@@ -47,8 +47,8 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 ],
             )
         if event.query.user_id == bot.uid and query.startswith("**Hello"):
-            result = builder.article(
-                title="PM PERMIT",
+            result = builder.photo(
+                file=WARN_PIC,
                 text=query,
                 buttons=[
                     [
