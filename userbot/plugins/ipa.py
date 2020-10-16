@@ -11,7 +11,7 @@ from telethon.tl.types import InputMessagesFilterDocument
 from userbot.utils import admin_cmd, load_module
 
 
-@borg.on(admin_cmd("ipa (.*)"))
+@friday.on(admin_cmd("ipa (.*)"))
 async def install(event):
     if event.fwd_from:
         return

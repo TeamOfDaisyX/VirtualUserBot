@@ -5,7 +5,7 @@ from telethon.errors.rpcerrorlist import MessageIdInvalidError
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="dump ?(.*)"))
+@friday.on(admin_cmd(pattern="dump ?(.*)"))
 async def _(message):
     try:
         obj = message.pattern_match.group(1)

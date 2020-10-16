@@ -22,7 +22,7 @@ from telethon.utils import get_display_name
 from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.uniborgConfig import Config
 
-@borg.on(events.NewMessage(
+@friday.on(events.NewMessage(
     incoming=True,
     blacklist_chats=Config.UB_BLACK_LIST_CHAT,
     func=lambda e: (

@@ -6,7 +6,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd(pattern=("sang ?(.*)")))
+@friday.on(admin_cmd(pattern=("sang ?(.*)")))
 async def _(event):
     if event.fwd_from:
         return
@@ -41,7 +41,7 @@ async def _(event):
             await event.edit(f"{response.message.message}")
 
 
-@borg.on(admin_cmd(pattern=("fakemail ?(.*)")))
+@friday.on(admin_cmd(pattern=("fakemail ?(.*)")))
 async def _(event):
     if event.fwd_from:
         return
@@ -62,7 +62,7 @@ async def _(event):
         await event.edit(mail)
 
 
-@borg.on(admin_cmd(pattern=("mailid ?(.*)")))
+@friday.on(admin_cmd(pattern=("mailid ?(.*)")))
 async def _(event):
     if event.fwd_from:
         return
@@ -83,7 +83,7 @@ async def _(event):
         await event.edit(mail)
 
 
-@borg.on(admin_cmd(pattern=("ub ?(.*)")))
+@friday.on(admin_cmd(pattern=("ub ?(.*)")))
 async def _(event):
     if event.fwd_from:
         return
@@ -118,7 +118,7 @@ async def _(event):
             await event.edit(f"{response.message.message}")
 
 
-@borg.on(admin_cmd(pattern=("gid ?(.*)")))
+@friday.on(admin_cmd(pattern=("gid ?(.*)")))
 async def _(event):
     if event.fwd_from:
         return

@@ -9,8 +9,8 @@ from telethon.tl.types import (
 from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
-@borg.on(admin_cmd("get_ad?(m)in ?(.*)"))
-@borg.on(sudo_cmd("get_ad?(m)in ?(.*)", allow_sudo=True))
+@friday.on(admin_cmd("get_ad?(m)in ?(.*)"))
+@friday.on(sudo_cmd("get_ad?(m)in ?(.*)", allow_sudo=True))
 async def _(event):
     admeme = await edit_or_reply(event, "Processing")
     if event.fwd_from:

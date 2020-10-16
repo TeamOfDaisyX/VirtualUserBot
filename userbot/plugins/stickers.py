@@ -29,8 +29,8 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Who is this"
 FILLED_UP_DADDY = "Invalid pack selected."
 
 
-@borg.on(admin_cmd(pattern="kang ?(.*)"))
-@borg.on(sudo_cmd(pattern="kang ?(.*)", allow_sudo=True))
+@friday.on(admin_cmd(pattern="kang ?(.*)"))
+@friday.on(sudo_cmd(pattern="kang ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -217,8 +217,8 @@ async def _(event):
     )
 
 
-@borg.on(admin_cmd(pattern="packinfo"))
-@borg.on(sudo_cmd(pattern="packinfo ?(.*)", allow_sudo=True))
+@friday.on(admin_cmd(pattern="packinfo"))
+@friday.on(sudo_cmd(pattern="packinfo ?(.*)", allow_sudo=True))
 async def _(event):
     moods = await edit_or_reply(event, "`HeHe , Me Gonna Leech Pack Info`")
     if event.fwd_from:
@@ -257,7 +257,7 @@ async def _(event):
     )
 
 
-@borg.on(admin_cmd(pattern="getsticker ?(.*)"))
+@friday.on(admin_cmd(pattern="getsticker ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

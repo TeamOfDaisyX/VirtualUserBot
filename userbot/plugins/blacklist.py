@@ -14,7 +14,7 @@ import userbot.plugins.sql_helper.blacklist_sql as sql
 from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
-@borg.on(events.NewMessage(incoming=True))
+@friday.on(events.NewMessage(incoming=True))
 async def on_new_message(event):
     # TODO: exempt admins from locks
     name = event.raw_text
@@ -30,8 +30,8 @@ async def on_new_message(event):
             break
 
 
-@borg.on(admin_cmd("textblacklist ((.|\n)*)"))
-@borg.on(sudo_cmd("textblacklist ((.|\n)*)", allow_sudo=True))
+@friday.on(admin_cmd("textblacklist ((.|\n)*)"))
+@friday.on(sudo_cmd("textblacklist ((.|\n)*)", allow_sudo=True))
 async def on_add_black_list(event):
     starksayxd = await edit_or_reply(event, "Trying To Set This Text As Blacklist xD")
     text = event.pattern_match.group(1)
@@ -47,8 +47,8 @@ async def on_add_black_list(event):
     )
 
 
-@borg.on(admin_cmd("listblacklist"))
-@borg.on(sudo_cmd("listblacklist", allow_sudo=True))
+@friday.on(admin_cmd("listblacklist"))
+@friday.on(sudo_cmd("listblacklist", allow_sudo=True))
 async def on_view_blacklist(event):
     sensibleleecher = await edit_or_reply(event, "Listing Blacklist xD")
     all_blacklisted = sql.get_chat_blacklist(event.chat_id)
@@ -74,8 +74,8 @@ async def on_view_blacklist(event):
         await sensibleleecher.edit(OUT_STR)
 
 
-@borg.on(admin_cmd("rmblacklist ((.|\n)*)"))
-@borg.on(sudo_cmd("rmblacklist ((.|\n)*)", allow_sudo=True))
+@friday.on(admin_cmd("rmblacklist ((.|\n)*)"))
+@friday.on(sudo_cmd("rmblacklist ((.|\n)*)", allow_sudo=True))
 async def on_delete_blacklist(event):
     sensibleisleecher = await edit_or_reply(event, "Ok Removing This Blacklist xD")
     text = event.pattern_match.group(1)

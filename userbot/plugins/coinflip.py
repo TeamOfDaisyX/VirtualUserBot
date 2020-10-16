@@ -5,7 +5,7 @@ import random
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="coin ?(.*)"))
+@friday.on(admin_cmd(pattern="coin ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

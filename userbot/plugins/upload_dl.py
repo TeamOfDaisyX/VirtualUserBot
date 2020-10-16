@@ -79,8 +79,8 @@ def time_formatter(milliseconds: int) -> str:
     return tmp[:-2]
 
 
-@borg.on(admin_cmd(pattern="download(?: |$)(.*)", outgoing=True))
-@borg.on(sudo_cmd(pattern="download(?: |$)(.*)", allow_sudo=True))
+@friday.on(admin_cmd(pattern="download(?: |$)(.*)", outgoing=True))
+@friday.on(sudo_cmd(pattern="download(?: |$)(.*)", allow_sudo=True))
 async def download(target_file):
     """ For .dl command, download files to the userbot's server. """
     friday = await edit_or_reply(target_file, "`Processing ...`")

@@ -10,7 +10,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 
 
 
-@borg.on(admin_cmd(pattern=r"hack"))
+@friday.on(admin_cmd(pattern=r"hack"))
 async def _(event):
     if event.fwd_from:
         return

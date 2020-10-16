@@ -9,7 +9,7 @@ from datetime import datetime
 from userbot.utils import admin_cmd, progress
 
 
-@borg.on(admin_cmd(pattern="convert (.*)"))  # pylint:disable=E0602
+@friday.on(admin_cmd(pattern="convert (.*)"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return

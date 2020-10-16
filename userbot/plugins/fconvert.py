@@ -68,7 +68,7 @@ def time_formatter(milliseconds: int) -> str:
     return tmp[:-2]
 
 
-@borg.on(admin_cmd(pattern="nfc (.*)"))  # pylint:disable=E0602
+@friday.on(admin_cmd(pattern="nfc (.*)"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return

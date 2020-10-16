@@ -30,8 +30,8 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-@borg.on(admin_cmd(pattern="ping$"))
-@borg.on(sudo_cmd(pattern="ping$", allow_sudo=True))
+@friday.on(admin_cmd(pattern="ping$"))
+@friday.on(sudo_cmd(pattern="ping$", allow_sudo=True))
 async def _(event):
     starkislub = await edit_or_reply(event, "`Pong !`")
     if event.fwd_from:

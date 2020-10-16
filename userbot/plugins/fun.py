@@ -87,8 +87,8 @@ INSULT_STRINGS = [
 # ===========================================
 
 
-@borg.on(admin_cmd(pattern="run ?(.*)"))
-@borg.on(sudo_cmd(pattern="run ?(.*)", allow_sudo=True))
+@friday.on(admin_cmd(pattern="run ?(.*)"))
+@friday.on(sudo_cmd(pattern="run ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -98,8 +98,8 @@ async def _(event):
     await edit_or_reply(event, reply_text)
 
 
-@borg.on(admin_cmd(pattern="metoo ?(.*)"))
-@borg.on(sudo_cmd(pattern="metoo ?(.*)", allow_sudo=True))
+@friday.on(admin_cmd(pattern="metoo ?(.*)"))
+@friday.on(sudo_cmd(pattern="metoo ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -109,8 +109,8 @@ async def _(event):
     await edit_or_reply(event, reply_text)
 
 
-@borg.on(admin_cmd(pattern="rapee ?(.*)"))
-@borg.on(sudo_cmd(pattern="rapee ?(.*)", allow_sudo=True))
+@friday.on(admin_cmd(pattern="rapee ?(.*)"))
+@friday.on(sudo_cmd(pattern="rapee ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -120,8 +120,8 @@ async def _(event):
     await edit_or_reply(event, reply_text)
 
 
-@borg.on(admin_cmd(pattern="insultt ?(.*)"))
-@borg.on(sudo_cmd(pattern="insultt ?(.*)", allow_sudo=True))
+@friday.on(admin_cmd(pattern="insultt ?(.*)"))
+@friday.on(sudo_cmd(pattern="insultt ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -131,8 +131,8 @@ async def _(event):
     await edit_or_reply(event, reply_text)
 
 
-@borg.on(admin_cmd(pattern="proo ?(.*)"))
-@borg.on(sudo_cmd(pattern="proo ?(.*)", allow_sudo=True))
+@friday.on(admin_cmd(pattern="proo ?(.*)"))
+@friday.on(sudo_cmd(pattern="proo ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -142,8 +142,8 @@ async def _(event):
     await edit_or_reply(event, reply_text)
 
 
-@borg.on(admin_cmd(pattern="abusee ?(.*)"))
-@borg.on(sudo_cmd(pattern="abusee ?(.*)", allow_sudo=True))
+@friday.on(admin_cmd(pattern="abusee ?(.*)"))
+@friday.on(sudo_cmd(pattern="abusee ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -153,8 +153,8 @@ async def _(event):
     await edit_or_reply(event, reply_text)
 
 
-@borg.on(admin_cmd(pattern="geyy ?(.*)"))
-@borg.on(sudo_cmd(pattern="geyy ?(.*)", allow_sudo=True))
+@friday.on(admin_cmd(pattern="geyy ?(.*)"))
+@friday.on(sudo_cmd(pattern="geyy ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

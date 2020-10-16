@@ -12,7 +12,7 @@ from uniborg.util import admin_cmd
 msg_cache = {}
 
 
-@borg.on(admin_cmd(pattern=r"fpost\s+(.*)"))
+@friday.on(admin_cmd(pattern=r"fpost\s+(.*)"))
 async def _(event):
     await event.delete()
     text = event.pattern_match.group(1)

@@ -12,7 +12,7 @@ from uniborg.util import admin_cmd
 thumb_image_path = Config.TMP_DOWNLOAD_DIRECTORY + "/thumb_image.jpg"
 
 
-@borg.on(admin_cmd(pattern="rnupload (.*)"))
+@friday.on(admin_cmd(pattern="rnupload (.*)"))
 async def _(event):
     if event.fwd_from:
         return

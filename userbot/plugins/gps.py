@@ -12,8 +12,8 @@ from telethon.tl import types
 from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
-@borg.on(admin_cmd(pattern="gps ?(.*)"))
-@borg.on(sudo_cmd(pattern="gps ?(.*)", allow_sudo=True))
+@friday.on(admin_cmd(pattern="gps ?(.*)"))
+@friday.on(sudo_cmd(pattern="gps ?(.*)", allow_sudo=True))
 async def gps(event):
     starkislub = await edit_or_reply(event, "Processing")
     if event.fwd_from:

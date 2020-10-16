@@ -9,7 +9,7 @@ import asyncio
 from telethon import events
 
 
-@borg.on(events.NewMessage(pattern=r"\.meme", outgoing=True))
+@friday.on(events.NewMessage(pattern=r"\.meme", outgoing=True))
 async def meme(event):
     if event.fwd_from:
         return
@@ -42,7 +42,7 @@ usage:- .flower
 """
 
 
-@borg.on(events.NewMessage(pattern=r"\.flower", outgoing=True))
+@friday.on(events.NewMessage(pattern=r"\.flower", outgoing=True))
 async def meme(event):
     if event.fwd_from:
         return

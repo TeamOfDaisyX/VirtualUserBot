@@ -12,7 +12,7 @@ from telethon.tl.types import MessageEntityMentionName
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="clone ?(.*)"))
+@friday.on(admin_cmd(pattern="clone ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

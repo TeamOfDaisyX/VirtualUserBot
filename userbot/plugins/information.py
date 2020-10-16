@@ -11,8 +11,8 @@ from telethon.utils import get_input_location
 from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
-@borg.on(admin_cmd("info ?(.*)"))
-@borg.on(sudo_cmd("info ?(.*)", allow_sudo=True))
+@friday.on(admin_cmd("info ?(.*)"))
+@friday.on(sudo_cmd("info ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

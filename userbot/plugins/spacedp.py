@@ -45,7 +45,7 @@ async def animepp():
     urllib.request.urlretrieve(fy, "friday.jpg")
 
 
-@borg.on(admin_cmd(pattern="spacedp ?(.*)"))
+@friday.on(admin_cmd(pattern="spacedp ?(.*)"))
 async def main(event):
 
     await event.edit(

@@ -5,7 +5,7 @@ from datetime import datetime
 from pathlib import Path
 DELETE_TIMEOUT = 5
 
-@borg.on(admin_cmd(pattern="install", outgoing=True))
+@friday.on(admin_cmd(pattern="install", outgoing=True))
 async def install(event):
     if event.fwd_from:
         return

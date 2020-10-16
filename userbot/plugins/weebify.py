@@ -64,7 +64,7 @@ weebyfont = [
 ]
 
 
-@borg.on(admin_cmd(pattern="weeb ?(.*)"))
+@friday.on(admin_cmd(pattern="weeb ?(.*)"))
 async def weebify(event):
 
     args = event.pattern_match.group(1)

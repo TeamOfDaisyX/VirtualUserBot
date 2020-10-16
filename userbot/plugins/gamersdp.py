@@ -46,7 +46,7 @@ async def animepp():
     urllib.request.urlretrieve(fy, "donottouch.jpg")
 
 
-@borg.on(admin_cmd(pattern="gamerdp ?(.*)"))
+@friday.on(admin_cmd(pattern="gamerdp ?(.*)"))
 async def main(event):
 
     await event.edit(

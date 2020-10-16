@@ -35,7 +35,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 # @command(pattern="^.latestupdate")
-@borg.on(admin_cmd(pattern="latestupdate"))
+@friday.on(admin_cmd(pattern="latestupdate"))
 async def _(event):
     if event.fwd_from:
         return

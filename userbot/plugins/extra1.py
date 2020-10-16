@@ -16,7 +16,7 @@ import asyncio
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd(pattern=r"(.*)"))
+@friday.on(admin_cmd(pattern=r"(.*)"))
 async def _(event):
 
     if event.fwd_from:
@@ -54,7 +54,7 @@ async def _(event):
             await event.edit(animation_chars[i % 10])
 
 
-@borg.on(admin_cmd(pattern=r"(.*)"))
+@friday.on(admin_cmd(pattern=r"(.*)"))
 async def _(event):
 
     if event.fwd_from:
@@ -92,7 +92,7 @@ async def _(event):
             await event.edit(animation_chars[i % 10])
 
 
-@borg.on(admin_cmd(pattern=r"(.*)"))
+@friday.on(admin_cmd(pattern=r"(.*)"))
 async def _(event):
 
     if event.fwd_from:

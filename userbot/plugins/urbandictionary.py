@@ -8,7 +8,7 @@ import urbandict
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd("ud (.*)"))
+@friday.on(admin_cmd("ud (.*)"))
 async def _(event):
     if event.fwd_from:
         return

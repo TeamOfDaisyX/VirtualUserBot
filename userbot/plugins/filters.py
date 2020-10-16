@@ -69,8 +69,8 @@ async def on_snip(event):
                 last_triggered_filters[event.chat_id].remove(name)
 
 
-@borg.on(admin_cmd(pattern="filter (.*)"))
-@borg.on(sudo_cmd(pattern="filter (.*)", allow_sudo=True))
+@friday.on(admin_cmd(pattern="filter (.*)"))
+@friday.on(sudo_cmd(pattern="filter (.*)", allow_sudo=True))
 async def on_snip_save(event):
     hitler = await edit_or_reply(event, "Processing....")
     name = event.pattern_match.group(1)
@@ -105,8 +105,8 @@ async def on_snip_save(event):
         )
 
 
-@borg.on(admin_cmd(pattern="filters$"))
-@borg.on(sudo_cmd(pattern="filters$", allow_sudo=True))
+@friday.on(admin_cmd(pattern="filters$"))
+@friday.on(sudo_cmd(pattern="filters$", allow_sudo=True))
 async def on_snip_list(event):
     indiaislove = await edit_or_reply(event, "Processing....")
     all_snips = get_all_filters(event.chat_id)
@@ -132,8 +132,8 @@ async def on_snip_list(event):
         await indiaislove.edit(OUT_STR)
 
 
-@borg.on(admin_cmd(pattern="stop (.*)"))
-@borg.on(sudo_cmd(pattern="stop (.*)", allow_sudo=True))
+@friday.on(admin_cmd(pattern="stop (.*)"))
+@friday.on(sudo_cmd(pattern="stop (.*)", allow_sudo=True))
 async def on_snip_delete(event):
     iloveindia = await edit_or_reply(event, "Processing...")
     name = event.pattern_match.group(1)
@@ -141,8 +141,8 @@ async def on_snip_delete(event):
     await iloveindia.edit(f"filter {name} deleted successfully")
 
 
-@borg.on(admin_cmd(pattern="rmfilters$"))
-@borg.on(sudo_cmd(pattern="rmfilters$", allow_sudo=True))
+@friday.on(admin_cmd(pattern="rmfilters$"))
+@friday.on(sudo_cmd(pattern="rmfilters$", allow_sudo=True))
 async def on_all_snip_delete(event):
     await edit_or_reply(event, "Processing....")
     remove_all_filters(event.chat_id)

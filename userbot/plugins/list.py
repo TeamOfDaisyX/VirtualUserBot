@@ -12,8 +12,8 @@ import os
 from uniborg.util import admin_cmd, edit_or_reply
 
 
-@borg.on(admin_cmd(pattern="ls ?(.*)"))
-@borg.on(admin_cmd(pattern="ls ?(.*)", allow_sudo=True))
+@friday.on(admin_cmd(pattern="ls ?(.*)"))
+@friday.on(admin_cmd(pattern="ls ?(.*)", allow_sudo=True))
 async def lst(event):
     genesis = await edit_or_reply(event, "Processing")
     if event.fwd_from:

@@ -21,7 +21,7 @@ else:
     BOTLOG_CHATID = Config.PRIVATE_GROUP_ID
 
 
-@borg.on(admin_cmd(pattern="telegraph (media|text) ?(.*)"))
+@friday.on(admin_cmd(pattern="telegraph (media|text) ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

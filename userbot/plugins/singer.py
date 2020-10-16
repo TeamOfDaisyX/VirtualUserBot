@@ -6,7 +6,7 @@ from PyLyrics import *
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="singer (.*)"))
+@friday.on(admin_cmd(pattern="singer (.*)"))
 async def _(event):
     if event.fwd_from:
         return

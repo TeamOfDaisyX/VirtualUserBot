@@ -17,7 +17,7 @@ import random
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd(pattern=r"qt"))
+@friday.on(admin_cmd(pattern=r"qt"))
 async def _(event):
 
     if event.fwd_from:

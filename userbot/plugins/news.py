@@ -11,8 +11,8 @@ from var import Var
 newslog = Var.NEWS_CHANNEL_ID
 
 
-@borg.on(admin_cmd("news (.*)"))
-@borg.on(sudo_cmd("news (.*)", allow_sudo=True))
+@friday.on(admin_cmd("news (.*)"))
+@friday.on(sudo_cmd("news (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

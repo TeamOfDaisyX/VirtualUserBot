@@ -3,7 +3,7 @@
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd(pattern=r"lmoon"))
+@friday.on(admin_cmd(pattern=r"lmoon"))
 async def test(event):
     if event.fwd_from:
         return
@@ -12,7 +12,7 @@ async def test(event):
     )
 
 
-@borg.on(admin_cmd(pattern=r"city"))
+@friday.on(admin_cmd(pattern=r"city"))
 async def test(event):
     if event.fwd_from:
         return
@@ -29,14 +29,14 @@ async def test(event):
     )
 
 
-@borg.on(admin_cmd(pattern=r"hello"))
+@friday.on(admin_cmd(pattern=r"hello"))
 async def hi(event):
     if event.fwd_from:
         return
     await event.edit("🌺✨✨🌺✨🌺🌺🌺\n🌺✨✨🌺✨✨🌺✨\n🌺🌺🌺🌺✨✨🌺✨\n🌺✨✨🌺✨✨🌺✨\n🌺✨✨🌺✨🌺🌺🌺\n☁☁☁☁☁☁☁☁")
 
 
-@borg.on(admin_cmd(pattern=r"cheer"))
+@friday.on(admin_cmd(pattern=r"cheer"))
 async def cheer(event):
     if event.fwd_from:
         return
@@ -45,14 +45,14 @@ async def cheer(event):
     )
 
 
-@borg.on(admin_cmd(pattern=r"getwell"))
+@friday.on(admin_cmd(pattern=r"getwell"))
 async def getwell(event):
     if event.fwd_from:
         return
     await event.edit("🌹🌹🌹🌹🌹🌹🌹🌹 \n🌹😷😢😓😷😢💨🌹\n🌹💝💉🍵💊💐💝🌹\n🌹 GetBetter Soon! 🌹\n🌹🌹🌹🌹🌹🌹🌹🌹")
 
 
-@borg.on(admin_cmd(pattern=r"sprinkle"))
+@friday.on(admin_cmd(pattern=r"sprinkle"))
 async def sprinkle(event):
     if event.fwd_from:
         return

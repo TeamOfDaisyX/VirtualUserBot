@@ -4,7 +4,7 @@ Syntax: .fwd as reply to any message"""
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="frwd"))
+@friday.on(admin_cmd(pattern="frwd"))
 async def _(event):
     if event.fwd_from:
         return

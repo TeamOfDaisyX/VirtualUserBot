@@ -76,7 +76,7 @@ HIT = [
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "FridayUserbot"
 
 
-@borg.on(admin_cmd(pattern="slap ?(.*)", allow_sudo=True))
+@friday.on(admin_cmd(pattern="slap ?(.*)", allow_sudo=True))
 async def who(event):
     if event.fwd_from:
         return

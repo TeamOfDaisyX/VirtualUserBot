@@ -11,7 +11,7 @@ import asyncio
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd("restart"))
+@friday.on(admin_cmd("restart"))
 async def _(event):
     if event.fwd_from:
         return
@@ -28,7 +28,7 @@ async def _(event):
     quit()
 
 
-@borg.on(admin_cmd("shutdown"))
+@friday.on(admin_cmd("shutdown"))
 async def _(event):
     if event.fwd_from:
         return

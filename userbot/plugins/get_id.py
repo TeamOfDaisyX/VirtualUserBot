@@ -5,8 +5,8 @@ from telethon.utils import pack_bot_file_id
 from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
-@borg.on(admin_cmd("get_id"))
-@borg.on(sudo_cmd("get_id", allow_sudo=True))
+@friday.on(admin_cmd("get_id"))
+@friday.on(sudo_cmd("get_id", allow_sudo=True))
 async def _(event):
     starkisgreat = await edit_or_reply(event, "Processing")
     if event.fwd_from:

@@ -24,7 +24,7 @@ import requests
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd("rmbg ?(.*)"))
+@friday.on(admin_cmd("rmbg ?(.*)"))
 async def _(event):
     HELP_STR = (
         "`.rmbg` as reply to a media, or give a link as an argument to this command"

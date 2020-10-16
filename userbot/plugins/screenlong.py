@@ -10,7 +10,7 @@ from selenium import webdriver
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd("screenlong (.*)"))
+@friday.on(admin_cmd("screenlong (.*)"))
 async def _(event):
     if event.fwd_from:
         return
