@@ -17,6 +17,7 @@ Best User Bot To Manage Your Telegram Account
 ### For any query or want to know how it works join Group And Channel 
 
 <a href="https://t.me/FridaySupportOfficial"><img src="https://img.shields.io/badge/Join-Telegram%20Channel-red.svg?logo=Telegram"></a>
+
 <a href="https://t.me/fridayOT"><img src="https://img.shields.io/badge/Join-Telegram%20Group-blue.svg?logo=telegram"></a>
 
 ## HOW TO DEPLOY 
