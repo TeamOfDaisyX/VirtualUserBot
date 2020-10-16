@@ -8,8 +8,8 @@ jobs:
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@master
         with:
-          find: "event.from_id"
-          replace: "event.sender_id"
+          find: "@borg.on"
+          replace: "@friday.on"
       - name: Create Pull Request
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
