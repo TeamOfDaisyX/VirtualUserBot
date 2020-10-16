@@ -1,4 +1,4 @@
-name: Telethon Fix
+name: Sed
 on: push
 jobs:
   build:
@@ -8,12 +8,12 @@ jobs:
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@master
         with:
-          find: "@borg.on"
-          replace: "@friday.on"
+          find: "admin_cmd"
+          replace: "friday_on_cmd"
       - name: Create Pull Request
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: 'Telethon Latest Fix'
+          commit_message: 'Hmm'
           commit_options: '--no-verify'
           repository: .
           commit_user_name: StarkGang
