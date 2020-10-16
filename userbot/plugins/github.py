@@ -2,10 +2,10 @@
 Syntax: .github USERNAME"""
 import requests
 
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
 
 
-@borg.on(admin_cmd("github (.*)"))
+@borg.on(friday_on_cmd("github (.*)"))
 @borg.on(sudo_cmd("github (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
