@@ -157,8 +157,8 @@ def friday_on_cmd(pattern=None, **args):
             # special fix for snip.py
             args["pattern"] = re.compile(pattern)
         else:
-            args["pattern"] = re.compile("\." + pattern)
-            cmd = "." + pattern
+            args["pattern"] = re.compile(Config.COMMAND_HAND_LER + pattern)
+            cmd = Config.COMMAND_HAND_LER + pattern
             try:
                 CMD_LIST[file_test].append(cmd)
             except:
