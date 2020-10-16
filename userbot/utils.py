@@ -9,7 +9,7 @@ from userbot import CMD_LIST, LOAD_PLUG, SUDO_LIST, bot
 from userbot.uniborgConfig import Config
 from var import Var
 
-cmdhandler = "^" + Config.COMMAND_HAND_LER
+cmdhandler = Config.COMMAND_HAND_LER
 
 def command(**args):
     args["func"] = lambda e: e.via_bot_id is None
