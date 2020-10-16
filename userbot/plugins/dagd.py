@@ -6,10 +6,10 @@ Available Commands:
 .unshort <short url>"""
 import requests
 
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 
 
-@borg.on(admin_cmd("dns (.*)"))
+@friday.on(friday_on_cmd("dns (.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -22,7 +22,7 @@ async def _(event):
         await event.edit("i can't seem to find {} on the internet".format(input_str))
 
 
-@borg.on(admin_cmd("url (.*)"))
+@friday.on(friday_on_cmd("url (.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -35,7 +35,7 @@ async def _(event):
         await event.edit("something is wrong. please try again later.")
 
 
-@borg.on(admin_cmd("unshort (.*)"))
+@friday.on(friday_on_cmd("unshort (.*)"))
 async def _(event):
     if event.fwd_from:
         return

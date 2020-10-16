@@ -10,10 +10,10 @@ from datetime import datetime
 from gtts import gTTS
 
 from userbot import CMD_HELP
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 
 
-@borg.on(admin_cmd(pattern="voice (.*)"))
+@friday.on(friday_on_cmd(pattern="voice (.*)"))
 async def _(event):
     if event.fwd_from:
         return

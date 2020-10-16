@@ -9,11 +9,11 @@ By:- @Zero_cool7870
 
 import os
 
-from uniborg.util import admin_cmd, edit_or_reply
+from uniborg.util import friday_on_cmd, edit_or_reply
 
 
-@borg.on(admin_cmd(pattern="ls ?(.*)"))
-@borg.on(admin_cmd(pattern="ls ?(.*)", allow_sudo=True))
+@friday.on(friday_on_cmd(pattern="ls ?(.*)"))
+@friday.on(friday_on_cmd(pattern="ls ?(.*)", allow_sudo=True))
 async def lst(event):
     genesis = await edit_or_reply(event, "Processing")
     if event.fwd_from:

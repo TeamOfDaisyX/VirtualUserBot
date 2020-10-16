@@ -1,13 +1,13 @@
 import asyncio
 
-from uniborg.util import admin_cmd
+from uniborg.util import friday_on_cmd
 
 from userbot import ALIVE_NAME
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Friday Userbot"
 
 
-@borg.on(admin_cmd(pattern=r"police"))
+@friday.on(friday_on_cmd(pattern=r"police"))
 async def _(event):
 
     if event.fwd_from:

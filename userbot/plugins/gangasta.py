@@ -1,9 +1,9 @@
 import asyncio
 
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 
 
-@borg.on(admin_cmd("gangasta ?(.*)"))
+@friday.on(friday_on_cmd("gangasta ?(.*)"))
 async def _(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         await event.edit("EVERyBOdy")

@@ -3,7 +3,7 @@ import time
 from datetime import datetime
 
 from userbot.__init__ import Lastupdate
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 
 
 def get_readable_time(seconds: int) -> str:
@@ -35,7 +35,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 # @command(pattern="^.latestupdate")
-@borg.on(admin_cmd(pattern="latestupdate"))
+@friday.on(friday_on_cmd(pattern="latestupdate"))
 async def _(event):
     if event.fwd_from:
         return

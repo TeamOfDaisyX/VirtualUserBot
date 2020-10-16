@@ -1,7 +1,7 @@
-from uniborg.util import admin_cmd
+from uniborg.util import friday_on_cmd
 
 
-@borg.on(admin_cmd(pattern=r"test"))
+@friday.on(friday_on_cmd(pattern=r"test"))
 async def test(event):
     if event.fwd_from:
         return

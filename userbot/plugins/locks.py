@@ -6,11 +6,11 @@ DB Options: bots, commands, email, forward, url"""
 from telethon import events, functions, types
 
 from userbot.plugins.sql_helper.locks_sql import get_locks, is_locked, update_lock
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
 
 
-@borg.on(admin_cmd("lock( (?P<target>\S+)|$)"))
-@borg.on(sudo_cmd("lock( (?P<target>\S+)|$)", allow_sudo=True))
+@friday.on(friday_on_cmd("lock( (?P<target>\S+)|$)"))
+@friday.on(sudo_cmd("lock( (?P<target>\S+)|$)", allow_sudo=True))
 async def _(event):
     mrhackerguy = await edit_or_reply(event, "Processing")
     # Space weirdness in regex required because argument is optional and other
@@ -82,8 +82,8 @@ async def _(event):
             )
 
 
-@borg.on(admin_cmd("unlock ?(.*)"))
-@borg.on(sudo_cmd("unlock ?(.*)", allow_sudo=True))
+@friday.on(friday_on_cmd("unlock ?(.*)"))
+@friday.on(sudo_cmd("unlock ?(.*)", allow_sudo=True))
 async def _(event):
     starkgang = await edit_or_reply(event, "Processing")
     if event.fwd_from:
@@ -97,8 +97,8 @@ async def _(event):
         await starkgang.edit("Use `.lock` without any parameters to unlock API locks")
 
 
-@borg.on(admin_cmd("curenabledlocks"))
-@borg.on(admin_cmd("curenabledlocks", allow_sudo=True))
+@friday.on(friday_on_cmd("curenabledlocks"))
+@friday.on(friday_on_cmd("curenabledlocks", allow_sudo=True))
 async def _(event):
     pikachu = await edit_or_reply(event, "Processing")
     if event.fwd_from:
@@ -134,8 +134,8 @@ async def _(event):
     await pikachu.edit(res)
 
 
-@borg.on(events.MessageEdited())  # pylint:disable=E0602
-@borg.on(events.NewMessage())  # pylint:disable=E0602
+@friday.on(events.MessageEdited())  # pylint:disable=E0602
+@friday.on(events.NewMessage())  # pylint:disable=E0602
 async def check_incoming_messages(event):
     # TODO: exempt admins from locks
     peer_id = event.chat_id
@@ -197,7 +197,7 @@ async def check_incoming_messages(event):
                 update_lock(peer_id, "url", False)
 
 
-@borg.on(events.ChatAction())  # pylint:disable=E0602
+@friday.on(events.ChatAction())  # pylint:disable=E0602
 async def _(event):
     # TODO: exempt admins from locks
     # check for "lock" "bots"

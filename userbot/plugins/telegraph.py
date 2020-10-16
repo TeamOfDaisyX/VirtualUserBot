@@ -8,7 +8,7 @@ from datetime import datetime
 from PIL import Image
 from telegraph import Telegraph, exceptions, upload_file
 
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 
 telegraph = Telegraph()
 r = telegraph.create_account(short_name=Config.TELEGRAPH_SHORT_NAME)
@@ -21,7 +21,7 @@ else:
     BOTLOG_CHATID = Config.PRIVATE_GROUP_ID
 
 
-@borg.on(admin_cmd(pattern="telegraph (media|text) ?(.*)"))
+@friday.on(friday_on_cmd(pattern="telegraph (media|text) ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

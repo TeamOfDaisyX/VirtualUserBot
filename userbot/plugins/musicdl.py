@@ -7,10 +7,10 @@ from telethon.errors.rpcerrorlist import (
 )
 from telethon.tl.functions.messages import ImportChatInviteRequest
 
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 
 
-@borg.on(admin_cmd("sdd ?(.*)"))
+@friday.on(friday_on_cmd("sdd ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

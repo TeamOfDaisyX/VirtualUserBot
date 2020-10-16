@@ -10,10 +10,10 @@
 
 import asyncio
 
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 
 
-@borg.on(admin_cmd("(.*)"))
+@friday.on(friday_on_cmd("(.*)"))
 async def _(event):
 
     if event.fwd_from:
@@ -48,7 +48,7 @@ async def _(event):
             await asyncio.sleep(animation_interval)
 
 
-@borg.on(admin_cmd("(.*)"))
+@friday.on(friday_on_cmd("(.*)"))
 async def _(event):
 
     if event.fwd_from:
@@ -83,7 +83,7 @@ async def _(event):
             await asyncio.sleep(animation_interval)
 
 
-@borg.on(admin_cmd("(.*)"))
+@friday.on(friday_on_cmd("(.*)"))
 async def _(event):
 
     if event.fwd_from:
@@ -117,7 +117,7 @@ async def _(event):
             await asyncio.sleep(animation_interval)
 
 
-@borg.on(admin_cmd("(.*)"))
+@friday.on(friday_on_cmd("(.*)"))
 async def _(event):
 
     if event.fwd_from:

@@ -1,11 +1,11 @@
-from userbot.utils import sudo_cmd, admin_cmd, edit_or_reply, load_module, remove_plugin
+from userbot.utils import sudo_cmd, friday_on_cmd, edit_or_reply, load_module, remove_plugin
 import asyncio
 import os
 from datetime import datetime
 from pathlib import Path
 DELETE_TIMEOUT = 5
 
-@borg.on(admin_cmd(pattern="install", outgoing=True))
+@friday.on(friday_on_cmd(pattern="install", outgoing=True))
 async def install(event):
     if event.fwd_from:
         return

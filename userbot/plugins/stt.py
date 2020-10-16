@@ -5,10 +5,10 @@ from datetime import datetime
 
 import requests
 
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 
 
-@borg.on(admin_cmd(pattern="stt (.*)"))
+@friday.on(friday_on_cmd(pattern="stt (.*)"))
 async def _(event):
     if event.fwd_from:
         return

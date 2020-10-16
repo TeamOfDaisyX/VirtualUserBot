@@ -27,13 +27,13 @@ from math import ceil
 from userbot.plugins import inlinestats
 from telethon import custom, events, Button
 from userbot import CMD_LIST
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
 from telethon.utils import get_display_name
-from userbot.utils import admin_cmd, sudo_cmd
+from userbot.utils import friday_on_cmd, sudo_cmd
 from userbot.uniborgConfig import Config
 from telethon import events
 from datetime import datetime
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
 import time
 from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
@@ -47,11 +47,11 @@ async def start(event):
     starkbot = await tgbot.get_me()
     bot_id = starkbot.first_name
     bot_username = starkbot.username
-    replied_user = await event.client(GetFullUserRequest(event.from_id))
+    replied_user = await event.client(GetFullUserRequest(event.sender_id))
     firstname = replied_user.user.first_name
     vent = event.chat_id
     starttext = (f"Hello, {firstname} ! Nice To Meet You, Well I Am {bot_id}, An Powerfull Assistant Bot. \n\nMy [➤ Master](tg://user?id={bot.uid}) \nYou Can Talk/Contact My Master Using This Bot. \n\nIf You Want Your Own Assistant You Can Deploy From Button Below. \n\nPowered By [Friday Userbot](t.me/FridayOT)")
-    if event.from_id == bot.uid:
+    if event.sender_id == bot.uid:
         await tgbot.send_message(
            vent,
            message=f"Hi Master, It's Me {bot_id}, Your Assistant ! \nWhat You Wanna Do today ?",
@@ -62,11 +62,11 @@ async def start(event):
             ]
            )
     else:
-        if already_added(event.from_id):
+        if already_added(event.sender_id):
             pass
-        elif not already_added(event.from_id):
+        elif not already_added(event.sender_id):
             add_usersid_in_db(
-                event.from_id
+                event.sender_id
              )
         await tgbot.send_message(
            event.chat_id,
@@ -128,11 +128,11 @@ async def users(event):
 # Bot Permit.
 @tgbot.on(events.NewMessage(func=lambda e: e.is_private))
 async def all_messages_catcher(event):
-    if is_he_added(event.from_id):
+    if is_he_added(event.sender_id):
         return
     if event.raw_text.startswith("/"):
         pass
-    elif event.from_id == bot.uid:
+    elif event.sender_id == bot.uid:
         return
     else:
         sender = await event.get_sender()
@@ -142,7 +142,7 @@ async def all_messages_catcher(event):
 # (C) @SpecHide
         add_me_in_db(
             sed.id,
-            event.from_id,
+            event.sender_id,
             event.id
         )
 
@@ -156,7 +156,7 @@ async def sed(event):
     user_id, reply_message_id = his_userid(
         msg.id
         )
-    if event.from_id == bot.uid:
+    if event.sender_id == bot.uid:
         if event.raw_text.startswith("/"):
             pass
         else:
@@ -201,7 +201,7 @@ async def starkislub(event):
     
 @tgbot.on(events.NewMessage(pattern="^/block ?(.*)", func=lambda e: e.sender_id == bot.uid))
 async def starkisnoob(event):
-    if event.from_id == bot.uid:
+    if event.sender_id == bot.uid:
         msg = await event.get_reply_message()
         real_nigga = msg.id
         msg_s = event.raw_text
@@ -219,7 +219,7 @@ async def starkisnoob(event):
 
 @tgbot.on(events.NewMessage(pattern="^/unblock ?(.*)", func=lambda e: e.sender_id == bot.uid))
 async def starkisnoob(event):
-    if event.from_id == bot.uid:
+    if event.sender_id == bot.uid:
         msg = await event.get_reply_message()
         real_nigga = msg.id
         msg_s = event.raw_text

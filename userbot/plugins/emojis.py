@@ -6,10 +6,10 @@ Available Commands:
 .emoji -_-"""
 import asyncio
 
-from uniborg.util import admin_cmd
+from uniborg.util import friday_on_cmd
 
 
-@borg.on(admin_cmd(pattern="emoji (.*)"))
+@friday.on(friday_on_cmd(pattern="emoji (.*)"))
 async def _(event):
     if event.fwd_from:
         return

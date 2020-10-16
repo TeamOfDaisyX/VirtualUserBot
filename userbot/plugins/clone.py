@@ -9,10 +9,10 @@ from telethon.tl import functions
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 
 
-@borg.on(admin_cmd(pattern="clone ?(.*)"))
+@friday.on(friday_on_cmd(pattern="clone ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

@@ -13,14 +13,14 @@ from telethon.tl.types import (
 
 import emoji
 from googletrans import Translator
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
 from telethon.utils import get_display_name
-from userbot.utils import admin_cmd, sudo_cmd
+from userbot.utils import friday_on_cmd, sudo_cmd
 from userbot.uniborgConfig import Config
 from telethon import events
 from userbot import bot 
 from datetime import datetime
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
 import time
 from userbot import Lastupdate
 

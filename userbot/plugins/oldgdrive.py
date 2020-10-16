@@ -18,7 +18,7 @@ from googleapiclient.discovery import build
 from oauth2client.client import OAuth2WebServerFlow
 from oauth2client.file import Storage
 from telethon import events
-from uniborg.util import admin_cmd
+from uniborg.util import friday_on_cmd
 
 # Path to token json file, it should be in same directory as script
 G_DRIVE_TOKEN_FILE = Var.TEMP_DOWNLOAD_DIRECTORY + "/auth_token.txt"
@@ -34,7 +34,7 @@ G_DRIVE_DIR_MIME_TYPE = "application/vnd.google-apps.folder"
 
 
 # @command(pattern="^.ugdrive ?(.*)")
-@borg.on(admin_cmd(pattern=r"ugdrive ?(.*)"))
+@friday.on(friday_on_cmd(pattern=r"ugdrive ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -115,7 +115,7 @@ async def _(event):
 
 
 # @command(pattern="^.drivesch ?(.*)")
-@borg.on(admin_cmd(pattern=r"drivesch ?(.*)"))
+@friday.on(friday_on_cmd(pattern=r"drivesch ?(.*)"))
 async def sch(event):
     if event.fwd_from:
         return
@@ -191,7 +191,7 @@ async def gsearch(http, query, filename):
 
 
 # @command(pattern="^.gdrivedir ?(.*)")
-@borg.on(admin_cmd(pattern=r"gdrivedir ?(.*)"))
+@friday.on(friday_on_cmd(pattern=r"gdrivedir ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -370,7 +370,7 @@ async def upload_file(http, file_path, file_name, mime_type, event, parent_id):
 
 
 # @command(pattern="^.gfolder ?(.*)")
-@borg.on(admin_cmd(pattern=r"gfolder ?(.*)"))
+@friday.on(friday_on_cmd(pattern=r"gfolder ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

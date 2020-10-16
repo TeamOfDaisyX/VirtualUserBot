@@ -7,7 +7,7 @@ import urllib
 import requests
 from telethon.tl import functions
 
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 
 COLLECTION_STRINGZ = [
     "star-wars-wallpaper-1080p",
@@ -46,7 +46,7 @@ async def animepp():
     urllib.request.urlretrieve(fy, "donottouch.jpg")
 
 
-@borg.on(admin_cmd(pattern="gamerdp ?(.*)"))
+@friday.on(friday_on_cmd(pattern="gamerdp ?(.*)"))
 async def main(event):
 
     await event.edit(

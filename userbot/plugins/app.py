@@ -8,11 +8,11 @@ import bs4
 import requests
 
 from .. import CMD_HELP
-from ..utils import admin_cmd, edit_or_reply, sudo_cmd
+from ..utils import friday_on_cmd, edit_or_reply, sudo_cmd
 
 
-@borg.on(admin_cmd(pattern="app (.*)"))
-@borg.on(sudo_cmd(pattern="app (.*)", allow_sudo=True))
+@friday.on(friday_on_cmd(pattern="app (.*)"))
+@friday.on(sudo_cmd(pattern="app (.*)", allow_sudo=True))
 async def apk(event):
     app_name = event.pattern_match.group(1)
     event = await edit_or_reply(event, "Searching!")
@@ -81,8 +81,8 @@ async def apk(event):
         await event.edit("Exception Occured:- " + str(err))
 
 
-@borg.on(admin_cmd(pattern="appr (.*)"))
-@borg.on(sudo_cmd(pattern="appr (.*)", allow_sudo=True))
+@friday.on(friday_on_cmd(pattern="appr (.*)"))
+@friday.on(sudo_cmd(pattern="appr (.*)", allow_sudo=True))
 async def apkr(event):
     app_name = event.pattern_match.group(1)
     event = await edit_or_reply(event, "searching!")

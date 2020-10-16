@@ -1,10 +1,10 @@
 # For Uniborg
 # (c) @INF1N17Y
 
-from uniborg.util import admin_cmd
+from uniborg.util import friday_on_cmd
 
 
-@borg.on(admin_cmd("mention (.*)"))
+@friday.on(friday_on_cmd("mention (.*)"))
 async def _(event):
     if event.fwd_from:
         return

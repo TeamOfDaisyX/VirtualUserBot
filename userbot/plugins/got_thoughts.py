@@ -12,7 +12,7 @@ import random
 from telethon import events
 
 
-@borg.on(events.NewMessage(pattern=r"\.gott", outgoing=True))
+@friday.on(events.NewMessage(pattern=r"\.gott", outgoing=True))
 async def _(event):
 
     if event.fwd_from:

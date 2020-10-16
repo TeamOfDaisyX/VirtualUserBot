@@ -8,7 +8,7 @@ import random
 
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
-from uniborg.util import admin_cmd
+from uniborg.util import friday_on_cmd
 
 from userbot import ALIVE_NAME
 
@@ -76,7 +76,7 @@ HIT = [
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "FridayUserbot"
 
 
-@borg.on(admin_cmd(pattern="slap ?(.*)", allow_sudo=True))
+@friday.on(friday_on_cmd(pattern="slap ?(.*)", allow_sudo=True))
 async def who(event):
     if event.fwd_from:
         return

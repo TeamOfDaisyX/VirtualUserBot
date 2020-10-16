@@ -1,9 +1,9 @@
 """use command .ducduckgo"""
 
-from uniborg.util import admin_cmd
+from uniborg.util import friday_on_cmd
 
 
-@borg.on(admin_cmd("ducduckgo (.*)"))
+@friday.on(friday_on_cmd("ducduckgo (.*)"))
 async def _(event):
     if event.fwd_from:
         return

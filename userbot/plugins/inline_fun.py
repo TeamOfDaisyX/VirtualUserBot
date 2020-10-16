@@ -1,11 +1,11 @@
-from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
+from userbot.utils import friday_on_cmd, sudo_cmd, edit_or_reply
 from var import Var
 
 
 
 
 
-@borg.on(admin_cmd(pattern="stat$"))
+@friday.on(friday_on_cmd(pattern="stat$"))
 async def stats(event):
     if event.fwd_from:
         return
@@ -18,7 +18,7 @@ async def stats(event):
     await event.delete()
 
 
-@borg.on(admin_cmd(pattern="xogame$"))
+@friday.on(friday_on_cmd(pattern="xogame$"))
 async def gamez(event):
     if event.fwd_from:
         return
@@ -30,7 +30,7 @@ async def gamez(event):
     await tap[0].click(event.chat_id)
     await event.delete()
 
-@borg.on(admin_cmd(pattern="wspr ?(.*)"))
+@friday.on(friday_on_cmd(pattern="wspr ?(.*)"))
 async def wspr(event):
     if event.fwd_from:
         return
@@ -42,7 +42,7 @@ async def wspr(event):
     await tap[0].click(event.chat_id)
     await event.delete()
 
-@borg.on(admin_cmd(pattern="mod ?(.*)"))
+@friday.on(friday_on_cmd(pattern="mod ?(.*)"))
 async def mod(event):
     if event.fwd_from:
         return

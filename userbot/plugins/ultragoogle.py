@@ -12,7 +12,7 @@ import requests
 from bs4 import BeautifulSoup
 from google_images_download import google_images_download
 
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
 
 
 def progress(current, total):
@@ -23,8 +23,8 @@ def progress(current, total):
     )
 
 
-@borg.on(admin_cmd(pattern="search (.*)"))
-@borg.on(sudo_cmd(pattern="search (.*)", allow_sudo=True))
+@friday.on(friday_on_cmd(pattern="search (.*)"))
+@friday.on(sudo_cmd(pattern="search (.*)", allow_sudo=True))
 async def _(event):
     stark = await edit_or_reply(event, "`Processing Your Request`")
     if event.fwd_from:
@@ -55,7 +55,7 @@ async def _(event):
     await stark.edit("Google: {}\n{}".format(input_str, output_str), link_preview=False)
 
 
-@borg.on(admin_cmd(pattern="image (.*)"))
+@friday.on(friday_on_cmd(pattern="image (.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -99,7 +99,7 @@ async def _(event):
     await event.delete()
 
 
-@borg.on(admin_cmd(pattern="grs"))
+@friday.on(friday_on_cmd(pattern="grs"))
 async def _(event):
     if event.fwd_from:
         return

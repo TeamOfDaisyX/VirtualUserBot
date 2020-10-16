@@ -16,7 +16,7 @@ if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
     os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
 
 
-@borg.on(events.NewMessage(pattern=r"\.lslocal", outgoing=True))
+@friday.on(events.NewMessage(pattern=r"\.lslocal", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -57,7 +57,7 @@ async def _(event):
 #        await event.edit("Unknown Command")
 
 
-@borg.on(events.NewMessage(pattern=r"\.lsroot", outgoing=True))
+@friday.on(events.NewMessage(pattern=r"\.lsroot", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -91,7 +91,7 @@ async def _(event):
     await event.edit(f"{OUTPUT}`{stdout.decode()}`")
 
 
-@borg.on(events.NewMessage(pattern=r"\.lssaved", outgoing=True))
+@friday.on(events.NewMessage(pattern=r"\.lssaved", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -125,7 +125,7 @@ async def _(event):
     await event.edit(f"{OUTPUT}`{stdout.decode()}`")
 
 
-@borg.on(events.NewMessage(pattern=r"\.rnsaved ?(.*)", outgoing=True))
+@friday.on(events.NewMessage(pattern=r"\.rnsaved ?(.*)", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -163,7 +163,7 @@ async def _(event):
     await event.edit(f"File renamed `{src}` to `{dst}`")
 
 
-@borg.on(events.NewMessage(pattern=r"\.rnlocal ?(.*)", outgoing=True))
+@friday.on(events.NewMessage(pattern=r"\.rnlocal ?(.*)", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -201,7 +201,7 @@ async def _(event):
     await event.edit(f"File renamed `{src}` to `{dst}`")
 
 
-@borg.on(events.NewMessage(pattern=r"\.delsave (.*)", outgoing=True))
+@friday.on(events.NewMessage(pattern=r"\.delsave (.*)", outgoing=True))
 async def handler(event):
     if event.fwd_from:
         return
@@ -216,7 +216,7 @@ async def handler(event):
         await event.edit("⛔️File Not Found സാധനം കയ്യിലില്ല😬")
 
 
-@borg.on(events.NewMessage(pattern=r"\.delocal (.*)", outgoing=True))
+@friday.on(events.NewMessage(pattern=r"\.delocal (.*)", outgoing=True))
 async def handler(event):
     if event.fwd_from:
         return

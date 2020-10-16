@@ -7,10 +7,10 @@ Credits to noone
 
 import asyncio
 
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 
 
-@borg.on(admin_cmd("Friday"))
+@friday.on(friday_on_cmd("Friday"))
 async def _(event):
     if event.fwd_from:
         return

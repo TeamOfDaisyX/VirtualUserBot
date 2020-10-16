@@ -9,6 +9,7 @@ from userbot import CMD_LIST, LOAD_PLUG, SUDO_LIST, bot
 from userbot.uniborgConfig import Config
 from var import Var
 
+cmdhandler = Config.COMMAND_HAND_LER
 
 def command(**args):
     args["func"] = lambda e: e.via_bot_id is None
@@ -142,7 +143,7 @@ def remove_plugin(shortname):
         raise ValueError
 
 
-def admin_cmd(pattern=None, **args):
+def friday_on_cmd(pattern=None, **args):
     args["func"] = lambda e: e.via_bot_id is None
 
     stack = inspect.stack()
@@ -157,8 +158,8 @@ def admin_cmd(pattern=None, **args):
             # special fix for snip.py
             args["pattern"] = re.compile(pattern)
         else:
-            args["pattern"] = re.compile("\." + pattern)
-            cmd = "." + pattern
+            args["pattern"] = re.compile(cmdhandler + pattern)
+            cmd = cmdhandler + pattern
             try:
                 CMD_LIST[file_test].append(cmd)
             except:
@@ -407,7 +408,7 @@ def sudo_cmd(pattern=None, **args):
 
 
 async def edit_or_reply(event, text):
-    if event.from_id in Config.SUDO_USERS:
+    if event.sender_id in Config.SUDO_USERS:
         reply_to = await event.get_reply_message()
         if reply_to:
             return await reply_to.reply(text)

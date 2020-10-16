@@ -6,7 +6,7 @@ import io
 import asyncio
 import datetime
 import time
-from userbot.utils import admin_cmd, sudo_cmd
+from userbot.utils import friday_on_cmd, sudo_cmd
 from userbot.events import register 
 from userbot import bot, CMD_HELP
 from telethon.errors.rpcerrorlist import YouBlockedUserError
@@ -30,7 +30,7 @@ def bruh(name):
     
 
 
-@borg.on(admin_cmd(pattern="spd ?(.*)"))
+@friday.on(friday_on_cmd(pattern="spd ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -50,7 +50,7 @@ async def _(event):
           await event.delete()
           await bot.forward_messages(event.chat_id, respond.message)
 
-@borg.on(admin_cmd(pattern="netease ?(.*)"))
+@friday.on(friday_on_cmd(pattern="netease ?(.*)"))
 async def WooMai(netase):
     if netase.fwd_from:
         return
@@ -78,7 +78,7 @@ async def WooMai(netase):
     await netase.delete()
 
 
-@borg.on(admin_cmd(pattern="dzd ?(.*)"))
+@friday.on(friday_on_cmd(pattern="dzd ?(.*)"))
 async def DeezLoader(Deezlod):
     if Deezlod.fwd_from:
         return

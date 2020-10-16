@@ -8,12 +8,12 @@ import os
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.types import MessageMediaPhoto
-from uniborg.util import admin_cmd
+from uniborg.util import friday_on_cmd
 
 thumb_image_path = Config.TMP_DOWNLOAD_DIRECTORY + "/thumb_image.jpg"
 
 
-@borg.on(admin_cmd("mmf ?(.*)"))
+@friday.on(friday_on_cmd("mmf ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

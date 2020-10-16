@@ -8,10 +8,10 @@ Available Commands:
 
 import asyncio
 
-from uniborg.util import admin_cmd
+from uniborg.util import friday_on_cmd
 
 
-@borg.on(admin_cmd(pattern="lucky"))
+@friday.on(friday_on_cmd(pattern="lucky"))
 async def _(event):
 
     if event.fwd_from:

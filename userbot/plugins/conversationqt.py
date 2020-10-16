@@ -14,10 +14,10 @@ Syntax: .qt
 import asyncio
 import random
 
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 
 
-@borg.on(admin_cmd(pattern=r"qt"))
+@friday.on(friday_on_cmd(pattern=r"qt"))
 async def _(event):
 
     if event.fwd_from:

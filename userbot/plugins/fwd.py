@@ -1,10 +1,10 @@
 """Enable Seen Counter in any message,Credits To Xtra-Tg Owner 
 to know how many users have seen your message
 Syntax: .fwd as reply to any message"""
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 
 
-@borg.on(admin_cmd(pattern="frwd"))
+@friday.on(friday_on_cmd(pattern="frwd"))
 async def _(event):
     if event.fwd_from:
         return

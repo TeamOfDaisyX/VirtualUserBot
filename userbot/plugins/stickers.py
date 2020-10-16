@@ -23,14 +23,14 @@ from telethon.tl.types import (
 )
 
 from userbot import ALIVE_NAME
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Who is this"
 FILLED_UP_DADDY = "Invalid pack selected."
 
 
-@borg.on(admin_cmd(pattern="kang ?(.*)"))
-@borg.on(sudo_cmd(pattern="kang ?(.*)", allow_sudo=True))
+@friday.on(friday_on_cmd(pattern="kang ?(.*)"))
+@friday.on(sudo_cmd(pattern="kang ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -47,7 +47,7 @@ async def _(event):
     if not user.username:
         user.username = user.id
     pack = 1
-    userid = event.from_id
+    userid = event.sender_id
     # packname = f"FRIDAY PACK"
     # packshortname = f"FRIDAY_{userid}_ns"  # format: Uni_Borg_userid
     if userid == 1263617196:
@@ -217,8 +217,8 @@ async def _(event):
     )
 
 
-@borg.on(admin_cmd(pattern="packinfo"))
-@borg.on(sudo_cmd(pattern="packinfo ?(.*)", allow_sudo=True))
+@friday.on(friday_on_cmd(pattern="packinfo"))
+@friday.on(sudo_cmd(pattern="packinfo ?(.*)", allow_sudo=True))
 async def _(event):
     moods = await edit_or_reply(event, "`HeHe , Me Gonna Leech Pack Info`")
     if event.fwd_from:
@@ -257,7 +257,7 @@ async def _(event):
     )
 
 
-@borg.on(admin_cmd(pattern="getsticker ?(.*)"))
+@friday.on(friday_on_cmd(pattern="getsticker ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

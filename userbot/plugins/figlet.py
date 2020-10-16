@@ -1,10 +1,10 @@
 import pyfiglet
 
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
 
 
-@borg.on(admin_cmd(pattern="figlet ?(.*)", outgoing=True))
-@borg.on(sudo_cmd(pattern="figlet ?(.*)", allow_sudo=True))
+@friday.on(friday_on_cmd(pattern="figlet ?(.*)", outgoing=True))
+@friday.on(sudo_cmd(pattern="figlet ?(.*)", allow_sudo=True))
 async def figlet(event):
     arjun = await edit_or_reply(event, "`Figleting This Text xD`")
     if event.fwd_from:

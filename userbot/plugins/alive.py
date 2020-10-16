@@ -1,7 +1,7 @@
 """Check if userbot alive. If you change these, you become the gayest gay such that even the gay world will disown you."""
 # CREDITS: @WhySooSerious, @Sur_vivor
 import time
-from uniborg.util import admin_cmd, sudo_cmd
+from uniborg.util import friday_on_cmd, sudo_cmd
 from userbot import ALIVE_NAME
 from datetime import datetime
 from userbot import Lastupdate
@@ -54,8 +54,8 @@ pm_caption += "➥ **Check Stats By Doing** `.stat`. \n\n"
 pm_caption += "[🇮🇳 Deploy FridayUserbot 🇮🇳](https://telegra.ph/FRIDAY-06-15)"
 
 
-@borg.on(admin_cmd(pattern=r"alive"))
-@borg.on(sudo_cmd(pattern=r"alive", allow_sudo=True))
+@friday.on(friday_on_cmd(pattern=r"alive"))
+@friday.on(sudo_cmd(pattern=r"alive", allow_sudo=True))
 async def friday(alive):
     await alive.get_chat()
     """ For .alive command, check if the bot is running.  """

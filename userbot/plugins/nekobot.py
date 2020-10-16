@@ -3,11 +3,11 @@
 # Official Web : nekobot.xyz
 # "Copy It As You Want But Don't Edit Credits"
 import requests
-from uniborg.util import admin_cmd, edit_or_reply, sudo_cmd
+from uniborg.util import friday_on_cmd, edit_or_reply, sudo_cmd
 
 
-@borg.on(admin_cmd("ttt ?(.*)"))
-@borg.on(sudo_cmd("ttt ?(.*)", allow_sudo=True))
+@friday.on(friday_on_cmd("ttt ?(.*)"))
+@friday.on(sudo_cmd("ttt ?(.*)", allow_sudo=True))
 async def noobishere(event):
     reply_to_id = event.message.id
     if event.reply_to_msg_id:
@@ -32,8 +32,8 @@ async def noobishere(event):
     )
 
 
-@borg.on(admin_cmd("tweet ?(.*)"))
-@borg.on(sudo_cmd("tweet ?(.*)", allow_sudo=True))
+@friday.on(friday_on_cmd("tweet ?(.*)"))
+@friday.on(sudo_cmd("tweet ?(.*)", allow_sudo=True))
 async def noobishere(event):
     reply_to_id = event.message.id
     text = event.pattern_match.group(1)

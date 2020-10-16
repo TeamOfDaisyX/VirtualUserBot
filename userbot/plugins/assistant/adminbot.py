@@ -7,13 +7,13 @@ from telethon.tl.types import (
 
 import emoji
 from googletrans import Translator
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
 from telethon.utils import get_display_name
-from userbot.utils import admin_cmd, sudo_cmd
+from userbot.utils import friday_on_cmd, sudo_cmd
 from userbot.uniborgConfig import Config
 from telethon import events
 from datetime import datetime
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
 import time
 from userbot import Lastupdate, bot
 import asyncio
@@ -48,7 +48,7 @@ from telethon.tl.types import (
 )
 
 from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
-from userbot.utils import admin_cmd, errors_handler, register, sudo_cmd
+from userbot.utils import friday_on_cmd, errors_handler, register, sudo_cmd
 
 # =================== CONSTANT ===================
 PP_TOO_SMOL = "`The image is too small`"
@@ -97,7 +97,7 @@ UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 
 @tgbot.on(events.NewMessage(pattern="^/bun(?: |$)(.*)"))
 async def ban(event):
-    noob = event.from_id
+    noob = event.sender_id
     userids = []
     async for user in tgbot.iter_participants(
         event.chat_id, filter=ChannelParticipantsAdmins
@@ -140,7 +140,7 @@ async def ban(event):
 @tgbot.on(events.NewMessage(pattern="^/unbun(?: |$)(.*)"))
 async def nothanos(event):
     userids = []
-    noob = event.from_id
+    noob = event.sender_id
     async for user in tgbot.iter_participants(
         event.chat_id, filter=ChannelParticipantsAdmins
     ):
@@ -172,7 +172,7 @@ async def nothanos(event):
 @tgbot.on(events.NewMessage(pattern="^/prumote(?: |$)(.*)"))
 async def promote(event):
     userids = []
-    noob = event.from_id
+    noob = event.sender_id
     async for user in tgbot.iter_participants(
         event.chat_id, filter=ChannelParticipantsAdmins
     ):
@@ -221,7 +221,7 @@ async def promote(event):
 @tgbot.on(events.NewMessage(pattern="^/demute(?: |$)(.*)"))
 async def demote(event):
     userids = []
-    noob = event.from_id
+    noob = event.sender_id
     async for user in tgbot.iter_participants(
         event.chat_id, filter=ChannelParticipantsAdmins
     ):
@@ -269,7 +269,7 @@ async def demote(event):
 @tgbot.on(events.NewMessage(pattern="^/pin(?: |$)(.*)"))
 async def pin(event):
     userids = []
-    noob = event.from_id
+    noob = event.sender_id
     async for user in tgbot.iter_participants(
         event.chat_id, filter=ChannelParticipantsAdmins
     ):

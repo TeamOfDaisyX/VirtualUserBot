@@ -1,5 +1,5 @@
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 import html
 from telethon import events
 from telethon.tl.functions.photos import GetUserPhotosRequest
@@ -48,7 +48,7 @@ async def get_user_from_id(user, event):
         return None
     return user_obj
 
-@borg.on(admin_cmd(pattern="gban ?(.*)"))
+@friday.on(friday_on_cmd(pattern="gban ?(.*)"))
 async def gspider(userbot):
     lol = userbot
     sender = await lol.get_sender()
@@ -114,7 +114,7 @@ async def gspider(userbot):
     )
 
 
-@borg.on(admin_cmd(pattern="ungban ?(.*)"))
+@friday.on(friday_on_cmd(pattern="ungban ?(.*)"))
 async def gspider(userbot):
     lol = userbot
     sender = await lol.get_sender()
@@ -180,7 +180,7 @@ async def gspider(userbot):
 
 
 
-@borg.on(ChatAction)
+@friday.on(ChatAction)
 async def handler(rkG): 
    if rkG.user_joined or rkG.user_added:      
        try:       	

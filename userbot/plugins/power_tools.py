@@ -8,10 +8,10 @@ Available Commands:
 import os
 import sys
 import asyncio
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 
 
-@borg.on(admin_cmd("restart"))
+@friday.on(friday_on_cmd("restart"))
 async def _(event):
     if event.fwd_from:
         return
@@ -28,7 +28,7 @@ async def _(event):
     quit()
 
 
-@borg.on(admin_cmd("shutdown"))
+@friday.on(friday_on_cmd("shutdown"))
 async def _(event):
     if event.fwd_from:
         return

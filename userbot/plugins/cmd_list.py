@@ -1,10 +1,10 @@
 import asyncio
 
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 
 
 # @command(pattern="^.cmds", outgoing=True)
-@borg.on(admin_cmd(pattern=r"cmds"))
+@friday.on(friday_on_cmd(pattern=r"cmds"))
 async def install(event):
     if event.fwd_from:
         return

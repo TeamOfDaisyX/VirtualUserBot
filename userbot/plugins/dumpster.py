@@ -2,10 +2,10 @@ import asyncio
 
 from telethon.errors.rpcerrorlist import MessageIdInvalidError
 
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 
 
-@borg.on(admin_cmd(pattern="dump ?(.*)"))
+@friday.on(friday_on_cmd(pattern="dump ?(.*)"))
 async def _(message):
     try:
         obj = message.pattern_match.group(1)

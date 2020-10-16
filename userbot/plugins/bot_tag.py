@@ -19,10 +19,10 @@ from telethon.tl.types import (
     User
 )
 from telethon.utils import get_display_name
-from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
+from userbot.utils import friday_on_cmd, sudo_cmd, edit_or_reply
 from userbot.uniborgConfig import Config
 
-@borg.on(events.NewMessage(
+@friday.on(events.NewMessage(
     incoming=True,
     blacklist_chats=Config.UB_BLACK_LIST_CHAT,
     func=lambda e: (
@@ -39,7 +39,7 @@ async def all_messages_catcher(event):
     # the message format is stolen from @MasterTagAlertBot
     ammoca_message = ""
 
-    who_ = await event.client.get_entity(event.from_id)
+    who_ = await event.client.get_entity(event.sender_id)
     if (
         who_.bot or
         who_.verified or

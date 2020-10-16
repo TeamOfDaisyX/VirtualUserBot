@@ -21,10 +21,10 @@ from datetime import datetime
 
 import requests
 
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 
 
-@borg.on(admin_cmd("rmbg ?(.*)"))
+@friday.on(friday_on_cmd("rmbg ?(.*)"))
 async def _(event):
     HELP_STR = (
         "`.rmbg` as reply to a media, or give a link as an argument to this command"

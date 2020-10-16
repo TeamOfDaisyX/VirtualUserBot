@@ -5,10 +5,10 @@ from datetime import datetime
 
 import speedtest
 
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 
 
-@borg.on(admin_cmd("speedtest ?(.*)"))
+@friday.on(friday_on_cmd("speedtest ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

@@ -7,10 +7,10 @@ By @loxxi
 
 import requests
 
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 
 
-@borg.on(admin_cmd("ggl (.*)"))
+@friday.on(friday_on_cmd("ggl (.*)"))
 async def _(event):
     if event.fwd_from:
         return

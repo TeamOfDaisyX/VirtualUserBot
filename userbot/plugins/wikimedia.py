@@ -1,11 +1,11 @@
 """WikiMedia.ORG
 Syntax: .wikimedia Query"""
 import requests
-from uniborg.util import admin_cmd, edit_or_reply, sudo_cmd
+from uniborg.util import friday_on_cmd, edit_or_reply, sudo_cmd
 
 
-@borg.on(admin_cmd(pattern="wikimedia (.*)"))
-@borg.on(sudo_cmd(pattern="wikimedia (.*)", allow_sudo=True))
+@friday.on(friday_on_cmd(pattern="wikimedia (.*)"))
+@friday.on(sudo_cmd(pattern="wikimedia (.*)", allow_sudo=True))
 async def _(event):
     wowsosmart = await edit_or_reply(event, "Wait Finding This Bleeding Media xD")
     if event.fwd_from:

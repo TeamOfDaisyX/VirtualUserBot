@@ -23,7 +23,7 @@ from io import BytesIO
 import requests
 import telethon
 from PIL import Image
-from uniborg.util import admin_cmd
+from uniborg.util import friday_on_cmd
 
 logger = logging.getLogger(__name__)
 
@@ -68,7 +68,7 @@ if 1 == 1:
     )
     client = borg
 
-    @borg.on(admin_cmd(pattern="chat(.*)"))
+    @friday.on(friday_on_cmd(pattern="chat(.*)"))
     async def quotecmd(message):  # noqa: C901
         """Quote a message.
         Usage: .quote [template]

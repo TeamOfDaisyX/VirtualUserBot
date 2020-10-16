@@ -7,10 +7,10 @@ cmd: .lol
 import asyncio
 import random
 
-from uniborg.util import admin_cmd
+from uniborg.util import friday_on_cmd
 
 
-@borg.on(admin_cmd(pattern=r"lol"))
+@friday.on(friday_on_cmd(pattern=r"lol"))
 async def _(event):
 
     if event.fwd_from:

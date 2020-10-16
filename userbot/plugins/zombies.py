@@ -15,7 +15,7 @@ from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import ChatBannedRights
 
 from userbot import CMD_HELP
-from userbot.utils import admin_cmd, sudo_cmd
+from userbot.utils import friday_on_cmd, sudo_cmd
 
 #
 BOTLOG = True
@@ -48,7 +48,7 @@ UNBAN_RIGHTS = ChatBannedRights(
 )
 
 
-@borg.on(admin_cmd(pattern=f"zombies ?(.*)"))
+@friday.on(friday_on_cmd(pattern=f"zombies ?(.*)"))
 async def rm_deletedacc(show):
     """ For .zombies command, list all the ghost/deleted/zombie accounts in a chat. """
 
@@ -118,7 +118,7 @@ async def rm_deletedacc(show):
         )
 
 
-@borg.on(sudo_cmd(pattern="zombies ?(.*)", allow_sudo=True))
+@friday.on(sudo_cmd(pattern="zombies ?(.*)", allow_sudo=True))
 async def rm_deletedacc(show):
     if show.fwd_from:
         return

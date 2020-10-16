@@ -1,9 +1,9 @@
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from uniborg.util import admin_cmd
+from uniborg.util import friday_on_cmd
 
 
-@borg.on(admin_cmd("sg ?(.*)"))
+@friday.on(friday_on_cmd("sg ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -39,7 +39,7 @@ async def _(event):
             await event.edit(f"{response.message.message}")
 
 
-@borg.on(admin_cmd("fakemail ?(.*)"))
+@friday.on(friday_on_cmd("fakemail ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -74,7 +74,7 @@ async def _(event):
             await event.edit(f"{response.message.message}")
 
 
-@borg.on(admin_cmd("ub ?(.*)"))
+@friday.on(friday_on_cmd("ub ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -109,7 +109,7 @@ async def _(event):
             await event.edit(f"{response.message.message}")
 
 
-@borg.on(admin_cmd("gid ?(.*)"))
+@friday.on(friday_on_cmd("gid ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -144,7 +144,7 @@ async def _(event):
             await event.edit(f"{response.message.message}")
 
 
-@borg.on(admin_cmd("urban ?(.*)"))
+@friday.on(friday_on_cmd("urban ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

@@ -7,7 +7,7 @@ import urllib
 import requests
 from telethon.tl import functions
 
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 
 # Space lovers
 COLLECTION_STRINGS = [
@@ -45,7 +45,7 @@ async def animepp():
     urllib.request.urlretrieve(fy, "friday.jpg")
 
 
-@borg.on(admin_cmd(pattern="spacedp ?(.*)"))
+@friday.on(friday_on_cmd(pattern="spacedp ?(.*)"))
 async def main(event):
 
     await event.edit(

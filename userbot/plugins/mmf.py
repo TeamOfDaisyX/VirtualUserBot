@@ -5,11 +5,11 @@
 from PIL import Image, ImageFont, ImageDraw
 import textwrap
 import os
-from userbot.utils import admin_cmd, sudo_cmd
+from userbot.utils import friday_on_cmd, sudo_cmd
 from var import Var
 # how a lazy guy ports.
 client = borg
-@borg.on(admin_cmd("memify ?(.*)"))
+@friday.on(friday_on_cmd("memify ?(.*)"))
 async def handler(event):
     if event.fwd_from:
         return
