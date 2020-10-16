@@ -4,10 +4,10 @@
 
 from telethon.tl.functions.messages import SaveDraftRequest
 
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
 
 
-@friday.on(admin_cmd(pattern="chain"))
+@friday.on(friday_on_cmd(pattern="chain"))
 @friday.on(sudo_cmd(pattern="chain", allow_sudo=True))
 async def _(event):
     pokemonlub = await edit_or_reply(event, "Counting...")

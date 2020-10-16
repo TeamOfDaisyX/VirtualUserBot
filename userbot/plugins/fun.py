@@ -1,6 +1,6 @@
 import random
 
-from uniborg.util import admin_cmd, edit_or_reply, sudo_cmd
+from uniborg.util import friday_on_cmd, edit_or_reply, sudo_cmd
 
 METOOSTR = [
     "`Me too thanks`",
@@ -87,7 +87,7 @@ INSULT_STRINGS = [
 # ===========================================
 
 
-@friday.on(admin_cmd(pattern="run ?(.*)"))
+@friday.on(friday_on_cmd(pattern="run ?(.*)"))
 @friday.on(sudo_cmd(pattern="run ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -98,7 +98,7 @@ async def _(event):
     await edit_or_reply(event, reply_text)
 
 
-@friday.on(admin_cmd(pattern="metoo ?(.*)"))
+@friday.on(friday_on_cmd(pattern="metoo ?(.*)"))
 @friday.on(sudo_cmd(pattern="metoo ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -109,7 +109,7 @@ async def _(event):
     await edit_or_reply(event, reply_text)
 
 
-@friday.on(admin_cmd(pattern="rapee ?(.*)"))
+@friday.on(friday_on_cmd(pattern="rapee ?(.*)"))
 @friday.on(sudo_cmd(pattern="rapee ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -120,7 +120,7 @@ async def _(event):
     await edit_or_reply(event, reply_text)
 
 
-@friday.on(admin_cmd(pattern="insultt ?(.*)"))
+@friday.on(friday_on_cmd(pattern="insultt ?(.*)"))
 @friday.on(sudo_cmd(pattern="insultt ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -131,7 +131,7 @@ async def _(event):
     await edit_or_reply(event, reply_text)
 
 
-@friday.on(admin_cmd(pattern="proo ?(.*)"))
+@friday.on(friday_on_cmd(pattern="proo ?(.*)"))
 @friday.on(sudo_cmd(pattern="proo ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -142,7 +142,7 @@ async def _(event):
     await edit_or_reply(event, reply_text)
 
 
-@friday.on(admin_cmd(pattern="abusee ?(.*)"))
+@friday.on(friday_on_cmd(pattern="abusee ?(.*)"))
 @friday.on(sudo_cmd(pattern="abusee ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -153,7 +153,7 @@ async def _(event):
     await edit_or_reply(event, reply_text)
 
 
-@friday.on(admin_cmd(pattern="geyy ?(.*)"))
+@friday.on(friday_on_cmd(pattern="geyy ?(.*)"))
 @friday.on(sudo_cmd(pattern="geyy ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:

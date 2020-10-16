@@ -11,7 +11,7 @@ import re
 from telethon import events
 
 import userbot.plugins.sql_helper.blacklist_sql as sql
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
 
 
 @friday.on(events.NewMessage(incoming=True))
@@ -30,7 +30,7 @@ async def on_new_message(event):
             break
 
 
-@friday.on(admin_cmd("textblacklist ((.|\n)*)"))
+@friday.on(friday_on_cmd("textblacklist ((.|\n)*)"))
 @friday.on(sudo_cmd("textblacklist ((.|\n)*)", allow_sudo=True))
 async def on_add_black_list(event):
     starksayxd = await edit_or_reply(event, "Trying To Set This Text As Blacklist xD")
@@ -47,7 +47,7 @@ async def on_add_black_list(event):
     )
 
 
-@friday.on(admin_cmd("listblacklist"))
+@friday.on(friday_on_cmd("listblacklist"))
 @friday.on(sudo_cmd("listblacklist", allow_sudo=True))
 async def on_view_blacklist(event):
     sensibleleecher = await edit_or_reply(event, "Listing Blacklist xD")
@@ -74,7 +74,7 @@ async def on_view_blacklist(event):
         await sensibleleecher.edit(OUT_STR)
 
 
-@friday.on(admin_cmd("rmblacklist ((.|\n)*)"))
+@friday.on(friday_on_cmd("rmblacklist ((.|\n)*)"))
 @friday.on(sudo_cmd("rmblacklist ((.|\n)*)", allow_sudo=True))
 async def on_delete_blacklist(event):
     sensibleisleecher = await edit_or_reply(event, "Ok Removing This Blacklist xD")

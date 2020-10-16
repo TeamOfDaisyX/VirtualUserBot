@@ -32,7 +32,7 @@ from telethon.tl.types import (
 )
 
 from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
-from userbot.utils import admin_cmd, errors_handler, register, sudo_cmd
+from userbot.utils import friday_on_cmd, errors_handler, register, sudo_cmd
 
 # =================== CONSTANT ===================
 PP_TOO_SMOL = "`The image is too small`"
@@ -80,7 +80,7 @@ UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 # ================================================
 
 
-@friday.on(admin_cmd(pattern=r"setgpic"))
+@friday.on(friday_on_cmd(pattern=r"setgpic"))
 @friday.on(sudo_cmd(pattern=r"setgpic", allow_sudo=True))
 @errors_handler
 async def set_group_photo(gpic):
@@ -119,7 +119,7 @@ async def set_group_photo(gpic):
             await gpic.edit(PP_ERROR)
 
 
-@friday.on(admin_cmd(pattern=r"promote(?: |$)(.*)"))
+@friday.on(friday_on_cmd(pattern=r"promote(?: |$)(.*)"))
 @friday.on(sudo_cmd(pattern=r"promote(?: |$)(.*)", allow_sudo=True))
 @errors_handler
 async def promote(promt):
@@ -174,7 +174,7 @@ async def promote(promt):
         )
 
 
-@friday.on(admin_cmd(pattern=r"demote(?: |$)(.*)"))
+@friday.on(friday_on_cmd(pattern=r"demote(?: |$)(.*)"))
 @errors_handler
 async def demote(dmod):
     """ For .demote command, demotes the replied/tagged person """
@@ -227,7 +227,7 @@ async def demote(dmod):
         )
 
 
-@friday.on(admin_cmd(pattern=r"ban(?: |$)(.*)"))
+@friday.on(friday_on_cmd(pattern=r"ban(?: |$)(.*)"))
 @errors_handler
 async def ban(bon):
     """ For .ban command, bans the replied/tagged person """
@@ -281,7 +281,7 @@ async def ban(bon):
         )
 
 
-@friday.on(admin_cmd(pattern=r"unban(?: |$)(.*)"))
+@friday.on(friday_on_cmd(pattern=r"unban(?: |$)(.*)"))
 @errors_handler
 async def nothanos(unbon):
     """ For .unban command, unbans the replied/tagged person """
@@ -320,7 +320,7 @@ async def nothanos(unbon):
         await unbon.edit("`Uh oh my unban logic broke!`")
 
 
-@friday.on(admin_cmd(pattern=r"mute(?: |$)(.*)"))
+@friday.on(friday_on_cmd(pattern=r"mute(?: |$)(.*)"))
 @errors_handler
 async def spider(spdr):
     """
@@ -381,7 +381,7 @@ async def spider(spdr):
             return await spdr.edit("`Uh oh my mute logic broke!`")
 
 
-@friday.on(admin_cmd(pattern=r"unmute(?: |$)(.*)"))
+@friday.on(friday_on_cmd(pattern=r"unmute(?: |$)(.*)"))
 @errors_handler
 async def unmoot(unmot):
     """ For .unmute command, unmute the replied/tagged person """
@@ -465,7 +465,7 @@ async def muter(moot):
 
 
 # @register(outgoing=True, pattern="^.ungmute(?: |$)(.*)")
-@friday.on(admin_cmd(pattern=r"ungmute(?: |$)(.*)"))
+@friday.on(friday_on_cmd(pattern=r"ungmute(?: |$)(.*)"))
 @errors_handler
 async def ungmoot(un_gmute):
     """ For .ungmute command, ungmutes the target in the userbot """
@@ -511,7 +511,7 @@ async def ungmoot(un_gmute):
             )
 
 
-@friday.on(admin_cmd(pattern=r"gmute(?: |$)(.*)"))
+@friday.on(friday_on_cmd(pattern=r"gmute(?: |$)(.*)"))
 @errors_handler
 async def gspider(gspdr):
     """ For .gmute command, globally mutes the replied/tagged person """
@@ -557,7 +557,7 @@ async def gspider(gspdr):
             )
 
 
-@friday.on(admin_cmd(pattern=r"delusers(?: |$)(.*)"))
+@friday.on(friday_on_cmd(pattern=r"delusers(?: |$)(.*)"))
 @errors_handler
 async def rm_deletedacc(show):
     """ For .delusers command, list all the ghost/deleted accounts in a chat. """
@@ -630,7 +630,7 @@ async def rm_deletedacc(show):
         )
 
 
-@friday.on(admin_cmd(pattern=r"adminlist"))
+@friday.on(friday_on_cmd(pattern=r"adminlist"))
 @errors_handler
 async def get_admin(show):
     """ For .admins command, list all of the admins of the chat. """
@@ -652,7 +652,7 @@ async def get_admin(show):
     await show.edit(mentions, parse_mode="html")
 
 
-@friday.on(admin_cmd(pattern=r"pin(?: |$)(.*)"))
+@friday.on(friday_on_cmd(pattern=r"pin(?: |$)(.*)"))
 @errors_handler
 async def pin(msg):
     """ For .pin command, pins the replied/tagged message on the top the chat. """
@@ -699,7 +699,7 @@ async def pin(msg):
         )
 
 
-@friday.on(admin_cmd(pattern=r"kick(?: |$)(.*)"))
+@friday.on(friday_on_cmd(pattern=r"kick(?: |$)(.*)"))
 @errors_handler
 async def kick(usr):
     """ For .kick command, kicks the replied/tagged person from the group. """
@@ -743,7 +743,7 @@ async def kick(usr):
         )
 
 
-@friday.on(admin_cmd(pattern=r"users ?(.*)"))
+@friday.on(friday_on_cmd(pattern=r"users ?(.*)"))
 @errors_handler
 async def get_users(show):
     """ For .users command, list all of the users in a chat. """

@@ -15,7 +15,7 @@ from userbot.plugins.sql_helper.snips_sql import (
     get_snips,
     remove_snip,
 )
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 
 TYPE_TEXT = 0
 TYPE_PHOTO = 1
@@ -50,7 +50,7 @@ async def on_snip(event):
         await event.delete()
 
 
-@friday.on(admin_cmd("snips (.*)"))
+@friday.on(friday_on_cmd("snips (.*)"))
 async def on_snip_save(event):
     name = event.pattern_match.group(1)
     msg = await event.get_reply_message()
@@ -83,7 +83,7 @@ async def on_snip_save(event):
         await event.edit("Reply to a message with `snips keyword` to save the snip")
 
 
-@friday.on(admin_cmd("snipl"))
+@friday.on(friday_on_cmd("snipl"))
 async def on_snip_list(event):
     all_snips = get_all_snips()
     OUT_STR = "Available Snips:\n"
@@ -108,7 +108,7 @@ async def on_snip_list(event):
         await event.edit(OUT_STR)
 
 
-@friday.on(admin_cmd("snipd (\S+)"))
+@friday.on(friday_on_cmd("snipd (\S+)"))
 async def on_snip_delete(event):
     name = event.pattern_match.group(1)
     remove_snip(name)

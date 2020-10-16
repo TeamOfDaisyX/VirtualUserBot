@@ -4,10 +4,10 @@ import os
 
 from PIL import Image, ImageColor
 
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 
 
-@friday.on(admin_cmd(pattern="color (.*)"))
+@friday.on(friday_on_cmd(pattern="color (.*)"))
 async def _(event):
     if event.fwd_from:
         return

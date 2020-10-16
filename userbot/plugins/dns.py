@@ -6,10 +6,10 @@ Available Commands:
 .unshort <short url>"""
 import requests
 
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
 
 
-@friday.on(admin_cmd("dns (.*)"))
+@friday.on(friday_on_cmd("dns (.*)"))
 @friday.on(sudo_cmd("dns (.*)", allow_sudo=True))
 async def _(event):
     starky = await edit_or_reply(event, "Processing.....")
@@ -24,7 +24,7 @@ async def _(event):
         await starky.edit("i can't seem to find {} on the internet".format(input_str))
 
 
-@friday.on(admin_cmd("url (.*)"))
+@friday.on(friday_on_cmd("url (.*)"))
 @friday.on(sudo_cmd("dns (.*)", allow_sudo=True))
 async def _(event):
     starkxd = await edit_or_reply(event, "Processing....")
@@ -39,7 +39,7 @@ async def _(event):
         await starkxd.edit("something is wrong. please try again later.")
 
 
-@friday.on(admin_cmd("unshort (.*)"))
+@friday.on(friday_on_cmd("unshort (.*)"))
 async def _(event):
     sadness = await edit_or_reply(event, "Processing...")
     if event.fwd_from:

@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 from requests import get
 
 from .. import CMD_HELP
-from ..utils import admin_cmd, edit_or_reply, sudo_cmd
+from ..utils import friday_on_cmd, edit_or_reply, sudo_cmd
 
 GITHUB = "https://github.com"
 DEVICES_DATA = (
@@ -20,7 +20,7 @@ DEVICES_DATA = (
 )
 
 
-@friday.on(admin_cmd(outgoing=True, pattern="magisk$"))
+@friday.on(friday_on_cmd(outgoing=True, pattern="magisk$"))
 @friday.on(sudo_cmd(pattern="magisk$", allow_sudo=True))
 async def magisk(request):
     """ magisk latest releases """
@@ -41,7 +41,7 @@ async def magisk(request):
     await edit_or_reply(request, releases)
 
 
-@friday.on(admin_cmd(outgoing=True, pattern=r"device(?: |$)(\S*)"))
+@friday.on(friday_on_cmd(outgoing=True, pattern=r"device(?: |$)(\S*)"))
 @friday.on(sudo_cmd(pattern="device(?: |$)(\S*)", allow_sudo=True))
 async def device_info(request):
     """ get android device basic info from its codename """
@@ -74,7 +74,7 @@ async def device_info(request):
     await edit_or_reply(request, reply)
 
 
-@friday.on(admin_cmd(outgoing=True, pattern=r"codename(?: |)([\S]*)(?: |)([\s\S]*)"))
+@friday.on(friday_on_cmd(outgoing=True, pattern=r"codename(?: |)([\S]*)(?: |)([\s\S]*)"))
 @friday.on(sudo_cmd(pattern="codename(?: |)([\S]*)(?: |)([\s\S]*)", allow_sudo=True))
 async def codename_info(request):
     """ search for android codename """
@@ -119,7 +119,7 @@ async def codename_info(request):
     await edit_or_reply(request, reply)
 
 
-@friday.on(admin_cmd(outgoing=True, pattern=r"specs(?: |)([\S]*)(?: |)([\s\S]*)"))
+@friday.on(friday_on_cmd(outgoing=True, pattern=r"specs(?: |)([\S]*)(?: |)([\s\S]*)"))
 @friday.on(sudo_cmd(pattern="specs(?: |)([\S]*)(?: |)([\s\S]*)", allow_sudo=True))
 async def devices_specifications(request):
     """ Mobile devices specifications """
@@ -182,7 +182,7 @@ async def devices_specifications(request):
     await edit_or_reply(request, reply)
 
 
-@friday.on(admin_cmd(outgoing=True, pattern=r"twrp(?: |$)(\S*)"))
+@friday.on(friday_on_cmd(outgoing=True, pattern=r"twrp(?: |$)(\S*)"))
 @friday.on(sudo_cmd(pattern="twrp(?: |$)(\S*)", allow_sudo=True))
 async def twrp(request):
     """ get android device twrp """

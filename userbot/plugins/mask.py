@@ -1,9 +1,9 @@
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from uniborg.util import admin_cmd
+from uniborg.util import friday_on_cmd
 
 
-@friday.on(admin_cmd("mask ?(.*)"))
+@friday.on(friday_on_cmd("mask ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

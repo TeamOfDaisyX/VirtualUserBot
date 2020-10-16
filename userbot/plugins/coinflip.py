@@ -2,10 +2,10 @@
 Syntax: .coinflip [optional_choice]"""
 import random
 
-from uniborg.util import admin_cmd
+from uniborg.util import friday_on_cmd
 
 
-@friday.on(admin_cmd(pattern="coin ?(.*)"))
+@friday.on(friday_on_cmd(pattern="coin ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

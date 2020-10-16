@@ -142,7 +142,7 @@ def remove_plugin(shortname):
         raise ValueError
 
 
-def admin_cmd(pattern=None, **args):
+def friday_on_cmd(pattern=None, **args):
     args["func"] = lambda e: e.via_bot_id is None
 
     stack = inspect.stack()

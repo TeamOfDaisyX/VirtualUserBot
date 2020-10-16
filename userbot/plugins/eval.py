@@ -8,10 +8,10 @@ import io
 import sys
 import traceback
 
-from uniborg.util import admin_cmd, edit_or_reply, sudo_cmd
+from uniborg.util import friday_on_cmd, edit_or_reply, sudo_cmd
 
 
-@friday.on(admin_cmd("eval"))
+@friday.on(friday_on_cmd("eval"))
 @friday.on(sudo_cmd("eval", allow_sudo=True))
 async def _(event):
     if event.fwd_from:

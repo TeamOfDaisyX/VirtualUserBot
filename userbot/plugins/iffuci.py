@@ -6,7 +6,7 @@ from datetime import datetime
 
 import requests
 
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
 
 
 def progress(current, total):
@@ -17,7 +17,7 @@ def progress(current, total):
     )
 
 
-@friday.on(admin_cmd(pattern="iffuci ?(.*)"))
+@friday.on(friday_on_cmd(pattern="iffuci ?(.*)"))
 @friday.on(sudo_cmd(pattern="iffuci ?(.*)", allow_sudo=True))
 async def _(event):
     crackexy = await edit_or_reply(event, "Processing")

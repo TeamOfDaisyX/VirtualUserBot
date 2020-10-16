@@ -9,10 +9,10 @@ credits :@mrconfused
 from geopy.geocoders import Nominatim
 from telethon.tl import types
 
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
 
 
-@friday.on(admin_cmd(pattern="gps ?(.*)"))
+@friday.on(friday_on_cmd(pattern="gps ?(.*)"))
 @friday.on(sudo_cmd(pattern="gps ?(.*)", allow_sudo=True))
 async def gps(event):
     starkislub = await edit_or_reply(event, "Processing")

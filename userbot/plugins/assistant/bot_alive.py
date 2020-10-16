@@ -1,5 +1,5 @@
 from telethon.utils import pack_bot_file_id
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
 from userbot import bot
 from telethon import events, custom, Button
 from telethon.tl.types import (
@@ -17,13 +17,13 @@ from math import ceil
 from userbot.plugins import inlinestats
 from telethon import custom, events, Button
 from userbot import CMD_LIST
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
 from telethon.utils import get_display_name
-from userbot.utils import admin_cmd, sudo_cmd
+from userbot.utils import friday_on_cmd, sudo_cmd
 from userbot.uniborgConfig import Config
 from telethon import events
 from datetime import datetime
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
 import time
 from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
@@ -31,7 +31,7 @@ from userbot import Lastupdate, bot
 from userbot.plugins.sql_helper.botusers_sql import add_me_in_db, his_userid
 from userbot.plugins.sql_helper.idadder_sql import add_usersid_in_db, get_all_users
 import time
-from uniborg.util import admin_cmd, sudo_cmd
+from uniborg.util import friday_on_cmd, sudo_cmd
 from userbot import ALIVE_NAME
 from datetime import datetime
 from userbot import Lastupdate

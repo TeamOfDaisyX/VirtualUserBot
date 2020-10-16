@@ -8,10 +8,10 @@ import shutil
 from re import findall
 
 from userbot.googol_images import googleimagesdownload
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
 
 
-@friday.on(admin_cmd(pattern="img ?(.*)"))
+@friday.on(friday_on_cmd(pattern="img ?(.*)"))
 @friday.on(sudo_cmd(pattern="img ?(.*)", allow_sudo=True))
 async def img_sampler(event):
     await edit_or_reply(event, "`Processing...`")

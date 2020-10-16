@@ -18,7 +18,7 @@ from userbot.plugins.sql_helper.filter_sql import (
     remove_all_filters,
     remove_filter,
 )
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
 
 DELETE_TIMEOUT = 0
 TYPE_TEXT = 0
@@ -69,7 +69,7 @@ async def on_snip(event):
                 last_triggered_filters[event.chat_id].remove(name)
 
 
-@friday.on(admin_cmd(pattern="filter (.*)"))
+@friday.on(friday_on_cmd(pattern="filter (.*)"))
 @friday.on(sudo_cmd(pattern="filter (.*)", allow_sudo=True))
 async def on_snip_save(event):
     hitler = await edit_or_reply(event, "Processing....")
@@ -105,7 +105,7 @@ async def on_snip_save(event):
         )
 
 
-@friday.on(admin_cmd(pattern="filters$"))
+@friday.on(friday_on_cmd(pattern="filters$"))
 @friday.on(sudo_cmd(pattern="filters$", allow_sudo=True))
 async def on_snip_list(event):
     indiaislove = await edit_or_reply(event, "Processing....")
@@ -132,7 +132,7 @@ async def on_snip_list(event):
         await indiaislove.edit(OUT_STR)
 
 
-@friday.on(admin_cmd(pattern="stop (.*)"))
+@friday.on(friday_on_cmd(pattern="stop (.*)"))
 @friday.on(sudo_cmd(pattern="stop (.*)", allow_sudo=True))
 async def on_snip_delete(event):
     iloveindia = await edit_or_reply(event, "Processing...")
@@ -141,7 +141,7 @@ async def on_snip_delete(event):
     await iloveindia.edit(f"filter {name} deleted successfully")
 
 
-@friday.on(admin_cmd(pattern="rmfilters$"))
+@friday.on(friday_on_cmd(pattern="rmfilters$"))
 @friday.on(sudo_cmd(pattern="rmfilters$", allow_sudo=True))
 async def on_all_snip_delete(event):
     await edit_or_reply(event, "Processing....")

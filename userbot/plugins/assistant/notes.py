@@ -9,13 +9,13 @@ from telethon.tl.types import (
 
 import emoji
 from googletrans import Translator
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
 from telethon.utils import get_display_name
-from userbot.utils import admin_cmd, sudo_cmd
+from userbot.utils import friday_on_cmd, sudo_cmd
 from userbot.uniborgConfig import Config
 from telethon import events
 from datetime import datetime
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
 import time
 from userbot import Lastupdate, bot
 
@@ -26,7 +26,7 @@ from userbot.plugins.sql_helper.snips_sql import (
     get_snips,
     remove_snip,
 )
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 
 TYPE_TEXT = 0
 TYPE_PHOTO = 1
