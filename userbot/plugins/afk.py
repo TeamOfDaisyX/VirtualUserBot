@@ -18,7 +18,7 @@ last_afk_message = {}
 afk_start = {}
 
 
-@friday.on(admin_cmd(pattern="afk ?(.*)"))  # pylint:disable=E0602
+@friday.on(friday_on_cmd(pattern="afk ?(.*)"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
