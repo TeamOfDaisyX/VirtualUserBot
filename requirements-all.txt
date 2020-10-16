@@ -55,3 +55,4 @@ wikipedia>=1.4.0
 youtube-dl
 covid
 validators
+git+https://github.com/LonamiWebs/Telethon.git
