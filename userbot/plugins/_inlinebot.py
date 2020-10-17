@@ -154,6 +154,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"whattalk")))
     async def rip(event):
         chat_m = await event.get_chat()
+        him_id = event.query.user_id
         await event.edit("Choice Accepted ✔️")
         text2 = (
             "Ok. Please Wait Until My Master Approves. Don't Spam Or Try Anything Stupid. \nThank You For Contacting Me."
@@ -163,7 +164,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                                 buttons=[
                                 Button.url(
                                 "Contact Him",
-                                "tg://user?id={event.query.user_id}")
+                                f"tg://user?id={him_id}")
                                 ]
                                 )
                                 
