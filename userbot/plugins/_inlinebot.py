@@ -159,7 +159,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             "Ok. Please Wait Until My Master Approves. Don't Spam Or Try Anything Stupid. \nThank You For Contacting Me."
         )
         await borg.send_message(event.query.user_id, text2)
-        await borg.send_message(LOG_CHAT, message="Hello, A New User. Wants To Talk With You.",
+        await tgbot.send_message(LOG_CHAT, message="Hello, A New User. Wants To Talk With You.",
                                 buttons=[
                                 Button.url(
                                 "Contact Him",
