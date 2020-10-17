@@ -155,13 +155,12 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def rip(event):
         chat_m = await event.get_chat()
         him_id = event.query.user_id
-        name_is = event.query.first_name
         await event.edit("Choice Accepted ✔️")
         text2 = (
             "Ok. Please Wait Until My Master Approves. Don't Spam Or Try Anything Stupid. \nThank You For Contacting Me."
         )
         await borg.send_message(event.query.user_id, text2)
-        await tgbot.send_message(LOG_CHAT, message=f"Hello, [{name_is}](tg://user?id={him_id}). Wants To Talk With You.",
+        await tgbot.send_message(LOG_CHAT, message=f"Hello, A [New User](tg://user?id={him_id}). Wants To Talk With You.",
                                 buttons=[
                                 Button.url(
                                 "Contact Him",
