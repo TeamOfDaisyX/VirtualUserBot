@@ -15,6 +15,7 @@ if PMPERMIT_PIC is None:
     WARN_PIC = "https://telegra.ph/file/53aed76a90e38779161b1.jpg"
 else:
     WARN_PIC = PMPERMIT_PIC
+LOG_CHAT = Config.PRIVATE_GROUP_ID
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Friday"
 if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
@@ -52,12 +53,12 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 text=query,
                 buttons=[
                     [
-                        custom.Button.inline("❌ I Am Here For Spamming❌ ",
+                        custom.Button.inline("❌ I Am Here For Spamming ❌ ",
                                              data="dontspamnigga")
                     ],
                     [
                         custom.Button.inline(
-                            "🗣️ I Am Here For Talking With Your Master 🗣️",
+                            "🛡️ I Am Here For Talking With Your Master 🛡️",
                             data="whattalk")
                     ],
                     [
@@ -158,6 +159,14 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             "Ok. Please Wait Until My Master Approves. Don't Spam Or Try Anything Stupid. \nThank You For Contacting Me."
         )
         await borg.send_message(event.query.user_id, text2)
+        await borg.send_message(LOG_CHAT, message="Hello, A New User. Wants To Talk With You.",
+                                buttons=[
+                                Button.url(
+                                "Contact Him",
+                                "tg://user?id={event.query.user_id}")
+                                ]
+                                )
+                                
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"askme")))
     async def rip(event):
