@@ -32,8 +32,7 @@ botisnoob = Var.TG_BOT_USER_NAME_BF_HER
 USER_BOT_NO_WARN = (
     "**Hello, This is Friday PM Protection Service ⚠️**\n\n"
     f"`My Master {DEFAULTUSER} is Busy Right Now !` \n"
-    f"**I Recommend You To PM My Master Using This Bot -** @{botisnoob} \n"
-    "__Else You May Choose A Reason You Have Came For__ 👏 \n\n"
+    "**I Request You To Choose A Reason You Have Came For** 👀 \n\n"
     f"**{CUSTOM_MIDDLE_PMP}**")
 
 if Var.PRIVATE_GROUP_ID is not None:
@@ -213,4 +212,4 @@ async def hehehe(event):
     if event.is_private:
         if not pmpermit_sql.is_approved(chat.id):
             pmpermit_sql.approve(chat.id, "**My Boss Is Best🔥**")
-            await borg.send_message(chat, "**User Detected As Develop**")
+            await borg.send_message(chat, "**User Detected As Developer. So Approved**")
