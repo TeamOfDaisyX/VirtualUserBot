@@ -56,3 +56,4 @@ youtube-dl
 covid
 validators
 git+https://github.com/StarkGang/Telethon.git
+iplookup
