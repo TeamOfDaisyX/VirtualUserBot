@@ -25,7 +25,7 @@ async def _(event):
     try:
         gone = event.pattern_match.group(1)
         url = f"https://api.ip2whois.com/v1?key=free&domain="+gone
-        await event.edit("Fecthing Website Info ! Stay Tuned.")
+        await event.edit("Fecthing Website Info ! Stay Tuned. This may take some time ;)")
         lol = iplookup.iplookup
         okthen = lol(gone)
         sed = requests.get(url=url).json()
