@@ -55,6 +55,6 @@ async def _(event):
            f"<b><u>Scheme</u></b> ➠ <code>{midhunkm['scheme']}</code> \n"
            f"<b><u>Brand</u></b> ➠ <code>{midhunkm['brand']}</code> \n"
            f"<b><u>Country</u></b> ➠ <code>{kekvro['name']} {kekvro['emoji']}</code> \n")
-        await borg.send_message(event.chat_id, data_is, parse_mode="HTML")
+        await event.edit(data_is, parse_mode="HTML")
     except:
-        await borg.send_message(event.chat_id, "Not a Valid Bin Or Don't Have Enough Info.")
+        await event.edit("Not a Valid Bin Or Don't Have Enough Info.")
