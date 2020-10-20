@@ -13,7 +13,7 @@ async def _(event):
         base64_string = base64_bytes.decode("ascii")
         await event.edit(f"**ENCODED MESSAGE** - `{base64_string}`")
     except:
-        borg.send_message("SOM3THING W3NT WRONG !")
+        await event.edit("SOM3THING W3NT WRONG !")
 
 @friday.on(friday_on_cmd(pattern="bdecode ?(.*)"))
 async def _(event):
@@ -24,7 +24,7 @@ async def _(event):
        base64_bytez = starky.encode("ascii")
        sample_string_bytez = base64.b64decode(base64_bytez)
        sample_strings = sample_string_bytez.decode("ascii")
-       event.edit(f"**DECODED STRING** : `{sample_strings}`")
+       await event.edit(f"**DECODED STRING** : `{sample_strings}`")
     except:
-        event.edit("Can't Decoded Probably Due To Invalid String")
+       await event.edit("Can't Decoded Probably Due To Invalid String")
 
