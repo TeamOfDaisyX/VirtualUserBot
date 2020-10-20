@@ -1,6 +1,7 @@
 from userbot.utils import sudo_cmd, friday_on_cmd, edit_or_reply
 from selenium import webdriver
 import requests
+import html
 from iplookup import iplookup
 
 
@@ -38,3 +39,22 @@ async def _(event):
         await event.edit(sedlyf)
     except Exception as e:
         await event.edit(f'Something went wrong \nERROR => {e}')
+
+
+@friday.on(friday_on_cmd(pattern="bin ?(.*)"))
+async def _(event):
+    if event.fwd_from:
+        return
+    try:
+        kek = event.pattern_match.group(1)
+        url = f"https://lookup.binlist.net/{kek}"
+        midhunkm = requests.get(url=url).json()
+        kekvro = midhunkm["country"]
+        data_is = (f"<b><u>Bin</u></b> ➠ <code>{kek}</code> \n"
+           f"<b><u>Type</u></b> ➠ <code>{midhunkm['type']}</code> \n"
+           f"<b><u>Scheme</u></b> ➠ <code>{midhunkm['scheme']}</code> \n"
+           f"<b><u>Brand</u></b> ➠ <code>{midhunkm['brand']}</code> \n"
+           f"<b><u>Country</u></b> ➠ <code>{kekvro['name']} {kekvro['emoji']}</code> \n")
+        await borg.send_message(event.chat_id, data_is, parse_mode="HTML")
+    except:
+        await borg.send_message(event.chat_id, "Not a Valid Bin Or Don't Have Enough Info.")
