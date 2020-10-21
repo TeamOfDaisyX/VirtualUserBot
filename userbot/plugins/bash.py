@@ -1,14 +1,16 @@
 import asyncio
 import io
 import time
+from userbot.utils import friday_on_cmd, sudo_cmd
 
-
-@command(pattern="^.bash ?(.*)")
+@friday.on(friday_on_cmd(pattern="bash ?(.*)"))
+@friday.on(sudo_cmd(pattern="bash ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
     PROCESS_RUN_TIME = 100
     cmd = event.pattern_match.group(1)
+    tflyf = await edit_or_reply("Processing Your Request...")
     reply_to_id = event.message.id
     if event.reply_to_msg_id:
         reply_to_id = event.reply_to_msg_id
@@ -39,4 +41,4 @@ async def _(event):
                 reply_to=reply_to_id,
             )
             await event.delete()
-    await event.edit(OUTPUT)
+    await tflyf.edit(OUTPUT)
