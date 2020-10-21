@@ -16,9 +16,6 @@ async def _(event):
         await event.edit("```Reply to any user message.```")
         return
     reply_message = await event.get_reply_message()
-    if not reply_message.text:
-        await event.edit("```Reply to text message```")
-        return
     chat = "@QuotLyBot"
     reply_message.sender
     if reply_message.sender.bot:
