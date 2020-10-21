@@ -5,7 +5,7 @@
 
 import logging
 
-from userbot.utils import friday_on_cmd
+from userbot.utils import friday_on_cmd, sudo_cmd
 
 logger = logging.getLogger(__name__)
 
@@ -17,10 +17,10 @@ if 1 == 1:
     client = borg
 
     @friday.on(friday_on_cmd(pattern="poto(.*)"))
+    @friday.on(sudo_cmd(pattern="poto(.*)"))
     async def potocmd(event):
 
         """Gets the profile photos of replied users, channels or chats"""
-
         id = "".join(event.raw_text.split(maxsplit=2)[1:])
 
         user = await event.get_reply_message()
