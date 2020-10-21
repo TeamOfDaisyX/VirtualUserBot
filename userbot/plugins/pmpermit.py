@@ -41,7 +41,7 @@ if Var.PRIVATE_GROUP_ID is not None:
     async def block(event):
         if event.fwd_from:
             return
-        replied_user = await event.client(GetFullUserRequest(event.chat_id))
+        replied_user = await borg(GetFullUserRequest(event.chat_id))
         firstname = replied_user.user.first_name
         chat = await event.get_chat()
         if event.is_private:
