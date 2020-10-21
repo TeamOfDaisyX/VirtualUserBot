@@ -58,3 +58,24 @@ async def _(event):
         await event.edit(data_is, parse_mode="HTML")
     except:
         await event.edit("Not a Valid Bin Or Don't Have Enough Info.")
+
+                   
+@friday.on(friday_on_cmd(pattern="iban ?(.*)"))
+async def _(event):
+    if event.fwd_from:
+        return
+    inputs = event.pattern_match.group(1)
+    api = f"https://openiban.com/validate/{inputs}?getBIC=true&validateBankCode=true"
+    lol = requests.get(url=api).json()
+    try:
+        banks = lol["bankData"]
+        kek = (f"<b><u>VALID</u></b> ➠ <code>{lol['valid']}</code> \n"
+           f"<b><u>IBAN</u></b> ➠ <code>{lol['iban']}</code> \n"
+           f"<b><u>BANK-CODE</u></b> ➠ <code>{banks['bankCode']}</code> \n"
+           f"<b><u>BANK-NAME</u></b> ➠ <code>{banks['name']}</code> \n"
+           f"<b><u>ZIP</u></b> ➠ <code>{banks['zip']}</code> \n"
+           f"<b><u>CITY</u></b> ➠ <code>{banks['city']}</code> \n"
+           f"<b><u>BIC</u></b> ➠ <code>{banks['bic']}</code> \n")
+        await event.edit(kek, parse_mode="HTML")
+    except:
+        await event.edit(f"Invalid IBAN Or Doesn't Have Enough Info")
