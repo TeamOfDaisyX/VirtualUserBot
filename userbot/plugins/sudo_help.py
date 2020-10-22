@@ -9,8 +9,8 @@ async def _(event):
     help_string = "**SUDO COMMANDS** \n"
     try:
         for i in SUDO_LIST[plugin_name]:
-            help_string += i
+            help_string += "$- {i}"
             help_string += "\n"
-        await event.reply(f"$-`{help_string}`")
+        await event.reply(f"`{help_string}`")
     except:
         await event.reply(f"`{plugin_name}` __May Not Have Sudo Or Is Not Valid__")
