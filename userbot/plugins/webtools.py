@@ -43,7 +43,7 @@ async def _(event):
          f'\nPhone Number => {km["phone"]} \nDomain Ip => {okthen}')
         await tfbro.edit(sedlyf)
     except Exception as e:
-        await tfbro.edit(f'Something Went Wrong. MayBe Website Wrong.)
+        await tfbro.edit(f'Something Went Wrong. MayBe Website Wrong.')
 
 
 @friday.on(friday_on_cmd(pattern="bin ?(.*)"))
