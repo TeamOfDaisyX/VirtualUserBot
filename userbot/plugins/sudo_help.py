@@ -9,7 +9,7 @@ async def _(event):
     help_string = "**SUDO COMMANDS** \n"
     try:
         for i in SUDO_LIST[plugin_name]:
-            help_string += f"$- {i}"
+            help_string += f"$× `{i}`"
             help_string += "\n"
         await event.reply(f"{help_string}")
     except:
