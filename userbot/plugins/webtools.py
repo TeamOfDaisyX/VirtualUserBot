@@ -81,3 +81,20 @@ async def _(event):
         await event.edit(kek, parse_mode="HTML")
     except:
         await event.edit(f"Invalid IBAN Or Doesn't Have Enough Info")
+
+                   
+@friday.on(friday_on_cmd(pattern="gitdl ?(.*)"))
+async def _(event):
+    if event.fwd_from:
+        return
+    inputs = event.pattern_match.group(1)
+    sed = event.pattern_match.group(1)
+    if sed:
+        if " " in sed:
+            stark = inputs.split(" ",2)
+    gitusername = stark[0]
+    gitrepo = stark[1]
+    gitbranch = stark[2]
+    link = f"https://github.com/{gitusername}/{gitrepo}/archive/{gitbranch}.zip
+    await event.delete()
+    await borg.send_file(link, caption="You Requested File")
