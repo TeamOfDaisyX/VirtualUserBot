@@ -107,7 +107,7 @@ async def _(event):
         gitbranch = stark[2]
         link = f"https://github.com/{gitusername}/{gitrepo}/archive/{gitbranch}.zip"
         await kekman.edit("Uploading... Stark Tuned.")
-        await kemman.delete()
+        await event.delete()
         await borg.send_file(event.chat_id, file=link, caption="You Repo Achieve File.")
     except:
         await borg.send_message(event.chat_id, "**Usage** : `.gitdl <gitusername> <gitrepo> <gitbranch>`")
