@@ -1,3 +1,5 @@
+# @FridayoT
+
 from userbot.utils import sudo_cmd, friday_on_cmd, edit_or_reply
 from selenium import webdriver
 import requests
