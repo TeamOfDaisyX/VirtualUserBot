@@ -95,6 +95,6 @@ async def _(event):
     gitusername = stark[0]
     gitrepo = stark[1]
     gitbranch = stark[2]
-    link = f"https://github.com/{gitusername}/{gitrepo}/archive/{gitbranch}.zip
+    link = f"https://github.com/{gitusername}/{gitrepo}/archive/{gitbranch}.zip"
     await event.delete()
     await borg.send_file(link, caption="You Requested File.")
