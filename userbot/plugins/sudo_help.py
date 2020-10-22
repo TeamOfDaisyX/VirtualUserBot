@@ -6,11 +6,11 @@ async def _(event):
     if event.fwd_from:
         return
     plugin_name = event.pattern_match.group(1)
-    help_string = ""
+    help_string = "**SUDO COMMANDS** \n"
     try:
         for i in SUDO_LIST[plugin_name]:
             help_string += i
             help_string += "\n"
-        await event.reply(help_string)
+        await event.reply(`help_string`)
     except:
-        await event.reply(f"{plugin_name} May Not Have Sudo Or Is Not Valid")
+        await event.reply(f"`{plugin_name}` __May Not Have Sudo Or Is Not Valid__")
