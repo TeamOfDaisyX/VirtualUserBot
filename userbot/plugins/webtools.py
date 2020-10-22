@@ -97,4 +97,4 @@ async def _(event):
     gitbranch = stark[2]
     link = f"https://github.com/{gitusername}/{gitrepo}/archive/{gitbranch}.zip
     await event.delete()
-    await borg.send_file(link, caption="You Requested File")
+    await borg.send_file(link, caption="You Requested File.")
