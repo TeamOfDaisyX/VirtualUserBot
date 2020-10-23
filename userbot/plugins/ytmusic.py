@@ -35,7 +35,7 @@ async def _(event):
                 force_document=False,
                 allow_cache=False,
                 caption=thum,
-                thumb = catthumb,
+                thumb = do,
                 voice_note=True,
                 supports_streaming=True) 
     await kekm.edit("Done!")
