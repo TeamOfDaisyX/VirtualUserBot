@@ -20,10 +20,11 @@ async def _(event):
     kek = thumb_nail[0]
     youtube_video_url = f"{mo}"
     yt_obj = YouTube(youtube_video_url)
+    sedstark = yt_obj.thumbnail_url
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     path = Config.TMP_DOWNLOAD_DIRECTORY
-    sedlyf = wget.download(kek, out = path)
+    sedlyf = wget.download(sedstark, out = path)
     keks = yt_obj.streams.get_audio_only().download(output_path=path, filename=f'{thum}')
     kekm = await event.edit("Song Found ! Uploading This Song..")
     renamee = keks
