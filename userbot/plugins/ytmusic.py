@@ -17,7 +17,7 @@ async def _(event):
     thum = mio[0]['title']
     thumb_nail = mio[0]['thumbnails']
     kek = thumb_nail[0]
-    do = await borg.download(kek, Config.TMP_DOWNLOAD_DIRECTORY)
+    do = await borg.download_media(kek, Config.TMP_DOWNLOAD_DIRECTORY)
     youtube_video_url = f"{mo}"
     yt_obj = YouTube(youtube_video_url)
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
