@@ -1,6 +1,7 @@
 from youtubesearchpython import SearchVideos
 from pytube import YouTube
 import os
+import wget
 from userbot.uniborgConfig import Config
 from userbot.utils import sudo_cmd, friday_on_cmd
 @friday.on(friday_on_cmd(pattern="ytmusic ?(.*)"))
@@ -17,13 +18,13 @@ async def _(event):
     thum = mio[0]['title']
     thumb_nail = mio[0]['thumbnails']
     kek = thumb_nail[0]
-    do = await borg.download_file(kek)
     await event.edit(f"{do}")
     youtube_video_url = f"{mo}"
     yt_obj = YouTube(youtube_video_url)
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     path = Config.TMP_DOWNLOAD_DIRECTORY
+    sedlyf = wget.download(kek, out = path)
     keks = yt_obj.streams.get_audio_only().download(output_path=path, filename=f'{thum}')
     kekm = await event.edit("Song Found ! Uploading This Song..")
     renamee = keks
@@ -35,10 +36,10 @@ async def _(event):
                 km,
                 force_document=False,
                 allow_cache=False,
-                caption=thum,
+                caption=sedlyf,
                 thumb = do,
                 supports_streaming=True) 
     await kekm.edit("Done!")
-    for files in (do, km):
+    for files in (sedlyf, km):
         if files and os.path.exists(files):
             os.remove(files)
