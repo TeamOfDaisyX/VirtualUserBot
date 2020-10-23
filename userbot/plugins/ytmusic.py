@@ -25,7 +25,7 @@ async def _(event):
     path = Config.TMP_DOWNLOAD_DIRECTORY
     keks = yt_obj.streams.get_audio_only().download(output_path=path, filename=f'{thum}')
     kekm = await event.edit("Song Found ! Uploading This Song..")
-    my_file = keks
+    my_file = f'{keks}'
     base = os.path.splitext(my_file)
     newkek = os.rename(my_file, base + '.mp3')
     await borg.send_file(event.chat_id, file=newkek, force_document=False, voice_note=True, thumb=do, caption=f"{thum}", supports_streaming=True)
