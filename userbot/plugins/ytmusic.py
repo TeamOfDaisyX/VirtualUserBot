@@ -25,5 +25,5 @@ async def _(event):
     path = Config.TMP_DOWNLOAD_DIRECTORY
     keks = yt_obj.streams.get_audio_only().download(output_path=path, filename=f'{thum}')
     await event.edit("Now Sending To Tg ?")
-    await borg.send_file(event.chat_id, file=keks, thumb=kek, caption=f"{thum}")
+    await borg.send_file(event.chat_id, file=keks, thumb=do, caption=f"{thum}")
     
