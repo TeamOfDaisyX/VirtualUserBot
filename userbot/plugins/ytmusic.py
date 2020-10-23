@@ -17,7 +17,7 @@ async def _(event):
     thum = mio[0]['title']
     thumb_nail = mio[0]['thumbnails']
     kek = thumb_nail[0]
-    do = await borg.download_file(kek, Config.TMP_DOWNLOAD_DIRECTORY)
+    do = await borg.download_file(kek)
     await event.edit(f"{do}")
     youtube_video_url = f"{mo}"
     yt_obj = YouTube(youtube_video_url)
