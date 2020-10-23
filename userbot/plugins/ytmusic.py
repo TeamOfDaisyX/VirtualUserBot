@@ -21,8 +21,11 @@ async def _(event):
         do = await borg.download(kek, Config.TMP_DOWNLOAD_DIRECTORY)
         youtube_video_url = f"{mo}"
         yt_obj = YouTube(youtube_video_url)
-    if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
-        os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
-    path = Config.TMP_DOWNLOAD_DIRECTORY
-    keks = yt_obj.streams.get_audio_only().download(output_path=path, filename=f'{thum}')
-    await borg.send_file(file=keks, thumb=kek, caption=f"{thum}")
+        if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
+            os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
+        path = Config.TMP_DOWNLOAD_DIRECTORY
+        keks = yt_obj.streams.get_audio_only().download(output_path=path, filename=f'{thum}')
+        await borg.send_file(file=keks, thumb=kek, caption=f"{thum}")
+    except:
+        await event.edit("Something Went Wrong")
+    
