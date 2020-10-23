@@ -18,6 +18,7 @@ async def _(event):
     thumb_nail = mio[0]['thumbnails']
     kek = thumb_nail[0]
     do = await borg.download_media(kek, Config.TMP_DOWNLOAD_DIRECTORY)
+    await event.edit(do)
     youtube_video_url = f"{mo}"
     yt_obj = YouTube(youtube_video_url)
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
@@ -36,10 +37,8 @@ async def _(event):
                 allow_cache=False,
                 caption=thum,
                 thumb = do,
-                voice_note=True,
                 supports_streaming=True) 
     await kekm.edit("Done!")
     for files in (do, km):
         if files and os.path.exists(files):
             os.remove(files)
-    
