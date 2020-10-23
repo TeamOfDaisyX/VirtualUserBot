@@ -60,3 +60,4 @@ iplookup
 git+https://github.com/Starkgangs/pytube.git
 youtube-search
 youtube-search-python
+wget
