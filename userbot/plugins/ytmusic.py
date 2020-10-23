@@ -1,7 +1,7 @@
 from youtubesearchpython import SearchVideos
 from pytube import YouTube
 import os
-froom userbot.uniborgConfig import Config
+from userbot.uniborgConfig import Config
 from userbot.utils import sudo_cmd, friday_on_cmd
 @friday.on(friday_on_cmd(pattern="ytsong ?(.*)"))
 @friday.on(sudo_cmd(pattern="ytsong ?(.*)", allow_sudo=True))
