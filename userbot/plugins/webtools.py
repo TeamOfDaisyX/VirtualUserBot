@@ -132,11 +132,11 @@ async def _(event):
                 stark_chnnl = moon['channel']
                 total_stark = moon['duration']
                 stark_views = moon['views']
-                noob += (f"<b><u>VIDEO-TITLE</u></b> - <code>{stark_name}</code> \n" 
-                     f"<b><u>LINK</u></b> - <code>{kek}</code> \n" 
-                     f"<b><u>CHANNEL</u></b> - <code>{stark_chnnl}</code> \n" 
-                     f"<b><u>DURATION</u></b> - <code>{total_stark}</code> \n"
-                     f"<b><u>TOTAL-VIEWS</u></b> - <code>{stark_views}</code> \n\n")
-        await stark_result.edit(noob)
+                noob += (f"<b><u>VIDEO-TITLE</u></b> ➠ <code>{stark_name}</code> \n" 
+                     f"<b><u>LINK</u></b> ➠ <code>{kek}</code> \n" 
+                     f"<b><u>CHANNEL</u></b> ➠ <code>{stark_chnnl}</code> \n" 
+                     f"<b><u>DURATION</u></b> ➠ <code>{total_stark}</code> \n"
+                     f"<b><u>TOTAL-VIEWS</u></b> ➠ <code>{stark_views}</code> \n\n")
+        await stark_result.edit(noob, parse_mode="HTML")
     except:
         await event.edit("Some Thing Went Wrong.")
