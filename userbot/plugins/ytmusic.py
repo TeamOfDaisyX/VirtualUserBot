@@ -36,8 +36,8 @@ async def _(event):
                 km,
                 force_document=False,
                 allow_cache=False,
-                caption=sedlyf,
-                thumb = do,
+                caption=thum,
+                thumb = sedlyf,
                 supports_streaming=True) 
     await kekm.edit("Done!")
     for files in (sedlyf, km):
