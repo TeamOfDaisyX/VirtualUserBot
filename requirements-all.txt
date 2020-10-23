@@ -39,7 +39,6 @@ pymongo
 python-barcode
 python-dotenv
 python-magic
-pytube
 pytz
 qrcode
 regex
