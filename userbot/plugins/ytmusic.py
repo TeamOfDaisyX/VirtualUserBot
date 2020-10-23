@@ -17,6 +17,7 @@ async def _(event):
     mo = mio[0]['link']
     thum = mio[0]['title']
     thumb_nail = mio[0]['thumbnails']
+    thums = mio[0]['channel']
     kek = thumb_nail[0]
     youtube_video_url = f"{mo}"
     yt_obj = YouTube(youtube_video_url)
@@ -36,6 +37,7 @@ async def _(event):
                 force_document=False,
                 allow_cache=False,
                 caption=thum,
+                performer=thums,
                 thumb = sedlyf,
                 supports_streaming=True) 
     await kekm.edit("Done!")
