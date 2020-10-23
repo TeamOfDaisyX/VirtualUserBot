@@ -27,4 +27,7 @@ async def _(event):
     kek = await event.edit("Song Found ! Uploading This Song..")
     await borg.send_file(event.chat_id, file=keks, force_document=False, thumb=do, caption=f"{thum}, supports_streaming=True")
     await kek.edit("Done!")
+    for files in (do, keks):
+        if files and os.path.exists(files):
+            os.remove(files)
     
