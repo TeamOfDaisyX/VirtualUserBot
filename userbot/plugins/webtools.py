@@ -137,6 +137,6 @@ async def _(event):
                      f"<b><u>CHANNEL</u></b> - <code>{stark_chnnl}</code> \n" 
                      f"<b><u>DURATION</u></b> - <code>{total_stark}</code> \n"
                      f"<b><u>TOTAL-VIEWS</u></b> - <code>{stark_views}</code> \n\n")
-        await event.edit(noob)
+        await stark_result.edit(noob)
     except:
         await event.edit("Some Thing Went Wrong.")
