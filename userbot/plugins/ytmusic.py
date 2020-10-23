@@ -30,7 +30,14 @@ async def _(event):
     new_extension = ".mp3"
     hmm = os.rename(renamee, pre + new_extension)
     km = pre + new_extension
-    await borg.send_file(event.chat_id, file=km, force_document=False, thumb=do, caption=f"{thum}", supports_streaming=True)
+    await borg.send_file(event.chat_id,
+                km,
+                force_document=False,
+                allow_cache=False,
+                caption=thum,
+                thumb = catthumb,
+                voice_note=True,
+                supports_streaming=True) 
     await kekm.edit("Done!")
     for files in (do, km):
         if files and os.path.exists(files):
