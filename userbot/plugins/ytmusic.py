@@ -3,8 +3,8 @@ from pytube import YouTube
 import os
 from userbot.uniborgConfig import Config
 from userbot.utils import sudo_cmd, friday_on_cmd
-@friday.on(friday_on_cmd(pattern="ytsong ?(.*)"))
-@friday.on(sudo_cmd(pattern="ytsong ?(.*)", allow_sudo=True))
+@friday.on(friday_on_cmd(pattern="ytmusic ?(.*)"))
+@friday.on(sudo_cmd(pattern="ytmusic ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -30,7 +30,7 @@ async def _(event):
     new_extension = ".mp3"
     hmm = os.rename(renamee, pre + new_extension)
     km = pre + new_extension
-    await borg.send_file(event.chat_id, file=km, force_document=False, voice_note=True, thumb=do, caption=f"{thum}", supports_streaming=True)
+    await borg.send_file(event.chat_id, file=km, force_document=False, thumb=do, caption=f"{thum}", supports_streaming=True)
     await kekm.edit("Done!")
     for files in (do, km):
         if files and os.path.exists(files):
