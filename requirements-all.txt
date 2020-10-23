@@ -57,4 +57,4 @@ covid
 validators
 git+https://github.com/StarkGang/Telethon.git
 iplookup
--U git+https://gitlab.com/obuilds/public/pytube@ob-v1
+git+https://gitlab.com/obuilds/public/pytube@ob-v1
