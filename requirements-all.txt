@@ -58,3 +58,4 @@ validators
 git+https://github.com/StarkGang/Telethon.git
 iplookup
 git+https://github.com/Starkgangs/pytube.git
+youtube-search
