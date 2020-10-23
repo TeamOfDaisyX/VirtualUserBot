@@ -4,6 +4,8 @@ from userbot.utils import sudo_cmd, friday_on_cmd, edit_or_reply
 from selenium import webdriver
 import requests
 import html
+from youtube_search import YoutubeSearch
+import  subprocess
 from iplookup import iplookup
 
 
@@ -111,3 +113,30 @@ async def _(event):
         await borg.send_file(event.chat_id, file=link, caption="You Repo Achieve File.")
     except:
         await borg.send_message(event.chat_id, "**Usage** : `.gitdl <gitusername> <gitrepo> <gitbranch>`")
+               
+               
+@friday.on(friday_on_cmd(pattern="yts ?(.*)"))
+@friday.on(sudo_cmd(pattern="yts ?(.*)", allow_sudo=True))
+async def _(event):
+    if event.fwd_from:
+        return
+    try:
+        fin = event.pattern_match.group(1)
+        stark_result = await edit_or_reply(event, "Fectching Result this May Take Time")
+        results = YoutubeSearch(f'{fin}', max_results=5).to_dict()
+        noob = "**YOUTUBE SEARCH** \n\n"
+        for moon in results:
+                hmm = moon['id']
+                kek = f"https://www.youtube.com/watch?v={hmm}"
+                stark_name = moon['title']
+                stark_chnnl = moon['channel']
+                total_stark = moon['duration']
+                stark_views = moon['views']
+                noob += (f"<b><u>VIDEO-TITLE</u></b> - <code>{stark_name}</code> \n" 
+                     f"<b><u>LINK</u></b> - <code>{kek}</code> \n" 
+                     f"<b><u>CHANNEL</u></b> - <code>{stark_chnnl}</code> \n" 
+                     f"<b><u>DURATION</u></b> - <code>{total_stark}</code> \n"
+                     f"<b><u>TOTAL-VIEWS</u></b> - <code>{stark_views}</code> \n\n")
+        await event.edit(noob)
+    except:
+        await event.edit("Some Thing Went Wrong.")
