@@ -124,7 +124,7 @@ async def _(event):
         fin = event.pattern_match.group(1)
         stark_result = await edit_or_reply(event, "Fectching Result this May Take Time")
         results = YoutubeSearch(f'{fin}', max_results=5).to_dict()
-        noob = "**YOUTUBE SEARCH** \n\n"
+        noob = "<b>YOUTUBE SEARCH</b> \n\n"
         for moon in results:
                 hmm = moon['id']
                 kek = f"https://www.youtube.com/watch?v={hmm}"
