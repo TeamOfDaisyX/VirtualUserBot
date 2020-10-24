@@ -21,7 +21,7 @@ async def _(event):
     thums = mio[0]['channel']
     kek = thumb_nail[0]
     await asyncio.sleep(0.6)
-    youtube_video_url = mo
+    youtube_video_url = f"{mo}"
     yt_obj = YouTube(youtube_video_url)
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
