@@ -137,7 +137,7 @@ if ENV:
         PLUGIN_CHANNEL = int(os.environ.get("PLUGIN_CHANNEL", False))
         NEWS_CHANNEL_ID = int(os.environ.get("NEWS_CHANNEL_ID", False))
         PM_DATA = os.environ.get("PM_DATA", "ENABLE")
-        TAG_FEATURE = os.environ.get("TAG_FEATURE", "ENABLE")
+        TAG_FEATURE = os.environ.get("TAG_FEATURE", "DISABLE")
         ASSISTANT_LOG = int(os.environ.get("ASSISTANT_LOG", False))
 else:
     class Config(object):
