@@ -11,7 +11,7 @@ async def _(event):
     if event.fwd_from:
         return
     urlissed = event.pattern_match.group(1)
-    await event.edit("`Getting {urlissed} From Youtube Servers. Please Wait.`")
+    await event.edit(f"`Getting {urlissed} From Youtube Servers. Please Wait.`")
     search = SearchVideos(f"{urlissed}", offset = 1, mode = "dict", max_results = 1)
     mi = search.result()
     mio = mi['search_result']
