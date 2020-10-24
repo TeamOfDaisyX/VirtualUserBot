@@ -56,7 +56,7 @@ covid
 validators
 git+https://github.com/StarkGang/Telethon.git
 iplookup
-git+https://github.com/Starkgangs/starkdl.git
+git+https://github.com/Starkgangs/tcbsdl.git
 youtube-search
 youtube-search-python
 wget
