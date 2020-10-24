@@ -21,7 +21,8 @@ async def _(event):
     thum = mio[0]['title']
     fridayz = mio[0]['id']
     thums = mio[0]['channel']
-    kek = f"https://img.youtube.com/vi/{fridayz}/maxresdefault.jpg"
+    hmm_test = f"{fridayz}"
+    kek = f"http://img.youtube.com/vi/{hmm_test}/maxresdefault.jpg"
     youtube_video_url = f"{mo}"
     yt_obj = YouTube(youtube_video_url)
     await asyncio.sleep(0.6)
