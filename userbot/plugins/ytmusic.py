@@ -20,15 +20,14 @@ async def _(event):
     thumb_nail = mio[0]['thumbnails']
     thums = mio[0]['channel']
     kek = thumb_nail[0]
-    await asyncio.sleep(0.6)
     youtube_video_url = f"{mo}"
     yt_obj = YouTube(youtube_video_url)
+    await asyncio.sleep(0.6)
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     path = Config.TMP_DOWNLOAD_DIRECTORY
     sedlyf = wget.download(kek, out = path)
     keks = yt_obj.streams.get_audio_only().download(output_path=path, filename=f'{thum}')
-    await asyncio.sleep(0.6)
     kekm = await event.edit("Song Found ! Uploading This Song..")
     renamee = keks
     pre, ext = os.path.splitext(renamee)
