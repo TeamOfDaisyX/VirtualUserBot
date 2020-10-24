@@ -11,7 +11,7 @@ async def _(event):
     if event.fwd_from:
         return
     urlissed = event.pattern_match.group(1)
-    await event.edit("Fecthing Song....")
+    await event.edit("`Getting {urlissed} From Youtube Servers. Please Wait.`")
     search = SearchVideos(f"{urlissed}", offset = 1, mode = "dict", max_results = 1)
     mi = search.result()
     mio = mi['search_result']
@@ -28,21 +28,22 @@ async def _(event):
     path = Config.TMP_DOWNLOAD_DIRECTORY
     sedlyf = wget.download(kek, out = path)
     keks = yt_obj.streams.get_audio_only().download(output_path=path, filename=f'{thum}')
-    kekm = await event.edit("Song Found ! Uploading This Song..")
+    kekm = await event.edit("`Song Downloaded Sucessfully. Let Me Upload it.`")
     renamee = keks
     pre, ext = os.path.splitext(renamee)
     new_extension = ".mp3"
     hmm = os.rename(renamee, pre + new_extension)
     km = pre + new_extension
+    capy = f"**Song Name ➠** `{thum}` \n**Requested For ➠** `{urlissed}` \n**Channel ➠** `{thums}` \n**Link ➠** `{mo}`" 
     await borg.send_file(event.chat_id,
                 km,
                 force_document=False,
                 allow_cache=False,
-                caption=thum,
+                caption=capy,
                 performer=thums,
                 thumb = sedlyf,
                 supports_streaming=True) 
-    await kekm.edit("Done!")
+    await kekm.edit("Song Uploaded. By (C) @FridayOT")
     for files in (sedlyf, km):
         if files and os.path.exists(files):
             os.remove(files)
