@@ -60,3 +60,4 @@ validators
 youtube-search
 youtube-search-python
 wget
+downloader_cli
