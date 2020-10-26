@@ -1,9 +1,5 @@
 ## FRIDAY USERBOT
-```python3
-None
-```
-### Formation
-Now I will show a short script to show the formation of the desired script.
+# EXAMPLE CODE !
 ```python3
 from userbot.utils import friday_on_cmd, sudo_cmd, edit_or_reply
 from userbot.uniborgConfig import Config
