@@ -6,7 +6,7 @@ None
 Now I will show a short script to show the formation of the desired script.
 ```python3
 from userbot.utils import friday_on_cmd, sudo_cmd, edit_or_reply
-from uniborgConfig import Config
+from userbot.uniborgConfig import Config
 @friday.on(friday_on_cmd(pattern="alive"))
 @friday.on(sudo_cmd(pattern="alive", allow_sudo=True))
 async def hello_world(event):
