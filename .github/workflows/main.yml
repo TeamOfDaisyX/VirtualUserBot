@@ -1,0 +1,21 @@
+name: Format python code
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@master
+        with:
+          find: "uniborgConfig"
+          replace: "Configs"
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: Bot Replace.
+          title: Replacer Bot
+          body: replacing
+          labels: replaced
+          reviewers: replacebot
+          branch: replace
