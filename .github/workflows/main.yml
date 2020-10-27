@@ -1,4 +1,4 @@
-name: Format python code
+name: Sed
 on: push
 jobs:
   build:
@@ -10,12 +10,12 @@ jobs:
         with:
           find: "uniborgConfig"
           replace: "Configs"
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
+      - name: Pull All Updates
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit-message: Bot Replace.
-          title: Replacer Bot
-          body: replacing
-          labels: replaced
-          reviewers: replacebot
-          branch: replace
+          commit_message: 'Hmm'
+          commit_options: '--no-verify'
+          repository: .
+          commit_user_name: StarkGang
+          commit_user_email: starkgangz@gmail.com
+          commit_author: StarkGang <starkgangz@gmail.comm>
