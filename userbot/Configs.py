@@ -140,6 +140,7 @@ if ENV:
         TAG_FEATURE = os.environ.get("TAG_FEATURE", "DISABLE")
         ASSISTANT_LOG = int(os.environ.get("ASSISTANT_LOG", False))
         UPSTREAM_REPO = os.environ.get("UPSTREAM_REPO", "https://github.com/Starkgang/FridayUserbot")
+        ALIVE_IMAGE = os.environ.get("ALIVE_IMAGE", "https://telegra.ph/file/22535f8051a58af113586.jpg")
 else:
     class Config(object):
         DB_URI = None
