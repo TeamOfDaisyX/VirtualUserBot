@@ -139,6 +139,7 @@ if ENV:
         PM_DATA = os.environ.get("PM_DATA", "ENABLE")
         TAG_FEATURE = os.environ.get("TAG_FEATURE", "DISABLE")
         ASSISTANT_LOG = int(os.environ.get("ASSISTANT_LOG", False))
+        UPSTREAM_REPO = os.environ.get("UPSTREAM_REPO", "https://github.com/Starkgang/FridayUserbot")
 else:
     class Config(object):
         DB_URI = None
