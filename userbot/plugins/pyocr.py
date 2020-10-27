@@ -5,7 +5,7 @@ except ImportError:
 import pytesseract
 import os
 from userbot.utils import friday_on_cmd, sudo_cmd
-from userbot.uniborgConfig import Config
+from userbot.Configs import Config
 import html
 @friday.on(friday_on_cmd(pattern="read$"))
 async def _(event):
