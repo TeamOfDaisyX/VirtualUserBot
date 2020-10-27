@@ -6,7 +6,7 @@ Syntax: .update
 import asyncio
 import os
 import sys
-from userbot.uniborgConfig import Config
+from userbot.Configs import Config
 import git
 
 from userbot.utils import friday_on_cmd
