@@ -1,6 +1,6 @@
 from sqlalchemy import Column, String
 
-from fridaybot.plugins.sql_helper import BASE, SESSION
+from fridaybot.modules.sql_helper import BASE, SESSION
 
 
 class PMPermit(BASE):

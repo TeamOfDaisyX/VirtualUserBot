@@ -20,7 +20,7 @@ import time
 from fridaybot import Lastupdate, bot
 
 
-from fridaybot.plugins.sql_helper.snips_sql import (
+from fridaybot.modules.sql_helper.snips_sql import (
     add_snip,
     get_all_snips,
     get_snips,

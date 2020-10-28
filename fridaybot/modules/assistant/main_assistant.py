@@ -24,7 +24,7 @@ from googletrans import Translator
 import re
 import io
 from math import ceil
-from fridaybot.plugins import inlinestats
+from fridaybot.modules import inlinestats
 from telethon import custom, events, Button
 from fridaybot import CMD_LIST
 from fridaybot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
@@ -38,9 +38,9 @@ import time
 from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from fridaybot import Lastupdate, bot
-from fridaybot.plugins.sql_helper.botusers_sql import add_me_in_db, his_userid
-from fridaybot.plugins.sql_helper.idadder_sql import add_usersid_in_db, get_all_users, already_added
-from fridaybot.plugins.sql_helper.blacklist_assistant import add_nibba_in_db, get_all_nibba, is_he_added, removenibba
+from fridaybot.modules.sql_helper.botusers_sql import add_me_in_db, his_userid
+from fridaybot.modules.sql_helper.idadder_sql import add_usersid_in_db, get_all_users, already_added
+from fridaybot.modules.sql_helper.blacklist_assistant import add_nibba_in_db, get_all_nibba, is_he_added, removenibba
 
 @tgbot.on(events.NewMessage(pattern="^/start"))
 async def start(event):

@@ -17,7 +17,7 @@ if ENV:
         )
         # Send .get_id in any group to fill this value.
 
-        # This is required for the plugins involving the file system.
+        # This is required for the modules involving the file system.
         TMP_DOWNLOAD_DIRECTORY = os.environ.get(
             "TMP_DOWNLOAD_DIRECTORY", "./DOWNLOADS/"
         )
@@ -78,14 +78,14 @@ if ENV:
         if PM_LOGGR_BOT_API_ID:
             PM_LOGGR_BOT_API_ID = int(PM_LOGGR_BOT_API_ID)
         # For Databases
-        # can be None in which case plugins requiring
+        # can be None in which case modules requiring
         # DataBase would not work
         DB_URI = os.environ.get("DATABASE_URL", None)
         # number of rows of buttons to be displayed in .helpme command
         NO_OF_BUTTONS_DISPLAYED_IN_H_ME_CMD = int(
             os.environ.get("NO_OF_BUTTONS_DISPLAYED_IN_H_ME_CMD", 5)
         )
-        # specify command handler that should be used for the plugins
+        # specify command handler that should be used for the modules
         # this should be a valid "regex" pattern
         COMMAND_HAND_LER = os.environ.get("COMMAND_HAND_LER", "\.")
         SUDO_COMMAND_HAND_LER = os.environ.get("SUDO_COMMAND_HAND_LER", "\.")

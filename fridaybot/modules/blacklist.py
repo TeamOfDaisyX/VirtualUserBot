@@ -10,7 +10,7 @@ import re
 
 from telethon import events
 
-import fridaybot.plugins.sql_helper.blacklist_sql as sql
+import fridaybot.modules.sql_helper.blacklist_sql as sql
 from fridaybot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
 
 

@@ -13,7 +13,7 @@ async def send(event):
     message_id = event.message.id
     input_str = event.pattern_match.group(1)
     start = datetime.now()
-    the_plugin_file = "./fridaybot/plugins/{}.py".format(input_str)
+    the_plugin_file = "./fridaybot/modules/{}.py".format(input_str)
     end = datetime.now()
     time_taken_in_ms = (end - start).seconds
     men = (f"Plugin Name - {input_str}.py \nUploaded By Friday")

@@ -34,7 +34,7 @@ else:
 
 
 import glob
-path = "fridaybot/plugins/*.py"
+path = "fridaybot/modules/*.py"
 files = glob.glob(path)
 for name in files:
     with open(name) as f:
@@ -42,7 +42,7 @@ for name in files:
         shortname = path1.stem
         load_module(shortname.replace(".py", ""))
 # Done.
-path = "fridaybot/plugins/assistant/*.py"
+path = "fridaybot/modules/assistant/*.py"
 files = glob.glob(path)
 for name in files:
     with open(name) as f:

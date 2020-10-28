@@ -29,7 +29,7 @@ async def handler(event):
     await client.send_file(event.chat_id, file=meme, force_document=False)
     os.remove(meme)
 
-# Taken from https://github.com/UsergeTeam/Userge-Plugins/blob/master/plugins/memify.py#L64
+# Taken from https://github.com/UsergeTeam/Userge-Plugins/blob/master/modules/memify.py#L64
 # Maybe edited to suit the needs of this module
 
 

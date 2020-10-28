@@ -6,7 +6,7 @@ from fridaybot import ALIVE_NAME
 from fridaybot.Configs import Config
 from datetime import datetime
 from fridaybot import Lastupdate
-from fridaybot.plugins import currentversion
+from fridaybot.modules import currentversion
 
 #Functions
 def get_readable_time(seconds: int) -> str:

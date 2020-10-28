@@ -9,7 +9,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 import os
 from fridaybot import ALIVE_NAME
 from fridaybot import CMD_LIST
-from fridaybot.plugins import inlinestats
+from fridaybot.modules import inlinestats
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 if PMPERMIT_PIC is None:
     WARN_PIC = "https://telegra.ph/file/53aed76a90e38779161b1.jpg"
@@ -177,18 +177,18 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         await borg.send_message(event.query.user_id, text3)
 
 
-def paginate_help(page_number, loaded_plugins, prefix):
+def paginate_help(page_number, loaded_modules, prefix):
     number_of_rows = 8
     number_of_cols = 2
-    helpable_plugins = []
-    for p in loaded_plugins:
+    helpable_modules = []
+    for p in loaded_modules:
         if not p.startswith("_"):
-            helpable_plugins.append(p)
-    helpable_plugins = sorted(helpable_plugins)
+            helpable_modules.append(p)
+    helpable_modules = sorted(helpable_modules)
     modules = [
         custom.Button.inline("{} {} {}".format("🔶", x, "🔶"),
                              data="us_plugin_{}".format(x))
-        for x in helpable_plugins
+        for x in helpable_modules
     ]
     pairs = list(zip(modules[::number_of_cols], modules[1::number_of_cols]))
     if len(modules) % number_of_cols == 1:

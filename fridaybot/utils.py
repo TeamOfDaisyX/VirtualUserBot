@@ -89,8 +89,8 @@ def load_module(shortname):
 
         import fridaybot.utils
 
-        path = Path(f"fridaybot/plugins/{shortname}.py")
-        name = "fridaybot.plugins.{}".format(shortname)
+        path = Path(f"fridaybot/modules/{shortname}.py")
+        name = "fridaybot.modules.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
@@ -102,8 +102,8 @@ def load_module(shortname):
 
         import fridaybot.utils
 
-        path = Path(f"fridaybot/plugins/{shortname}.py")
-        name = "fridaybot.plugins.{}".format(shortname)
+        path = Path(f"fridaybot/modules/{shortname}.py")
+        name = "fridaybot.modules.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.bot = bot
@@ -121,7 +121,7 @@ def load_module(shortname):
         sys.modules["fridaybot.events"] = fridaybot.utils
         spec.loader.exec_module(mod)
         # for imports
-        sys.modules["fridaybot.plugins." + shortname] = mod
+        sys.modules["fridaybot.modules." + shortname] = mod
         print("Successfully imported " + shortname)
 
 
@@ -133,7 +133,7 @@ def remove_plugin(shortname):
             del LOAD_PLUG[shortname]
 
         except:
-            name = f"fridaybot.plugins.{shortname}"
+            name = f"fridaybot.modules.{shortname}"
 
             for i in reversed(range(len(bot._event_builders))):
                 ev, cb = bot._event_builders[i]
@@ -474,8 +474,8 @@ def start_assistant(shortname):
 
         import fridaybot.utils
 
-        path = Path(f"fridaybot/plugins/assistant/{shortname}.py")
-        name = "fridaybot.plugins.assistant.{}".format(shortname)
+        path = Path(f"fridaybot/modules/assistant/{shortname}.py")
+        name = "fridaybot.modules.assistant.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
@@ -488,11 +488,11 @@ def start_assistant(shortname):
 
         import fridaybot.utils
 
-        path = Path(f"fridaybot/plugins/assistant/{shortname}.py")
-        name = "fridaybot.plugins.assistant.{}".format(shortname)
+        path = Path(f"fridaybot/modules/assistant/{shortname}.py")
+        name = "fridaybot.modules.assistant.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.tgbot = bot.tgbot
         spec.loader.exec_module(mod)
-        sys.modules["fridaybot.plugins.assistant" + shortname] = mod
+        sys.modules["fridaybot.modules.assistant" + shortname] = mod
         print("Assistant Has imported " + shortname)

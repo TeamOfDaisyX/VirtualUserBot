@@ -6,7 +6,7 @@ from telethon import events
 from telethon import functions
 from telethon.tl.functions.users import GetFullUserRequest
 
-import fridaybot.plugins.sql_helper.pmpermit_sql as pmpermit_sql
+import fridaybot.modules.sql_helper.pmpermit_sql as pmpermit_sql
 from fridaybot import ALIVE_NAME
 from fridaybot import CUSTOM_PMPERMIT
 from fridaybot.Configs import Config

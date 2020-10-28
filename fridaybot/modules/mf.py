@@ -10,8 +10,8 @@ async def _(event):
     if event.fwd_from:
         return
     splugin_name = event.pattern_match.group(1)
-    if splugin_name in borg._plugins:
-        s_help_string = borg._plugins[splugin_name].__doc__
+    if splugin_name in borg._modules:
+        s_help_string = borg._modules[splugin_name].__doc__
     else:
         s_help_string = ""
     help_string = """

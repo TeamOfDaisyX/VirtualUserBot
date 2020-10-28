@@ -9,7 +9,7 @@ Available Commands:
 from telethon import events, utils
 from telethon.tl import types
 
-from fridaybot.plugins.sql_helper.snips_sql import (
+from fridaybot.modules.sql_helper.snips_sql import (
     add_snip,
     get_all_snips,
     get_snips,

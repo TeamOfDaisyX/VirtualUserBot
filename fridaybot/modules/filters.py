@@ -12,7 +12,7 @@ import re
 from telethon import utils
 from telethon.tl import types
 
-from fridaybot.plugins.sql_helper.filter_sql import (
+from fridaybot.modules.sql_helper.filter_sql import (
     add_filter,
     get_all_filters,
     remove_all_filters,
