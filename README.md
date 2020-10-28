@@ -1,4 +1,4 @@
-#<b><u> FRIDAY-USERBOT 🇮🇳 </u></b>
+# <u> FRIDAY-USERBOT 🇮🇳 </u>
 ## A Bot With Assistant Support 🔥
 
 <p align="center">
@@ -75,17 +75,11 @@ Fortunately there are no Mandatory vars for the UniBorg Support Config.
 
 ## Mandatory Vars
 
-- Only two of the environment variables are mandatory.
-- This is because of `telethon.errors.rpc_error_list.ApiIdPublishedFloodError`
-    - `APP_ID`:   You can get this value from https://my.telegram.org
-    - `API_HASH`:   You can get this value from https://my.telegram.org
-- The userbot will not work without setting the mandatory vars.
+[+] Only two of the environment variables are mandatory.
+[+] This is because of `telethon.errors.rpc_error_list.ApiIdPublishedFloodError`
+    [-] `APP_ID`:   You can get this value from https://my.telegram.org
+    [-] `API_HASH`:   You can get this value from https://my.telegram.org
+[+] The userbot will not work without setting the mandatory vars.
 
 ## Credits 
-```- Thanks To All Contributers For This Project 
-- $ Full Repo - X-Tra Telegram 
-- $ Lyrics Plugin // Inline Fix - @MrConfused
-- $ Sudo Credits - Uniborg , @MrConfused
-- $ Some Bug Fixes - @Adarsh_xD , @Aid_3n, @Sur_vivor, @Everythingsuckz, @PureindiaLover 
-
-Check More Contribution At https://github.com/StarkGang/FridayUserbot/graphs/contributors
+[+] Check Contribution At https://github.com/StarkGang/FridayUserbot/graphs/contributors
