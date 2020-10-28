@@ -8,12 +8,12 @@ jobs:
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@master
         with:
-          find: "userbot"
-          replace: "fridaybot"
+          find: "plugins"
+          replace: "modules"
       - name: Pull All Updates
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: 'Hmm'
+          commit_message: 'Kek'
           commit_options: '--no-verify'
           repository: .
           commit_user_name: StarkGang
