@@ -11,7 +11,7 @@ from datetime import datetime
 
 from github import Github
 
-GIT_TEMP_DIR = "./userbot/temp/"
+GIT_TEMP_DIR = "./fridaybot/temp/"
 
 
 @command(pattern="^.commit", outgoing=True)
