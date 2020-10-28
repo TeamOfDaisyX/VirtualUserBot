@@ -1,4 +1,4 @@
-<b><u> FRIDAY-USERBOT 🇮🇳 </u></b>
+#<b><u> FRIDAY-USERBOT 🇮🇳 </u></b>
 ## A Bot With Assistant Support 🔥
 
 <p align="center">
