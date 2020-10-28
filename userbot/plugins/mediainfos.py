@@ -5,8 +5,8 @@ import asyncio
 import os
 import time
 from datetime import datetime
-from userbot.Configs import Config
-from userbot.utils import friday_on_cmd, sudo_cmd
+from fridaybot.Configs import Config
+from fridaybot.utils import friday_on_cmd, sudo_cmd
 import subprocess
 import os
 import re

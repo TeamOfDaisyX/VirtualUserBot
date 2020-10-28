@@ -3,7 +3,7 @@ Syntax: .afk REASON"""
 import asyncio
 import datetime
 from datetime import datetime
-from userbot.utils import friday_on_cmd
+from fridaybot.utils import friday_on_cmd
 from telethon import events
 from telethon.tl import functions, types
 
@@ -119,7 +119,7 @@ async def on_afk(event):
     afk_since = "**a while ago**"
     current_message_text = event.message.message.lower()
     if "afk" in current_message_text:
-        # userbot's should not reply to other userbot's
+        # fridaybot's should not reply to other fridaybot's
         # https://core.telegram.org/bots/faq#why-doesn-39t-my-bot-see-messages-from-other-bots
         return False
     if USER_AFK and not (await event.get_sender()).bot:  # pylint:disable=E0602

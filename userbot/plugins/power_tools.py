@@ -8,7 +8,7 @@ Available Commands:
 import os
 import sys
 import asyncio
-from userbot.utils import friday_on_cmd
+from fridaybot.utils import friday_on_cmd
 
 
 @friday.on(friday_on_cmd("restart"))

@@ -5,7 +5,7 @@
 
 import logging
 
-from userbot.utils import friday_on_cmd, sudo_cmd
+from fridaybot.utils import friday_on_cmd, sudo_cmd
 
 logger = logging.getLogger(__name__)
 

@@ -1,5 +1,5 @@
 """
-Telegram Channel Media Downloader Plugin for userbot.
+Telegram Channel Media Downloader Plugin for fridaybot.
 usage: .geta channel_username [will  get all media from channel, tho there is limit of 3000 there to prevent API limits.]
        .getc number_of_messsages channel_username  
 By: @Zero_cool7870

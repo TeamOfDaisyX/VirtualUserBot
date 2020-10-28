@@ -12,7 +12,7 @@ import requests
 from bs4 import BeautifulSoup
 from google_images_download import google_images_download
 
-from userbot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
+from fridaybot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
 
 
 def progress(current, total):

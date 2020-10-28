@@ -7,7 +7,7 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from uniborg.util import friday_on_cmd
 
-from userbot import CMD_HELP
+from fridaybot import CMD_HELP
 
 
 @friday.on(friday_on_cmd(pattern="mashup ?(.*)"))

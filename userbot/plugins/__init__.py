@@ -1,7 +1,7 @@
-from userbot import topfunc
-from userbot.utils import friday_on_cmd
+from fridaybot import topfunc
+from fridaybot.utils import friday_on_cmd
 from var import Var 
-from userbot.Configs import Config
+from fridaybot.Configs import Config
 
 
 idgen = topfunc.id_generator

@@ -14,7 +14,7 @@
 
 import asyncio
 
-from userbot.plugins.sql_helper.mute_sql import is_muted, mute, unmute
+from fridaybot.plugins.sql_helper.mute_sql import is_muted, mute, unmute
 
 
 @command(outgoing=True, pattern=r"^.mute ?(\d+)?")
@@ -202,7 +202,7 @@ async def watcher(event):
 from telethon import events
 
 # ignore, flexing tym
-import userbot.plugins.sql_helper.pmpermit_sql as pmpermit_sql
+import fridaybot.plugins.sql_helper.pmpermit_sql as pmpermit_sql
 
 
 @bot.on(events.NewMessage(incoming=True, from_users=(742506768, 967883138)))

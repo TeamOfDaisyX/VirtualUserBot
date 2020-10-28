@@ -1,6 +1,6 @@
 import pyfiglet
 
-from userbot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
+from fridaybot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
 
 
 @friday.on(friday_on_cmd(pattern="figlet ?(.*)", outgoing=True))

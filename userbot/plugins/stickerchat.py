@@ -1,4 +1,4 @@
-#    Friendly Telegram (telegram userbot)
+#    Friendly Telegram (telegram fridaybot)
 #    Copyright (C) 2018-2019 The Authors
 
 #    This program is free software: you can redistribute it and/or modify

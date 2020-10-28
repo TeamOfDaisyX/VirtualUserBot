@@ -9,7 +9,7 @@ credits :@mrconfused
 from geopy.geocoders import Nominatim
 from telethon.tl import types
 
-from userbot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
+from fridaybot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
 
 
 @friday.on(friday_on_cmd(pattern="gps ?(.*)"))
@@ -28,7 +28,7 @@ async def gps(event):
 
     await starkislub.edit("finding")
 
-    geolocator = Nominatim(user_agent="catuserbot")
+    geolocator = Nominatim(user_agent="catfridaybot")
     geoloc = geolocator.geocode(input_str)
 
     if geoloc:

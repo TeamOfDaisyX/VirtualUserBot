@@ -4,8 +4,8 @@ from sys import argv
 import telethon.utils
 from telethon import TelegramClient
 
-from userbot import bot
-from userbot.utils import load_module, start_assistant
+from fridaybot import bot
+from fridaybot.utils import load_module, start_assistant
 from var import Var
 
 
@@ -34,7 +34,7 @@ else:
 
 
 import glob
-path = "userbot/plugins/*.py"
+path = "fridaybot/plugins/*.py"
 files = glob.glob(path)
 for name in files:
     with open(name) as f:
@@ -42,7 +42,7 @@ for name in files:
         shortname = path1.stem
         load_module(shortname.replace(".py", ""))
 # Done.
-path = "userbot/plugins/assistant/*.py"
+path = "fridaybot/plugins/assistant/*.py"
 files = glob.glob(path)
 for name in files:
     with open(name) as f:

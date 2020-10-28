@@ -8,7 +8,7 @@ from pathlib import Path
 
 from telethon.tl.types import InputMessagesFilterDocument
 
-from userbot.utils import friday_on_cmd, load_module
+from fridaybot.utils import friday_on_cmd, load_module
 
 
 @friday.on(friday_on_cmd("ipa (.*)"))
@@ -25,7 +25,7 @@ async def install(event):
     for ixo in total_doxx:
         mxo = documentss[ixo].id
         downloaded_file_name = await event.client.download_media(
-            await borg.get_messages(chat, ids=mxo), "userbot/plugins/"
+            await borg.get_messages(chat, ids=mxo), "fridaybot/plugins/"
         )
         if "(" not in downloaded_file_name:
             path1 = Path(downloaded_file_name)

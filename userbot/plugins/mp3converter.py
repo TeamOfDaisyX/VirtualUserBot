@@ -6,7 +6,7 @@ import os
 import time
 from datetime import datetime
 
-from userbot.utils import friday_on_cmd, progress
+from fridaybot.utils import friday_on_cmd, progress
 
 
 @friday.on(friday_on_cmd(pattern="convert (.*)"))  # pylint:disable=E0602

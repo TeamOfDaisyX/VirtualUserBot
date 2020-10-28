@@ -7,7 +7,7 @@ from datetime import datetime
 
 from PIL import Image, ImageDraw, ImageFont
 
-from userbot.utils import friday_on_cmd
+from fridaybot.utils import friday_on_cmd
 
 FONT_FILE_TO_USE = "Fonts/digital.ttf"
 

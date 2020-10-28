@@ -4,9 +4,9 @@
   "logo": "https://telegra.ph/file/b4e1e36c6b1fcb32dd997.jpg",
   "keywords": [
     "telegram",
-    "userbot",
+    "fridaybot",
     "plugin",
-    "telegram-userbot",
+    "telegram-fridaybot",
     "productivity"
   ],
   "repository": "https://github.com/starkgang/FridayUserbot",
@@ -19,7 +19,7 @@
     },
     "TEMP_DOWNLOAD_DIRECTORY": {
       "description": "Where downloaded files will go.",
-      "value": "./userbot/DOWNLOADS/",
+      "value": "./fridaybot/DOWNLOADS/",
       "required": false
     },
     "ALIVE_NAME": {

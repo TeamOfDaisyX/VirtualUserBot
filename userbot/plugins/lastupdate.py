@@ -2,8 +2,8 @@
 import time
 from datetime import datetime
 
-from userbot.__init__ import Lastupdate
-from userbot.utils import friday_on_cmd
+from fridaybot.__init__ import Lastupdate
+from fridaybot.utils import friday_on_cmd
 
 
 def get_readable_time(seconds: int) -> str:

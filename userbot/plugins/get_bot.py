@@ -2,7 +2,7 @@
 Syntax: .get_bot"""
 from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantsBots
 
-from userbot.utils import friday_on_cmd
+from fridaybot.utils import friday_on_cmd
 
 
 @friday.on(friday_on_cmd("get_bot ?(.*)"))

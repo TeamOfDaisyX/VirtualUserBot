@@ -1,4 +1,4 @@
-from userbot.utils import sudo_cmd, friday_on_cmd, edit_or_reply, load_module, remove_plugin
+from fridaybot.utils import sudo_cmd, friday_on_cmd, edit_or_reply, load_module, remove_plugin
 import asyncio
 import os
 from datetime import datetime
@@ -14,7 +14,7 @@ async def install(event):
             downloaded_file_name = (
                 await event.client.download_media(  # pylint:disable=E0602
                     await event.get_reply_message(),
-                    "userbot/plugins/",  # pylint:disable=E0602
+                    "fridaybot/plugins/",  # pylint:disable=E0602
                 )
             )
             if "(" not in downloaded_file_name:

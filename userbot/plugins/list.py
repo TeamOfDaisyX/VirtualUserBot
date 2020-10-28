@@ -1,5 +1,5 @@
 """
-List Files plugin for userbot //Simple Module for people who dont wanna use shell executor for listing files.
+List Files plugin for fridaybot //Simple Module for people who dont wanna use shell executor for listing files.
 cmd: .ls // will return files from current working directory
 	 .ls path // will return output according to path  
 

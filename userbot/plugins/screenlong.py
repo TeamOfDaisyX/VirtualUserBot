@@ -7,7 +7,7 @@ from datetime import datetime
 
 from selenium import webdriver
 
-from userbot.utils import friday_on_cmd
+from fridaybot.utils import friday_on_cmd
 
 
 @friday.on(friday_on_cmd("screenlong (.*)"))
