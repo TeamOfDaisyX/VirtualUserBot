@@ -1,5 +1,4 @@
 from sqlalchemy import BigInteger, Boolean, Column, String, UnicodeText
-
 from fridaybot.modules.sql_helper import BASE, SESSION
 
 
