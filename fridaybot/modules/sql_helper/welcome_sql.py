@@ -1,6 +1,6 @@
 from sqlalchemy import BigInteger, Boolean, Column, String, UnicodeText
 
-from fridaybot.modules.sql_helper import BASE, SESSION
+from serenabot.plugins.sql_files import BASE, SESSION
 
 
 class Welcome(BASE):
