@@ -32,5 +32,5 @@ async def runcmd(cmd: str) -> Tuple[str, str, int, int]:
 async def kek(event):
     app_name = event.pattern_match.group(1)
     out, err, ret, pid = await runcmd(f'spotdl "{app_name}"')
-    await friday.send_file(file=out, caption="=+  MUSIC +=")
+    await friday.send_file(event.chat_id, file=out, caption="=+  MUSIC +=")
     os.remove(out)
