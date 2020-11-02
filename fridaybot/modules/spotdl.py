@@ -27,7 +27,8 @@ async def runcmd(cmd: str) -> Tuple[str, str, int, int]:
             stderr.decode('utf-8', 'replace').strip(),
             process.returncode,
             process.pid)
-@friday.on(friday_on_cmd(pattern="spotdl (.*)")
+
+@friday.on(friday_on_cmd(pattern="spotdl (.*)"))
 async def kek(event):
     app_name = event.pattern_match.group(1)
     out, err, ret, pid = await runcmd(f'spotdl "{app_name}"')
