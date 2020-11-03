@@ -596,4 +596,4 @@ def start_assistant(shortname):
         mod.is_admin() = is_admin()
         spec.loader.exec_module(mod)
         sys.modules["fridaybot.modules.assistant" + shortname] = mod
-        print("Assistant Has imported " + shortname)
+        print("Assistants Has imported " + shortname)
