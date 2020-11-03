@@ -2,14 +2,14 @@ import inspect
 import logging
 import re
 from pathlib import Path
-
+import functools
 from telethon import events
-
 from fridaybot import CMD_LIST, LOAD_PLUG, SUDO_LIST, bot
 from fridaybot.Configs import Config
 from var import Var
 
 cmdhandler = Config.COMMAND_HAND_LER
+bothandler = Config.BOT_CMD_HANDLER
 
 def command(**args):
     args["func"] = lambda e: e.via_bot_id is None
@@ -466,11 +466,11 @@ async def edit_or_reply(event, text):
 def assistant_cmd(add_cmd, is_args=False):
     def cmd(func):
         if is_args:
-            pattern = custom + add_cmd + "(?: |$)(.*)"
+            pattern = bothandler + add_cmd + "(?: |$)(.*)"
         elif is_args == "stark":
-            pattern = custom + add_cmd + " (.*)"
+            pattern = bothandler + add_cmd + " (.*)"
         else:
-            pattern = custom + add_cmd + "$"
+            pattern = bothandler + add_cmd + "$"
         serena.add_event_handler(
             func, events.NewMessage(incoming=True, pattern=pattern)
         )
