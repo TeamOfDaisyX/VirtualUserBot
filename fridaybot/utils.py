@@ -463,7 +463,103 @@ async def edit_or_reply(event, text):
 
 
 
-# Assistant 
+def assistant_cmd(add_cmd, is_args=False):
+    def cmd(func):
+        if is_args:
+            pattern = custom + add_cmd + "(?: |$)(.*)"
+        elif is_args == "stark":
+            pattern = custom + add_cmd + " (.*)"
+        else:
+            pattern = custom + add_cmd + "$"
+        serena.add_event_handler(
+            func, events.NewMessage(incoming=True, pattern=pattern)
+        )
+
+    return cmd
+
+
+def is_admin():
+    def decorator(func):
+        @functools.wraps(func)
+        async def wrapper(event):
+            sed = await serena.get_permissions(event.chat_id, event.sender_id)
+            user = event.sender_id
+            kek = bot.uid
+            if sed.is_admin:
+                await func(event)
+            if event.sender_id == kek:
+                pass
+            elif not user:
+                pass
+            if not sed.is_admin:
+                await event.reply("Only Admins Can Use it.")
+
+        return wrapper
+
+    return decorator
+
+
+def is_bot_admin():
+    def decorator(func):
+        @functools.wraps(func)
+        async def wrapper(event):
+            pep = await serena.get_me()
+            sed = await serena.get_permissions(event.chat_id, pep)
+            if sed.is_admin:
+                await func(event)
+            else:
+                event.reply("I Must Be Admin To Do This.")
+
+        return wrapper
+
+    return decorator
+
+
+def pro_only():
+    def decorator(func):
+        @functools.wraps(func)
+        async def wrapper(event):
+            kek = list(Config.SUDO_USERS)
+            mm = bot.uid
+            stark = kek, mm
+            if event.sender_id == stark:
+                await func(event)
+            else:
+                event.reply("Only Owners, Sudo Users Can Use This Command.")
+
+        return wrapper
+
+    return decorator
+
+
+def god_only():
+    def decorator(func):
+        @functools.wraps(func)
+        async def wrapper(event):
+            moms = bot.uid
+            if event.sender_id == moms:
+                await func(event)
+            else:
+                pass
+
+        return wrapper
+
+    return decorator
+
+
+def only_groups():
+    def decorator(func):
+        @functools.wraps(func)
+        async def wrapper(event):
+            if event.is_group:
+                await func(event)
+            else:
+                await event.reply("This Command Only Works On Groups.")
+
+        return wrapper
+
+    return decorator
+
 def start_assistant(shortname):
     if shortname.startswith("__"):
         pass
