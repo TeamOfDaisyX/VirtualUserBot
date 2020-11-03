@@ -465,6 +465,7 @@ async def edit_or_reply(event, text):
 
 def assistant_cmd(add_cmd, is_args=False):
     def cmd(func):
+        serena = bot.tgbot
         if is_args:
             pattern = bothandler + add_cmd + "(?: |$)(.*)"
         elif is_args == "stark":
@@ -482,6 +483,7 @@ def is_admin():
     def decorator(func):
         @functools.wraps(func)
         async def wrapper(event):
+            serena = bot.tgbot
             sed = await serena.get_permissions(event.chat_id, event.sender_id)
             user = event.sender_id
             kek = bot.uid
@@ -503,6 +505,7 @@ def is_bot_admin():
     def decorator(func):
         @functools.wraps(func)
         async def wrapper(event):
+            serena = bot.tgbot
             pep = await serena.get_me()
             sed = await serena.get_permissions(event.chat_id, pep)
             if sed.is_admin:
