@@ -9,7 +9,7 @@ from fridaybot.Configs import Config
 from var import Var
 
 cmdhandler = Config.COMMAND_HAND_LER
-bothandler = Config.BOT_CMD_HANDLER
+bothandler = Config.BOT_HANDLER
 
 def command(**args):
     args["func"] = lambda e: e.via_bot_id is None
