@@ -590,10 +590,10 @@ def start_assistant(shortname):
         mod = importlib.util.module_from_spec(spec)
         mod.tgbot = bot.tgbot
         mod.assistant_cmd = assistant_cmd
-        mod.god_only() = god_only()
-        mod.only_groups() = only_groups()
-        mod.is_bot_admin() = is_bot_admin()
-        mod.is_admin() = is_admin()
+        mod.god_only = god_only()
+        mod.only_groups = only_groups()
+        mod.is_bot_admin = is_bot_admin()
+        mod.is_admin = is_admin()
         spec.loader.exec_module(mod)
         sys.modules["fridaybot.modules.assistant" + shortname] = mod
         print("Assistants Has imported " + shortname)
