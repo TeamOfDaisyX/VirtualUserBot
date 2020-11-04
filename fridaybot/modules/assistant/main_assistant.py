@@ -167,7 +167,7 @@ async def sed(event):
             msg_s
             )
 
-# broadcast
+
 @assistant_cmd("broadcast", is_args=True)
 @god_only
 async def sedlyfsir(event):
