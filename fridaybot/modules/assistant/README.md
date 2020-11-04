@@ -1,7 +1,5 @@
 # EXAMPLE CODE FOR ASSISTANT MODULE/PLUGIN
 
-## is_args can be `False` if your command has no args else set it to `True`.
-
 ```python3
 from fridaybot.Configs import Config
 from userbot import bot
@@ -9,6 +7,7 @@ from userbot import bot
 async def shit(event):
     await event.reply(f"My master is [Pro](tg://user?id={bot.uid}")
 ```
+## Note - is_args can be set to `False` if your command has no args else set it to `True`.
 ## Some Wrappers To Help You ! 
 ```
 [+] - @is_admin ~ This Checks If Sender Is Admin.
