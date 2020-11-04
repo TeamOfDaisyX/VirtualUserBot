@@ -520,7 +520,7 @@ def is_bot_admin():
     return decorator
 
 
-def only_only():
+def only_pro():
     def decorator(func):
         @functools.wraps(func)
         async def wrapper(event):
