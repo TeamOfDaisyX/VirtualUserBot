@@ -60,7 +60,7 @@ async def on_snip(event):
         )
 
 
-@assitant_cmd("addnote", is_args=True)
+@assistant_cmd("addnote", is_args=True)
 @pro_only
 async def _(event):
     name = event.pattern_match.group(1)
