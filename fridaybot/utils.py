@@ -636,6 +636,7 @@ def start_assistant(shortname):
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.tgbot = bot.tgbot
+        mod.serena = bot.tgbot
         mod.assistant_cmd = assistant_cmd
         mod.god_only = god_only()
         mod.only_groups = only_groups()
