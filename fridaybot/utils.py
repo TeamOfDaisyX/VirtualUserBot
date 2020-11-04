@@ -592,6 +592,18 @@ def peru_only():
 
     return decorator
 
+def only_pvt():
+    def decorator(func):
+        @functools.wraps(func)
+        async def wrapper(event):
+            if event.is_group:
+                pass
+            else:
+                await func(event)
+
+        return wrapper
+
+    return decorator
 def start_assistant(shortname):
     if shortname.startswith("__"):
         pass
@@ -628,6 +640,7 @@ def start_assistant(shortname):
         mod.is_bot_admin = is_bot_admin()
         mod.is_admin = is_admin()
         mod.peru_only = peru_only()
+        mod.only_pvt = only_pvt()
         spec.loader.exec_module(mod)
         sys.modules["fridaybot.modules.assistant" + shortname] = mod
         print("Assistants Has imported " + shortname)
