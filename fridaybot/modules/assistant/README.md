@@ -7,7 +7,7 @@ from fridaybot import bot
 async def shit(event):
     await event.reply(f"My master is [Pro](tg://user?id={bot.uid}")
 ```
-### Note - is_args can be set to `False` if your command has no args else set it to `True`.
+### If Your Command Has Args Then Set It To `is_args=True` Else Set It To `is_args=False`.
 ## Some Wrappers To Help You ! 
 ```
 [+] - @is_admin ~ This Checks If Sender Is Admin.
