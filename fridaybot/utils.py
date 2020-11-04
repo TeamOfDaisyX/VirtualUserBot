@@ -563,6 +563,35 @@ def only_groups():
 
     return decorator
 
+def only_group():
+    def decorator(func):
+        @functools.wraps(func)
+        async def wrapper(event):
+            if event.is_group:
+                await func(event)
+            else:
+                pass
+
+        return wrapper
+
+    return decorator
+
+def peru_only():
+    def decorator(func):
+        @functools.wraps(func)
+        async def wrapper(event):
+            kek = list(Config.SUDO_USERS)
+            mm = bot.uid
+            stark = kek, mm
+            if event.sender_id == stark:
+                await func(event)
+            else:
+                pass
+
+        return wrapper
+
+    return decorator
+
 def start_assistant(shortname):
     if shortname.startswith("__"):
         pass
@@ -595,8 +624,10 @@ def start_assistant(shortname):
         mod.assistant_cmd = assistant_cmd
         mod.god_only = god_only()
         mod.only_groups = only_groups()
+        mod.only_group = only_group()
         mod.is_bot_admin = is_bot_admin()
         mod.is_admin = is_admin()
+        mod.peru_only = peru_only()
         spec.loader.exec_module(mod)
         sys.modules["fridaybot.modules.assistant" + shortname] = mod
         print("Assistants Has imported " + shortname)
