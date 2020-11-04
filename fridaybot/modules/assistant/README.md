@@ -2,12 +2,12 @@
 
 ```python3
 from fridaybot.Configs import Config
-from userbot import bot
+from fridaybot import bot
 @assistant_cmd("commandhere", is_args=True)
 async def shit(event):
     await event.reply(f"My master is [Pro](tg://user?id={bot.uid}")
 ```
-## Note - is_args can be set to `False` if your command has no args else set it to `True`.
+### Note - is_args can be set to `False` if your command has no args else set it to `True`.
 ## Some Wrappers To Help You ! 
 ```
 [+] - @is_admin ~ This Checks If Sender Is Admin.
