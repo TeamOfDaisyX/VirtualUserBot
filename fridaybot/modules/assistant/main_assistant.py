@@ -169,7 +169,7 @@ async def sed(event):
 
 # broadcast
 @assistant_cmd("broadcast", is_args=True)
-god_only
+@god_only
 async def sedlyfsir(event):
     msgtobroadcast = event.pattern_match.group(1)
     userstobc = get_all_users()
