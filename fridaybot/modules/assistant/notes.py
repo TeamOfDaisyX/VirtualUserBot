@@ -60,7 +60,8 @@ async def on_snip(event):
         )
 
 
-@tgbot.on(events.NewMessage(pattern="^/addnote ?(.*)", func=lambda e: e.sender_id == bot.uid))
+@assitant_cmd("addnote", is_args=True)
+pro_only
 async def _(event):
     name = event.pattern_match.group(1)
     msg = await event.get_reply_message()
@@ -93,7 +94,8 @@ async def _(event):
         await event.reply("Reply to a message with `snips keyword` to save the snip")
 
 
-@tgbot.on(events.NewMessage(pattern="^/notes"))
+@assistant_cmd("notes", is_args=True)
+@pro_only
 async def on_snip_list(event):
     all_snips = get_all_snips()
     OUT_STR = "Available Snips:\n"
