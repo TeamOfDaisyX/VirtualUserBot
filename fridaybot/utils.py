@@ -513,7 +513,7 @@ def is_bot_admin():
             if sed.is_admin:
                 await func(event)
             else:
-                event.reply("I Must Be Admin To Do This.")
+                await event.reply("I Must Be Admin To Do This.")
 
         return wrapper
 
@@ -526,11 +526,12 @@ def only_pro():
         async def wrapper(event):
             kek = list(Config.SUDO_USERS)
             mm = bot.uid
-            stark = kek, mm
-            if event.sender_id == stark:
+            if event.sender_id == mm:
+                await func(event)
+            elif event.sender_id == kek:
                 await func(event)
             else:
-                event.reply("Only Owners, Sudo Users Can Use This Command.")
+                await event.reply("Only Owners, Sudo Users Can Use This Command.")
 
         return wrapper
 
