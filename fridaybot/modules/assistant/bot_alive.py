@@ -53,6 +53,7 @@ pm_caption += "➥ **Copyright** : By [StarkGang@Github](GitHub.com/StarkGang)\n
 pm_caption += "[Assistant By Friday 🇮🇳](https://telegra.ph/FRIDAY-06-15)"
 
 # only Owner Can Use it 
-@tgbot.on(events.NewMessage(pattern="^/alive", func=lambda e: e.sender_id == bot.uid))
+@assistant_cmd("alive", is_args=False)
+@peru_only
 async def friday(event):
     await tgbot.send_file(event.chat_id, PM_IMG, caption=pm_caption)
