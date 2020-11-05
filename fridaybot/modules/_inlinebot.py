@@ -49,22 +49,14 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 file=WARN_PIC,
                 text=query,
                 buttons=[
-                    [
-                        custom.Button.inline(
-                            "Spamming", data="dontspamnigga"
-                        )
-                    ],
+                    [custom.Button.inline("Spamming", data="dontspamnigga")],
                     [
                         custom.Button.inline(
                             "Casual Talk",
                             data="whattalk",
                         )
                     ],
-                    [
-                        custom.Button.inline(
-                            "Requesting", data="askme"
-                        )
-                    ],
+                    [custom.Button.inline("Requesting", data="askme")],
                 ],
             )
         await event.answer([result] if result else None)
@@ -148,7 +140,10 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         await event.edit("Choice Not Accepted ❌")
         await borg.send_message(event.query.user_id, text1)
         await borg(functions.contacts.BlockRequest(event.query.user_id))
-        await tgbot.send_message(LOG_CHAT, "Hello, A Noob [Nibba](tg://user?id={him_id}) Selected Probhited Option, Therefore Blocked.")
+        await tgbot.send_message(
+            LOG_CHAT,
+            "Hello, A Noob [Nibba](tg://user?id={him_id}) Selected Probhited Option, Therefore Blocked.",
+        )
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"whattalk")))
     async def rip(event):
