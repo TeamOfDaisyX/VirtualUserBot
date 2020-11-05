@@ -51,18 +51,18 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 buttons=[
                     [
                         custom.Button.inline(
-                            "❌ I Am Here For Spamming ❌ ", data="dontspamnigga"
+                            "Spamming", data="dontspamnigga"
                         )
                     ],
                     [
                         custom.Button.inline(
-                            "🛡️ I Am Here For Talking With Your Master 🛡️",
+                            "Casual Talk",
                             data="whattalk",
                         )
                     ],
                     [
                         custom.Button.inline(
-                            "🙏 I Am Here For Asking Something 🙏", data="askme"
+                            "Requesting", data="askme"
                         )
                     ],
                 ],
@@ -148,6 +148,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         await event.edit("Choice Not Accepted ❌")
         await borg.send_message(event.query.user_id, text1)
         await borg(functions.contacts.BlockRequest(event.query.user_id))
+        await tgbot.send_message(LOG_CHAT, "Hello, A Noob [Nibba](tg://user?id={him_id}) Selected Probhited Option, Therefore Blocked.")
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"whattalk")))
     async def rip(event):
@@ -168,6 +169,11 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         await event.edit("Choice Accepted ✔️")
         text3 = "Ok, Wait. You can Ask After Master Approves You. Kindly, Wait."
         await borg.send_message(event.query.user_id, text3)
+        await tgbot.send_message(
+            LOG_CHAT,
+            message=f"Hello, A [New User](tg://user?id={him_id}). Wants To Ask You Something.",
+            buttons=[Button.url("Contact Him", f"tg://user?id={him_id}")],
+        )
 
 
 def paginate_help(page_number, loaded_modules, prefix):
