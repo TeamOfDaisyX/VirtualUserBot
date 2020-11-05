@@ -91,29 +91,24 @@ UNBAN_RIGHTS = ChatBannedRights(
 )
 
 MUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=True)
-
+serena = tgbot
 UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 
-
-@tgbot.on(events.NewMessage(pattern="^/bun(?: |$)(.*)"))
+@assistant_cmd("ban", is_args=True)
+@only_groups
+@is_bot_admin
+@is_admin
 async def ban(event):
-    noob = event.sender_id
-    userids = []
-    async for user in tgbot.iter_participants(
-        event.chat_id, filter=ChannelParticipantsAdmins
-    ):
-        userids.append(user.id)
-    if noob not in userids:
-        await event.reply("You're not an admin!")
-        return
     chat = await event.get_chat()
-    admin = chat.admin_rights
-    creator = chat.creator
-    if not admin and not creator:
-        await event.reply("I Am Not Admin 🥺.")
-        return
-
+    chat.admin_rights
+    chat.creator
     user, reason = await get_user_from_event(event)
+    kekme = await serena.get_permissions(event.chat_id, user)
+    momos = user
+    momoz = momos.first_name
+    if kekme.is_admin:
+        await event.reply("Oh, Yeah? Lets Start Banning Admins.")
+        return
     if user:
         pass
     else:
@@ -121,39 +116,22 @@ async def ban(event):
     try:
         await event.client(EditBannedRequest(event.chat_id, user.id, BANNED_RIGHTS))
     except BadRequestError:
-        await event.reply("No Permission Sar 🤭.")
-        return
-    # Helps ban group join spammers more easily
-    try:
-        reply = await event.get_reply_message()
-        if reply:
-             pass
-    except BadRequestError:
-        await event.reply("`I dont have message nuking rights! But still he was banned!`")
+        await event.reply("I Could't Ban That User Probably Due To Less Permissions.")
         return
     if reason:
-        await event.reply(f"Banned `{str(user.id)}` \nReason: {reason}")
+        await event.reply(f"Banned {momoz} For \nReason: {reason}")
     else:
-        await event.reply(f"Banned  `{str(user.id)}` !")
+        await event.reply(f"Banned {momoz} !")
 
 
-@tgbot.on(events.NewMessage(pattern="^/unbun(?: |$)(.*)"))
+@assistant_cmd("unban", is_args=True)
+@only_groups
+@is_bot_admin
+@is_admin
 async def nothanos(event):
-    userids = []
-    noob = event.sender_id
-    async for user in tgbot.iter_participants(
-        event.chat_id, filter=ChannelParticipantsAdmins
-    ):
-        userids.append(user.id)
-    if noob not in userids:
-        await event.reply("You're not an admin!")
-        return
     chat = await event.get_chat()
-    admin = chat.admin_rights
-    creator = chat.creator
-    if not admin and not creator:
-        await event.reply("Me Not Admin 🥺")
-        return
+    chat.admin_rights
+    chat.creator
     user = await get_user_from_event(event)
     user = user[0]
     if user:
@@ -164,33 +142,18 @@ async def nothanos(event):
         await event.client(EditBannedRequest(event.chat_id, user.id, UNBAN_RIGHTS))
         await event.reply("`Unbanned Successfully. Granting another chance.🚶`")
     except BadRequestError:
-        await event.reply("`No Permission 🤭`")
+        await event.reply("I Could't UnBan That User Probably Due To Less Permissions.")
         return
 
 
-
-@tgbot.on(events.NewMessage(pattern="^/prumote(?: |$)(.*)"))
+@assistant_cmd("promote", is_args=True)
+@only_groups
+@is_bot_admin
+@is_admin
 async def promote(event):
-    userids = []
-    noob = event.sender_id
-    async for user in tgbot.iter_participants(
-        event.chat_id, filter=ChannelParticipantsAdmins
-    ):
-        userids.append(user.id)
-    if noob not in userids:
-        await event.reply("You're not an admin!")
-        return
-    """ For .promote command, promotes the replied/tagged person """
-    # Get targeted chat
     chat = await event.get_chat()
-    # Grab admin status or creator in a chat
-    admin = chat.admin_rights
-    creator = chat.creator
-
-    # If not admin and not creator, also return
-    if not admin and not creator:
-        await event.reply("Me Not Admin 🥺")
-        return
+    chat.admin_rights
+    chat.creator
     new_rights = ChatAdminRights(
         add_admins=False,
         invite_users=False,
@@ -200,46 +163,35 @@ async def promote(event):
         pin_messages=True,
     )
     user, rank = await get_user_from_event(event)
+    kekme = await serena.get_permissions(event.chat_id, user)
+    if kekme.is_admin:
+        await event.reply("Oh, Yeah? Promote A Admin?")
+        return
     if not rank:
-        rank = "mememaster"  # Just in case.
+        rank = "Admin"
     if user:
         pass
     else:
         return
-    # Try to promote if current user is admin or creator
     try:
         await event.client(EditAdminRequest(event.chat_id, user.id, new_rights, rank))
-        await event.reply("`Promoted Successfully! Now gib Party`")
-
-    # If Telethon spit BadRequestError, assume
-    # we don't have Promote permission
+        await event.reply("Promoted Successfully! Now give Party")
     except BadRequestError:
-        await event.reply("No Permission To Promote 🤭")
+        await event.reply(
+            "I Could't Promote That User Probably Due To Less Permissions."
+        )
         return
 
 
-@tgbot.on(events.NewMessage(pattern="^/demute(?: |$)(.*)"))
+@assistant_cmd("demote", is_args=True)
+@only_groups
+@is_bot_admin
+@is_admin
 async def demote(event):
-    userids = []
-    noob = event.sender_id
-    async for user in tgbot.iter_participants(
-        event.chat_id, filter=ChannelParticipantsAdmins
-    ):
-        userids.append(user.id)
-    if noob not in userids:
-        await event.reply("You're not an admin!")
-        return
-    """ For .demote command, demotes the replied/tagged person """
-    # Admin right check
     chat = await event.get_chat()
-    admin = chat.admin_rights
-    creator = chat.creator
-
-    if not admin and not creator:
-        await event.reply("I Am Not Admin 🤭")
-        return
-
-    rank = "mememaster"  # dummy rank, lol.
+    chat.admin_rights
+    chat.creator
+    rank = "Admin"
     user = await get_user_from_event(event)
     user = user[0]
     if user:
@@ -255,45 +207,26 @@ async def demote(event):
         delete_messages=None,
         pin_messages=None,
     )
-    # Edit Admin Permission
     try:
         await event.client(EditAdminRequest(event.chat_id, user.id, newrights, rank))
-
-    # If we catch BadRequestError from Telethon
-    # Assume we don't have permission to demote
     except BadRequestError:
-        await event.reply("Me No Permission 🤔")
+        await event.reply(
+            "I Could't Demote That User Probably Due To Less Permissions."
+        )
         return
-    await event.reply("`Demoted this retard Successfully!`")
+    await event.reply("Demoted This User Sucessfully.")
 
-@tgbot.on(events.NewMessage(pattern="^/pin(?: |$)(.*)"))
+
+@assistant_cmd("pin", is_args=True)
+@only_groups
+@is_bot_admin
+@is_admin
 async def pin(event):
-    userids = []
-    noob = event.sender_id
-    async for user in tgbot.iter_participants(
-        event.chat_id, filter=ChannelParticipantsAdmins
-    ):
-        userids.append(user.id)
-    if noob not in userids:
-        await event.reply("You're not an admin!")
-        return
-    """ For .pin command, pins the replied/tagged message on the top the chat. """
-    # Admin or creator check
-    chat = await event.get_chat()
-    admin = chat.admin_rights
-    creator = chat.creator
-
-    # If not admin and not creator, return
-    if not admin and not creator:
-        await event.reply("I Need Administration Permission 🤔")
-        return
-
+    await event.get_chat()
     to_pin = event.reply_to_msg_id
-
     if not to_pin:
         await event.reply("`Reply to a message to pin it.`")
         return
-
     options = event.pattern_match.group(1)
     is_silent = True
     if options.lower() == "loud":
@@ -301,11 +234,102 @@ async def pin(event):
     try:
         await event.client(UpdatePinnedMessageRequest(event.to_id, to_pin, is_silent))
     except BadRequestError:
-        await event.reply("No Permission 🥺")
+        await event.reply(
+            "I Could't Pin That Message Probably Due To Less Permissions."
+        )
         return
-    await event.reply("`Pinned Successfully!`")
-    user = await get_user_from_id(msg.from_id, msg)
+    await event.reply("Pinned This Message Sucessfully.")
+    await get_user_from_id(event.from_id, event)
 
+
+@assistant_cmd("kick", is_args=True)
+@only_groups
+@is_bot_admin
+@is_admin
+async def kick(event):
+    chat = await event.get_chat()
+    chat.admin_rights
+    chat.creator
+    user, reason = await get_user_from_event(event)
+    kekme = await serena.get_permissions(event.chat_id, user)
+    momos = user
+    momos.first_name
+    if kekme.is_admin:
+        await event.reply("Oh, Yeah? Lets Start kicking Admins.")
+        retur
+    if not user:
+        await event.reply("Mention A User")
+        return
+    try:
+        await event.client.kick_participant(event.chat_id, user.id)
+    except:
+        await event.reply("I Could't Kick That User Probably Due To Less Permissions.")
+        return
+    if reason:
+        await event.reply(
+            f"`Kicked` [{user.first_name}](tg://user?id={user.id})`!`\nReason: {reason}"
+        )
+    else:
+        await event.reply(f"`Kicked` [{user.first_name}](tg://user?id={user.id})`!`")
+
+
+@assistant_cmd("mute", is_args=True)
+@only_groups
+@is_bot_admin
+@is_admin
+async def mute(event):
+    chat = await event.get_chat()
+    chat.admin_rights
+    chat.creator
+    user, reason = await get_user_from_event(event)
+    kekme = await serena.get_permissions(event.chat_id, user)
+    momos = user
+    momos.first_name
+    if kekme.is_admin:
+        await event.reply("Oh, Mutting? Lets Start Banning Admins.")
+        retur
+    if not user:
+        await event.reply("Mention A User")
+        return
+    try:
+        await event.client(EditBannedRequest(event.chat_id, user.id, MUTE_RIGHTS))
+    except:
+        await event.reply("I Could't Mute That User Probably Due To Less Permissions.")
+        return
+    if reason:
+        await event.reply(
+            f"`Muted` [{user.first_name}](tg://user?id={user.id})`!`\nReason: {reason}"
+        )
+    else:
+        await event.reply(f"`Kicked` [{user.first_name}](tg://user?id={user.id})`!`")
+
+
+@assistant_cmd("unmute", is_args=True)
+@only_groups
+@is_bot_admin
+@is_admin
+async def mute(event):
+    chat = await event.get_chat()
+    chat.admin_rights
+    chat.creator
+    user, reason = await get_user_from_event(event)
+    if not user:
+        await event.reply("Mention A User")
+        return
+    try:
+        await event.client(EditBannedRequest(event.chat_id, user.id, UNMUTE_RIGHTS))
+    except:
+        await event.reply(
+            "I Could't UnMute That User Probably Due To Less Permissions."
+        )
+        return
+    if reason:
+        await event.reply(
+            f"`UnMuted` [{user.first_name}](tg://user?id={user.id})`!`\nReason: {reason}"
+        )
+    else:
+        await event.reply(f"`Unmute` [{user.first_name}](tg://user?id={user.id})`!`")
+        
 async def get_user_from_event(event):
     """ Get the user from argument or replied message. """
     args = event.pattern_match.group(1).split(" ", 1)

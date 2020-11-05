@@ -2,14 +2,14 @@ import inspect
 import logging
 import re
 from pathlib import Path
-
+import functools
 from telethon import events
-
 from fridaybot import CMD_LIST, LOAD_PLUG, SUDO_LIST, bot
 from fridaybot.Configs import Config
 from var import Var
 
 cmdhandler = Config.COMMAND_HAND_LER
+bothandler = Config.BOT_HANDLER
 
 def command(**args):
     args["func"] = lambda e: e.via_bot_id is None
@@ -463,7 +463,151 @@ async def edit_or_reply(event, text):
 
 
 
-# Assistant 
+def assistant_cmd(add_cmd, is_args=False):
+    def cmd(func):
+        serena = bot.tgbot
+        if is_args:
+            pattern = bothandler + add_cmd + "(?: |$)(.*)"
+        elif is_args == "stark":
+            pattern = bothandler + add_cmd + " (.*)"
+        elif is_args == "snips":
+            pattern = bothandler + add_cmd + " (\S+)"
+        else:
+            pattern = bothandler + add_cmd + "$"
+        serena.add_event_handler(
+            func, events.NewMessage(incoming=True, pattern=pattern)
+        )
+
+    return cmd
+
+
+def is_admin():
+    def decorator(func):
+        @functools.wraps(func)
+        async def wrapper(event):
+            serena = bot.tgbot
+            sed = await serena.get_permissions(event.chat_id, event.sender_id)
+            user = event.sender_id
+            kek = bot.uid
+            if sed.is_admin:
+                await func(event)
+            if event.sender_id == kek:
+                pass
+            elif not user:
+                pass
+            if not sed.is_admin:
+                await event.reply("Only Admins Can Use it.")
+
+        return wrapper
+
+    return decorator
+
+
+def is_bot_admin():
+    def decorator(func):
+        @functools.wraps(func)
+        async def wrapper(event):
+            serena = bot.tgbot
+            pep = await serena.get_me()
+            sed = await serena.get_permissions(event.chat_id, pep)
+            if sed.is_admin:
+                await func(event)
+            else:
+                await event.reply("I Must Be Admin To Do This.")
+
+        return wrapper
+
+    return decorator
+
+
+def only_pro():
+    def decorator(func):
+        @functools.wraps(func)
+        async def wrapper(event):
+            kek = list(Config.SUDO_USERS)
+            mm = bot.uid
+            if event.sender_id == mm:
+                await func(event)
+            elif event.sender_id == kek:
+                await func(event)
+            else:
+                await event.reply("Only Owners, Sudo Users Can Use This Command.")
+
+        return wrapper
+
+    return decorator
+
+
+def god_only():
+    def decorator(func):
+        @functools.wraps(func)
+        async def wrapper(event):
+            moms = bot.uid
+            if event.sender_id == moms:
+                await func(event)
+            else:
+                pass
+
+        return wrapper
+
+    return decorator
+
+
+def only_groups():
+    def decorator(func):
+        @functools.wraps(func)
+        async def wrapper(event):
+            if event.is_group:
+                await func(event)
+            else:
+                await event.reply("This Command Only Works On Groups.")
+
+        return wrapper
+
+    return decorator
+
+def only_group():
+    def decorator(func):
+        @functools.wraps(func)
+        async def wrapper(event):
+            if event.is_group:
+                await func(event)
+            else:
+                pass
+
+        return wrapper
+
+    return decorator
+
+def peru_only():
+    def decorator(func):
+        @functools.wraps(func)
+        async def wrapper(event):
+            kek = list(Config.SUDO_USERS)
+            mm = bot.uid
+            if event.sender_id == mm:
+                await func(event)
+            elif event.sender_id == kek:
+                await func(event)
+            else:
+                pass
+
+        return wrapper
+
+    return decorator
+
+def only_pvt():
+    def decorator(func):
+        @functools.wraps(func)
+        async def wrapper(event):
+            if event.is_group:
+                pass
+            else:
+                await func(event)
+
+        return wrapper
+
+    return decorator
 def start_assistant(shortname):
     if shortname.startswith("__"):
         pass
@@ -493,6 +637,17 @@ def start_assistant(shortname):
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.tgbot = bot.tgbot
+        mod.serena = bot.tgbot
+        mod.assistant_cmd = assistant_cmd
+        mod.god_only = god_only()
+        mod.only_groups = only_groups()
+        mod.only_pro = only_pro()
+        mod.pro_only = only_pro()
+        mod.only_group = only_group()
+        mod.is_bot_admin = is_bot_admin()
+        mod.is_admin = is_admin()
+        mod.peru_only = peru_only()
+        mod.only_pvt = only_pvt()
         spec.loader.exec_module(mod)
         sys.modules["fridaybot.modules.assistant" + shortname] = mod
-        print("Assistant Has imported " + shortname)
+        print("Assistants Has imported " + shortname)

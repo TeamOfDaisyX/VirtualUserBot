@@ -5,9 +5,9 @@
 <img src="https://telegra.ph/file/22535f8051a58af113586.jpg" alt="FRIDAY USERBOT">
 
 
-[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+- [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
-
+- [![README](https://readme.com/static/brandkit/readme-blue.svg)](https://app.gitbook.com/@starkgangz/s/fridayuserbot)
 
 Best User Bot To Manage Your Telegram Account 
 ## Most PowerFul And Better And Secure

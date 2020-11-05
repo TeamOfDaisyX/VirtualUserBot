@@ -42,7 +42,7 @@ from fridaybot.modules.sql_helper.botusers_sql import add_me_in_db, his_userid
 from fridaybot.modules.sql_helper.idadder_sql import add_usersid_in_db, get_all_users, already_added
 from fridaybot.modules.sql_helper.blacklist_assistant import add_nibba_in_db, get_all_nibba, is_he_added, removenibba
 
-@tgbot.on(events.NewMessage(pattern="^/start"))
+@assistant_cmd("start", is_args=False)
 async def start(event):
     starkbot = await tgbot.get_me()
     bot_id = starkbot.first_name
@@ -167,8 +167,9 @@ async def sed(event):
             msg_s
             )
 
-# broadcast
-@tgbot.on(events.NewMessage(pattern="^/broadcast ?(.*)", func=lambda e: e.sender_id == bot.uid))
+
+@assistant_cmd("broadcast", is_args=True)
+@god_only
 async def sedlyfsir(event):
     msgtobroadcast = event.pattern_match.group(1)
     userstobc = get_all_users()
@@ -191,17 +192,20 @@ async def sedlyfsir(event):
         )
 
 
-@tgbot.on(events.NewMessage(pattern="^/stats ?(.*)", func=lambda e: e.sender_id == bot.uid))
+@assistant_cmd("stats", is_args=False)
+@peru_only
 async def starkisnoob(event):
     starkisnoob = get_all_users()
     await event.reply(f"**Stats Of Your Bot** \nTotal Users In Bot => {len(starkisnoob)}")
     
-@tgbot.on(events.NewMessage(pattern="^/help", func=lambda e: e.sender_id == bot.uid))
+@assistant_cmd("help", is_args=False)
+@peru_only
 async def starkislub(event):
     grabonx = "Hello Here Are Some Commands \n➤ /start - Check if I am Alive \n➤ /ping - Pong! \n➤ /tr <lang-code> \n➤ /broadcast - Sends Message To all Users In Bot \n➤ /id - Shows ID of User And Media. \n➤ /addnote - Add Note \n➤ /notes - Shows Notes \n➤ /rmnote - Remove Note \n➤ /alive - Am I Alive? \n➤ /bun - Works In Group , Bans A User. \n➤ /unbun - Unbans A User in Group \n➤ /prumote - Promotes A User \n➤ /demute - Demotes A User \n➤ /pin - Pins A Message \n➤ /stats - Shows Total Users In Bot"
     await event.reply(grabonx)
     
-@tgbot.on(events.NewMessage(pattern="^/block ?(.*)", func=lambda e: e.sender_id == bot.uid))
+@assistant_cmd("block", is_args=False)
+@god_only
 async def starkisnoob(event):
     if event.sender_id == bot.uid:
         msg = await event.get_reply_message()
@@ -219,7 +223,8 @@ async def starkisnoob(event):
         await event.reply("Blacklisted This Dumb Person")
         await tgbot.send_message(user_id, "You Have Been Blacklisted And You Can't Message My Master Now.")
 
-@tgbot.on(events.NewMessage(pattern="^/unblock ?(.*)", func=lambda e: e.sender_id == bot.uid))
+@assistant_cmd("unblock", is_args=False)
+@god_only
 async def starkisnoob(event):
     if event.sender_id == bot.uid:
         msg = await event.get_reply_message()
