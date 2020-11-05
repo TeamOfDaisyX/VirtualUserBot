@@ -585,8 +585,9 @@ def peru_only():
         async def wrapper(event):
             kek = list(Config.SUDO_USERS)
             mm = bot.uid
-            stark = kek, mm
-            if event.sender_id == stark:
+            if event.sender_id == mm:
+                await func(event)
+            elif event.sender_id == kek:
                 await func(event)
             else:
                 pass
