@@ -1,5 +1,6 @@
 import base64
-from fridaybot.utils import friday_on_cmd, sudo_cmd, edit_or_reply
+
+from fridaybot.utils import friday_on_cmd
 
 
 @friday.on(friday_on_cmd(pattern="bencode ?(.*)"))
@@ -15,16 +16,16 @@ async def _(event):
     except:
         await event.edit("SOM3THING W3NT WRONG !")
 
+
 @friday.on(friday_on_cmd(pattern="bdecode ?(.*)"))
 async def _(event):
     if event.fwd_from:
-            return
+        return
     starky = event.pattern_match.group(1)
     try:
-       base64_bytez = starky.encode("ascii")
-       sample_string_bytez = base64.b64decode(base64_bytez)
-       sample_strings = sample_string_bytez.decode("ascii")
-       await event.edit(f"**DECODED STRING** : `{sample_strings}`")
+        base64_bytez = starky.encode("ascii")
+        sample_string_bytez = base64.b64decode(base64_bytez)
+        sample_strings = sample_string_bytez.decode("ascii")
+        await event.edit(f"**DECODED STRING** : `{sample_strings}`")
     except:
-       await event.edit("Can't Decoded Probably Due To Invalid String")
-
+        await event.edit("Can't Decoded Probably Due To Invalid String")

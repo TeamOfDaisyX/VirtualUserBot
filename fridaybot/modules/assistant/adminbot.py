@@ -1,9 +1,8 @@
-
 #    Copyright (C) Midhun KM 2020
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
 #    the Free Software Foundation, either version 3 of the License, or
-# 
+#
 #    This program is distributed in the hope that it will be useful,
 #    but WITHOUT ANY WARRANTY; without even the implied warranty of
 #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -13,57 +12,14 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
-from telethon import events, custom, Button
-from telethon.tl.types import (
-    Channel,
-    Chat,
-    User
-)
-
-import emoji
-from googletrans import Translator
-from fridaybot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
-from telethon.utils import get_display_name
-from fridaybot.utils import friday_on_cmd, sudo_cmd
-from fridaybot.Configs import Config
-from telethon import events
-from datetime import datetime
-from fridaybot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
-import time
-from fridaybot import Lastupdate, bot
-import asyncio
-
-from telethon import events
-from telethon.errors.rpcerrorlist import MessageDeleteForbiddenError
-from telethon.tl.types import ChannelParticipantsAdmins
-
-from asyncio import sleep
-from os import remove
-
-from telethon.errors import (
-    BadRequestError,
-    ChatAdminRequiredError,
-    ImageProcessFailedError,
-    PhotoCropSizeSmallError,
-    UserAdminInvalidError,
-)
-from telethon.errors.rpcerrorlist import MessageTooLongError, UserIdInvalidError
-from telethon.tl.functions.channels import (
-    EditAdminRequest,
-    EditBannedRequest,
-    EditPhotoRequest,
-)
+from telethon.errors import BadRequestError
+from telethon.tl.functions.channels import EditAdminRequest, EditBannedRequest
 from telethon.tl.functions.messages import UpdatePinnedMessageRequest
 from telethon.tl.types import (
-    ChannelParticipantsAdmins,
     ChatAdminRights,
     ChatBannedRights,
     MessageEntityMentionName,
-    MessageMediaPhoto,
 )
-
-from fridaybot import BOTLOG, BOTLOG_CHATID, CMD_HELP
-from fridaybot.utils import friday_on_cmd, errors_handler, register, sudo_cmd
 
 # =================== CONSTANT ===================
 PP_TOO_SMOL = "`The image is too small`"
@@ -108,6 +64,7 @@ UNBAN_RIGHTS = ChatBannedRights(
 MUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=True)
 serena = tgbot
 UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
+
 
 @assistant_cmd("ban", is_args=True)
 @only_groups
@@ -344,7 +301,8 @@ async def mute(event):
         )
     else:
         await event.reply(f"`Unmute` [{user.first_name}](tg://user?id={user.id})`!`")
-        
+
+
 async def get_user_from_event(event):
     """ Get the user from argument or replied message. """
     args = event.pattern_match.group(1).split(" ", 1)

@@ -18,7 +18,7 @@ from fridaybot.modules.sql_helper.filter_sql import (
     remove_all_filters,
     remove_filter,
 )
-from fridaybot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
+from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 
 DELETE_TIMEOUT = 0
 TYPE_TEXT = 0

@@ -1,15 +1,18 @@
+import functools
 import inspect
 import logging
 import re
 from pathlib import Path
-import functools
+
 from telethon import events
+
 from fridaybot import CMD_LIST, LOAD_PLUG, SUDO_LIST, bot
 from fridaybot.Configs import Config
 from var import Var
 
 cmdhandler = Config.COMMAND_HAND_LER
 bothandler = Config.BOT_HANDLER
+
 
 def command(**args):
     args["func"] = lambda e: e.via_bot_id is None
@@ -142,6 +145,7 @@ def remove_plugin(shortname):
     except:
         raise ValueError
 
+
 def admin_cmd(pattern=None, **args):
     args["func"] = lambda e: e.via_bot_id is None
 
@@ -184,7 +188,6 @@ def admin_cmd(pattern=None, **args):
     # check if the plugin should listen for outgoing 'messages'
 
     return events.NewMessage(**args)
-
 
 
 def friday_on_cmd(pattern=None, **args):
@@ -460,13 +463,11 @@ async def edit_or_reply(event, text):
     return await event.edit(text)
 
 
-
-
 #    Copyright (C) Midhun KM 2020
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
 #    the Free Software Foundation, either version 3 of the License, or
-# 
+#
 #    This program is distributed in the hope that it will be useful,
 #    but WITHOUT ANY WARRANTY; without even the implied warranty of
 #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -579,6 +580,7 @@ def only_groups():
 
     return decorator
 
+
 def only_group():
     def decorator(func):
         @functools.wraps(func)
@@ -591,6 +593,7 @@ def only_group():
         return wrapper
 
     return decorator
+
 
 def peru_only():
     def decorator(func):
@@ -609,6 +612,7 @@ def peru_only():
 
     return decorator
 
+
 def only_pvt():
     def decorator(func):
         @functools.wraps(func)
@@ -621,6 +625,8 @@ def only_pvt():
         return wrapper
 
     return decorator
+
+
 def start_assistant(shortname):
     if shortname.startswith("__"):
         pass
@@ -628,8 +634,6 @@ def start_assistant(shortname):
         import importlib
         import sys
         from pathlib import Path
-
-        import fridaybot.utils
 
         path = Path(f"fridaybot/modules/assistant/{shortname}.py")
         name = "fridaybot.modules.assistant.{}".format(shortname)
@@ -642,8 +646,6 @@ def start_assistant(shortname):
         import importlib
         import sys
         from pathlib import Path
-
-        import fridaybot.utils
 
         path = Path(f"fridaybot/modules/assistant/{shortname}.py")
         name = "fridaybot.modules.assistant.{}".format(shortname)

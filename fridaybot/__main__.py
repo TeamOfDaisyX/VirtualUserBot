@@ -34,6 +34,7 @@ else:
 
 
 import glob
+
 path = "fridaybot/modules/*.py"
 files = glob.glob(path)
 for name in files:

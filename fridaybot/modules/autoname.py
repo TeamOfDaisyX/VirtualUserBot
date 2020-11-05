@@ -5,7 +5,7 @@ import time
 
 from telethon.errors import FloodWaitError
 from telethon.tl import functions
-from uniborg.util import friday_on_cmd, edit_or_reply, sudo_cmd
+from uniborg.util import edit_or_reply, friday_on_cmd, sudo_cmd
 
 from fridaybot import ALIVE_NAME
 

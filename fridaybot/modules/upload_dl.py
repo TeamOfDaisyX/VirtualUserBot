@@ -17,7 +17,7 @@ from telethon.tl.types import DocumentAttributeVideo
 
 from fridaybot import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
 from fridaybot.events import register
-from fridaybot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
+from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 
 
 async def progress(current, total, event, start, type_of_ps, file_name=None):

@@ -6,7 +6,7 @@ from telethon.tl.types import (
     ChannelParticipantsAdmins,
 )
 
-from fridaybot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
+from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 
 
 @friday.on(friday_on_cmd("get_ad?(m)in ?(.*)"))
