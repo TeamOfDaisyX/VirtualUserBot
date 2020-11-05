@@ -2,13 +2,6 @@
 <h2 align="center"><b>FRIDAY-USERBOT 🇮🇳 </b></h2>
 <h4 align="center">A Powerful, Smart And Simple Userbot In Telethon.</h4>
 
-
-- [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
-- [![README](https://readme.com/static/brandkit/readme-blue.svg)](https://app.gitbook.com/@starkgangz/s/fridayuserbot)
-
-Best User Bot To Manage Your Telegram Account 
-## Most PowerFul And Better And Secure
-
 ### For any query or want to know how it works join Group And Channel 
 
 <a href="https://t.me/FridaySupportOfficial"><img src="https://img.shields.io/badge/Join-Telegram%20Channel-red.svg?logo=Telegram"></a>
