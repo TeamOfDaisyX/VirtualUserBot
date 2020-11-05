@@ -12,14 +12,11 @@
 <p align="center"><a href="https://youtu.be/xfHcm_e92eQ"><img src="https://img.shields.io/badge/How%20To-Deploy-red.svg?logo=Youtube"></a></p>
 
 
-### Host Friday In Heroku
+<h1 align="center"><b>Deploy In Heroku</b></h1>
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/StarkGang/FridayUserbot"><img src="https://www.herokucdn.com/deploy/button.svg"></a></p>
 
-[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/StarkGang/FridayUserbot)
-
-## Telegram-String
-
-[![Run on Repl.it](https://repl.it/badge/github/STARKGANG/friday)](https://friday.midhunkm1294.repl.run)
-
+<h1 align="center"><b>String Session</b></h1>
+<p align="center"><a href="https://friday.midhunkm1294.repl.run"><img src="https://repl.it/badge/github/STARKGANG/friday"></a></p>
 
 ### The Normal Way
 
