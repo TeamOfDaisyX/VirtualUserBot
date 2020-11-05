@@ -24,13 +24,13 @@ from fridaybot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
 import time
 from fridaybot import Lastupdate
 
-@tgbot.on(events.NewMessage(pattern="^/tr ?(.*)"))
+@assistant_cmd("tr", is_args=True)
 async def _(event):
     input_str = event.pattern_match.group(1)
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
         text = previous_message.message
-        lan = input_str or "gu"
+        lan = input_str or "en"
     elif "|" in input_str:
         lan, text = input_str.split("|")
     else:
