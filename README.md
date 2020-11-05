@@ -1,8 +1,9 @@
-<p align="center"><a href="https://t.me/fridayot"><img src="https://telegra.ph/file/22535f8051a58af113586.jpg" width="150"></a></p> 
+<p align="center"><a href="https://t.me/fridayot"><img src="https://telegra.ph/file/22535f8051a58af113586.jpg" width="250"></a></p> 
 <h2 align="center"><b>FRIDAY-USERBOT 🇮🇳 </b></h2>
 <h4 align="center">A Powerful, Smart And Simple Userbot In Telethon.</h4>
-- [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
+
+- [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 - [![README](https://readme.com/static/brandkit/readme-blue.svg)](https://app.gitbook.com/@starkgangz/s/fridayuserbot)
 
 Best User Bot To Manage Your Telegram Account 
