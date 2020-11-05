@@ -650,4 +650,4 @@ def start_assistant(shortname):
         mod.only_pvt = only_pvt()
         spec.loader.exec_module(mod)
         sys.modules["fridaybot.modules.assistant" + shortname] = mod
-        print("Assistants Has imported " + shortname)
+        print("Assistant Has imported " + shortname)
