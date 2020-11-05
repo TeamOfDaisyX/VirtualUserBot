@@ -19,14 +19,21 @@
 <p align="center"><a href="https://friday.midhunkm1294.repl.run"><img src="https://repl.it/badge/github/STARKGANG/friday"></a></p>
 
 <h1 align="center"><b>Deploy In Heroku</b></h1>
-<h4 align="center"><code>git clone https://github.com/starkGang/Fridayuserbot
+align="center"><code>git clone https://github.com/starkGang/Fridayuserbot
+  
 cd FridayUserbot
+
 virtualenv -p /usr/bin/python3 venv
+
 . ./venv/bin/activate
+
 pip install -r requirements.txt
+
 # <Create local_config.py with variables as given below>
+  
 python3 -m fridaybot
-</code></h4>
+
+</code>
   
 ## Licence
 [![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl-3.0.en.html)  
