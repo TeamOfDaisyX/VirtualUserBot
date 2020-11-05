@@ -12,18 +12,32 @@
 
 <a href="https://t.me/fridayOT"><img src="https://img.shields.io/badge/Join-Telegram%20Group-blue.svg?logo=telegram"></a>
 
+
+
+
 # How To
 
 <a href="https://youtu.be/xfHcm_e92eQ"><img src="https://img.shields.io/badge/How%20To-Deploy-red.svg?logo=Youtube"></a>
+
 <a href="https://app.gitbook.com/@starkgangz/s/fridayuserbot/"><img src="https://img.shields.io/badge/Read%20More-GitBook-red.svg"></a>
+
+
+
+
 
 # Deploy
 
 [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/StarkGang/FridayUserbot)
 
+
+
+
 # String
 
 [![Run on Repl.it](https://repl.it/badge/github/STARKGANG/friday)](https://friday.midhunkm1294.repl.run)
+
+
+
 
 # The Normal Way
 
@@ -38,6 +52,9 @@ pip install -r requirements.txt
 python3 -m fridaybot
 ```
 
+
+
+
 # Mandatory Vars
 ```
 [+] Only two of the environment variables are mandatory.
@@ -49,10 +66,16 @@ python3 -m fridaybot
     
 [+] The fridaybot will not work without setting the mandatory vars.
 ```
+
+
+
 # Credits 
 `[+] Check Contribution At https://github.com/StarkGang/FridayUserbot/graphs/contributors`
 
-  
+
+
+
+
 # Licence
 [![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl-3.0.en.html)  
 
