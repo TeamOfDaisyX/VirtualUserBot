@@ -7,7 +7,7 @@
 
 - [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
-- [![README](https://readme.com/static/brandkit/readme-blue.png)](https://app.gitbook.com/@starkgangz/s/fridayuserbot)
+- [![README](https://readme.com/static/brandkit/readme-blue.svg)](https://app.gitbook.com/@starkgangz/s/fridayuserbot)
 
 Best User Bot To Manage Your Telegram Account 
 ## Most PowerFul And Better And Secure
