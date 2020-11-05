@@ -3,27 +3,28 @@
 <h4 align="center">A Powerful, Smart And Simple Userbot In Telethon.</h4>
 
 
-## Support
+
+
+
+# Support
 
 <a href="https://t.me/FridaySupportOfficial"><img src="https://img.shields.io/badge/Join-Telegram%20Channel-red.svg?logo=Telegram"></a>
 
 <a href="https://t.me/fridayOT"><img src="https://img.shields.io/badge/Join-Telegram%20Group-blue.svg?logo=telegram"></a>
 
-## How To
+# How To
 
 <a href="https://youtu.be/xfHcm_e92eQ"><img src="https://img.shields.io/badge/How%20To-Deploy-red.svg?logo=Youtube"></a>
 
-
-## Deploy
+# Deploy
 
 [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/StarkGang/FridayUserbot)
 
-## Telegram-String
+# String
 
 [![Run on Repl.it](https://repl.it/badge/github/STARKGANG/friday)](https://friday.midhunkm1294.repl.run)
 
-
-### The Normal Way
+# The Normal Way
 
 Simply clone the repository and run the main file:
 ```sh
@@ -36,7 +37,7 @@ pip install -r requirements.txt
 python3 -m fridaybot
 ```
 
-## Mandatory Vars
+# Mandatory Vars
 ```
 [+] Only two of the environment variables are mandatory.
 
@@ -47,11 +48,11 @@ python3 -m fridaybot
     
 [+] The fridaybot will not work without setting the mandatory vars.
 ```
-## Credits 
+# Credits 
 `[+] Check Contribution At https://github.com/StarkGang/FridayUserbot/graphs/contributors`
 
   
-## Licence
+# Licence
 [![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl-3.0.en.html)  
 
 FridayUserbot is Free Software: You can use, study share and improve it at your
