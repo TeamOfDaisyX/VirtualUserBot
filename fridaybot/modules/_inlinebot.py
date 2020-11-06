@@ -2,6 +2,7 @@ import os
 import re
 from math import ceil
 
+import requests
 from telethon import Button, custom, events, functions
 
 from fridaybot import ALIVE_NAME, CMD_LIST
@@ -99,30 +100,38 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         )
     )
     async def on_plug_in_callback_query_handler(event):
-        if event.query.user_id == bot.uid:
-            plugin_name = event.data_match.group(1).decode("UTF-8")
-            help_string = ""
-            try:
-                for i in CMD_LIST[plugin_name]:
-                    help_string += i
-                    help_string += "\n"
-            except BaseException:
-                pass
-            if help_string is "":
-                reply_pop_up_alert = "{} is useless".format(plugin_name)
-            else:
-                reply_pop_up_alert = help_string
-            reply_pop_up_alert += "\n Use .unload {} to remove this plugin\n\
-                  © Userbot".format(
-                plugin_name
-            )
-            try:
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-            except BaseException:
-                halps = "Do .help {} to get the list of commands.".format(plugin_name)
-                await event.answer(halps, cache_time=0, alert=True)
+        if not event.query.user_id == bot.uid:
+            sedok = "Who The Fuck Are You? Get Your Own Friday."
+            await event.answer(sedok, cache_time=0, alert=True)
+            return
+        plugin_name = event.data_match.group(1).decode("UTF-8")
+        help_string = ""
+        try:
+            for i in CMD_LIST[plugin_name]:
+                help_string += i
+                help_string += "\n"
+        except BaseException:
+            pass
+        if help_string is "":
+            reply_pop_up_alert = "{} is useless".format(plugin_name)
         else:
-            reply_pop_up_alert = "Please get your own Userbot, and don't use mine!"
+            reply_pop_up_alert = help_string
+        reply_pop_up_alert += "\n Use .unload {} to remove this plugin\n\
+                  © Userbot".format(
+            plugin_name
+        )
+        if len(reply_pop_up_alert) >= 210:
+            crackexy = "Sir. The String Was Too Big So Me Sending Here As Paste."
+            await event.answer(crackexy, cache_time=0, alert=True)
+            out_file = reply_pop_up_alert
+            url = "https://del.dog/documents"
+            r = requests.post(url, data=out_file.encode("UTF-8")).json()
+            url = f"https://del.dog/{r['key']}"
+            await bot.send_message(
+                event.chat_id, f"Pasted {plugin_name} to {url}", link_preview=False
+            )
+        else:
+            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"terminator")))
     async def rip(event):
@@ -181,7 +190,7 @@ def paginate_help(page_number, loaded_modules, prefix):
     helpable_modules = sorted(helpable_modules)
     modules = [
         custom.Button.inline(
-            "{} {} {}".format("🔶", x, "🔶"), data="us_plugin_{}".format(x)
+            "{} {} {}".format("✘", x, "✘"), data="us_plugin_{}".format(x)
         )
         for x in helpable_modules
     ]
