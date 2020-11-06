@@ -121,14 +121,14 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             plugin_name
         )
         if len(reply_pop_up_alert) >= 200:
-            crackexy = "Sir. The String Was Too Big So Me Sending Here As Paste.."
+            crackexy = "Sir. The String Was Too Big So Me Sending Here As Paste."
             await event.answer(crackexy, cache_time=0, alert=True)
             out_file = reply_pop_up_alert
             url = "https://del.dog/documents"
             r = requests.post(url, data=out_file.encode("UTF-8")).json()
             url = f"https://del.dog/{r['key']}"
             await borg.send_message(
-                event.query.chat_id, f"Dogged {plugin_name} to {url}"
+                event.chat_id, f"Dogged {plugin_name} to {url}"
             )
         else:
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
