@@ -120,7 +120,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                   © Userbot".format(
             plugin_name
         )
-        if len(reply_pop_up_alert) > 4095:
+        if len(reply_pop_up_alert) > 3000:
             crackexy = "Sir. The String Was Too Big So Me Sending Here As Paste.."
             await event.answer(crackexy, cache_time=0, alert=True)
             out_file = reply_pop_up_alert
