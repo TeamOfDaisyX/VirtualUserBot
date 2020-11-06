@@ -130,7 +130,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 r = requests.post(url, data=out_file.encode("UTF-8")).json()
                 url = f"https://del.dog/{r['key']}"
                 await borg.send_message(event.chat_Id, f"Dogged {plugin_name} to {url}")
-                
+
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"terminator")))
     async def rip(event):
         if event.query.user_id == bot.uid:
