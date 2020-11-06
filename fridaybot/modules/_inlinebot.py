@@ -129,7 +129,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             url = "https://del.dog/documents"
             r = requests.post(url, data=out_file.encode("UTF-8")).json()
             url = f"https://del.dog/{r['key']}"
-            await borg.send_message(event.chat_Id, f"Dogged {plugin_name} to {url}")
+            await borg.send_message(event.chat_id, f"Dogged {plugin_name} to {url}")
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"terminator")))
     async def rip(event):
@@ -188,7 +188,7 @@ def paginate_help(page_number, loaded_modules, prefix):
     helpable_modules = sorted(helpable_modules)
     modules = [
         custom.Button.inline(
-            "{} {} {}".format("🔶", x, "🔶"), data="us_plugin_{}".format(x)
+            "{} {} {}".format("✘", x, "✘"), data="us_plugin_{}".format(x)
         )
         for x in helpable_modules
     ]
