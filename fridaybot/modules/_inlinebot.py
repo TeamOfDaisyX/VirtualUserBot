@@ -99,7 +99,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         )
     )
     async def on_plug_in_callback_query_handler(event):
-        if event.query.user_id is not bot.uid:
+        if not event.query.user_id == bot.uid:
             sedok = "Who The Fuck Are You? Get Your Own Friday."
             await event.answer(sedok, cache_time=0, alert=True)
             return
