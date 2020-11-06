@@ -124,14 +124,13 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         try:
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         except:
-            with io.BytesIO(str.encode(reply_pop_up_alert)) as out_file:
-                crackexy = "Sir. The String Was Too Big So Me Sending Here As Paste.."
-                await event.answer(crackexy, cache_time=0, alert=True)
-                out_file.name = "{}.txt".format(plugin_name)
-                url = "https://del.dog/documents"
-                r = requests.post(url, data=out_file.encode("UTF-8")).json()
-                url = f"https://del.dog/{r['key']}"
-                await borg.send_message(event.chat_Id, f"Dogged {plugin_name} to {url}")
+            crackexy = "Sir. The String Was Too Big So Me Sending Here As Paste.."
+            await event.answer(crackexy, cache_time=0, alert=True)
+            out_file = reply_pop_up_alert   
+            url = "https://del.dog/documents"
+            r = requests.post(url, data=out_file.encode("UTF-8")).json()
+            url = f"https://del.dog/{r['key']}"
+            await borg.send_message(event.chat_Id, f"Dogged {plugin_name} to {url}")
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"terminator")))
     async def rip(event):
