@@ -9,7 +9,6 @@ from fridaybot import bot
 from fridaybot.utils import load_module, start_assistant
 from var import Var
 
-
 async def add_bot(bot_token):
     await bot.start(bot_token)
     bot.me = await bot.get_me()
@@ -53,7 +52,7 @@ if Config.ENABLE_ASSISTANTBOT:
             shortname = path1.stem
             start_assistant(shortname.replace(".py", ""))
 else:
-    print("We Didn't Install Assistant Bot. Because You Disabled It")
+    print("We Didn't Install Assistant Bot. Because You Disabled It.")
 
 print("Friday And Assistant Bot Have Been Installed Successfully !")
 print("You Can Visit @FridayOT For Any Support Or Doubts")
