@@ -3,7 +3,7 @@ from sys import argv
 
 import telethon.utils
 from telethon import TelegramClient
-
+from Configs import Config
 from fridaybot import bot
 from fridaybot.utils import load_module, start_assistant
 from var import Var
@@ -42,14 +42,17 @@ for name in files:
         path1 = Path(f.name)
         shortname = path1.stem
         load_module(shortname.replace(".py", ""))
-# Done.
-path = "fridaybot/modules/assistant/*.py"
-files = glob.glob(path)
-for name in files:
-    with open(name) as f:
-        path1 = Path(f.name)
-        shortname = path1.stem
-        start_assistant(shortname.replace(".py", ""))
+
+if Config.ENABLE_ASSISTANTBOT:
+    path = "fridaybot/modules/assistant/*.py"
+    files = glob.glob(path)
+    for name in files:
+        with open(name) as f:
+            path1 = Path(f.name)
+            shortname = path1.stem
+            start_assistant(shortname.replace(".py", ""))
+else:
+    print("We Didn't Install Assistant Bot. Because You Disabled It")
 
 print("Friday And Assistant Bot Have Been Installed Successfully !")
 print("You Can Visit @FridayOT For Any Support Or Doubts")
