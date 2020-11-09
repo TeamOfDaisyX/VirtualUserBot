@@ -2,7 +2,7 @@ from pathlib import Path
 from sys import argv
 
 import telethon.utils
-from Configs import Config
+from fridaybot.Configs import Config
 from telethon import TelegramClient
 
 from fridaybot import bot
