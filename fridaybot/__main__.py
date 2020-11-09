@@ -43,7 +43,7 @@ for name in files:
         shortname = path1.stem
         load_module(shortname.replace(".py", ""))
 
-if Config.ENABLE_ASSISTANTBOT:
+if Config.ENABLE_ASSISTANTBOT == "ENABLE":
     path = "fridaybot/modules/assistant/*.py"
     files = glob.glob(path)
     for name in files:
