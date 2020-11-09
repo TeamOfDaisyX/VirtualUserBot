@@ -9,6 +9,7 @@ from fridaybot import bot
 from fridaybot.utils import load_module, start_assistant
 from var import Var
 
+
 async def add_bot(bot_token):
     await bot.start(bot_token)
     bot.me = await bot.get_me()
