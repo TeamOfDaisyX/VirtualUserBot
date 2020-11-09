@@ -12,6 +12,10 @@ import heroku3
 import requests
 
 from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
+from telegraph import Telegraph
+
+telegraph = Telegraph()
+tgnoob = telegraph.create_account(short_name="Friday 🇮🇳")
 
 Heroku = heroku3.from_key(Var.HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
@@ -207,16 +211,10 @@ async def _(givelogs):
         return await givelogs.reply(
             " Please make sure your Heroku API Key, Your App name are configured correctly in the heroku var !"
         )
-    await edit_or_reply(givelogs, "`Trying To Fetch Logs...`")
-    with open("logs.txt", "w") as log:
-        log.write(app.get_log())
-    await givelogs.client.send_file(
-        givelogs.chat_id,
-        "logs.txt",
-        reply_to=givelogs.id,
-        caption="Logs Collected Using Heroku \n For More Support Visit @FridayOT",
-    )
-    await edit_or_reply(givelogs, "`Logs Send Sucessfully ! `")
-    await asyncio.sleep(5)
-    await givelogs.delete()
-    return os.remove("logs.txt")
+    ik = await edit_or_reply(givelogs, "`Trying To Fetch Logs...`")
+    hmm = app.get_log()
+    starky = f"<code> {hmm} </code>"
+    title_of_page = "Friday UserBot Logs"
+    response = telegraph.create_page(title_of_page, html_content=starky)
+    km = response["path"]
+    await ik.edit(f"`Logs Can Be Found` [Here](https://telegra.ph/{km})")
