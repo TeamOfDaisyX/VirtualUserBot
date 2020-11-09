@@ -138,6 +138,7 @@ if ENV:
         PLUGIN_CHANNEL = int(os.environ.get("PLUGIN_CHANNEL", False))
         NEWS_CHANNEL_ID = int(os.environ.get("NEWS_CHANNEL_ID", False))
         PM_DATA = os.environ.get("PM_DATA", "ENABLE")
+        ENABLE_ASSISTANTBOT = bool(os.environ.get("ENABLE_ASSISTANTBOT", True))
         TAG_FEATURE = os.environ.get("TAG_FEATURE", "DISABLE")
         ASSISTANT_LOG = int(os.environ.get("ASSISTANT_LOG", False))
         UPSTREAM_REPO = os.environ.get(
