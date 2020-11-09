@@ -2,8 +2,9 @@ from pathlib import Path
 from sys import argv
 
 import telethon.utils
-from telethon import TelegramClient
 from Configs import Config
+from telethon import TelegramClient
+
 from fridaybot import bot
 from fridaybot.utils import load_module, start_assistant
 from var import Var
