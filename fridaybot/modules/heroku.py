@@ -212,9 +212,18 @@ async def _(givelogs):
             " Please make sure your Heroku API Key, Your App name are configured correctly in the heroku var !"
         )
     ik = await edit_or_reply(givelogs, "`Trying To Fetch Logs...`")
+    with open("logs.txt", "w") as log:
+        log.write(app.get_log())
     hmm = app.get_log()
     starky = f"<code> {hmm} </code>"
     title_of_page = "Friday UserBot Logs"
     response = telegraph.create_page(title_of_page, html_content=starky)
     km = response["path"]
-    await ik.edit(f"`Logs Can Be Found` [Here](https://telegra.ph/{km})")
+    suger = f"`Logs Can Be Found` [Here](https://telegra.ph/{km})"
+    await givelogs.client.send_file(
+        givelogs.chat_id,
+        "logs.txt",
+        reply_to=givelogs.id,
+        caption=suger,
+    )
+   
