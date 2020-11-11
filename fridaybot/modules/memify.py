@@ -24,7 +24,7 @@ async def _(event):
     if not reply_message.media:
         await event.edit("```reply to a image/sticker/gif```")
         return
-    chat = "@MemeCreatorBot"
+    chat = "@TgMemeRobot"
     reply_message.sender
     if reply_message.sender.bot:
         await event.edit("```Reply to actual users message.```")
@@ -35,22 +35,24 @@ async def _(event):
         )
     await borg.download_file(reply_message.media)
 
-    async with borg.conversation("@MemeCreatorBot") as bot_conv:
+    async with borg.conversation("@TgMemeRobot") as bot_conv:
         try:
             memeVar = event.pattern_match.group(1)
             await silently_send_message(bot_conv, "/start")
             await asyncio.sleep(1)
-            await silently_send_message(bot_conv, memeVar)
+            await silently_send_message(bot_conv, "/create")
+            await asyncio.sleep(1)
             await borg.send_file(chat, reply_message.media)
+            await silently_send_message(bot_conv, memeVar)
             response = await bot_conv.get_response()
         except YouBlockedUserError:
-            await event.reply("```Please unblock @MemeCreatorBot and try again```")
+            await event.reply("```Please unblock @TgMemeRobot and try again```")
             return
         if response.text.startswith("Forward"):
             await event.edit(
                 "```can you kindly disable your forward privacy settings for good nibba?```"
             )
-        if "Send" in response.text:
+        if "This is" in response.text:
             await event.edit(
                 "```🤨 NANI?! This is not an image! This will take sum tym to convert to image owo 🧐```"
             )
@@ -95,7 +97,6 @@ async def _(event):
                 requires_file_name,
                 supports_streaming=False,
                 caption="@FridayOT",
-                # Courtesy: @A_Dark_Princ3
             )
             await event.delete()
             sax = await borg.send_message(event.chat_id, "Memeify Sucess !")
