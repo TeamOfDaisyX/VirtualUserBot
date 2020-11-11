@@ -4,7 +4,6 @@ created by: @A_Dark_Princ3
 """
 
 import asyncio
-import os
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.types import MessageMediaPhoto
@@ -59,7 +58,7 @@ async def _(event):
             await event.edit(
                 "```🤨 NANI?! This is not an image! This will take sum tym to convert to image owo 🧐```"
             )
-            
+
 
 def is_message_image(message):
     if message.media:
