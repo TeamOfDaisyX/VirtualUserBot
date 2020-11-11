@@ -34,7 +34,7 @@ async def _(event):
         )
     await borg.download_file(reply_message.media)
 
-    async with borg.conversation("@TgMemeRobot") as bot_conv:
+    async with borg.conversation("@TgMemeRobot") as conv:
         try:
             kekbruh = event.pattern_match.group(1)
             await conv.send_message("/start")
