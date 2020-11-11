@@ -37,16 +37,18 @@ async def _(event):
 
     async with borg.conversation("@TgMemeRobot") as bot_conv:
         try:
-            memeVar = event.pattern_match.group(1)
-            await silently_send_message(bot_conv, "/start")
+            kekbruh = event.pattern_match.group(1)
+            await conv.send_message("/start")
             await asyncio.sleep(1)
-            await silently_send_message(bot_conv, "/create")
+            await conv.send_message("/create")
             await asyncio.sleep(1)
-            await borg.send_file(chat, reply_message.media)
+            await conv.send_file(reply_message.media)
             await asyncio.sleep(3)
-            await silently_send_message(bot_conv, memeVar)
-            response = await bot_conv.get_response()
-            await borg.send_message(hmm, response.media)
+            await conv.send_message(kekbruh)
+            response = await conv.get_response()
+            await conv.mark_read(message=response)
+            den = response.media
+            await borg.send_file(hmm, den)
         except YouBlockedUserError:
             await event.reply("```Please unblock @TgMemeRobot and try again```")
             return
@@ -70,9 +72,3 @@ def is_message_image(message):
         return False
     return False
 
-
-async def silently_send_message(conv, text):
-    await conv.send_message(text)
-    response = await conv.get_response()
-    await conv.mark_read(message=response)
-    return response
