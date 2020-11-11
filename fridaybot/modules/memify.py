@@ -43,7 +43,7 @@ async def _(event):
             await silently_send_message(bot_conv, "/create")
             await asyncio.sleep(1)
             await borg.send_file(chat, reply_message.media)
-            await asyncio.sleep(3)
+            await asyncio.sleep(1)
             await silently_send_message(bot_conv, memeVar)
             response = await bot_conv.get_response()
         except YouBlockedUserError:
