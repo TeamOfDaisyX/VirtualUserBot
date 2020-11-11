@@ -24,7 +24,6 @@ async def _(event):
     if not reply_message.media:
         await event.edit("```reply to a image/sticker/gif```")
         return
-    chat = "@TgMemeRobot"
     reply_message.sender
     if reply_message.sender.bot:
         await event.edit("```Reply to actual users message.```")
@@ -71,4 +70,3 @@ def is_message_image(message):
                 return True
         return False
     return False
-
