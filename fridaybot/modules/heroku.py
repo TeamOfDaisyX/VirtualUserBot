@@ -211,7 +211,7 @@ async def _(givelogs):
         return await givelogs.reply(
             " Please make sure your Heroku API Key, Your App name are configured correctly in the heroku var !"
         )
-    ik = await edit_or_reply(givelogs, "`Trying To Fetch Logs...`")
+    await edit_or_reply(givelogs, "`Trying To Fetch Logs...`")
     with open("logs.txt", "w") as log:
         log.write(app.get_log())
     hmm = app.get_log()
@@ -226,4 +226,3 @@ async def _(givelogs):
         reply_to=givelogs.id,
         caption=suger,
     )
-   
