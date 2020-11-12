@@ -52,5 +52,5 @@ def already_added(chat_id):
 def rm_channel(chat_id):
     remove = SESSION.query(Broadcast).get(str(chat_id))
     if remove:
-        SESSION.delete(rem)
+        SESSION.delete(remove)
         SESSION.commit()
