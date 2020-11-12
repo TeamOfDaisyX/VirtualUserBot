@@ -47,3 +47,10 @@ def already_added(chat_id):
         return None
     finally:
         SESSION.close()
+
+        
+def rm_channel(chat_id):
+    remove = SESSION.query(Broadcast).get(str(chat_id))
+    if remove:
+        SESSION.delete(rem)
+        SESSION.commit()
