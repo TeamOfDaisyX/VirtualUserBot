@@ -3,11 +3,18 @@ import inspect
 import logging
 import re
 from pathlib import Path
-from fridaybot.wraptools import ignore_fwd, am_i_admin, ignore_bot, ignore_pm, ignore_grp
+
 from telethon import events
 
 from fridaybot import CMD_LIST, LOAD_PLUG, SUDO_LIST, bot
 from fridaybot.Configs import Config
+from fridaybot.wraptools import (
+    am_i_admin,
+    ignore_bot,
+    ignore_fwd,
+    ignore_grp,
+    ignore_pm,
+)
 from var import Var
 
 cmdhandler = Config.COMMAND_HAND_LER
