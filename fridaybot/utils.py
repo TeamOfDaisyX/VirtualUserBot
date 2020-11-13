@@ -3,7 +3,7 @@ import inspect
 import logging
 import re
 from pathlib import Path
-
+from fridaybot.wraptools import ignore_fwd, am_i_admin, ignore_bot, ignore_pm, ignore_grp
 from telethon import events
 
 from fridaybot import CMD_LIST, LOAD_PLUG, SUDO_LIST, bot
@@ -118,6 +118,11 @@ def load_module(shortname):
         sys.modules["uniborg.util"] = fridaybot.utils
         sys.modules["friday.util"] = fridaybot.utils
         mod.Config = Config
+        mod.ignore_grp = ignore_grp()
+        mod.ignore_pm = ignore_pm()
+        mod.ignore_bot = ignore_bot()
+        mod.am_i_admin = am_i_admin()
+        mod.ignore_fwd = ignore_fwd()
         mod.borg = bot
         mod.friday = bot
         # support for paperplaneextended
