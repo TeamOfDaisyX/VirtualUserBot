@@ -14,7 +14,6 @@
 
 import io
 import os
-
 from fridaybot.Configs import Config
 from fridaybot.modules.sql_helper.broadcast_sql import (
     add_chnnl_in_db,
@@ -23,7 +22,6 @@ from fridaybot.modules.sql_helper.broadcast_sql import (
     rm_channel,
 )
 from fridaybot.utils import friday_on_cmd
-
 loggy_grp = Config.PRIVATE_GROUP_ID
 
 
@@ -150,7 +148,7 @@ async def _(event):
     )
 
 
-@friday.on(friday_on_cmd(pattern="forward"))
+@friday.on(friday_on_cmd(pattern="bforward"))
 async def _(event):
     all_chnnl = get_all_chnnl()
     if len(all_chnnl) == 0:
