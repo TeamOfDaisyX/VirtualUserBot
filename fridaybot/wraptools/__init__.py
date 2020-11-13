@@ -14,9 +14,12 @@
 
 import functools
 import re
+
+from telethon import events
+
 from fridaybot.Configs import Config
 from var import Var
-from telethon import events
+
 
 def ignore_fwd():
     def decorator(func):
@@ -26,9 +29,12 @@ def ignore_fwd():
                 await func(event)
             else:
                 pass
+
         return wrapper
+
     return decorator
-    
+
+
 def am_i_admin():
     def decorator(func):
         @functools.wraps(func)
@@ -39,26 +45,32 @@ def am_i_admin():
             if sed.is_admin or sed.is_creator:
                 await func(event)
             else:
-                await event.reply("I Must Be Admin To Do This. Please Make Sure I Am Admin.")
+                await event.reply(
+                    "I Must Be Admin To Do This. Please Make Sure I Am Admin."
+                )
+
         return wrapper
+
     return decorator
-    
-    
+
+
 def ignore_bot():
     def decorator(func):
         @functools.wraps(func)
         async def wrapper(event):
-            serena = bot.tgbot
+            bot.tgbot
             reply_message = await event.get_reply_message()
             reply_message.sender
             if not reply_message.sender.bot:
                 await func(event)
             else:
                 await event.reply("Bruh, Reply to Actual Users Message")
+
         return wrapper
+
     return decorator
-    
-    
+
+
 def ignore_pm():
     def decorator(func):
         @functools.wraps(func)
@@ -71,8 +83,8 @@ def ignore_pm():
         return wrapper
 
     return decorator
-    
-    
+
+
 def ignore_grp():
     def decorator(func):
         @functools.wraps(func)
@@ -81,5 +93,7 @@ def ignore_grp():
                 pass
             else:
                 await func(event)
+
         return wrapper
+
     return decorator
