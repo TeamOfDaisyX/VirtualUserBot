@@ -15,7 +15,7 @@
 
 
 
-# How To
+# Method
 
 <a href="https://youtu.be/xfHcm_e92eQ"><img src="https://img.shields.io/badge/How%20To-Deploy-red.svg?logo=Youtube"></a>
 
