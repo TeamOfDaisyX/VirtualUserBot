@@ -82,7 +82,8 @@ UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 
 @friday.on(friday_on_cmd(pattern=r"setgpic"))
 @friday.on(sudo_cmd(pattern=r"setgpic", allow_sudo=True))
-@errors_handler
+@am_i_admin
+@ignore_fwd
 async def set_group_photo(gpic):
     """ For .setgpic command, changes the picture of a group """
     if not gpic.is_group:
@@ -90,14 +91,7 @@ async def set_group_photo(gpic):
         return
     replymsg = await gpic.get_reply_message()
     chat = await gpic.get_chat()
-    admin = chat.admin_rights
-    creator = chat.creator
     photo = None
-
-    if not admin and not creator:
-        await gpic.edit(NO_ADMIN)
-        return
-
     if replymsg and replymsg.media:
         if isinstance(replymsg.media, MessageMediaPhoto):
             photo = await gpic.client.download_media(message=replymsg.photo)
@@ -121,20 +115,12 @@ async def set_group_photo(gpic):
 
 @friday.on(friday_on_cmd(pattern=r"promote(?: |$)(.*)"))
 @friday.on(sudo_cmd(pattern=r"promote(?: |$)(.*)", allow_sudo=True))
-@errors_handler
+@am_i_admin
+@ignore_fwd
 async def promote(promt):
     """ For .promote command, promotes the replied/tagged person """
     # Get targeted chat
     chat = await promt.get_chat()
-    # Grab admin status or creator in a chat
-    admin = chat.admin_rights
-    creator = chat.creator
-
-    # If not admin and not creator, also return
-    if not admin and not creator:
-        await promt.edit(NO_ADMIN)
-        return
-
     new_rights = ChatAdminRights(
         add_admins=False,
         invite_users=True,
@@ -175,18 +161,9 @@ async def promote(promt):
 
 
 @friday.on(friday_on_cmd(pattern=r"demote(?: |$)(.*)"))
-@errors_handler
+@am_i_admin
+@ignore_fwd
 async def demote(dmod):
-    """ For .demote command, demotes the replied/tagged person """
-    # Admin right check
-    chat = await dmod.get_chat()
-    admin = chat.admin_rights
-    creator = chat.creator
-
-    if not admin and not creator:
-        await dmod.edit(NO_ADMIN)
-        return
-
     # If passing, declare that we're going to demote
     await dmod.edit("`Demoting...`")
     rank = "admeme"  # dummy rank, lol.
@@ -228,19 +205,9 @@ async def demote(dmod):
 
 
 @friday.on(friday_on_cmd(pattern=r"ban(?: |$)(.*)"))
-@errors_handler
+@am_i_admin
+@ignore_fwd
 async def ban(bon):
-    """ For .ban command, bans the replied/tagged person """
-    # Here laying the sanity check
-    chat = await bon.get_chat()
-    admin = chat.admin_rights
-    creator = chat.creator
-
-    # Well
-    if not admin and not creator:
-        await bon.edit(NO_ADMIN)
-        return
-
     user, reason = await get_user_from_event(bon)
     if user:
         pass
@@ -282,22 +249,11 @@ async def ban(bon):
 
 
 @friday.on(friday_on_cmd(pattern=r"unban(?: |$)(.*)"))
-@errors_handler
+@am_i_admin
+@ignore_fwd
 async def nothanos(unbon):
-    """ For .unban command, unbans the replied/tagged person """
-    # Here laying the sanity check
-    chat = await unbon.get_chat()
-    admin = chat.admin_rights
-    creator = chat.creator
-
-    # Well
-    if not admin and not creator:
-        await unbon.edit(NO_ADMIN)
-        return
-
     # If everything goes well...
     await unbon.edit("`Unbanning...`")
-
     user = await get_user_from_event(unbon)
     user = user[0]
     if user:
@@ -321,7 +277,8 @@ async def nothanos(unbon):
 
 
 @friday.on(friday_on_cmd(pattern=r"mute(?: |$)(.*)"))
-@errors_handler
+@am_i_admin
+@ignore_fwd
 async def spider(spdr):
     """
     This function is basically muting peeps
@@ -335,14 +292,6 @@ async def spider(spdr):
 
     # Admin or creator check
     chat = await spdr.get_chat()
-    admin = chat.admin_rights
-    creator = chat.creator
-
-    # If not admin and not creator, return
-    if not admin and not creator:
-        await spdr.edit(NO_ADMIN)
-        return
-
     user, reason = await get_user_from_event(spdr)
     if user:
         pass
@@ -382,18 +331,12 @@ async def spider(spdr):
 
 
 @friday.on(friday_on_cmd(pattern=r"unmute(?: |$)(.*)"))
-@errors_handler
+@am_i_admin
+@ignore_fwd
 async def unmoot(unmot):
     """ For .unmute command, unmute the replied/tagged person """
     # Admin or creator check
     chat = await unmot.get_chat()
-    admin = chat.admin_rights
-    creator = chat.creator
-
-    # If not admin and not creator, return
-    if not admin and not creator:
-        await unmot.edit(NO_ADMIN)
-        return
 
     # Check if the function running under SQL mode
     try:
@@ -466,19 +409,12 @@ async def muter(moot):
 
 # @register(outgoing=True, pattern="^.ungmute(?: |$)(.*)")
 @friday.on(friday_on_cmd(pattern=r"ungmute(?: |$)(.*)"))
-@errors_handler
+@am_i_admin
+@ignore_fwd
 async def ungmoot(un_gmute):
     """ For .ungmute command, ungmutes the target in the fridaybot """
     # Admin or creator check
     chat = await un_gmute.get_chat()
-    admin = chat.admin_rights
-    creator = chat.creator
-
-    # If not admin and not creator, return
-    if not admin and not creator:
-        await un_gmute.edit(NO_ADMIN)
-        return
-
     # Check if the function running under SQL mode
     try:
         from fridaybot.modules.sql_helper.gmute_sql import ungmute
@@ -512,20 +448,11 @@ async def ungmoot(un_gmute):
 
 
 @friday.on(friday_on_cmd(pattern=r"gmute(?: |$)(.*)"))
-@errors_handler
+@am_i_admin
+@ignore_fwd
 async def gspider(gspdr):
     """ For .gmute command, globally mutes the replied/tagged person """
-    # Admin or creator check
     chat = await gspdr.get_chat()
-    admin = chat.admin_rights
-    creator = chat.creator
-
-    # If not admin and not creator, return
-    if not admin and not creator:
-        await gspdr.edit(NO_ADMIN)
-        return
-
-    # Check if the function running under SQL mode
     try:
         from fridaybot.modules.sql_helper.gmute_sql import gmute
     except AttributeError:
@@ -558,7 +485,8 @@ async def gspider(gspdr):
 
 
 @friday.on(friday_on_cmd(pattern=r"delusers(?: |$)(.*)"))
-@errors_handler
+@am_i_admin
+@ignore_fwd
 async def rm_deletedacc(show):
     """ For .delusers command, list all the ghost/deleted accounts in a chat. """
     if not show.is_group:
@@ -583,14 +511,6 @@ async def rm_deletedacc(show):
 
     # Here laying the sanity check
     chat = await show.get_chat()
-    admin = chat.admin_rights
-    creator = chat.creator
-
-    # Well
-    if not admin and not creator:
-        await show.edit("`I am not an admin here!`")
-        return
-
     await show.edit("`Deleting deleted accounts...\nOh I can do that?!?!`")
     del_u = 0
     del_a = 0
@@ -653,19 +573,12 @@ async def get_admin(show):
 
 
 @friday.on(friday_on_cmd(pattern=r"pin(?: |$)(.*)"))
-@errors_handler
+@am_i_admin
+@ignore_fwd
 async def pin(msg):
     """ For .pin command, pins the replied/tagged message on the top the chat. """
     # Admin or creator check
     chat = await msg.get_chat()
-    admin = chat.admin_rights
-    creator = chat.creator
-
-    # If not admin and not creator, return
-    if not admin and not creator:
-        await msg.edit(NO_ADMIN)
-        return
-
     to_pin = msg.reply_to_msg_id
 
     if not to_pin:
@@ -700,19 +613,12 @@ async def pin(msg):
 
 
 @friday.on(friday_on_cmd(pattern=r"kick(?: |$)(.*)"))
-@errors_handler
+@am_i_admin
+@ignore_fwd
 async def kick(usr):
     """ For .kick command, kicks the replied/tagged person from the group. """
     # Admin or creator check
     chat = await usr.get_chat()
-    admin = chat.admin_rights
-    creator = chat.creator
-
-    # If not admin and not creator, return
-    if not admin and not creator:
-        await usr.edit(NO_ADMIN)
-        return
-
     user, reason = await get_user_from_event(usr)
     if not user:
         await usr.edit("`Couldn't fetch user.`")
