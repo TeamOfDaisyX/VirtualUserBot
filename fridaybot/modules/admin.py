@@ -90,7 +90,7 @@ async def set_group_photo(gpic):
         await gpic.edit("`I don't think this is a group.`")
         return
     replymsg = await gpic.get_reply_message()
-    chat = await gpic.get_chat()
+    await gpic.get_chat()
     photo = None
     if replymsg and replymsg.media:
         if isinstance(replymsg.media, MessageMediaPhoto):
@@ -120,7 +120,7 @@ async def set_group_photo(gpic):
 async def promote(promt):
     """ For .promote command, promotes the replied/tagged person """
     # Get targeted chat
-    chat = await promt.get_chat()
+    await promt.get_chat()
     new_rights = ChatAdminRights(
         add_admins=False,
         invite_users=True,
@@ -291,7 +291,7 @@ async def spider(spdr):
         return
 
     # Admin or creator check
-    chat = await spdr.get_chat()
+    await spdr.get_chat()
     user, reason = await get_user_from_event(spdr)
     if user:
         pass
@@ -336,7 +336,7 @@ async def spider(spdr):
 async def unmoot(unmot):
     """ For .unmute command, unmute the replied/tagged person """
     # Admin or creator check
-    chat = await unmot.get_chat()
+    await unmot.get_chat()
 
     # Check if the function running under SQL mode
     try:
@@ -414,7 +414,7 @@ async def muter(moot):
 async def ungmoot(un_gmute):
     """ For .ungmute command, ungmutes the target in the fridaybot """
     # Admin or creator check
-    chat = await un_gmute.get_chat()
+    await un_gmute.get_chat()
     # Check if the function running under SQL mode
     try:
         from fridaybot.modules.sql_helper.gmute_sql import ungmute
@@ -452,7 +452,7 @@ async def ungmoot(un_gmute):
 @ignore_fwd
 async def gspider(gspdr):
     """ For .gmute command, globally mutes the replied/tagged person """
-    chat = await gspdr.get_chat()
+    await gspdr.get_chat()
     try:
         from fridaybot.modules.sql_helper.gmute_sql import gmute
     except AttributeError:
@@ -510,7 +510,7 @@ async def rm_deletedacc(show):
         return
 
     # Here laying the sanity check
-    chat = await show.get_chat()
+    await show.get_chat()
     await show.edit("`Deleting deleted accounts...\nOh I can do that?!?!`")
     del_u = 0
     del_a = 0
@@ -578,7 +578,7 @@ async def get_admin(show):
 async def pin(msg):
     """ For .pin command, pins the replied/tagged message on the top the chat. """
     # Admin or creator check
-    chat = await msg.get_chat()
+    await msg.get_chat()
     to_pin = msg.reply_to_msg_id
 
     if not to_pin:
@@ -618,7 +618,7 @@ async def pin(msg):
 async def kick(usr):
     """ For .kick command, kicks the replied/tagged person from the group. """
     # Admin or creator check
-    chat = await usr.get_chat()
+    await usr.get_chat()
     user, reason = await get_user_from_event(usr)
     if not user:
         await usr.edit("`Couldn't fetch user.`")
