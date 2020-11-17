@@ -1,6 +1,6 @@
 Pillow>=5.3.0
 PyGithub
-git+https://github.com/ytdl-org/youtube-dl
+git+https://github.com/ytdl-org/youtube-dl.git
 telethon
 iplookup
 git+https://github.com/Starkgangs/pydl.git
