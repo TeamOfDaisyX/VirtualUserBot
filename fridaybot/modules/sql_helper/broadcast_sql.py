@@ -15,9 +15,7 @@
 
 
 from sqlalchemy import Column, String
-
 from . import BASE, SESSION
-
 
 class Broadcast(BASE):
     __tablename__ = "Broadcast"
