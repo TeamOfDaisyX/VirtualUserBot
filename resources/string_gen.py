@@ -6,8 +6,7 @@
 
 from telethon.sessions import StringSession
 from telethon.sync import TelegramClient
-from telethon.sessions import StringSession
-from telethon.sync import TelegramClient
+
 ok = """ ____  ____  __  ____   __   _  _
 (  __)(  _ \(  )(    \ / o\ ( \/ )
  ) _)  )   / )(  ) D (/    \ )  /
@@ -21,7 +20,7 @@ client = TelegramClient(StringSession(), APP_ID, API_HASH)
 with client:
     session_str = client.session.save()
     client.send_message("me", f"`{session_str}`")
-    client.send_message("me",
-        "THIS IS YOUR STRING SESSION \nJoin @FRIDAYOT For More Support."
+    client.send_message(
+        "me", "THIS IS YOUR STRING SESSION \nJoin @FRIDAYOT For More Support."
     )
     print("⬆ Please Check Your Telegram Saved Message For Your String.")
