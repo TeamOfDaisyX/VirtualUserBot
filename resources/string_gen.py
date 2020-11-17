@@ -16,11 +16,11 @@ print(ok)
 APP_ID = int(input("Enter APP ID here: \n"))
 API_HASH = input("Enter API HASH here: \n")
 
-client = TelegramClient(StringSession(), APP_ID, API_HASH)
-with client:
-    session_str = client.session.save()
-    client.send_message("me", f"`{session_str}`")
-    client.send_message(
-        "me", "THIS IS YOUR STRING SESSION \nJoin @FRIDAYOT For More Support."
-    )
-    print("⬆ Please Check Your Telegram Saved Message For Your String.")
+with TelegramClient(StringSession(), APP_ID, API_HASH) as client:
+    try:
+        session = client.session.save()
+        client.send_message("me",
+                            f"String Session \nTap To Copy. \n`{session}`")
+        print("String Generated Sucessfully Check Your Saved Message.")
+    except Exception as sed:
+        print(f"Something Went Wrong While Generating String \nError : {sed}")
