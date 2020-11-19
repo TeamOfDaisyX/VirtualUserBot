@@ -14,7 +14,7 @@
 
 import functools
 import re
-
+from fridaybot import bot
 from telethon import events
 
 from fridaybot.Configs import Config
