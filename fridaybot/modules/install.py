@@ -13,11 +13,9 @@ async def install(event):
         return
     if event.reply_to_msg_id:
         try:
-            downloaded_file_name = (
-                await event.client.download_media( 
-                    await event.get_reply_message(),
-                    "fridaybot/modules/", 
-                )
+            downloaded_file_name = await event.client.download_media(
+                await event.get_reply_message(),
+                "fridaybot/modules/",
             )
             if "(" not in downloaded_file_name:
                 path1 = Path(downloaded_file_name)
