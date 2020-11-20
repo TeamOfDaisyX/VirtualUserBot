@@ -28,6 +28,9 @@ async def starkmeme(event):
     if hmm == None:
         await event.edit("Give Some Text")
         return
+    if not event.reply_to_msg_id:
+        await event.edit("`PLease, Reply To A MsG`")
+        return
     mryeast = await event.edit("Making Memes Until Praise MrBeast.")
     response = await event.get_reply_message()
     name = response.media
