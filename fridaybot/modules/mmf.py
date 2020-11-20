@@ -13,7 +13,6 @@
 
 import os
 import textwrap
-
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import MessageMediaPhoto
 
