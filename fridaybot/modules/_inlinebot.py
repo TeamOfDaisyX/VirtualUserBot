@@ -23,7 +23,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Friday"
 async def inline_handler(event):
     builder = event.builder
     result = None
-    query = event.pattern_match.group(1)
+    query = event.text
     if event.query.user_id == bot.uid and query.startswith("Friday"):
         rev_text = query[::-1]
         buttons = paginate_help(0, CMD_LIST, "helpme")
