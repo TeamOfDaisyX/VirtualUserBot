@@ -1,4 +1,4 @@
-Pillow>=5.3.0
+Pillow
 PyGithub
 git+https://github.com/ytdl-org/youtube-dl.git
 git+https://github.com/StarkGang/Telethon.git
