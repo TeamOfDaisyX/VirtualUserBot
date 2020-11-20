@@ -33,16 +33,18 @@ async def inline_handler(event):
             buttons=buttons,
             link_preview=False,
         )
+        await event.answer([result])
     elif event.query.user_id == bot.uid and query == "stats":
         result = builder.article(
             title="Stats",
             text=f"**Showing Stats For {DEFAULTUSER}'s Friday** \nNote --> Only Owner Can Check This \n(C) @FridayOT",
             buttons=[
-                [custom.Button.inline("Show Stats", data="terminator")],
-                [Button.url("Repo", "https://github.com/StarkGang/FridayUserbot")],
-                [Button.url("Join Channel", "t.me/Fridayot")],
+                [custom.Button.inline("Show Stats ", data="terminator")],
+                [Button.url("Repo 🇮🇳", "https://github.com/StarkGang/FridayUserbot")],
+                [Button.url("Join Channel ❤️", "t.me/Fridayot")],
             ],
         )
+        await event.answer([result])
     elif event.query.user_id == bot.uid and query.startswith("**Hello"):
         result = builder.photo(
             file=WARN_PIC,
@@ -58,8 +60,7 @@ async def inline_handler(event):
                 [custom.Button.inline("Requesting", data="askme")],
             ],
         )
-    await event.answer([result])
-
+        await event.answer([result])
 
 @tgbot.on(
     events.callbackquery.CallbackQuery(  # pylint:disable=E0602
