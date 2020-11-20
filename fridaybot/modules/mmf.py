@@ -15,7 +15,6 @@ import os
 import textwrap
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import MessageMediaPhoto
-
 from fridaybot.utils import friday_on_cmd
 
 sedpath = Config.TMP_DOWNLOAD_DIRECTORY
