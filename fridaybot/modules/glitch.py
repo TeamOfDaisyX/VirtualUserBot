@@ -12,6 +12,7 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import os
+
 from glitch_this import ImageGlitcher
 from telethon.tl.types import MessageMediaPhoto
 
