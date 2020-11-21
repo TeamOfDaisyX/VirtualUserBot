@@ -25,30 +25,42 @@
 
 
 
-# Deploy
+# Deploying To Heroku
 
 [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/StarkGang/FridayUserbot)
 
 
 
 
-# String
-
+# String Session
+## Repl
 [![Run on Repl.it](https://repl.it/badge/github/STARKGANG/friday)](https://friday.midhunkm1294.repl.run)
+## Heroku
+### - Open Your Friday Heroku App
+### - Click On More Option
+### - Now Click On 'Run Console'
+### - Now Run Command 'bash StringGen'
+### - Now Enter Your Api ID / Hash 
+### - Enter Your Phone Number, OTP, If Password then enter it Too.
+### - Now Check Inbox For Your String Session  
 
 
 
-
-# The Normal Way
+# Hard Way (For Devs)
 
 Simply clone the repository and run the main file:
 ```sh
-git clone https://github.com/starkGang/Fridayfridaybot
+# Install Git First.
+git clone https://github.com/starkGang/FridayUserbot
+# Open Git Cloned File
 cd FridayUserbot
+# Config Virtual Env
 virtualenv -p /usr/bin/python3 venv
 . ./venv/bin/activate
+# Install All Requirements 
 pip install -r requirements.txt
-# <Create local_config.py with variables as given below>
+# Create local_config.py with variables as given below
+# Start Bot 
 python3 -m fridaybot
 ```
 
@@ -66,15 +78,6 @@ python3 -m fridaybot
     
 [+] The fridaybot will not work without setting the mandatory vars.
 ```
-
-
-
-# Credits 
-`[+] Check Contribution At https://github.com/StarkGang/FridayUserbot/graphs/contributors`
-
-
-
-
 
 # Licence
 [![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl-3.0.en.html)  
