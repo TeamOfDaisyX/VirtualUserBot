@@ -6,11 +6,15 @@
 
 
 
+
+
 # Support
 
 <a href="https://t.me/FridaySupportOfficial"><img src="https://img.shields.io/badge/Join-Telegram%20Channel-red.svg?logo=Telegram"></a>
 
 <a href="https://t.me/fridayOT"><img src="https://img.shields.io/badge/Join-Telegram%20Group-blue.svg?logo=telegram"></a>
+
+
 
 
 
@@ -32,10 +36,17 @@
 
 
 
+
+
+
+
 # String Session
 ## Repl
+
 [![Run on Repl.it](https://repl.it/badge/github/STARKGANG/friday)](https://friday.midhunkm1294.repl.run)
-## Heroku
+
+## Using Heroku
+
 ### - Open Your Friday Heroku App
 ### - Click On More Option
 ### - Now Click On 'Run Console'
@@ -43,6 +54,11 @@
 ### - Now Enter Your Api ID / Hash 
 ### - Enter Your Phone Number, OTP, If Password then enter it Too.
 ### - Now Check Inbox For Your String Session  
+
+
+
+
+
 
 
 
@@ -67,6 +83,10 @@ python3 -m fridaybot
 
 
 
+
+
+
+
 # Mandatory Vars
 ```
 [+] Only two of the environment variables are mandatory.
@@ -78,6 +98,11 @@ python3 -m fridaybot
     
 [+] The fridaybot will not work without setting the mandatory vars.
 ```
+
+
+
+
+
 
 # Licence
 [![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl-3.0.en.html)  
