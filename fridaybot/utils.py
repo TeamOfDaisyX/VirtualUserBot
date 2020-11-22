@@ -96,6 +96,7 @@ def load_module(shortname):
         import importlib
         import sys
         from pathlib import Path
+
         import fridaybot.modules
         import fridaybot.utils
 
@@ -109,6 +110,7 @@ def load_module(shortname):
         import importlib
         import sys
         from pathlib import Path
+
         import fridaybot.modules
         import fridaybot.utils
 
