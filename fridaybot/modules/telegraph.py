@@ -4,7 +4,7 @@ Available Commands:
 .telegraph text as reply to a large text"""
 import os
 from datetime import datetime
-
+from fridaybot import CMD_HELP
 from PIL import Image
 from telegraph import Telegraph, exceptions, upload_file
 
@@ -104,3 +104,13 @@ async def _(event):
 def resize_image(image):
     im = Image.open(image)
     im.save(image, "PNG")
+
+
+
+CMD_HELP.update(
+    {
+        "telegraph": "**Telegraph**\
+\n\n**Syntax : **`.telegraph media <reply to your image or video> OR .telegraph text <reply to text> `\
+\n**Usage :** upload text or image directly to Telegraph"
+    }
+)
