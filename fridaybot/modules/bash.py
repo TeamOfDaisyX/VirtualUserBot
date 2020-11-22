@@ -49,6 +49,6 @@ CMD_HELP.update(
     {
         "bash": "**Bash**\
 \n\n**Syntax : **`.bash <cmd>`\
-\n**Usage :** Run Commands Using Userbot \"
+\n**Usage :** Run Commands Using Userbot"
     }
 )
