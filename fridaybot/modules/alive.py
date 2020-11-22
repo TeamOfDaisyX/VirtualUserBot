@@ -3,7 +3,7 @@
 import time
 
 from uniborg.util import friday_on_cmd, sudo_cmd
-
+from fridaybot import CMD_HELP
 from fridaybot import ALIVE_NAME, Lastupdate
 from fridaybot.Configs import Config
 from fridaybot.modules import currentversion
@@ -64,3 +64,11 @@ async def friday(alive):
     """ For .alive command, check if the bot is running.  """
     await borg.send_file(alive.chat_id, PM_IMG, caption=pm_caption)
     await alive.delete()
+
+    
+CMD_HELP.update(
+    {
+        "alive": ".alive \
+\nUsage: Check if userbot is Alive"
+    }
+)
