@@ -109,7 +109,7 @@ def load_module(shortname):
         import importlib
         import sys
         from pathlib import Path
-
+        import friday.modules
         import fridaybot.utils
 
         path = Path(f"fridaybot/modules/{shortname}.py")
@@ -126,8 +126,6 @@ def load_module(shortname):
         sys.modules["friday.util"] = fridaybot.utils
         sys.modules["userbot.utils"] = fridaybot.utils
         sys.modules["userbot.plugins"] = fridaybot.modules
-        sys.modules["userbot"] = fridaybot
-        sys.modules["plugins"] = modules
         mod.Config = Config
         mod.ignore_grp = ignore_grp()
         mod.ignore_pm = ignore_pm()
