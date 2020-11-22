@@ -163,6 +163,6 @@ CMD_HELP.update(
 \n\n**Syntax : **`.ub <paste direct download link here>`\
 \n**Usage :** Upload any file from direct download link to telegram max file limit 500MB.\
 \n\n**Syntax : **`.gid <replying to user message>`\
-\n**Usage :** Get user_id of a person.
+\n**Usage :** Get user_id of a person."
     }
 )
