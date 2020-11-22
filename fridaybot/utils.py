@@ -124,6 +124,10 @@ def load_module(shortname):
         # support for uniborg
         sys.modules["uniborg.util"] = fridaybot.utils
         sys.modules["friday.util"] = fridaybot.utils
+        sys.modules["userbot.utils"] = fridaybot.utils
+        sys.modules["userbot.plugins"] = fridaybot.modules
+        sys.modules["userbot"] = fridaybot
+        sys.modules["plugins"] = modules
         mod.Config = Config
         mod.ignore_grp = ignore_grp()
         mod.ignore_pm = ignore_pm()
