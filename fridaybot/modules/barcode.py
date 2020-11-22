@@ -6,10 +6,12 @@ By @snappy101
 import asyncio
 import os
 from datetime import datetime
-from fridaybot import CMD_HELP
+
 import barcode
 from barcode.writer import ImageWriter
 from uniborg.util import edit_or_reply, friday_on_cmd, sudo_cmd
+
+from fridaybot import CMD_HELP
 
 
 @friday.on(friday_on_cmd(pattern="barcode ?(.*)"))
@@ -62,11 +64,12 @@ async def _(event):
     await edit_or_reply(event, "Created BarCode in {} seconds".format(ms))
     await asyncio.sleep(5)
     await event.delete()
-   
+
+
 CMD_HELP.update(
     {
         "barcode": "**Barcode**\
 \n\n**Syntax : **`.barcode <text>`\
-\n**Usage :** Creates Barcode Of Your Text.\
+\n**Usage :** Creates Barcode Of Your Text."
     }
 )
