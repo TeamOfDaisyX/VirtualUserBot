@@ -82,10 +82,13 @@ UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 
 @friday.on(friday_on_cmd(pattern=r"setgpic"))
 @friday.on(sudo_cmd(pattern=r"setgpic", allow_sudo=True))
-@am_i_admin
-@ignore_fwd
 async def set_group_photo(gpic):
     """ For .setgpic command, changes the picture of a group """
+    pep = await borg.get_me()
+    sed = await borg.get_permissions(event.chat_id, pep)
+    if not sed.is_admin or sed.is_creator:
+        await event.edit("`I Need Admin Permission Bruh")
+        return
     if not gpic.is_group:
         await gpic.edit("`I don't think this is a group.`")
         return
@@ -115,12 +118,15 @@ async def set_group_photo(gpic):
 
 @friday.on(friday_on_cmd(pattern=r"promote(?: |$)(.*)"))
 @friday.on(sudo_cmd(pattern=r"promote(?: |$)(.*)", allow_sudo=True))
-@am_i_admin
-@ignore_fwd
 async def promote(promt):
     """ For .promote command, promotes the replied/tagged person """
     # Get targeted chat
     await promt.get_chat()
+    pep = await borg.get_me()
+    sed = await borg.get_permissions(event.chat_id, pep)
+    if not sed.is_admin or sed.is_creator:
+        await event.edit("`I Need Admin Permission Bruh")
+        return
     new_rights = ChatAdminRights(
         add_admins=False,
         invite_users=True,
@@ -161,10 +167,13 @@ async def promote(promt):
 
 
 @friday.on(friday_on_cmd(pattern=r"demote(?: |$)(.*)"))
-@am_i_admin
-@ignore_fwd
 async def demote(dmod):
     # If passing, declare that we're going to demote
+    pep = await borg.get_me()
+    sed = await borg.get_permissions(event.chat_id, pep)
+    if not sed.is_admin or sed.is_creator:
+        await event.edit("`I Need Admin Permission Bruh")
+        return
     await dmod.edit("`Demoting...`")
     rank = "admeme"  # dummy rank, lol.
     user = await get_user_from_event(dmod)
@@ -205,9 +214,12 @@ async def demote(dmod):
 
 
 @friday.on(friday_on_cmd(pattern=r"ban(?: |$)(.*)"))
-@am_i_admin
-@ignore_fwd
 async def ban(bon):
+    pep = await borg.get_me()
+    sed = await borg.get_permissions(event.chat_id, pep)
+    if not sed.is_admin or sed.is_creator:
+        await event.edit("`I Need Admin Permission Bruh")
+        return
     user, reason = await get_user_from_event(bon)
     if user:
         pass
@@ -249,9 +261,12 @@ async def ban(bon):
 
 
 @friday.on(friday_on_cmd(pattern=r"unban(?: |$)(.*)"))
-@am_i_admin
-@ignore_fwd
 async def nothanos(unbon):
+    pep = await borg.get_me()
+    sed = await borg.get_permissions(event.chat_id, pep)
+    if not sed.is_admin or sed.is_creator:
+        await event.edit("`I Need Admin Permission Bruh")
+        return
     # If everything goes well...
     await unbon.edit("`Unbanning...`")
     user = await get_user_from_event(unbon)
@@ -277,9 +292,12 @@ async def nothanos(unbon):
 
 
 @friday.on(friday_on_cmd(pattern=r"mute(?: |$)(.*)"))
-@am_i_admin
-@ignore_fwd
 async def spider(spdr):
+    pep = await borg.get_me()
+    sed = await borg.get_permissions(event.chat_id, pep)
+    if not sed.is_admin or sed.is_creator:
+        await event.edit("`I Need Admin Permission Bruh")
+        return
     """
     This function is basically muting peeps
     """
@@ -331,9 +349,12 @@ async def spider(spdr):
 
 
 @friday.on(friday_on_cmd(pattern=r"unmute(?: |$)(.*)"))
-@am_i_admin
-@ignore_fwd
 async def unmoot(unmot):
+    pep = await borg.get_me()
+    sed = await borg.get_permissions(event.chat_id, pep)
+    if not sed.is_admin or sed.is_creator:
+        await event.edit("`I Need Admin Permission Bruh")
+        return
     """ For .unmute command, unmute the replied/tagged person """
     # Admin or creator check
     await unmot.get_chat()
@@ -409,9 +430,12 @@ async def muter(moot):
 
 # @register(outgoing=True, pattern="^.ungmute(?: |$)(.*)")
 @friday.on(friday_on_cmd(pattern=r"ungmute(?: |$)(.*)"))
-@am_i_admin
-@ignore_fwd
 async def ungmoot(un_gmute):
+    pep = await borg.get_me()
+    sed = await borg.get_permissions(event.chat_id, pep)
+    if not sed.is_admin or sed.is_creator:
+        await event.edit("`I Need Admin Permission Bruh")
+        return
     """ For .ungmute command, ungmutes the target in the fridaybot """
     # Admin or creator check
     await un_gmute.get_chat()
@@ -448,9 +472,12 @@ async def ungmoot(un_gmute):
 
 
 @friday.on(friday_on_cmd(pattern=r"gmute(?: |$)(.*)"))
-@am_i_admin
-@ignore_fwd
 async def gspider(gspdr):
+    pep = await borg.get_me()
+    sed = await borg.get_permissions(event.chat_id, pep)
+    if not sed.is_admin or sed.is_creator:
+        await event.edit("`I Need Admin Permission Bruh")
+        return
     """ For .gmute command, globally mutes the replied/tagged person """
     await gspdr.get_chat()
     try:
@@ -485,9 +512,12 @@ async def gspider(gspdr):
 
 
 @friday.on(friday_on_cmd(pattern=r"delusers(?: |$)(.*)"))
-@am_i_admin
-@ignore_fwd
 async def rm_deletedacc(show):
+    pep = await borg.get_me()
+    sed = await borg.get_permissions(event.chat_id, pep)
+    if not sed.is_admin or sed.is_creator:
+        await event.edit("`I Need Admin Permission Bruh")
+        return
     """ For .delusers command, list all the ghost/deleted accounts in a chat. """
     if not show.is_group:
         await show.edit("`I don't think this is a group.`")
@@ -573,9 +603,12 @@ async def get_admin(show):
 
 
 @friday.on(friday_on_cmd(pattern=r"pin(?: |$)(.*)"))
-@am_i_admin
-@ignore_fwd
 async def pin(msg):
+    pep = await borg.get_me()
+    sed = await borg.get_permissions(event.chat_id, pep)
+    if not sed.is_admin or sed.is_creator:
+        await event.edit("`I Need Admin Permission Bruh")
+        return
     """ For .pin command, pins the replied/tagged message on the top the chat. """
     # Admin or creator check
     await msg.get_chat()
@@ -613,9 +646,12 @@ async def pin(msg):
 
 
 @friday.on(friday_on_cmd(pattern=r"kick(?: |$)(.*)"))
-@am_i_admin
-@ignore_fwd
 async def kick(usr):
+    pep = await borg.get_me()
+    sed = await borg.get_permissions(event.chat_id, pep)
+    if not sed.is_admin or sed.is_creator:
+        await event.edit("`I Need Admin Permission Bruh")
+        return
     """ For .kick command, kicks the replied/tagged person from the group. """
     # Admin or creator check
     await usr.get_chat()
