@@ -2,10 +2,12 @@ import asyncio
 import os
 import shutil
 from datetime import datetime
-from fridaybot import CMD_HELP
+
 from PIL import Image, ImageDraw, ImageFont
 from pySmartDL import SmartDL
 from telethon.tl import functions
+
+from fridaybot import CMD_HELP
 
 FONT_FILE_TO_USE = "Fonts/digital.ttf"
 
@@ -41,7 +43,8 @@ async def autopic(event):
             await asyncio.sleep(60)
         except:
             return
-        
+
+
 CMD_HELP.update(
     {
         "autopic": "**AutoPic**\

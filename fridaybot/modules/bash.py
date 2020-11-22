@@ -1,8 +1,10 @@
 import asyncio
 import io
 import time
+
 from fridaybot import CMD_HELP
 from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
+
 
 @friday.on(friday_on_cmd(pattern="bash ?(.*)"))
 @friday.on(sudo_cmd(pattern="bash ?(.*)", allow_sudo=True))
@@ -44,7 +46,7 @@ async def _(event):
             await event.delete()
     await tflyf.edit(OUTPUT)
 
-    
+
 CMD_HELP.update(
     {
         "bash": "**Bash**\
