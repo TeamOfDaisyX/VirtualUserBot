@@ -49,9 +49,6 @@ async def hmm(event):
     }
     url = "https://api.deepai.org/api/colorizer"
     r = requests.post(url=url, files=img_file, headers=headers).json()
-    if r["err"]:
-        await event.edit("Some Errors. \nOutput : r['err']")
-        return
     sedimg = r["output_url"]
     await borg.send_file(event.chat_id, sedimg)
     await hmm.delete()
@@ -84,9 +81,6 @@ async def hmm(event):
     }
     url = "https://api.deepai.org/api/toonify"
     r = requests.post(url=url, files=img_file, headers=headers).json()
-    if r["err"]:
-        await event.edit("Some Errors. \nOutput : r['err']")
-        return
     sedimg = r["output_url"]
     await borg.send_file(event.chat_id, sedimg)
     await hmm.delete()
@@ -119,9 +113,6 @@ async def hmm(event):
     }
     url = "https://api.deepai.org/api/nsfw-detector"
     r = requests.post(url=url, files=img_file, headers=headers).json()
-    if r["err"]:
-        await event.edit("Some Errors. \nOutput : r['err']")
-        return
     sedcopy = r["output"]
     hmmyes = sedcopy["detections"]
     game = sedcopy["nsfw_score"]
