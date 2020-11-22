@@ -5,6 +5,7 @@ Available Commands:
 .url <long url>
 .unshort <short url>"""
 import requests
+
 from fridaybot import CMD_HELP
 from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 
@@ -69,4 +70,3 @@ CMD_HELP.update(
 \n**Usage :** it unshortens the given short link."
     }
 )
-

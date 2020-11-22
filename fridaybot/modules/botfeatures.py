@@ -2,6 +2,7 @@ import asyncio
 
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
+
 from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd
 

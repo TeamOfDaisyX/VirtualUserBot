@@ -1,7 +1,9 @@
 """.admin Plugin for @UniBorg"""
 from telethon.tl.types import ChannelParticipantsAdmins
 from uniborg.util import friday_on_cmd
+
 from fridaybot import CMD_HELP
+
 
 @friday.on(friday_on_cmd(pattern="admins"))
 async def _(event):
