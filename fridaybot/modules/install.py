@@ -1,7 +1,9 @@
 import asyncio
 import os
 from pathlib import Path
+
 from fridaybot.utils import friday_on_cmd, load_module
+
 DELETE_TIMEOUT = 5
 
 
@@ -31,7 +33,9 @@ async def install(event):
                     "Errors! This plugin is already installed/pre-installed."
                 )
         except Exception as e:  # pylint:disable=C0103,W0703
-            await event.edit(f"Error While Installing This Plugin, Please Make Sure That its py Extension. \n**ERROR :** {e}")
+            await event.edit(
+                f"Error While Installing This Plugin, Please Make Sure That its py Extension. \n**ERROR :** {e}"
+            )
             os.remove(downloaded_file_name)
     await asyncio.sleep(DELETE_TIMEOUT)
     await event.delete()
