@@ -63,6 +63,6 @@ CMD_HELP.update(
     {
         "autoname": "**Autoname**\
 \n\n**Syntax : **`.autoname`\
-\n**Usage :** Change Name With Time\
+\n**Usage :** Change Name With Time"
     }
 )
