@@ -2,7 +2,7 @@ import asyncio
 
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-
+from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd
 
 
@@ -151,3 +151,18 @@ async def _(event):
             )
         else:
             await event.edit(f"{response.message.message}")
+
+
+CMD_HELP.update(
+    {
+        "botfeatures": "**Botfeatures**\
+\n\n**Syntax : **`.sang <replying to user message> `\
+\n**Usage :** Get Name history of an user.\
+\n\n**Syntax : **`.fakemail <type and send in groups or private chats>`\
+\n**Usage :** Get a fake email id and get all mails forwarded to you.\
+\n\n**Syntax : **`.ub <paste direct download link here>`\
+\n**Usage :** Upload any file from direct download link to telegram max file limit 500MB.\
+\n\n**Syntax : **`.gid <replying to user message>`\
+\n**Usage :** Get user_id of a person."
+    }
+)

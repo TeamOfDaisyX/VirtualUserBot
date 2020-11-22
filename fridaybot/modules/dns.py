@@ -5,7 +5,7 @@ Available Commands:
 .url <long url>
 .unshort <short url>"""
 import requests
-
+from fridaybot import CMD_HELP
 from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 
 
@@ -56,3 +56,17 @@ async def _(event):
         await sadness.edit(
             "Input URL {} returned status_code {}".format(input_str, r.status_code)
         )
+
+
+CMD_HELP.update(
+    {
+        "dns": "**Dns**\
+\n\n**Syntax : **`.dns <site link>`\
+\n**Usage :** it provides DNS records of given site.\
+\n\n**Syntax : **`.url <site link>`\
+\n**Usage :** it shortens given URL.\
+\n\n**Syntax : **`.unshort <shorten link>`\
+\n**Usage :** it unshortens the given short link."
+    }
+)
+
