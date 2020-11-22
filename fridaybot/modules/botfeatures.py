@@ -151,9 +151,7 @@ async def _(event):
             )
         else:
             await event.edit(f"{response.message.message}")
-            
-            
-            
+
             CMD_HELP.update(
                 {
                     "Botfeatures": ".sang <replying to user message>\
@@ -166,4 +164,3 @@ async def _(event):
                     \nUsage: Get user_id of a person."
                 }
             )
-                    
