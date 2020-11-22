@@ -8,8 +8,7 @@ async def _(event):
     args = event.pattern_match.group(1).lower()
     if args:
         if args in CMD_HELP:
-            await event.edit(
-                f"Here is some help for the {CMD_HELP[args]}")
+            await event.edit(f"Here is some help for the {CMD_HELP[args]}")
         else:
             await event.edit(
                 f"Help string for {args} not found! Type ```.help``` to see valid module names."
