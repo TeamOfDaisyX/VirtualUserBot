@@ -83,11 +83,12 @@ UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 @friday.on(friday_on_cmd(pattern=r"setgpic"))
 @friday.on(sudo_cmd(pattern=r"setgpic", allow_sudo=True))
 async def set_group_photo(gpic):
+    event = gpic
     """ For .setgpic command, changes the picture of a group """
     pep = await borg.get_me()
     sed = await borg.get_permissions(event.chat_id, pep)
     if not sed.is_admin or sed.is_creator:
-        await event.edit("`I Need Admin Permission Bruh")
+        await gpic.edit("`I Need Admin Permission Bruh")
         return
     if not gpic.is_group:
         await gpic.edit("`I don't think this is a group.`")
@@ -119,6 +120,7 @@ async def set_group_photo(gpic):
 @friday.on(friday_on_cmd(pattern=r"promote(?: |$)(.*)"))
 @friday.on(sudo_cmd(pattern=r"promote(?: |$)(.*)", allow_sudo=True))
 async def promote(promt):
+    event = promt
     """ For .promote command, promotes the replied/tagged person """
     # Get targeted chat
     await promt.get_chat()
@@ -168,6 +170,7 @@ async def promote(promt):
 
 @friday.on(friday_on_cmd(pattern=r"demote(?: |$)(.*)"))
 async def demote(dmod):
+    event = dmod
     # If passing, declare that we're going to demote
     pep = await borg.get_me()
     sed = await borg.get_permissions(event.chat_id, pep)
@@ -215,6 +218,7 @@ async def demote(dmod):
 
 @friday.on(friday_on_cmd(pattern=r"ban(?: |$)(.*)"))
 async def ban(bon):
+    event = bon
     pep = await borg.get_me()
     sed = await borg.get_permissions(event.chat_id, pep)
     if not sed.is_admin or sed.is_creator:
@@ -262,6 +266,7 @@ async def ban(bon):
 
 @friday.on(friday_on_cmd(pattern=r"unban(?: |$)(.*)"))
 async def nothanos(unbon):
+    event = unbon
     pep = await borg.get_me()
     sed = await borg.get_permissions(event.chat_id, pep)
     if not sed.is_admin or sed.is_creator:
@@ -293,6 +298,7 @@ async def nothanos(unbon):
 
 @friday.on(friday_on_cmd(pattern=r"mute(?: |$)(.*)"))
 async def spider(spdr):
+    event = spdr
     pep = await borg.get_me()
     sed = await borg.get_permissions(event.chat_id, pep)
     if not sed.is_admin or sed.is_creator:
@@ -350,6 +356,7 @@ async def spider(spdr):
 
 @friday.on(friday_on_cmd(pattern=r"unmute(?: |$)(.*)"))
 async def unmoot(unmot):
+    event = unmot
     pep = await borg.get_me()
     sed = await borg.get_permissions(event.chat_id, pep)
     if not sed.is_admin or sed.is_creator:
@@ -431,6 +438,7 @@ async def muter(moot):
 # @register(outgoing=True, pattern="^.ungmute(?: |$)(.*)")
 @friday.on(friday_on_cmd(pattern=r"ungmute(?: |$)(.*)"))
 async def ungmoot(un_gmute):
+    event = ungmoot
     pep = await borg.get_me()
     sed = await borg.get_permissions(event.chat_id, pep)
     if not sed.is_admin or sed.is_creator:
@@ -473,6 +481,7 @@ async def ungmoot(un_gmute):
 
 @friday.on(friday_on_cmd(pattern=r"gmute(?: |$)(.*)"))
 async def gspider(gspdr):
+    event = gspdr
     pep = await borg.get_me()
     sed = await borg.get_permissions(event.chat_id, pep)
     if not sed.is_admin or sed.is_creator:
@@ -513,6 +522,7 @@ async def gspider(gspdr):
 
 @friday.on(friday_on_cmd(pattern=r"delusers(?: |$)(.*)"))
 async def rm_deletedacc(show):
+    event = show
     pep = await borg.get_me()
     sed = await borg.get_permissions(event.chat_id, pep)
     if not sed.is_admin or sed.is_creator:
