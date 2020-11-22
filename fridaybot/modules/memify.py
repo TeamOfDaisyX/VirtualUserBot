@@ -8,6 +8,7 @@ import asyncio
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.types import MessageMediaPhoto
 from uniborg.util import friday_on_cmd
+
 from fridaybot import CMD_HELP
 
 thumb_image_path = Config.TMP_DOWNLOAD_DIRECTORY + "/thumb_image.jpg"
@@ -71,7 +72,6 @@ def is_message_image(message):
                 return True
         return False
     return False
-
 
 
 CMD_HELP.update(
