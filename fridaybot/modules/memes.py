@@ -15,9 +15,10 @@ from collections import deque
 
 """ Plugin By @chsaiujwal on telegram """
 from asyncio import wait
-from telethon import events
+
 import requests
 from cowpy import cow
+from telethon import events
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from uniborg.util import friday_on_cmd
