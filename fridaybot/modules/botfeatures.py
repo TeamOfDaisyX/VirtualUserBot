@@ -155,7 +155,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "botfeature": "**Botfeature**\
+        "botfeatures": "**Botfeatures**\
 \n\n**Syntax : **`.sang <replying to user message> `\
 \n**Usage :** Get Name history of an user.\
 \n\n**Syntax : **`.fakemail <type and send in groups or private chats>`\
