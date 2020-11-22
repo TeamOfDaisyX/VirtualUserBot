@@ -44,3 +44,12 @@ async def _(event):
             )
             await event.delete()
     await tflyf.edit(OUTPUT)
+
+    
+CMD_HELP.update(
+    {
+        "bash": "**Bash**\
+\n\n**Syntax : **`.bash <cmd>`\
+\n**Usage :** Run Commands Using Userbot \
+    }
+)
