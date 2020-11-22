@@ -9,8 +9,7 @@ async def _(event):
     if args:
         if args in CMD_HELP:
             await event.edit(
-                f"Here is some help for the **{CMD_HELP[args][0]}** module:\n\n"
-                + str(CMD_HELP[args][1])
+                f"Here is some help for the {CMD_HELP[args]}")
             )
         else:
             await event.edit(
