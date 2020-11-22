@@ -7,7 +7,9 @@ import asyncio
 
 from telethon.tl.functions.users import GetFullUserRequest
 from uniborg.util import friday_on_cmd
+
 from fridaybot import CMD_HELP
+
 
 @friday.on(friday_on_cmd(pattern=r"hack"))
 async def _(event):
@@ -43,6 +45,7 @@ async def _(event):
                 await event.edit(animation_chars[i % 11])
     else:
         await event.edit("U Dumb. Reply to User 🤷")
+
 
 CMD_HELP.update(
     {

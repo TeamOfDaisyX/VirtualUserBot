@@ -1,8 +1,8 @@
 import pyfiglet
 
+from fridaybot import CMD_HELP
 from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 
-from fridaybot import CMD_HELP
 
 @friday.on(friday_on_cmd(pattern="figlet ?(.*)", outgoing=True))
 @friday.on(sudo_cmd(pattern="figlet ?(.*)", allow_sudo=True))
