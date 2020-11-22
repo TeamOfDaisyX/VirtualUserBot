@@ -67,6 +67,6 @@ CMD_HELP.update(
     {
         "barcode": "**Barcode**\
 \n\n**Syntax : **`.barcode <text>`\
-\n**Usage :** Creates Barcode Of Your Text.\"
+\n**Usage :** Creates Barcode Of Your Text."
     }
 )
