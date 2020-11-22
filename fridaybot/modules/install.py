@@ -4,6 +4,7 @@ from pathlib import Path
 
 from fridaybot.utils import friday_on_cmd, load_module
 
+from fridaybot import CMD_HELP
 DELETE_TIMEOUT = 5
 
 
@@ -39,3 +40,12 @@ async def install(event):
             os.remove(downloaded_file_name)
     await asyncio.sleep(DELETE_TIMEOUT)
     await event.delete()
+
+
+CMD_HELP.update(
+    {
+        "install": "**Install**\
+\n\n**Syntax : **`.install <reply to plugin>`\
+\n**Usage :** it installs replyed plugin"
+    }
+)
