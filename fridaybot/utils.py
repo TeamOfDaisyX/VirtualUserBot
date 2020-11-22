@@ -109,7 +109,7 @@ def load_module(shortname):
         import importlib
         import sys
         from pathlib import Path
-        import friday.modules
+
         import fridaybot.utils
 
         path = Path(f"fridaybot/modules/{shortname}.py")
