@@ -44,11 +44,3 @@ async def figlet(event):
     else:
         result = pyfiglet.figlet_format(text)
     await arjun.edit("‌‌‎`{}`".format(result))
-
-
-CMD_HELP.update(
-    {
-        "figlet": ".figlet <text> \
-\nUsage: this plugin helps you to create ASCII text art"
-    }
-)
