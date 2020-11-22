@@ -2,6 +2,7 @@ import pyfiglet
 
 from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 
+from fridaybot import CMD_HELP
 
 @friday.on(friday_on_cmd(pattern="figlet ?(.*)", outgoing=True))
 @friday.on(sudo_cmd(pattern="figlet ?(.*)", allow_sudo=True))
@@ -43,3 +44,11 @@ async def figlet(event):
     else:
         result = pyfiglet.figlet_format(text)
     await arjun.edit("‌‌‎`{}`".format(result))
+
+
+CMD_HELP.update(
+    {
+        "figlet": ".figlet <text> \
+\nUsage: this plugin helps you to create ASCII text art"
+    }
+)
