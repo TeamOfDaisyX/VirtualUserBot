@@ -614,6 +614,7 @@ async def get_admin(show):
 
 @friday.on(friday_on_cmd(pattern=r"pin(?: |$)(.*)"))
 async def pin(msg):
+   event = msg
     pep = await borg.get_me()
     sed = await borg.get_permissions(event.chat_id, pep)
     if not sed.is_admin or sed.is_creator:
@@ -657,6 +658,7 @@ async def pin(msg):
 
 @friday.on(friday_on_cmd(pattern=r"kick(?: |$)(.*)"))
 async def kick(usr):
+    event = usr
     pep = await borg.get_me()
     sed = await borg.get_permissions(event.chat_id, pep)
     if not sed.is_admin or sed.is_creator:
