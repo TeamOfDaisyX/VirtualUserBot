@@ -2,7 +2,7 @@ import asyncio
 import os
 import shutil
 from datetime import datetime
-
+from fridaybot import CMD_HELP
 from PIL import Image, ImageDraw, ImageFont
 from pySmartDL import SmartDL
 from telethon.tl import functions
@@ -41,3 +41,11 @@ async def autopic(event):
             await asyncio.sleep(60)
         except:
             return
+        
+CMD_HELP.update(
+    {
+        "autopic": "**AutoPic**\
+\n\n**Syntax : **`.autopic`\
+\n**Usage :** Change PIC With Time\
+    }
+)
