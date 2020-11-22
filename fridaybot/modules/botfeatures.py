@@ -151,3 +151,16 @@ async def _(event):
             )
         else:
             await event.edit(f"{response.message.message}")
+
+            CMD_HELP.update(
+                {
+                    "Botfeatures": ".sang <replying to user message>\
+                    \nUsage: Get Name history of an user.\
+                    \n\n.fakemail <type and send in groups or private chats>\
+                    \nUsage: Get a fake email id and get all mails forwarded to you.\
+                    \n\n.ub <paste direct download link here>\
+                    \nUsage: Upload any file from direct download link to telegram max file limit 500MB.\
+                    \n\n.gid <replying to user message>\
+                    \nUsage: Get user_id of a person."
+                }
+            )
