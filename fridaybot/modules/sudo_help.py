@@ -1,4 +1,4 @@
-from userbot import CMD_HELP
+from fridaybot import CMD_HELP
 
 from fridaybot.utils import sudo_cmd, friday_on_cmd
 
