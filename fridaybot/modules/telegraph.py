@@ -110,7 +110,9 @@ def resize_image(image):
 CMD_HELP.update(
     {
         "telegraph": "**Telegraph**\
-\n\n**Syntax : **`.telegraph media <reply to your image or video> OR .telegraph text <reply to text> `\
-\n**Usage :** upload text or image directly to Telegraph"
+\n\n**Syntax : **`.telegraph media <reply to image or video>`\
+\n**Usage :** upload image and video directly to telegraph\
+\n\n**Syntax : **`.telegraph text <reply to text>`\
+\n**Usage :** upload text directly to telegraph .\
     }
 )
