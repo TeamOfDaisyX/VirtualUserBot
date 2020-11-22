@@ -15,7 +15,7 @@ from collections import deque
 
 """ Plugin By @chsaiujwal on telegram """
 from asyncio import wait
-
+from telethon import events
 import requests
 from cowpy import cow
 from telethon.tl.functions.users import GetFullUserRequest
