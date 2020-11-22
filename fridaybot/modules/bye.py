@@ -7,6 +7,7 @@
 import time
 
 from telethon.tl.functions.channels import LeaveChannelRequest
+
 from fridaybot import CMD_HELP
 from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 
@@ -22,6 +23,7 @@ async def leave(e):
             await borg(LeaveChannelRequest(e.chat_id))
         else:
             await starkgang.edit("`Sir This is Not A Chat`")
+
 
 CMD_HELP.update(
     {
