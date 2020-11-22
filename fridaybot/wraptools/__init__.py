@@ -42,8 +42,10 @@ def am_i_admin():
         async def wrapper(event):
             pep = await bot.get_me()
             sed = await bot.get_permissions(event.chat_id, pep)
-            if sed.is_admin or sed.is_creator:
+            if sed.is_admin:
                 await func(event)
+            if sed.is_creator:
+                await func(event) 
             else:
                 await event.edit(
                     "I Must Be Admin To Do This. Please Make Sure I Am Admin."
