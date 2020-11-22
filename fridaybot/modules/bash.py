@@ -1,7 +1,7 @@
 import asyncio
 import io
 import time
-
+from fridaybot import CMD_HELP
 from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 
 
@@ -50,6 +50,6 @@ CMD_HELP.update(
     {
         "bash": "**Bash**\
 \n\n**Syntax : **`.bash <cmd>`\
-\n**Usage :** Run Commands Using Userbot \
+\n**Usage :** Run Commands Using Userbot \"
     }
 )
