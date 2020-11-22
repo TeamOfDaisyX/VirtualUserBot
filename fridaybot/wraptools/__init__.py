@@ -40,9 +40,8 @@ def am_i_admin():
     def decorator(func):
         @functools.wraps(func)
         async def wrapper(event):
-            serena = bot
-            pep = await serena.get_me()
-            sed = await serena.get_permissions(event.chat_id, pep)
+            pep = await bot.get_me()
+            sed = await bot.get_permissions(event.chat_id, pep)
             if sed.is_admin or sed.is_creator:
                 await func(event)
             else:
@@ -59,7 +58,6 @@ def ignore_bot():
     def decorator(func):
         @functools.wraps(func)
         async def wrapper(event):
-            bot.tgbot
             reply_message = await event.get_reply_message()
             reply_message.sender
             if not reply_message.sender.bot:
