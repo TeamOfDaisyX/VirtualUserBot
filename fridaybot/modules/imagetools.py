@@ -67,7 +67,7 @@ async def hmm(event):
         await event.reply("Reply to any Image.")
         return
     headers = {"api-key": life}
-    hmm = await event.edit("Colourzing..")
+    hmm = await event.edit("Toooning.....")
     sed = await event.get_reply_message()
     if isinstance(sed.media, MessageMediaPhoto):
         img = await borg.download_media(sed.media, sedpath)
