@@ -48,7 +48,7 @@ async def hmm(event):
     }
     url = "https://api.deepai.org/api/colorizer"
     r = requests.post(url=url, files=img_file, headers=headers).json()
-    if r['err']:
+    if r["err"]:
         await event.edit("Some Errors. \nOutput : r['err']")
         return
     sedimg = r["output_url"]
@@ -56,7 +56,8 @@ async def hmm(event):
     await hmm.delete()
     if os.path.exists(img):
         os.remove(img)
-        
+
+
 @friday.on(friday_on_cmd(pattern=r"toon"))
 @friday.on(sudo_cmd(pattern=r"toon", allow_sudo=True))
 async def hmm(event):
@@ -82,7 +83,7 @@ async def hmm(event):
     }
     url = "https://api.deepai.org/api/toonify"
     r = requests.post(url=url, files=img_file, headers=headers).json()
-    if r['err']:
+    if r["err"]:
         await event.edit("Some Errors. \nOutput : r['err']")
         return
     sedimg = r["output_url"]
@@ -90,7 +91,8 @@ async def hmm(event):
     await hmm.delete()
     if os.path.exists(img):
         os.remove(img)
-        
+
+
 @friday.on(friday_on_cmd(pattern=r"nst"))
 @friday.on(sudo_cmd(pattern=r"nst", allow_sudo=True))
 async def hmm(event):
@@ -116,15 +118,14 @@ async def hmm(event):
     }
     url = "https://api.deepai.org/api/nsfw-detector"
     r = requests.post(url=url, files=img_file, headers=headers).json()
-    if r['err']:
+    if r["err"]:
         await event.edit("Some Errors. \nOutput : r['err']")
         return
     sedcopy = r["output"]
-    hmmyes = sedcopy['detections']
-    game = sedcopy['nsfw_score'] 
-    final = (f"**IMG RESULT** \n**Detections :** `{hmmyes}` \n**NSFW SCORE :** `{game}`")
+    hmmyes = sedcopy["detections"]
+    game = sedcopy["nsfw_score"]
+    final = f"**IMG RESULT** \n**Detections :** `{hmmyes}` \n**NSFW SCORE :** `{game}`"
     await borg.send_message(event.chat_id, final)
     await hmm.delete()
     if os.path.exists(img):
         os.remove(img)
-        
