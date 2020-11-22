@@ -40,7 +40,7 @@ def am_i_admin():
     def decorator(func):
         @functools.wraps(func)
         async def wrapper(event):
-            serena = bot.tgbot
+            serena = bot
             pep = await serena.get_me()
             sed = await serena.get_permissions(event.chat_id, pep)
             if sed.is_admin or sed.is_creator:
