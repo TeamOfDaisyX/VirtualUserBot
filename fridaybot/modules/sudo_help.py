@@ -1,9 +1,10 @@
 from userbot import CMD_HELP
 
-from fridaybot.utils import sudo_cmd
+from fridaybot.utils import sudo_cmd, friday_on_cmd
 
 
-@friday.on(sudo_cmd(pattern="help ?(.*)", allow_sudo=True))
+@friday.on(sudo_cmd(pattern="shelp ?(.*)", allow_sudo=True))
+@friday.on(friday_on_cmd(pattern="shelp ?(.*)"))
 async def _(event):
     args = event.pattern_match.group(1).lower()
     if args:
