@@ -1,6 +1,5 @@
 from fridaybot import CMD_HELP
-
-from fridaybot.utils import sudo_cmd, friday_on_cmd
+from fridaybot.utils import friday_on_cmd, sudo_cmd
 
 
 @friday.on(sudo_cmd(pattern="shelp ?(.*)", allow_sudo=True))
