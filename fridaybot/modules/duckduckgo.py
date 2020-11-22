@@ -1,7 +1,9 @@
 """use command .ducduckgo"""
 
 from uniborg.util import friday_on_cmd
+
 from fridaybot import CMD_HELP
+
 
 @friday.on(friday_on_cmd("ducduckgo (.*)"))
 async def _(event):
