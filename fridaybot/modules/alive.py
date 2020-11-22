@@ -68,7 +68,8 @@ async def friday(alive):
 
 CMD_HELP.update(
     {
-        "alive": ".alive \
-\nUsage: Check if userbot is Alive"
+        "alive": "**ALive**\
+\n\n**Syntax : **`.alive`\
+\n**Usage :** Check if UserBot is Alive"
     }
 )
