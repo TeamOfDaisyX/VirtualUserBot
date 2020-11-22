@@ -4,10 +4,11 @@ Available Commands:
 .telegraph text as reply to a large text"""
 import os
 from datetime import datetime
-from fridaybot import CMD_HELP
+
 from PIL import Image
 from telegraph import Telegraph, exceptions, upload_file
 
+from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd
 
 telegraph = Telegraph()
@@ -104,7 +105,6 @@ async def _(event):
 def resize_image(image):
     im = Image.open(image)
     im.save(image, "PNG")
-
 
 
 CMD_HELP.update(
