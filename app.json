@@ -110,9 +110,6 @@
       "url": "heroku/python"
     },
     {
-      "url": "https://github.com/heroku/heroku-buildpack-google-chrome"
-    },
-    {
       "url": "https://github.com/heroku/heroku-buildpack-chromedriver"
     },
     {
@@ -120,9 +117,6 @@
     },
     {
       "url": "https://github.com/heroku/heroku-buildpack-apt"
-    },
-    {
-      "url": "https://github.com/opendoor-labs/heroku-buildpack-p7zip"
     }
   ]
 }
