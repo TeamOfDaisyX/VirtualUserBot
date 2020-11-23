@@ -15,7 +15,7 @@ import asyncio
 import random
 
 from fridaybot.utils import friday_on_cmd
-
+from fridaybot import CMD_HELP
 
 @friday.on(friday_on_cmd(pattern=r"qt"))
 async def _(event):
@@ -327,3 +327,13 @@ async def _(event):
         await event.edit(
             '`"What’s something you misunderstood as a child and only realized much later was wrong?"`'
         )
+
+
+
+CMD_HELP.update(
+    {
+        "conversationqt": "**Conversationqt**\
+\n\n**Syntax : **`.qt`\
+\n**Usage :** this plugin generates questions."
+    }
+)
