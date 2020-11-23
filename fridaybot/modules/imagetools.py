@@ -13,8 +13,7 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import os
-import cv2
-from PIL import Image
+
 import requests
 from telethon.tl.types import MessageMediaPhoto
 
