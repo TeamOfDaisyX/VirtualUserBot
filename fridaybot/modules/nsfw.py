@@ -21,15 +21,16 @@ from fridaybot.utils import friday_on_cmd, sudo_cmd
 async def nsfw(event):
     url = "https://nsfw-categorize.it/api/upload"
     await event.edit("`Processing..`")
-    replymsg = await event.get_reply_message()
+    sed = await event.get_reply_message()
     photo = None
     if replymsg and replymsg.media:
-        if isinstance(replymsg.media, MessageMediaPhoto):
-            photo = await borg.download_media(message=replymsg.photo)
-        elif "image" in replymsg.media.document.mime_type.split("/"):
-            photo = await borg.download_file(replymsg.media.document)
+        if isinstance(sed.media, MessageMediaPhoto):
+            photo  = await borg.download_media(sed.media, sedpath)
+        elif "image" in response.media.document.mime_type.split("/"):
+            photo = await borg.download_media(sed.media, sedpath)
         else:
-            await event.edit("`Reply To Image.`")
+            await event.edit("Reply To Image")
+            return
     if photo:
         files = {"image": (f"{photo}", open(f"{photo}", "rb"))}
         r = requests.post(url, files=files).json()
