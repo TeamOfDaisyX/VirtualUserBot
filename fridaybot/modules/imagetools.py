@@ -158,3 +158,6 @@ async def iamthug(event):
     background.save(ok, "PNG")
     await borg.send_file(event.chat_id, ok)
     await hmm.delete()
+    for files in (ok, img):
+        if files and os.path.exists(files):
+            os.remove(files)
