@@ -4,7 +4,7 @@ PyGithub
 git+https://github.com/ytdl-org/youtube-dl.git
 git+https://github.com/StarkGang/Telethon.git
 iplookup
-opencv-python
+pyopencv
 git+https://github.com/Starkgangs/pydl.git
 pytesseract
 spotdl
