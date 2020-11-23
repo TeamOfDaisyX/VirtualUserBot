@@ -31,12 +31,10 @@ else:
 
 
 CMD_LIST = {}
-# for later purposes
 CMD_HELP = {}
 INT_PLUG = ""
 LOAD_PLUG = {}
 
-# PaperPlaneExtended Support Vars
 ENV = os.environ.get("ENV", False)
 """ PPE initialization. """
 
@@ -54,9 +52,6 @@ if bool(ENV):
             format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=INFO
         )
     LOGS = getLogger(__name__)
-
-    # Check if the config was edited by using the already used variable.
-    # Basically, its the 'virginity check' for the config file ;)
     CONFIG_CHECK = os.environ.get(
         "___________PLOX_______REMOVE_____THIS_____LINE__________", None
     )
@@ -170,11 +165,6 @@ if bool(ENV):
 else:
     # Put your ppe vars here if you are using local hosting
     PLACEHOLDER = None
-
-# Setting Up CloudMail.ru and MEGA.nz extractor binaries,
-# and giving them correct perms to work properly.
-if not os.path.exists("bin"):
-    os.mkdir("bin")
 
 # Global Variables
 COUNT_MSG = 0
