@@ -31,10 +31,12 @@
 
 import io
 from random import randint, uniform
-from fridaybot import CMD_HELP
+
 from PIL import Image, ImageEnhance, ImageOps
 from telethon.tl.types import DocumentAttributeFilename
 from uniborg.util import friday_on_cmd
+
+from fridaybot import CMD_HELP
 
 
 @friday.on(friday_on_cmd(pattern="deepfry(?: |$)(.*)", outgoing=True))
@@ -144,6 +146,7 @@ async def check_media(reply_message):
     else:
         return data
 
+
 CMD_HELP.update(
     {
         "deepfryer": "**Deepfryer**\
@@ -151,5 +154,3 @@ CMD_HELP.update(
 \n**Usage :** This plugin deepfries the given image."
     }
 )
-
-
