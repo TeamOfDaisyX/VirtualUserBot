@@ -202,7 +202,6 @@ async def _(event):
             caption="Total Channel In DB.",
             allow_cache=False,
         )
-        
         CMD_HELP.update(
                 {
                     "broadcast": "**broadcast**\
