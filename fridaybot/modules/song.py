@@ -7,20 +7,6 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from fridaybot import bot
 from fridaybot.utils import friday_on_cmd
 
-try:
-    pass
-except:
-    os.system("pip install instantmusic")
-
-
-os.system("rm -rf *.mp3")
-
-
-def bruh(name):
-
-    os.system("instantmusic -q -s " + name)
-
-
 @friday.on(friday_on_cmd(pattern="spd ?(.*)"))
 async def _(event):
     if event.fwd_from:
