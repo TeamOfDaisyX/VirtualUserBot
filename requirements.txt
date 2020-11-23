@@ -2,12 +2,12 @@ Pillow
 python-magic
 glitch_this
 PyGithub
-git+https://github.com/ytdl-org/youtube-dl.git
-git+https://github.com/StarkGang/Telethon.git
+youtube-dl
+telethon
 iplookup
 numpy
 opencv-contrib-python
-git+https://github.com/Starkgangs/pydl.git
+pytube3
 pytesseract
 aiofiles
 pyshorteners
@@ -59,7 +59,6 @@ telegraph
 tswift
 urbandict>=0.5
 wikipedia>=1.4.0
-youtube-dl
 validators
 youtube-search
 youtube-search-python
