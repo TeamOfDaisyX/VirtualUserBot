@@ -3,7 +3,7 @@ Syntax: .decide"""
 import requests
 
 from fridaybot.utils import friday_on_cmd
-
+from fridaybot import CMD_HELP
 
 @friday.on(friday_on_cmd("decide"))
 async def _(event):
@@ -17,3 +17,12 @@ async def _(event):
         event.chat_id, r["answer"], reply_to=message_id, file=r["image"]
     )
     await event.delete()
+
+
+CMD_HELP.update(
+    {
+        "decide": "**Decide**\
+\n\n**Syntax : **`.decide`\
+\n**Usage :** Use this plugin to quickly make a decision."
+    }
+)
