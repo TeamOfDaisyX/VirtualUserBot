@@ -7,7 +7,7 @@ from telethon.tl.types import (
 )
 
 from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
-
+from fridaybot import CMD_HELP
 
 @friday.on(friday_on_cmd("get_ad?(m)in ?(.*)"))
 @friday.on(sudo_cmd("get_ad?(m)in ?(.*)", allow_sudo=True))
@@ -62,3 +62,12 @@ async def _(event):
         await event.delete()
     else:
         await admeme.edit(mentions)
+
+
+CMD_HELP.update(
+    {
+        "get_admin": "**Get_admin**\
+\n\n**Syntax : **`.get_admin`\
+\n**Usage :** lists all the admins in a group."
+    }
+)
