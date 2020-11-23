@@ -2,3 +2,7 @@ mediainfo
 tesseract-ocr
 tesseract-ocr-eng
 imagemagick
+libsm6
+libxrender1
+libfontconfig1
+libice6
