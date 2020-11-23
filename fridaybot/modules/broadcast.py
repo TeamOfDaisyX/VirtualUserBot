@@ -202,7 +202,10 @@ async def _(event):
             caption="Total Channel In DB.",
             allow_cache=False,
         )
-        CMD_HELP.update(
+        
+        
+        
+CMD_HELP.update(
                 {
                     "broadcast": "**broadcast**\
                     \n\n**Syntax : **`.badd <channel_id>`\
