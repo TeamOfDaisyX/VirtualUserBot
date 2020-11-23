@@ -31,12 +31,10 @@ lyricsgenius
 oauth2client
 psycopg2-binary
 PyLyrics
-PyPDF2
 pySmartDL
 pybase64>=0.4.0
 pyfiglet
 pylast
-pymongo
 python-barcode
 python-dotenv
 pytz
@@ -51,7 +49,6 @@ telegraph
 tswift
 urbandict>=0.5
 wikipedia>=1.4.0
-validators
 youtube-search
 youtube-search-python
 wget
