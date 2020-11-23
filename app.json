@@ -116,13 +116,7 @@
       "url": "https://github.com/heroku/heroku-buildpack-chromedriver"
     },
     {
-      "url": "https://github.com/heroku/heroku-buildpack-apt"
-    }
-    {
       "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
-    },
-    {
-      "url": "heroku/python"
     },
     {
       "url": "https://github.com/heroku/heroku-buildpack-apt"
