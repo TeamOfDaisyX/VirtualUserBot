@@ -6,7 +6,6 @@ youtube-dl
 telethon
 iplookup
 numpy
-opencv-contrib-python
 pytube3
 pytesseract
 aiofiles
