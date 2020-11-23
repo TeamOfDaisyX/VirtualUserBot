@@ -3,3 +3,4 @@ tesseract-ocr
 tesseract-ocr-eng
 imagemagick
 python-opencv
+libgl1
