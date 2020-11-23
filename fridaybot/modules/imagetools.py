@@ -13,8 +13,8 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import os
+
 import requests
-from PIL import Image
 from telethon.tl.types import MessageMediaPhoto
 
 from fridaybot.utils import friday_on_cmd, sudo_cmd
