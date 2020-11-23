@@ -15,6 +15,7 @@
 import io
 import os
 
+from fridaybot import CMD_HELP
 from fridaybot.Configs import Config
 from fridaybot.modules.sql_helper.broadcast_sql import (
     add_chnnl_in_db,
@@ -201,3 +202,48 @@ async def _(event):
             caption="Total Channel In DB.",
             allow_cache=False,
         )
+        
+        
+CMD_HELP.update(
+    {
+        "broadcast": "**broadcast**\
+        \n\n**Syntax : **`.badd <channel_id>`\
+        \n**Usage :** Adds the given channel/group to database.\
+        \n\n**Syntax : **`.badd all`\
+        \n**Usage :** Adds all the channel/groups to database where you are admin.\
+        \n\n**Syntax : **`.brm <channel_id>`\
+        \n**Usage :** Removes the Specified Channel From database.\
+        \n\n**Syntax : **`.brm all`\
+        \n**Usage :** Removes Everything From DataBase.\
+        \n\n**Syntax : **`.broadcast <Reply-To-Msg>`\
+        \n**Usage :**  Broadcasts To All Channel in DB, Even Supports Media.\
+        \n\n**Syntax : **`.forward <Reply-To-Msg>`\
+        \n**Usage :** Forwards To All Channel in Database.\
+        \n\n**Syntax : **`.bstat`\
+        \n**Usage :** Shows list of channels/groups in database."
+    }
+)
+
+        
+
+
+
+        
+
+        
+
+
+        
+        
+
+
+
+
+        
+
+
+
+                 
+                   
+                
+            
