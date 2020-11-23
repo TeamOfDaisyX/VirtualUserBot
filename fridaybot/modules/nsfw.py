@@ -12,7 +12,7 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import requests
 from telethon.tl.types import MessageMediaPhoto
-
+import os
 from fridaybot.utils import friday_on_cmd, sudo_cmd
 
 
@@ -38,5 +38,9 @@ async def nsfw(event):
             await event.edit(
                 "This image is classified as " + str(r["data"]["classification"])
             )
+        if os.path.exists(photo):
+            os.remove(photo)
         else:
             await event.edit("Response UnsucessFull. Try Again.")
+            if os.path.exists(photo):
+                os.remove(photo)
