@@ -211,8 +211,8 @@ async def _(event):
                     \nUsage: Adds All Channel You Are Admin, Just in One Cmd.\
                     \n\n.brm <Group/Channel ID>\
                     \nUsage: Remove a previously added channel/group from database.\
-                    \n\n.brm all <use in saved messages or groups>
-                    \nUsage: Remove Everything From DB
+                    \n\n.brm all <use in saved messages or groups>\
+                    \nUsage: Remove Everything From DB.\
                     \n\n.broadcast <Replying to message u want to broadcast>\
                     \nUsage: Directly broadcast a message to all the groups/channels added in bot database.\
                     \n\n.bforward <replying to user message>\
