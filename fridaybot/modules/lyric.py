@@ -108,6 +108,7 @@ async def lyrics(lyric):
         )
     return
 
+
 CMD_HELP.update(
     {
         "lyric": "**Lyric**\
@@ -117,5 +118,3 @@ CMD_HELP.update(
 \n**Usage :** this plugin searches for song lyrics with song name and artist."
     }
 )
-
-
