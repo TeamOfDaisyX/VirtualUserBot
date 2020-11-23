@@ -207,7 +207,7 @@ async def _(event):
 CMD_HELP.update(
     {
         "broadcast": "**broadcast**\
- \n\n**Syntax : **`.badd <channel_id>`\ 
+\n\n**Syntax : **`.badd <channel_id>`\ 
 \n**Usage :** Adds the given channel/group to database.\
 \n\n**Syntax : **`.badd all`\
 \n**Usage :** Adds all the channel/groups to database where you are admin.\
