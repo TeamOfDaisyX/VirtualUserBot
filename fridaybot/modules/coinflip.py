@@ -1,7 +1,7 @@
 """CoinFlip for @UniBorg
 Syntax: .coinflip [optional_choice]"""
 import random
-
+from fridaybot import CMD_HELP
 from uniborg.util import friday_on_cmd
 
 
@@ -33,3 +33,12 @@ async def _(event):
             await event.edit("The coin landed on: **Tails**.")
     else:
         await event.edit("¯\_(ツ)_/¯")
+
+
+CMD_HELP.update(
+    {
+        "coinflip": "**Coinflip**\
+\n\n**Syntax : **`.coin`\
+\n**Usage :** This plugin flips the coin to land on heads or tails."
+    }
+)
