@@ -13,7 +13,7 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import os
-
+import cv2
 import requests
 from telethon.tl.types import MessageMediaPhoto
 
@@ -121,3 +121,42 @@ async def hmm(event):
     await hmm.delete()
     if os.path.exists(img):
         os.remove(img)
+
+        
+        
+@friday.on(friday_on_cmd(pattern=r"thug"))
+@friday.on(sudo_cmd(pattern=r"thug", allow_sudo=True))
+async def iamthug(event):
+    if not event.reply_to_msg_id:
+        await event.reply("Reply to any Image.")
+        return
+    hmm = await event.edit("`Converting To thug Image..`")
+    sed = await event.get_reply_message()
+    if isinstance(sed.media, MessageMediaPhoto):
+        img = await borg.download_media(sed.media, sedpath)
+    elif "image" in sed.media.document.mime_type.split("/"):
+        img = await borg.download_media(sed.media, sedpath)
+    else:
+        await event.edit("Reply To Image")
+        return
+    imagePath = img
+    maskPath = "./resources/thuglife/mask.png"
+    cascPath = "./resources/thuglife/face_regex.xml"
+    faceCascade = cv2.CascadeClassifier(cascPath)
+    image = cv2.imread(imagePath)
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    faces = faceCascade.detectMultiScale(gray, 1.15)
+    background = Image.open(imagePath)
+    for (x, y, w, h) in faces:
+        mask = Image.open(maskPath)
+        mask = mask.resize((w, h), Image.ANTIALIAS)
+        offset = (x, y)
+        background.paste(mask, offset, mask=mask)
+    file_name = "fridaythug.png"
+    ok = sedpath + "/" + file_name
+    background.save(ok, "PNG")
+    await borg.send_file(event.chat_id, ok)
+    await hmm.delete()
+    for files in (ok, img):
+        if files and os.path.exists(files):
+            os.remove(files)
