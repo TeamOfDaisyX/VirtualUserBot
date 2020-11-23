@@ -7,6 +7,7 @@ from datetime import datetime
 
 import requests
 from uniborg.util import friday_on_cmd, sudo_cmd
+
 from fridaybot import CMD_HELP
 
 logging.basicConfig(
