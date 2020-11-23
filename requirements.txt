@@ -3,6 +3,7 @@ python-magic
 glitch_this
 PyGithub
 youtube-dl
+opencv-contrib-python
 telethon
 iplookup
 numpy
