@@ -146,13 +146,13 @@ async def iamthug(event):
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     faces = faceCascade.detectMultiScale(gray, 1.15)
     background = Image.open(imagePath)
-    for (x,y,w,h) in faces:
-	    mask = Image.open(maskPath)
-	    mask = mask.resize((w,h), Image.ANTIALIAS)
-	    offset = (x,y)
-	    background.paste(mask, offset, mask=mask)
+    for (x, y, w, h) in faces:
+        mask = Image.open(maskPath)
+        mask = mask.resize((w, h), Image.ANTIALIAS)
+        offset = (x, y)
+        background.paste(mask, offset, mask=mask)
     file_name = "fridaythug.png"
     ok = sedpath + "/" + file_name
-    background.save(ok, 'PNG')
+    background.save(ok, "PNG")
     await borg.send_file(event.chat_id, ok)
     await hmm.delete()
