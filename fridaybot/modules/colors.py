@@ -3,6 +3,7 @@ Syntax: .color <color_code>"""
 import os
 
 from PIL import Image, ImageColor
+
 from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd
 
@@ -36,7 +37,6 @@ async def _(event):
             await event.delete()
     else:
         await event.edit("Syntax: `.color <color_code>`")
-
 
 
 CMD_HELP.update(
