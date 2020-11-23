@@ -4,3 +4,5 @@ tesseract-ocr-eng
 imagemagick
 python-opencv
 libgl1
+ffmpeg
+p7zip-full
