@@ -1,8 +1,10 @@
 """CoinFlip for @UniBorg
 Syntax: .coinflip [optional_choice]"""
 import random
-from fridaybot import CMD_HELP
+
 from uniborg.util import friday_on_cmd
+
+from fridaybot import CMD_HELP
 
 
 @friday.on(friday_on_cmd(pattern="coin ?(.*)"))
