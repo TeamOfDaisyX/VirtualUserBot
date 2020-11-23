@@ -1,7 +1,7 @@
 import asyncio
 
 from fridaybot.utils import friday_on_cmd
-
+from fridaybot import CMD_HELP
 
 @friday.on(friday_on_cmd("gangasta ?(.*)"))
 async def _(event):
@@ -21,3 +21,12 @@ async def _(event):
         await event.edit("🔥🔥🔥")
         await asyncio.sleep(0.3)
         await event.edit("EVERyBOdy iZ GangSTur UNtIL I ArRivE 🔥🔥🔥")
+
+
+CMD_HELP.update(
+    {
+        "gangasta": "**Gangasta**\
+\n\n**Syntax : **`.gangasta`\
+\n**Usage :** shows your gangster skills."
+    }
+)
