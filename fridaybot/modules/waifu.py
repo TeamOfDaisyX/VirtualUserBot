@@ -32,8 +32,6 @@ def deEmojify(inputString: str) -> str:
 @friday.on(friday_on_cmd(pattern=r"waifu(?: |$)(.*)"))
 @friday.on(sudo_cmd(pattern=r"waifu(?: |$)(.*)", allow_sudo=True))
 async def waifu(animu):
-    # """Creates random anime sticker!"""
-
     text = animu.pattern_match.group(1)
     if not text:
         if animu.is_reply:
