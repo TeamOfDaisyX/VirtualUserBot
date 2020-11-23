@@ -13,6 +13,7 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import os
+
 import cv2
 import requests
 from telethon.tl.types import MessageMediaPhoto
@@ -122,8 +123,7 @@ async def hmm(event):
     if os.path.exists(img):
         os.remove(img)
 
-        
-        
+
 @friday.on(friday_on_cmd(pattern=r"thug"))
 @friday.on(sudo_cmd(pattern=r"thug", allow_sudo=True))
 async def iamthug(event):
