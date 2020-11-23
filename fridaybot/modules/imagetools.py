@@ -14,10 +14,11 @@
 
 import os
 
-import requests
-from telethon.tl.types import MessageMediaPhoto
 import cv2
+import requests
 from PIL import Image
+from telethon.tl.types import MessageMediaPhoto
+
 from fridaybot.utils import friday_on_cmd, sudo_cmd
 
 sedpath = "./starkgangz/"
@@ -123,8 +124,7 @@ async def hmm(event):
     if os.path.exists(img):
         os.remove(img)
 
-        
-        
+
 @friday.on(friday_on_cmd(pattern=r"thug"))
 @friday.on(sudo_cmd(pattern=r"thug", allow_sudo=True))
 async def iamthug(event):
@@ -148,13 +148,13 @@ async def iamthug(event):
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     faces = faceCascade.detectMultiScale(gray, 1.15)
     background = Image.open(imagePath)
-    for (x,y,w,h) in faces:
-	    mask = Image.open(maskPath)
-	    mask = mask.resize((w,h), Image.ANTIALIAS)
-	    offset = (x,y)
-	    background.paste(mask, offset, mask=mask)
+    for (x, y, w, h) in faces:
+        mask = Image.open(maskPath)
+        mask = mask.resize((w, h), Image.ANTIALIAS)
+        offset = (x, y)
+        background.paste(mask, offset, mask=mask)
     file_name = "fridaythug.png"
     ok = sedpath + "/" + file_name
-    background.save(ok, 'PNG')
+    background.save(ok, "PNG")
     await borg.send_file(event.chat_id, ok)
     await hmm.delete()
