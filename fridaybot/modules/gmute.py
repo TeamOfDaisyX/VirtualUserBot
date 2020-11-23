@@ -1,7 +1,8 @@
 import asyncio
 
-from fridaybot.modules.sql_helper.mute_sql import is_muted, mute, unmute
 from fridaybot import CMD_HELP
+from fridaybot.modules.sql_helper.mute_sql import is_muted, mute, unmute
+
 
 @command(outgoing=True, pattern=r"^.gmute ?(\d+)?")
 async def startgmute(event):
@@ -133,7 +134,6 @@ async def endgmute(event):
 async def watcher(event):
     if is_muted(event.sender_id, "gmute"):
         await event.delete()
-
 
 
 CMD_HELP.update(
