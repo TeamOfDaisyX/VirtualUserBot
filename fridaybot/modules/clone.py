@@ -8,6 +8,7 @@ import html
 from telethon.tl import functions
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
+
 from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd
 
