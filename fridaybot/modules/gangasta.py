@@ -1,7 +1,8 @@
 import asyncio
 
-from fridaybot.utils import friday_on_cmd
 from fridaybot import CMD_HELP
+from fridaybot.utils import friday_on_cmd
+
 
 @friday.on(friday_on_cmd("gangasta ?(.*)"))
 async def _(event):
