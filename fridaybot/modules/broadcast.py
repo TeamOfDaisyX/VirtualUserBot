@@ -23,6 +23,7 @@ from fridaybot.modules.sql_helper.broadcast_sql import (
     rm_channel,
 )
 from fridaybot.utils import friday_on_cmd
+from fridaybot import CMD_HELP
 
 loggy_grp = Config.PRIVATE_GROUP_ID
 
@@ -201,3 +202,24 @@ async def _(event):
             caption="Total Channel In DB.",
             allow_cache=False,
         )
+        
+        CMD_HELP.update(
+                {
+                    "Broadcast": "\n.badd <Group/Channel ID>\
+                    \nUsage: Add a channel/group to database.\
+                    \n\n.badd all <use in saved messages or group>\
+                    \nUsage: Adds All Channel You Are Admin, Just in One Cmd.\
+                    \n\n.brm <Group/Channel ID>\
+                    \nUsage: Remove a previously added channel/group from database.\
+                    \n\n.brm all <use in saved messages or groups>
+                    \nUsage: Remove Everything From DB
+                    \n\n.broadcast <Replying to message u want to broadcast>\
+                    \nUsage: Directly broadcast a message to all the groups/channels added in bot database.\
+                    \n\n.bforward <replying to user message>\
+                    \nUsage: Forwards To All Channel in Database.\
+                    \n\n.bstat <use in group or saved messages>\
+                    \nUsage: Shows Total IDs in DB."
+                }
+        )
+                
+            
