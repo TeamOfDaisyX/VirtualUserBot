@@ -14,8 +14,8 @@ from os import environ, execle, path, remove
 
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
-from fridaybot import CMD_HELP
 
+from fridaybot import CMD_HELP
 from var import Var
 
 UPSTREAM_REPO_URL = Config.UPSTREAM_REPO
