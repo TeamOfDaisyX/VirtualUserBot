@@ -1,6 +1,6 @@
 from pathlib import Path
 from sys import argv
-
+import logging
 import telethon.utils
 from telethon import TelegramClient
 
@@ -9,6 +9,7 @@ from fridaybot.Configs import Config
 from fridaybot.utils import load_module, start_assistant
 from var import Var
 
+sed = logging.getLogger("Friday")
 
 async def add_bot(bot_token):
     await bot.start(bot_token)
@@ -47,10 +48,10 @@ if Config.ENABLE_ASSISTANTBOT == "ENABLE":
             path1 = Path(f.name)
             shortname = path1.stem
             start_assistant(shortname.replace(".py", ""))
-    print("Friday And Assistant Bot Have Been Installed Successfully !")
+    sed.info("Friday And Assistant Bot Have Been Installed Successfully !")
 else:
-    print("Friday Has Been Installed Sucessfully !")
-    print("You Can Visit @FridayOT For Any Support Or Doubts")
+    sed.info("Friday Has Been Installed Sucessfully !")
+    sed.info("You Can Visit @FridayOT For Any Support Or Doubts")
 
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
