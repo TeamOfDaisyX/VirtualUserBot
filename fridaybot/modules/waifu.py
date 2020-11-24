@@ -54,8 +54,6 @@ async def waifu(animu):
     await animu.delete()
 
 
-
-
 CMD_HELP.update(
     {
         "waifu": "**Waifu**\
