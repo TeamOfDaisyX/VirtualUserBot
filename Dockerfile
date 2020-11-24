@@ -1,7 +1,6 @@
-FROM kalilinux/kali-rolling
-ARG DEBIAN_FRONTEND=noninteractive
+FROM ubuntu
 RUN apt-get update && apt upgrade -y && apt-get install sudo -y
-
+ENV DEBAIN_FRONTEND=noninteractive
 
 RUN apt-get install -y\
     coreutils \
