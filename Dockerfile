@@ -1,5 +1,6 @@
 FROM kalilinux/kali-rolling
 ARG DEBIAN_FRONTEND=noninteractive
+RUN touch /etc/kali-motd/disable-all
 RUN apt-get update && apt upgrade -y && apt-get install sudo -y
 
 RUN apt-get install -y\
