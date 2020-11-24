@@ -7,7 +7,7 @@ Available Commands:
 
 
 import asyncio
-
+from fridaybot import CMD_HELP
 from uniborg.util import friday_on_cmd
 
 
@@ -55,3 +55,13 @@ async def _(event):
         await asyncio.sleep(animation_interval)
 
         await event.edit(animation_chars[i % 19])
+
+
+CMD_HELP.update(
+    {
+        "jio": "**Jio**\
+\n\n**Syntax : **`.jio`\
+\n**Usage :** funny prank plugin."
+    }
+)
+
