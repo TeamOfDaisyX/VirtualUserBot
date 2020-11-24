@@ -6,6 +6,7 @@ youtube-dl
 opencv-contrib-python
 telethon
 iplookup
+wget
 numpy
 pyshorteners
 aiohttp
