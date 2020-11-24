@@ -10,8 +10,6 @@ from fridaybot.Configs import Config
 from fridaybot.utils import load_module, start_assistant
 from var import Var
 
-sed = logging.getLogger(shortname)
-
 
 async def add_bot(bot_token):
     await bot.start(bot_token)
@@ -50,10 +48,10 @@ if Config.ENABLE_ASSISTANTBOT == "ENABLE":
             path1 = Path(f.name)
             shortname = path1.stem
             start_assistant(shortname.replace(".py", ""))
-    sed.info("Friday And Assistant Bot Have Been Installed Successfully !")
+    print("Friday And Assistant Bot Have Been Installed Successfully !")
 else:
-    sed.info("Friday Has Been Installed Sucessfully !")
-    sed.info("You Can Visit @FridayOT For Any Support Or Doubts")
+    print("Friday Has Been Installed Sucessfully !")
+    print("You Can Visit @FridayOT For Any Support Or Doubts")
 
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
