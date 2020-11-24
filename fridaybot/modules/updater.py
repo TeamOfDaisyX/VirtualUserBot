@@ -11,7 +11,7 @@ This module updates the userbot based on upstream revision
 import asyncio
 import sys
 from os import environ, execle, path, remove
-
+from fridaybot.utils import friday_on_cmd
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
@@ -168,7 +168,7 @@ async def upstream(event):
     if ac_br != UPSTREAM_REPO_BRANCH:
         await event.edit(
             f"**Looks like you are using your own custom branch: ({ac_br}). \n"
-            "Please switch to** `sql-extended` **branch.**"
+            "Please switch to** `master` **branch.**"
         )
         return repo.__del__()
     try:
