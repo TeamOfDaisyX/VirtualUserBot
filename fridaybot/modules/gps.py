@@ -8,6 +8,7 @@ credits :@mrconfused
 
 from geopy.geocoders import Nominatim
 from telethon.tl import types
+
 from fridaybot import CMD_HELP
 from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 
