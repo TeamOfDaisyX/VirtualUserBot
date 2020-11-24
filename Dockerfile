@@ -1,11 +1,10 @@
-FROM ubuntu
+FROM kalilinux/kali-rolling
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt upgrade -y && apt-get install sudo -y
 
 RUN apt-get install -y\
     coreutils \
     bash \
-    nodejs \
     bzip2 \
     curl \
     figlet \
@@ -44,6 +43,7 @@ RUN apt-get install -y\
     procps \
     policykit-1
 
+RUN apt-get autoremove --purge
 RUN pip3 install --upgrade pip setuptools 
 RUN pip3 install --upgrade pip
 RUN if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi 
