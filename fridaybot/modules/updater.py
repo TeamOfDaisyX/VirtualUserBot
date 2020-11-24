@@ -11,11 +11,12 @@ This module updates the userbot based on upstream revision
 import asyncio
 import sys
 from os import environ, execle, path, remove
-from fridaybot.utils import friday_on_cmd
+
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
 from fridaybot import CMD_HELP
+from fridaybot.utils import friday_on_cmd
 from var import Var
 
 UPSTREAM_REPO_URL = Config.UPSTREAM_REPO
