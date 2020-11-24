@@ -7,8 +7,10 @@ Available Commands:
 
 
 import asyncio
-from fridaybot import CMD_HELP
+
 from uniborg.util import friday_on_cmd
+
+from fridaybot import CMD_HELP
 
 
 @friday.on(friday_on_cmd(pattern=r"jio"))
@@ -64,4 +66,3 @@ CMD_HELP.update(
 \n**Usage :** funny prank plugin."
     }
 )
-
