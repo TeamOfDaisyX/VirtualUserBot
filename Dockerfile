@@ -59,4 +59,4 @@ RUN mkdir /root/fridaybot/bin/
 WORKDIR /root/fridaybot/
 RUN chmod +x /usr/local/bin/*
 RUN pip3 install -r requirements.txt
-CMD ["python -m fridaybot"]
+CMD ["bash","start.sh"]
