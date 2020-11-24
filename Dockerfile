@@ -1,6 +1,7 @@
-FROM ubuntu
+FROM kalilinux/kali-rolling
+ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt upgrade -y && apt-get install sudo -y
-ENV DEBAIN_FRONTEND=noninteractive
+RUN touch ~/.hushlogin
 
 
 RUN apt-get install -y\
@@ -58,4 +59,4 @@ RUN mkdir /root/fridaybot/bin/
 WORKDIR /root/fridaybot/
 RUN chmod +x /usr/local/bin/*
 RUN pip3 install -r requirements.txt
-CMD ["bash","resources/start.sh"]
+CMD ["python -m fridaybot"]
