@@ -6,6 +6,7 @@ youtube-dl
 opencv-contrib-python
 telethon
 iplookup
+wget
 numpy
 pyshorteners
 aiohttp
@@ -52,4 +53,3 @@ urbandict>=0.5
 wikipedia>=1.4.0
 youtube-search
 youtube-search-python
-wget
