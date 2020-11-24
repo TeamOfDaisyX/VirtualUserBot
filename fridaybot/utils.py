@@ -3,6 +3,7 @@ import inspect
 import logging
 import re
 from pathlib import Path
+
 from telethon import events
 
 from fridaybot import CMD_LIST, LOAD_PLUG, SUDO_LIST, bot
@@ -15,6 +16,7 @@ from fridaybot.wraptools import (
     ignore_pm,
 )
 from var import Var
+
 sedprint = logging.getLogger(shortname)
 cmdhandler = Config.COMMAND_HAND_LER
 bothandler = Config.BOT_HANDLER
