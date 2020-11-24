@@ -17,7 +17,7 @@ from fridaybot.wraptools import (
 )
 from var import Var
 
-sedprint = logging.getLogger("Main")
+sedprint = logging.getLogger("PLUGINS")
 cmdhandler = Config.COMMAND_HAND_LER
 bothandler = Config.BOT_HANDLER
 
