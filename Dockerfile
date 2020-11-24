@@ -1,6 +1,6 @@
 FROM ubuntu
-RUN apt-get update && apt upgrade -y && apt-get install sudo -y
 ENV DEBAIN_FRONTEND=noninteractive
+RUN apt-get update && apt upgrade -y && apt-get install sudo -y
 
 RUN apt-get install -y\
     coreutils \
