@@ -32,7 +32,7 @@ from telethon.tl.types import (
 )
 
 from fridaybot import BOTLOG, BOTLOG_CHATID, CMD_HELP
-from fridaybot.utils import admin_cmd, errors_handler, register
+from fridaybot.utils import admin_cmd, errors_handler
 
 # =================== CONSTANT ===================
 PP_TOO_SMOL = "`The image is too small`"
@@ -433,7 +433,8 @@ async def unmoot(unmot):
                 f"USER: [{user.first_name}](tg://user?id={user.id})\n"
                 f"CHAT: {unmot.chat.title}(`{unmot.chat_id}`)",
             )
-            
+
+
 @borg.on(admin_cmd(pattern=r"delusers(?: |$)(.*)"))
 @errors_handler
 async def rm_deletedacc(show):
