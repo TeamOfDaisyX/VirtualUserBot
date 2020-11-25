@@ -15,7 +15,7 @@ import asyncio
 import io
 import re
 
-from Configs import Config
+from fridaybot.Configs import Config
 from telethon import Button, custom, events
 from telethon.tl.functions.users import GetFullUserRequest
 
