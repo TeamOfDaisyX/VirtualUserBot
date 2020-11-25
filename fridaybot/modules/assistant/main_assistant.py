@@ -14,7 +14,7 @@
 import asyncio
 import io
 import re
-
+import os
 from telethon import Button, custom, events
 from telethon.tl.functions.users import GetFullUserRequest
 
@@ -43,9 +43,7 @@ async def start(event):
     devlop = await bot.get_me()
     hmmwow = devlop.first_name
     vent = event.chat_id
-    mypic = await tgbot.download_profile_photo(
-        starkbot.id, Config.TMP_DOWNLOAD_DIRECTORY
-    )
+    mypic = Config.ASSISTANT_START_PIC
     starttext = f"Hello, {firstname} ! Nice To Meet You, Well I Am {bot_id}, An Powerfull Assistant Bot. \n\nMy Master [{hmmwow}](tg://user?id={bot.uid}) \nYou Can Talk/Contact My Master Using This Bot. \n\nIf You Want Your Own Assistant You Can Deploy From Button Below. \n\nPowered By [Friday Userbot](t.me/FridayOT)"
     if event.sender_id == bot.uid:
         await tgbot.send_message(
