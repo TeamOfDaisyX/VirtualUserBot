@@ -6,7 +6,7 @@ cmd: .lol
 """
 import asyncio
 import random
-
+from fridaybot import CMD_HELP
 from uniborg.util import friday_on_cmd
 
 
@@ -78,3 +78,13 @@ async def _(event):
         await event.edit("hola lol")
     if x == 28:
         await event.edit("llllllllllllllooooooooooollllllllll")
+
+
+
+CMD_HELP.update(
+    {
+        "lol": "**Lol**\
+\n\n**Syntax : **`.lol`\
+\n**Usage :** Pulls up a random string."
+    }
+)
