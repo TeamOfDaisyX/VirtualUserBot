@@ -175,21 +175,24 @@ async def sedlyfsir(event):
     userstobc = get_all_users()
     error_count = 0
     sent_count = 0
-    hmmok = ''
+    hmmok = ""
     if msgtobroadcast == None:
-        await event.reply('`Wait. What? Broadcast None?`')
+        await event.reply("`Wait. What? Broadcast None?`")
         return
-    elif msgtobroadcast == ' ':
-        await event.reply('`Wait. What? Broadcast None?`')
+    elif msgtobroadcast == " ":
+        await event.reply("`Wait. What? Broadcast None?`")
         return
     for starkcast in userstobc:
         try:
             sent_count += 1
-            await tgbot.send_message(int(starkcast.chat_id), '**Hey, You Have Received A New Broadcast Message**')
+            await tgbot.send_message(
+                int(starkcast.chat_id),
+                "**Hey, You Have Received A New Broadcast Message**",
+            )
             await tgbot.send_message(int(starkcast.chat_id), msgtobroadcast)
             await asyncio.sleep(0.2)
         except Exception as e:
-            hmmok += f'Errors : {e} \n'
+            hmmok += f"Errors : {e} \n"
             error_count += 1
     await tgbot.send_message(
         event.chat_id,
