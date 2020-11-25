@@ -43,7 +43,7 @@ python-dotenv
 pytz
 qrcode
 regex
-requests
+requests>=2.18.4
 search-engine-parser>=0.4.2
 selenium
 speedtest-cli>=2.0.2
