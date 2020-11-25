@@ -124,7 +124,7 @@ async def update(event, repo, ups_rem, ac_br):
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
     await event.edit(
-        "**Successfully updated!**\nBot is restarting, will be back up in a few seconds."
+        "**Soft Update Sucessfull, Please Wait For Some Time To Get This Process Completed.**"
     )
     # Spin a new instance of bot
     args = [sys.executable, "-m", "fridaybot"]
@@ -184,7 +184,7 @@ async def upstream(event):
     """ - Special case for deploy - """
     if conf == "deploy":
         await event.edit(
-            "**Perfoming a full update...**\nThis usually takes less than 5 minutes, please wait."
+            "**Perfoming a Power Update, Please Wait. It Usually Takes 5 min.**"
         )
         await deploy(event, repo, ups_rem, ac_br, txt)
         return
