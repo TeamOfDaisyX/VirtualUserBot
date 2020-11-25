@@ -7,7 +7,7 @@ import requests
 from telethon import Button, custom, events, functions
 from youtubesearchpython import SearchVideos
 
-from fridaybot import ALIVE_NAME, CMD_LIST
+from fridaybot import ALIVE_NAME, CMD_LIST, CMD_HELP
 from fridaybot.modules import inlinestats
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
@@ -26,7 +26,7 @@ async def inline_handler(event):
     query = event.text
     if event.query.user_id == bot.uid and query.startswith("Friday"):
         rev_text = query[::-1]
-        buttons = paginate_help(0, CMD_LIST, "helpme")
+        buttons = paginate_help(0, CMD_HELP, "helpme")
         result = builder.article(
             "© Userbot Help",
             text="{}\nCurrently Loaded Plugins: {}".format(query, len(CMD_LIST)),
@@ -71,7 +71,7 @@ async def inline_handler(event):
 async def on_plug_in_callback_query_handler(event):
     if event.query.user_id == bot.uid:  # pylint:disable=E0602
         current_page_number = int(event.data_match.group(1).decode("UTF-8"))
-        buttons = paginate_help(current_page_number + 1, CMD_LIST, "helpme")
+        buttons = paginate_help(current_page_number + 1, CMD_HELP, "helpme")
         # https://t.me/TelethonChat/115200
         await event.edit(buttons=buttons)
     else:
@@ -88,7 +88,7 @@ async def on_plug_in_callback_query_handler(event):
     if event.query.user_id == bot.uid:  # pylint:disable=E0602
         current_page_number = int(event.data_match.group(1).decode("UTF-8"))
         buttons = paginate_help(
-            current_page_number - 1, CMD_LIST, "helpme"  # pylint:disable=E0602
+            current_page_number - 1, CMD_HELP, "helpme"  # pylint:disable=E0602
         )
         # https://t.me/TelethonChat/115200
         await event.edit(buttons=buttons)
@@ -108,33 +108,25 @@ async def on_plug_in_callback_query_handler(event):
         await event.answer(sedok, cache_time=0, alert=True)
         return
     plugin_name = event.data_match.group(1).decode("UTF-8")
-    help_string = ""
-    try:
-        for i in CMD_LIST[plugin_name]:
-            help_string += i
-            help_string += "\n"
-    except BaseException:
-        pass
+    if plugin_name in CMD_HELP:
+            help_string = f'**PLUGIN NAME :** `{plugin_name}` \n{CMD_HELP[plugin_name]}'
     if help_string is "":
         reply_pop_up_alert = "{} is useless".format(plugin_name)
     else:
         reply_pop_up_alert = help_string
-    reply_pop_up_alert += "\n Use .unload {} to remove this plugin\n\
-                  © Userbot".format(
+    reply_pop_up_alert += "\n\n**(C) @FRIDAYOT** ".format(
         plugin_name
     )
-    if len(reply_pop_up_alert) >= 210:
+    if len(reply_pop_up_alert) >= 4096:
         crackexy = "Sir. The String Was Too Big So Me Sending Here As Paste."
         await event.answer(crackexy, cache_time=0, alert=True)
         out_file = reply_pop_up_alert
         url = "https://del.dog/documents"
         r = requests.post(url, data=out_file.encode("UTF-8")).json()
         url = f"https://del.dog/{r['key']}"
-        await bot.send_message(
-            event.chat_id, f"Pasted {plugin_name} to {url}", link_preview=False
-        )
+        await event.edit(message=f"Pasted {plugin_name} to {url}", buttons=[[custom.Button.inline("Go Back", data="backme")]], link_preview=False)
     else:
-        await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+        await event.edit(message=reply_pop_up_alert, buttons=[[custom.Button.inline("Go Back", data="backme")]])
 
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"terminator")))
@@ -159,6 +151,18 @@ async def rip(event):
         LOG_CHAT,
         f"Hello, A Noob [Nibba](tg://user?id={him_id}) Selected Probhited Option, Therefore Blocked.",
     )
+    
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"backme")))
+async def rip(event):
+    if not event.query.user_id == bot.uid:
+        sedok = "Who The Fuck Are You? Get Your Own Friday."
+        await event.answer(sedok, cache_time=0, alert=True)
+        return
+    buttons = paginate_help(0, CMD_HELP, "helpme")
+    sed = f"""Friday Userbot Modules Are Listed Here !\n
+For More Help or Support Visit @FridayOT \nCurrently Loaded Plugins: {len(CMD_LIST)}"""
+    await event.edit(message=sed, buttons=buttons)
+
 
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"whattalk")))
