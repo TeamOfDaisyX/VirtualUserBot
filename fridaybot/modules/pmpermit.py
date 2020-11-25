@@ -1,13 +1,14 @@
 import asyncio
 import io
 import os
-from fridaybot.utils import friday_on_cmd
+
 from telethon import events, functions
 from telethon.tl.functions.users import GetFullUserRequest
 
 import fridaybot.modules.sql_helper.pmpermit_sql as pmpermit_sql
 from fridaybot import ALIVE_NAME, CUSTOM_PMPERMIT
 from fridaybot.Configs import Config
+from fridaybot.utils import friday_on_cmd
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 if PMPERMIT_PIC is None:
