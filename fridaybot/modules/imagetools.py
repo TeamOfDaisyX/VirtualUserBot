@@ -33,7 +33,7 @@ async def hmm(event):
     if not event.reply_to_msg_id:
         await event.reply("Reply to any Image.")
         return
-    await event.edit("Colourzing..")
+    hmmu = await event.edit("Colourzing..")
     sed = await event.get_reply_message()
     if isinstance(sed.media, MessageMediaPhoto):
         img = await borg.download_media(sed.media, sedpath)
@@ -70,6 +70,10 @@ async def hmm(event):
     ok = sedpath + "/" + file_name
     cv2.imwrite(ok, colorized)
     await borg.send_file(event.chat_id, ok)
+    await hmmu.delete()
+    for files in (ok, img):
+        if files and os.path.exists(files):
+            os.remove(files)
 
 
 @friday.on(friday_on_cmd(pattern=r"toon"))
