@@ -326,18 +326,6 @@ def useragent():
     user_agent = choice(useragents)
     return user_agent.text
 
-
-CMD_HELP.update(
-    {
-        "direct": ".direct <url> <url>\n"
-        "Usage: Generate direct download link from supported URL(s)\n"
-        "Supported websites:\n"
-        "`Google Drive - MEGA.nz - Cloud Mail - Yandex.Disk - AFH - "
-        "ZippyShare - MediaFire - SourceForge - OSDN - GitHub`"
-    }
-)
-
-
 CMD_HELP.update(
     {
         "direct": "**Direct**\
