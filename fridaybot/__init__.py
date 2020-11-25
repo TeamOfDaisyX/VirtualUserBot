@@ -4,8 +4,9 @@ import sys
 import time
 from distutils.util import strtobool as sb
 from logging import DEBUG, INFO, basicConfig, getLogger
-import wget
+
 import pylast
+import wget
 from dotenv import load_dotenv
 from pylast import LastFMNetwork, md5
 from pySmartDL import SmartDL
@@ -176,10 +177,10 @@ CMD_HELP = {}
 ISAFK = False
 AFKREASON = None
 # End of PaperPlaneExtended Support Vars
-link = 'https://people.eecs.berkeley.edu/~rich.zhang/projects/2016_colorization/files/demo_v2/colorization_release_v2.caffemodel'
-km = './resources/imgcolour/colorization_release_v2.caffemodel'
+link = "https://people.eecs.berkeley.edu/~rich.zhang/projects/2016_colorization/files/demo_v2/colorization_release_v2.caffemodel"
+km = "./resources/imgcolour/colorization_release_v2.caffemodel"
 if os.path.exists(km):
     return
 else:
-    pathz = './resources/imgcolour/'
+    pathz = "./resources/imgcolour/"
     sedlyf = wget.download(link, out=pathz)
