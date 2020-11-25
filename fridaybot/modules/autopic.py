@@ -49,6 +49,6 @@ CMD_HELP.update(
     {
         "autopic": "**AutoPic**\
 \n\n**Syntax : **`.autopic`\
-\n**Usage :** Change PIC With Time"
+\n**Usage :** Change your profile PIC With Time"
     }
 )
