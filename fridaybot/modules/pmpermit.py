@@ -1,14 +1,13 @@
 import asyncio
 import io
 import os
-
+from fridaybot.utils import friday_on_cmd
 from telethon import events, functions
 from telethon.tl.functions.users import GetFullUserRequest
 
 import fridaybot.modules.sql_helper.pmpermit_sql as pmpermit_sql
 from fridaybot import ALIVE_NAME, CUSTOM_PMPERMIT
 from fridaybot.Configs import Config
-from fridaybot.utils import friday_on_cmd
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 if PMPERMIT_PIC is None:
@@ -43,19 +42,19 @@ if Var.PRIVATE_GROUP_ID is not None:
     async def block(event):
         if event.fwd_from:
             return
-        replied_user = await borg(GetFullUserRequest(event.sender_id))
+        replied_user = await borg(GetFullUserRequest(event.chat_id))
         firstname = replied_user.user.first_name
-        chat = await event.get_chat()
+        chats = await event.get_chat()
         if event.is_private:
-            if not pmpermit_sql.is_approved(chat.id):
-                if chat.id in PM_WARNS:
-                    del PM_WARNS[chat.id]
-                if chat.id in PREV_REPLY_MESSAGE:
-                    await PREV_REPLY_MESSAGE[chat.id].delete()
-                    del PREV_REPLY_MESSAGE[chat.id]
-                pmpermit_sql.approve(chat.id, "Approved Another Nibba")
+            if not pmpermit_sql.is_approved(chats.id):
+                if chats.id in PM_WARNS:
+                    del PM_WARNS[chats.id]
+                if chats.id in PREV_REPLY_MESSAGE:
+                    await PREV_REPLY_MESSAGE[chats.id].delete()
+                    del PREV_REPLY_MESSAGE[chats.id]
+                pmpermit_sql.approve(chats.id, "Approved Another Nibba")
                 await event.edit(
-                    "Approved to pm [{}](tg://user?id={})".format(firstname, chat.id)
+                    "Approved to pm [{}](tg://user?id={})".format(firstname, chats.id)
                 )
                 await asyncio.sleep(3)
                 await event.delete()
