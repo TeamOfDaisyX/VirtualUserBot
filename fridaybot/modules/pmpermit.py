@@ -1,7 +1,7 @@
 import asyncio
 import io
 import os
-
+from fridaybot.utils import friday_on_cmd
 from telethon import events, functions
 from telethon.tl.functions.users import GetFullUserRequest
 
@@ -38,11 +38,11 @@ USER_BOT_NO_WARN = (
 
 if Var.PRIVATE_GROUP_ID is not None:
 
-    @command(pattern="^.a$")
+    @borg.on(friday_on_cmd(pattern="(a|approve)"))
     async def block(event):
         if event.fwd_from:
             return
-        replied_user = await borg(GetFullUserRequest(event.chat_id))
+        replied_user = await borg(GetFullUserRequest(event.sender_id))
         firstname = replied_user.user.first_name
         chat = await event.get_chat()
         if event.is_private:
@@ -75,7 +75,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                 await asyncio.sleep(3)
                 await event.client(functions.contacts.BlockRequest(chat.id))
 
-    @command(pattern="^.da$")
+    @borg.on(friday_on_cmd(pattern="(da|disapprove)"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -90,7 +90,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                 )
                 await event.delete()
 
-    @command(pattern="^.listapproved$")
+    @borg.on(friday_on_cmd(pattern="listapproved$"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
