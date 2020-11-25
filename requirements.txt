@@ -2,6 +2,7 @@ Pillow
 python-magic
 glitch_this
 PyGithub
+pytesseract
 youtube-dl
 opencv-contrib-python
 telethon
