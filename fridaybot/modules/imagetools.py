@@ -41,7 +41,7 @@ async def hmm(event):
     sed = await event.get_reply_message()
     if isinstance(sed.media, MessageMediaPhoto):
         img = await borg.download_media(sed.media, sedpath)
-    elif "image" in response.media.document.mime_type.split("/"):
+    elif "image" in sed.media.document.mime_type.split("/"):
         img = await borg.download_media(sed.media, sedpath)
     else:
         await event.edit("Reply To Image")
@@ -73,7 +73,7 @@ async def hmm(event):
     sed = await event.get_reply_message()
     if isinstance(sed.media, MessageMediaPhoto):
         img = await borg.download_media(sed.media, sedpath)
-    elif "image" in response.media.document.mime_type.split("/"):
+    elif "image" in sed.media.document.mime_type.split("/"):
         img = await borg.download_media(sed.media, sedpath)
     else:
         await event.edit("Reply To Image")
@@ -105,7 +105,7 @@ async def hmm(event):
     sed = await event.get_reply_message()
     if isinstance(sed.media, MessageMediaPhoto):
         img = await borg.download_media(sed.media, sedpath)
-    elif "image" in response.media.document.mime_type.split("/"):
+    elif "image" in sed.media.document.mime_type.split("/"):
         img = await borg.download_media(sed.media, sedpath)
     else:
         await event.edit("Reply To Image")
