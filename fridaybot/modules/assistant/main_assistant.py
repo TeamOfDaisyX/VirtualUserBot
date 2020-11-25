@@ -15,6 +15,7 @@ import asyncio
 import io
 import re
 
+from Configs import Config
 from telethon import Button, custom, events
 from telethon.tl.functions.users import GetFullUserRequest
 
@@ -30,7 +31,7 @@ from fridaybot.modules.sql_helper.idadder_sql import (
     already_added,
     get_all_users,
 )
-from Configs import Config
+
 
 @assistant_cmd("start", is_args=False)
 async def start(event):
