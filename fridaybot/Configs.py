@@ -147,7 +147,8 @@ if ENV:
             "ALIVE_IMAGE", "https://telegra.ph/file/22535f8051a58af113586.jpg"
         )
         ASSISTANT_START_PIC = os.environ.get(
-            "ASSISTANT_START_PIC", "https://www.logolynx.com/images/logolynx/72/7257d2ac93b97c8a2c7308266052df13.png"
+            "ASSISTANT_START_PIC",
+            "https://www.logolynx.com/images/logolynx/72/7257d2ac93b97c8a2c7308266052df13.png",
         )
         TESSDATA_PREFIX = os.environ.get(
             "TESSDATA_PREFIX", "/usr/share/tesseract-ocr/4.00/tessdata"
