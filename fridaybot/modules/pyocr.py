@@ -16,7 +16,7 @@ async def _(event):
     global images
     if event.fwd_from:
         return
-    await event.edit("`Reading..`")
+    await event.edit("`Reading, Please Wait..`")
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     if event.reply_to_msg_id:
