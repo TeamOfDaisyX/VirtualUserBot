@@ -336,3 +336,13 @@ CMD_HELP.update(
         "ZippyShare - MediaFire - SourceForge - OSDN - GitHub`"
     }
 )
+
+
+CMD_HELP.update(
+    {
+        "direct": "**Direct**\
+\n\n**Syntax : **`.direct <url> <url>`\
+\n**Usage :** Generates direct download link from supported URL(s)\
+\n\n**Supported websites : **`Google Drive - MEGA.nz - Cloud Mail - Yandex.Disk - AFH - ZippyShare - MediaFire - SourceForge - OSDN - GitHub`
+    }
+)
