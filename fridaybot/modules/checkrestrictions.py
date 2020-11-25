@@ -4,12 +4,10 @@
 
 """Check Account Restrictions
 .cr (.*)"""
-from telethon.tl.types import (
-    Channel,
-    Chat,
-    User
-)
+from telethon.tl.types import Channel, Chat, User
+
 from fridaybot.utils import friday_on_cmd
+
 
 @borg.on(friday_on_cmd(pattern="cr (.*)"))
 async def _(event):
@@ -17,13 +15,9 @@ async def _(event):
         return
     input_str = event.pattern_match.group(1)
     try:
-        input_entity = await event.client.get_entity(
-            input_str
-        )
-    except Exception as e:
-        await event.edit(
-           "`Hmm...`"
-        )
+        input_entity = await event.client.get_entity(input_str)
+    except Exception:
+        await event.edit("`Hmm...`")
         return
     else:
         await event.edit(get_restriction_string(input_entity))
