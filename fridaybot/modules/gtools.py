@@ -1,10 +1,11 @@
+import asyncio
+
 from telethon.events import ChatAction
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 from telethon.tl.types import MessageEntityMentionName
-import asyncio
+
 from fridaybot import CMD_HELP
 from fridaybot.modules.sql_helper.mute_sql import is_muted, mute, unmute
-from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd
 
 
@@ -208,6 +209,7 @@ async def handler(rkG):
                             rkG.reply("`No Permission To Ban`")
                             return
 
+
 @friday.on(friday_on_cmd(pattern=r"gmute ?(\d+)?"))
 async def startgmute(event):
     private = False
@@ -270,11 +272,13 @@ async def endgmute(event):
     else:
         await event.edit("Successfully ungmuted that person")
 
+
 @command(incoming=True)
 async def watcher(event):
     if is_muted(event.sender_id, "gmute"):
         await event.delete()
-        
+
+
 CMD_HELP.update(
     {
         "Gtools": "**Global Tools**\

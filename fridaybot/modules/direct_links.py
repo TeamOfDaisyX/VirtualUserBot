@@ -326,6 +326,7 @@ def useragent():
     user_agent = choice(useragents)
     return user_agent.text
 
+
 CMD_HELP.update(
     {
         "direct": "**Direct**\
