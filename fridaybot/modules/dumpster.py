@@ -1,6 +1,7 @@
 import asyncio
 
 from telethon.errors.rpcerrorlist import MessageIdInvalidError
+
 from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd
 
