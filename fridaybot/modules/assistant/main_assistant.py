@@ -24,6 +24,7 @@ from fridaybot.modules.sql_helper.blacklist_assistant import (
     is_he_added,
     removenibba,
 )
+from fridaybot import bot
 from fridaybot.modules.sql_helper.botusers_sql import add_me_in_db, his_userid
 from fridaybot.modules.sql_helper.idadder_sql import (
     add_usersid_in_db,
@@ -39,10 +40,10 @@ async def start(event):
     bot_username = starkbot.username
     replied_user = await event.client(GetFullUserRequest(event.sender_id))
     firstname = replied_user.user.first_name
-    devlop = await borg.get_me()
+    devlop = await bot.get_me()
     hmmwow = devlop.first_name
     vent = event.chat_id
-    mypic = await borg.download_profile_photo(
+    mypic = await tgbot.download_profile_photo(
         starkbot.id, Config.TMP_DOWNLOAD_DIRECTORY
     )
     starttext = f"Hello, {firstname} ! Nice To Meet You, Well I Am {bot_id}, An Powerfull Assistant Bot. \n\nMy Master [{hmmwow}](tg://user?id={bot.uid}) \nYou Can Talk/Contact My Master Using This Bot. \n\nIf You Want Your Own Assistant You Can Deploy From Button Below. \n\nPowered By [Friday Userbot](t.me/FridayOT)"
@@ -75,7 +76,8 @@ async def start(event):
                 [Button.url("Help Me ❓", "t.me/Fridayot")],
             ],
         )
-
+        if os.path.exists(mypic):
+            os.remove(mypic)
 
 # Data's
 
