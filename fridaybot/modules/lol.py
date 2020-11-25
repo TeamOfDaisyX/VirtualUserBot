@@ -86,6 +86,6 @@ CMD_HELP.update(
     {
         "lol": "**Lol**\
 \n\n**Syntax : **`.lol`\
-\n**Usage :** Pulls up a random string."
+\n**Usage :** Pulls up a random lol string."
     }
 )
