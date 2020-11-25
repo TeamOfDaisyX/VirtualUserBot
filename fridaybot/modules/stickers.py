@@ -35,7 +35,7 @@ async def _(event):
     if event.fwd_from:
         return
     if not event.reply_to_msg_id:
-        await event.edit('PLease, Reply To A Sticker / Image To Add It Your Pack')
+        await event.edit("PLease, Reply To A Sticker / Image To Add It Your Pack")
         return
     if not event.is_reply:
         await moods.edit("Reply to a photo to add to my personal sticker pack.")
