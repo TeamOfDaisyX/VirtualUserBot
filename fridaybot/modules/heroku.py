@@ -11,6 +11,7 @@ import os
 import heroku3
 import requests
 from telegraph import Telegraph
+
 from fridaybot import CMD_HELP
 from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 
@@ -227,6 +228,7 @@ async def _(givelogs):
         caption=suger,
     )
 
+
 CMD_HELP.update(
     {
         "heroku": "**Heroku**\
@@ -236,4 +238,3 @@ CMD_HELP.update(
 \n**Usage :** Gets logs from heroku."
     }
 )
-
