@@ -6,7 +6,7 @@
 import logging
 
 from fridaybot.utils import friday_on_cmd, sudo_cmd
-
+from fridaybot import CMD_HELP
 logger = logging.getLogger(__name__)
 
 
@@ -76,3 +76,11 @@ if 1 == 1:
                 await event.edit("`No photo found of that Nigga , now u Die`")
 
                 return
+
+CMD_HELP.update(
+    {
+        "poto": "**Poto**\
+\n\n**Syntax : **`.poto <reply to a user> <profile picture number>`\
+\n**Usage :** Downloads profile picture of replyed user."
+    }
+)
