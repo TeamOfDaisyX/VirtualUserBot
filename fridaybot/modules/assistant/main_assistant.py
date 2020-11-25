@@ -24,7 +24,6 @@ from fridaybot.modules.sql_helper.blacklist_assistant import (
     is_he_added,
     removenibba,
 )
-from fridaybot import bot
 from fridaybot.modules.sql_helper.botusers_sql import add_me_in_db, his_userid
 from fridaybot.modules.sql_helper.idadder_sql import (
     add_usersid_in_db,
@@ -78,6 +77,7 @@ async def start(event):
         )
         if os.path.exists(mypic):
             os.remove(mypic)
+
 
 # Data's
 
