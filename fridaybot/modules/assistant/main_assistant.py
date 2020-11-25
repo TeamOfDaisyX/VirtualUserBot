@@ -15,11 +15,11 @@ import asyncio
 import io
 import re
 
-from fridaybot.Configs import Config
 from telethon import Button, custom, events
 from telethon.tl.functions.users import GetFullUserRequest
 
 from fridaybot import bot
+from fridaybot.Configs import Config
 from fridaybot.modules.sql_helper.blacklist_assistant import (
     add_nibba_in_db,
     is_he_added,
