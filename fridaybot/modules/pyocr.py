@@ -4,9 +4,7 @@ except ImportError:
     import Image
 
 import os
-
 import pytesseract
-
 from fridaybot.Configs import Config
 from fridaybot.utils import friday_on_cmd
 
