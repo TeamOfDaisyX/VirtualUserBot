@@ -173,7 +173,8 @@ COUNT_PM = {}
 LASTMSG = {}
 SUDO_LIST = {}
 CMD_HELP = {}
-
+CUSTOM_PMPERMIT = {}
+CUSTOM_BOTSTART = {}
 ISAFK = False
 AFKREASON = None
 # End of PaperPlaneExtended Support Vars
