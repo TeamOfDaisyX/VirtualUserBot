@@ -25,7 +25,7 @@ async def nsfw(event):
     await event.edit("`Processing..`")
     sed = await event.get_reply_message()
     photo = None
-    if replymsg and replymsg.media:
+    if sed and sed.media:
         if isinstance(sed.media, MessageMediaPhoto):
             photo = await borg.download_media(sed.media, sedpath)
         elif "image" in sed.media.document.mime_type.split("/"):
