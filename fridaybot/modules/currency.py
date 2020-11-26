@@ -3,7 +3,9 @@ from datetime import datetime
 
 import requests
 from uniborg.util import friday_on_cmd
+
 from fridaybot import CMD_HELP
+
 
 @friday.on(friday_on_cmd(pattern="currency (.*)"))
 async def _(event):
