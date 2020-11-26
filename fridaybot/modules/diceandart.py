@@ -35,10 +35,10 @@ CMD_HELP.update(
     {
         "diceandart": "**Diceandart**\
 \n\n**Syntax : **`.🏀`\
-\n**Usage :** Creates a basket ball emoji game.\
+\n**Usage :** Creates a basket ball game.\
 \n\n**Syntax : **`.🎲`\
-\n**Usage :** Creates a dice emoji game.\
+\n**Usage :** Creates a dice game.\
 \n\n**Syntax : **`.🎯`\
-\n**Usage :** Creates a dart emoji game. ."
+\n**Usage :** Creates a dart game. ."
     }
 )
