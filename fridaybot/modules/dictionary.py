@@ -3,7 +3,9 @@ Syntax: .meaning <word>"""
 
 import requests
 from uniborg.util import edit_or_reply, friday_on_cmd, sudo_cmd
+
 from fridaybot import CMD_HELP
+
 
 @friday.on(friday_on_cmd("meaning (.*)"))
 @friday.on(sudo_cmd("meaning (.*)", allow_sudo=True))
