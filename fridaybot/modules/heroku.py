@@ -232,6 +232,14 @@ async def _(givelogs):
 CMD_HELP.update(
     {
         "heroku": "**Heroku**\
+\n\n**Syntax : **`.set var <var key> <var value>`\
+\n**Usage :** Add new variable or update existing value variable.\
+\n\n**Syntax : **`.get var <var>`\
+\n**Usage :** Get your existing variables, use it only on your private group!\
+\n\n**Syntax : **`.del var <var>`\
+\n**Usage :** Deletes existing variable.\
+\n\n**Syntax : **`.usage`\
+\n**Usage :** Gives you information about Dyno usage.\
 \n\n**Syntax : **`.info heroku`\
 \n**Usage :** Gives you information to use other commands of heroku.\
 \n\n**Syntax : **`.logs`\
