@@ -51,6 +51,15 @@ if Var.PRIVATE_GROUP_ID is not None:
             await event.edit("Done ! Setting Custom Message Sucessfull")
         else:
             await event.edit("Remove Old Custom Pm Permit To Set New")
+            
+    @borg.on(friday_on_cmd(pattern="delpm (.*)"))
+    async def __(event):
+        event.pattern_match.group(1)
+        if not CUSTOM_PMPERMIT_MSG:
+            await event.edit("Really?")
+        else:
+            del CUSTOM_PMPERMIT_MSG["custom"]
+            await event.edit("Removed Old Custom Pm")
 
     @borg.on(friday_on_cmd(pattern="(a|approve)"))
     async def block(event):
