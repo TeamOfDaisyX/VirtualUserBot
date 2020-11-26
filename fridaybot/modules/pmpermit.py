@@ -30,16 +30,6 @@ CUSTOM_MIDDLE_PMP = (
 USER_BOT_WARN_ZERO = "You Have Attempted To Spam Masters Inbox So Inorder To Avoid Over Spam , You Have Been Blocked By Userbot"
 
 botisnoob = Var.TG_BOT_USER_NAME_BF_HER
-if not CUSTOM_PMPERMIT_MSG:
-    USER_BOT_NO_WARN = (
-        "**Hello, This is Friday PM Protection Service ⚠️**\n\n"
-        f"`My Master {DEFAULTUSER} is Busy Right Now !` \n"
-        "**I Request You To Choose A Reason You Have Came For** 👀 \n\n"
-        f"**{CUSTOM_MIDDLE_PMP}**"
-    )
-else:
-    USER_BOT_NO_WARN = CUSTOM_PMPERMIT_MSG["custom"]
-
 
 if Var.PRIVATE_GROUP_ID is not None:
 
@@ -146,6 +136,15 @@ if Var.PRIVATE_GROUP_ID is not None:
 
     @bot.on(events.NewMessage(incoming=True))
     async def on_new_private_message(event):
+        if not CUSTOM_PMPERMIT_MSG:
+            USER_BOT_NO_WARN = (
+            "**Hello, This is Friday PM Protection Service ⚠️**\n\n"
+            f"`My Master {DEFAULTUSER} is Busy Right Now !` \n"
+            "**I Request You To Choose A Reason You Have Came For** 👀 \n\n"
+            f"**{CUSTOM_MIDDLE_PMP}**"
+        )
+        else:
+            USER_BOT_NO_WARN = CUSTOM_PMPERMIT_MSG["custom"]
         if event.sender_id == bot.uid:
             return
 
@@ -191,6 +190,15 @@ if Var.PRIVATE_GROUP_ID is not None:
             await do_pm_permit_action(chat_ids, event)
 
     async def do_pm_permit_action(chat_ids, event):
+        if not CUSTOM_PMPERMIT_MSG:
+            USER_BOT_NO_WARN = (
+            "**Hello, This is Friday PM Protection Service ⚠️**\n\n"
+            f"`My Master {DEFAULTUSER} is Busy Right Now !` \n"
+            "**I Request You To Choose A Reason You Have Came For** 👀 \n\n"
+            f"**{CUSTOM_MIDDLE_PMP}**"
+        )
+        else:
+            USER_BOT_NO_WARN = CUSTOM_PMPERMIT_MSG["custom"]
         if chat_ids not in PM_WARNS:
             PM_WARNS.update({chat_ids: 0})
         if PM_WARNS[chat_ids] == 3:
