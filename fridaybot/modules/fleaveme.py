@@ -6,7 +6,7 @@ Available Commands:
 .fleave"""
 
 import asyncio
-
+from fridaybot import CMD_HELP
 from telethon import events
 
 
@@ -50,3 +50,12 @@ async def _(event):
             await asyncio.sleep(animation_interval)
 
             await event.edit(animation_chars[i % 17])
+
+
+CMD_HELP.update(
+    {
+        "fleaveme": "**Fleaveme**\
+\n\n**Syntax : **`.fleave`\
+\n**Usage :** Prank plugin."
+    }
+)
