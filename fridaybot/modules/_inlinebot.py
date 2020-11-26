@@ -7,7 +7,7 @@ import requests
 from telethon import Button, custom, events, functions
 from youtubesearchpython import SearchVideos
 
-from fridaybot import ALIVE_NAME, CMD_HELP, CMD_LIST
+from fridaybot import ALIVE_NAME, CMD_HELP, CMD_LIST, CUSTOM_PMPERMIT_MSG
 from fridaybot.modules import inlinestats
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
@@ -24,7 +24,7 @@ async def inline_handler(event):
     builder = event.builder
     result = None
     query = event.text
-    if event.query.user_id == bot.uid and query.startswith("Friday"):
+    if event.query.user_id == bot.uid and query.startswith(hmmok):
         rev_text = query[::-1]
         buttons = paginate_help(0, CMD_HELP, "helpme")
         result = builder.article(
@@ -45,7 +45,16 @@ async def inline_handler(event):
             ],
         )
         await event.answer([result])
-    elif event.query.user_id == bot.uid and query.startswith("**Hello"):
+    if not CUSTOM_PMPERMIT_MSG:
+        hmmok = (
+                "**Hello, This is Friday PM Protection Service ⚠️**\n\n"
+                f"`My Master {DEFAULTUSER} is Busy Right Now !` \n"
+                "**I Request You To Choose A Reason You Have Came For** 👀 \n\n"
+                f"**{CUSTOM_MIDDLE_PMP}**"
+            )
+    else:
+        hmmok = (f'{CUSTOM_PMPERMIT_MSG["custom"]}')
+    elif event.query.user_id == bot.uid and query == hmmok:
         result = builder.photo(
             file=WARN_PIC,
             text=query,
