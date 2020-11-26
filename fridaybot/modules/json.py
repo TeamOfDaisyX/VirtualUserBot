@@ -2,8 +2,9 @@
 Syntax: .json"""
 import io
 
-from fridaybot.utils import friday_on_cmd
 from fridaybot import CMD_HELP
+from fridaybot.utils import friday_on_cmd
+
 
 @friday.on(friday_on_cmd("json"))
 async def _(event):
