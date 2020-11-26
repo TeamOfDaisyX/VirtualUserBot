@@ -5,6 +5,7 @@ Available Commands:
 
 
 import asyncio
+
 from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd
 
