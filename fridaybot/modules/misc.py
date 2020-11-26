@@ -9,6 +9,7 @@
 
 from random import randint
 from time import sleep
+
 from fridaybot import CMD_HELP
 from fridaybot.events import register
 
