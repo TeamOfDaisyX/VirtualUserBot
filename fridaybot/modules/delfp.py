@@ -1,7 +1,9 @@
 from telethon.tl.functions.photos import DeletePhotosRequest, GetUserPhotosRequest
 from telethon.tl.types import InputPhoto
 from uniborg.util import edit_or_reply, friday_on_cmd, sudo_cmd
+
 from fridaybot import CMD_HELP
+
 
 @friday.on(friday_on_cmd(pattern="delpfp ?(.*)"))
 @friday.on(sudo_cmd(pattern="delpfp ?(.*)", allow_sudo=True))
