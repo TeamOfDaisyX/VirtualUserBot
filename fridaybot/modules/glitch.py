@@ -12,10 +12,11 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import os
-from fridaybot import CMD_HELP
+
 from glitch_this import ImageGlitcher
 from telethon.tl.types import MessageMediaPhoto
 
+from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd, sudo_cmd
 
 glitcher = ImageGlitcher()
