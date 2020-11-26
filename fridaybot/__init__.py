@@ -89,10 +89,10 @@ if bool(ENV):
 
     # Chrome For Carbon
     CHROME_DRIVER = os.environ.get(
-        "CHROME_DRIVER", "/app/.chromedriver/bin/chromedriver"
+        "CHROME_DRIVER", "/usr/bin/chromedriver"
     )
     GOOGLE_CHROME_BIN = os.environ.get(
-        "GOOGLE_CHROME_BIN", "/app/.apt/usr/bin/google-chrome"
+        "GOOGLE_CHROME_BIN", "/usr/bin/google-chrome"
     )
 
     # Heroku Credentials for updater.
