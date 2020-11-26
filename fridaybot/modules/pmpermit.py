@@ -31,26 +31,13 @@ USER_BOT_WARN_ZERO = "You Have Attempted To Spam Masters Inbox So Inorder To Avo
 
 botisnoob = Var.TG_BOT_USER_NAME_BF_HER
 
+USER_BOT_NO_WARN = (
+                "**Hello, This is Friday PM Protection Service ⚠️**\n\n"
+                f"`My Master {DEFAULTUSER} is Busy Right Now !` \n"
+                "**I Request You To Choose A Reason You Have Came For** 👀 \n\n"
+                f"**{CUSTOM_MIDDLE_PMP}**"
+            )
 if Var.PRIVATE_GROUP_ID is not None:
-
-    @borg.on(friday_on_cmd(pattern="setpm (.*)"))
-    async def block(event):
-        event.pattern_match.group(1)
-        if not CUSTOM_PMPERMIT_MSG:
-            CUSTOM_PMPERMIT_MSG["custom"] = input
-            await event.edit("Done ! Setting Custom Message Sucessfull")
-        else:
-            await event.edit("Remove Old Custom Pm Permit To Set New")
-
-    @borg.on(friday_on_cmd(pattern="delpm (.*)"))
-    async def __(event):
-        event.pattern_match.group(1)
-        if not CUSTOM_PMPERMIT_MSG:
-            await event.edit("Really?")
-        else:
-            del CUSTOM_PMPERMIT_MSG["custom"]
-            await event.edit("Removed Old Custom Pm")
-
     @borg.on(friday_on_cmd(pattern="(a|approve)"))
     async def block(event):
         if event.fwd_from:
@@ -136,15 +123,6 @@ if Var.PRIVATE_GROUP_ID is not None:
 
     @bot.on(events.NewMessage(incoming=True))
     async def on_new_private_message(event):
-        if not CUSTOM_PMPERMIT_MSG:
-            USER_BOT_NO_WARN = (
-                "**Hello, This is Friday PM Protection Service ⚠️**\n\n"
-                f"`My Master {DEFAULTUSER} is Busy Right Now !` \n"
-                "**I Request You To Choose A Reason You Have Came For** 👀 \n\n"
-                f"**{CUSTOM_MIDDLE_PMP}**"
-            )
-        else:
-            USER_BOT_NO_WARN = f'{CUSTOM_PMPERMIT_MSG["custom"]}'
         if event.sender_id == bot.uid:
             return
 
@@ -190,15 +168,6 @@ if Var.PRIVATE_GROUP_ID is not None:
             await do_pm_permit_action(chat_ids, event)
 
     async def do_pm_permit_action(chat_ids, event):
-        if not CUSTOM_PMPERMIT_MSG:
-            USER_BOT_NO_WARN = (
-                "**Hello, This is Friday PM Protection Service ⚠️**\n\n"
-                f"`My Master {DEFAULTUSER} is Busy Right Now !` \n"
-                "**I Request You To Choose A Reason You Have Came For** 👀 \n\n"
-                f"**{CUSTOM_MIDDLE_PMP}**"
-            )
-        else:
-            USER_BOT_NO_WARN = f'{CUSTOM_PMPERMIT_MSG["custom"]}'
         if chat_ids not in PM_WARNS:
             PM_WARNS.update({chat_ids: 0})
         if PM_WARNS[chat_ids] == 3:
@@ -230,7 +199,7 @@ if Var.PRIVATE_GROUP_ID is not None:
         tap = await bot.inline_query(botusername, USER_BOT_NO_WARN)
         sed = await tap[0].click(event.chat_id)
         PM_WARNS[chat_ids] += 1
-        if chat_id in PREV_REPLY_MESSAGE:
+        if chat_ids in PREV_REPLY_MESSAGE:
             await PREV_REPLY_MESSAGE[chat_ids].delete()
         PREV_REPLY_MESSAGE[chat_ids] = sed
 
