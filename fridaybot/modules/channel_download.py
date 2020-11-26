@@ -8,7 +8,7 @@ import os
 import subprocess
 
 from uniborg.util import friday_on_cmd
-
+from fridaybot import CMD_HELP
 
 @friday.on(friday_on_cmd(pattern="getc"))
 async def get_media(event):
@@ -67,3 +67,15 @@ async def get_media(event):
     output = output.replace("b'", "")
     output = output.replace("\n'", "")
     await event.edit("Downloaded " + output + " files.")
+
+
+
+CMD_HELP.update(
+    {
+        "channel_download": "**Channel Download**\
+\n\n**Syntax : **`.geta <channel username>`\
+\n**Usage :** Will get all media from given channel.\
+\n\n**Syntax : **`.getc <number of messages> <channel username>`\
+\n**Usage :** Downloads given number of messages from given channel."
+    }
+)
