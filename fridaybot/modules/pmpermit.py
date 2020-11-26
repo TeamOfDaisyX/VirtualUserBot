@@ -38,21 +38,20 @@ if not CUSTOM_PMPERMIT_MSG:
         f"**{CUSTOM_MIDDLE_PMP}**"
     )
 else:
-    USER_BOT_NO_WARN = CUSTOM_PMPERMIT_MSG['custom']
-    
+    USER_BOT_NO_WARN = CUSTOM_PMPERMIT_MSG["custom"]
+
 
 if Var.PRIVATE_GROUP_ID is not None:
-    
-    
+
     @borg.on(friday_on_cmd(pattern="setpm (.*)"))
     async def block(event):
-        inputgiven = event.pattern_match.group(1)
+        event.pattern_match.group(1)
         if not CUSTOM_PMPERMIT_MSG:
-            CUSTOM_PMPERMIT_MSG['custom'] = input
+            CUSTOM_PMPERMIT_MSG["custom"] = input
             await event.edit("Done ! Setting Custom Message Sucessfull")
         else:
             await event.edit("Remove Old Custom Pm Permit To Set New")
-        
+
     @borg.on(friday_on_cmd(pattern="(a|approve)"))
     async def block(event):
         if event.fwd_from:
