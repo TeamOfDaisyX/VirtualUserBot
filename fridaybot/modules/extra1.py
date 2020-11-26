@@ -134,9 +134,11 @@ async def _(event):
 CMD_HELP.update(
     {
         "extra1": "**Extra1**\
-\n\n**Syntax : **`.telegraph media <reply to image or video>`\
-\n**Usage :** Upload image and video directly to telegraph.\
-\n\n**Syntax : **`.telegraph text <reply to text>`\
-\n**Usage :** upload text directly to telegraph ."
+\n\n**Syntax : **`.chod`\
+\n**Usage :** Abuse someone using this.\
+\n\n**Syntax : **`.sqh`\
+\n**Usage :** Prank antivirus plugin with no virus result.\
+\n\n**Syntax : **`.vquickheal`\
+\n**Usage :** Prank antivirus plugin with virus result."
     }
 )
