@@ -2,7 +2,7 @@
 from telethon.tl.types import ChannelParticipantsAdmins
 
 from fridaybot.utils import friday_on_cmd
-
+from fridaybot import CMD_HELP
 
 @friday.on(friday_on_cmd("join"))
 async def _(event):
@@ -36,3 +36,14 @@ async def _(event):
     else:
         await event.reply(mentions)
     await event.delete()
+
+
+CMD_HELP.update(
+    {
+        "design": "**Design**\
+\n\n**Syntax : **`.join`\
+\n**Usage :** Funny prank plugin.\
+\n\n**Syntax : **`.pay`\
+\n**Usage :** Funny Prank plugin."
+    }
+)
