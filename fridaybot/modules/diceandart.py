@@ -1,7 +1,7 @@
 from telethon.tl.types import InputMediaDice
 
 from fridaybot.utils import friday_on_cmd
-
+from fridaybot import CMD_HELP
 # EMOJI CONSTANTS
 DART_E_MOJI = "🎯"
 DICE_E_MOJI = "🎲"
@@ -28,3 +28,16 @@ async def _(event):
                 r = await reply_message.reply(file=InputMediaDice(emoticon=emoticon))
         except:
             pass
+
+
+CMD_HELP.update(
+    {
+        "diceandart": "**Diceandart**\
+\n\n**Syntax : **`.🏀`\
+\n**Usage :** Creates a basket ball emoji game.\
+\n\n**Syntax : **`.🎲`\
+\n**Usage :** Creates a dice emoji game.\
+\n\n**Syntax : **`.🎯`\
+\n**Usage :** Creates a dart emoji game. ."
+    }
+)
