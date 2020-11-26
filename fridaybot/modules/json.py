@@ -3,7 +3,7 @@ Syntax: .json"""
 import io
 
 from fridaybot.utils import friday_on_cmd
-
+from fridaybot import CMD_HELP
 
 @friday.on(friday_on_cmd("json"))
 async def _(event):
@@ -31,3 +31,12 @@ async def _(event):
             await event.delete()
     else:
         await event.edit("`{}`".format(the_real_message))
+
+
+CMD_HELP.update(
+    {
+        "json": "**JSON**\
+\n\n**Syntax : **`.json <reply to a message>`\
+\n**Usage :** Get detailed info about any message."
+    }
+)
