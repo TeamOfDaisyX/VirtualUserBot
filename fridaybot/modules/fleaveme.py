@@ -6,8 +6,10 @@ Available Commands:
 .fleave"""
 
 import asyncio
-from fridaybot import CMD_HELP
+
 from telethon import events
+
+from fridaybot import CMD_HELP
 
 
 @friday.on(events.NewMessage(pattern=r"\.fleave", outgoing=True))
