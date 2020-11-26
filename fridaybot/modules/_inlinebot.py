@@ -143,6 +143,10 @@ async def rip(event):
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"dontspamnigga")))
 async def rip(event):
+    if event.query.user_id == bot.uid:
+        sedok = "Master, You Don't Need To Use This."
+        await event.answer(sedok, cache_time=0, alert=True)
+        return
     await event.get_chat()
     him_id = event.query.user_id
     text1 = "You Have Chosed A Probhited Option. Therefore, You Have Been Blocked By UserBot. 🇮🇳"
@@ -156,13 +160,12 @@ async def rip(event):
 
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"backme")))
-async def rip(event):
+async def sed(event):
     if not event.query.user_id == bot.uid:
         sedok = "Who The Fuck Are You? Get Your Own Friday."
         await event.answer(sedok, cache_time=0, alert=True)
         return
-    hmm = int(event.data_match.group(1).decode("UTF-8"))
-    buttons = paginate_help(hmm, CMD_HELP, "helpme")
+    buttons = paginate_help(0, CMD_HELP, "helpme")
     sed = f"""Friday Userbot Modules Are Listed Here !\n
 For More Help or Support Visit @FridayOT \nCurrently Loaded Plugins: {len(CMD_LIST)}"""
     await event.edit(message=sed, buttons=buttons)
@@ -170,6 +173,10 @@ For More Help or Support Visit @FridayOT \nCurrently Loaded Plugins: {len(CMD_LI
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"whattalk")))
 async def rip(event):
+    if event.query.user_id == bot.uid:
+        sedok = "Master, You Don't Need To Use This."
+        await event.answer(sedok, cache_time=0, alert=True)
+        return
     await event.get_chat()
     him_id = event.query.user_id
     await event.edit("Choice Accepted ✔️")
@@ -184,6 +191,10 @@ async def rip(event):
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"askme")))
 async def rip(event):
+    if event.query.user_id == bot.uid:
+        sedok = "Master, You Don't Need To Use This."
+        await event.answer(sedok, cache_time=0, alert=True)
+        return
     await event.get_chat()
     him_id = event.query.user_id
     await event.edit("Choice Accepted ✔️")
