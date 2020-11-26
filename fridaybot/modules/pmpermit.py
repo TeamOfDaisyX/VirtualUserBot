@@ -144,7 +144,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                 f"**{CUSTOM_MIDDLE_PMP}**"
             )
         else:
-            USER_BOT_NO_WARN = CUSTOM_PMPERMIT_MSG["custom"]
+            USER_BOT_NO_WARN = (f'{CUSTOM_PMPERMIT_MSG["custom"]}')
         if event.sender_id == bot.uid:
             return
 
@@ -198,7 +198,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                 f"**{CUSTOM_MIDDLE_PMP}**"
             )
         else:
-            USER_BOT_NO_WARN = CUSTOM_PMPERMIT_MSG["custom"]
+            USER_BOT_NO_WARN = (f'{CUSTOM_PMPERMIT_MSG["custom"]}')
         if chat_ids not in PM_WARNS:
             PM_WARNS.update({chat_ids: 0})
         if PM_WARNS[chat_ids] == 3:
