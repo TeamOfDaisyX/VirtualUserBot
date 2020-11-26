@@ -12,7 +12,7 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import os
-
+from fridaybot import CMD_HELP
 from glitch_this import ImageGlitcher
 from telethon.tl.types import MessageMediaPhoto
 
@@ -55,3 +55,12 @@ async def glitch(event):
     for starky in (pathsn, photolove):
         if starky and os.path.exists(starky):
             os.remove(starky)
+
+
+CMD_HELP.update(
+    {
+        "glitch": "**Glitch**\
+\n\n**Syntax : **`.glitch <reply to a image>`\
+\n**Usage :** Creates glitch gif of given image."
+    }
+)
