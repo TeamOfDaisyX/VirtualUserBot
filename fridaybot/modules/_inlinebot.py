@@ -7,7 +7,7 @@ import requests
 from telethon import Button, custom, events, functions
 from youtubesearchpython import SearchVideos
 
-from fridaybot import ALIVE_NAME, CMD_LIST, CMD_HELP
+from fridaybot import ALIVE_NAME, CMD_HELP, CMD_LIST
 from fridaybot.modules import inlinestats
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
@@ -109,11 +109,9 @@ async def on_plug_in_callback_query_handler(event):
         return
     plugin_name = event.data_match.group(1).decode("UTF-8")
     if plugin_name in CMD_HELP:
-            help_string = f'**💡 PLUGIN NAME 💡 :** `{plugin_name}` \n{CMD_HELP[plugin_name]}'
+        help_string = f"**💡 PLUGIN NAME 💡 :** `{plugin_name}` \n{CMD_HELP[plugin_name]}"
     reply_pop_up_alert = help_string
-    reply_pop_up_alert += "\n\n**(C) @FRIDAYOT** ".format(
-        plugin_name
-    )
+    reply_pop_up_alert += "\n\n**(C) @FRIDAYOT** ".format(plugin_name)
     if len(reply_pop_up_alert) >= 4096:
         crackexy = "`Pasting Your Help Menu.`"
         await event.answer(crackexy, cache_time=0, alert=True)
@@ -121,9 +119,16 @@ async def on_plug_in_callback_query_handler(event):
         url = "https://del.dog/documents"
         r = requests.post(url, data=out_file.encode("UTF-8")).json()
         url = f"https://del.dog/{r['key']}"
-        await event.edit(f"Pasted {plugin_name} to {url}", link_preview=False, buttons=[[custom.Button.inline("Go Back", data="backme")]])
+        await event.edit(
+            f"Pasted {plugin_name} to {url}",
+            link_preview=False,
+            buttons=[[custom.Button.inline("Go Back", data="backme")]],
+        )
     else:
-        await event.edit(message=reply_pop_up_alert, buttons=[[custom.Button.inline("Go Back", data="backme")]])
+        await event.edit(
+            message=reply_pop_up_alert,
+            buttons=[[custom.Button.inline("Go Back", data="backme")]],
+        )
 
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"terminator")))
@@ -148,7 +153,8 @@ async def rip(event):
         LOG_CHAT,
         f"Hello, A Noob [Nibba](tg://user?id={him_id}) Selected Probhited Option, Therefore Blocked.",
     )
-    
+
+
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"backme")))
 async def rip(event):
     if not event.query.user_id == bot.uid:
@@ -160,7 +166,6 @@ async def rip(event):
     sed = f"""Friday Userbot Modules Are Listed Here !\n
 For More Help or Support Visit @FridayOT \nCurrently Loaded Plugins: {len(CMD_LIST)}"""
     await event.edit(message=sed, buttons=buttons)
-
 
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"whattalk")))
