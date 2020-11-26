@@ -5,10 +5,8 @@ Available Commands:
 .emoji :/
 .emoji -_-"""
 import asyncio
-
-from uniborg.util import friday_on_cmd
-
 from fridaybot import CMD_HELP
+from uniborg.util import friday_on_cmd
 
 
 @friday.on(friday_on_cmd(pattern="emoji (.*)"))
@@ -35,11 +33,10 @@ async def _(event):
             await asyncio.sleep(animation_interval)
             await event.edit(animation_chars[i % 2])
 
-
 CMD_HELP.update(
     {
         "emojis": "**Emojis**\
-\n\n**Syntax : **`.emoji <apple/shrug/ :/ /-_->`\
+\n\n**Syntax : **`.emoji <apple/shrug/ :/ /-_-`\
 \n**Usage :** Funny prank plugin."
     }
 )
