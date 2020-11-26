@@ -36,7 +36,7 @@ async def _(event):
 CMD_HELP.update(
     {
         "emojis": "**Emojis**\
-\n\n**Syntax : **`.emoji <apple/shrug/ :/ /-_-`\
+\n\n**Syntax : **`.emoji <apple/shrug/ :/ /-_->`\
 \n**Usage :** Funny prank plugin."
     }
 )
