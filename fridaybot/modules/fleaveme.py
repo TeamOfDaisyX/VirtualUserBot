@@ -10,7 +10,7 @@ import asyncio
 from telethon import events
 
 
-@friday.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
+@friday.on(events.NewMessage(pattern=r"\.fleave", outgoing=True))
 async def _(event):
 
     if event.fwd_from:
