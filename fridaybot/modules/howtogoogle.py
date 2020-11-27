@@ -8,7 +8,7 @@ By @loxxi
 import requests
 
 from fridaybot.utils import friday_on_cmd
-
+from fridaybot import CMD_HELP
 
 @friday.on(friday_on_cmd("ggl (.*)"))
 async def _(event):
@@ -25,3 +25,13 @@ async def _(event):
         )
     else:
         await event.edit("something is wrong. please try again later.")
+
+
+
+CMD_HELP.update(
+    {
+        "howtogoogle": "**How To Google**\
+\n\n**Syntax : **`.ggl <search query>`\
+\n**Usage :** Animates how to Google with search query."
+    }
+)
