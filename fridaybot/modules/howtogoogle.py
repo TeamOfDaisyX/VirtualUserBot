@@ -7,8 +7,9 @@ By @loxxi
 
 import requests
 
-from fridaybot.utils import friday_on_cmd
 from fridaybot import CMD_HELP
+from fridaybot.utils import friday_on_cmd
+
 
 @friday.on(friday_on_cmd("ggl (.*)"))
 async def _(event):
@@ -25,7 +26,6 @@ async def _(event):
         )
     else:
         await event.edit("something is wrong. please try again later.")
-
 
 
 CMD_HELP.update(
