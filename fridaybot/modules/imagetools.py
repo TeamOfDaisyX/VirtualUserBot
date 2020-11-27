@@ -182,9 +182,10 @@ async def iamthug(event):
             os.remove(files)
 
 
-@friday.on(friday_on_cmd(pattern=r"trg"))
-@friday.on(sudo_cmd(pattern=r"trg", allow_sudo=True))
+@friday.on(friday_on_cmd(pattern=r"tig"))
+@friday.on(sudo_cmd(pattern=r"tig", allow_sudo=True))
 async def lolmetrg(event):
+    await event.edit('`Triggered This Image`')
     sed = await event.get_reply_message()
     if isinstance(sed.media, MessageMediaPhoto):
         img = await borg.download_media(sed.media, sedpath)
@@ -193,11 +194,7 @@ async def lolmetrg(event):
     else:
         await event.edit("Reply To Image")
         return
-    try:
-        url_s = upload_file(img)
-    except exceptions.TelegraphException as exc:
-        await event.edit("ERROR: " + str(exc))
-        os.remove(img)
+    url_s = upload_file(img)
     imglink = f"https://telegra.ph{url_s[0]}"
     lolul = f"https://some-random-api.ml/canvas/triggered?avatar={imglink}"
     open("triggered.gif", "wb").write(r.content)
