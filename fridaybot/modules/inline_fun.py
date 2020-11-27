@@ -1,7 +1,6 @@
-from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd
 from var import Var
-
+from fridaybot import CMD_HELP
 
 @friday.on(friday_on_cmd(pattern="stat$"))
 async def stats(event):
@@ -55,12 +54,17 @@ async def mod(event):
     await event.delete()
 
 
+
 CMD_HELP.update(
     {
         "inline_fun": "**Inline Fun**\
 \n\n**Syntax : **`.stat`\
-\n**Usage :** Shows inline st.\
-\n\n**Syntax : **`.telegraph text <reply to text>`\
-\n**Usage :** upload text directly to telegraph ."
+\n**Usage :** Shows inline stats of your assistant bot.\
+\n\n**Syntax : **`.xogame`\
+\n**Usage :** starts a multiplayer xo game.\
+\n\n**Syntax : **`.wspr <text> <username/ID>`\
+\n**Usage :** sends a inline whisper message for given user.\
+\n\n**Syntax : **`.mod <app name>`\
+\n**Usage :** Provides mod APK for given app."
     }
 )
