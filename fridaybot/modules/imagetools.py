@@ -18,7 +18,7 @@ import cv2
 import numpy as np
 import requests
 from PIL import Image
-from telegraph import exceptions, upload_file
+from telegraph import upload_file
 from telethon.tl.types import MessageMediaPhoto
 
 from fridaybot.utils import friday_on_cmd, sudo_cmd
@@ -185,7 +185,7 @@ async def iamthug(event):
 @friday.on(friday_on_cmd(pattern=r"tig"))
 @friday.on(sudo_cmd(pattern=r"tig", allow_sudo=True))
 async def lolmetrg(event):
-    await event.edit('`Triggered This Image`')
+    await event.edit("`Triggered This Image`")
     sed = await event.get_reply_message()
     if isinstance(sed.media, MessageMediaPhoto):
         img = await borg.download_media(sed.media, sedpath)
