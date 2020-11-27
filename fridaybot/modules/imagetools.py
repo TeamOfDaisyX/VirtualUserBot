@@ -195,7 +195,7 @@ async def lolmetrg(event):
         return
     url_s = upload_file(img)
     imglink = f"https://telegra.ph{url_s[0]}"
-    lolul = f"https://some-random-api.ml/canvas/triggered?avatar={img}"
+    lolul = f"https://some-random-api.ml/canvas/triggered?avatar={imglink}"
     r = requests.get(lolul)
     open("triggered.gif", "wb").write(r.content)
     lolbruh = "triggered.gif"
