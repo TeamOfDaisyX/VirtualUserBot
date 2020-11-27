@@ -4,7 +4,7 @@ import sys
 import time
 from distutils.util import strtobool as sb
 from logging import DEBUG, INFO, basicConfig, getLogger
-
+from telegraph import Telegraph, exceptions, upload_file
 import pylast
 import wget
 from dotenv import load_dotenv
@@ -181,3 +181,7 @@ if os.path.exists(km):
 else:
     pathz = "./resources/imgcolour/"
     sedlyf = wget.download(link, out=pathz)
+    
+telegraph = Telegraph()
+r = telegraph.create_account(short_name='Friday UserBot Inc.')
+auth_url = r["auth_url"]
