@@ -1,6 +1,7 @@
 """Get ID of any Telegram media, or any user
 Syntax: .get_id"""
 from telethon.utils import pack_bot_file_id
+
 from fridaybot import CMD_HELP
 from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 
@@ -29,7 +30,6 @@ async def _(event):
             )
     else:
         await starkisgreat.edit("Current Chat ID: `{}`".format(str(event.chat_id)))
-
 
 
 CMD_HELP.update(
