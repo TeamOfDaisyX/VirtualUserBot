@@ -1,4 +1,3 @@
-# Api Provided By @PythonvsAno
 #    Copyright (C) Midhun KM 2020
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -196,7 +195,7 @@ async def lolmetrg(event):
         return
     url_s = upload_file(img)
     imglink = f"https://telegra.ph{url_s[0]}"
-    lolul = f"https://some-random-api.ml/canvas/triggered?avatar={imglink}"
+    lolul = f"https://some-random-api.ml/canvas/triggered?avatar={img}"
     r = requests.get(lolul)
     open("triggered.gif", "wb").write(r.content)
     lolbruh = "triggered.gif"
