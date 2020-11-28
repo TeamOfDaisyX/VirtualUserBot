@@ -37,7 +37,7 @@ async def gen_chlog(repo, diff):
 
 async def print_changelogs(event, ac_br, changelog):
     changelog_str = (
-        f"**Updates available in {ac_br} branch!\n\nChangelog:**\n{changelog}"
+        f"**Updates available in {ac_br} branch!\n\n{changelog}"
     )
     if len(changelog_str) > 4096:
         await event.edit("**Changelog is too big, sending as a file.**")
@@ -47,7 +47,7 @@ async def print_changelogs(event, ac_br, changelog):
         await event.client.send_file(event.chat_id, "output.txt")
         remove("output.txt")
     else:
-        await event.client.send_message(event.chat_id, changelog_str)
+        await event.client.send_message(event.chat_id, changelog_str, link_preview=False)
     return True
 
 
