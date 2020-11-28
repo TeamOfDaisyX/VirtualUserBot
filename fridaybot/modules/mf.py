@@ -1,7 +1,7 @@
 import sys
 
 from telethon import __version__, functions
-
+from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd
 
 
@@ -73,3 +73,16 @@ async def _(event):
     result = result.stringify()
     logger.info(result)  # pylint:disable=E0602
     await event.edit("""Telethon UserBot powered by @UniBorg""")
+
+
+
+
+CMD_HELP.update(
+    {
+        "mf": "**Mf**\
+\n\n**Syntax : **`.mf`\
+\n**Usage :** funny plugin.\
+\n\n**Syntax : **`.dc`\
+\n**Usage :** shows nearest Dc."
+    }
+)
