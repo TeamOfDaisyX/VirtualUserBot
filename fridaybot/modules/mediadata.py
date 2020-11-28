@@ -7,7 +7,7 @@ import shlex
 from typing import Tuple
 
 from telegraph import Telegraph
-
+from fridaybot import CMD_HELP
 from fridaybot.Configs import Config
 from fridaybot.utils import friday_on_cmd
 
@@ -50,3 +50,12 @@ async def _(event):
     await event.edit(f"`This MediaInfo Can Be Found` [Here](https://telegra.ph/{km})")
     if os.path.exists(file_path):
         os.remove(file_path)
+
+
+CMD_HELP.update(
+    {
+        "mediadata": "**Media Data**\
+\n\n**Syntax : **`.mediainfo <reply to image>`\
+\n**Usage :** Gives you information about the media."
+    }
+)
