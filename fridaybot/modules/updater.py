@@ -29,7 +29,7 @@ requirements_path = path.join(
 
 
 async def gen_chlog(repo, diff):
-    ch_log = "**ChangeLog(s)** \n\n"
+    ch_log = "**ChangeLog** \n\n"
     for c in repo.iter_commits(diff):
         ch_log += f"🔨 **#{c.count()} :** [{c.summary}]({UPSTREAM_REPO_URL}/commit/{c}) 👷 __{c.author}__\n"
     return ch_log
