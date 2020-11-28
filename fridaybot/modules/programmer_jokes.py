@@ -6,19 +6,16 @@
 
 
 import pyjokes
-from fridaybot import CMD_HELP
 from uniborg.util import friday_on_cmd
-from asyncio import wait
-from telethon import events
 
- 
- 
+from fridaybot import CMD_HELP
+
+
 @friday.on(friday_on_cmd(pattern=r"pjoke"))
 async def hi(event):
     if event.fwd_from:
         return
-    await event.edit(pyjokes.get_joke(category='all'))
-
+    await event.edit(pyjokes.get_joke(category="all"))
 
 
 CMD_HELP.update(
