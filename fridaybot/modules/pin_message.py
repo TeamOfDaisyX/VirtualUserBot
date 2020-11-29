@@ -2,8 +2,9 @@
 Syntax: .cpin [LOUD]"""
 from telethon.tl import functions
 
-from fridaybot.utils import friday_on_cmd
 from fridaybot import CMD_HELP
+from fridaybot.utils import friday_on_cmd
+
 
 @friday.on(friday_on_cmd("cpin ?(.*)"))
 async def _(event):
@@ -27,8 +28,6 @@ async def _(event):
             await event.delete()
     else:
         await event.edit("Reply to a message to pin the message in this Channel.")
-
-
 
 
 CMD_HELP.update(
