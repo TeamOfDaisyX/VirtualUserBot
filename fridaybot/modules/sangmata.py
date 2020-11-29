@@ -1,7 +1,9 @@
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from uniborg.util import friday_on_cmd
+
 from fridaybot import CMD_HELP
+
 
 @friday.on(friday_on_cmd("sg ?(.*)"))
 async def _(event):
@@ -177,8 +179,6 @@ async def _(event):
             )
         else:
             await event.edit(f"{response.message.message}")
-
-
 
 
 CMD_HELP.update(
