@@ -13,7 +13,7 @@ Available Commands:
 import asyncio
 
 from telethon import events
-
+from fridaybot import CMD_HELP
 
 @friday.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
 async def _(event):
@@ -191,7 +191,7 @@ async def _(event):
             "__Current Loaded OS: Symbian OS__\n\n**To Boot Other OS, Use The Following Trigger:**\n✅ `.macos`\n☑️ `.windows`\n☑️ `.linux`\n☑️ `.stock`",
             "__Current Loaded OS: Symbian OS__\n\n**To Boot Other OS, Use The Following Trigger:**\n✅ `.macos`\n✅ `.windows`\n☑️ `.linux`\n☑️ `.stock`",
             "__Current Loaded OS: Symbian OS__\n\n**To Boot Other OS, Use The Following Trigger:**\n✅ `.macos`\n✅ `.windows`\n✅ `.linux`\n☑️ `.stock`",
-            "__Current Loaded OS: Symbian OS__\n\n**To Boot Other OS, Use The Following Trigger:**\n✅ `.macos`\n✅ `.windows`\n✅ `.linux`\n✅ `.stock`\n\nDeveloped By: @shivamkchoudhary",
+            "__Current Loaded OS: Symbian OS__\n\n**To Boot Other OS, Use The Following Trigger:**\n✅ `.macos`\n✅ `.windows`\n✅ `.linux`\n✅ `.stock`",
         ]
 
         for i in animation_ttl:
@@ -199,3 +199,22 @@ async def _(event):
             await asyncio.sleep(animation_interval)
 
             await event.edit(animation_chars[i % 7])
+
+
+
+
+CMD_HELP.update(
+    {
+        "os": "**OS**\
+\n\n**Syntax : **`.macos`\
+\n**Usage :** shows a prank mac os loading.\
+\n\n**Syntax : **windows\
+\n**Usage :** shows a prank windows os loading.\
+\n\n**Syntax : **`.linux`\
+\n**Usage :** shows a prank linux os loading.\
+\n\n**Syntax : **`.stock`\
+\n**Usage :** shows a prank symbian os loading.\
+\n\n**Syntax : **`.os`\
+\n**Usage :** Shows prank OS booting."
+    }
+)
