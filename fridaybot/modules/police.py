@@ -2,7 +2,7 @@ import asyncio
 
 from uniborg.util import friday_on_cmd
 
-from fridaybot import ALIVE_NAME
+from fridaybot import ALIVE_NAME, CMD_HELP
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Friday Userbot"
 
@@ -32,7 +32,7 @@ async def _(event):
         "🔴🔴🔴⬜⬜⬜🔵🔵🔵\n🔴🔴🔴⬜⬜⬜🔵🔵🔵\n🔴🔴🔴⬜⬜⬜🔵🔵🔵",
         "🔵🔵🔵⬜⬜⬜🔴🔴🔴\n🔵🔵🔵⬜⬜⬜🔴🔴🔴\n🔵🔵🔵⬜⬜⬜🔴🔴🔴",
         "🔴🔴🔴⬜⬜⬜🔵🔵🔵\n🔴🔴🔴⬜⬜⬜🔵🔵🔵\n🔴🔴🔴⬜⬜⬜🔵🔵🔵",
-        "[FRIDAY](https://www.github.com/midhunkm1294-bit/friday) **Police Service Here**",
+        "[FRIDAY](https://github.com/StarkGang/fridayuserbot) **Police Service Here**",
     ]
 
     for i in animation_ttl:
@@ -40,3 +40,13 @@ async def _(event):
         await asyncio.sleep(animation_interval)
 
         await event.edit(animation_chars[i % 12])
+
+
+
+CMD_HELP.update(
+    {
+        "police": "**Police 👮**\
+\n\n**Syntax : **`.police`\
+\n**Usage :** Funny police prank plugin."
+    }
+)
