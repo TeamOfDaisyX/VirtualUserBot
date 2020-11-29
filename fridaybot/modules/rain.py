@@ -3,7 +3,9 @@ import asyncio
 from collections import deque
 
 from telethon import events
+
 from fridaybot import CMD_HELP
+
 
 @friday.on(events.NewMessage(pattern=r"\.rain", outgoing=True))
 async def _(event):
@@ -14,7 +16,6 @@ async def _(event):
         await asyncio.sleep(0.1)
         await event.edit("".join(deq))
         deq.rotate(1)
-
 
 
 CMD_HELP.update(
