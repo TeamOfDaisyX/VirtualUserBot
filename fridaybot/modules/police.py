@@ -42,7 +42,6 @@ async def _(event):
         await event.edit(animation_chars[i % 12])
 
 
-
 CMD_HELP.update(
     {
         "police": "**Police 👮**\
