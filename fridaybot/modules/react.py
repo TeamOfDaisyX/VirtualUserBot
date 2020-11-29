@@ -114,7 +114,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "telegraph": "**Telegraph**\
+        "react": "**React**\
 \n\n**Syntax : **`.react <type happy/thinking/waving/dead/dog/sad/love/confused/wtf>`\
 \n**Usage :** generates emojis to show given emotion."
     }
