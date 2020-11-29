@@ -115,7 +115,6 @@ CMD_HELP.update(
     {
         "telegraph": "**Telegraph**\
 \n\n**Syntax : **`.react <type happy/thinking/waving/dead/dog/sad/love/confused/wtf>`\
-\n**Usage :** generates emojis to show given emotion."\
-\n**Example :** .react happy."
+\n**Usage :** generates emojis to show given emotion."
     }
 )
