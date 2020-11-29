@@ -1,7 +1,7 @@
 import time
 from datetime import datetime
 
-from fridaybot import Lastupdate, CMD_HELP
+from fridaybot import CMD_HELP, Lastupdate
 from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 
 
@@ -46,7 +46,6 @@ async def _(event):
     await starkislub.edit(
         f"**█▀█ █▀█ █▄░█ █▀▀ █ \n█▀▀ █▄█ █░▀█ █▄█ ▄**\n ➲ `{ms}` \n ➲ `{uptime}`"
     )
-
 
 
 CMD_HELP.update(
