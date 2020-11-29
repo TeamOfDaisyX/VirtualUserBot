@@ -7,7 +7,7 @@ import requests
 
 from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 from var import Var
-
+from fridaybot import CMD_HELP
 newslog = Var.NEWS_CHANNEL_ID
 
 
@@ -39,3 +39,13 @@ async def _(event):
         sed1 = img
         sedm = f"**Title : {titles}** \n{sedlyf} \nDate : {dateis} \nAuthor : {writter} \nReadMore : {readthis}"
         await borg.send_file(newslog, sed1, caption=sedm)
+
+
+
+CMD_HELP.update(
+    {
+        "news": "**News**\
+\n\n**Syntax : **`.news <type of news>`\
+\n**Usage :** Get latest news instantly to your private group"
+    }
+)
