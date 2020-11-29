@@ -8,8 +8,9 @@ Available Commands:
 import os
 import sys
 
-from fridaybot.utils import friday_on_cmd
 from fridaybot import CMD_HELP
+from fridaybot.utils import friday_on_cmd
+
 
 @friday.on(friday_on_cmd("restart"))
 async def _(event):
@@ -34,7 +35,6 @@ async def _(event):
         return
     await event.edit("Turning off ...Manually turn me on later")
     await borg.disconnect()
-
 
 
 CMD_HELP.update(
