@@ -21,8 +21,9 @@ from datetime import datetime
 
 import requests
 
-from fridaybot.utils import friday_on_cmd
 from fridaybot import CMD_HELP
+from fridaybot.utils import friday_on_cmd
+
 
 @friday.on(friday_on_cmd("rmbg ?(.*)"))
 async def _(event):
@@ -116,8 +117,6 @@ def ReTrieveURL(input_url):
         stream=True,
     )
     return r
-
-
 
 
 CMD_HELP.update(
