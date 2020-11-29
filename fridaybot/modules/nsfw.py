@@ -14,6 +14,7 @@ import os
 
 import requests
 from telethon.tl.types import MessageMediaPhoto
+
 from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd, sudo_cmd
 
@@ -46,7 +47,6 @@ async def nsfw(event):
             await event.edit("Response UnsucessFull. Try Again.")
             if os.path.exists(photo):
                 os.remove(photo)
-
 
 
 CMD_HELP.update(
