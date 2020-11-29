@@ -1,7 +1,7 @@
 from asyncio import wait
 
 from fridaybot.utils import friday_on_cmd
-
+from fridaybot import CMD_HELP
 
 @friday.on(friday_on_cmd("repeat ?(.*)"))
 async def _(event):
@@ -10,3 +10,14 @@ async def _(event):
     repmessage = message * count
     await wait([event.respond(repmessage) for i in range(count)])
     await event.delete()
+
+
+
+
+CMD_HELP.update(
+    {
+        "repeat": "**Repeat**\
+\n\n**Syntax : **`.repeat <number of times to repeat> <text to repeat>`\
+\n**Usage :** repeats the given text with given number of times."
+    }
+)
