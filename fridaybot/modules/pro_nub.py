@@ -11,7 +11,7 @@
 import asyncio
 
 from fridaybot.utils import friday_on_cmd
-
+from fridaybot import CMD_HELP
 
 @friday.on(friday_on_cmd("(.*)"))
 async def _(event):
@@ -149,3 +149,20 @@ async def _(event):
 
             await event.edit(animation_chars[i % 8])
             await asyncio.sleep(animation_interval)
+
+
+
+
+CMD_HELP.update(
+    {
+        "pro_nub": "**Pro noob**\
+\n\n**Syntax : **`.unoob`\
+\n**Usage :** funny prank plugin to show others as noobs.\
+\n\n**Syntax : **`.menoob`\
+\n**Usage :** funny prank plugin to show yourself as noob.\
+\n\n**Syntax : **`.upro`\
+\n**Usage :** funny prank plugin to show others as pros.\
+\n\n**Syntax : **`.mepro`\
+\n**Usage :** Funny plugin to show yourself as pro."
+    }
+)
