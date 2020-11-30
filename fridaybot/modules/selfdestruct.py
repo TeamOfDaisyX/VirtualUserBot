@@ -6,6 +6,7 @@
 
 
 import time
+
 from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd
 
@@ -27,9 +28,6 @@ async def selfdestruct(destroy):
         smsg = await destroy.client.send_message(destroy.chat_id, text)
         time.sleep(counter)
         await smsg.delete()
-
-
-
 
 
 CMD_HELP.update(
