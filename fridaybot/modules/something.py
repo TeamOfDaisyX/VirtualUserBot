@@ -1,7 +1,7 @@
 """ Whatever Plugin by Noobs of Telegram i.e. @pureindialover """
 
 from uniborg.util import friday_on_cmd
-
+from fridaybot import CMD_HELP
 
 @friday.on(friday_on_cmd(pattern=r"lmoon"))
 async def test(event):
@@ -59,3 +59,24 @@ async def sprinkle(event):
     await event.edit(
         "✨.•*¨*.¸.•*¨*.¸¸.•*¨*• ƸӜƷ\n🌸🌺🌸🌺🌸🌺🌸🌺\n Sprinkled with love❤\n🌷🌻🌷🌻🌷🌻🌷🌻\n ¨*.¸.•*¨*. ¸.•*¨*.¸¸.•*¨`*•.✨\n🌹🍀🌹🍀🌹🍀🌹🍀"
     )
+
+
+
+
+CMD_HELP.update(
+    {
+        "something": "**Something**\
+\n\n**Syntax : **`.lmoon`\
+\n**Usage :** creates funny emoji with moons.\
+\n\n**Syntax : **`.city`\
+\n**Usage :** creates funny city emoji.\
+\n\n**Syntax : **`.hello`\
+\n**Usage :** creates hello text to wish.\
+\n\n**Syntax : **`.cheer`\
+\n**Usage :** creates funny emoji.\
+\n\n**Syntax : **`.getwell`\
+\n**Usage :** creates funny emoji to show getwell.\
+\n\n**Syntax : **`.sprinkle`\
+\n**Usage :** creates funny text emoji."
+    }
+)
