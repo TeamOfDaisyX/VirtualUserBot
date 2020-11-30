@@ -1,5 +1,6 @@
 import asyncio
 from datetime import datetime
+
 from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd, sudo_cmd
 
@@ -29,7 +30,6 @@ async def send(event):
     )
     await asyncio.sleep(5)
     await event.delete()
-
 
 
 CMD_HELP.update(
