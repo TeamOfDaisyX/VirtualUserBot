@@ -4,9 +4,10 @@ Syntax: .screenlong <Website URL>"""
 import io
 import traceback
 from datetime import datetime
-from fridaybot import CMD_HELP
+
 from selenium import webdriver
 
+from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd
 
 
@@ -66,9 +67,6 @@ async def _(event):
         await event.edit(f"Completed screencapture Process in {ms} seconds")
     except Exception:
         await event.edit(traceback.format_exc())
-
-
-
 
 
 CMD_HELP.update(
