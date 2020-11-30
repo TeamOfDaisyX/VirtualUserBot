@@ -1,11 +1,10 @@
 import asyncio
 
-from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from fridaybot import bot
+from fridaybot import CMD_HELP, bot
 from fridaybot.utils import friday_on_cmd
-from fridaybot import CMD_HELP
+
 
 @friday.on(friday_on_cmd(pattern="netease ?(.*)"))
 async def WooMai(netase):
