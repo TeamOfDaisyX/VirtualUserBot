@@ -456,8 +456,6 @@ def zipdir(path, ziph):
             os.remove(os.path.join(root, file))
 
 
-
-
 CMD_HELP.update(
     {
         "stickers": "**Stickers**\
