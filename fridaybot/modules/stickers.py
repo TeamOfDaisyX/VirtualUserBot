@@ -22,7 +22,7 @@ from telethon.tl.types import (
     MessageMediaPhoto,
 )
 
-from fridaybot import ALIVE_NAME
+from fridaybot import ALIVE_NAME, CMD_HELP
 from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Who is this"
@@ -454,3 +454,18 @@ def zipdir(path, ziph):
         for file in files:
             ziph.write(os.path.join(root, file))
             os.remove(os.path.join(root, file))
+
+
+
+
+CMD_HELP.update(
+    {
+        "stickers": "**Stickers**\
+\n\n**Syntax : **`.kang <reply to sticker/image>`\
+\n**Usage :** Kangs the image into your sticker pack.\
+\n\n**Syntax : **`.packinfo <reply to a sticker>`\
+\n**Usage :** Shows info about the pack.\
+\n\n**Syntax : **`.getsticker <reply to sticker>`\
+\n**Usage :** Downloada the sticker."
+    }
+)
