@@ -4,7 +4,9 @@ originaly from : @corsicanu_bot
 """
 
 from telethon import events
+
 from fridaybot import CMD_HELP
+
 
 @friday.on(events.NewMessage(pattern=r"\.shout", outgoing=True))
 async def shout(args):
@@ -24,8 +26,6 @@ async def shout(args):
         result = "".join(result)
         msg = "\n" + result
         await args.edit("`" + msg + "`")
-
-
 
 
 CMD_HELP.update(
