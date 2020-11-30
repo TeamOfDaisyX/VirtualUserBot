@@ -6,7 +6,7 @@ import urllib
 
 import requests
 from telethon.tl import functions
-
+from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd
 
 # Space lovers
@@ -63,3 +63,13 @@ async def main(event):
         os.system("rm -rf donottouch.jpg")
 
         await asyncio.sleep(3600)  # Edit this to your required needs
+
+
+
+CMD_HELP.update(
+    {
+        "spacedp": "**Space Dp**\
+\n\n**Syntax : **`.spacedp`\
+\n**Usage :** uploades new space picture as your profile pic."
+    }
+)
