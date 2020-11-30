@@ -10,7 +10,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from uniborg.util import friday_on_cmd
 
-from fridaybot import ALIVE_NAME
+from fridaybot import ALIVE_NAME, CMD_HELP
 
 SLAP_TEMPLATES = [
     "{user1} {hits} {user2} with a {item}.",
@@ -145,3 +145,14 @@ async def slap(replied_user, event):
     )
 
     return caption
+
+
+
+
+CMD_HELP.update(
+    {
+        "slap": "**Slap**\
+\n\n**Syntax : **`.slap <reply to a message>`\
+\n**Usage :** Slaps the user with text."
+    }
+)
