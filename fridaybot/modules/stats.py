@@ -3,7 +3,7 @@ from datetime import datetime
 from telethon.tl.types import Channel, Chat, User
 from uniborg.util import friday_on_cmd
 
-from fridaybot import bot
+from fridaybot import bot, CMD_HELP
 
 
 @bot.on(friday_on_cmd(pattern=r"stats"))
@@ -45,3 +45,13 @@ async def _(event):
             ms, u, g, c, bc, b
         )
     )
+
+
+
+CMD_HELP.update(
+    {
+        "stats": "**Stats**\
+\n\n**Syntax : **`.stats`\
+\n**Usage :** Shows user account stats."
+    }
+)
