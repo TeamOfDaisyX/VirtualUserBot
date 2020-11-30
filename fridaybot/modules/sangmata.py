@@ -66,7 +66,7 @@ async def _(event):
             await borg.forward_messages(chat, reply_message)
             response = await response
         except YouBlockedUserError:
-            await event.reply("```Please unblock @sangmatainfo_bot and try again```")
+            await event.reply("```Please unblock @fakemailbot and try again```")
             return
         if response.text.startswith("send"):
             await event.edit(
@@ -101,7 +101,7 @@ async def _(event):
             await borg.forward_messages(chat, reply_message)
             response = await response
         except YouBlockedUserError:
-            await event.reply("```Please unblock @sangmatainfo_bot and try again```")
+            await event.reply("```Please unblock @uploadbot and try again```")
             return
         if response.text.startswith("Hi!,"):
             await event.edit(
@@ -136,7 +136,7 @@ async def _(event):
             await borg.forward_messages(chat, reply_message)
             response = await response
         except YouBlockedUserError:
-            await event.reply("```nikal gendu```")
+            await event.reply("```Please unblock @getidsbot and try again```")
             return
         if response.text.startswith("Hello,"):
             await event.edit(
@@ -171,7 +171,7 @@ async def _(event):
             await borg.forward_messages(chat, reply_message)
             response = await response
         except YouBlockedUserError:
-            await event.reply("```nikal gendu```")
+            await event.reply("```Please unblock @UrbanDictionaryBot and try again```")
             return
         if response.text.startswith("Hello,"):
             await event.edit(
