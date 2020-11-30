@@ -8,6 +8,7 @@ Available Commands:
 .snipd"""
 from telethon import events, utils
 from telethon.tl import types
+
 from fridaybot import CMD_HELP
 from fridaybot.modules.sql_helper.snips_sql import (
     add_snip,
@@ -113,8 +114,6 @@ async def on_snip_delete(event):
     name = event.pattern_match.group(1)
     remove_snip(name)
     await event.edit("snip #{} deleted successfully".format(name))
-
-
 
 
 CMD_HELP.update(
