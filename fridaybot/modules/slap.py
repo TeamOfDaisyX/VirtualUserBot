@@ -147,8 +147,6 @@ async def slap(replied_user, event):
     return caption
 
 
-
-
 CMD_HELP.update(
     {
         "slap": "**Slap**\
