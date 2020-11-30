@@ -1,6 +1,6 @@
 import asyncio
 from datetime import datetime
-
+from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd, sudo_cmd
 
 fridaythumb = "./resources/IMG_20200929_103719_628.jpg"
@@ -29,3 +29,13 @@ async def send(event):
     )
     await asyncio.sleep(5)
     await event.delete()
+
+
+
+CMD_HELP.update(
+    {
+        "send": "**Send**\
+\n\n**Syntax : **`.send <plugin name>`\
+\n**Usage :** sends the plugin."
+    }
+)
