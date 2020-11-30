@@ -10,6 +10,7 @@ import textwrap
 
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import InputMessagesFilterDocument
+
 from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd, sudo_cmd
 
@@ -154,8 +155,6 @@ async def get_font_file(client, channel_id, search_kw=""):
 # def deEmojify(inputString: str) -> str:
 #  """Remove emojis and other non-safe characters from string"""
 # return re.sub(EMOJI_PATTERN, '', inputString)
-
-
 
 
 CMD_HELP.update(
