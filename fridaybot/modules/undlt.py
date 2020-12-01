@@ -1,7 +1,9 @@
 import asyncio
 
 from uniborg.util import friday_on_cmd
+
 from fridaybot import CMD_HELP
+
 
 @friday.on(friday_on_cmd(pattern="undlt"))
 async def _(event):
@@ -20,8 +22,6 @@ async def _(event):
         )
         await asyncio.sleep(3)
         await event.delete()
-
-
 
 
 CMD_HELP.update(
