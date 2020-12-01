@@ -4,7 +4,9 @@
 import asyncio
 
 from uniborg.util import friday_on_cmd
+
 from fridaybot import CMD_HELP
+
 
 @friday.on(friday_on_cmd(pattern="type (.*)"))
 async def _(event):
@@ -37,9 +39,6 @@ async def _(event):
         except Exception as e:
             logger.warn(str(e))
         await asyncio.sleep(DELAY_BETWEEN_EDITS)
-
-
-
 
 
 CMD_HELP.update(
