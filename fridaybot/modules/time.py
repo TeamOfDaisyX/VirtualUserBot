@@ -6,6 +6,7 @@ import os
 from datetime import datetime
 
 from PIL import Image, ImageDraw, ImageFont
+
 from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd
 
@@ -59,8 +60,6 @@ async def _(event):
         return
     input_str = event.pattern_match.group(1)
     logger.info(input_str)  # pylint:disable=E0602
-
-
 
 
 CMD_HELP.update(
