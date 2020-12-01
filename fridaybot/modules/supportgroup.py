@@ -6,6 +6,7 @@ Credits to noone
 
 
 import asyncio
+
 from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd
 
@@ -28,8 +29,6 @@ async def _(event):
 
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 18])
-
-
 
 
 CMD_HELP.update(
