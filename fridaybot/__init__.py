@@ -184,4 +184,4 @@ else:
     try:
         sedlyf = wget.download(link, out=pathz)
     except:
-        print("I Wasn't Able To Download Cafee Model. Skipping")       
+        print("I Wasn't Able To Download Cafee Model. Skipping")
