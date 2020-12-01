@@ -1,7 +1,8 @@
 import pyshorteners
 
-from fridaybot.utils import friday_on_cmd, sudo_cmd
 from fridaybot import CMD_HELP
+from fridaybot.utils import friday_on_cmd, sudo_cmd
+
 
 @friday.on(friday_on_cmd(pattern="urlshort (.*)"))
 @friday.on(sudo_cmd(pattern="urlshort (.*)", allow_sudo=True))
@@ -17,7 +18,6 @@ async def vom(event):
         await event.edit(bestisbest, parse_mode="HTML")
     except Exception as e:
         await event.edit("SomeThing Went Wrong. \nError : " + e)
-
 
 
 CMD_HELP.update(
