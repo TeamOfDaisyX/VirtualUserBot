@@ -6,7 +6,7 @@ import os
 from datetime import datetime
 
 from PIL import Image, ImageDraw, ImageFont
-
+from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd
 
 FONT_FILE_TO_USE = "Fonts/digital.ttf"
@@ -59,3 +59,14 @@ async def _(event):
         return
     input_str = event.pattern_match.group(1)
     logger.info(input_str)  # pylint:disable=E0602
+
+
+
+
+CMD_HELP.update(
+    {
+        "time": "**Time**\
+\n\n**Syntax : **`.time`\
+\n**Usage :** Creates a sticker with present time and date."
+    }
+)
