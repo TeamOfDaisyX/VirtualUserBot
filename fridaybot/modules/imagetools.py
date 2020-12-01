@@ -20,6 +20,7 @@ from PIL import Image
 from telegraph import upload_file
 from telethon.tl.types import MessageMediaPhoto
 
+from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd, sudo_cmd
 
 sedpath = "./starkgangz/"
@@ -205,3 +206,21 @@ async def lolmetrg(event):
     for files in (lolbruh, img):
         if files and os.path.exists(files):
             os.remove(files)
+            
+            
+
+CMD_HELP.update(
+    {
+        "imagetools": "**imagetools**\
+        \n\n**Syntax : **`.cit`\
+        \n**Usage :** colourizes the given picture\
+        \n\n**Syntax : **`.toon`\
+        \n**Usage :** makes toon of the given image\
+        \n\n**Syntax : **`.nst`\
+        \n**Usage :** removes colours from image\
+        \n\n**Syntax : ** `.thug`\
+        \n**Usage :** makes a thug life meme image\
+        \n\n**Syntax : ** `.tig`\
+        \n**Usage :** Makes a triggered gif of the replied image"
+    }
+)
