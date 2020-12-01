@@ -12,6 +12,7 @@ from uniborg.util import friday_on_cmd
 
 from fridaybot import CMD_HELP
 
+
 @friday.on(friday_on_cmd(pattern="lucky"))
 async def _(event):
 
@@ -54,8 +55,8 @@ async def _(event):
         await asyncio.sleep(animation_interval)
 
         await event.edit(animation_chars[i % 17])
-        
-        
+
+
 CMD_HELP.update(
     {
         "lucky": "**Lucky**\
