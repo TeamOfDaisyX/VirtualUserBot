@@ -125,8 +125,6 @@ async def _(event):
         await event.edit("Reply `.gethumbnail` as a reply to a media")
 
 
-
-
 CMD_HELP.update(
     {
         "thumbnail": "**Thumbnail**\
