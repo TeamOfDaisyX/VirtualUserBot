@@ -7,8 +7,9 @@ import time
 
 import aiohttp
 
-from fridaybot.utils import friday_on_cmd
 from fridaybot import CMD_HELP
+from fridaybot.utils import friday_on_cmd
+
 
 @friday.on(friday_on_cmd(pattern="weathers (.*)"))
 async def _(event):
@@ -70,7 +71,6 @@ async def _(event):
         with io.BytesIO(response_api) as out_file:
             await event.reply(file=out_file)
     await event.edit(input_str)
-
 
 
 CMD_HELP.update(
