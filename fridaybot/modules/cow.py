@@ -29,19 +29,19 @@ async def univsaye(cowmsg):
 CMD_HELP.update(
     {
         "cow": "**Cow**\
-        \n\n**Syntax : **`.cowsay`\
-        \n\n**Syntax : **`.tuxsay`\
-        \n\n**Syntax : **`.milksay`\
-        \n\n**Syntax : **`.kisssay`\
-        \n\n**Syntax : **`.wwwsay`\
-        \n\n**Syntax : **`.defaultsay`\
-        \n\n**Syntax : **`.bunnysay`\
-        \n\n**Syntax : **`.moosesay`\
-        \n\n**Syntax : **`.sheepsay`\
-        \n\n**Syntax : **`.rensay`\
-        \n\n**Syntax : **`.cheesesay`\
-        \n\n**Syntax : **`.ghostbusterssay`\
-        \n\n**Syntax : **`.skeletonsay`\
+        \n\n**Syntax : **`.cowsay <text>`\
+        \n\n**Syntax : **`.tuxsay <text>`\
+        \n\n**Syntax : **`.milksay <text>`\
+        \n\n**Syntax : **`.kisssay <text>`\
+        \n\n**Syntax : **`.wwwsay <text>`\
+        \n\n**Syntax : **`.defaultsay <text>`\
+        \n\n**Syntax : **`.bunnysay <text>`\
+        \n\n**Syntax : **`.moosesay <text>`\
+        \n\n**Syntax : **`.sheepsay <text>`\
+        \n\n**Syntax : **`.rensay <text>`\
+        \n\n**Syntax : **`.cheesesay <text>`\
+        \n\n**Syntax : **`.ghostbusterssay <text>`\
+        \n\n**Syntax : **`.skeletonsay text>`\
         \n\n**Usage :** A fun plugin to get ur texts look like its being said by different characters"
     }
 )
