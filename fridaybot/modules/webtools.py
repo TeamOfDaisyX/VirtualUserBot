@@ -5,8 +5,9 @@ from iplookup import iplookup
 from selenium import webdriver
 from youtube_search import YoutubeSearch
 
-from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 from fridaybot import CMD_HELP
+from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
+
 
 @friday.on(friday_on_cmd(pattern="wshot ?(.*)"))
 @friday.on(sudo_cmd(pattern="wshot ?(.*)", allow_sudo=True))
@@ -155,7 +156,6 @@ async def _(event):
         await stark_result.edit(noob, parse_mode="HTML")
     except:
         await event.edit("Some Thing Went Wrong.")
-
 
 
 CMD_HELP.update(
