@@ -8,7 +8,7 @@ Available Commands:
 import asyncio
 
 from fridaybot.utils import friday_on_cmd
-
+from fridaybot import CMD_HELP
 
 @friday.on(friday_on_cmd("wtf"))
 async def _(event):
@@ -29,3 +29,13 @@ async def _(event):
 
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 5])
+
+
+
+CMD_HELP.update(
+    {
+        "wtf": "**wtf**\
+\n\n**Syntax : **`.wtf`\
+\n**Usage :** Creates wtf expression with text."
+    }
+)
