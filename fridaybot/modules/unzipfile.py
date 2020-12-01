@@ -7,11 +7,12 @@ import os
 import time
 import zipfile
 from datetime import datetime
-from fridaybot import CMD_HELP
+
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from telethon.tl.types import DocumentAttributeVideo
 
+from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd
 
 thumb_image_path = Config.TMP_DOWNLOAD_DIRECTORY + "/thumb_image.jpg"
@@ -114,7 +115,6 @@ def get_lst_of_files(input_directory, output_lst):
             return get_lst_of_files(current_file_name, output_lst)
         output_lst.append(current_file_name)
     return output_lst
-
 
 
 CMD_HELP.update(
