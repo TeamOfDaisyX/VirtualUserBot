@@ -1,6 +1,7 @@
 from telethon import events
 from telethon.utils import pack_bot_file_id
 
+from fridaybot import CMD_HELP
 from fridaybot.modules.sql_helper.welcome_sql import (
     add_welcome_setting,
     get_current_welcome_settings,
@@ -8,7 +9,6 @@ from fridaybot.modules.sql_helper.welcome_sql import (
     update_previous_welcome,
 )
 
-from fridaybot import CMD_HELP
 
 @bot.on(events.ChatAction())  # pylint:disable=E0602
 async def _(event):
@@ -103,8 +103,6 @@ async def _(event):
         )
     else:
         await event.edit("No Welcome Message found")
-
-
 
 
 CMD_HELP.update(
