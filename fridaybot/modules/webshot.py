@@ -6,8 +6,9 @@ import io
 
 import requests
 
-from fridaybot.utils import friday_on_cmd
 from fridaybot import CMD_HELP
+from fridaybot.utils import friday_on_cmd
+
 
 @friday.on(friday_on_cmd("screencapture (.*)"))
 async def _(event):
@@ -65,7 +66,6 @@ async def _(event):
     else:
 
         await event.edit(response_api.text)
-
 
 
 CMD_HELP.update(
