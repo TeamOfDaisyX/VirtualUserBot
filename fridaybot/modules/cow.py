@@ -24,8 +24,8 @@ async def univsaye(cowmsg):
         cheese = cheese()
 
         await cowmsg.edit(f"`{cheese.milk(text).replace('`', '´')}`")
-                          
-                          
+
+
 CMD_HELP.update(
     {
         "cow": "**Cow**\
@@ -45,14 +45,3 @@ CMD_HELP.update(
         \n**Usage :** A fun plugin to get ur texts look like its being said by different characters"
     }
 )
-        
-        
-        
-        
-        
-         
-        
-        
-        
-        
-        
