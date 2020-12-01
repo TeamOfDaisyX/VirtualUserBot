@@ -206,8 +206,7 @@ async def lolmetrg(event):
     for files in (lolbruh, img):
         if files and os.path.exists(files):
             os.remove(files)
-            
-            
+
 
 CMD_HELP.update(
     {
