@@ -6,6 +6,8 @@ and may cmd would be added soon."""
 from cowpy import cow
 from telethon import events
 
+from fridaybot import CMD_HELP
+
 
 @friday.on(events.NewMessage(pattern=r"^.(\w+)say (.*)", outgoing=True))
 async def univsaye(cowmsg):
@@ -22,3 +24,35 @@ async def univsaye(cowmsg):
         cheese = cheese()
 
         await cowmsg.edit(f"`{cheese.milk(text).replace('`', '´')}`")
+                          
+                          
+CMD_HELP.update(
+    {
+        "cow": "**Cow**\
+        \n\n**Syntax : **`.cowsay`\
+        \n\n**Syntax : **`.tuxsay`\
+        \n\n**Syntax : **`.milksay`\
+        \n\n**Syntax : **`.kisssay`\
+        \n\n**Syntax : **`.wwwsay`\
+        \n\n**Syntax : **`.defaultsay`\
+        \n\n**Syntax : **`.bunnysay`\
+        \n\n**Syntax : **`.moosesay`\
+        \n\n**Syntax : **`.sheepsay`\
+        \n\n**Syntax : **`.rensay`\
+        \n\n**Syntax : **`.cheesesay`\
+        \n\n**Syntax : **`.ghostbusterssay`\
+        \n\n**Syntax : **`.skeletonsay`\
+        \n**Usage :** A fun plugin to get ur texts look like its being said by different characters"
+    }
+)
+        
+        
+        
+        
+        
+         
+        
+        
+        
+        
+        
