@@ -123,3 +123,18 @@ async def _(event):
         await event.edit(caption_str)
     else:
         await event.edit("Reply `.gethumbnail` as a reply to a media")
+
+
+
+
+CMD_HELP.update(
+    {
+        "thumbnail": "**Thumbnail**\
+\n\n**Syntax : **`.savethumbnail <reply to image>`\
+\n**Usage :** Saves the thumbnail.\
+\n\n**Syntax : **`.clearthumbnail`\
+\n**Usage :** Clears the saved thumbnail.\
+\n\n**Syntax : **`.getthumbnail`\
+\n**Usage :** Shows the saved thumbnail."
+    }
+)
