@@ -7,8 +7,9 @@ Available Commands:
 
 import asyncio
 
-from fridaybot.utils import friday_on_cmd
 from fridaybot import CMD_HELP
+from fridaybot.utils import friday_on_cmd
+
 
 @friday.on(friday_on_cmd("think"))
 async def _(event):
@@ -62,8 +63,6 @@ async def _(event):
 
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 72])
-
-
 
 
 CMD_HELP.update(
