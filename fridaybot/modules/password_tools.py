@@ -16,10 +16,10 @@ import string
 from random import *
 
 from password_strength import PasswordStats
-from telethon import events
 from uniborg.util import friday_on_cmd
-from fridaybot.utils import admin_cmd
+
 from fridaybot import CMD_HELP
+from fridaybot.utils import admin_cmd
 
 
 @friday.on(admin_cmd(pattern="passcheck (.*)"))
@@ -30,9 +30,15 @@ async def _(event):
     stats = PasswordStats(input_str)
     sedbruh = stats.strength()
     if stats.strength() >= 0.6:
-        await event.edit(f"<b><u>Password Checked</b></u> \n<b>Password :</b> <code>{input_str}</code> \n<b>Strength :</b> <code>{sedbruh}</code> \n<b>Result :</b> <code>Good Password</code>", parse_mode='HTML')
+        await event.edit(
+            f"<b><u>Password Checked</b></u> \n<b>Password :</b> <code>{input_str}</code> \n<b>Strength :</b> <code>{sedbruh}</code> \n<b>Result :</b> <code>Good Password</code>",
+            parse_mode="HTML",
+        )
     else:
-        await event.edit(f"<b><u>Password Checked</b></u> \n<b>Password :</b> <code>{input_str}</code> \n<b>Strength :</b> <code>{sedbruh}</code> \n<b>Result :</b> <code>Bad Password</code>", parse_mode='HTML')
+        await event.edit(
+            f"<b><u>Password Checked</b></u> \n<b>Password :</b> <code>{input_str}</code> \n<b>Strength :</b> <code>{sedbruh}</code> \n<b>Result :</b> <code>Bad Password</code>",
+            parse_mode="HTML",
+        )
 
 
 @friday.on(friday_on_cmd(pattern=r"passgen"))
