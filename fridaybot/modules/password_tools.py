@@ -14,7 +14,7 @@
 
 import string
 from random import *
-
+import secrets
 from password_strength import PasswordStats
 from uniborg.util import friday_on_cmd
 
@@ -29,7 +29,7 @@ async def _(event):
     input_str = event.pattern_match.group(1)
     stats = PasswordStats(input_str)
     sedbruh = stats.strength()
-    if stats.strength() >= 0.6:
+    if stats.strength() >= 0.2:
         await event.edit(
             f"<b><u>Password Checked</b></u> \n<b>Password :</b> <code>{input_str}</code> \n<b>Strength :</b> <code>{sedbruh}</code> \n<b>Result :</b> <code>Good Password</code>",
             parse_mode="HTML",
@@ -45,9 +45,10 @@ async def _(event):
 async def hi(event):
     if event.fwd_from:
         return
-    characters = string.ascii_letters + string.punctuation + string.digits
-    password = "".join(choice(characters) for x in range(randint(14, 16)))
-    await event.edit(password)
+    okbabe = secrets.token_urlsafe(16)
+    stats = PasswordStats(okbabe)
+    sedbruh = stats.strength()
+    await event.edit(f'<b>Password</b> : <code>{okbabe}</code> \n<b>Strength :</b> <code>{sedbruh}</code>', parse_mode='HTML')
 
 
 CMD_HELP.update(
