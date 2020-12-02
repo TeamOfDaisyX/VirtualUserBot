@@ -12,9 +12,9 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
-import string
-from random import *
 import secrets
+from random import *
+
 from password_strength import PasswordStats
 from uniborg.util import friday_on_cmd
 
@@ -48,7 +48,10 @@ async def hi(event):
     okbabe = secrets.token_urlsafe(16)
     stats = PasswordStats(okbabe)
     sedbruh = stats.strength()
-    await event.edit(f'<b>Password</b> : <code>{okbabe}</code> \n<b>Strength :</b> <code>{sedbruh}</code>', parse_mode='HTML')
+    await event.edit(
+        f"<b>Password</b> : <code>{okbabe}</code> \n<b>Strength :</b> <code>{sedbruh}</code>",
+        parse_mode="HTML",
+    )
 
 
 CMD_HELP.update(
