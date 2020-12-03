@@ -25,5 +25,5 @@ async def ok(event):
                   await event.reply(f"**#FRIDAY-ANTISPAM** \n**Detected Malicious User.** \n**User-ID :** `{juser.id}`  \n**Reason :** `{sed['reason']}`")
               except:
                   pass
-          else:
+            else:
               pass
