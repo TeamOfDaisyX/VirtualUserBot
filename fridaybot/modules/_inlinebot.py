@@ -168,7 +168,7 @@ async def sed(event):
     # This is Only For idea Not for Code, the same Codes exists in line 47 by @SpecHiDe
     # This Idea Was Firstly Released By @Javes05 TG
     # Lmao, Kids Cry For 3 lines of simple Code, IDK Why should i give but leave, Kids.
-    # @Sh1vam 
+    # @Sh1vam
     buttons = paginate_help(0, CMD_HELP, "helpme")
     sed = f"""Friday Userbot Modules Are Listed Here !\n
 For More Help or Support Visit @FridayOT \nCurrently Loaded Plugins: {len(CMD_LIST)}"""
