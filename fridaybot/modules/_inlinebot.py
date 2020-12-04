@@ -39,7 +39,7 @@ async def inline_handler(event):
             title="Stats",
             text=f"**Showing Stats For {DEFAULTUSER}'s Friday** \nNote --> Only Owner Can Check This \n(C) @FridayOT",
             buttons=[
-                [custom.Button.inline("Show Stats ", data="terminator")],
+                [custom.Button.inline("Show Stats ?", data="terminator")],
                 [Button.url("Repo 🇮🇳", "https://github.com/StarkGang/FridayUserbot")],
                 [Button.url("Join Channel ❤️", "t.me/Fridayot")],
             ],
