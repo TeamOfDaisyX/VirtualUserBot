@@ -167,7 +167,7 @@ async def sed(event):
         return
     # This is Only For idea Not for Code, the same Codes exists in line 47 by @SpecHiDe
     # This Idea Was Firstly Released By @Javes05 TG
-    # @Sh1vam 
+    # @Sh1vam
     buttons = paginate_help(0, CMD_HELP, "helpme")
     sed = f"""Friday Userbot Modules Are Listed Here !\n
 For More Help or Support Visit @FridayOT \nCurrently Loaded Plugins: {len(CMD_LIST)}"""
