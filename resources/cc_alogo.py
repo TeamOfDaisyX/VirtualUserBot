@@ -65,7 +65,7 @@ class CreditCard:
 
     @property
     def checksum(self):
-        return "#CHECKSUM# : " + self.card_no[-1]
+        return f"#CHECKSUM# : {self.card_no[-1]}"
 
     @classmethod
     def set_card(cls, card_to_check):
