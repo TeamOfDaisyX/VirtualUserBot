@@ -1,6 +1,6 @@
 import requests
 from telethon.events import ChatAction
-
+from fridaybot.Configs import Config
 
 @borg.on(ChatAction)
 async def ok(event):
