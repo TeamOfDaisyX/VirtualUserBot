@@ -165,6 +165,10 @@ async def sed(event):
         sedok = "Who The Fuck Are You? Get Your Own Friday."
         await event.answer(sedok, cache_time=0, alert=True)
         return
+    # This is Only For idea Not for Code, the same Codes exists in line 47 by @SpecHiDe
+    # This Idea Was Firstly Released By @Javes05 TG
+    # Lmao, Kids Cry For 3 lines of simple Code, IDK Why should i give but leave, Kids.
+    # @Sh1vam 
     buttons = paginate_help(0, CMD_HELP, "helpme")
     sed = f"""Friday Userbot Modules Are Listed Here !\n
 For More Help or Support Visit @FridayOT \nCurrently Loaded Plugins: {len(CMD_LIST)}"""
