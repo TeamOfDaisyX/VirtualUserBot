@@ -77,36 +77,6 @@ async def hmm(event):
             os.remove(files)
 
 
-@friday.on(friday_on_cmd(pattern=r"toon"))
-@friday.on(sudo_cmd(pattern=r"toon", allow_sudo=True))
-async def hmm(event):
-    life = Config.DEEP_API_KEY
-    if life == None:
-        life = "quickstart-QUdJIGlzIGNvbWluZy4uLi4K"
-        await event.edit("No Api Key Found, Please Add it. For Now Using Local Key")
-    if not event.reply_to_msg_id:
-        await event.reply("Reply to any Image.")
-        return
-    headers = {"api-key": life}
-    hmm = await event.edit("Toooning.....")
-    sed = await event.get_reply_message()
-    if isinstance(sed.media, MessageMediaPhoto):
-        img = await borg.download_media(sed.media, sedpath)
-    elif "image" in sed.media.document.mime_type.split("/"):
-        img = await borg.download_media(sed.media, sedpath)
-    else:
-        await event.edit("Reply To Image")
-        return
-    img_file = {
-        "image": open(img, "rb"),
-    }
-    url = "https://api.deepai.org/api/toonify"
-    r = requests.post(url=url, files=img_file, headers=headers).json()
-    sedimg = r["output_url"]
-    await borg.send_file(event.chat_id, sedimg)
-    await hmm.delete()
-    if os.path.exists(img):
-        os.remove(img)
 
 
 @friday.on(friday_on_cmd(pattern=r"nst"))
@@ -213,8 +183,6 @@ CMD_HELP.update(
         "imagetools": "**imagetools**\
         \n\n**Syntax : **`.cit`\
         \n**Usage :** colourizes the given picture\
-        \n\n**Syntax : **`.toon`\
-        \n**Usage :** makes toon of the given image\
         \n\n**Syntax : **`.nst`\
         \n**Usage :** removes colours from image\
         \n\n**Syntax : ** `.thug`\
