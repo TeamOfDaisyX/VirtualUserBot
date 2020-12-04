@@ -1,14 +1,15 @@
-from resources.cc_alogo import CreditCard
 from fridaybot.utils import admin_cmd
+from resources.cc_alogo import CreditCard
 
-@friday.on(admin_cmd(pattern='cccheck'))
+
+@friday.on(admin_cmd(pattern="cccheck"))
 async def lol(event):
-    cnn = event.pattern_match.group(1)
+    event.pattern_match.group(1)
     if ccn.isnumeric():
-      card_number = int(ccn)
+        card_number = int(ccn)
     else:
-      event.edit('Card Number Should Be Only Number')
-      return
+        event.edit("Card Number Should Be Only Number")
+        return
     card = CreditCard.set_card(card_number)
     sed = f"""{card.company}
 Card : {card.card_no}
