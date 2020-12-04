@@ -1,5 +1,6 @@
 import requests
 from telethon.events import ChatAction
+
 from fridaybot.Configs import Config
 
 
@@ -11,7 +12,7 @@ async def ok(event):
         juser = await event.get_user()
         data = {"token": Config.ANTI_SPAMINC_TOKEN, "userid": juser.id}
         if Config.ANTI_SPAMINC_TOKEN == None:
-            logger.info('[Warning] - Your Token is None \nGet It From @AntispamIncbot')
+            logger.info("[Warning] - Your Token is None \nGet It From @AntispamIncbot")
             return
         url = f"http://antispaminc.tk/info/"
         sed = requests.post(url=url, data=data).json()
