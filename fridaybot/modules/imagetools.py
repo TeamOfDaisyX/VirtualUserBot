@@ -162,7 +162,7 @@ async def toony(event):
     if not event.reply_to_msg_id:
         await event.reply("Reply to any Image.")
         return
-    await event.edit("`Converting Toonized Image..`")
+    hmmu = await event.edit("`Converting Toonized Image..`")
     sed = await event.get_reply_message()
     if isinstance(sed.media, MessageMediaPhoto):
         img = await borg.download_media(sed.media, sedpath)
