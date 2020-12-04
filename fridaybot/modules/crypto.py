@@ -43,7 +43,7 @@ async def _(event):
 CMD_HELP.update(
     {
         "crypto": "**Cryptocurrency**\
-\n\n**Syntax : **`.crypto <currency to give value in> <Cryptocurrency shortname`\
+\n\n**Syntax : **`.crypto <currency to give value in> <Cryptocurrency shortname>`\
 \n**Usage :** Shows cryptocurrency value in given currency.\
 \n\n**Example : **`.crypto inr btc`\
 \nThis above syntax gives bitcoin's current value in INR."
