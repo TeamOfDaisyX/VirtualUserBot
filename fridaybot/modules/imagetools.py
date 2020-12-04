@@ -151,6 +151,39 @@ async def iamthug(event):
             os.remove(files)
 
 
+import cv2
+import os
+from pathlib import Path
+
+
+@friday.on(friday_on_cmd(pattern=r"tni"))
+@friday.on(sudo_cmd(pattern=r"tni", allow_sudo=True))
+async def toony(event):
+    if not event.reply_to_msg_id:
+        await event.reply("Reply to any Image.")
+        return
+    hmm = await event.edit("`Converting Toonized Image..`")
+    sed = await event.get_reply_message()
+    if isinstance(sed.media, MessageMediaPhoto):
+        img = await borg.download_media(sed.media, sedpath)
+    elif "image" in sed.media.document.mime_type.split("/"):
+        img = await borg.download_media(sed.media, sedpath)
+    else:
+        await event.edit("Reply To Image")
+        return
+    cartoon_image_style_2  = cv2.stylization(img, sigma_s=60, sigma_r=0.5) ## Cartoonify process. 
+    # Save it
+    file_name = "Tooned.png"
+    ok = sedpath + "/" + file_name
+    cv2.imwrite(ok, cartoon_image_style_2)
+    # Upload it
+    await borg.send_file(event.chat_id, ok)
+    await hmmu.delete()
+    # Remove all Files
+    for files in (ok, img):
+        if files and os.path.exists(files):
+            os.remove(files)
+    
 @friday.on(friday_on_cmd(pattern=r"tig"))
 @friday.on(sudo_cmd(pattern=r"tig", allow_sudo=True))
 async def lolmetrg(event):
