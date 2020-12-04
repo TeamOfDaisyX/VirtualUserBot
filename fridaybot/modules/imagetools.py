@@ -77,8 +77,6 @@ async def hmm(event):
             os.remove(files)
 
 
-
-
 @friday.on(friday_on_cmd(pattern=r"nst"))
 @friday.on(sudo_cmd(pattern=r"nst", allow_sudo=True))
 async def hmm(event):
