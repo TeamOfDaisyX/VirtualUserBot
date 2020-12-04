@@ -32,7 +32,7 @@ class CreditCard:
         return "Company : " + comp
 
     def first_check(self):
-        if 13 <= len(self.card_no) <= 19:
+        if 13 <= str(len(self.card_no)) <= 19:
             message = "First check : Valid in terms of length."
 
         else:
