@@ -76,7 +76,7 @@ async def hmm(event):
         if files and os.path.exists(files):
             os.remove(files)
 
-
+# Firstly Released By @DELETEDUSER420
 @friday.on(friday_on_cmd(pattern=r"nst"))
 @friday.on(sudo_cmd(pattern=r"nst", allow_sudo=True))
 async def hmm(event):
