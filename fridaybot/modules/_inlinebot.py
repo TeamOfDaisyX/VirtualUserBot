@@ -69,7 +69,7 @@ async def inline_handler(event):
     )
 )
 async def on_plug_in_callback_query_handler(event):
-    if event.query.user_id == bot.uid:  # pylint:disable=E0602
+    if event.query.user_id == bot.uid:
         current_page_number = int(event.data_match.group(1).decode("UTF-8"))
         buttons = paginate_help(current_page_number + 1, CMD_HELP, "helpme")
         # https://t.me/TelethonChat/115200
@@ -161,13 +161,11 @@ async def rip(event):
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"backme")))
 async def sed(event):
-    if not event.query.user_id == bot.uid:
+    if event.query.user_id != bot.uid:
         sedok = "Who The Fuck Are You? Get Your Own Friday."
         await event.answer(sedok, cache_time=0, alert=True)
         return
-    # This is Only For idea Not for Code, the same Codes exists in line 47 by @SpecHiDe
-    # This Idea Was Firstly Released By @Javes05 TG
-    # @Sh1vam
+    # This Is Copy of Above Code. (C) @SpEcHiDe 
     buttons = paginate_help(0, CMD_HELP, "helpme")
     sed = f"""Friday Userbot Modules Are Listed Here !\n
 For More Help or Support Visit @FridayOT \nCurrently Loaded Plugins: {len(CMD_LIST)}"""
