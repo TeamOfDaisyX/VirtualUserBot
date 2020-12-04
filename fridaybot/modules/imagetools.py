@@ -171,7 +171,7 @@ async def toony(event):
     else:
         await event.edit("Reply To Image")
         return
-    imagez = np.array(img)
+    imagez = cv2.imread(img)
     cartoon_image_style_2 = cv2.stylization(
         imagez, sigma_s=60, sigma_r=0.5
     )  ## Cartoonify process.
