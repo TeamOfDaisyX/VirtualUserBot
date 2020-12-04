@@ -4,7 +4,7 @@ from resources.cc_alogo import CreditCard
 
 @friday.on(admin_cmd(pattern="cccheck (.*)"))
 async def lol(event):
-    event.pattern_match.group(1)
+    ccn = event.pattern_match.group(1)
     if ccn.isnumeric():
         card_number = int(ccn)
     else:
