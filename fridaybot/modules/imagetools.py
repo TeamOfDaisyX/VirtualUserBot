@@ -172,7 +172,7 @@ async def toony(event):
         await event.edit("Reply To Image")
         return
     cartoon_image_style_2 = cv2.stylization(
-        img, sigma_s=60, sigma_r=0.5
+        np.float32(img), sigma_s=60, sigma_r=0.5
     )  ## Cartoonify process.
     # Save it
     file_name = "Tooned.png"
