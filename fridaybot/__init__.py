@@ -22,7 +22,7 @@ from .Configs import Config
 from .function import fridayfunction as topfunc
 
 Lastupdate = time.time()
-
+sed = logging.getLogger("WARNING")
 from var import Var
 
 if Var.STRING_SESSION:
@@ -186,9 +186,9 @@ else:
     try:
         sedlyf = wget.download(link, out=pathz)
     except:
-        print("I Wasn't Able To Download Cafee Model. Skipping")
+        sed.info("I Wasn't Able To Download Cafee Model. Skipping")
 if Config.ANTI_SPAMINC_TOKEN is not None:
     try:
         client = Connect(Config.ANTI_SPAMINC_TOKEN)
     except Exception as e:
-        print("Antispaminc Client Failed to Start " + e)
+        sed.info("Antispaminc Client Failed to Start " + e)
