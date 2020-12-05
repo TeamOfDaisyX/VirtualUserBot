@@ -4,9 +4,10 @@ import sys
 import time
 from distutils.util import strtobool as sb
 from logging import DEBUG, INFO, basicConfig, getLogger
-
+from antispaminc.connect import Connect
 import pylast
 import wget
+from .Configs import Config
 from dotenv import load_dotenv
 from pylast import LastFMNetwork, md5
 from pySmartDL import SmartDL
@@ -185,3 +186,9 @@ else:
         sedlyf = wget.download(link, out=pathz)
     except:
         print("I Wasn't Able To Download Cafee Model. Skipping")
+if Config.ANTI_SPAMINC_TOKEN is not None:
+    try:
+        client = Connect(Config.ANTI_SPAMINC_TOKEN)
+    except Exception as e:
+        print('Antispaminc Client Failed to Start ' + e)
+    
