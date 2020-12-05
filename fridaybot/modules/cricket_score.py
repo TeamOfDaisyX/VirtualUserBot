@@ -12,7 +12,7 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
-romm bs4 import BeautifulSoup
+from bs4 import BeautifulSoup
 import urllib.request
 from uniborg.util import friday_on_cmd
 
