@@ -4,10 +4,10 @@ import sys
 import time
 from distutils.util import strtobool as sb
 from logging import DEBUG, INFO, basicConfig, getLogger
-from antispaminc.connect import Connect
+
 import pylast
 import wget
-from .Configs import Config
+from antispaminc.connect import Connect
 from dotenv import load_dotenv
 from pylast import LastFMNetwork, md5
 from pySmartDL import SmartDL
@@ -18,6 +18,7 @@ from telethon.sessions import StringSession
 
 from var import Var
 
+from .Configs import Config
 from .function import fridayfunction as topfunc
 
 Lastupdate = time.time()
@@ -190,5 +191,4 @@ if Config.ANTI_SPAMINC_TOKEN is not None:
     try:
         client = Connect(Config.ANTI_SPAMINC_TOKEN)
     except Exception as e:
-        print('Antispaminc Client Failed to Start ' + e)
-    
+        print("Antispaminc Client Failed to Start " + e)
