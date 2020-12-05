@@ -34,7 +34,7 @@ async def quote_search(event):
 
 CMD_HELP.update(
     {
-        "quotes": "**Quotes**\
+        "quote": "**Quote**\
 \n\n**Syntax : **`.quote <text>`\
 \n**Usage :** Gets quotes about given text."
     }
