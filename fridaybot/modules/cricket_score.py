@@ -12,29 +12,27 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
-from bs4 import BeautifulSoup
 import urllib.request
-from uniborg.util import friday_on_cmd
 
-from asyncio import wait
-from fridaybot import CMD_HELP
+from bs4 import BeautifulSoup
 from telethon import events
+
+from fridaybot import CMD_HELP
 
 
 @friday.on(events.NewMessage(pattern=r"\.cricket(.*)", outgoing=True))
 async def _(event):
-        score_page = 'http://static.cricinfo.com/rss/livescores.xml'
-        page = urllib.request.urlopen(score_page)
-        soup = BeautifulSoup(page, 'html.parser')
-        result = soup.find_all('description')
-        Sed = ''
-        for match in result:
-          Sed +=match.get_text() + "\n\n"
-        await event.edit(
-        f"<b><u>Match information gathered successful</b></u>\n\n\n<code>{Sed}</code>", parse_mode="HTML",)
-          
-
-
+    score_page = "http://static.cricinfo.com/rss/livescores.xml"
+    page = urllib.request.urlopen(score_page)
+    soup = BeautifulSoup(page, "html.parser")
+    result = soup.find_all("description")
+    Sed = ""
+    for match in result:
+        Sed += match.get_text() + "\n\n"
+    await event.edit(
+        f"<b><u>Match information gathered successful</b></u>\n\n\n<code>{Sed}</code>",
+        parse_mode="HTML",
+    )
 
 
 CMD_HELP.update(
