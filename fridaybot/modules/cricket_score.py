@@ -16,11 +16,11 @@ import urllib.request
 
 from bs4 import BeautifulSoup
 from telethon import events
-
+from fridaybot.utils import friday_on_cmd
 from fridaybot import CMD_HELP
 
 
-@friday.on(events.NewMessage(pattern=r"\.cricket(.*)", outgoing=True))
+@friday.on(friday_on_cmd(pattern="cs"))
 async def _(event):
     score_page = "http://static.cricinfo.com/rss/livescores.xml"
     page = urllib.request.urlopen(score_page)
@@ -38,7 +38,7 @@ async def _(event):
 CMD_HELP.update(
     {
         "cricket_score": "**Cricket Score**\
-\n\n**Syntax : **`.cricket`\
+\n\n**Syntax : **`.cs`\
 \n**Usage :** Gets Live cricket score automatically."
     }
 )
