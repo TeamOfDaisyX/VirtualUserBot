@@ -190,6 +190,6 @@ else:
         sed.info("I Wasn't Able To Download Cafee Model. Skipping")
 if Config.ANTI_SPAMINC_TOKEN is not None:
     try:
-        client = Connect(Config.ANTI_SPAMINC_TOKEN)
+        sclient = Connect(Config.ANTI_SPAMINC_TOKEN)
     except Exception as e:
         sed.info("Antispaminc Client Failed to Start " + e)
