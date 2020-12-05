@@ -4,7 +4,7 @@ import sys
 import time
 from distutils.util import strtobool as sb
 from logging import DEBUG, INFO, basicConfig, getLogger
-
+import logging
 import pylast
 import wget
 from antispaminc.connect import Connect
