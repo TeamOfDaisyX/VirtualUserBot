@@ -37,8 +37,8 @@ async def oki(event):
         await event.edit("Error : " + gensys["full"])
     else:
         await event.edit(
-                f"**User :** `{user}` \n**Reason :** `{extra}` \n**Banned Sucessfully !**"
-            )
+            f"**User :** `{user}` \n**Reason :** `{extra}` \n**Banned Sucessfully !**"
+        )
 
 
 @borg.on(admin_cmd(pattern="ubs ?(.*)"))
@@ -64,8 +64,8 @@ async def oka(event):
         await event.edit("Error : " + gensys2["full"])
     else:
         await event.edit(
-                f"**User :** `{user}` \n**Reason :** `{extra}` \n**Banned Sucessfully !**"
-            )
+            f"**User :** `{user}` \n**Reason :** `{extra}` \n**Banned Sucessfully !**"
+        )
 
 
 @borg.on(admin_cmd(pattern="nt"))
