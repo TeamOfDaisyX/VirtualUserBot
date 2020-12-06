@@ -45,20 +45,6 @@
 
 [![Run on Repl.it](https://repl.it/badge/github/STARKGANG/friday)](https://friday.midhunkm1294.repl.run)
 
-## Using Heroku
-
-### - Open Your Friday Heroku App
-### - Click On More Option
-### - Now Click On 'Run Console'
-### - Now Run Command 'bash StringGen'
-### - Now Enter Your Api ID / Hash 
-### - Enter Your Phone Number, OTP, If Password then enter it Too.
-### - Now Check Inbox For Your String Session  
-
-
-
-
-
 
 
 
