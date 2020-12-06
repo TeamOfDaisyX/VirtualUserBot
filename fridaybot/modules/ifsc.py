@@ -11,11 +11,11 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-import requests 
-import json
+import requests
 from uniborg.util import friday_on_cmd
 
 from fridaybot import CMD_HELP
+
 
 @friday.on(friday_on_cmd(pattern="ifsc (.*)"))
 async def _(event):
@@ -27,7 +27,7 @@ async def _(event):
 
     URL = "https://ifsc.razorpay.com/"
 
-    data = requests.get(URL+IFSC_Code).json() 
+    data = requests.get(URL + IFSC_Code).json()
 
     a = data["ADDRESS"]
     b = data["CENTRE"]
@@ -39,7 +39,10 @@ async def _(event):
     h = data["IFSC"]
 
     await event.edit(
-      f"<b><u>INFORMATION GATHERED SUCCESSFULLY</b></u>\n\n<b>Bank Name :-</b><code>{f}</code>\n<b>Bank Address:- </b> <code>{a}</code>\n<b>Centre :-</b><code>{b}</code>\n<b>Branch :- </b><code>{c}</code>\n<b> City :-</b><code>{d}</code>\n<b>State:- </b> <code>{e}</code>\n<b>Bank Code :- </b><code>{g}</code>\n<b>Ifsc :-</b><code>{h}</code>", parse_mode="HTML",)
+        f"<b><u>INFORMATION GATHERED SUCCESSFULLY</b></u>\n\n<b>Bank Name :-</b><code>{f}</code>\n<b>Bank Address:- </b> <code>{a}</code>\n<b>Centre :-</b><code>{b}</code>\n<b>Branch :- </b><code>{c}</code>\n<b> City :-</b><code>{d}</code>\n<b>State:- </b> <code>{e}</code>\n<b>Bank Code :- </b><code>{g}</code>\n<b>Ifsc :-</b><code>{h}</code>",
+        parse_mode="HTML",
+    )
+
 
 CMD_HELP.update(
     {
