@@ -1,5 +1,7 @@
 from telethon.events import ChatAction
-
+import secrets
+import requests
+from telethon import custom, events
 from fridaybot import sclient
 from fridaybot.Configs import Config
 from fridaybot.utils import admin_cmd
@@ -26,7 +28,7 @@ async def ok(event):
             pass
 
 
-@friday.on(admin_cmd(pattern="aban (.*)"))
+@friday.on(admin_cmd(pattern="aban ?(.*)"))
 async def ok(event):
     args = event.pattern_match.group(1).split(" ", 1)
     extra = None
@@ -65,7 +67,7 @@ async def ok(event):
             event.edit(e)
 
 
-@friday.on(admin_cmd(pattern="aunban (.*)"))
+@friday.on(admin_cmd(pattern="aunban ?(.*)"))
 async def ok(event):
     args = event.pattern_match.group(1)
     if event.reply_to_msg_id:
