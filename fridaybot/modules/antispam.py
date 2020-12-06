@@ -28,7 +28,7 @@ async def ok(event):
             pass
 
 
-@friday.on(admin_cmd(pattern="bs ?(.*)"))
+@friday.on(admin_cmd(pattern="bs(?: |$)(.*)"))
 async def ok(event):
     args = event.pattern_match.group(1).split(" ", 1)
     extra = None
@@ -67,7 +67,7 @@ async def ok(event):
             event.edit(e)
 
 
-@friday.on(admin_cmd(pattern="ubs ?(.*)"))
+@friday.on(admin_cmd(pattern="ubs(?: |$)(.*)"))
 async def ok(event):
     args = event.pattern_match.group(1)
     if event.reply_to_msg_id:
