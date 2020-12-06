@@ -4,7 +4,7 @@ from fridaybot import sclient
 from fridaybot.utils import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="bs ?(.*)"))
+@borg.on(admin_cmd(pattern="benheck(?: |$)(.*)"))
 async def oki(event):
     await event.edit("`Processing...`")
     args = event.pattern_match.group(1).split(" ", 1)
@@ -41,7 +41,7 @@ async def oki(event):
         )
 
 
-@borg.on(admin_cmd(pattern="ubs ?(.*)"))
+@borg.on(admin_cmd(pattern="heck(?: |$)(.*)"))
 async def oka(event):
     await event.edit("`Processing...`")
     args = event.pattern_match.group(1)
