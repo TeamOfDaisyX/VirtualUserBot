@@ -56,10 +56,11 @@ async def oki(event):
             await event.edit("Reply To User Or Mention a User.")
             return
         gensys = sclient.ban(user, extra)
+        await borg.send_message("antispamincfed", f"/fban {user} {extra}")
         if gensys["error"] == True:
             await event.edit("Error : " + gensys["full"])
+            return
         else:
-            await borg.send_message("antispamincfed", f"/fban {user} {extra}")
             await event.edit(
                 f"**User :** `{user}` \n**Reason :** `{extra}` \n**Banned Sucessfully !**"
             )
@@ -83,10 +84,10 @@ async def oka(event):
             await event.reply("Reply To User Or Mention a User.")
             return
         gensys2 = sclient.unban(user, extra)
+        await borg.send_message("antispamincfed", f"/unfban {user} {extra}")
         if gensys2["error"] == True:
             await event.edit("Error : " + gensys2["full"])
         else:
-            await borg.send_message("antispamincfed", f"/unfban {user} {extra}")
             await event.edit(
                 f"**User :** `{user}` \n**Reason :** `{extra}` \n**Banned Sucessfully !**"
             )
