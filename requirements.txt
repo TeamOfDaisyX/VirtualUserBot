@@ -8,14 +8,11 @@ pytesseract
 youtube-dl
 opencv-contrib-python
 telethon>=1.17
-pyspark
 iplookup
 wget
 numpy
 pyshorteners
 aiohttp
-pydub
-scikit-learn==0.20
 bs4
 coffeehouse
 cowpy
