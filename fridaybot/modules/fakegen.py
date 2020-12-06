@@ -12,7 +12,6 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
-
 from faker import Faker
 from faker.providers import internet
 from uniborg.util import friday_on_cmd
