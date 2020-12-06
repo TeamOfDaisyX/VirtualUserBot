@@ -28,7 +28,7 @@ async def ok(event):
             pass
 
 
-@borg.on(admin_cmd(pattern="bs(?: |$)(.*)"))
+@borg.on(admin_cmd(pattern="bs ?(.*)"))
 async def ok(event):
     await event.edit("Processing.")
     args = event.pattern_match.group(1).split(" ", 1)
@@ -68,7 +68,7 @@ async def ok(event):
             event.edit(e)
 
 
-@borg.on(admin_cmd(pattern="ubs(?: |$)(.*)"))
+@borg.on(admin_cmd(pattern="ubs ?(.*)"))
 async def ok(event):
     await event.edit("Processing.")
     args = event.pattern_match.group(1)
@@ -98,7 +98,7 @@ async def ok(event):
             event.edit(e)
 
 
-@friday.on(admin_cmd(pattern="nt"))
+@borg.on(admin_cmd(pattern="nt"))
 async def tokens(event):
     await event.edit("Processing.")
     okbabe = secrets.token_urlsafe(16)
