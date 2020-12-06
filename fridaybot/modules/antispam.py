@@ -57,7 +57,7 @@ async def ok(event):
             else:
                 await borg.send_message('antispamincfed', f'/fban {user} {extra}')
                 event.edit(f'**User :** `{user}` \n**Reason :** `{extra}` \n**Banned Sucessfully !**')
-        except Exception as e
+        except Exception as e:
             event.edit(e)
             
 @friday.on(admin_cmd(pattern='aunban (.*)'))
@@ -83,7 +83,7 @@ async def ok(event):
             else:
                 await borg.send_message('antispamincfed', f'/unfban {user} {extra}')
                 event.edit(f'**User :** `{user}` \n**Reason :** `{extra}` \n**Banned Sucessfully !**')
-        except Exception as e
+        except Exception as e:
             event.edit(e)
             
 @friday.on(admin_cmd(pattern='anewtoken'))
@@ -95,5 +95,5 @@ async def tokens(event):
                 await event.edit("Error : " + gensys2['full'])
             else:
                 await event.edit(f'**New Token** \n**Token** : `{okbabe}`')
-    except Exception as e
+    except Exception as e:
             event.edit(e)
