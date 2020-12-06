@@ -58,7 +58,7 @@ async def oka(event):
         if not user:
             await event.reply("Reply To User Or Mention a User.")
             return
-    gensys2 = sclient.unban(user, extra)
+    gensys2 = sclient.unban(user)
     await borg.send_message("antispamincfed", f"/unfban {user} {extra}")
     if gensys2["error"] == True:
         await event.edit("Error : " + gensys2["full"])
