@@ -61,8 +61,8 @@ async def ok(event):
         else:
             await borg.send_message("antispamincfed", f"/fban {user} {extra}")
             await event.edit(
-                    f"**User :** `{user}` \n**Reason :** `{extra}` \n**Banned Sucessfully !**"
-                )
+                f"**User :** `{user}` \n**Reason :** `{extra}` \n**Banned Sucessfully !**"
+            )
 
 
 @borg.on(admin_cmd(pattern="ubs ?(.*)"))
@@ -88,8 +88,8 @@ async def ok(event):
         else:
             await borg.send_message("antispamincfed", f"/unfban {user} {extra}")
             await event.edit(
-                    f"**User :** `{user}` \n**Reason :** `{extra}` \n**Banned Sucessfully !**"
-                )
+                f"**User :** `{user}` \n**Reason :** `{extra}` \n**Banned Sucessfully !**"
+            )
 
 
 @borg.on(admin_cmd(pattern="nt"))
