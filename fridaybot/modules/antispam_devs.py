@@ -1,11 +1,8 @@
-  
 import secrets
 
-from telethon.events import ChatAction
-
 from fridaybot import sclient
-from fridaybot.Configs import Config
 from fridaybot.utils import admin_cmd
+
 
 @borg.on(admin_cmd(pattern="bs ?(.*)"))
 async def oki(event):
