@@ -28,7 +28,7 @@ async def ok(event):
             pass
 
 
-@friday.on(admin_cmd(pattern="aban ?(.*)"))
+@friday.on(admin_cmd(pattern="spamban ?(.*)"))
 async def ok(event):
     args = event.pattern_match.group(1).split(" ", 1)
     extra = None
@@ -67,7 +67,7 @@ async def ok(event):
             event.edit(e)
 
 
-@friday.on(admin_cmd(pattern="aunban ?(.*)"))
+@friday.on(admin_cmd(pattern="spamunban ?(.*)"))
 async def ok(event):
     args = event.pattern_match.group(1)
     if event.reply_to_msg_id:
@@ -96,7 +96,7 @@ async def ok(event):
             event.edit(e)
 
 
-@friday.on(admin_cmd(pattern="anewtoken"))
+@friday.on(admin_cmd(pattern="spamnewtoken"))
 async def tokens(event):
     okbabe = secrets.token_urlsafe(16)
     try:
