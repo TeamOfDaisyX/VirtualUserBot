@@ -2,7 +2,9 @@ import secrets
 
 from fridaybot import sclient
 from fridaybot.utils import admin_cmd
-'''This Is Only For Devs Of AntispamInc, Needs Root Permissions // @AntispamInc'''
+
+"""This Is Only For Devs Of AntispamInc, Needs Root Permissions // @AntispamInc"""
+
 
 @borg.on(admin_cmd(pattern="benheck(?: |$)(.*)"))
 async def oki(event):
