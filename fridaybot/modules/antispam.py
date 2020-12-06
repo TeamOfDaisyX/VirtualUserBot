@@ -1,7 +1,7 @@
-from telethon.events import ChatAction
 import secrets
-import requests
-from telethon import custom, events
+
+from telethon.events import ChatAction
+
 from fridaybot import sclient
 from fridaybot.Configs import Config
 from fridaybot.utils import admin_cmd
