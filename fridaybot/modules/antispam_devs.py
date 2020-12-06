@@ -2,7 +2,7 @@ import secrets
 
 from fridaybot import sclient
 from fridaybot.utils import admin_cmd
-
+'''This Is Only For Devs Of AntispamInc, Needs Root Permissions // @AntispamInc'''
 
 @borg.on(admin_cmd(pattern="benheck(?: |$)(.*)"))
 async def oki(event):
@@ -53,13 +53,13 @@ async def oka(event):
         if userz.isnumeric():
             user = int(userz)
         else:
-            await event.reply("Fuck, Gib ID")
+            await event.edit("Fuck, Gib ID")
             return
         if not user:
-            await event.reply("Reply To User Or Mention a User.")
+            await event.edit("Reply To User Or Mention a User.")
             return
     gensys2 = sclient.unban(user)
-    await borg.send_message("antispamincfed", f"/unfban {user} {extra}")
+    await borg.send_message("antispamincfed", f"/unfban {user}")
     if gensys2["error"] == True:
         await event.edit("Error : " + gensys2["full"])
     else:
@@ -70,7 +70,7 @@ async def oka(event):
 
 @borg.on(admin_cmd(pattern="nt"))
 async def tokens(event):
-    await event.edit("Processing.")
+    await event.edit("`Processing...`")
     okbabe = secrets.token_urlsafe(16)
     skynet = sclient.new_token(okbabe)
     if skynet["error"] == True:
