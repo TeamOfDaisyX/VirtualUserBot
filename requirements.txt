@@ -8,6 +8,7 @@ pytesseract
 youtube-dl
 opencv-contrib-python
 telethon>=1.17
+pyspark
 iplookup
 wget
 numpy
