@@ -13,6 +13,8 @@ wget
 numpy
 pyshorteners
 aiohttp
+pydub
+scikit-learn==0.20
 bs4
 coffeehouse
 cowpy
