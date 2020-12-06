@@ -29,7 +29,7 @@ async def ok(event):
 
 
 @borg.on(admin_cmd(pattern="bs ?(.*)"))
-async def ok(event):
+async def oki(event):
     await event.edit("Processing.")
     args = event.pattern_match.group(1).split(" ", 1)
     extra = None
@@ -66,7 +66,7 @@ async def ok(event):
 
 
 @borg.on(admin_cmd(pattern="ubs ?(.*)"))
-async def ok(event):
+async def oka(event):
     await event.edit("Processing.")
     args = event.pattern_match.group(1)
     if event.reply_to_msg_id:
