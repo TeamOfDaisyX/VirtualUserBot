@@ -27,7 +27,6 @@ async def ok(event):
         else:
             pass
 
-
 @borg.on(admin_cmd(pattern="bs ?(.*)"))
 async def ok(event):
     await event.edit("Processing.")
@@ -96,7 +95,7 @@ async def ok(event):
 async def tokens(event):
     await event.edit("Processing.")
     okbabe = secrets.token_urlsafe(16)
-    skynet = sclient.new_token(sed_put)
+    skynet = sclient.new_token(okbabe)
     if skynet["error"] == True:
         await event.edit("Error : " + gensys2["full"])
     else:
