@@ -93,7 +93,7 @@ async def tokens(event):
         skynet = sclient.new_token(sed_put)
         if skynet['error'] == True:
                 await event.edit("Error : " + gensys2['full'])
-            else:
+        else:
                 await event.edit(f'**New Token** \n**Token** : `{okbabe}`')
     except Exception as e:
             event.edit(e)
