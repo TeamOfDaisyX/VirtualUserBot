@@ -6,7 +6,7 @@ from fridaybot.utils import admin_cmd
 
 @borg.on(admin_cmd(pattern="bs ?(.*)"))
 async def oki(event):
-    await event.edit("Processing.")
+    await event.edit("`Processing...`")
     args = event.pattern_match.group(1).split(" ", 1)
     extra = None
     if event.reply_to_msg_id:
@@ -43,7 +43,7 @@ async def oki(event):
 
 @borg.on(admin_cmd(pattern="ubs ?(.*)"))
 async def oka(event):
-    await event.edit("Processing.")
+    await event.edit("`Processing...`")
     args = event.pattern_match.group(1)
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
