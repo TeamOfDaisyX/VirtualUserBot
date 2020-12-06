@@ -55,17 +55,14 @@ async def ok(event):
         if not user:
             await event.edit("Reply To User Or Mention a User.")
             return
-        try:
-            gensys = sclient.ban(user, extra)
-            if gensys["error"] == True:
-                await event.edit("Error : " + gensys["full"])
-            else:
-                await borg.send_message("antispamincfed", f"/fban {user} {extra}")
-                await event.edit(
+        gensys = sclient.ban(user, extra)
+        if gensys["error"] == True:
+            await event.edit("Error : " + gensys["full"])
+        else:
+            await borg.send_message("antispamincfed", f"/fban {user} {extra}")
+            await event.edit(
                     f"**User :** `{user}` \n**Reason :** `{extra}` \n**Banned Sucessfully !**"
                 )
-        except Exception as e:
-            await event.edit(e)
 
 
 @borg.on(admin_cmd(pattern="ubs ?(.*)"))
@@ -85,28 +82,22 @@ async def ok(event):
         if not user:
             await event.reply("Reply To User Or Mention a User.")
             return
-        try:
-            gensys2 = sclient.unban(user, extra)
-            if gensys2["error"] == True:
-                await event.edit("Error : " + gensys2["full"])
-            else:
-                await borg.send_message("antispamincfed", f"/unfban {user} {extra}")
-                await event.edit(
+        gensys2 = sclient.unban(user, extra)
+        if gensys2["error"] == True:
+            await event.edit("Error : " + gensys2["full"])
+        else:
+            await borg.send_message("antispamincfed", f"/unfban {user} {extra}")
+            await event.edit(
                     f"**User :** `{user}` \n**Reason :** `{extra}` \n**Banned Sucessfully !**"
                 )
-        except Exception as e:
-            await event.edit(e)
 
 
 @borg.on(admin_cmd(pattern="nt"))
 async def tokens(event):
     await event.edit("Processing.")
     okbabe = secrets.token_urlsafe(16)
-    try:
-        skynet = sclient.new_token(sed_put)
-        if skynet["error"] == True:
-            await event.edit("Error : " + gensys2["full"])
-        else:
-            await event.edit(f"**New Token** \n**Token** : `{okbabe}`")
-    except Exception as e:
-        await event.edit(e)
+    skynet = sclient.new_token(sed_put)
+    if skynet["error"] == True:
+        await event.edit("Error : " + gensys2["full"])
+    else:
+        await event.edit(f"**New Token** \n**Token** : `{okbabe}`")
