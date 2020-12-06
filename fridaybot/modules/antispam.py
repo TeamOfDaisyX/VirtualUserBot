@@ -1,7 +1,8 @@
 from telethon.events import ChatAction
-from fridaybot.utils import admin_cmd
+
 from fridaybot import sclient
 from fridaybot.Configs import Config
+from fridaybot.utils import admin_cmd
 
 
 @borg.on(ChatAction)
@@ -23,8 +24,9 @@ async def ok(event):
                 pass
         else:
             pass
-        
-@friday.on(admin_cmd(pattern='aban (.*)'))
+
+
+@friday.on(admin_cmd(pattern="aban (.*)"))
 async def ok(event):
     args = event.pattern_match.group(1).split(" ", 1)
     extra = None
@@ -52,15 +54,18 @@ async def ok(event):
             return
         try:
             gensys = sclient.ban(user, extra)
-            if gensys['error'] == True:
-                await event.edit("Error : " + gensys['full'])
+            if gensys["error"] == True:
+                await event.edit("Error : " + gensys["full"])
             else:
-                await borg.send_message('antispamincfed', f'/fban {user} {extra}')
-                event.edit(f'**User :** `{user}` \n**Reason :** `{extra}` \n**Banned Sucessfully !**')
+                await borg.send_message("antispamincfed", f"/fban {user} {extra}")
+                event.edit(
+                    f"**User :** `{user}` \n**Reason :** `{extra}` \n**Banned Sucessfully !**"
+                )
         except Exception as e:
             event.edit(e)
-            
-@friday.on(admin_cmd(pattern='aunban (.*)'))
+
+
+@friday.on(admin_cmd(pattern="aunban (.*)"))
 async def ok(event):
     args = event.pattern_match.group(1)
     if event.reply_to_msg_id:
@@ -78,22 +83,25 @@ async def ok(event):
             return
         try:
             gensys2 = sclient.unban(user, extra)
-            if gensys2['error'] == True:
-                await event.edit("Error : " + gensys2['full'])
+            if gensys2["error"] == True:
+                await event.edit("Error : " + gensys2["full"])
             else:
-                await borg.send_message('antispamincfed', f'/unfban {user} {extra}')
-                event.edit(f'**User :** `{user}` \n**Reason :** `{extra}` \n**Banned Sucessfully !**')
+                await borg.send_message("antispamincfed", f"/unfban {user} {extra}")
+                event.edit(
+                    f"**User :** `{user}` \n**Reason :** `{extra}` \n**Banned Sucessfully !**"
+                )
         except Exception as e:
             event.edit(e)
-            
-@friday.on(admin_cmd(pattern='anewtoken'))
+
+
+@friday.on(admin_cmd(pattern="anewtoken"))
 async def tokens(event):
     okbabe = secrets.token_urlsafe(16)
     try:
         skynet = sclient.new_token(sed_put)
-        if skynet['error'] == True:
-                await event.edit("Error : " + gensys2['full'])
+        if skynet["error"] == True:
+            await event.edit("Error : " + gensys2["full"])
         else:
-                await event.edit(f'**New Token** \n**Token** : `{okbabe}`')
+            await event.edit(f"**New Token** \n**Token** : `{okbabe}`")
     except Exception as e:
-            event.edit(e)
+        event.edit(e)
