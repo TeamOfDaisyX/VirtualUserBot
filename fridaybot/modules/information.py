@@ -7,8 +7,8 @@ from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
-from fridaybot import sclient
-from fridaybot import CMD_HELP
+
+from fridaybot import CMD_HELP, sclient
 from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 
 
@@ -50,9 +50,9 @@ async def _(event):
         str(e)
     hmmyes = sclient.is_banned(replied_user.user.id)
     if hmmyes.banned == True:
-        oki = f'Wait, This Guy is Banned In AntispamInc. For Reason : {hmmyes.reason}'
+        oki = f"Wait, This Guy is Banned In AntispamInc. For Reason : {hmmyes.reason}"
     else:
-        oki = ' '
+        oki = " "
     caption = """<b>Extracted Userdata From Telegram DATABASE By Friday<b>
 <b>🔥Telegram ID</b>: <code>{}</code>
 <b>🤟Permanent Link</b>: <a href='tg://user?id={}'>Click Here</a>
@@ -78,7 +78,7 @@ async def _(event):
         replied_user.user.verified,
         replied_user.user.bot,
         common_chats,
-        oki
+        oki,
     )
     message_id_to_reply = event.message.reply_to_msg_id
     if not message_id_to_reply:
