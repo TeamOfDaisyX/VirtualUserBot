@@ -23,7 +23,7 @@ from .Configs import Config
 from .function import fridayfunction as topfunc
 
 Lastupdate = time.time()
-sed = logging.getLogger("WARNING")
+sedprint = logging.getLogger("WARNING")
 from var import Var
 
 if Var.STRING_SESSION:
@@ -187,14 +187,14 @@ else:
     try:
         sedlyf = wget.download(link, out=pathz)
     except:
-        sed.info("I Wasn't Able To Download Cafee Model. Skipping")
+        sedprint.info("I Wasn't Able To Download Cafee Model. Skipping")
 
 if Config.ANTI_SPAMINC_TOKEN == None:
     sclient = None
-    sed.info("[Warning] - AntispamInc is None")
+    sedprint.info("[Warning] - AntispamInc is None")
 else:
     try:
         sclient = Connect(Config.ANTI_SPAMINC_TOKEN)
     except TokenNotFound:
         sclient = None
-        sed.info("[Warning] - Invalid AntispamInc Key")
+        sedprint.info("[Warning] - Invalid AntispamInc Key")
