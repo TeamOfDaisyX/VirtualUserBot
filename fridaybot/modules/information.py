@@ -47,7 +47,7 @@ async def _(event):
     except Exception as e:
         dc_id = "Unknown."
         str(e)
-    hmmyes = sclient.is_banned(replied_user.user.id)
+    hmmyes = sclient.is_banned(user_id)
     if hmmyes.banned == True:
         oki = f"Wait, This Guy is Banned In AntispamInc. For Reason : {hmmyes.reason}"
     else:
@@ -64,7 +64,7 @@ async def _(event):
 <b>✅VERIFIED</b>: {replied_user.user.verified}
 <b>🙄IS A BOT</b>: {replied_user.user.bot}
 <b>👥Groups in Common</b>: {common_chats}
-<u>{oki}</u>
+<b>{oki}</b>
 """
     message_id_to_reply = event.message.reply_to_msg_id
     if not message_id_to_reply:
