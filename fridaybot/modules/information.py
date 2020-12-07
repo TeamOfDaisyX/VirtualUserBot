@@ -49,21 +49,22 @@ async def _(event):
         str(e)
     hmmyes = sclient.is_banned(user_id)
     if hmmyes.banned == True:
-        oki = f"Wait, This Guy is Banned In AntispamInc. For Reason : {hmmyes.reason}"
+        oki = f"""ANTISPAM INC BANNED: True 
+Reason : {hmmyes.reason}"""
     else:
         oki = " "
-    caption = f"""<b>Extracted Userdata From Telegram DATABASE By Friday<b>
-<b>🔥Telegram ID</b>: <code>{user_id}</code>
-<b>🤟Permanent Link</b>: <a href='tg://user?id={user_id}'>Click Here</a>
-<b>🗣️First Name</b>: <code>{first_name}</code>
-<b>🗣️Second Name</b>: <code>{last_name}</code>
-<b>👨🏿‍💻BIO</b>: {user_bio}
-<b>🎃DC ID</b>: {dc_id}
-<b>⚡NO OF PSS</b> : {replied_user_profile_photos_count}
-<b>🤔IS RESTRICTED</b>: {replied_user.user.restricted}
-<b>✅VERIFIED</b>: {replied_user.user.verified}
-<b>🙄IS A BOT</b>: {replied_user.user.bot}
-<b>👥Groups in Common</b>: {common_chats}
+    caption = f"""<b>INFO<b>
+<b>Telegram ID</b>: <code>{user_id}</code>
+<b>Permanent Link</b>: <a href='tg://user?id={user_id}'>Click Here</a>
+<b>First Name</b>: <code>{first_name}</code>
+<b>Second Name</b>: <code>{last_name}</code>
+<b>BIO</b>: <code>{user_bio}</code>
+<b>DC ID</b>: <code>{dc_id}</code>
+<b>NO OF PSS</b> : <code>{replied_user_profile_photos_count}</code>
+<b>IS RESTRICTED</b>: <code>{replied_user.user.restricted}</code>
+<b>VERIFIED</b>: <code>{replied_user.user.verified}</code>
+<b>IS A BOT</b>: <code>{replied_user.user.bot}</code>
+<b>Groups in Common</b>: <code>{common_chats}</code>
 <b>{oki}</b>
 """
     message_id_to_reply = event.message.reply_to_msg_id
