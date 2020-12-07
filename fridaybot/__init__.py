@@ -188,5 +188,9 @@ else:
         sedlyf = wget.download(link, out=pathz)
     except:
         sed.info("I Wasn't Able To Download Cafee Model. Skipping")
-if Config.ANTI_SPAMINC_TOKEN is not None:
-sclient = Connect(Config.ANTI_SPAMINC_TOKEN)
+        
+if Config.ANTI_SPAMINC_TOKEN == None:
+    sclient = None
+    logger.info('[Warning] - Invalid AntispamInc Key')
+else:
+    sclient = Connect(Config.ANTI_SPAMINC_TOKEN)
