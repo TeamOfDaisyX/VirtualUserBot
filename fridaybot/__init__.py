@@ -6,10 +6,9 @@ import time
 from distutils.util import strtobool as sb
 from logging import DEBUG, INFO, basicConfig, getLogger
 
-from antispaminc.connect import TokenNotFound
 import pylast
 import wget
-from antispaminc.connect import Connect
+from antispaminc.connect import Connect, TokenNotFound
 from dotenv import load_dotenv
 from pylast import LastFMNetwork, md5
 from pySmartDL import SmartDL
