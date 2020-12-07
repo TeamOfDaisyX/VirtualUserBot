@@ -53,19 +53,25 @@ async def _(event):
 Reason : {hmmyes.reason}"""
     else:
         oki = " "
+    shazam = replied_user_profile_photos_count
     caption = f"""<b>INFO<b>
-<b>Telegram ID</b>: <code>{user_id}</code>
-<b>Permanent Link</b>: <a href='tg://user?id={user_id}'>Click Here</a>
-<b>First Name</b>: <code>{first_name}</code>
-<b>Second Name</b>: <code>{last_name}</code>
-<b>BIO</b>: <code>{user_bio}</code>
-<b>DC ID</b>: <code>{dc_id}</code>
-<b>NO OF PSS</b> : <code>{replied_user_profile_photos_count}</code>
-<b>IS RESTRICTED</b>: <code>{replied_user.user.restricted}</code>
-<b>VERIFIED</b>: <code>{replied_user.user.verified}</code>
-<b>IS A BOT</b>: <code>{replied_user.user.bot}</code>
-<b>Groups in Common</b>: <code>{common_chats}</code>
-<b>{oki}</b>
+<________________________________________________________________________> 
+| DATA                  |  INFO                                          |
+|-----------------------|------------------------------------------------|
+|<b>Telegram ID</b>     | <code>{user_id}</code>                         |
+|<b>Permanent Link</b>  | <a href='tg://user?id={user_id}'>Click Here</a>|
+|<b>First Name</b>      | <code>{first_name}</code>                      |
+|<b>Second Name</b>     | <code>{last_name}</code>                       |
+|<b>BIO</b>             | <code>{user_bio}</code>                        |
+|<b>DC ID</b>           | <code>{dc_id}</code>                           |
+|<b>NO OF PSS</b>       | <code>{shazam}</code>                          |
+|<b>IS RESTRICTED</b>   | <code>{replied_user.user.restricted}</code>    |
+|<b>VERIFIED</b>        | <code>{replied_user.user.verified}</code>      |
+|<b>IS A BOT</b>        | <code>{replied_user.user.bot}</code>           |
+|<b>Groups in Common</b>| <code>{common_chats}</code>                    |
+|<b>ANTISPAM BANNED </b>|                                                |
+|<b>REASON<b/b>         |                                                |
+|____ __________________|________________________________________________|
 """
     message_id_to_reply = event.message.reply_to_msg_id
     if not message_id_to_reply:
