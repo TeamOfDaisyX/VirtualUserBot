@@ -191,6 +191,9 @@ else:
 
 if Config.ANTI_SPAMINC_TOKEN == None:
     sclient = None
-    logger.info("[Warning] - Invalid AntispamInc Key")
+    logger.info("[Warning] - AntispamInc is None")
 else:
-    sclient = Connect(Config.ANTI_SPAMINC_TOKEN)
+    try:
+        sclient = Connect(Config.ANTI_SPAMINC_TOKEN)
+    except TokenNotFound:
+        logger.info("[Warning] - Invalid AntispamInc Key")
