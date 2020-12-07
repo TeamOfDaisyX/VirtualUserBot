@@ -54,31 +54,19 @@ async def _(event):
     else:
         oki = " "
     caption = f"""<b>Extracted Userdata From Telegram DATABASE By Friday<b>
-<b>🔥Telegram ID</b>: <code>{}</code>
-<b>🤟Permanent Link</b>: <a href='tg://user?id={}'>Click Here</a>
-<b>🗣️First Name</b>: <code>{}</code>
-<b>🗣️Second Name</b>: <code>{}</code>
-<b>👨🏿‍💻BIO</b>: {}
-<b>🎃DC ID</b>: {}
-<b>⚡NO OF PSS</b> : {}
-<b>🤔IS RESTRICTED</b>: {}
-<b>✅VERIFIED</b>: {}
-<b>🙄IS A BOT</b>: {}
-<b>👥Groups in Common</b>: {}
+<b>🔥Telegram ID</b>: <code>{user_id}</code>
+<b>🤟Permanent Link</b>: <a href='tg://user?id={user_id}'>Click Here</a>
+<b>🗣️First Name</b>: <code>{first_name}</code>
+<b>🗣️Second Name</b>: <code>{last_name}</code>
+<b>👨🏿‍💻BIO</b>: {user_bio}
+<b>🎃DC ID</b>: {dc_id}
+<b>⚡NO OF PSS</b> : {replied_user_profile_photos_count}
+<b>🤔IS RESTRICTED</b>: {replied_user.user.restricted}
+<b>✅VERIFIED</b>: {replied_user.user.verified}
+<b>🙄IS A BOT</b>: {replied_user.user.bot}
+<b>👥Groups in Common</b>: {common_chats}
 <u>{oki}</u>
-""".format(
-        user_id,
-        user_id,
-        first_name,
-        last_name,
-        user_bio,
-        dc_id,
-        replied_user_profile_photos_count,
-        replied_user.user.restricted,
-        replied_user.user.verified,
-        replied_user.user.bot,
-        common_chats,
-    )
+"""
     message_id_to_reply = event.message.reply_to_msg_id
     if not message_id_to_reply:
         message_id_to_reply = event.message.id
