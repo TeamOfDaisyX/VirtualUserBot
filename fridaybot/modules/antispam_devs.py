@@ -66,7 +66,7 @@ async def oka(event):
         await event.edit("Error : " + gensys2["full"])
     else:
         await event.edit(
-            f"**User :** `{user}` \n**Reason :** `{extra}` \n**Banned Sucessfully !**"
+            f"**User :** `{user}` \n**UnBanned Sucessfully !**"
         )
 
 
