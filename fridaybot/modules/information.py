@@ -52,7 +52,7 @@ async def _(event):
         oki = f"""ANTISPAM INC BANNED: True 
 Reason : {hmmyes.reason}"""
     else:
-        oki = " "
+        pass
     shazam = replied_user_profile_photos_count
     caption = f"""<b>INFO<b>
 <________________________________________________________________________> 
