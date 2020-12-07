@@ -65,9 +65,7 @@ async def oka(event):
     if gensys2["error"] == True:
         await event.edit("Error : " + gensys2["full"])
     else:
-        await event.edit(
-            f"**User :** `{user}` \n**UnBanned Sucessfully !**"
-        )
+        await event.edit(f"**User :** `{user}` \n**UnBanned Sucessfully !**")
 
 
 @borg.on(admin_cmd(pattern="nt"))
