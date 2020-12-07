@@ -191,9 +191,9 @@ else:
 
 if Config.ANTI_SPAMINC_TOKEN == None:
     sclient = None
-    logger.info("[Warning] - AntispamInc is None")
+    sed.info("[Warning] - AntispamInc is None")
 else:
     try:
         sclient = Connect(Config.ANTI_SPAMINC_TOKEN)
     except TokenNotFound:
-        logger.info("[Warning] - Invalid AntispamInc Key")
+        sed.info("[Warning] - Invalid AntispamInc Key")
