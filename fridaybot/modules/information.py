@@ -26,7 +26,7 @@ async def _(event):
             user_id=replied_user.user.id, offset=42, max_id=0, limit=80
         )
     )
-    replied_user_profile_photos_count = "NaN"
+    replied_user_profile_photos_count = "None"
     try:
         replied_user_profile_photos_count = replied_user_profile_photos.count
     except AttributeError:
@@ -46,7 +46,7 @@ async def _(event):
     try:
         dc_id, location = get_input_location(replied_user.profile_photo)
     except Exception as e:
-        dc_id = "`Need a Profile Picture to check **this**`"
+        dc_id = "Unknown."
         str(e)
     hmmyes = sclient.is_banned(replied_user.user.id)
     if hmmyes.banned == True:
@@ -65,7 +65,7 @@ async def _(event):
 <b>✅VERIFIED</b>: {}
 <b>🙄IS A BOT</b>: {}
 <b>👥Groups in Common</b>: {}
-<b>{}</b>
+<u>{}</u>
 """.format(
         user_id,
         user_id,
