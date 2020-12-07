@@ -53,7 +53,7 @@ async def _(event):
         oki = f"Wait, This Guy is Banned In AntispamInc. For Reason : {hmmyes.reason}"
     else:
         oki = " "
-    caption = """<b>Extracted Userdata From Telegram DATABASE By Friday<b>
+    caption = f"""<b>Extracted Userdata From Telegram DATABASE By Friday<b>
 <b>🔥Telegram ID</b>: <code>{}</code>
 <b>🤟Permanent Link</b>: <a href='tg://user?id={}'>Click Here</a>
 <b>🗣️First Name</b>: <code>{}</code>
@@ -65,7 +65,7 @@ async def _(event):
 <b>✅VERIFIED</b>: {}
 <b>🙄IS A BOT</b>: {}
 <b>👥Groups in Common</b>: {}
-<u>{}</u>
+<u>{oki}</u>
 """.format(
         user_id,
         user_id,
@@ -78,7 +78,6 @@ async def _(event):
         replied_user.user.verified,
         replied_user.user.bot,
         common_chats,
-        oki,
     )
     message_id_to_reply = event.message.reply_to_msg_id
     if not message_id_to_reply:
