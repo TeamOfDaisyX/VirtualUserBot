@@ -19,6 +19,7 @@ RUN apt-get install -y\
     libjpeg-dev \
     libffi-dev \
     libpq-dev \
+    libsqlite3-dev \
     libwebp-dev \
     libgl1 \
     musl \
