@@ -32,9 +32,9 @@ USER_BOT_WARN_ZERO = "ඔයා මගේ මාස්ටර් ගෙ Inbox එ
 botisnoob = Var.TG_BOT_USER_NAME_BF_HER
 
 USER_BOT_NO_WARN = (
-    "**ආයුබෝවන් 🙏, ඔයාව සාදරයෙන් පිලිගන්නවා ⚠️**\n\n"
-    f"`මම ඒ කිව්වෙ {DEFAULTUSER} මේ වෙලාවෙ ටිකක් Busy !` \n"
-    "**ඔයා මට කතාකරන්න හිතුව හේතුව කියල යන්නකෝ** 👀 \n\n"
+    "**Hello, This is @InukaASiTH's PM Protection Service ⚠️**\n\n"
+    f"`My Master {DEFAULTUSER} is Busy Right Now !` \n"
+    "**I Request You To Choose A Reason You Have Came For** 👀 \n\n"
     f"**{CUSTOM_MIDDLE_PMP}**"
 )
 if Var.PRIVATE_GROUP_ID is not None:
