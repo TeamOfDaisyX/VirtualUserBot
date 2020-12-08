@@ -71,8 +71,8 @@ async def start(event):
             caption=starttext,
             link_preview=False,
             buttons=[
-                [custom.Button.inline("Deploy your Friday 🇮🇳", data="deploy")],
-                [Button.url("Help Me ❓", "t.me/Fridayot")],
+                [custom.Button.inline("Deploy a bot like this", data="deploy")],
+                [Button.url("Help Me ❓", "t.me/inukaasith")],
             ],
         )
         if os.path.exists(mypic):
@@ -88,10 +88,10 @@ async def help(event):
     if event.query.user_id is not bot.uid:
         await tgbot.send_message(
             event.chat_id,
-            message="You Can Deploy Friday In Heroku By Following Steps Bellow, You Can See Some Quick Guides On Support Channel Or On Your Own Assistant Bot. \nThank You For Contacting Me.",
+            message="This is a private property. \nThank You For Contacting Me.",
             buttons=[
-                [Button.url("Deploy Tutorial 📺", "https://youtu.be/xfHcm_e92eQ")],
-                [Button.url("Need Help ❓", "t.me/FridaySupportOfficial")],
+                [Button.url("Owner", "https:/github.com/inukaasith")],
+                [Button.url("Need Help ❓", "t.me/inukaasith")],
             ],
         )
 
