@@ -2,7 +2,7 @@
 from covid import Covid
 
 from ..utils import admin_cmd, edit_or_reply, sudo_cmd
-from . import CMD_HELP
+from fridaybot import CMD_HELP
 
 @bot.on(admin_cmd(pattern="covid(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="covid(?: |$)(.*)", allow_sudo=True))
