@@ -82,7 +82,7 @@ async def _(event):
     else:
         await edit_or_reply(event, "No User is Defined\n Can't hack account")
 @friday.on(friday_on_cmd(pattern=r"whack")) 
- async def _(event):
+async def _(event):
     if event.fwd_from:
         return
     animation_interval = 2
