@@ -1,6 +1,6 @@
 # corona virus stats for catuserbot
 from covid import Covid
-
+from telethon import events
 from ..utils import admin_cmd, edit_or_reply, sudo_cmd
 from fridaybot import CMD_HELP
 
