@@ -119,7 +119,7 @@ CMD_HELP.update(
 \n\n**Syntax : **`.thack reply to a person`\
 \n**Function : **__shows an animation of hacking progess bar__\
 \n\n**Syntax : **`.wahack reply to a person`\
-\n**Function : **__shows an animation of whatsapp account hacking to a replied person__\"
+\n**Function : **__shows an animation of whatsapp account hacking to a replied person__"
 
     }
 )
