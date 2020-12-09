@@ -23,7 +23,7 @@ async def _(event):
         
         "**Bye  🙏\n Ending this chat 😒**",
         "**I'm leaving this chat now  🙏**",
-        "You call again contact me anytime you like",
+        "You can again contact me anytime you like",
         "Please Don't forget to Join @InfinityJE our group",
         "**Have a Good Day.. **",
         "බොහොම ස්තූතී මාත් එක්ක කතාකරාට.. 🙏\n මම දැන් මේ chat එකෙන් පොඩ්ඩක් එලියට යනවා..😜 \n ඔයාට සුබ දවසක් වේවා..\n\n✌️ **LEFT THE CHAT** ✌️",
