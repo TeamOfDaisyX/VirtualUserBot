@@ -34,16 +34,7 @@ async def corona(event):
             parse_mode="html",
         )
     
-    else:
-        
-            
-        await edit_delete(            
-            catevent,
-                "`Corona Virus Info of {} is not avaiable or unable to fetch`".format(
-                    country
-                ),
-                5,
-            )
+    
 
 
 CMD_HELP.update(
