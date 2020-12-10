@@ -1,8 +1,4 @@
-try:
-    from fridaybot import BASE, SESSION
-except ImportError:
-    raise AttributeError
-
+from fridaybot.modules.sql_helper import BASE, SESSION
 from sqlalchemy import BigInteger, Column, Numeric, String, UnicodeText
 
 
