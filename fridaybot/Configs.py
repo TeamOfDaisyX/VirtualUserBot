@@ -156,6 +156,10 @@ if ENV:
             "TESSDATA_PREFIX", "/usr/share/tesseract-ocr/4.00/tessdata"
         )
         CHROME_BIN = os.environ.get("CHROME_BIN", "/app/.apt/usr/bin/google-chrome")
+        SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)
+        # SpamWatch, CAS, SpamProtection ban Needed or not
+        ANTISPAMBOT_BAN = os.environ.get("ANTISPAMBOT_BAN", False)
+        # Deepai value can get from https://deepai.org/
 
 
 else:
