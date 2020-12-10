@@ -1,5 +1,5 @@
 try:
-    from . import BASE, SESSION
+    from fridaybot import BASE, SESSION
 except ImportError:
     raise AttributeError
 
