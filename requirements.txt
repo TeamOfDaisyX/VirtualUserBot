@@ -61,4 +61,5 @@ password_strength
 pyjokes
 cryptocompare
 faker
+validators
 googletrans==3.1.0a0
