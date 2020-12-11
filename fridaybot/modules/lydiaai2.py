@@ -99,8 +99,7 @@ async def lydia_disable_enable(event):
 async def on_new_message(event):
     if event.chat_id in Config.UB_BLACK_LIST_CHAT:
         return
-    if Config.LYDIA_API_KEY is None:
-        return
+    
     reply = await event.get_reply_message()
     if reply is not None and reply.sender_id != bot.uid:
         return
