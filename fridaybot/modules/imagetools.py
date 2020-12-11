@@ -214,6 +214,41 @@ async def lolmetrg(event):
             os.remove(files)
 
 
+@friday.on(friday_on_cmd(pattern=r"jail"))
+@friday.on(sudo_cmd(pattern=r"jail", allow_sudo=True))
+async def hmm(event):
+    if not event.reply_to_msg_id:
+        await event.reply("Reply to any Image.")
+        return
+    hmmu = await event.edit("hmm... Sending him to jail...🚶")
+    sed = await event.get_reply_message()
+    if isinstance(sed.media, MessageMediaPhoto):
+        img = await borg.download_media(sed.media, sedpath)
+    elif "image" in sed.media.document.mime_type.split("/"):
+        img = await borg.download_media(sed.media, sedpath)
+    else:
+        await event.edit("Reply To Image")
+        return
+    mon = "./resources/jail/jail.png"
+    foreground = Image.open(mon).convert("RGBA")
+
+    background = Image.open(img).convert("RGB")
+    with Image.open(img) as img:
+        width, height = img.size
+    fg_resized = foreground.resize((width, height))
+    background.paste(fg_resized, box=(0, 0), mask=fg_resized)
+
+    background.save("./starkgangz/testing.png")
+
+    file_name = "testing.png"
+    ok = "./starkgangz/" + file_name
+    await borg.send_file(event.chat_id, ok)
+    await hmmu.delete()
+    for files in (ok, img):
+        if files and os.path.exists(files):
+            os.remove(files)
+
+
 CMD_HELP.update(
     {
         "imagetools": "**imagetools**\
@@ -224,6 +259,8 @@ CMD_HELP.update(
         \n\n**Syntax : ** `.thug`\
         \n**Usage :** makes a thug life meme image\
         \n\n**Syntax : ** `.tig`\
-        \n**Usage :** Makes a triggered gif of the replied image"
+        \n**Usage :** Makes a triggered gif of the replied image\
+        \n\n**Syntax : ** `.jail`\
+        \n**Usage :** Makes a jail image of the replied image"
     }
 )
