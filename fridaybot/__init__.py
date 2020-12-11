@@ -197,4 +197,4 @@ else:
         sclient = Connect(Config.ANTI_SPAMINC_TOKEN)
     except TokenNotFound:
         sclient = None
-        sedprint.info("[Warning] - Invalid AntispamInc Key")
+        sedprint.info("[Warning] - " + str(e))
