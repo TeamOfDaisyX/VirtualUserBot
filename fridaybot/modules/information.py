@@ -48,25 +48,25 @@ async def _(event):
         dc_id = "Unknown."
         str(e)
     hmmyes = sclient.is_banned(user_id)
-    if hmmyes.banned == True:
-        oki = f"""ANTISPAM INC BANNED: True 
-Reason : {hmmyes.reason}"""
+    if hmmyes:
+        oki = f"""<b>ANTISPAM INC BANNED:</b> <code>True</code> 
+<b>Reason :</b> <code>{hmmyes.reason}</code>"""
     else:
-        pass
+        oki = " "
     shazam = replied_user_profile_photos_count
     caption = f"""<b>INFO<b>
-|__<b>Telegram ID</b>: <code>{user_id}</code>
-|___<b>Permanent Link</b>: <a href='tg://user?id={user_id}'>Click Here</a>
-|____<b>First Name</b>: <code>{first_name}</code>
-|_____<b>Second Name</b>: <code>{last_name}</code>
-|______<b>BIO</b>: <code>{user_bio}</code>
-|_______<b>DC ID</b>: <code>{dc_id}</code>
-|_________<b>NO OF PSS</b>: <code>{shazam}</code>
-|__________<b>IS RESTRICTED</b>: <code>{replied_user.user.restricted}</code>
-|____________<b>VERIFIED</b>: <code>{replied_user.user.verified}</code>
-|_____________<b>IS A BOT</b>: <code>{replied_user.user.bot}</code>
-|_______________<b>Groups in Common</b>: <code>{common_chats}</code>
-|_________________{oki}
+<b>Telegram ID</b>: <code>{user_id}</code>
+<b>Permanent Link</b>: <a href='tg://user?id={user_id}'>Click Here</a>
+<b>First Name</b>: <code>{first_name}</code>
+<b>Second Name</b>: <code>{last_name}</code>
+<b>BIO</b>: <code>{user_bio}</code>
+<b>DC ID</b>: <code>{dc_id}</code>
+<b>NO OF PSS</b>: <code>{shazam}</code>
+<b>IS RESTRICTED</b>: <code>{replied_user.user.restricted}</code>
+<b>VERIFIED</b>: <code>{replied_user.user.verified}</code>
+<b>IS A BOT</b>: <code>{replied_user.user.bot}</code>
+<b>Groups in Common</b>: <code>{common_chats}</code>
+{oki}
 """
     message_id_to_reply = event.message.reply_to_msg_id
     if not message_id_to_reply:
