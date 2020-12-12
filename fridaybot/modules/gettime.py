@@ -2,7 +2,7 @@
 from datetime import datetime
 
 from fridaybot import CMD_HELP
-from fridaybot.utils import friday_on_cmd
+from fridaybot.utils import friday_on_cmd,edit_or_reply
 
 FONT_FILE_TO_USE = "Fonts/digital.ttf"
 
