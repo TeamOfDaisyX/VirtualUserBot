@@ -12,7 +12,6 @@ from asyncio import sleep
 from os import system
 from fridaybot import LOGS, CMD_HELP
 from telethon import events
-from uniborg.util import 
 from requests import get
 from fridaybot.utils import register
 
