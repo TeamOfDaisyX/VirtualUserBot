@@ -18,7 +18,7 @@ async def _(event):
     if event.fwd_from:
         return
     current_time = datetime.now().strftime(
-        "FRIDAY TIMEZONE \nLOCATION: India \nTime: %H:%M:%S \nDate: %d.%m.%y"
+        "CURRENT TIMEZONE \nLOCATION: Sri Lanka \nTime: %H:%M:%S \nDate: %d.%m.%y"
     )
     start = datetime.now()
     input_str = event.pattern_match.group(1)
