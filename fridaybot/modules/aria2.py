@@ -10,10 +10,13 @@
 import aria2p
 from asyncio import sleep
 from os import system
-from userbot import LOGS, CMD_HELP
-from userbot.events import register
+from fridaybot import LOGS, CMD_HELP
+from telethon import events
+from uniborg.util import 
 from requests import get
-from userbot.cmdhelp import CmdHelp
+from fridaybot.utils import register
+
+
 
 # Gelişmiş indirme hızları için en iyi trackerları çağırır, bunun için K-E-N-W-A-Y'e teşekkürler.
 trackers_list = get(
