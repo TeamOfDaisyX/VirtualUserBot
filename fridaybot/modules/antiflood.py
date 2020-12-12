@@ -3,7 +3,7 @@ import asyncio
 from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import ChatBannedRights
 
-import fridaybot.modules.sql_helper.antiflood_sql as sql
+import fridaybot.modules.sql_helper.floodsql as sql
 
 from fridaybot import CMD_HELP
 from ..utils import admin_cmd, edit_or_reply, sudo_cmd
