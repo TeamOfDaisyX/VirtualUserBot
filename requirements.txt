@@ -68,3 +68,4 @@ deep_translator
 langdetect
 aria2p
 fontTools
+PyDictionary
