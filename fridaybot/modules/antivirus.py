@@ -11,9 +11,9 @@ async def _(event):
     if event.fwd_from:
         return
     if not event.reply_to_msg_id:
-        await eor(event, "```Reply to any user message.```")
+        await edit_or_reply(event, "```Reply to any user message.```")
         return
-    x = await eor(event, "scanning...")
+    x = await edit_or_reply(event, "scanning...")
     reply_message = await event.get_reply_message()
     if not reply_message.media:
         await x.edit("```reply to a media message```")
