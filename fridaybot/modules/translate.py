@@ -60,3 +60,4 @@ CMD_HELP.update(
 \n\n**Syntax : **`.tr <language Code> <reply to text>`\
 \n**Usage :** Translates the given text into your language."
     }
+)
