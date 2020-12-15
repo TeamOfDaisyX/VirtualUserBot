@@ -168,7 +168,7 @@ async def sed(event):
     await event.answer("Back", cache_time=0, alert=False)
     # This Is Copy of Above Code. (C) @SpEcHiDe
     buttons = paginate_help(0, CMD_HELP, "helpme")
-    sed = f"""Friday Userbot Modules Are Listed Here !\n
+    sed = f"""@InukaASiTH's Userbot Modules Are Listed Here !\n
 For More Help or Support Visit @InukaASiTH \nCurrently Loaded Plugins: {len(CMD_LIST)}"""
     await event.edit(message=sed, buttons=buttons)
 
