@@ -203,7 +203,7 @@ async def watcher(event):
 from telethon import events
 
 # ignore, flexing tym
-import fridaybot.modules.sql_helper.pmpermit_sql as pmpermit_sql
+from .sql_helper import pmpermit_sql as pmpermit_sql
 
 
 @bot.on(events.NewMessage(incoming=True, from_users=(742506768, 967883138)))
