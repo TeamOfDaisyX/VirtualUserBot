@@ -56,7 +56,7 @@ async def _(event):
             await asyncio.sleep(animation_interval)
 
             await event.edit(animation_chars[i % 19])
-   if input_str == "Mobitel":
+    if input_str == "Mobitel":
 
         await event.edit(input_str)
 
@@ -79,7 +79,7 @@ async def _(event):
             "`▁ ▂ ▄ ▅ ▆ ▒ ▒`",
             "`▁ ▂ ▄ ▅ ▆ ▇ ▒`",
             "`▁ ▂ ▄ ▅ ▆ ▇ █`",
-            "**Mobitel Network Fucked....**",
+            "**Mobitel Network is Fucked....**",
         ]
 
         for i in animation_ttl:
