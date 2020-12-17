@@ -2,7 +2,7 @@ import datetime
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
-from ..util import admin_cmd
+from ..utils import admin_cmd
 
 @borg.on(admin_cmd("audio ?(.*)"))
 async def _(event):
