@@ -25,12 +25,12 @@ async def _(event):
 
     input_str = event.pattern_match.group(1)
 
-    if input_str == "mtn":
+    if input_str == "Dialog":
 
         await event.edit(input_str)
 
         animation_chars = [
-            "`Connecting To MTN NG ....`",
+            "`Connecting To Dialog Servers ....`",
             "`█ ▇ ▆ ▅ ▄ ▂ ▁`",
             "`▒ ▇ ▆ ▅ ▄ ▂ ▁`",
             "`▒ ▒ ▆ ▅ ▄ ▂ ▁`",
@@ -48,7 +48,7 @@ async def _(event):
             "`▁ ▂ ▄ ▅ ▆ ▒ ▒`",
             "`▁ ▂ ▄ ▅ ▆ ▇ ▒`",
             "`▁ ▂ ▄ ▅ ▆ ▇ █`",
-            "**MTN Network Boosted....**",
+            "**Dialog Network Boosted....**",
         ]
 
         for i in animation_ttl:
@@ -56,6 +56,38 @@ async def _(event):
             await asyncio.sleep(animation_interval)
 
             await event.edit(animation_chars[i % 19])
+   if input_str == "Mobitel":
+
+        await event.edit(input_str)
+
+        animation_chars = [
+            "`Connecting To Mobitel Servers ....`",
+            "`█ ▇ ▆ ▅ ▄ ▂ ▁`",
+            "`▒ ▇ ▆ ▅ ▄ ▂ ▁`",
+            "`▒ ▒ ▆ ▅ ▄ ▂ ▁`",
+            "`▒ ▒ ▒ ▅ ▄ ▂ ▁`",
+            "`▒ ▒ ▒ ▒ ▄ ▂ ▁`",
+            "`▒ ▒ ▒ ▒ ▒ ▂ ▁`",
+            "`▒ ▒ ▒ ▒ ▒ ▒ ▁`",
+            "`▒ ▒ ▒ ▒ ▒ ▒ ▒`",
+            "*Trying to Optimising Network...*",
+            "`▒ ▒ ▒ ▒ ▒ ▒ ▒`",
+            "`▁ ▒ ▒ ▒ ▒ ▒ ▒`",
+            "`▁ ▂ ▒ ▒ ▒ ▒ ▒`",
+            "`▁ ▂ ▄ ▒ ▒ ▒ ▒`",
+            "`▁ ▂ ▄ ▅ ▒ ▒ ▒`",
+            "`▁ ▂ ▄ ▅ ▆ ▒ ▒`",
+            "`▁ ▂ ▄ ▅ ▆ ▇ ▒`",
+            "`▁ ▂ ▄ ▅ ▆ ▇ █`",
+            "**Mobitel Network Fucked....**",
+        ]
+
+        for i in animation_ttl:
+
+            await asyncio.sleep(animation_interval)
+
+            await event.edit(animation_chars[i % 19])
+
 
 
 CMD_HELP.update(
