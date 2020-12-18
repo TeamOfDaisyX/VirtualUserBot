@@ -92,12 +92,12 @@
       "value": "",
       "required": false
     },
-      "ALIVE_IMAGE": {
+     "ALIVE_IMAGE": {
       "description": "Enter Image URL for bot pic ",
       "value": "",
       "required": false
     },
-      "PMPERMIT_PIC": {
+     "PMPERMIT_PIC": {
       "description": "Enter Image URL for bot's pmsecurity pic ",
       "value": "",
       "required": false
