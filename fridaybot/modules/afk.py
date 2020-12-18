@@ -160,7 +160,7 @@ async def on_afk(event):
             f"**මම දැන් පොඩ්ඩක් Busy.. ඒක නිසා ටිකකට ඔන්ලයින් නෑ**  \n**ඕෆ්ලයින් ගිය කාලය** : `{total_afk_time}`\n**හේතුව** : `{reason}`"
             + f"\n\nමම ඉක්මනටම ආපහු එන්නම්!"
             if reason
-            else f"**මගේ දැන් ඕෆ්ලයින්**\n ඕෆ්ලයින් ගිය කාලය : `{total_afk_time}` මම ඉක්මනටම ආපහු එන්නම්"
+            else f"**මම දැන් ඕෆ්ලයින්**\n ඕෆ්ලයින් ගිය කාලය : `{total_afk_time}` මම ඉක්මනටම ආපහු එන්නම්"
         )
         msg = await event.reply(message_to_reply)
         await asyncio.sleep(5)
