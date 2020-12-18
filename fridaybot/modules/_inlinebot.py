@@ -12,11 +12,11 @@ from fridaybot.modules import inlinestats
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 if PMPERMIT_PIC is None:
-    WARN_PIC = "https://telegra.ph/file/4828cfc7bc31852ed5571.jpg"
+    WARN_PIC = "https://telegra.ph/file/b1922e21e94ba5a7a19d0.jpg"
 else:
     WARN_PIC = PMPERMIT_PIC
 LOG_CHAT = Config.PRIVATE_GROUP_ID
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@InukaASiTH"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@InfinityJE"
 
 
 @tgbot.on(events.InlineQuery)
@@ -24,7 +24,7 @@ async def inline_handler(event):
     builder = event.builder
     result = None
     query = event.text
-    if event.query.user_id == bot.uid and query.startswith("Friday"):
+    if event.query.user_id == bot.uid and query.startswith("VirtualUserbot"):
         rev_text = query[::-1]
         buttons = paginate_help(0, CMD_HELP, "helpme")
         result = builder.article(
@@ -40,8 +40,8 @@ async def inline_handler(event):
             text=f"**Showing Stats For {DEFAULTUSER}'s Inukaasith** \nNote --> Only Owner Can Check This \n(C) @InukaASiTH",
             buttons=[
                 [custom.Button.inline("Show Stats ?", data="terminator")],
-                [Button.url("Owner", "https://github.com/Inukaasith")],
-                [Button.url("Conatact ❤️", "t.me/Inukaasith")],
+                [Button.url("Developed By", "https://github.com/Inukaasith")],
+                [Button.url("Support ❤️", "t.me/InfinityJE")],
             ],
         )
         await event.answer([result])
