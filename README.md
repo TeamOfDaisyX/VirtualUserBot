@@ -27,18 +27,18 @@
 
 
 # How to Deploy guide by Friday
-``` The Methord is also same for this. Just deploy bot from this repo ```
+
 <a href="https://youtu.be/xfHcm_e92eQ"><img src="https://img.shields.io/badge/How%20To-Deploy-red.svg?logo=Youtube"></a>
 
 <a href="https://app.gitbook.com/@starkgangz/s/fridayuserbot/"><img src="https://img.shields.io/badge/Read%20More-GitBook-red.svg"></a>
 
-
+``` The Methord is also same for this. Just deploy bot from this repo ```
 
 
 
 # Deploying To Heroku
 
-[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/StarkGang/FridayUserbot)
+[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Inukaasith/virtualuserbot)
 
 
 
@@ -52,7 +52,7 @@
 
 [![Run on Repl.it](https://repl.it/badge/github/STARKGANG/friday)](https://friday.midhunkm1294.repl.run)
 
-## Please Note!.. This bot is a Developed Version of Friday Userbot.. All credits goes to StarkGang..
+## Please Note!.. This bot is a Developed Version of Friday Userbot.. All credits goes to StarkGang for the Friday Project..
 
 <details>
 <summary>-THE HARD WAY of deploying -</summary>
@@ -72,10 +72,6 @@ pip install -r requirements.txt
 # Start Bot 
 python3 -m fridaybot
 ```
-
-
-[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/inukaasith/virtualuserbot/graphs/commit-activity)
 
 
 
@@ -109,3 +105,7 @@ will. Specifically you can redistribute and/or modify it under the terms of the
 published by the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version. 
 </Details>
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/inukaasith/virtualuserbot/graphs/commit-activity)
+
+
