@@ -12,7 +12,7 @@ from fridaybot.utils import friday_on_cmd
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 if PMPERMIT_PIC is None:
-    WARN_PIC = "https://telegra.ph/file/4828cfc7bc31852ed5571.jpg"
+    WARN_PIC = "https://telegra.ph/file/b1922e21e94ba5a7a19d0.jpg"
 else:
     WARN_PIC = PMPERMIT_PIC
 
@@ -25,14 +25,14 @@ DEFAULTUSER = (
     str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
 )
 CUSTOM_MIDDLE_PMP = (
-    str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "Protection By @InukaASiTH ❤️"
+    str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "Protection By @InfinityJE ❤️"
 )
 USER_BOT_WARN_ZERO = "ඔයා මගේ මාස්ටර් ගෙ Inbox එකට Spam ගහන්න හදපු නිසා මම ඔයාව Block කරා"
 
 botisnoob = Var.TG_BOT_USER_NAME_BF_HER
 
 USER_BOT_NO_WARN = (
-    "**Hello, This is @InukaASiTH's PM Protection Service ⚠️**\n\n"
+    "**Hello, This is VirtualUserbot's PM Protection Service ⚠️**\n\n"
     f"`My Master {DEFAULTUSER} is Busy Right Now !` \n"
     "**I Request You To Choose A Reason You Have Came For** 👀 \n\n"
     f"**{CUSTOM_MIDDLE_PMP}**"
