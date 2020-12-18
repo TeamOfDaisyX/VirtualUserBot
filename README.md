@@ -19,7 +19,7 @@
 
 <a href="https://t.me/InfJE"><img src="https://img.shields.io/badge/Join-Telegram%20Group-blue.svg?logo=telegram"></a>
 
-'''Please Note!.. This bot is a Developed Version of Friday Userbot.. All credits goes to StarkGang..'''
+''' Please Note!.. This bot is a Developed Version of Friday Userbot.. All credits goes to StarkGang.. '''
 
 
 
@@ -27,7 +27,7 @@
 
 
 # How to Deploy guide by Friday
-'''The Methord is also same for this. Just deploy bot from this repo'''
+''' The Methord is also same for this. Just deploy bot from this repo '''
 <a href="https://youtu.be/xfHcm_e92eQ"><img src="https://img.shields.io/badge/How%20To-Deploy-red.svg?logo=Youtube"></a>
 
 <a href="https://app.gitbook.com/@starkgangz/s/fridayuserbot/"><img src="https://img.shields.io/badge/Read%20More-GitBook-red.svg"></a>
