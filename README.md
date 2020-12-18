@@ -1,6 +1,5 @@
 
-# මේක Personal එකක්.. Clone ගහනෝ නම් යන්න
+# Amaizing Userbot
 
-## https://github.com/StarkGang/FridayUserbot
-
-# මේක Clone කරන්න එපෝ
+## Will be available as soon as finished
+# Thanks
