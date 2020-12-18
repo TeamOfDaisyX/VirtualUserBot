@@ -53,7 +53,7 @@ async def _(event):
         performer=thums,
         supports_streaming=True,
     )
-    await myself_stark.edit("`Song Uploaded. By (C) [VirtualUserbot](https://github.com/inukaasith/virtualuserbot)`")
+    await myself_stark.edit("`Song Uploaded. By (C) VirtualUserbot`")
     for files in (sedlyf, km):
         if files and os.path.exists(files):
             os.remove(files)
