@@ -36,7 +36,7 @@ async def _(event):
     translated = translator.translate(text, dest=lan)
     after_tr_text = translated.text
     output_str = (
-        f"**Translated By Friday Assistant Bot** \n"
+        f"**Translated By VirtualUserbot Assistant** \n"
         f"Source {translated.src} \nTranslation {lan} \nWhat I Can Translate From This {after_tr_text}"
     )
     try:
