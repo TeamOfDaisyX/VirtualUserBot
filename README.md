@@ -1,7 +1,11 @@
-<h1 align="center"><b>Virtual-USERBOT  </b></h1>
+<h1 align="center"><b> Virtual-USERBOT 🇱🇰  </b></h1>
 <h4 align="center">A Powerful, Smart And Simple Userbot based on Friday Userbot.</h4>
 
-
+<p align="center">
+    <a href="https://github.com/inukaasith/virtualuserbot/commits/master"><img src="https://img.shields.io/github/last-commit/inukaasith/virtualuserbot/master?label=Last%20Commit&style=flat-square&logo=github&color=F10070" alt="Commit" /></a>
+    <a href="https://github.com/inukaasith/virtualuserbot/stargazers"><img src="https://img.shields.io/github/stars/p-rinc-e/Elizabeth?label=Stars&style=flat-square&logo=github&color=F10070" alt="Stars" /></a>
+    <a href="https://github.com/inukaasith/virtualuserbot/network/members"><img src="https://img.shields.io/github/forks/inukaasith/virtualuserbot?label=Fork&style=flat-square&logo=github&color=F10070" alt="Fork" /></a>
+</p>
 
 <p align="center"><a href="https://t.me/InfinityJE"><img src="https://telegra.ph/file/b1922e21e94ba5a7a19d0.jpg" width="400"></a></p> 
 
@@ -20,7 +24,7 @@
 
 
 
-# Please Note!.. This bot is a Developed Version of Friday Userbot.. All credits goes to StarkGang
+## Please Note!.. This bot is a Developed Version of Friday Userbot.. All credits goes to StarkGang
 # How to Deploy guide by Friday
 ## The Methord is also same for this. Just deploy bot from this repo
 <a href="https://youtu.be/xfHcm_e92eQ"><img src="https://img.shields.io/badge/How%20To-Deploy-red.svg?logo=Youtube"></a>
@@ -48,9 +52,8 @@
 [![Run on Repl.it](https://repl.it/badge/github/STARKGANG/friday)](https://friday.midhunkm1294.repl.run)
 
 
-
-
-# Hard Way (For Devs)
+<details>
+<summary>-THE HARD WAY of deploying -</summary>
 
 Simply clone the repository and run the main file:
 ```sh
@@ -100,3 +103,4 @@ will. Specifically you can redistribute and/or modify it under the terms of the
 [GNU General Public License](https://www.gnu.org/licenses/gpl.html) as
 published by the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version. 
+</Details>
