@@ -3,7 +3,7 @@
 
 <p align="center">
     <a href="https://github.com/inukaasith/virtualuserbot/commits/master"><img src="https://img.shields.io/github/last-commit/inukaasith/virtualuserbot/master?label=Last%20Commit&style=flat-square&logo=github&color=F10070" alt="Commit" /></a>
-    <a href="https://github.com/inukaasith/virtualuserbot/stargazers"><img src="https://img.shields.io/github/stars/p-rinc-e/Elizabeth?label=Stars&style=flat-square&logo=github&color=F10070" alt="Stars" /></a>
+    <a href="https://github.com/inukaasith/virtualuserbot/stargazers"><img src="https://img.shields.io/github/stars/inukaasith/virtualuserbot?label=Stars&style=flat-square&logo=github&color=F10070" alt="Stars" /></a>
     <a href="https://github.com/inukaasith/virtualuserbot/network/members"><img src="https://img.shields.io/github/forks/inukaasith/virtualuserbot?label=Fork&style=flat-square&logo=github&color=F10070" alt="Fork" /></a>
 </p>
 
@@ -50,6 +50,10 @@
 ## Repl
 
 [![Run on Repl.it](https://repl.it/badge/github/STARKGANG/friday)](https://friday.midhunkm1294.repl.run)
+
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/inukaasith/virtualuserbot/graphs/commit-activity)
+
 
 
 <details>
