@@ -30,7 +30,7 @@ async def cmd_list(event):
                 await event.edit(input_str + " is not a valid plugin!")
         else:
             help_string = """VirtualUserbot Modules Are Listed Here !\n
-For More Help or Support contact @InfinityJE"""
+For More Help or Support contact Devs @InfinityJE"""
             results = await bot.inline_query(  # pylint:disable=E0602
                 tgbotusername, help_string
             )
