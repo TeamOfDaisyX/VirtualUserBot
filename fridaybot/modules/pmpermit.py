@@ -25,14 +25,14 @@ DEFAULTUSER = (
     str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
 )
 CUSTOM_MIDDLE_PMP = (
-    str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "Protection By @InfinityJE ❤️"
+    str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "Protection By [VirtualUserbot](https://github.com/inukaasith/virtualuserbot) ❤️"
 )
 USER_BOT_WARN_ZERO = "ඔයා මගේ මාස්ටර් ගෙ Inbox එකට Spam ගහන්න හදපු නිසා මම ඔයාව Block කරා"
 
 botisnoob = Var.TG_BOT_USER_NAME_BF_HER
 
 USER_BOT_NO_WARN = (
-    "**Hello, This is VirtualUserbot's PM Protection Service ⚠️**\n\n"
+    f"**Hello, This is {DEFAULTUSER}'s PM Protection Service ⚠️**\n\n"
     f"`My Master {DEFAULTUSER} is Busy Right Now !` \n"
     "**I Request You To Choose A Reason You Have Came For** 👀 \n\n"
     f"**{CUSTOM_MIDDLE_PMP}**"
