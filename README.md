@@ -3,7 +3,7 @@
 
 
 
-<p align="center"><a href="https://t.me/InfinityJE"><img src="https://telegra.ph/file/b1922e21e94ba5a7a19d0.jpg" width="1000"></a></p> 
+<p align="center"><a href="https://t.me/InfinityJE"><img src="https://telegra.ph/file/b1922e21e94ba5a7a19d0.jpg" width="400"></a></p> 
 
 
 
@@ -22,6 +22,7 @@
 
 # Please Note!.. This bot is a Developed Version of Friday Userbot.. All credits goes to StarkGang
 # How to Deploy guide by Friday
+## The Methord is also same for this. Just deploy bot from this repo
 <a href="https://youtu.be/xfHcm_e92eQ"><img src="https://img.shields.io/badge/How%20To-Deploy-red.svg?logo=Youtube"></a>
 
 <a href="https://app.gitbook.com/@starkgangz/s/fridayuserbot/"><img src="https://img.shields.io/badge/Read%20More-GitBook-red.svg"></a>
