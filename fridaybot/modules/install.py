@@ -24,7 +24,7 @@ async def install(event):
                 shortname = path1.stem
                 load_module(shortname.replace(".py", ""))
                 await event.edit(
-                    "Friday Has Installed `{}` Sucessfully.".format(
+                    "VirtualUserbot Has Installed `{}` Sucessfully.".format(
                         os.path.basename(downloaded_file_name)
                     )
                 )
