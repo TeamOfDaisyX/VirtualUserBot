@@ -25,7 +25,7 @@ DEFAULTUSER = (
     str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
 )
 CUSTOM_MIDDLE_PMP = (
-    str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "Protection By [VirtualUserbot](https://github.com/inukaasith/virtualuserbot) ❤️"
+    str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "Protection By VirtualUserbot ❤️"
 )
 USER_BOT_WARN_ZERO = "ඔයා මගේ මාස්ටර් ගෙ Inbox එකට Spam ගහන්න හදපු නිසා මම ඔයාව Block කරා"
 
