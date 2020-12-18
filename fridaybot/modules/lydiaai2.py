@@ -9,9 +9,10 @@ from coffeehouse.lydia import LydiaAI
 from ..utils import admin_cmd, edit_or_reply, sudo_cmd
 from fridaybot import BOTLOG, BOTLOG_CHATID, CMD_HELP
 from fridaybot.modules.sql_helper.lydia_ai_sql import add_s, get_all_s, get_s, remove_s
-api_key = ''
-coffeehouse_api = API(api_key)
-lydia = LydiaAI(coffeehouse_api)
+if Var.LYDIA_API_KEY:
+    api_key = Var.LYDIA_API_KEY
+    coffeehouse_api = API(api_key)
+    lydia = LydiaAI(coffeehouse_api)
 
 
 
