@@ -10,7 +10,7 @@ from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd
 
 
-@friday.on(friday_on_cmd("fridaybot"))
+@friday.on(friday_on_cmd("virtualuserbot"))
 async def _(event):
     if event.fwd_from:
         return
@@ -32,8 +32,8 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "fridaybot": "**Fridaybot**\
-\n\n**Syntax : **`.fridaybot`\
-\n**Usage :** Gives you Friday guide."
+        "VirtualUserbot": "**VirtualUserbot**\
+\n\n**Syntax : **`.virtualuserbot`\
+\n**Usage :** Gives you Friday guide (VirtualUserbot is a developed version of Friday Project)."
     }
 )
