@@ -19,14 +19,15 @@
 
 <a href="https://t.me/InfJE"><img src="https://img.shields.io/badge/Join-Telegram%20Group-blue.svg?logo=telegram"></a>
 
+'''Please Note!.. This bot is a Developed Version of Friday Userbot.. All credits goes to StarkGang..'''
 
 
 
 
 
-## Please Note!.. This bot is a Developed Version of Friday Userbot.. All credits goes to StarkGang
+
 # How to Deploy guide by Friday
-## The Methord is also same for this. Just deploy bot from this repo
+'''The Methord is also same for this. Just deploy bot from this repo'''
 <a href="https://youtu.be/xfHcm_e92eQ"><img src="https://img.shields.io/badge/How%20To-Deploy-red.svg?logo=Youtube"></a>
 
 <a href="https://app.gitbook.com/@starkgangz/s/fridayuserbot/"><img src="https://img.shields.io/badge/Read%20More-GitBook-red.svg"></a>
@@ -51,10 +52,7 @@
 
 [![Run on Repl.it](https://repl.it/badge/github/STARKGANG/friday)](https://friday.midhunkm1294.repl.run)
 
-[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/inukaasith/virtualuserbot/graphs/commit-activity)
-
-
+## Please Note!.. This bot is a Developed Version of Friday Userbot.. All credits goes to StarkGang..
 
 <details>
 <summary>-THE HARD WAY of deploying -</summary>
@@ -75,6 +73,9 @@ pip install -r requirements.txt
 python3 -m fridaybot
 ```
 
+
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/inukaasith/virtualuserbot/graphs/commit-activity)
 
 
 
