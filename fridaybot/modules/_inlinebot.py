@@ -16,7 +16,7 @@ if PMPERMIT_PIC is None:
 else:
     WARN_PIC = PMPERMIT_PIC
 LOG_CHAT = Config.PRIVATE_GROUP_ID
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@InfinityJE"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "VirtualUserbot"
 
 
 @tgbot.on(events.InlineQuery)
@@ -37,11 +37,11 @@ async def inline_handler(event):
     elif event.query.user_id == bot.uid and query == "stats":
         result = builder.article(
             title="Stats",
-            text=f"**Showing Stats For {DEFAULTUSER}'s Inukaasith** \nNote --> Only Owner Can Check This \n(C) @InukaASiTH",
+            text=f"**Showing Stats For {DEFAULTUSER}'s VirtualUserbot** \nNote --> Only Owner Can Check This \n(C) [VirtualUserbot](https://github.com/inukaasith/virtualuserbot)",
             buttons=[
                 [custom.Button.inline("Show Stats ?", data="terminator")],
                 [Button.url("Developed By", "https://github.com/Inukaasith")],
-                [Button.url("Support ❤️", "t.me/InfinityJE")],
+                [Button.url("Support Chat❤️", "t.me/InfinityJE")],
             ],
         )
         await event.answer([result])
@@ -111,7 +111,7 @@ async def on_plug_in_callback_query_handler(event):
     if plugin_name in CMD_HELP:
         help_string = f"**💡 PLUGIN NAME 💡 :** `{plugin_name}` \n{CMD_HELP[plugin_name]}"
     reply_pop_up_alert = help_string
-    reply_pop_up_alert += "\n\n**(C) @InukaASiTH** ".format(plugin_name)
+    reply_pop_up_alert += "\n\n**(C) [VirtualUserbot](https://github.com/inukaasith/virtualuserbot)** ".format(plugin_name)
     if len(reply_pop_up_alert) >= 4096:
         crackexy = "`Pasting Your Help Menu.`"
         await event.answer(crackexy, cache_time=0, alert=True)
@@ -168,8 +168,8 @@ async def sed(event):
     await event.answer("Back", cache_time=0, alert=False)
     # This Is Copy of Above Code. (C) @SpEcHiDe
     buttons = paginate_help(0, CMD_HELP, "helpme")
-    sed = f"""@InukaASiTH's Userbot Modules Are Listed Here !\n
-For More Help or Support Visit @InukaASiTH \nCurrently Loaded Plugins: {len(CMD_LIST)}"""
+    sed = f"""VirtualUserbots's Userbot Modules Are Listed Here !\n
+For More Help or Support Visit @InfinityJE \nCurrently Loaded Plugins: {len(CMD_LIST)}"""
     await event.edit(message=sed, buttons=buttons)
 
 
