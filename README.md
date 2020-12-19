@@ -1,6 +1,6 @@
 # Available as soon as finished
 
-<details>
+
 <h1 align="center"><b> Virtual-USERBOT 🇱🇰  </b></h1>
 <h4 align="center">A Powerful, Smart And Simple Userbot based on Friday Userbot.</h4>
 
@@ -112,4 +112,3 @@ published by the Free Software Foundation, either version 3 of the License, or
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/inukaasith/virtualuserbot/graphs/commit-activity)
 
-</details>
