@@ -10,7 +10,7 @@
     <a href="https://github.com/inukaasith/virtualuserbot/network/members"><img src="https://img.shields.io/github/forks/inukaasith/virtualuserbot?label=Fork&style=flat-square&logo=github&color=F10070" alt="Fork" /></a>
 </p>
 
-<p align="center"><a href="https://t.me/InfinityJE"><img src="https://telegra.ph/file/b1922e21e94ba5a7a19d0.jpg" width="400"></a></p> 
+<p align="center"><a href="https://t.me/InfinityJE"><img src="https://telegra.ph/file/0e7a45ed44e17ce68d8cd.png" width="400"></a></p> 
 
 
 
