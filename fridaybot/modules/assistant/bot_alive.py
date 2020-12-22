@@ -16,7 +16,7 @@ from fridaybot import ALIVE_NAME
 from fridaybot.modules import currentversion
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Unknown"
-PM_IMG = "https://telegra.ph/file/b1922e21e94ba5a7a19d0.jpg"
+PM_IMG = "https://telegra.ph/file/0e7a45ed44e17ce68d8cd.png"
 pm_caption = "➥ **ASSISTANT IS:** `ONLINE`\n\n"
 pm_caption += "➥ **SYSTEMS STATS**\n"
 pm_caption += "➥ **Telethon Version:** `1.15.0` \n"
