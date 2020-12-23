@@ -169,7 +169,7 @@ async def sed(event):
     # This Is Copy of Above Code. (C) @SpEcHiDe
     buttons = paginate_help(0, CMD_HELP, "helpme")
     sed = f"""VirtualUserbot Modules Are Listed Here !\n
-For More Help or Support contact {DEFAULTUSER} \n\nCurrently Loaded Plugins: {len(CMD_LIST)}"""
+For More Help or Support contact {DEFAULTUSER} \nCurrently Loaded Plugins: {len(CMD_LIST)}"""
     await event.edit(message=sed, buttons=buttons)
 
 
