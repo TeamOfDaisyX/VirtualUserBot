@@ -5,7 +5,7 @@ Available Commands:
 
 import emoji
 from asyncio import sleep
-from userbot import CMD_HELP
+from fridaybot import CMD_HELP
 from googletrans import Translator
 from ..utils import admin_cmd, sudo_cmd
 
@@ -48,7 +48,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "translate": ".tl <language code> <reply to text>"
+        "Classic translate": ".tl <language code> <reply to text>"
         "\nUsage: reply any msg with .tr (language code) example .tr en / .tr hi\n\n"
         ".tl <language code> | <msg> "
         "\nUsage: translate text example .tr en|msg (note:- this | mark is important.\n\n"
