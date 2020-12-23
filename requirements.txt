@@ -54,7 +54,7 @@ tswift
 urbandict>=0.5
 wikipedia>=1.4.0
 youtube-search
-
+youtube-search-python
 covid
 password_strength
 pyjokes
@@ -71,5 +71,3 @@ fontTools
 PyDictionary
 beautifulsoup4
 bs4
-justwatch
-youtube-search-python>=1.3.2
