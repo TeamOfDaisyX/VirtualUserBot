@@ -12,7 +12,7 @@ from fridaybot.modules import inlinestats
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 if PMPERMIT_PIC is None:
-    WARN_PIC = "https://telegra.ph/file/b1922e21e94ba5a7a19d0.jpg"
+    WARN_PIC = "https://telegra.ph/file/0e7a45ed44e17ce68d8cd.png"
 else:
     WARN_PIC = PMPERMIT_PIC
 LOG_CHAT = Config.PRIVATE_GROUP_ID
@@ -93,7 +93,7 @@ async def on_plug_in_callback_query_handler(event):
         # https://t.me/TelethonChat/115200
         await event.edit(buttons=buttons)
     else:
-        reply_pop_up_alert = "මොන හුත්තෙක්ද තෝ? උඹටම කියල බොටෙක් හදාගනිම්.!"
+        reply_pop_up_alert = "මොන පිස්සෙක්ද තෝ? උඹටම කියල බොටෙක් හදාගනිම්.!"
         await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
 
@@ -104,14 +104,14 @@ async def on_plug_in_callback_query_handler(event):
 )
 async def on_plug_in_callback_query_handler(event):
     if not event.query.user_id == bot.uid:
-        sedok = "මොන හුත්තෙක්ද තෝ? උඹටම කියල බොටෙක් හදාගනිම්.."
+        sedok = "මොන පිස්සෙක්ද තෝ? උඹටම කියල බොටෙක් හදාගනිම්.."
         await event.answer(sedok, cache_time=0, alert=True)
         return
     plugin_name = event.data_match.group(1).decode("UTF-8")
     if plugin_name in CMD_HELP:
         help_string = f"**💡 PLUGIN NAME 💡 :** `{plugin_name}` \n{CMD_HELP[plugin_name]}"
     reply_pop_up_alert = help_string
-    reply_pop_up_alert += "\n\n**(C) [VirtualUserbot](https://github.com/inukaasith/virtualuserbot)** ".format(plugin_name)
+    reply_pop_up_alert += "\n\n**(C) [VirtualUserbot](www.github.com/inukaasith/virtualuserbot)** ".format(plugin_name)
     if len(reply_pop_up_alert) >= 4096:
         crackexy = "`Pasting Your Help Menu.`"
         await event.answer(crackexy, cache_time=0, alert=True)
@@ -162,7 +162,7 @@ async def rip(event):
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"backme")))
 async def sed(event):
     if event.query.user_id != bot.uid:
-        sedok = "මොන හුත්තෙක්ද තෝ? උඹටම කියල බොටෙක් හදාගනිම්."
+        sedok = "මොන පිස්සෙක්ද තෝ? උඹටම කියල බොටෙක් හදාගනිම්."
         await event.answer(sedok, cache_time=0, alert=True)
         return
     await event.answer("Back", cache_time=0, alert=False)
