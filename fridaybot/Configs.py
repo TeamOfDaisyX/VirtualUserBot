@@ -142,6 +142,8 @@ if ENV:
         TAG_FEATURE = os.environ.get("TAG_FEATURE", "DISABLE")
         ANTISPAM_FEATURE = os.environ.get("ANTISPAM_FEATURE", "ENABLE")
         ASSISTANT_LOG = int(os.environ.get("ASSISTANT_LOG", False))
+        OPEN_LOAD_LOGIN = os.environ.get("OPEN_LOAD_LOGIN", None)
+        OPEN_LOAD_KEY = os.environ.get("OPEN_LOAD_KEY", None)
         UPSTREAM_REPO = os.environ.get(
             "UPSTREAM_REPO", "https://github.com/Inukaasith/VirtualUserbot"
         )
