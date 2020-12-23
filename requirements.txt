@@ -71,3 +71,4 @@ fontTools
 PyDictionary
 beautifulsoup4
 bs4
+justwatch
