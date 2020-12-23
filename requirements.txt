@@ -54,7 +54,7 @@ tswift
 urbandict>=0.5
 wikipedia>=1.4.0
 youtube-search
-
+youtubesearchpython 
 covid
 password_strength
 pyjokes
