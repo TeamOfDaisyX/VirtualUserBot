@@ -15,7 +15,7 @@ from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest
 from ..utils import admin_cmd
 
-@borg.on(admin_cmd("pornhd ?(.*)"))
+@borg.on(admin_cmd("phd2 ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
