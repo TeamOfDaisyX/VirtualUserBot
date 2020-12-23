@@ -4,7 +4,7 @@ import datetime
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
-from fridayuserbot import bot, CMD_HELP
+from fridaybot import bot, CMD_HELP
 from ..utils import admin_cmd
 
 @borg.on(admin_cmd(pattern=r"quotebot(?: |$)(.*)"))
