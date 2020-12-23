@@ -7,7 +7,7 @@ from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from fridaybot import bot, CMD_HELP
 from ..utils import admin_cmd
 
-@borg.on(admin_cmd(pattern=r"quotebot(?: |$)(.*)"))
+@borg.on(admin_cmd(pattern=r"qubot(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return 
