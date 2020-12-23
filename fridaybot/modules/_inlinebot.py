@@ -168,7 +168,7 @@ async def sed(event):
     await event.answer("Back", cache_time=0, alert=False)
     # This Is Copy of Above Code. (C) @SpEcHiDe
     buttons = paginate_help(0, CMD_HELP, "helpme")
-    sed = f"""VirtualUserbots's Userbot Modules Are Listed Here !\n
+    sed = f"""VirtualUserbot Modules Are Listed Here !\n
 For More Help or Support Visit @InfinityJE \nCurrently Loaded Plugins: {len(CMD_LIST)}"""
     await event.edit(message=sed, buttons=buttons)
 
@@ -208,6 +208,13 @@ async def rip(event):
         buttons=[Button.url("Contact Him", f"tg://user?id={him_id}")],
     )
 
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
+async def on_plug_in_callback_query_handler(event):
+    if event.query.user_id == bot.uid:
+        await event.edit("menu closed")
+    else:
+        reply_pop_up_alert = "මොන පිස්සෙක්ද තෝ? උඹටම කියල බොටෙක් හදාගනිම්. "
+        await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
 def paginate_help(page_number, loaded_modules, prefix):
     number_of_rows = 8
