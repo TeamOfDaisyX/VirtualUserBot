@@ -72,3 +72,4 @@ PyDictionary
 beautifulsoup4
 bs4
 justwatch
+youtube-search-python>=1.3.2
