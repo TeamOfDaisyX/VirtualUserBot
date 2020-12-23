@@ -211,8 +211,7 @@ async def rip(event):
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
 async def on_plug_in_callback_query_handler(event):
     if event.query.user_id == bot.uid:
-        reply_pop_up_alert1 = "Menu Closed"
-        await event.answer(reply_pop_up_alert1, cache_time=0, alert=True)
+        await event.delete()
     else:
         reply_pop_up_alert = "මොන පිස්සෙක්ද තෝ? උඹටම කියල බොටෙක් හදාගනිම්. "
         await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
