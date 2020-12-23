@@ -5,7 +5,7 @@
 from telethon import events
 from datetime import datetime
 import requests
-from ..util import admin_cmd
+from ..utils import admin_cmd
 
 
 @borg.on(admin_cmd("xtools (.*)"))
