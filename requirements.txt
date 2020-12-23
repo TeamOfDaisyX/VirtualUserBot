@@ -69,3 +69,5 @@ langdetect
 aria2p
 fontTools
 PyDictionary
+beautifulsoup4
+bs4
