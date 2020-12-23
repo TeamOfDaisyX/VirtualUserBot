@@ -111,7 +111,7 @@ async def on_plug_in_callback_query_handler(event):
     if plugin_name in CMD_HELP:
         help_string = f"**💡 PLUGIN NAME 💡 :** `{plugin_name}` \n{CMD_HELP[plugin_name]}"
     reply_pop_up_alert = help_string
-    reply_pop_up_alert += "\n\n**(C) [VirtualUserbot](www.github.com/inukaasith/virtualuserbot)** ".format(plugin_name)
+    reply_pop_up_alert += "\n\n**(C) [VirtualUserbot](github.com/inukaasith/virtualuserbot)** ".format(plugin_name)
     if len(reply_pop_up_alert) >= 4096:
         crackexy = "`Pasting Your Help Menu.`"
         await event.answer(crackexy, cache_time=0, alert=True)
