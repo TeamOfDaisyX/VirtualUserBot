@@ -3,7 +3,7 @@ from telethon import events
 from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import ChatBannedRights
 from ..utils import admin_cmd
-from fridaybot.modules.sql_helperimport floodsql as sql
+from fridaybot.modules.sql_helper import floodsql as sql
 import fridaybot.utils
 from fridaybot.utils import humanbytes, progress, time_formatter
 from fridaybot import CMD_HELP
