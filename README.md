@@ -57,6 +57,7 @@
 
 <details>
 <summary>-THE HARD WAY of deploying -</summary>
+
 # String Session (Hard Way)
 ## Repl (not recommended)
 
