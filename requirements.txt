@@ -60,6 +60,7 @@ covid
 password_strength
 pyjokes
 cryptocompare
+cryptosteganography
 faker
 pydub
 validators
