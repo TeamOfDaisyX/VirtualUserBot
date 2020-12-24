@@ -51,18 +51,16 @@
 
 
 
-# String Session (Need before deploying)
-## Using Our Bot (Recommended)
-[![Use Our Bot](https://repl.it/badge/github/STARKGANG/friday)](https://t.me/StringSessionGeneratorRobot)
-#
-## Repl (not recommended)
 
-[![Run on Repl.it](https://repl.it/badge/github/STARKGANG/friday)](https://friday.midhunkm1294.repl.run)
 
 ## Please Note!.. This bot is a Developed Version of Friday Userbot.. All credits goes to StarkGang for the Friday Project..
 
 <details>
 <summary>-THE HARD WAY of deploying -</summary>
+#String Session (Hard Way)
+## Repl (not recommended)
+
+[![Run on Repl.it](https://repl.it/badge/github/STARKGANG/friday)](https://friday.midhunkm1294.repl.run)
 
 Simply clone the repository and run the main file:
 ```sh
