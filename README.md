@@ -18,9 +18,9 @@
 
 # Support
 
-<a href="https://t.me/InfinityJE"><img src="https://img.shields.io/badge/Join-Telegram%20Channel-red.svg?logo=Telegram"></a>
+<a href="https://t.me/InfJE"><img src="https://img.shields.io/badge/Join-Telegram%20Channel-red.svg?logo=Telegram"></a>
 
-<a href="https://t.me/InfJE"><img src="https://img.shields.io/badge/Join-Telegram%20Group-blue.svg?logo=telegram"></a>
+<a href="https://t.me/infinityje"><img src="https://img.shields.io/badge/Join-Telegram%20Group-blue.svg?logo=telegram"></a>
 
 ``` Please Note!.. This bot is a Developed Version of Friday Userbot.. All credits goes to StarkGang.. ```
 
@@ -50,8 +50,11 @@
 
 
 
-# String Session (Powered By Friday)
-## Repl
+# String Session (Need before deploying)
+## Using Our Bot (Recommended)
+[![Use Our Bot](https://repl.it/badge/github/STARKGANG/friday)](https://t.me/StringSessionGeneratorRobot)
+#
+## Repl (not recommended)
 
 [![Run on Repl.it](https://repl.it/badge/github/STARKGANG/friday)](https://friday.midhunkm1294.repl.run)
 
