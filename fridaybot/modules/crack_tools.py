@@ -1,7 +1,7 @@
 import json
 import os
 import requests
-
+from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd
 data = {
    "User-Agent": "NordApp android (playstore/2.8.6) Android 9.0.0",
