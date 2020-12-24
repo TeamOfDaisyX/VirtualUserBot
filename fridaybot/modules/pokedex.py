@@ -13,7 +13,7 @@
 
 import html
 from uniborg.util import friday_on_cmd
-
+import os
 
 
 from telethon.tl.functions.photos import GetUserPhotosRequest
