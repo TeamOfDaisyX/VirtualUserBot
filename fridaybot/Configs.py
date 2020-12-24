@@ -137,6 +137,7 @@ if ENV:
         PRIVATE_GROUP_ID = int(os.environ.get("PRIVATE_GROUP_ID", False))
         PLUGIN_CHANNEL = int(os.environ.get("PLUGIN_CHANNEL", False))
         NEWS_CHANNEL_ID = int(os.environ.get("NEWS_CHANNEL_ID", False))
+        FBAN_GROUP = int(os.environ.get("FBAN_GROUP", False))
         PM_DATA = os.environ.get("PM_DATA", "ENABLE")
         DEEP_AI = os.environ.get("DEEP_AI", None)
         ENABLE_ASSISTANTBOT = os.environ.get("ENABLE_ASSISTANTBOT", "ENABLE")
