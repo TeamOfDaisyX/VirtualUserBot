@@ -27,7 +27,7 @@ from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd, admin_cmd
 try:
    from pokedex import pokedex 
 except:
-	os.system("pip install pip install pokedex")
+	os.system("pip install pokedex")
 	from pokedex import pokedex 
 
 @friday.on(admin_cmd(pattern="pokedex (.*)"))
