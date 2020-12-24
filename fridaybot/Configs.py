@@ -144,6 +144,8 @@ if ENV:
         ANTISPAM_FEATURE = os.environ.get("ANTISPAM_FEATURE", "ENABLE")
         ASSISTANT_LOG = int(os.environ.get("ASSISTANT_LOG", False))
         OPEN_LOAD_LOGIN = os.environ.get("OPEN_LOAD_LOGIN", None)
+        SUPERHERO_API_KEY = os.environ.get("SUPERHERO_API_KEY", None)
+        FOOTBALL_API_KEY = os.environ.get("FOOTBALL_API_KEY", None)
         OPEN_LOAD_KEY = os.environ.get("OPEN_LOAD_KEY", None)
         UPSTREAM_REPO = os.environ.get(
             "UPSTREAM_REPO", "https://github.com/Inukaasith/VirtualUserbot"
