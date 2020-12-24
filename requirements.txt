@@ -61,6 +61,7 @@ password_strength
 pyjokes
 cryptocompare
 faker
+pydub
 validators
 googletrans==3.1.0a0
 spamwatch
