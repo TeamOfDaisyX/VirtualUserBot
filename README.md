@@ -53,7 +53,7 @@
 
 
 
-## Please Note!.. This bot is a Developed Version of Friday Userbot.. All credits goes to StarkGang for the Friday Project..
+
 
 <details>
 <summary>-THE HARD WAY of deploying -</summary>
@@ -115,3 +115,4 @@ published by the Free Software Foundation, either version 3 of the License, or
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/inukaasith/virtualuserbot/graphs/commit-activity)
 
+### Please Note!.. This bot is a Developed Version of Friday Userbot.. All credits goes to StarkGang for the Friday Project..
