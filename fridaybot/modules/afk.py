@@ -79,7 +79,7 @@ async def set_not_afk(event):
     if ".afk" not in current_message and "yes" in USER_AFK:  # pylint:disable=E0602
         shite = await borg.send_message(
             event.chat_id,
-            "__Pro is Back Alive__\n**තව දුරටත් Offline නෙමෙයි.**\n `මම Offline හිටිය කාලය:``"
+            "__Pro is Back Alive__\n**තව දුරටත් Offline නෙමෙයි.**\n `මම Offline හිටිය කාලය :``"
             + total_afk_time
             + "`",
         )
