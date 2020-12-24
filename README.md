@@ -33,10 +33,11 @@
 
 <a href="https://youtu.be/xfHcm_e92eQ"><img src="https://img.shields.io/badge/How%20To-Deploy-red.svg?logo=Youtube"></a>
 
-<a href="https://app.gitbook.com/@starkgangz/s/fridayuserbot/"><img src="https://img.shields.io/badge/Read%20More-GitBook-red.svg"></a>
-
 ``` The Methord is also same for this. Just deploy bot from this repo ```
 
+# String Session (Need before deploying)
+## Using Our Bot (Recommended)
+[![Use Our Bot](https://img.shields.io/badge/StringSessionGenerator-Use%20Bot-brightgreen)](https://t.me/StringSessionGeneratorRobot)
 
 
 # Deploying To Heroku
