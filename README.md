@@ -57,7 +57,7 @@
 
 <details>
 <summary>-THE HARD WAY of deploying -</summary>
-#String Session (Hard Way)
+# String Session (Hard Way)
 ## Repl (not recommended)
 
 [![Run on Repl.it](https://repl.it/badge/github/STARKGANG/friday)](https://friday.midhunkm1294.repl.run)
