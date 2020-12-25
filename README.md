@@ -13,7 +13,7 @@
 <p align="center"><a href="https://t.me/InfinityJE"><img src="https://telegra.ph/file/0e7a45ed44e17ce68d8cd.png" width="400"></a></p> 
 
 
-
+<h2 align="center"><b> Support  </b></h2>
 # Support
 
 <a href="https://t.me/InfJE"><img src="https://img.shields.io/badge/Join-Telegram%20Channel-red.svg?logo=Telegram"></a>
