@@ -20,6 +20,14 @@
 
 <a href="https://t.me/infinityje"><img src="https://img.shields.io/badge/Join-Telegram%20Group-blue.svg?logo=telegram"></a>
 
+Please Star this repo If you are deploying this Userbot
+
+<p align="center">
+  
+  <a href="https://github.com/inukaasith/virtualuserbot">
+    <img src="https://img.shields.io/github/stars/inukaasith/virtualuserbot?style=social">
+  </a>
+</p>
 
 
 # Before You Go 
@@ -28,7 +36,7 @@
 
 ##    AppID and API HASH
 
-Get APP ID and API HASH from [HERE](https://my.telegram.org) and BOT TOKEN from [Bot Father](https://t.me/botfather) and then Generate stringsession by clicking on run.on.repl.it button below and then click on deploy to heroku . Before clicking on deploy to heroku star the repo from just below
+Get APP ID and API HASH from [HERE](https://my.telegram.org) and BOT TOKEN from [Bot Father](https://t.me/botfather) and then Turn on Inline mode for the bot
 
 ##    String Session (Need before deploying)
 ### [Using the Bot](https://t.me/stringsessionbot) (Recommended)
@@ -50,14 +58,7 @@ send /id and get the group's ID
 
 # 
 
-<p align="center">
-  
-  <a href="https://github.com/inukaasith/virtualuserbot">
-    <img src="https://img.shields.io/github/stars/inukaasith/virtualuserbot?style=social">
-  </a>
-</p>
 
-# 
 
 
 # Deploying To Heroku
@@ -70,7 +71,6 @@ send /id and get the group's ID
  
 # 
 
-# 
 
 ## How to Deploy guide by Friday
 
@@ -83,7 +83,6 @@ send /id and get the group's ID
  
 # 
 
-# 
 
 
 
@@ -149,9 +148,6 @@ published by the Free Software Foundation, either version 3 of the License, or
 # 
  
 # 
-
-# 
-
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/inukaasith/virtualuserbot/graphs/commit-activity)
 
