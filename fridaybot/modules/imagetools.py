@@ -189,6 +189,8 @@ async def hmm(event):
     hmmu = await event.edit("hmm... Sending him to jail...🚶")
     await event.get_reply_message()
     img = await convert_to_image(event, borg)
+    sed = await event.get_reply_message()
+    img = await convert_to_image(event, borg)
     mon = "./resources/jail/hmm.png"
     foreground = Image.open(mon).convert("RGBA")
 
@@ -319,9 +321,11 @@ async def img(event):
     file_name = "testpb.jpg"
     ok = "./starkgangz/" + file_name
     await borg.send_file(event.chat_id, ok)
+    os.remove(files)
     for files in (ok, img):
         if files and os.path.exists(files):
             os.remove(files)
+        event.delete()
 # Credits To These :
 # https://github.com/midnightmadwalk [TG: @MidnightMadwalk]
 # https://github.com/code-rgb [TG: @DeletedUser420]
