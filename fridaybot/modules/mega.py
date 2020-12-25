@@ -77,7 +77,7 @@ async def mega_downloader(megadl):
     except IndexError:
         await megadl.edit("`MEGA.nz link not found...`")
         return None
-    cmd = f"DOWNLOADS -q -m {link}"
+    cmd = f"./DOWNLOADS -q -m {link}"
     result = await subprocess_run(megadl, cmd)
     try:
         data = json.loads(result[0])
