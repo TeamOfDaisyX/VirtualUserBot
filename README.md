@@ -36,7 +36,7 @@
 ``` The Methord is also same for this. Just deploy bot from this repo ```
 
 # String Session (Need before deploying)
-## Using the Bot (Recommended)
+### Using the Bot (Recommended)
 [![Use Our Bot](https://img.shields.io/badge/StringSessionGenerator-Use%20Bot-brightgreen)](https://t.me/stringsessionbot)
 
 
