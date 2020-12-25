@@ -2,7 +2,7 @@
 
 
 <h1 align="center"><b> Virtual-USERBOT 🇱🇰  </b></h1>
-<h4 align="center">A Powerful, Smart And Simple Userbot with 300+ Plugins <br> based on [Friday Userbot Project](https://github.com/StarkGang/FridayUserbot).</h4>
+<h4 align="center">A Powerful, Smart And Simple Userbot with 300+ Plugins <br> based on Friday Userbot Project.</h4>
 
 <p align="center">
     <a href="https://github.com/inukaasith/virtualuserbot/commits/master"><img src="https://img.shields.io/github/last-commit/inukaasith/virtualuserbot/master?label=Last%20Commit&style=flat-square&logo=github&color=F10070" alt="Commit" /></a>
@@ -34,20 +34,20 @@
 
 
 
-##    AppID and API HASH
+## 1)   AppID and API HASH
 
 Get APP ID and API HASH from [HERE](https://my.telegram.org) and BOT TOKEN from [Bot Father](https://t.me/botfather) and then Turn on Inline mode for the bot
 
-##    String Session (Need before deploying)
+## 2)   String Session (Need before deploying)
 ### [Using the Bot](https://t.me/stringsessionbot) (Recommended)
 [![Use Our Bot](https://img.shields.io/badge/StringSessionGenerator-Use%20Bot-brightgreen)](https://t.me/stringsessionbot)
 
 
-## Heroku API
+## 3)   Heroku API
 
 Create a account on [Heroku](dashboad.heroku.com) first. Then goto sttings scroll to bottom. Reaveal API and get api
 
-## Plugin Channel and Private Group ID
+## 4)   Plugin Channel and Private Group ID
 
 Create a private group on Telegram.
 Add [MissRoseBot](t.me/missrosebot) to you group and give Admin permissions.
