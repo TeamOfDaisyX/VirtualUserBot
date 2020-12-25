@@ -20,9 +20,9 @@
 
 <a href="https://t.me/infinityje"><img src="https://img.shields.io/badge/Join-Telegram%20Group-blue.svg?logo=telegram"></a>
 
-Please Star this repo If you are deploying this Userbot
+### Please Star this repo If you are deploying this Userbot
 
-<p align="center">
+<p align="left">
   
   <a href="https://github.com/inukaasith/virtualuserbot">
     <img src="https://img.shields.io/github/stars/inukaasith/virtualuserbot?style=social">
@@ -69,7 +69,6 @@ send /id and get the group's ID
 
 # 
  
-# 
 
 
 ## How to Deploy guide by Friday
@@ -81,7 +80,6 @@ send /id and get the group's ID
 
 # 
  
-# 
 
 
 
