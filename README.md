@@ -22,6 +22,8 @@
 
 ``` Please Note!.. This bot is a Developed Version of Friday Userbot.. All credits goes to StarkGang.. ```
 
+# Before You Go
+## AppID and API HASH
 
 Get APP ID and API HASH from [HERE](https://my.telegram.org) and BOT TOKEN from [Bot Father](https://t.me/botfather) and then Generate stringsession by clicking on run.on.repl.it button below and then click on deploy to heroku . Before clicking on deploy to heroku star the repo from just below
 <p align="center">
@@ -30,14 +32,10 @@ Get APP ID and API HASH from [HERE](https://my.telegram.org) and BOT TOKEN from 
     <img src="https://img.shields.io/github/stars/inukaasith/virtualuserbot?style=social">
   </a>
 </p>
-# How to Deploy guide by Friday
 
-<a href="https://youtu.be/xfHcm_e92eQ"><img src="https://img.shields.io/badge/How%20To-Deploy-red.svg?logo=Youtube"></a>
 
-``` The Methord is also same for this. Just deploy bot from this repo ```
-
-# String Session (Need before deploying)
-### Using the Bot (Recommended)
+## String Session (Need before deploying)
+#### Using the Bot (Recommended)
 [![Use Our Bot](https://img.shields.io/badge/StringSessionGenerator-Use%20Bot-brightgreen)](https://t.me/stringsessionbot)
 
 
@@ -48,6 +46,11 @@ Get APP ID and API HASH from [HERE](https://my.telegram.org) and BOT TOKEN from 
 ``` Always try to  Deploy this source. If not you will miss the future updates```
 
 
+# How to Deploy guide by Friday
+
+<a href="https://youtu.be/xfHcm_e92eQ"><img src="https://img.shields.io/badge/How%20To-Deploy-red.svg?logo=Youtube"></a>
+
+``` The Methord is also same for this. Just deploy bot from this repo ```
 
 
 
