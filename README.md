@@ -24,12 +24,7 @@
 
 # Before You Go 
 
-<p align="center">
-  
-  <a href="https://github.com/inukaasith/virtualuserbot">
-    <img src="https://img.shields.io/github/stars/inukaasith/virtualuserbot?style=social">
-  </a>
-</p>
+
 
 ##    AppID and API HASH
 
@@ -54,6 +49,14 @@ send /id and get the group's ID
 
 
 # 
+
+<p align="center">
+  
+  <a href="https://github.com/inukaasith/virtualuserbot">
+    <img src="https://img.shields.io/github/stars/inukaasith/virtualuserbot?style=social">
+  </a>
+</p>
+
 # 
 
 
@@ -63,6 +66,11 @@ send /id and get the group's ID
 
 ``` Always try to  Deploy this source. If not you will miss the future updates```
 
+# 
+ 
+# 
+
+# 
 
 ## How to Deploy guide by Friday
 
@@ -71,7 +79,11 @@ send /id and get the group's ID
 ``` The Methord is also same for this. Just deploy bot from this repo ```
 
 
+# 
+ 
+# 
 
+# 
 
 
 
@@ -133,6 +145,12 @@ will. Specifically you can redistribute and/or modify it under the terms of the
 published by the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version. 
 </details>
+
+# 
+ 
+# 
+
+# 
 
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/inukaasith/virtualuserbot/graphs/commit-activity)
