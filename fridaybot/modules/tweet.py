@@ -7,7 +7,7 @@ from random import choice, getrandbits, randint
 import random
 import time
 from telethon import events
-from userbot import bot
+from fridaybot import bot
 from collections import deque
 import sys
 import html
