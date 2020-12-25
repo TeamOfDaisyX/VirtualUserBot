@@ -2,7 +2,7 @@ from telethon import events
 from asyncio import sleep
 import os, sys, random, re
 from ..utils import admin_cmd
-from fridayuserbot import bot
+from fridaybot import bot
 
 img1=("https://t.me/danish2512/2")
 img2=("https://t.me/danish2512/3")
