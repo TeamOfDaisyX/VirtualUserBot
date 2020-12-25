@@ -45,7 +45,7 @@ Get APP ID and API HASH from [HERE](https://my.telegram.org) and BOT TOKEN from 
 
 ## 3)   Heroku API
 
-Create a account on [Heroku](dashboad.heroku.com) first. Then goto sttings scroll to bottom. Reaveal API and get api
+Create a account on [Heroku](dashboad.heroku.com) first. Then goto settings scroll to bottom. Reaveal API and get api
 
 ## 4)   Plugin Channel and Private Group ID
 
