@@ -87,7 +87,7 @@ send /id and get the group's ID
 
 
 <details>
-<summary>-THE HARD WAY of deploying -</summary>
+<summary>-MORE INFO HERE -</summary>
 
 # String Session (Hard Way)
 ## Repl (not recommended)
