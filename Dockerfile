@@ -61,6 +61,7 @@ RUN axel https://chromedriver.storage.googleapis.com/86.0.4240.22/chromedriver_l
 RUN wget -O opencv.zip https://github.com/opencv/opencv/archive/master.zip && unzip opencv.zip && mv -f opencv-master /usr/bin/ && rm opencv.zip
 RUN git clone https://github.com/inukaasith/virtualuserbot /root/fridaybot
 RUN mkdir /root/fridaybot/bin/
+RUN mkdir /root/fridaybot/bin/megadown
 WORKDIR /root/fridaybot/
 RUN chmod +x /usr/local/bin/*
 RUN pip3 install -r requirements.txt
