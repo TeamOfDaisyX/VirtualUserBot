@@ -24,6 +24,13 @@
 
 # Before You Go 
 
+<p align="center">
+  
+  <a href="https://github.com/inukaasith/virtualuserbot">
+    <img src="https://img.shields.io/github/stars/inukaasith/virtualuserbot?style=social">
+  </a>
+</p>
+
 ##    AppID and API HASH
 
 Get APP ID and API HASH from [HERE](https://my.telegram.org) and BOT TOKEN from [Bot Father](https://t.me/botfather) and then Generate stringsession by clicking on run.on.repl.it button below and then click on deploy to heroku . Before clicking on deploy to heroku star the repo from just below
@@ -44,13 +51,10 @@ Add [MissRoseBot](t.me/missrosebot) to you group and give Admin permissions.
 Turn Chat history for members in Manage group
 send /id and get the group's ID
 
-<p align="center">
-  
-  <a href="https://github.com/inukaasith/virtualuserbot">
-    <img src="https://img.shields.io/github/stars/inukaasith/virtualuserbot?style=social">
-  </a>
-</p>
 
+
+# 
+# 
 
 
 # Deploying To Heroku
