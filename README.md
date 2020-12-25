@@ -2,7 +2,7 @@
 
 
 <h1 align="center"><b> Virtual-USERBOT 🇱🇰  </b></h1>
-<h4 align="center">A Powerful, Smart And Simple Userbot based on Friday Userbot.</h4>
+<h4 align="center">A Powerful, Smart And Simple Userbot with 300+ Plugins <br> based on Friday Userbot.</h4>
 
 <p align="center">
     <a href="https://github.com/inukaasith/virtualuserbot/commits/master"><img src="https://img.shields.io/github/last-commit/inukaasith/virtualuserbot/master?label=Last%20Commit&style=flat-square&logo=github&color=F10070" alt="Commit" /></a>
