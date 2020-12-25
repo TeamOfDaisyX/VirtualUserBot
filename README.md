@@ -36,7 +36,7 @@ Get APP ID and API HASH from [HERE](https://my.telegram.org) and BOT TOKEN from 
 
 
 ###    String Session (Need before deploying)
-#### Using the Bot (Recommended)
+### Using the Bot (Recommended)
 [![Use Our Bot](https://img.shields.io/badge/StringSessionGenerator-Use%20Bot-brightgreen)](https://t.me/stringsessionbot)
 
 
