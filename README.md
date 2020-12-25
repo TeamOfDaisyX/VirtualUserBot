@@ -22,11 +22,28 @@
 
 
 
-# Before You Go
+# Before You Go 
 
 ##    AppID and API HASH
 
 Get APP ID and API HASH from [HERE](https://my.telegram.org) and BOT TOKEN from [Bot Father](https://t.me/botfather) and then Generate stringsession by clicking on run.on.repl.it button below and then click on deploy to heroku . Before clicking on deploy to heroku star the repo from just below
+
+##    String Session (Need before deploying)
+### Using the Bot (Recommended)
+[![Use Our Bot](https://img.shields.io/badge/StringSessionGenerator-Use%20Bot-brightgreen)](https://t.me/stringsessionbot)
+
+
+## Heroku API
+
+Create a account on [Heroku](dashboad.heroku.com) first. Then goto sttings scroll to bottom. Reaveal API and get api
+
+## Plugin Channel and Private Group ID
+
+Create a private group on Telegram.
+Add [MissRoseBot](t.me/missrosebot) to you group and give Admin permissions.
+Turn Chat history for members in Manage group
+send /id and get the group's ID
+
 <p align="center">
   
   <a href="https://github.com/inukaasith/virtualuserbot">
@@ -34,10 +51,6 @@ Get APP ID and API HASH from [HERE](https://my.telegram.org) and BOT TOKEN from 
   </a>
 </p>
 
-
-##    String Session (Need before deploying)
-### Using the Bot (Recommended)
-[![Use Our Bot](https://img.shields.io/badge/StringSessionGenerator-Use%20Bot-brightgreen)](https://t.me/stringsessionbot)
 
 
 # Deploying To Heroku
