@@ -11,19 +11,18 @@
 </p>
 
 <p align="center"><a href="https://t.me/InfinityJE"><img src="https://telegra.ph/file/0e7a45ed44e17ce68d8cd.png" width="400"></a></p> 
+``` Please Note!.. This bot is a Developed Version of Friday Userbot.. All credits goes to StarkGang.. ```
 
-
-<h1 align="center"><b> Support  </b></h1>
 # Support
 
 <a href="https://t.me/InfJE"><img src="https://img.shields.io/badge/Join-Telegram%20Channel-red.svg?logo=Telegram"></a>
 
 <a href="https://t.me/infinityje"><img src="https://img.shields.io/badge/Join-Telegram%20Group-blue.svg?logo=telegram"></a>
 
-``` Please Note!.. This bot is a Developed Version of Friday Userbot.. All credits goes to StarkGang.. ```
+
 
 # Before You Go
-## AppID and API HASH
+### AppID and API HASH
 
 Get APP ID and API HASH from [HERE](https://my.telegram.org) and BOT TOKEN from [Bot Father](https://t.me/botfather) and then Generate stringsession by clicking on run.on.repl.it button below and then click on deploy to heroku . Before clicking on deploy to heroku star the repo from just below
 <p align="center">
@@ -34,7 +33,7 @@ Get APP ID and API HASH from [HERE](https://my.telegram.org) and BOT TOKEN from 
 </p>
 
 
-## String Session (Need before deploying)
+### String Session (Need before deploying)
 #### Using the Bot (Recommended)
 [![Use Our Bot](https://img.shields.io/badge/StringSessionGenerator-Use%20Bot-brightgreen)](https://t.me/stringsessionbot)
 
@@ -46,7 +45,7 @@ Get APP ID and API HASH from [HERE](https://my.telegram.org) and BOT TOKEN from 
 ``` Always try to  Deploy this source. If not you will miss the future updates```
 
 
-# How to Deploy guide by Friday
+## How to Deploy guide by Friday
 
 <a href="https://youtu.be/xfHcm_e92eQ"><img src="https://img.shields.io/badge/How%20To-Deploy-red.svg?logo=Youtube"></a>
 
