@@ -5,8 +5,7 @@ from math import ceil
 
 import requests
 from telethon import Button, custom, events, functions
-from youtubesearchpython import SearchVideos
-
+from youtubesearchpython import VideosSearch
 from fridaybot import ALIVE_NAME, CMD_HELP, CMD_LIST
 from fridaybot.modules import inlinestats
 
@@ -104,7 +103,7 @@ async def on_plug_in_callback_query_handler(event):
 )
 async def on_plug_in_callback_query_handler(event):
     if not event.query.user_id == bot.uid:
-        sedok = "මොන පිස්සෙක්ද තෝ? උඹටම කියල බොටෙක් හදාගනිම්.."
+        sedok = "මොන පිස්සෙක්ද තෝ? උඹටම කියල බොටෙක් හදාගනිම්."
         await event.answer(sedok, cache_time=0, alert=True)
         return
     plugin_name = event.data_match.group(1).decode("UTF-8")
@@ -215,6 +214,7 @@ async def on_plug_in_callback_query_handler(event):
     else:
         reply_pop_up_alert = "මොන පිස්සෙක්ද තෝ? උඹටම කියල බොටෙක් හදාගනිම්. "
         await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+    
 
 def paginate_help(page_number, loaded_modules, prefix):
     number_of_rows = 8
@@ -251,10 +251,16 @@ def paginate_help(page_number, loaded_modules, prefix):
         ]
     return pairs
 
-
 @tgbot.on(events.InlineQuery(pattern=r"torrent (.*)"))
 async def inline_id_handler(event: events.InlineQuery.Event):
     builder = event.builder
+    if event.query.user_id != bot.uid:
+        resultm = builder.article(
+            title="Not Allowded",
+            text=f"You Can't Use This Bot. \nDeploy VirtualUserbot To Get Your Own Assistant, Repo Link [Here](https://github.com/Inukaasith/virtualuserbot)",
+        )
+        await event.answer([resultm])
+        return
     testinput = event.pattern_match.group(1)
     starkisnub = urllib.parse.quote_plus(testinput)
     results = []
@@ -329,12 +335,20 @@ async def inline_id_handler(event: events.InlineQuery.Event):
 @tgbot.on(events.InlineQuery(pattern=r"yt (.*)"))
 async def inline_id_handler(event: events.InlineQuery.Event):
     builder = event.builder
+    if event.query.user_id != bot.uid:
+        resultm = builder.article(
+            title="Not Allowded",
+            text=f"You Can't Use This Bot. \nDeploy VirtualUserbot To Get Your Own Assistant, Repo Link [Here](https://github.com/Inukaasith/virtualuserbot)",
+        )
+        await event.answer([resultm])
+        return
     testinput = event.pattern_match.group(1)
     urllib.parse.quote_plus(testinput)
     results = []
-    search = SearchVideos(f"{testinput}", offset=1, mode="dict", max_results=20)
+    search = VideosSearch(f"{testinput}", limit = 20)
     mi = search.result()
-    moi = mi["search_result"]
+    moi = mi["result"]
+    fk = 0
     if search == None:
         resultm = builder.article(
             title="No Results Found.",
@@ -352,7 +366,9 @@ async def inline_id_handler(event: events.InlineQuery.Event):
         fridayz = mio["id"]
         thums = mio["channel"]
         td = mio["duration"]
-        tw = mio["views"]
+        kk = moi[fk]
+        tw = kk["viewCount"]["text"]
+        fk = fk+1
         kekme = f"https://img.youtube.com/vi/{fridayz}/hqdefault.jpg"
         okayz = f"**Title :** `{thum}` \n**Link :** `{mo}` \n**Channel :** `{thums}` \n**Views :** `{tw}` \n**Duration :** `{td}`"
         hmmkek = f"Channel : {thums} \nDuration : {td} \nViews : {tw}"
@@ -371,7 +387,14 @@ async def inline_id_handler(event: events.InlineQuery.Event):
 
 @tgbot.on(events.InlineQuery(pattern=r"jm (.*)"))
 async def inline_id_handler(event: events.InlineQuery.Event):
-    event.builder
+    builder = event.builder
+    if event.query.user_id != bot.uid:
+        resultm = builder.article(
+            title="Not Allowded",
+            text=f"You Can't Use This Bot. \nDeploy VirtualUserbot To Get Your Own Assistant, Repo Link [Here](https://github.com/inukaasith/virtualuserbot)",
+        )
+        await event.answer([resultm])
+        return
     testinput = event.pattern_match.group(1)
     starkisnub = urllib.parse.quote_plus(testinput)
     results = []
@@ -409,13 +432,20 @@ async def inline_id_handler(event: events.InlineQuery.Event):
 @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
 async def inline_handler(event):
     builder = event.builder
+    if event.query.user_id != bot.uid:
+        resultm = builder.article(
+            title="Not Allowded",
+            text=f"You Can't Use This Bot. \nDeploy VirtualUserbot To Get Your Own Assistant, Repo Link [Here](https://github.com/inukaasith/virtualuserbot)",
+        )
+        await event.answer([resultm])
+        return
     query = event.text
     replied_user = await tgbot.get_me()
     firstname = replied_user.username
     if query == None:
         resulte = builder.article(
             title="Usage Guide.",
-            description="(C) @Inukaasith",
+            description="(C) VirtualUserbot",
             text=f"**How To Use Me?** \n**Youtube :** `@{firstname} yt <query>` \n**Example :** `@{firstname} yt why we lose song` \n\n**Torrent :** `@{firstname} torrent <query>` \n**Example :** `@{firstname} torrent avengers endgame ` \n\n**JioSaavan :** `@{firstname} jm <query>` \n**Example :** `@{firstname} jm dilbaar`",
             buttons=[
                 [Button.url("Contact Me", f"t.me/{firstname}")],
