@@ -30,7 +30,7 @@
 </p>
 
 
-# Before You Go (Need in deploying Process)
+# Before You Go 
 
 
 
