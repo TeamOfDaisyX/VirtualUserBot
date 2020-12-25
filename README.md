@@ -2,7 +2,7 @@
 
 
 <h1 align="center"><b> Virtual-USERBOT 🇱🇰  </b></h1>
-<h4 align="center">A Powerful, Smart And Simple Userbot with 300+ Plugins <br> based on Friday Userbot.</h4>
+<h4 align="center">A Powerful, Smart And Simple Userbot with 300+ Plugins <br> based on [Friday Userbot Project](https://github.com/StarkGang/FridayUserbot).</h4>
 
 <p align="center">
     <a href="https://github.com/inukaasith/virtualuserbot/commits/master"><img src="https://img.shields.io/github/last-commit/inukaasith/virtualuserbot/master?label=Last%20Commit&style=flat-square&logo=github&color=F10070" alt="Commit" /></a>
@@ -149,4 +149,8 @@ published by the Free Software Foundation, either version 3 of the License, or
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/inukaasith/virtualuserbot/graphs/commit-activity)
 
-### Please Note!.. This bot is a Developed Version of Friday Userbot.. All credits goes to StarkGang for the Friday Project..
+### Please Note!.. This bot is a Developed Version of [Friday Userbot](https://github.com/StarkGang/FridayUserbot).. All credits goes to [StarkGang](https://github.com/StarkGang) for the [Friday Project](https://github.com/StarkGang/FridayUserbot)..
+
+### Made possible by [Friday Project](https://github.com/StarkGang/FridayUserbot) and many other opensource projects..
+
+### Special Thanks to [Tech Wizard Entertaintment](https://t.me/Tech_Wizard_Ent) for helping me.
