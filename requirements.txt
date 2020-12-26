@@ -69,6 +69,7 @@ PyProxyToolkit
 cairosvg
 grapheme
 QScintilla
+cfscrape
 requests_html
 flask
 yahoo_fin
