@@ -14,7 +14,7 @@ import aria2p
 import asyncio
 import io
 import os
-from ..util import admin_cmd
+from ..utils import admin_cmd
 
 
 EDIT_SLEEP_TIME_OUT = 15
