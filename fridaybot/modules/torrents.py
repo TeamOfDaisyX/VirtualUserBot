@@ -51,7 +51,7 @@ async def magnet_download(event):
 	
 
 
-@borg.on(admin_cmd(pattern=r"tor"))
+@borg.on(admin_cmd(pattern=r"tar"))
 async def torrent_download(event):
 	if event.fwd_from:
 		return
