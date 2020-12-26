@@ -164,7 +164,7 @@ async def _(event):
     if event.fwd_from:
         return
     pathz, name = await apk_dl(akkad, Config.TMP_DOWNLOAD_DIRECTORY, event)
-    await borg.send_file(event.chat_id, pathz, caption='Uploaded By @FRidayOT')
+    await borg.send_file(event.chat_id, pathz, caption='Uploaded By [VirtualUserbot](github.com/inukaasith/virtualuserbot)')
 
 CMD_HELP.update(
     {
