@@ -382,6 +382,43 @@ async def spinshit(message):
     rmtree(path, ignore_errors=True)
 
 
+
+@friday.on(friday_on_cmd(pattern=r"lnews ?(.*)"))
+@friday.on(sudo_cmd(pattern=r"lnews ?(.*)", allow_sudo=True))
+async def hmm(event):
+    text = event.pattern_match.group(1)
+    if not text:
+        await event.edit("No input found!  --__--")
+        return
+    if not event.reply_to_msg_id:
+        await event.reply("Reply to any Image.")
+        return
+    hmmu = await event.edit("hmm... Starting Live News Stream...🚶")
+    await event.get_reply_message()
+    img = await convert_to_image(event, borg)
+    sed = await event.get_reply_message()
+    img = await convert_to_image(event, borg)
+    background = Image.open(img)
+    newss = "./resources/live/news.png"
+    foreground = Image.open(newss)
+    im = background.resize((2800, 1500))
+    im.paste(foreground, (0,0), mask = foreground)
+    d1 = ImageDraw.Draw(im)
+    myFont = ImageFont.truetype("./resources/live/font.ttf", 165)
+    d1.text((7, 1251), text, font=myFont, fill =(0, 0, 0))
+
+    im.save("./starkgangz/livenews.png")
+    file_name = "livenews.png"
+    ok = "./starkgangz/" + file_name
+    await borg.send_file(event.chat_id, ok)
+    await hmmu.delete()
+    for files in (ok, img):
+        if files and os.path.exists(files):
+            os.remove(files)
+
+
+
+
 CMD_HELP.update(
     {
         "imagetools": "**imagetools**\
@@ -393,6 +430,8 @@ CMD_HELP.update(
         \n**Usage :** makes a thug life meme image.\
         \n\n**Syntax : ** `.tig`\
         \n**Usage :** Makes a triggered gif of the replied image.\
+        \n\n**Syntax : ** `.spin <number between 1-6>`\
+        \n**Usage :** Spins The Given Image.\
         \n\n**Syntax : ** `.jail`\
         \n**Usage :** Makes a jail image of the replied image.\
         \n\n**Syntax : ** `.fgs searchtext;fake text`\
@@ -400,6 +439,8 @@ CMD_HELP.update(
         \n\n**Syntax : ** `.ph username:fake text`\
         \n**Usage :** Makes a Fake PornHub comment with given username and text.\
         \n\n**Syntax : ** `.greyscale`\
-        \n**Usage :** Makes a black and white image of the replied image."
+        \n**Usage :** Makes a black and white image of the replied image.\
+        \n\n**Syntax : ** `.lnews <text>`\
+        \n**Usage :** Makes a Fake News Streaming With Replyed Image And Text."
     }
 )
