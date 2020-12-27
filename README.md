@@ -40,7 +40,7 @@ Get APP ID and API HASH from [HERE](https://my.telegram.org) and BOT TOKEN from 
 
 ## 2)   String Session (Need before deploying)
 This is the way thar your userbot connects with you. Need an AppID ApiHash and a username to go..
-### [Using the repl](https://repl.it/@InukaAsith/VirtualUserbot#main.py) (Recommended)
+
 [![Run on Repl.it](https://repl.it/badge/github/STARKGANG/friday)](https://repl.it/@InukaAsith/VirtualUserbot#main.py)
 
 
