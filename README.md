@@ -39,8 +39,10 @@
 Get APP ID and API HASH from [HERE](https://my.telegram.org) and BOT TOKEN from [Bot Father](https://t.me/botfather) and then Turn on Inline mode for the bot
 
 ## 2)   String Session (Need before deploying)
-### [Using the Bot](https://t.me/stringsessionbot) (Recommended)
-[![Use Our Bot](https://img.shields.io/badge/StringSessionGenerator-Use%20Bot-brightgreen)](https://t.me/stringsessionbot)
+This is the way thar your userbot connects with you. Need an AppID ApiHash and a username to go..
+### [Using the repl](https://repl.it/@InukaAsith/VirtualUserbot#main.py) (Recommended)
+[![Run on Repl.it](https://repl.it/badge/github/STARKGANG/friday)](https://repl.it/@InukaAsith/VirtualUserbot#main.py)
+
 
 
 ## 3)   Heroku API
@@ -90,10 +92,9 @@ send /id and get the group's ID
 <summary>-MORE INFO HERE -</summary>
 
 # String Session (Hard Way)
-## Repl (not recommended)
 
-[![Run on Repl.it](https://repl.it/badge/github/STARKGANG/friday)](https://friday.midhunkm1294.repl.run)
-
+## [Using the Bot](https://t.me/stringsessionbot) (Not Recommended)
+[![Use Our Bot](https://img.shields.io/badge/StringSessionGenerator-Use%20Bot-brightgreen)](https://t.me/stringsessionbot)
 Simply clone the repository and run the main file:
 ```sh
 # Install Git First.
