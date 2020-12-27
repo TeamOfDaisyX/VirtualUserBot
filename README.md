@@ -12,7 +12,7 @@
 
 <p align="center"><a href="https://t.me/InfinityJE"><img src="https://telegra.ph/file/0e7a45ed44e17ce68d8cd.png" width="400"></a></p> 
 
-``` Please Note!.. This bot is a Developed Version of Friday Userbot.. All credits goes to StarkGang.. ```
+``` Please Note!.. This bot is a Developed Version of Friday Userbot.. All credits goes to Friday Developers.. ```
 
 # ❤️ Support
 
