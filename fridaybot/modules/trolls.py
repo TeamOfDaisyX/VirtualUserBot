@@ -19,7 +19,8 @@ import requests
 
 from telegraph import exceptions, upload_file
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
-
+import PIL.ImageOps
+from PIL import Image, ImageDraw, ImageFont
 from fridaybot import *
 from fridaybot import CMD_HELP
 from ..utils import admin_cmd, sudo_cmd, edit_or_reply
