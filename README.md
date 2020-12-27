@@ -83,6 +83,19 @@ send /id and get the group's ID
 # 
  
 
+# After Deploying Steps
+
+## 1) Turn Heroku Dynos ON
+Dynos are used on heroku. On free accounts You will get 600 free dyno hours. When you link your CC you will get aditional 400 dyno for free.
+
+Ater Building app is completed.. Goto [Heroku](dashboad.heroku.com), Select your app and goto *Resources Tab*.
+Then turn  * worker bash start.sh * to ON
+
+## 2) Check you logs
+Chack Heroku logs then.. If you done any mistakes they will shown there.
+
+## 3) Goto telegram and check your Superpowers
+Goto telegram and send .help to see the help of your Userbot
 
 
 
