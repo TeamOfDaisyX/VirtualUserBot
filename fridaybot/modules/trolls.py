@@ -126,7 +126,7 @@ async def catbot(catmemes):
 @bot.on(sudo_cmd(pattern="ttrap(?: |$)(.*)", allow_sudo=True))
 async def catbot(catmemes):
     input_str = catmemes.pattern_match.group(1)
-    input_str = deEmojify(input_str)
+    
     if "|" in input_str:
         text1, text2 = input_str.split("|")
     else:
@@ -185,7 +185,7 @@ async def catbot(catmemes):
 @bot.on(sudo_cmd(pattern="tphub(?: |$)(.*)", allow_sudo=True))
 async def catbot(catmemes):
     input_str = catmemes.pattern_match.group(1)
-    input_str = deEmojify(input_str)
+    
     if "|" in input_str:
         username, text = input_str.split("|")
     else:
