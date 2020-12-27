@@ -15,6 +15,7 @@ credits to @mrconfused and @sandy1709
 
 import base64
 import os
+import requests
 
 from telegraph import exceptions, upload_file
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
