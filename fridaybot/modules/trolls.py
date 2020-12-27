@@ -24,6 +24,70 @@ from fridaybot import CMD_HELP
 from ..utils import admin_cmd, sudo_cmd, edit_or_reply
 
 
+async def trap(text1, text2, text3):
+    r = requests.get(
+        f"https://nekobot.xyz/api/imagegen?type=trap&name={text1}&author={text2}&image={text3}"
+    ).json()
+    sandy = r.get("message")
+    caturl = url(sandy)
+    if not caturl:
+        return "check syntax once more"
+    with open("temp.png", "wb") as f:
+        f.write(requests.get(sandy).content)
+    img = Image.open("temp.png")
+    if img.mode != "RGB":
+        img = img.convert("RGB")
+    img.save("temp.jpg", "jpeg")
+    return "temp.jpg"
+
+async def trash(text):
+    r = requests.get(f"https://nekobot.xyz/api/imagegen?type=trash&url={text}").json()
+    sandy = r.get("message")
+    caturl = url(sandy)
+    if not caturl:
+        return "check syntax once more"
+    with open("temp.png", "wb") as f:
+        f.write(requests.get(sandy).content)
+    img = Image.open("temp.png")
+    if img.mode != "RGB":
+        img = img.convert("RGB")
+    img.save("temp.jpg", "jpeg")
+    return "temp.jpg"
+
+
+async def threats(text):
+    r = requests.get(f"https://nekobot.xyz/api/imagegen?type=threats&url={text}").json()
+    sandy = r.get("message")
+    caturl = url(sandy)
+    if not caturl:
+        return "check syntax once more"
+    with open("temp.png", "wb") as f:
+        f.write(requests.get(sandy).content)
+    img = Image.open("temp.png")
+    if img.mode != "RGB":
+        img = img.convert("RGB")
+    img.save("temp.jpg", "jpeg")
+    return "temp.jpg"
+
+
+async def phcomment(text1, text2, text3):
+    r = requests.get(
+        f"https://nekobot.xyz/api/imagegen?type=phcomment&image={text1}&text={text2}&username={text3}"
+    ).json()
+    sandy = r.get("message")
+    caturl = url(sandy)
+    if not caturl:
+        return "check syntax once more"
+    with open("temp.png", "wb") as f:
+        f.write(requests.get(sandy).content)
+    img = Image.open("temp.png")
+    if img.mode != "RGB":
+        img = img.convert("RGB")
+    img.save("temp.jpg", "jpeg")
+    return "temp.jpg"
+
+
+
 @bot.on(admin_cmd(pattern="threats(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="threats(?: |$)(.*)", allow_sudo=True))
 async def catbot(catmemes):
