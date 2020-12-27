@@ -97,7 +97,17 @@ Chack Heroku logs then.. If you done any mistakes they will shown there.
 ## 3) Goto telegram and check your Superpowers
 Goto telegram and send .help to see the help of your Userbot
 
+#
 
+
+## What is the message sending to users who message to you
+
+Virtual Userbot has a PM Protection service ( It was just copied from Friday Project)
+
+Send .a to approove users to PM you 
+and, .da to disapproove 
+
+If you Dont like this send .set var 
 
 
 
