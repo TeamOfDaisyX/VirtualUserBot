@@ -21,7 +21,7 @@ from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
 from fridaybot import *
 from fridaybot import CMD_HELP
-from ..utils import admin_cmd, sudo_cmd
+from ..utils import admin_cmd, sudo_cmd, edit_or_reply
 
 
 @bot.on(admin_cmd(pattern="threats(?: |$)(.*)"))
@@ -73,8 +73,8 @@ async def catbot(catmemes):
     await catmemes.client.send_file(catmemes.chat_id, cat, reply_to=replied)
 
 
-@bot.on(admin_cmd(pattern="trash(?: |$)(.*)"))
-@bot.on(sudo_cmd(pattern="trash(?: |$)(.*)", allow_sudo=True))
+@bot.on(admin_cmd(pattern="ttrash(?: |$)(.*)"))
+@bot.on(sudo_cmd(pattern="ttrash(?: |$)(.*)", allow_sudo=True))
 async def catbot(catmemes):
     replied = await catmemes.get_reply_message()
     if not os.path.isdir("./temp/"):
@@ -122,8 +122,8 @@ async def catbot(catmemes):
     await catmemes.client.send_file(catmemes.chat_id, cat, reply_to=replied)
 
 
-@bot.on(admin_cmd(pattern="trap(?: |$)(.*)"))
-@bot.on(sudo_cmd(pattern="trap(?: |$)(.*)", allow_sudo=True))
+@bot.on(admin_cmd(pattern="ttrap(?: |$)(.*)"))
+@bot.on(sudo_cmd(pattern="ttrap(?: |$)(.*)", allow_sudo=True))
 async def catbot(catmemes):
     input_str = catmemes.pattern_match.group(1)
     input_str = deEmojify(input_str)
@@ -132,7 +132,7 @@ async def catbot(catmemes):
     else:
         await edit_or_reply(
             catmemes,
-            "**Syntax :** reply to image or sticker with `.trap (name of the person to trap)|(trapper name)`",
+            "**Syntax :** reply to image or sticker with `.ttrap (name of the person to trap)|(trapper name)`",
         )
         return
     replied = await catmemes.get_reply_message()
@@ -181,8 +181,8 @@ async def catbot(catmemes):
     await catmemes.client.send_file(catmemes.chat_id, cat, reply_to=replied)
 
 
-@bot.on(admin_cmd(pattern="phub(?: |$)(.*)"))
-@bot.on(sudo_cmd(pattern="phub(?: |$)(.*)", allow_sudo=True))
+@bot.on(admin_cmd(pattern="tphub(?: |$)(.*)"))
+@bot.on(sudo_cmd(pattern="tphub(?: |$)(.*)", allow_sudo=True))
 async def catbot(catmemes):
     input_str = catmemes.pattern_match.group(1)
     input_str = deEmojify(input_str)
@@ -191,7 +191,7 @@ async def catbot(catmemes):
     else:
         await edit_or_reply(
             catmemes,
-            "**Syntax :** reply to image or sticker with `.phub (username)|(text in comment)`",
+            "**Syntax :** reply to image or sticker with `.tphub (username)|(text in comment)`",
         )
         return
     replied = await catmemes.get_reply_message()
@@ -245,11 +245,11 @@ CMD_HELP.update(
         "trolls": "**Plugin : **`trolls`\
       \n\n**Syntax :**`.threats` reply to image or sticker \
       \n**USAGE:**Changes the given pic to another pic which shows that pic content is threat to society as that of nuclear bomb .\
-      \n\n**Syntax :**`.trash` reply to image or sticker\
+      \n\n**Syntax :**`.ttrash` reply to image or sticker\
       \n**USAGE : **Changes the given pic to another pic which shows that pic content is as equal as to trash(waste)\
-      \n\n**Syntax :** reply to image or sticker with `.trap (name of the person to trap)|(trapper name)`\
+      \n\n**Syntax :** reply to image or sticker with `.ttrap (name of the person to trap)|(trapper name)`\
       \n**USAGE :**Changes the given pic to another pic which shows that pic content is trapped in trap card\
-      \n\n**Syntax :** reply to image or sticker with `.phub (username)|(text in comment)`\
+      \n\n**Syntax :** reply to image or sticker with `.tphub (username)|(text in comment)`\
       \n**USAGE :**Changes the given pic to another pic which shows that pic content as dp and shows a comment in phub with the given username\
       "
     }
