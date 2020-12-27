@@ -82,7 +82,6 @@ spamwatch
 nekos.py
 deep_translator
 langdetect
-aria2p
 fontTools
 PyDictionary
 beautifulsoup4
