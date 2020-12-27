@@ -23,7 +23,7 @@ from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from fridaybot import *
 from fridaybot import CMD_HELP
 from ..utils import admin_cmd, sudo_cmd, edit_or_reply
-
+from validators.url import url
 
 async def trap(text1, text2, text3):
     r = requests.get(
