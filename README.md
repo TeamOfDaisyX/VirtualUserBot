@@ -104,10 +104,10 @@ Goto telegram and send .help to see the help of your Userbot
 
 Virtual Userbot has a PM Protection service ( It was just copied from Friday Project)
 
-Send .a to approove users to PM you 
-and, .da to disapproove 
+Send ```.a``` to approove users to PM you 
+and, ```.da``` to disapproove 
 
-If you Dont like this send .set var 
+If you Dont like this send ```.set var PM_DATA DISABLE```
 
 
 
