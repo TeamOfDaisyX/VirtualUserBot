@@ -14,7 +14,7 @@
 
 ``` Please Note!.. This bot is a Developed Version of Friday Userbot.. All credits goes to StarkGang.. ```
 
-# Support
+# ❤️ Support
 
 <a href="https://t.me/InfJE"><img src="https://img.shields.io/badge/Join-Telegram%20Channel-red.svg?logo=Telegram"></a>
 
@@ -30,7 +30,7 @@
 </p>
 
 
-# Before You Go 
+# 🕵️‍♀️ Before You Go 
 
 
 
@@ -54,7 +54,7 @@ Create a account on [Heroku](dashboad.heroku.com) first. Then goto settings scro
 Create a private group on Telegram.
 Add [MissRoseBot](t.me/missrosebot) to you group and give Admin permissions.
 Turn Chat history for members in Manage group
-send /id and get the group's ID
+send ```/id``` and get the group's ID
 
 
 
@@ -63,7 +63,7 @@ send /id and get the group's ID
 
 
 
-# Deploying To Heroku
+# 🏃‍♂️ Deploying To Heroku
 
 [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Inukaasith/virtualuserbot)
 
@@ -83,7 +83,7 @@ send /id and get the group's ID
 # 
  
 
-# After Deploying Steps
+#  🤴 After Deploying Steps
 
 ## 1) Turn Heroku Dynos ON
 Dynos are used on heroku. On free accounts You will get 600 free dyno hours. When you link your CC you will get aditional 400 dyno for free.
@@ -102,7 +102,7 @@ Goto telegram and send .help to see the help of your Userbot
 
 # What is the message sending to users who message to you
 
-Virtual Userbot has a PM Protection service ( It was just copied from Friday Project)
+### Virtual Userbot has a PM Protection service ( It was just copied from Friday Project)
 
 Send ```.a``` to approove users to PM you 
 and, ```.da``` to disapproove 
@@ -110,6 +110,7 @@ and, ```.da``` to disapproove
 If you Dont like this send ```.set var PM_DATA DISABLE```
 
 
+# 
 
 <details>
 <summary>-MORE INFO HERE -</summary>
@@ -175,6 +176,6 @@ published by the Free Software Foundation, either version 3 of the License, or
 
 ### Please Note!.. This bot is a Developed Version of [Friday Userbot](https://github.com/StarkGang/FridayUserbot).. All credits goes to [StarkGang](https://github.com/StarkGang) for the [Friday Project](https://github.com/StarkGang/FridayUserbot)..
 
-### Made possible by [Friday Project](https://github.com/StarkGang/FridayUserbot) and many other opensource projects..
+### ❤️ Made possible by [Friday Project](https://github.com/StarkGang/FridayUserbot) and many other opensource projects.. ❤️
 
-### Special Thanks to [Tech Wizard Entertaintment](https://t.me/Tech_Wizard_Ent) for helping me.
+### 😍 Special Thanks to [Tech Wizard Entertaintment](https://t.me/Tech_Wizard_Ent) for helping me. 😍
