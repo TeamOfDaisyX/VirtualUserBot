@@ -17,7 +17,7 @@ from pySmartDL import SmartDL
 from telethon.errors import FloodWaitError
 from telethon.tl import functions
 from fridaybot import CMD_HELP
-from ..utils import admin_cmd, sudo_cmd,edit_delete
+from ..utils import admin_cmd, sudo_cmd, edit_or_reply
 AUTONAME = os.environ.get("AUTONAME", None)
 DEFAULT_BIO = os.environ.get("DEFAULTBIO", None)
 DEFAULTUSERBIO = str(DEFAULT_BIO) if DEFAULT_BIO else " ᗯᗩᏆᎢᏆᑎᏀ ᏞᏆᏦᗴ ᎢᏆᗰᗴ  "
@@ -60,11 +60,11 @@ async def autopic(event):
     else:
         input_str = 0
     if AUTOPICSTART:
-        return await edit_delete(event, f"`Autopic is already enabled`")
+        return await edit_or_reply(event, f"`Autopic is already enabled`")
     else:
         AUTOPICSTART = True
     counter = input_str
-    await edit_delete(event, f"`Autopic has been started by my Master`")
+    await edit_or_reply(event, f"`Autopic has been started by my Master`")
     while AUTOPICSTART:
         shutil.copy(downloaded_file_name, photo)
         im = Image.open(photo)
@@ -100,10 +100,10 @@ async def main(event):
     downloader = SmartDL(cat, downloaded_file_name, progress_bar=False)
     downloader.start(blocking=False)
     if DIGITALPICSTART:
-        return await edit_delete(event, f"`Digitalpfp is already enabled`")
+        return await edit_or_reply(event, f"`Digitalpfp is already enabled`")
     else:
         DIGITALPICSTART = True
-    await edit_delete(event, f"`digitalpfp has been started by my Master`")
+    await edit_or_reply(event, f"`digitalpfp has been started by my Master`")
     while DIGITALPICSTART:
         shutil.copy(downloaded_file_name, poto)
         Image.open(poto)
@@ -141,10 +141,10 @@ async def autopic(event):
     while not downloader.isFinished():
         pass
     if BLOOMSTART:
-        return await edit_delete(event, f"`Bloom is already enabled`")
+        return await edit_or_reply(event, f"`Bloom is already enabled`")
     else:
         BLOOMSTART = True
-    await edit_delete(
+    await edit_or_reply(
         event, "`Bloom colour profile pic have been enabled by my master`"
     )
     while BLOOMSTART:
@@ -182,10 +182,10 @@ async def _(event):
         return
     global AUTONAMESTART
     if AUTONAMESTART:
-        return await edit_delete(event, f"`Autoname is already enabled`")
+        return await edit_or_reply(event, f"`Autoname is already enabled`")
     else:
         AUTONAMESTART = True
-    await edit_delete(event, "`Auto Name has been started by my Master `")
+    await edit_or_reply(event, "`Auto Name has been started by my Master `")
     while AUTONAMESTART:
         DM = time.strftime("%d-%m-%y")
         HM = time.strftime("%H:%M")
@@ -205,10 +205,10 @@ async def _(event):
     if event.fwd_from:
         return
     if AUTOBIOSTART:
-        return await edit_delete(event, f"`Autobio is already enabled`")
+        return await edit_or_reply(event, f"`Autobio is already enabled`")
     else:
         AUTOBIOSTART = True
-    await edit_delete(event, "`Autobio has been started by my Master`")
+    await edit_or_reply(event, "`Autobio has been started by my Master`")
     while AUTOBIOSTART:
         DMY = time.strftime("%d.%m.%Y")
         HM = time.strftime("%H:%M:%S")
@@ -235,35 +235,35 @@ async def _(event):
     if input_str == "autopic":
         if AUTOPICSTART:
             AUTOPICSTART = False
-            await edit_delete(event, "`Autopic has been stopped now`")
+            await edit_or_reply(event, "`Autopic has been stopped now`")
         else:
-            await edit_delete(event, "`Autopic haven't enabled`")
+            await edit_or_reply(event, "`Autopic haven't enabled`")
     elif input_str == "digitalpfp":
         if DIGITALPICSTART:
             DIGITALPICSTART = False
-            await edit_delete(event, "`Digital profile pic has been stopped now`")
+            await edit_or_reply(event, "`Digital profile pic has been stopped now`")
         else:
-            await edit_delete(event, "`Digital profile pic haven't enabled`")
+            await edit_or_reply(event, "`Digital profile pic haven't enabled`")
     elif input_str == "bloom":
         if BLOOMSTART:
             BLOOMSTART = False
-            await edit_delete(event, "`Bloom has been stopped now`")
+            await edit_or_reply(event, "`Bloom has been stopped now`")
         else:
-            await edit_delete(event, "`Bloom haven't enabled`")
+            await edit_or_reply(event, "`Bloom haven't enabled`")
     elif input_str == "autoname":
         if AUTONAMESTART:
             AUTONAMESTART = False
-            await edit_delete(event, "`Autoname has been stopped now`")
+            await edit_or_reply(event, "`Autoname has been stopped now`")
         else:
-            await edit_delete(event, "`Autoname haven't enabled`")
+            await edit_or_reply(event, "`Autoname haven't enabled`")
     elif input_str == "autobio":
         if AUTOBIOSTART:
             AUTOBIOSTART = False
-            await edit_delete(event, "`Autobio has been stopped now`")
+            await edit_or_reply(event, "`Autobio has been stopped now`")
         else:
-            await edit_delete(event, "`Autobio haven't enabled`")
+            await edit_or_reply(event, "`Autobio haven't enabled`")
     else:
-        await edit_delete(event, "`What should i end ?..`")
+        await edit_or_reply(event, "`What should i end ?..`")
 
 
 CMD_HELP.update(
