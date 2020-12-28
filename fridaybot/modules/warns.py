@@ -184,3 +184,4 @@ CMD_HELP.update(
 \n\n**Syntax : **`.wap <on or off>`\
 \n**Usage :** If this is turned on, user gets banned after reaching maximum warns. If it's off, user is kicked."
     }
+)
