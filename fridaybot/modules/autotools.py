@@ -18,11 +18,10 @@ from telethon.errors import FloodWaitError
 from telethon.tl import functions
 from fridaybot import CMD_HELP
 
-AUTONAME = Config.AUTONAME
-DEFAULT_BIO = Config.DEFAULT_BIO
-
+AUTONAME = os.environ.get("AUTONAME", None)
+DEFAULT_BIO = os.environ.get("DEFAULTBIO", None)
 DEFAULTUSERBIO = str(DEFAULT_BIO) if DEFAULT_BIO else " ᗯᗩᏆᎢᏆᑎᏀ ᏞᏆᏦᗴ ᎢᏆᗰᗴ  "
-CHANGE_TIME = Config.CHANGE_TIME
+CHANGE_TIME = int(os.environ.get("CHANGE_TIME", 60))
 DEFAULTUSER = str(AUTONAME) if AUTONAME else "VirtualUserbot"
 
 FONT_FILE_TO_USE = "Fonts/digital.ttf"
