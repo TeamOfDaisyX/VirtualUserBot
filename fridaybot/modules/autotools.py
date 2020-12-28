@@ -69,11 +69,11 @@ async def autopic(event):
         shutil.copy(downloaded_file_name, photo)
         im = Image.open(photo)
         file_test = im.rotate(counter, expand=False).save(photo, "PNG")
-        current_time = datetime.now().strftime("  Time: %H:%M \n  Date: %d.%m.%y ")
+        current_time = datetime.now().strftime("Let's Time Travel %H:%M ")
         img = Image.open(photo)
         drawn_text = ImageDraw.Draw(img)
         fnt = ImageFont.truetype(FONT_FILE_TO_USE, 30)
-        drawn_text.text((150, 250), current_time, font=fnt, fill=(124, 252, 0))
+        drawn_text.text((95, 250), current_time, font=fnt, fill=(255, 255, 255))
         img.save(photo)
         file = await event.client.upload_file(photo)
         try:
