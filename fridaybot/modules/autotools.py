@@ -17,7 +17,7 @@ from pySmartDL import SmartDL
 from telethon.errors import FloodWaitError
 from telethon.tl import functions
 from fridaybot import CMD_HELP
-
+from ..utils import admin_cmd, sudo_cmd
 AUTONAME = os.environ.get("AUTONAME", None)
 DEFAULT_BIO = os.environ.get("DEFAULTBIO", None)
 DEFAULTUSERBIO = str(DEFAULT_BIO) if DEFAULT_BIO else " ᗯᗩᏆᎢᏆᑎᏀ ᏞᏆᏦᗴ ᎢᏆᗰᗴ  "
