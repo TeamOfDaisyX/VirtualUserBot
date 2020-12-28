@@ -17,13 +17,15 @@ from pySmartDL import SmartDL
 from telethon.errors import FloodWaitError
 from telethon.tl import functions
 from fridaybot import CMD_HELP
-from . import AUTONAME, DEFAULT_BIO
+
+AUTONAME = Config.AUTONAME
+DEFAULT_BIO = Config.DEFAULT_BIO
 
 DEFAULTUSERBIO = str(DEFAULT_BIO) if DEFAULT_BIO else " ᗯᗩᏆᎢᏆᑎᏀ ᏞᏆᏦᗴ ᎢᏆᗰᗴ  "
 CHANGE_TIME = Config.CHANGE_TIME
-DEFAULTUSER = str(AUTONAME) if AUTONAME else "cat"
+DEFAULTUSER = str(AUTONAME) if AUTONAME else "VirtualUserbot"
 
-FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"
+FONT_FILE_TO_USE = "Fonts/digital.ttf"
 global AUTOPICSTART
 global DIGITALPICSTART
 global BLOOMSTART
@@ -37,17 +39,17 @@ AUTONAMESTART = False
 DIGITALPICSTART = False
 
 
-@bot.on(admin_cmd(pattern="autopic ?(.*)"))
+@bot.on(admin_cmd(pattern="auutopic ?(.*)"))
 async def autopic(event):
     if event.fwd_from:
         return
     global AUTOPICSTART
-    downloaded_file_name = "userbot/original_pic.png"
+    downloaded_file_name = "fridaybot/original_pic.png"
     downloader = SmartDL(
         Config.DOWNLOAD_PFP_URL_CLOCK, downloaded_file_name, progress_bar=False
     )
     downloader.start(blocking=False)
-    photo = "userbot/photo_pfp.png"
+    photo = "fridaybot/photo_pfp.png"
     while not downloader.isFinished():
         pass
     input_str = event.pattern_match.group(1)
@@ -89,13 +91,13 @@ async def main(event):
     if event.fwd_from:
         return
     global DIGITALPICSTART
-    poto = "userbot/poto_pfp.png"
+    poto = "fridaybot/poto_pfp.png"
     cat = str(
         base64.b64decode(
             "aHR0cHM6Ly90ZWxlZ3JhLnBoL2ZpbGUvYWVhZWJlMzNiMWYzOTg4YTBiNjkwLmpwZw=="
         )
     )[2:51]
-    downloaded_file_name = "userbot/digital_pic.png"
+    downloaded_file_name = "fridaybot/digital_pic.png"
     downloader = SmartDL(cat, downloaded_file_name, progress_bar=False)
     downloader.start(blocking=False)
     if DIGITALPICSTART:
@@ -131,12 +133,12 @@ async def autopic(event):
     if event.fwd_from:
         return
     global BLOOMSTART
-    downloaded_file_name = "userbot/original_pic.png"
+    downloaded_file_name = "fridaybot/original_pic.png"
     downloader = SmartDL(
         Config.DOWNLOAD_PFP_URL_CLOCK, downloaded_file_name, progress_bar=True
     )
     downloader.start(blocking=False)
-    photo = "userbot/photo_pfp.png"
+    photo = "fridaybot/photo_pfp.png"
     while not downloader.isFinished():
         pass
     if BLOOMSTART:
@@ -175,7 +177,7 @@ async def autopic(event):
             return
 
 
-@bot.on(admin_cmd(pattern="autoname$"))
+@bot.on(admin_cmd(pattern="auutoname$"))
 async def _(event):
     if event.fwd_from:
         return
