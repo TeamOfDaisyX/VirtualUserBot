@@ -96,7 +96,7 @@ async def main(event):
             "aHR0cHM6Ly90ZWxlZ3JhLnBoL2ZpbGUvYWVhZWJlMzNiMWYzOTg4YTBiNjkwLmpwZw=="
         )
     )[2:51]
-    downloaded_file_name = "fridaybot/digital_pic.png"
+    downloaded_file_name = "fridaybot/original_pic.png"
     downloader = SmartDL(cat, downloaded_file_name, progress_bar=False)
     downloader.start(blocking=False)
     if DIGITALPICSTART:
