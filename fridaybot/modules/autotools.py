@@ -38,7 +38,7 @@ AUTONAMESTART = False
 DIGITALPICSTART = False
 
 
-@bot.on(admin_cmd(pattern="auutopic ?(.*)"))
+@bot.on(admin_cmd(pattern="autopic ?(.*)"))
 async def autopic(event):
     if event.fwd_from:
         return
@@ -176,7 +176,7 @@ async def autopic(event):
             return
 
 
-@bot.on(admin_cmd(pattern="auutoname$"))
+@bot.on(admin_cmd(pattern="autoname$"))
 async def _(event):
     if event.fwd_from:
         return
