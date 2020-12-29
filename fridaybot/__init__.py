@@ -189,12 +189,12 @@ else:
     except:
         sedprint.info("I Wasn't Able To Download Cafee Model. Skipping")
 
-if Config.ANTI_SPAMINC_TOKEN == None:
+if Config.NOSPAMPLUS_TOKEN == None:
     sclient = None
-    sedprint.info("[Warning] - AntispamInc is None")
+    sedprint.info("[Warning] - NoSpamPlusToken is None")
 else:
     try:
-        sclient = Connect(Config.ANTI_SPAMINC_TOKEN)
+        sclient = Connect(Config.NOSPAMPLUS_TOKEN)
     except Exception as e:
         sclient = None
         sedprint.info("[Warning] - " + str(e))
