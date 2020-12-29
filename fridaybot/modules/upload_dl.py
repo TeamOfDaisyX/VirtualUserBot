@@ -84,7 +84,7 @@ def time_formatter(milliseconds: int) -> str:
 async def download(target_file):
     """ For .dl command, download files to the fridaybot's server. """
     friday = await edit_or_reply(target_file, "`Processing ...`")
-    await friday.edit("Processing using fridaybot server ( ◜‿◝ )♡")
+    await friday.edit("Processing using VirtualUserbot server ( ◜‿◝ )♡")
     input_str = target_file.pattern_match.group(1)
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
         os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
