@@ -16,7 +16,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-# @friday.on(friday_on_cmd(pattern="count"))
+# @friday.on(friday_on_cmd(pattern="count$"))
 # async def _(event):
 #     if event.fwd_from:
 #         return
@@ -52,7 +52,7 @@ logger = logging.getLogger(__name__)
 # Bots:\t{}""".format(ms, u, g, c, bc, b))
 
 
-@friday.on(friday_on_cmd(pattern="count"))
+@friday.on(friday_on_cmd(pattern="count$"))
 async def stats(
     event: NewMessage.Event,
 ) -> None:  # pylint: disable = R0912, R0914, R0915
