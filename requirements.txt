@@ -2,7 +2,6 @@ Pillow
 nospamplus
 pymediainfo
 quote
-antispaminc
 python-magic
 glitch_this
 PyGithub
