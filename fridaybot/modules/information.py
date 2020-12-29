@@ -1,5 +1,3 @@
-"""Get Telegram Profile Picture and other information
-Syntax: .info @username"""
 import html
 
 from telethon.tl.functions.photos import GetUserPhotosRequest
@@ -47,12 +45,6 @@ async def _(event):
     except Exception as e:
         dc_id = "Unknown."
         str(e)
-    hmmyes = sclient.is_banned(user_id)
-    if hmmyes:
-        oki = f"""<b>ANTISPAM INC BANNED:</b> <code>True</code> 
-<b>Reason :</b> <code>{hmmyes.reason}</code>"""
-    else:
-        oki = " "
     shazam = replied_user_profile_photos_count
     caption = f"""<b>INFO<b>
 <b>Telegram ID</b>: <code>{user_id}</code>
@@ -66,7 +58,6 @@ async def _(event):
 <b>VERIFIED</b>: <code>{replied_user.user.verified}</code>
 <b>IS A BOT</b>: <code>{replied_user.user.bot}</code>
 <b>Groups in Common</b>: <code>{common_chats}</code>
-{oki}
 """
     message_id_to_reply = event.message.reply_to_msg_id
     if not message_id_to_reply:
@@ -137,10 +128,53 @@ async def get_full_user(event):
                 return None, e
 
 
+@friday.on(friday_on_cmd("wru ?(.*)"))
+@friday.on(sudo_cmd("wru ?(.*)", allow_sudo=True))
+async def gibinfo(event):
+    if not event.pattern_match.group(1):
+        user = (
+            (await event.get_reply_message()).sender if event.is_reply else event.sender
+        )
+        lolu = await event.client(GetFullUserRequest(user.id))
+    else:
+        try:
+            lolu = await event.client(GetFullUserRequest(event.pattern_match.group(1)))
+        except:
+            await event.edit("<i>No User Found.</i>", parse_mode="HTML")
+            return
+    try:
+        cas_url = f"https://combot.org/api/cas/check?user_id={lolu.user.id}"
+        r = get(cas_url, timeout=3)
+        data = r.json()
+    except:
+        data = None
+    if data and data["ok"]:
+        reason = f"<i>True</i>"
+    else:
+        reason = f"<i>False</i>"
+    hmmyes = sclient.is_banned(lolu.user.id)
+    if hmmyes:
+        oki = f"""<i>True</i>
+<b>~ Reason :</b> <i>{hmmyes.reason}</i>"""
+    else:
+        oki = "<i>False</i>"
+    infomsg = (
+        f"<b>Info Of</b> <a href=tg://user?id={lolu.user.id}>{lolu.user.first_name}</a>: \n"
+        f"<b>- Username :</b> <i>{lolu.user.username}</i>\n"
+        f"<b>- ID :</b> <i>{lolu.user.id}</i>\n"
+        f"<b>- Bot :</b> <i>{lolu.user.bot}</i>\n"
+        f"<b>- CAS Banned :</b> {reason} \n"
+        f"<b>- Nospam+ Banned :</b> {oki}"
+    )
+    await event.edit(infomsg, parse_mode="HTML")
+
+
 CMD_HELP.update(
     {
         "information": "**Information**\
 \n\n**Syntax : **`.info <mention a username/reply to a message>`\
-\n**Usage :** Gives you information about the username."
+\n**Usage :** Gives you information about the username.\
+\n\n**Syntax : **`.wru <mention a username/reply to a message>`\
+\n**Usage :** Shows if the person is banned in NospamPlus or not."
     }
 )
