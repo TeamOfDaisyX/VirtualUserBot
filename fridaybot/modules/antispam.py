@@ -19,7 +19,7 @@ async def ok(event):
         user = sclient.is_banned(juser.id)
         if user:
             await event.reply(
-                f"**#FRIDAY ANTISPAM** \n**Detected Malicious User.** \n**User-ID :** `{juser.id}`  \n**Reason :** `{user.reason}`"
+                f"**#ANTISPAM** \n**Detected Malicious User.** \n**User-ID :** `{juser.id}`  \n**Reason :** `{user.ban_code} - {user.reason}`"
             )
             try:
                 await borg.edit_permissions(
@@ -54,5 +54,5 @@ async def dnamg(event):
         await borg.kick_participant(event.chat_id, okbruh.id)
         await borg.send_message(
             Config.PRIVATE_GROUP_ID,
-            f"**WARNING - SPAM ADDING** \nUSER : `{added_bys}` \nCHAT : `{lmao_info}` \nGROUP PRIVATE : `{is_pvt}` \n**You May Report This At @SpamWatch Or @AntispamINC.**",
+            f"**WARNING - SPAM ADDING** \nUSER : `{added_bys}` \nCHAT : `{lmao_info}` \nGROUP PRIVATE : `{is_pvt}` \n**You May Report This At @SpamWatch Or @NospamPlusChat.**",
         )
