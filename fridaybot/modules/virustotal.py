@@ -86,7 +86,7 @@ async def download(target_file):
             "Need to get an API key from https://virustotal.com\nModule stopping!"
         )
         return
-    await friday.edit("Processing using fridaybot server ( ◜‿◝ )♡")
+    await friday.edit("Processing using VirtualUserbot server ( ◜‿◝ )♡")
     input_str = Config.VIRUSTOTAL_API_KEY
     if not os.path.isdir(sedpath):
         os.makedirs(sedpath)
