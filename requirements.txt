@@ -1,4 +1,5 @@
 Pillow
+nospamplus
 pymediainfo
 quote
 antispaminc
