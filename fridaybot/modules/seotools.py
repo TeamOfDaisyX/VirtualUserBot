@@ -28,7 +28,7 @@ async def _(event):
       com = "rm seo.html"
       os.system(com)
       await event.delete()
-    else:
+    except:
       await event.edit("Make Sure The Given Website URL is valid.")
     com = "rm seo.html"
     os.system(com)
