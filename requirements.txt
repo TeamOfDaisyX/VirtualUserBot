@@ -3,6 +3,7 @@ nospamplus
 pymediainfo
 quote
 python-magic
+pyseoanalyzer
 glitch_this
 PyGithub
 pytesseract
