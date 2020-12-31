@@ -18,6 +18,7 @@ import re
 
 from telethon import Button, custom, events
 from telethon.tl.functions.users import GetFullUserRequest
+from telethon.utils import pack_bot_file_id
 
 from fridaybot import bot
 from fridaybot.Configs import Config
@@ -45,7 +46,7 @@ async def start(event):
     hmmwow = devlop.first_name
     vent = event.chat_id
     mypic = Config.ASSISTANT_START_PIC
-    starttext = f"Hello, {firstname} ! Nice To Meet You, Well I Am {bot_id}, An Powerfull Assistant Bot. \n\nMy Master [{hmmwow}](tg://user?id={bot.uid}) \nYou Can Talk/Contact My Master Using This Bot. \n\nIf You Want Your Own Assistant You Can Deploy From Button Below. \n\nPowered By [Friday Userbot](t.me/FridayOT)"
+    starttext = f"Hello, {firstname} ! Nice To Meet You, Well I Am {bot_id}, An Powerfull Assistant Bot. \n\nMy Master [{hmmwow}](tg://user?id={bot.uid}) \nYou Can Talk/Contact My Master Using This Bot. \n\nIf You Want Your Own Assistant You Can Deploy From Button Below. \n\nPowered By [Virtual Userbot](github.com/virtualuserbot)"
     if event.sender_id == bot.uid:
         await tgbot.send_message(
             vent,
@@ -71,8 +72,8 @@ async def start(event):
             caption=starttext,
             link_preview=False,
             buttons=[
-                [custom.Button.inline("Deploy a bot like this", data="deploy")],
-                [Button.url("Help Me ❓", "t.me/inukaasith")],
+                [custom.Button.inline("Deploy your VirtualUserbot", data="deploy")],
+                [Button.url("Contact Dev", "t.me/Inukaasith")],
             ],
         )
         if os.path.exists(mypic):
@@ -88,10 +89,10 @@ async def help(event):
     if event.query.user_id is not bot.uid:
         await tgbot.send_message(
             event.chat_id,
-            message="This is a private property. \nThank You For Contacting Me.",
+            message="You Can Deploy VirtualUserbot In Heroku By Following Steps Bellow, You Can See Some Quick Guides On Support Channel Or On Your Own Assistant Bot. \nThank You For Contacting Me.",
             buttons=[
-                [Button.url("Owner", "https:/github.com/inukaasith")],
-                [Button.url("Need Help ❓", "t.me/inukaasith")],
+                [Button.url("Github Repo 📺", "https:/github.com/inukaasith/virtualuserbot")],
+                [Button.url("Contact Dev ❓", "t.me/inukaasith")],
             ],
         )
 
@@ -135,7 +136,6 @@ async def all_messages_catcher(event):
         return
     else:
         await event.get_sender()
-        event.chat_id
         sed = await event.forward_to(bot.uid)
         # Add User To Database ,Later For Broadcast Purpose
         # (C) @SpecHide
@@ -150,24 +150,25 @@ async def sed(event):
     msg.id
     msg_s = event.raw_text
     user_id, reply_message_id = his_userid(msg.id)
-    if event.sender_id == Config.OWNER_ID:
-        if event.raw_text.startswith("/"):
-            return
-        if event.text is not None and event.media:
-            bot_api_file_id = pack_bot_file_id(event.media)
-            await tgbot.send_file(
-                user_id,
-                file=bot_api_file_id,
-                caption=event.text,
-                reply_to=reply_message_id,
-            )
-        else:
-            msg_s = event.raw_text
-            await tgbot.send_message(
-                user_id,
-                msg_s,
-                reply_to=reply_message_id,
-            )
+    if event.sender_id != bot.uid:
+        return
+    elif event.raw_text.startswith("/"):
+        return
+    elif event.text is not None and event.media:
+        bot_api_file_id = pack_bot_file_id(event.media)
+        await tgbot.send_file(
+            user_id,
+            file=bot_api_file_id,
+            caption=event.text,
+            reply_to=reply_message_id,
+        )
+    else:
+        msg_s = event.raw_text
+        await tgbot.send_message(
+            user_id,
+            msg_s,
+            reply_to=reply_message_id,
+        )
 
 
 @assistant_cmd("broadcast", is_args=True)
@@ -187,14 +188,9 @@ async def sedlyfsir(event):
     for starkcast in userstobc:
         try:
             sent_count += 1
-            await tgbot.send_message(
-                int(starkcast.chat_id),
-                "**Hey, You Have Received A New Broadcast Message**",
-            )
             await tgbot.send_message(int(starkcast.chat_id), msgtobroadcast)
             await asyncio.sleep(0.2)
-        except Exception as e:
-            hmmok += f"Errors : {e} \n"
+        except:
             error_count += 1
     await tgbot.send_message(
         event.chat_id,
@@ -223,8 +219,6 @@ async def starkislub(event):
 async def starkisnoob(event):
     if event.sender_id == bot.uid:
         msg = await event.get_reply_message()
-        msg.id
-        event.raw_text
         user_id, reply_message_id = his_userid(msg.id)
     if is_he_added(user_id):
         await event.reply("Already Blacklisted")
