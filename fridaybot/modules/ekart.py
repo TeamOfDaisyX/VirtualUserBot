@@ -36,8 +36,8 @@ Time:- {ar}
 Place:- {place}
 Status:- {status}
 Detailed link:- {urlo}
-<u><b>Ekart Search Completed By Friday.
-Get Your Own Friday From @FRIDAYCHAT.</b></u>
+<u><b>Ekart Search Completed By VirtualUserbot.
+Get Your Own Friday From VirtualUserbot.</b></u>
 """
     await borg.send_message(
         event.chat_id,
