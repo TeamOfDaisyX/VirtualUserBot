@@ -1,3 +1,6 @@
+import requests
+from bs4 import BeautifulSoup
+
 import asyncio
 import json
 import math
@@ -12,10 +15,17 @@ import webbrowser
 from bs4 import BeautifulSoup
 import requests
 from bs4 import BeautifulSoup as bs
+import re
+
+import telethon
+from telethon import Button, custom, events, functions
 from pymediainfo import MediaInfo
 from telethon.tl.types import MessageMediaPhoto
+
 BASE_URL = "https://isubtitles.org"
 from fridaybot.Configs import Config
+import zipfile
+import os
 
 sedpath = Config.TMP_DOWNLOAD_DIRECTORY
 from fridaybot import logging
@@ -39,6 +49,7 @@ async def runcmd(cmd: str) -> Tuple[str, str, int, int]:
         process.returncode,
         process.pid,
     )
+
 
 
 async def progress(current, total, event, start, type_of_ps, file_name=None):
@@ -91,11 +102,11 @@ def time_formatter(milliseconds: int) -> str:
     hours, minutes = divmod(minutes, 60)
     days, hours = divmod(hours, 24)
     tmp = (
-        ((str(days) + " day(s), ") if days else "")
-        + ((str(hours) + " hour(s), ") if hours else "")
-        + ((str(minutes) + " minute(s), ") if minutes else "")
-        + ((str(seconds) + " second(s), ") if seconds else "")
-        + ((str(milliseconds) + " millisecond(s), ") if milliseconds else "")
+            ((str(days) + " day(s), ") if days else "")
+            + ((str(hours) + " hour(s), ") if hours else "")
+            + ((str(minutes) + " minute(s), ") if minutes else "")
+            + ((str(seconds) + " second(s), ") if seconds else "")
+            + ((str(milliseconds) + " millisecond(s), ") if milliseconds else "")
     )
     return tmp[:-2]
 
@@ -105,13 +116,13 @@ def time_formatter(milliseconds: int) -> str:
 async def convert_to_image(event, borg):
     lmao = await event.get_reply_message()
     if not (
-        lmao.gif
-        or lmao.audio
-        or lmao.voice
-        or lmao.video
-        or lmao.video_note
-        or lmao.photo
-        or lmao.sticker
+            lmao.gif
+            or lmao.audio
+            or lmao.voice
+            or lmao.video
+            or lmao.video_note
+            or lmao.photo
+            or lmao.sticker
     ):
         await event.edit("`Format Not Supported.`")
         return
@@ -193,7 +204,7 @@ async def crop_vid(input_vid: str, final_path: str):
 
 # Thanks To Userge-X
 async def take_screen_shot(
-    video_file: str, duration: int, path: str = ""
+        video_file: str, duration: int, path: str = ""
 ) -> Optional[str]:
     """ take a screenshot """
     logger.info(
@@ -293,8 +304,8 @@ async def get_subtitles(imdb_id, borg, event):
             sub_name_tag = row.find("td", class_=None)
             sub_name = (
                 str(sub_name_tag.find("a").text)
-                .replace("subtitle", "")
-                .replace("\n", "")
+                    .replace("subtitle", "")
+                    .replace("\n", "")
             )
             sub = (sub_name, sub_link)
             subtitles.append(sub)
@@ -312,6 +323,7 @@ async def get_subtitles(imdb_id, borg, event):
     final_paths = sedpath + f"{selected_sub_name}.zip"
     namez = selected_sub_name
     return final_paths, namez, subtitles[0]["sub_link"]
+
 
 # Thanks To TechoAryan For Scarpping
 async def apk_dl(app_name, path, event):
@@ -331,9 +343,21 @@ async def apk_dl(app_name, path, event):
             result = soup2.select('.ga')
         for link in result:
             dl_link = link.get('href')
-            r = requests.get(dl_link) 
+            r = requests.get(dl_link)
             with open(f"{path}/{name}#VirtualUserbot.apk", 'wb') as f:
                 f.write(r.content)
     await event.edit('`Apk, Downloaded. Let me Upload It here.`')
     final_path = f'{path}/{name}#VirtualUserbot.apk'
     return final_path, name
+
+async def check_if_subbed(channel_id, event, bot):
+    try:
+            result = await bot(
+                functions.channels.GetParticipantRequest(
+                    channel=channel_id, user_id=event.sender_id
+                )
+            )
+            if result.participant:
+                return True
+    except telethon.errors.rpcerrorlist.UserNotParticipantError:
+        return False
