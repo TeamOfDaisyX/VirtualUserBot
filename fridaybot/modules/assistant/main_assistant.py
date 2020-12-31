@@ -16,7 +16,8 @@ import io
 import os
 import re
 
-from telethon import Button, custom, events
+from telethon import Button, custom, events, functions
+import telethon
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.utils import pack_bot_file_id
 
@@ -34,7 +35,6 @@ from fridaybot.modules.sql_helper.idadder_sql import (
     get_all_users,
 )
 
-
 @assistant_cmd("start", is_args=False)
 async def start(event):
     starkbot = await tgbot.get_me()
@@ -46,7 +46,7 @@ async def start(event):
     hmmwow = devlop.first_name
     vent = event.chat_id
     mypic = Config.ASSISTANT_START_PIC
-    starttext = f"Hello, {firstname} ! Nice To Meet You, Well I Am {bot_id}, An Powerfull Assistant Bot. \n\nMy Master [{hmmwow}](tg://user?id={bot.uid}) \nYou Can Talk/Contact My Master Using This Bot. \n\nIf You Want Your Own Assistant You Can Deploy From Button Below. \n\nPowered By [Virtual Userbot](github.com/virtualuserbot)"
+    starttext = f"Hello, {firstname} ! Nice To Meet You, Well I Am {bot_id}, An Powerfull Assistant Bot. \n\nMy Master [{hmmwow}](tg://user?id={bot.uid}) \nYou Can Talk/Contact My Master Using This Bot. \n\nIf You Want Your Own Assistant You Can Deploy From Button Below. \n\nPowered By [VirtualUserbot](github.com/inukaasith/virtualuserbot)"
     if event.sender_id == bot.uid:
         await tgbot.send_message(
             vent,
@@ -73,7 +73,7 @@ async def start(event):
             link_preview=False,
             buttons=[
                 [custom.Button.inline("Deploy your VirtualUserbot", data="deploy")],
-                [Button.url("Contact Dev", "t.me/Inukaasith")],
+                [Button.url("Contact Dev ❓", "t.me/inukaasith")],
             ],
         )
         if os.path.exists(mypic):
@@ -91,8 +91,8 @@ async def help(event):
             event.chat_id,
             message="You Can Deploy VirtualUserbot In Heroku By Following Steps Bellow, You Can See Some Quick Guides On Support Channel Or On Your Own Assistant Bot. \nThank You For Contacting Me.",
             buttons=[
-                [Button.url("Github Repo 📺", "https:/github.com/inukaasith/virtualuserbot")],
-                [Button.url("Contact Dev ❓", "t.me/inukaasith")],
+                [Button.url("Deploy Tutorial 📺", "https://youtu.be/xfHcm_e92eQ")],
+                [Button.url("Github Repo ❓", "github.com/inukaasith/virtualuserbot")],
             ],
         )
 
@@ -128,6 +128,17 @@ async def users(event):
 # Bot Permit.
 @tgbot.on(events.NewMessage(func=lambda e: e.is_private))
 async def all_messages_catcher(event):
+    if Config.SUB_TO_MSG_ASSISTANT:
+        try:
+            result = await tgbot(
+                functions.channels.GetParticipantRequest(
+                    channel=Config.JTM_CHANNEL_ID, user_id=event.sender_id
+                )
+            )
+        except telethon.errors.rpcerrorlist.UserNotParticipantError:
+            await event.reply(f"**Opps, I Couldn't Forward That Message To Owner. Please Join My Channel First And Then Try Again!**",
+                             buttons = [Button.url("Join Channel ", Config.JTM_CHANNEL_USERNAME)])
+            return
     if is_he_added(event.sender_id):
         return
     if event.raw_text.startswith("/"):
