@@ -44,7 +44,7 @@ PM_IMG = Config.ALIVE_IMAGE
 pm_caption = "➥ **I'm:** `ONLINE`\n\n"
 pm_caption += "➥ **SYSTEMS STATS**\n"
 pm_caption += "➥ **Telethon Version:** `1.15.0` \n"
-pm_caption += "➥ **Python:** `3.7.4` \n"
+pm_caption += "➥ **Python:** `3.9.4` \n"
 pm_caption += f"➥ **Uptime** : `{uptime}` \n"
 pm_caption += "➥ **Database Status:**  `Functional`\n"
 pm_caption += "➥ **Current Branch** : `master`\n"
@@ -62,6 +62,12 @@ pm_caption += "[Contact Dev](https://t.me/inukaasith)"
 async def friday(alive):
     await alive.get_chat()
     """ For .alive command, check if the bot is running.  """
+    if Config.ALIVE_TEXT is None:
+        pass
+    else:
+        pm_caption=Config.ALIVE_TEXT
+
+    
     await borg.send_file(alive.chat_id, PM_IMG, caption=pm_caption)
     await alive.delete()
 
