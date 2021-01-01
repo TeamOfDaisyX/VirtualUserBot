@@ -171,8 +171,58 @@ async def nope(doit):
                             silent=True if doit.is_reply else False,
                             hide_via=True)
     await doit.delete()
+    
+    
+@borg.on(admin_cmd(pattern="gaana ?(.*)"))
+async def FindMusicPleaseBot(gaana):
 
+    song = gaana.pattern_match.group(1)
 
+    chat = "@FindMusicPleaseBot"
+
+    if not song:
+
+        return await gaana.edit("```what should i search```")
+
+    await gaana.edit("```Getting Your Music```")
+
+    await asyncio.sleep(2)
+
+    async with bot.conversation(chat) as conv:
+
+        await gaana.edit("`Downloading...Please wait`")
+
+        try:
+
+            msg = await conv.send_message(song)
+
+            response = await conv.get_response()
+
+            if response.text.startswith("Sorry"):
+
+                await bot.send_read_acknowledge(conv.chat_id)
+
+                return await gaana.edit(f"Sorry, can't find {song}")
+
+            respond = await conv.get_response()
+
+            cobra = await conv.get_response()
+
+        except YouBlockedUserError:
+
+            await gaana.edit("```Please unblock``` @FindmusicpleaseBot``` and try again```")
+
+            return
+
+        await gaana.edit("`Sending Your Music...wait!!! 😉😎`")
+
+        await bot.send_file(gaana.chat_id, cobra)
+
+        await bot.send_read_acknowledge(conv.chat_id)
+
+    await gaana.delete()
+
+    
 
 CMD_HELP.update(
     {
@@ -181,8 +231,10 @@ CMD_HELP.update(
     \n**USAGE   ★  **Send u a song \
     \n\n📌** CMD ★** `.song (name)`\
     \n**USAGE   ★  **Send u a song \
+    \n\n📌** CMD ★** `.gaana (name)`\
+    \n**USAGE   ★  **Send u a song with gaana \
     \n\n📌** CMD ★** `.sptfy (name)`\
-    \n**USAGE   ★  **Send u song(best for indian songs)\
+    \n**USAGE   ★  **Send u song(best for Sri lankan songs)\
     \n\n📌** CMD ★** `.deez (name)`\
     \n**USAGE   ★  **Send u song (note:- u can use .vsong/.uta/.utv (name) too for songs 😁😁"
     }
