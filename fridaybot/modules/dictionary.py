@@ -31,3 +31,4 @@ CMD_HELP.update(
 \n\n**Syntax : **`.meaning <word>`\
 \n**Usage :** Get meaning and pronunciation of a word."
     }
+)
