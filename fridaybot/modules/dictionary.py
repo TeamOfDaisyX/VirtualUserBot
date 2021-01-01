@@ -15,7 +15,11 @@ async def _(event):
     input_str = event.pattern_match.group(1)
     dictionary = PyDictionary()
     a = dictionary.meaning(input_str)
-    b = a.get("Noun")
+    try:
+
+        b = a.get("Noun")
+    except:
+        await omg.edit("Couldn't Find Meaning Of Given Word")
     messi = ""
     for x in b:
         messi += x + "\n"
