@@ -46,3 +46,15 @@ Get Your Own Friday From VirtualUserbot.</b></u>
     )
     await event.delete()
 
+
+CMD_HELP.update(
+    {
+        "ekart_tracker": "**Ekat Tracker**\
+\n\n**Syntax : **`.ekart <Tracking-ID>`\
+\n**Usage :** Shows Details And Latest Updates About Given Tracking-ID."
+    }
+)
+
+
+
+
