@@ -1,32 +1,47 @@
 """Syntax: .meaning <word>"""
 
-from PyDictionary import PyDictionary
-from uniborg.util import edit_or_reply, friday_on_cmd, sudo_cmd
-
 from fridaybot import CMD_HELP
+import requests
+from telethon import events
+from uniborg.util import admin_cmd
 
 
-@friday.on(friday_on_cmd("meaning (.*)"))
-@friday.on(sudo_cmd("meaning (.*)", allow_sudo=True))
+@borg.on(admin_cmd("meaning (.*)"))
 async def _(event):
-    omg = await edit_or_reply(event, "Finding Meaning.....")
     if event.fwd_from:
         return
     input_str = event.pattern_match.group(1)
-    dictionary = PyDictionary()
-    a = dictionary.meaning(input_str)
+    input_url = "https://bots.shrimadhavuk.me/dictionary/?s={}".format(input_str)
+    headers = {"USER-AGENT": "UniBorg"}
+    caption_str = f"Meaning of __{input_str}__\n"
     try:
-
-        b = a.get("Noun")
+        response = requests.get(input_url, headers=headers).json()
+        pronounciation = response.get("p")
+        meaning_dict = response.get("lwo")
+        for current_meaning in meaning_dict:
+            current_meaning_type = current_meaning.get("type")
+            current_meaning_definition = current_meaning.get("definition")
+            caption_str += f"**{current_meaning_type}**: {current_meaning_definition}\n\n"
+    except Exception as e:
+        caption_str = str(e)
+    reply_msg_id = event.message.id
+    if event.reply_to_msg_id:
+        reply_msg_id = event.reply_to_msg_id
+    try:
+        await borg.send_file(
+            event.chat_id,
+            pronounciation,
+            caption=f"Pronounciation of __{input_str}__",
+            force_document=False,
+            reply_to=reply_msg_id,
+            allow_cache=True,
+            voice_note=True,
+            silent=True,
+            supports_streaming=True
+        )
     except:
-        await omg.edit("Couldn't Find Meaning Of Given Word")
-    messi = ""
-    for x in b:
-        messi += x + "\n"
-    await omg.edit(
-        f"<b> meaning of {input_str} is:-</b>\n{messi}",
-        parse_mode="HTML",
-    )
+        pass
+    await event.edit(caption_str)
 
 
 CMD_HELP.update(
