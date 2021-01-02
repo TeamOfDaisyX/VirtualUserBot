@@ -117,8 +117,6 @@ If you Dont like this send ```.set var PM_DATA DISABLE```
 
 
 # 
-# Credits
-This Is Telegram VirtualUserbot.. A Remix Of Userbots on github Credits To Thier Owners Thx To Friday And Dark Cobra Bot a lot
 <details>
 <summary>-MORE INFO HERE -</summary>
 
