@@ -2,7 +2,7 @@
 
 
 <h1 align="center"><b> Virtual-USERBOT 🇱🇰  </b></h1>
-<h4 align="center">A Powerful, Smart And Simple Userbot with 300+ Plugins <br> based on Friday Userbot Project.</h4>
+<h4 align="center">A Powerful, Smart And Simple Userbot with 300+ Plugins <br> The Userbot Remix.</h4>
 
 <p align="center">
     <a href="https://github.com/inukaasith/virtualuserbot/commits/master"><img src="https://img.shields.io/github/last-commit/inukaasith/virtualuserbot/master?label=Last%20Commit&style=flat-square&logo=github&color=F10070" alt="Commit" /></a>
@@ -13,7 +13,11 @@
 <p align="center"><a href="https://t.me/InfinityJE"><img src="https://telegra.ph/file/0e7a45ed44e17ce68d8cd.png" width="400"></a></p> 
 
 ``` Please Note!.. This bot is a Developed Version of Friday Userbot.. All credits goes to Friday Developers.. ```
-
+# 😍 Credits
+Here is the Telegram VirtualUserbot.. A Remix Of Userbots on github..
+Credits To Thier Owners Special thanks To Friday And Dark Cobra Bot a lot
+``` Full credits mentioned at the bottom```
+#
 # ❤️ Support
 
 <a href="https://t.me/InfJE"><img src="https://img.shields.io/badge/Join-Telegram%20Channel-red.svg?logo=Telegram"></a>
@@ -111,7 +115,8 @@ If you Dont like this send ```.set var PM_DATA DISABLE```
 
 
 # 
-
+# Credits
+This Is Telegram VirtualUserbot.. A Remix Of Userbots on github Credits To Thier Owners Thx To Friday And Dark Cobra Bot a lot
 <details>
 <summary>-MORE INFO HERE -</summary>
 
@@ -174,7 +179,14 @@ published by the Free Software Foundation, either version 3 of the License, or
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/inukaasith/virtualuserbot/graphs/commit-activity)
 
-### Please Note!.. This bot is a Developed Version of [Friday Userbot](https://github.com/StarkGang/FridayUserbot).. All credits goes to [StarkGang](https://github.com/StarkGang) for the [Friday Project](https://github.com/StarkGang/FridayUserbot)..
+# Full Credits
+
+- FridayUserBot
+- CatUserbot
+- DarkCobra
+- Uniborg🤗
+- TeleBot
+
 
 ### ❤️ Made possible by [Friday Project](https://github.com/StarkGang/FridayUserbot) and many other opensource projects.. ❤️
 
