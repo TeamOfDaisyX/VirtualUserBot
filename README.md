@@ -2,7 +2,7 @@
 
 
 <h1 align="center"><b> Virtual-USERBOT 🇱🇰  </b></h1>
-<h4 align="center">A Powerful, Smart And Simple Userbot with 300+ Plugins <br> The Userbot Remix.</h4>
+<h4 align="center">A Powerful, Smart And Simple Userbot with 300+ Plugins <br> ...The Userbot Remix...</h4>
 
 <p align="center">
     <a href="https://github.com/inukaasith/virtualuserbot/commits/master"><img src="https://img.shields.io/github/last-commit/inukaasith/virtualuserbot/master?label=Last%20Commit&style=flat-square&logo=github&color=F10070" alt="Commit" /></a>
@@ -12,10 +12,11 @@
 
 <p align="center"><a href="https://t.me/InfinityJE"><img src="https://telegra.ph/file/0e7a45ed44e17ce68d8cd.png" width="400"></a></p> 
 
-``` Please Note!.. This bot is a Developed Version of Friday Userbot.. All credits goes to Friday Developers.. ```
+
 # 😍 Credits
-Here is the Telegram VirtualUserbot.. A Remix Of Userbots on github..
-Credits To Thier Owners Special thanks To Friday And Dark Cobra Bot a lot
+### Here is the Telegram VirtualUserbot.. A Remix Of Userbots on github..
+### Credits To Thier Owners Special thanks To Friday And Dark Cobra Bot a lot
+
 ``` Full credits mentioned at the bottom```
 #
 # ❤️ Support
