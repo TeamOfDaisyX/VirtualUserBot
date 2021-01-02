@@ -14,9 +14,8 @@
 
 
 # 😍 Credits
-### Here is the Telegram VirtualUserbot. A Remix Of Userbots on github..
-### Credits To Thier Owners..
-### Special thanks To Friday And Dark Cobra Bot a lot
+### Here is the Telegram VirtualUserbot. A Remix Of Userbots on github.. Credits To Thier Owners..
+#### Special thanks To Friday And Dark Cobra Bot a lot
 
 ``` Full credits mentioned at the bottom```
 #
