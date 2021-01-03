@@ -83,6 +83,7 @@ googletrans==3.1.0a0
 spamwatch
 nekos.py
 deep_translator
+pornhub-api
 countryinfo
 emoji-country-flag
 langdetect
