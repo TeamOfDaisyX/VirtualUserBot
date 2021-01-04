@@ -43,3 +43,4 @@ CMD_HELP.update(
 \n**Usage :** Genetates Fake Image.\
 \n\n**Note : **The Person In Picture Really Doesn't Exist."
     }
+)
