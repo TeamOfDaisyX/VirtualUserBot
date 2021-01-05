@@ -158,7 +158,7 @@ if ENV:
             "UPSTREAM_REPO", "https://github.com/Inukaasith/VirtualUserbot"
         )
         ALIVE_IMAGE = os.environ.get(
-            "ALIVE_IMAGE", "https://telegra.ph/file/0e7a45ed44e17ce68d8cd.png"
+            "ALIVE_IMAGE", none
         )
         ASSISTANT_START_PIC = os.environ.get(
             "ASSISTANT_START_PIC",
