@@ -61,7 +61,7 @@ Add [MissRoseBot](t.me/missrosebot) to you group and give Admin permissions.
 Turn Chat history for members in Manage group
 send ```/id``` and get the group's ID
 
-## 5)  Bot Language  (lang)
+## 5)  Bot Language  (Si or En)
 
 ### VirtualUserbot Support Multiple languages..
 #### Currently Available Languages are
