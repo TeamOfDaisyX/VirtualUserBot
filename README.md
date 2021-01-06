@@ -68,7 +68,7 @@ send ```/id``` and get the group's ID
 - Sinhala (si)
 - English (en)
 
-Enter ```si``` or ```en``` in lang section while deploying to deply bot in desired Language
+Enter ```si``` or ```en``` in lang section while deploying to deploy bot in desired Language
 
 #### You can always change Languages by sending
 
