@@ -77,7 +77,7 @@ async def _(event):
     await bot(functions.messages.DeleteHistoryRequest(peer=chat, max_id=0))
     await event.delete()
   
-@danish_00.on(danishehe(pattern="iban ?(.*)"))
+@danish_00.on(danishehe(pattern="iban2 ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return 
