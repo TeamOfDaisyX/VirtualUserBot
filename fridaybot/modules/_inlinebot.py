@@ -194,7 +194,7 @@ if lang == "si":
         # This Is Copy of Above Code. (C) @SpEcHiDe
         buttons = paginate_help(0, CMD_HELP, "helpme")
         sed = f"""VirtualUserbot Modules Are Listed Here !\n
-    For More Help or Support contact {DEFAULTUSER} \nCurrently Loaded Plugins: {len(CMD_LIST)}"""
+    For More Help or Support contact {DEFAULTUSER} \nCurrently Loaded Plugins: {len(CMD_LIST)}\nCurrently using Language - Sinhala (Sinhalese)"""
         await event.edit(message=sed, buttons=buttons)
 
 
@@ -447,7 +447,7 @@ else:
         # This Is Copy of Above Code. (C) @SpEcHiDe
         buttons = paginate_help(0, CMD_HELP, "helpme")
         sed = f"""VirtualUserbot Userbot Modules Are Listed Here !\n
-    For More Help or Support contact {DEFAULTUSER} \nCurrently Loaded Plugins: {len(CMD_LIST)}"""
+    For More Help or Support contact {DEFAULTUSER} \nCurrently Loaded Plugins: {len(CMD_LIST)}\nCurrently using Language - English (Standard)"""
         await event.edit(message=sed, buttons=buttons)
 
 
