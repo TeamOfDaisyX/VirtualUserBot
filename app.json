@@ -27,6 +27,10 @@
       "description": "Enter Username Here ",
       "value": ""
     },
+    "lang": {
+      "description": "Enter the Userbot's language ( si , en ) <= Simple letters are copulsory.. only support si and en ",
+      "value": "en"
+    },    
     "APP_ID": {
       "description": "Get this value from my.telegram.org! Please do not steal",
       "value": ""
