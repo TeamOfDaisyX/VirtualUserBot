@@ -344,18 +344,17 @@ async def inline_id_handler(event: events.InlineQuery.Event):
             okayz = f"**Title :** `{okiknow}` \n**Size :** `{starksize}` \n**Type :** `{starky}` \n**Seeder :** `{seeders}` \n**Leecher :** `{okpros}` \n**Magnet :** `{sadstark}` "
             sedme = f"Size : {starksize} Type : {starky} Age : {seds}"
             results.append(
-                await event.builder.article(
-                    title=okiknow,
-                    description=sedme,
-                    text=okayz,
-                    buttons=[
-                        Button.switch_inline(
-                            "Search Again", query="torrent ", same_peer=True
-                        )
-                    ],
-                )
-            )
+            await event.builder.photo(
+                file=kekme,
+                text=okayz,
+                buttons=[
+                [custom.Button.inline("Download Test", data=f"yt_dl_{mo}")],
+                [Button.switch_inline("Search Again", query="yt ", same_peer=True)],
+                ]
+              )
+        )
     await event.answer(results)
+
 
 
 @tgbot.on(events.InlineQuery(pattern=r"yt (.*)"))
