@@ -3,7 +3,8 @@ from datetime import datetime
 
 from fridaybot import CMD_HELP, Lastupdate
 from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
-lang = "si"
+from fridaybot import lang
+
 if lang == "si":
     def get_readable_time(seconds: int) -> str:
         count = 0
