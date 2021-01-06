@@ -7,7 +7,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from ..utils import admin_cmd as danishehe
 
-@danish_00.on(danishehe(pattern="bin ?(.*)"))
+@danish_00.on(danishehe(pattern="bin2 ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return 
