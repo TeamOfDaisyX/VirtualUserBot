@@ -121,6 +121,7 @@ if bool(ENV):
 
     # Default .alive name
     ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
+    lang = os.environ.get("lang", "si")
 
     LESS_SPAMMY = os.environ.get("LESS_SPAMMY", True)
 
