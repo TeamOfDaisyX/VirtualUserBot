@@ -180,13 +180,26 @@ published by the Free Software Foundation, either version 3 of the License, or
 
 # Full Credits
 
-- FridayUserBot
+- FridayUserBot ❤️
+- DarkCobra 😍
 - CatUserbot
-- DarkCobra
-- Uniborg🤗
+- Uniborg
 - TeleBot
 
+# Disclaimer 🧐
+
+## Use at your Own Risk 😇
+Virtualuserbot don't have any torrent leeching plugins.. So risk of bans in TG is low
+But somehow if you get banned or anything happened WE ARE NOT RESPONSIBLE FOR THEM
+
+## Report Errors only to virtualuserbot developers
+
+There are various plugins in virtualuserbot owned by Friday and other userbots.. 
+All the plugins are reconfigured for for virtualuserbot. So if you have any errors please report only to the virtualuserbot developers
+
+### If you are using adult content in the bot or if you harm someone with fun plugins of the bot you might get banned from Telegram. We are not responsible for that 😅
 
 ### ❤️ Made possible by [Friday Project](https://github.com/StarkGang/FridayUserbot) and many other opensource projects.. ❤️
 
 ### 😍 Special Thanks to [Tech Wizard Entertaintment](https://t.me/Tech_Wizard_Ent) for helping me. 😍
+
