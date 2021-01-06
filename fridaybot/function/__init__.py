@@ -1,6 +1,17 @@
 import requests
 from bs4 import BeautifulSoup
-
+from telethon.tl.types import DocumentAttributeAudio
+from youtube_dl import YoutubeDL
+from youtube_dl.utils import (
+    ContentTooShortError,
+    DownloadError,
+    ExtractorError,
+    GeoRestrictedError,
+    MaxDownloadsReached,
+    PostProcessingError,
+    UnavailableVideoError,
+    XAttrMetadataError,
+)
 import asyncio
 import json
 import math
@@ -123,6 +134,7 @@ async def convert_to_image(event, borg):
             or lmao.video_note
             or lmao.photo
             or lmao.sticker
+            or lmao.media
     ):
         await event.edit("`Format Not Supported.`")
         return
@@ -344,10 +356,10 @@ async def apk_dl(app_name, path, event):
         for link in result:
             dl_link = link.get('href')
             r = requests.get(dl_link)
-            with open(f"{path}/{name}#VirtualUserbot.apk", 'wb') as f:
+            with open(f"{path}/{name}@VirtualUserbot.apk", 'wb') as f:
                 f.write(r.content)
     await event.edit('`Apk, Downloaded. Let me Upload It here.`')
-    final_path = f'{path}/{name}#VirtualUserbot.apk'
+    final_path = f'{path}/{name}@VirtualUserbot.apk'
     return final_path, name
 
 async def check_if_subbed(channel_id, event, bot):
@@ -361,3 +373,77 @@ async def check_if_subbed(channel_id, event, bot):
                 return True
     except telethon.errors.rpcerrorlist.UserNotParticipantError:
         return False
+    
+async def _ytdl(url, is_it, event, tgbot):
+    await event.edit("`Ok Downloading This Video / Audio`")
+    if is_it:
+        opts = {
+            "format": "bestaudio",
+            "addmetadata": True,
+            "key": "FFmpegMetadata",
+            "writethumbnail": True,
+            "prefer_ffmpeg": True,
+            "geo_bypass": True,
+            "nocheckcertificate": True,
+            "postprocessors": [
+                {
+                    "key": "FFmpegExtractAudio",
+                    "preferredcodec": "mp3",
+                    "preferredquality": "480",
+                }
+            ],
+            "outtmpl": "%(id)s.mp3",
+            "quiet": True,
+            "logtostderr": False,
+        }
+        video = False
+        song = True
+    else:
+        opts = {
+            "format": "best",
+            "addmetadata": True,
+            "key": "FFmpegMetadata",
+            "prefer_ffmpeg": True,
+            "geo_bypass": True,
+            "nocheckcertificate": True,
+            "postprocessors": [
+                {"key": "FFmpegVideoConvertor", "preferedformat": "mp4"}
+            ],
+            "outtmpl": "%(id)s.mp4",
+            "logtostderr": False,
+            "quiet": True,
+        }
+        song = False
+        video = True
+    try:
+        with YoutubeDL(opts) as ytdl:
+            ytdl_data = ytdl.extract_info(url)
+    except Exception as e:
+        await event.edit(f"**Failed To Download** \n**Error :** `{str(e)}`")
+        return
+    c_time = time.time()
+    if song:
+        await event.edit(
+            f"**Uploading Audio**\
+        \n**Title :** `{ytdl_data['title']}`\
+        \n**Video Uploader :** `{ytdl_data['uploader']}`"
+        )
+        await tgbot.edit_message(
+            event.chat_id,
+            file=f"{ytdl_data['id']}.mp3",
+            text=ytdl_data["title"]
+        )
+        os.remove(f"{ytdl_data['id']}.mp3")
+                  
+    elif video:
+        await event.edit(
+            f"**Uploading Video**\
+        \n**Title :** `{ytdl_data['title']}`\
+        \n**Video Uploader :** `{ytdl_data['uploader']}`"
+        )
+        await tgbot.edit_message(
+            event.chat_id,
+            file=f"{ytdl_data['id']}.mp4",
+            text=ytdl_data["title"]
+        )
+        os.remove(f"{ytdl_data['id']}.mp4")
