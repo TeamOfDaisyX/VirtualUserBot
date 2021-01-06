@@ -61,6 +61,21 @@ Add [MissRoseBot](t.me/missrosebot) to you group and give Admin permissions.
 Turn Chat history for members in Manage group
 send ```/id``` and get the group's ID
 
+## 5)  Bot Language  (lang)
+
+### VirtualUserbot Support Multiple languages..
+#### Currently Available Languages are
+- Sinhala (si)
+- English (en)
+
+Enter ```si``` or ```en``` in lang section while deploying to deply bot in desired Language
+
+#### You can always change Languages by sending
+
+To Sinhala =>
+```.set var lang si```
+To English =>
+``` .set var lang en```
 
 
 # 
