@@ -10,7 +10,7 @@
     <a href="https://github.com/inukaasith/virtualuserbot/network/members"><img src="https://img.shields.io/github/forks/inukaasith/virtualuserbot?label=Fork&style=flat-square&logo=github&color=F10070" alt="Fork" /></a>
 </p>
 
-<p align="center"><a href="https://t.me/InfinityJE"><img src="https://telegra.ph/file/0e7a45ed44e17ce68d8cd.png" width="400"></a></p> 
+<p align="center"><a href="https://t.me/Infinity_Bots"><img src="https://telegra.ph/file/0e7a45ed44e17ce68d8cd.png" width="400"></a></p> 
 
 
 # 😍 Credits
@@ -21,7 +21,7 @@
 #
 # ❤️ Support
 
-<a href="https://t.me/InfJE"><img src="https://img.shields.io/badge/Join-Telegram%20Channel-red.svg?logo=Telegram"></a>
+<a href="https://t.me/Infinity_Bots"><img src="https://img.shields.io/badge/Join-Telegram%20Channel-red.svg?logo=Telegram"></a>
 
 <a href="https://t.me/infinityje"><img src="https://img.shields.io/badge/Join-Telegram%20Group-blue.svg?logo=telegram"></a>
 
@@ -201,4 +201,4 @@ All the plugins are reconfigured for for virtualuserbot. So if you have any erro
 
 ## ❤️ Made possible by [Friday Project](https://github.com/StarkGang/FridayUserbot) and many other opensource projects.. ❤️
 
-### 😍 Special Thanks to [Tech Wizard Entertaintment](https://t.me/Tech_Wizard_Ent) for helping me. 😍
+### 😍 Project by [Infinity_Bots](https://t.me/Infinity_Bots)  😍
