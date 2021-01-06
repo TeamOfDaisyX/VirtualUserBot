@@ -135,6 +135,7 @@ if ENV:
         MONGO_URI = os.environ.get("MONGO_URI", None)
         # Lydia API
         LYDIA_API = os.environ.get("LYDIA_API", None)
+        lang = os.environ.get("lang", "si")
         PRIVATE_GROUP_ID = int(os.environ.get("PRIVATE_GROUP_ID", False))
         PLUGIN_CHANNEL = int(os.environ.get("PLUGIN_CHANNEL", False))
         SUB_TO_MSG_ASSISTANT = os.environ.get("SUB_TO_MSG_ASSISTANT", False)
