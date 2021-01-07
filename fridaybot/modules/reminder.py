@@ -5,7 +5,7 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 import asyncio 
 from ..utils import admin_cmd
-from userbot import CMD_HELP
+from fridaybot import CMD_HELP
 
 
 @borg.on(admin_cmd(pattern="skeedy?(.*)"))
