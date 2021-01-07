@@ -159,11 +159,11 @@ if ENV:
             "UPSTREAM_REPO", "https://github.com/Inukaasith/VirtualUserbot"
         )
         ALIVE_IMAGE = os.environ.get(
-            "ALIVE_IMAGE", "https://telegra.ph/file/0e7a45ed44e17ce68d8cd.png"
+            "ALIVE_IMAGE", "https://telegra.ph/file/4e1364fb18f899ad47dec.png"
         )
         ASSISTANT_START_PIC = os.environ.get(
             "ASSISTANT_START_PIC",
-            "https://telegra.ph/file/0e7a45ed44e17ce68d8cd.png",
+            "https://telegra.ph/file/4e1364fb18f899ad47dec.png",
         )
         TESSDATA_PREFIX = os.environ.get(
             "TESSDATA_PREFIX", "/usr/share/tesseract-ocr/4.00/tessdata"
