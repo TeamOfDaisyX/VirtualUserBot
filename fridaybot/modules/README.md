@@ -1,4 +1,7 @@
-## VirtualUserbot (Based on FridayUserbot by StarkGang)
+# Modules of VirtualUserbot
+
+
+## Credits to FridayUserbo
 # EXAMPLE CODE !
 ```python3
 from fridaybot.utils import friday_on_cmd, sudo_cmd, edit_or_reply
