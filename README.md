@@ -13,12 +13,14 @@
 <p align="center"><a href="https://t.me/Infinity_Bots"><img src="https://telegra.ph/file/4e1364fb18f899ad47dec.png" width="400"></a></p> 
 
 
-# 😍 Credits
 ### Here is the Telegram VirtualUserbot. A Remix Of Userbots on github.. Credits To Thier Owners..
+
+# 😍 Credits
+### Cloned from [Friday Userbot](github.com/starkgang/fridayuserbot).. Full credits to Friday Developers 
 #### Special thanks To Friday And Dark Cobra Bot a lot
 
 ``` Full credits mentioned at the bottom```
-#
+# 
 # ❤️ Support
 
 <a href="https://t.me/Infinity_Bots"><img src="https://img.shields.io/badge/Join-Telegram%20Channel-red.svg?logo=Telegram"></a>
@@ -180,7 +182,7 @@ python3 -m fridaybot
 # Licence
 [![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl-3.0.en.html)  
 
-FridayUserbot is Free Software: You can use, study share and improve it at your
+VirtualUserbot is Free Software: You can use, study share and improve it at your
 will. Specifically you can redistribute and/or modify it under the terms of the
 [GNU General Public License](https://www.gnu.org/licenses/gpl.html) as
 published by the Free Software Foundation, either version 3 of the License, or
