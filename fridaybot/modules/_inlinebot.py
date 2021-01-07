@@ -26,7 +26,7 @@ if lang == "si":
         builder = event.builder
         result = None
         query = event.text
-        if event.query.user_id == bot.uid and query.startswith("VirtualUserbot"):
+        if event.query.user_id == bot.uid and query.startswith("🥷 VirtualUserbot"):
             rev_text = query[::-1]
             buttons = paginate_help(0, CMD_HELP, "helpme")
             result = builder.article(
@@ -193,7 +193,7 @@ if lang == "si":
         await event.answer("Back", cache_time=0, alert=False)
         # This Is Copy of Above Code. (C) @SpEcHiDe
         buttons = paginate_help(0, CMD_HELP, "helpme")
-        sed = f"""VirtualUserbot Modules Are Listed Here !\n
+        sed = f"""🥷 VirtualUserbot Modules Are Listed Here 🥷 !\n
     For More Help or Support contact {DEFAULTUSER} \nCurrently Loaded Plugins: {len(CMD_LIST)}\nCurrently using Language - Sinhala (Sinhalese)"""
         await event.edit(message=sed, buttons=buttons)
 
@@ -446,7 +446,7 @@ else:
         await event.answer("Back", cache_time=0, alert=False)
         # This Is Copy of Above Code. (C) @SpEcHiDe
         buttons = paginate_help(0, CMD_HELP, "helpme")
-        sed = f"""VirtualUserbot Userbot Modules Are Listed Here !\n
+        sed = f"""🥷 VirtualUserbot Userbot Modules Are Listed Here 🥷 !\n
     For More Help or Support contact {DEFAULTUSER} \nCurrently Loaded Plugins: {len(CMD_LIST)}\nCurrently using Language - English (Standard)"""
         await event.edit(message=sed, buttons=buttons)
 
