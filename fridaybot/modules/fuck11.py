@@ -241,7 +241,15 @@ async def gn(event):
        "**පල හුත්තෝ යන්න 😂\n තෝ සමාජයට විහිළුවක් ඕයි 😒**",
     )
 
-
+@bot.on(admin_cmd(pattern="bs$"))
+@bot.on(sudo_cmd(pattern="bs$", allow_sudo=True))
+async def gn(event):
+    await edit_or_reply(
+        event,
+       "** Good Night 🌙 Bs ☸️ Jp ✝️Tc 😘Byee...👋👋👋👋 **",
+    )
+    
+    
 @bot.on(admin_cmd(pattern=f"srun$", outgoing=True))
 @bot.on(sudo_cmd(pattern="snun$", allow_sudo=True))
 async def runstrings(event):
@@ -537,4 +545,4 @@ async def _(event):
         
         
 
-CMD_HELP.update({"Sinhala_Jokes": "\n**RUN STRINGS**\n.srun - Daisy's Run Strings to VirtualUserbot 😂..\n\n**Nothing to Say**\n.boobs\n.butts\n\n**Funny Animations.**\n.fuuk\n.sux\n.kiss\n.lovestory\n.gdbye\n.hbty\n.merrychristmas\n\n**Frequently using quotes\n.hu - `කවුරුන් කෙසේ කීවද ඵරුස වචන භාවිතය ඔබේ අරක පණ නැති කරවයි!`\n.slo -  `පෝන් එක හිරවෙනවාද?? ගලක්මත තබා හොඳින් තලන්න නිසැක ප්‍රතිඵල`\n.hp - `හුත්තිගෙ පුතා`\n.kp - `කැරි පකයා`\n.sm - `එහෙම එවා නෑ පුතා.ඒ සෙලවෙන මනස`\n.fk - `පල හුත්තෝ යන්න. තෝ සමාජයට විහිලුවක් ඕයි`"})
+CMD_HELP.update({"Sinhala_Jokes": "\n**RUN STRINGS**\n.srun - Daisy's Run Strings to VirtualUserbot 😂..\n\n**Nothing to Say**\n.boobs\n.butts\n\n**Funny Animations.**\n.fuuk\n.sux\n.kiss\n.lovestory\n.gdbye\n.hbty\n.merrychristmas\n.bs\n\n**Frequently using quotes\n.hu - `කවුරුන් කෙසේ කීවද ඵරුස වචන භාවිතය ඔබේ අරක පණ නැති කරවයි!`\n.slo -  `පෝන් එක හිරවෙනවාද?? ගලක්මත තබා හොඳින් තලන්න නිසැක ප්‍රතිඵල`\n.hp - `හුත්තිගෙ පුතා`\n.kp - `කැරි පකයා`\n.sm - `එහෙම එවා නෑ පුතා.ඒ සෙලවෙන මනස`\n.fk - `පල හුත්තෝ යන්න. තෝ සමාජයට විහිලුවක් ඕයි`"})
