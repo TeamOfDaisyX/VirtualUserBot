@@ -12,7 +12,7 @@ from fridaybot.utils import friday_on_cmd
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 if PMPERMIT_PIC is None:
-    WARN_PIC = "https://telegra.ph/file/0e7a45ed44e17ce68d8cd.png"
+    WARN_PIC = "https://telegra.ph/file/4e1364fb18f899ad47dec.png"
 else:
     WARN_PIC = PMPERMIT_PIC
 
