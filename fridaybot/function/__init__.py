@@ -1,5 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
+from hachoir.metadata import extractMetadata
+from hachoir.parser import createParser
+import hachoir
 from telethon.tl.types import DocumentAttributeAudio
 from youtube_dl import YoutubeDL
 from youtube_dl.utils import (
