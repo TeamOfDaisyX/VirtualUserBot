@@ -363,7 +363,7 @@ else:
     )
     async def on_plug_in_callback_query_handler(event):
         if not event.query.user_id == bot.uid:
-            sedok = "Who The Fuck Are You? Get Your Own Friday."
+            sedok = "Who The Fuck Are You? Get Your Own VirtualUserbot ."
             await event.answer(sedok, cache_time=0, alert=True)
             return
         plugin_name = event.data_match.group(1).decode("UTF-8")
