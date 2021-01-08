@@ -1,7 +1,9 @@
 from telethon.events import ChatAction
-
+from telethon import events
+from telethon.tl.functions.users import GetFullUserRequest
 from fridaybot import bot, sclient
 from fridaybot.Configs import Config
+
 
 """Bans Spammers/Scammer At time Of Arrival 
 If You Add Him The Bot Won't Restrict."""
@@ -30,7 +32,23 @@ async def ok(event):
         else:
             pass
 
-
+@bot.on(events.ChatAction())
+async def anti_spambot(event):
+    if not event.user_joined and not event.user_added:
+        return
+    if Config.ANTISPAM_FEATURE != "ENABLE":
+        return
+    user = await event.get_user()
+    juser = await event.client(GetFullUserRequest(int(user.id)))
+    if "@date4ubot" in str(juser.about):
+            try:
+                await bot.edit_permissions(
+                        event.chat_id, juser.user.id, view_messages=False
+                    )
+                await event.reply("**Banned Porn Spammer Bot** \n**Powered By @FridayOT**")
+            except:
+                return
+                                    
 @borg.on(ChatAction)
 async def dnamg(event):
     okbruh = await borg.get_me()
