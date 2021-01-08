@@ -6,7 +6,7 @@ from telethon import events, functions
 from telethon.tl.functions.users import GetFullUserRequest
 
 from .sql_helper import pmpermit_sql as pmpermit_sql
-from fridaybot import ALIVE_NAME, CUSTOM_PMPERMIT
+from fridaybot import ALIVE_NAME, CUSTOM_PMPERMIT, lang
 from fridaybot.Configs import Config
 from fridaybot.utils import friday_on_cmd
 
@@ -27,7 +27,11 @@ DEFAULTUSER = (
 CUSTOM_MIDDLE_PMP = (
     str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else f"Protection By {DEFAULTUSER} ❤️"
 )
-USER_BOT_WARN_ZERO = "ඔයා මගේ මාස්ටර් ගෙ Inbox එකට Spam ගහන්න හදපු නිසා මම ඔයාව Block කරා"
+
+if lang == "si":  
+    USER_BOT_WARN_ZERO = "ඔයා මගේ මාස්ටර් ගෙ Inbox එකට Spam ගහන්න හදපු නිසා මම ඔයාව Block කරා"
+else:
+    USER_BOT_WARN_ZERO = "You Tried to Spam on my Master's Inbox.. So I Blocked you."
 
 botisnoob = Var.TG_BOT_USER_NAME_BF_HER
 
@@ -55,7 +59,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                     del PREV_REPLY_MESSAGE[chats.id]
                 pmpermit_sql.approve(chats.id, "Approved Another Nibba")
                 await event.edit(
-                    "ඔයාව ප්‍රයිවට් මැසේජ් යවන්න Approove උනා [{}](tg://user?id={})".format(firstname, chats.id)
+                    "Approved to PM [{}](tg://user?id={})".format(firstname, chats.id)
                 )
                 await asyncio.sleep(3)
                 await event.delete()
