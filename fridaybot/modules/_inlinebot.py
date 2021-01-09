@@ -561,14 +561,14 @@ else:
     
     
     
-    
+
 @tgbot.on(events.InlineQuery(pattern=r"torrent (.*)"))
 async def inline_id_handler(event: events.InlineQuery.Event):
     builder = event.builder
     if event.query.user_id != bot.uid:
         resultm = builder.article(
             title="Not Allowded",
-            text=f"You Can't Use This Bot. \nDeploy VirtualUserbot To Get Your Own Assistant, Repo Link [Here](https://github.com/Inukaasith/virtualuserbot)",
+            text=f"You Can't Use This Bot. \nDeploy VirtualUserbot To Get Your Own Assistant, Repo Link [Here](https://github.com/inukaasith/VirtualUserbot)",
         )
         await event.answer([resultm])
         return
@@ -629,17 +629,18 @@ async def inline_id_handler(event: events.InlineQuery.Event):
             okayz = f"**Title :** `{okiknow}` \n**Size :** `{starksize}` \n**Type :** `{starky}` \n**Seeder :** `{seeders}` \n**Leecher :** `{okpros}` \n**Magnet :** `{sadstark}` "
             sedme = f"Size : {starksize} Type : {starky} Age : {seds}"
             results.append(
-            await event.builder.photo(
-                file=kekme,
-                text=okayz,
-                buttons=[
-                [custom.Button.inline("Download Test", data=f"yt_dl_{mo}")],
-                [Button.switch_inline("Search Again", query="yt ", same_peer=True)],
-                ]
-              )
-        )
+                await event.builder.article(
+                    title=okiknow,
+                    description=sedme,
+                    text=okayz,
+                    buttons=[
+                        Button.switch_inline(
+                            "Search Again", query="torrent ", same_peer=True
+                        )
+                    ],
+                )
+            )
     await event.answer(results)
-
 
 
 @tgbot.on(events.InlineQuery(pattern=r"yt (.*)"))
@@ -648,18 +649,15 @@ async def inline_id_handler(event: events.InlineQuery.Event):
     if event.query.user_id != bot.uid:
         resultm = builder.article(
             title="Not Allowded",
-            text=f"You Can't Use This Bot. \nDeploy VirtualUserbot To Get Your Own Assistant, Repo Link [Here](https://github.com/Inukaasith/virtualuserbot)",
+            text=f"You Can't Use This Bot. \nDeploy VirtualUserbot To Get Your Own Assistant, Repo Link [Here](https://github.com/inukaasith/virtualuserbot)",
         )
         await event.answer([resultm])
         return
     testinput = event.pattern_match.group(1)
     urllib.parse.quote_plus(testinput)
     results = []
-    search = VideosSearch(f"{testinput}", limit = 20)
-    mi = search.result()
-    moi = mi["result"]
-    fk = 0
-    if search == None:
+    moi = YoutubeSearch(testinput, max_results=20).to_dict()
+    if not moi:
         resultm = builder.article(
             title="No Results Found.",
             description="Check Your Spelling / Keyword",
@@ -670,27 +668,31 @@ async def inline_id_handler(event: events.InlineQuery.Event):
         )
         await event.answer([resultm])
         return
-    for mio in moi:
-        mo = mio["link"]
-        thum = mio["title"]
-        fridayz = mio["id"]
-        thums = mio["channel"]
-        td = mio["duration"]
-        kk = moi[fk]
-        tw = kk["viewCount"]["text"]
-        fk = fk+1
-        kekme = f"https://img.youtube.com/vi/{fridayz}/hqdefault.jpg"
-        okayz = f"**Title :** `{thum}` \n**Link :** `{mo}` \n**Channel :** `{thums}` \n**Views :** `{tw}` \n**Duration :** `{td}`"
-        hmmkek = f"Channel : {thums} \nDuration : {td} \nViews : {tw}"
+    for moon in moi:
+        hmm = moon["id"]
+        mo = f"https://www.youtube.com/watch?v={hmm}"
+        kek = f"https://www.youtube.com/watch?v={hmm}"
+        stark_name = moon["title"]
+        stark_chnnl = moon["channel"]
+        total_stark = moon["duration"]
+        stark_views = moon["views"]
+        lol_desc = moon["long_desc"]
+        kekme = f"https://img.youtube.com/vi/{hmm}/hqdefault.jpg"
+        okayz = f"**Title :** `{stark_name}` \n**Link :** `{kek}` \n**Channel :** `{stark_chnnl}` \n**Views :** `{stark_views}` \n**Duration :** `{total_stark}`"
+        hmmkek = f"Video Name : {stark_name} \nChannel : {stark_chnnl} \nDuration : {total_stark} \nViews : {stark_views}"
         results.append(
-            await event.builder.article(
-                title=thum,
+            await event.builder.document(
+                file=kekme,
+                title=stark_name,
                 description=hmmkek,
                 text=okayz,
-                buttons=Button.switch_inline(
-                    "Search Again", query="yt ", same_peer=True
-                ),
-            )
+                include_media=True,
+                buttons=[
+                [custom.Button.inline("Download Video", data=f"yt_vid_{mo}")],
+                [custom.Button.inline("Download Audio", data=f"yt_dla_{mo}")],
+                [Button.switch_inline("Search Again", query="yt ", same_peer=True)],
+                ]
+              )
         )
     await event.answer(results)
 
@@ -738,46 +740,15 @@ async def inline_id_handler(event: events.InlineQuery.Event):
         )
     await event.answer(results)
 
-
-@tgbot.on(events.InlineQuery)  # pylint:disable=E0602
-async def inline_handler(event):
-    builder = event.builder
-    if event.query.user_id != bot.uid:
-        resultm = builder.article(
-            title="Not Allowded",
-            text=f"You Can't Use This Bot. \nDeploy VirtualUserbot To Get Your Own Assistant, Repo Link [Here](https://github.com/inukaasith/virtualuserbot)",
-        )
-        await event.answer([resultm])
-        return
-    query = event.text
-    replied_user = await tgbot.get_me()
-    firstname = replied_user.username
-    if query == None:
-        resulte = builder.article(
-            title="Usage Guide.",
-            description="(C) @VirtualUserbot",
-            text=f"**How To Use Me?** \n**Youtube :** `@{firstname} yt <query>` \n**Example :** `@{firstname} yt why we lose song` \n\n**Torrent :** `@{firstname} torrent <query>` \n**Example :** `@{firstname} torrent avengers endgame ` \n\n**JioSaavan :** `@{firstname} jm <query>` \n**Example :** `@{firstname} jm dilbaar`",
-            buttons=[
-                [Button.url("Contact Me", f"t.me/{firstname}")],
-                [Button.switch_inline("Search Youtube", query="yt ", same_peer=True)],
-                [
-                    Button.switch_inline(
-                        "Search Torrent", query="torrent ", same_peer=True
-                    )
-                ],
-                [Button.switch_inline("Search JioSaavn", query="jm ", same_peer=True)],
-            ],
-        )
-        await event.answer([resulte])
-
-
+    
+        
 @tgbot.on(events.InlineQuery(pattern=r"google (.*)"))
 async def inline_id_handler(event: events.InlineQuery.Event):
     builder = event.builder
     if event.query.user_id != bot.uid:
         resultm = builder.article(
             title="- Not Allowded -",
-            text=f"You Can't Use This Bot. \nDeploy VirtualUserbot To Get Your Own Assistant, Repo Link [Here](https://github.com/inukaasith/VirtualUserbot)",
+            text=f"You Can't Use This Bot. \nDeploy virtualuserbot  To Get Your Own Assistant, Repo Link [Here](https://github.com/inukaasith/virtualuserbot)",
         )
         await event.answer([resultm])
         return
@@ -790,7 +761,7 @@ async def inline_id_handler(event: events.InlineQuery.Event):
         match = match.replace("page=" + page[0], "")
     except IndexError:
         page = 1
-
+    
     search_args = (str(match), int(page))
     gsearch = GoogleSearch()
     gresults = await gsearch.async_search(*search_args)
@@ -816,7 +787,7 @@ async def inline_id_handler(event: events.InlineQuery.Event):
         except IndexError:
             break
     await event.answer(results)
-
+    
 @tgbot.on(events.InlineQuery(pattern=r"ph (.*)"))
 async def inline_id_handler(event: events.InlineQuery.Event):
     builder = event.builder
@@ -853,14 +824,14 @@ async def inline_id_handler(event: events.InlineQuery.Event):
       else:
         pass
     await event.answer(results)
-
+    
 @tgbot.on(events.InlineQuery(pattern=r"xkcd (.*)"))
 async def inline_id_handler(event: events.InlineQuery.Event):
     builder = event.builder
     if event.query.user_id != bot.uid:
         resultm = builder.article(
             title="- Not Allowded -",
-            text=f"You Can't Use This Bot. \nDeploy VirtualUserbot To Get Your Own Assistant, Repo Link [Here](https://github.com/inukaasith/virtualuserbot)",
+            text=f"You Can't Use This Bot. \nDeploy VirtualUserbot To Get Your Own Assistant, Repo Link [Here](https://github.com/inukaasith/VirtualUserbot)",
         )
         await event.answer([resultm])
         return
@@ -911,4 +882,4 @@ Year: {}""".format(
             title="- No Results :/ -",
             text=f"No Results Found !"
         )
-        await event.answer([resultm])     
+        await event.answer([resultm])
