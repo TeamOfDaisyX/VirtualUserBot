@@ -656,7 +656,7 @@ async def inline_id_handler(event: events.InlineQuery.Event):
     testinput = event.pattern_match.group(1)
     urllib.parse.quote_plus(testinput)
     results = []
-    moi = YoutubeSearch(testinput, max_results=20).to_dict()
+    moi = YoutubeSearch(testinput, max_results=9).to_dict()
     if not moi:
         resultm = builder.article(
             title="No Results Found.",
@@ -688,8 +688,8 @@ async def inline_id_handler(event: events.InlineQuery.Event):
                 text=okayz,
                 include_media=True,
                 buttons=[
-                [custom.Button.inline("Download Video", data=f"yt_vid_{mo}")],
-                [custom.Button.inline("Download Audio", data=f"yt_dla_{mo}")],
+                [custom.Button.inline("Download Video - mp4", data=f"yt_vid_{mo}")],
+                [custom.Button.inline("Download Audio - mp3", data=f"yt_dla_{mo}")],
                 [Button.switch_inline("Search Again", query="yt ", same_peer=True)],
                 ]
               )
