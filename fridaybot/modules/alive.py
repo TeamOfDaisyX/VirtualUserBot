@@ -1,4 +1,4 @@
-"""Check if fridaybot alive. If you change these, you become the gayest gay such that even the gay world will disown you."""
+"""Check if Vbot alive. If you change these, you become the gayest gay such that even the gay world will disown you."""
 # CREDITS: @WhySooSerious, @Sur_vivor
 import time
 
@@ -44,7 +44,7 @@ PM_IMG = Config.ALIVE_IMAGE
 pm_caption = "➥ **I'm:** `ONLINE`\n\n"
 pm_caption += "➥ **SYSTEMS STATS**\n"
 pm_caption += "➥ **Telethon Version:** `1.15.0` \n"
-pm_caption += "➥ **Python:** `3.7.4` \n"
+pm_caption += "➥ **Python:** `3.9.0` \n"
 pm_caption += f"➥ **Uptime** : `{uptime}` \n"
 pm_caption += "➥ **Database Status:**  `Functional`\n"
 pm_caption += "➥ **Current Branch** : `master`\n"
