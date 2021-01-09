@@ -145,7 +145,7 @@ if lang == "si":
 
 
 
-   @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"yt_dla_(.*)")))
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"yt_dla_(.*)")))
     async def rip(event):
         yt_dl_data = event.data_match.group(1).decode("UTF-8")
         link_s = yt_dl_data
