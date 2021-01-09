@@ -2,6 +2,7 @@ import os
 import re
 import urllib
 from math import ceil
+from youtube_search import YoutubeSearch
 from re import findall
 from search_engine_parser import GoogleSearch
 from fridaybot.function import _ytdl
@@ -144,7 +145,7 @@ if lang == "si":
 
 
 
-    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"yt_dl_(.*)")))
+   @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"yt_dla_(.*)")))
     async def rip(event):
         yt_dl_data = event.data_match.group(1).decode("UTF-8")
         link_s = yt_dl_data
@@ -154,7 +155,19 @@ if lang == "si":
             return
         is_it = True
         ok = await _ytdl(link_s, is_it, event, tgbot)
-
+        
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"yt_vid_(.*)")))
+    async def rip(event):
+        yt_dl_data = event.data_match.group(1).decode("UTF-8")
+        link_s = yt_dl_data
+        if event.query.user_id != bot.uid:
+            text = f"Please Get Your Own VirtualUserbot And Don't Waste My Resources"
+            await event.answer(text, alert=True)
+            return
+        is_it = False
+        ok = await _ytdl(link_s, is_it, event, tgbot)
+        
+        
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"ph_dl_(.*)")))
     async def rip(event):
         link_s = event.pattern_match.group(1)
@@ -399,7 +412,7 @@ else:
             txt = "You Can't View My Masters Stats"
             await event.answer(txt, alert=True)
 
-    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"yt_dl_(.*)")))
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"yt_dla_(.*)")))
     async def rip(event):
         yt_dl_data = event.data_match.group(1).decode("UTF-8")
         link_s = yt_dl_data
@@ -410,6 +423,20 @@ else:
         is_it = True
         ok = await _ytdl(link_s, is_it, event, tgbot)
 
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"yt_vid_(.*)")))
+    async def rip(event):
+        yt_dl_data = event.data_match.group(1).decode("UTF-8")
+        link_s = yt_dl_data
+        if event.query.user_id != bot.uid:
+            text = f"Please Get Your Own Friday And Don't Waste My Resources"
+            await event.answer(text, alert=True)
+            return
+        is_it = False
+        ok = await _ytdl(link_s, is_it, event, tgbot)
+
+        
+        
+        
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"ph_dl_(.*)")))
     async def rip(event):
         link_s = event.pattern_match.group(1)
