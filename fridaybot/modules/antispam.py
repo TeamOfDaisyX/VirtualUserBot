@@ -31,23 +31,6 @@ async def ok(event):
                 pass
         else:
             pass
-
-@bot.on(events.ChatAction())
-async def anti_spambot(event):
-    if not event.user_joined and not event.user_added:
-        return
-    if Config.ANTISPAM_FEATURE != "ENABLE":
-        return
-    user = await event.get_user()
-    juser = await event.client(GetFullUserRequest(int(user.id)))
-    if "@date4ubot" in str(juser.about):
-            try:
-                await bot.edit_permissions(
-                        event.chat_id, juser.user.id, view_messages=False
-                    )
-                await event.reply("**Banned Porn Spammer Bot** \n**Powered By @FridayOT**")
-            except:
-                return
                                     
 @borg.on(ChatAction)
 async def dnamg(event):
