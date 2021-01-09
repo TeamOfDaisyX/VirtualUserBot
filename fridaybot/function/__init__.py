@@ -77,8 +77,8 @@ async def progress(current, total, event, start, type_of_ps, file_name=None):
         time_to_completion = round((total - current) / speed) * 1000
         estimated_total_time = elapsed_time + time_to_completion
         progress_str = "[{0}{1}] {2}%\n".format(
-            "".join(["▰" for i in range(math.floor(percentage / 10))]),
-            "".join(["▱" for i in range(10 - math.floor(percentage / 10))]),
+            "".join(["■" for i in range(math.floor(percentage / 5))]),
+            "".join(["▢" for i in range(20 - math.floor(percentage / 5))]),
             round(percentage, 2),
         )
         tmp = progress_str + "{0} of {1}\nETA: {2}".format(
@@ -359,10 +359,10 @@ async def apk_dl(app_name, path, event):
         for link in result:
             dl_link = link.get('href')
             r = requests.get(dl_link)
-            with open(f"{path}/{name}@VirtualUserbot.apk", 'wb') as f:
+            with open(f"{path}/{name}@FridayOT.apk", 'wb') as f:
                 f.write(r.content)
     await event.edit('`Apk, Downloaded. Let me Upload It here.`')
-    final_path = f'{path}/{name}@VirtualUserbot.apk'
+    final_path = f'{path}/{name}@FridayOT.apk'
     return final_path, name
 
 async def check_if_subbed(channel_id, event, bot):
@@ -378,7 +378,7 @@ async def check_if_subbed(channel_id, event, bot):
         return False
     
 async def _ytdl(url, is_it, event, tgbot):
-    await event.edit("`Ok Downloading This Video / Audio`")
+    await event.edit("`Ok Downloading This Video / Audio - Please Wait.` \n**Powered By @FridayOT**")
     if is_it:
         opts = {
             "format": "bestaudio",
@@ -431,22 +431,35 @@ async def _ytdl(url, is_it, event, tgbot):
         \n**Title :** `{ytdl_data['title']}`\
         \n**Video Uploader :** `{ytdl_data['uploader']}`"
         )
-        await tgbot.edit_message(
-            event.chat_id,
+        lol_m = await tgbot.upload_file(
             file=f"{ytdl_data['id']}.mp3",
-            text=ytdl_data["title"]
+            progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
+                progress(
+                    d, t, event, c_time, "**Uploading Audio To TG**", f"{ytdl_data['title']}.mp3"
+                )
+            ),
+        )
+        await event.edit(
+            file=lol_m,
+            text=f"{ytdl_data['title']} \n**Uploaded Using @FRidayOt**"
         )
         os.remove(f"{ytdl_data['id']}.mp3")
-                  
     elif video:
         await event.edit(
             f"**Uploading Video**\
         \n**Title :** `{ytdl_data['title']}`\
         \n**Video Uploader :** `{ytdl_data['uploader']}`"
         )
-        await tgbot.edit_message(
-            event.chat_id,
+        hmmo = await tgbot.upload_file(
             file=f"{ytdl_data['id']}.mp4",
-            text=ytdl_data["title"]
+            progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
+                progress(
+                    d, t, event, c_time, "**Uploading Video To TG**", f"{ytdl_data['title']}.mp4"
+                )
+            ),
+        )
+        await event.edit(
+            file=hmmo,
+            text=f"{ytdl_data['title']} \n**Uploaded Using @VirtualUserbot**"
         )
         os.remove(f"{ytdl_data['id']}.mp4")
