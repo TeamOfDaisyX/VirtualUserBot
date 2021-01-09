@@ -1,4 +1,5 @@
 Pillow
+git+https://github.com/cher-nov/cryptg
 nospamplus
 pymediainfo
 quote
