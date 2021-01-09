@@ -1,7 +1,7 @@
 {
   "name": "Virtual-Userbot",
   "description": "A Remix of Userbots on Github By @InukaASiTH",
-  "logo": "https://telegra.ph/file/b1922e21e94ba5a7a19d0.jpg",
+  "logo": "https://telegra.ph/file/4e1364fb18f899ad47dec.png",
   "keywords": [
     "telegram",
     "fridaybot",
@@ -98,12 +98,12 @@
     },
      "ALIVE_IMAGE": {
       "description": "Enter Image URL for bot pic ",
-      "value": "",
+      "value": "https://telegra.ph/file/4e1364fb18f899ad47dec.png",
       "required": false
     },
      "PMPERMIT_PIC": {
       "description": "Enter Image URL for bot's pmsecurity pic ",
-      "value": "",
+      "value": "https://telegra.ph/file/4e1364fb18f899ad47dec.png",
       "required": false
     },    
     
