@@ -642,7 +642,6 @@ async def inline_id_handler(event: events.InlineQuery.Event):
             )
     await event.answer(results)
 
-
 @tgbot.on(events.InlineQuery(pattern=r"yt (.*)"))
 async def inline_id_handler(event: events.InlineQuery.Event):
     builder = event.builder
@@ -695,6 +694,7 @@ async def inline_id_handler(event: events.InlineQuery.Event):
               )
         )
     await event.answer(results)
+
 
 
 @tgbot.on(events.InlineQuery(pattern=r"jm (.*)"))
