@@ -41,7 +41,7 @@ def get_readable_time(seconds: int) -> str:
 uptime = get_readable_time((time.time() - Lastupdate))
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "VirtualUserbot"
 PM_IMG = Config.ALIVE_IMAGE
-pm_caption = f" **\n {DEFAULTUSER} \n        🔥 VIRTUALUSERBOT IS AT YOUR SERVICE 🔥** \n\n"
+pm_caption = f" **\n   \n🔥 {DEFAULTUSER} VIRTUALUSERBOT IS AT YOUR SERVICE 🔥** \n\n"
 pm_caption += "➣ **SYS**                        `នƴន ʀᴜɴɴɪɢ⋆ 🏃`\n"
 pm_caption += "➣ **Telethon**                `₁.₁₅.₀ ` \n"
 pm_caption += "➣ **Python**                   `₃.₇.₄ ` \n"
