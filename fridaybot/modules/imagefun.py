@@ -1,420 +1,222 @@
-#Made By Sh1vam  Donot KANG
-# ME MADE MORE THAN ONE AND MORE COMPLEX ONE WAS YT COMMENT 
-#I REMOVED COLOUR CAUSE ALL NEED TO REMEMBER HEX COLOUR CODES # replaced by %23
-# DARKCOBRA ORIGINAL 
-# by @shivam_patel , fix nd edited by @danish_00
-# by #team dc
-
-# Kangers Keep Credits
-
-# Kepp Credits
-import os
 
 
+   # By @danish_00
+   # import cv2
+   # with @shivam_patel
+   # @THE_B_LACK_HAT
+   # Team Dc
+   # For Cobra
+
+import cv2
 import numpy as np
-import requests, re
-from PIL import Image
-from telegraph import upload_file
-from telethon.tl.types import MessageMediaPhoto
+from PIL import Image, ImageDraw
+import pygments, os, asyncio, shutil, scapy, sys, requests, re, subprocess, urllib
+from pygments.lexers import Python3Lexer
+from pygments.formatters import ImageFormatter
 from fridaybot import bot, CMD_HELP
-from ..utils import admin_cmd, sudo_cmd
-pathdc = "./shivam/"
-if not os.path.isdir(pathdc):
-    os.makedirs(pathdc)
+from fridaybot.utils import admin_cmd, sudo_cmd
+from telegraph import upload_file
+from telethon import events
+from telethon.tl.types import MessageMediaPhoto
 
-#keep CREDIT LINES ELSE GET LOST
-
-
+path = "./dcobra/"
+if not os.path.isdir(path):
+    os.makedirs(path)
 
 @bot.on(admin_cmd(pattern=r"trig"))
-@bot.on(sudo_cmd(pattern=r"trig", allow_sudo=True))
 async def dc(event):
-    await event.edit("Making this image 😡triggered😈")    
-    dc = await event.get_reply_message()
-    if isinstance(dc.media, MessageMediaPhoto):
-        img = await borg.download_media(dc.media, pathdc)
-    elif "image" in dc.media.document.mime_type.split("/"):
-        img = await borg.download_media(dc.media, pathdc)
-    else:
-        await event.edit("Reply To any Image only 😅😅")
+    if not event.reply_to_msg_id:
+        await event.edit("Reply to any media.")
         return
-    url = upload_file(img)
+    reply = await event.get_reply_message()
+    await event.edit('`Processing...`')
+    download = await bot.download_media(reply.media, path)
+    img = cv2.VideoCapture(download)
+    ret, frame = img.read()
+    cv2.imwrite("danish.png", frame)
+    url = upload_file("danish.png")
     link = f"https://telegra.ph{url[0]}"
-    hmm = f"https://some-random-api.ml/canvas/triggered?avatar={link}"
-    r = requests.get(hmm)
+    api = f"https://some-random-api.ml/canvas/triggered?avatar={link}"
+    r = requests.get(api)
     open("shivam.gif", "wb").write(r.content)
-    hehe = "shivam.gif"
-    await borg.send_file(
-        event.chat_id, hehe, caption="Got Triggered 😈😂", reply_to=dc
-     )
-    for files in (hehe, img):
-        if files and os.path.exists(files):
-            os.remove(files)
+    await event.client.send_file(event.chat_id, "shivam.gif", force_document=False, reply_to=event.reply_to_msg_id)
     await event.delete()
+    shutil.rmtree(path)
+    os.remove("danish.png")
+    os.remove("shivam.gif")
+    
             
-        #Made By Sh1vam  Donot KANG
-# ME MADE MORE THAN ONE AND MORE COMPLEX ONE WAS YT COMMENT 
-#I REMOVED COLOUR CAUSE ALL NEED TO REMEMBER HEX COLOUR CODES # replaced by %23
-# DARKCOBRA ORIGINAL 
-# by @shivam_patel , fix nd edited by @danish_00
-# by #team dc
-
-# Kangers Keep Credits
-
-# Kepp Credits
 @bot.on(admin_cmd(pattern=r"wst"))
-@bot.on(sudo_cmd(pattern=r"wst", allow_sudo=True))
 async def dc(event):
-    await event.edit("What a waste 😒😒")    
-    dc = await event.get_reply_message()
-    if isinstance(dc.media, MessageMediaPhoto):
-        img = await borg.download_media(dc.media, pathdc)
-    elif "image" in dc.media.document.mime_type.split("/"):
-        img = await borg.download_media(dc.media, pathdc)
-    else:
-        await event.edit("Reply To any Image only 😅😅")
+    if not event.reply_to_msg_id:
+        await event.edit("Reply to any media.")
         return
-    url = upload_file(img)
+    reply = await event.get_reply_message()
+    await event.edit('`Processing...`')
+    download = await bot.download_media(reply.media, path)
+    img = cv2.VideoCapture(download)
+    ret, frame = img.read()
+    cv2.imwrite("danish.jpg", frame)
+    url = upload_file("danish.jpg")
     link = f"https://telegra.ph{url[0]}"
-    hmm = f"https://some-random-api.ml/canvas/wasted?avatar={link}"
-    r = requests.get(hmm)
-    open("shivam.png", "wb").write(r.content)
-    hehe = "shivam.png"
-    await borg.send_file(
-        event.chat_id, hehe, caption="Totally wasted⚰️ 😒", reply_to=dc
-     )
-    for files in (hehe, img):
-        if files and os.path.exists(files):
-            os.remove(files)
+    api = f"https://some-random-api.ml/canvas/wasted?avatar={link}"
+    r = requests.get(api)
+    open("shivam.jpg", "wb").write(r.content)
+    await event.client.send_file(event.chat_id, "shivam.jpg", stream=True, reply_to=event.reply_to_msg_id)
     await event.delete()
-            
-          #Made By Sh1vam  Donot KANG
-# ME MADE MORE THAN ONE AND MORE COMPLEX ONE WAS YT COMMENT 
-#I REMOVED COLOUR CAUSE ALL NEED TO REMEMBER HEX COLOUR CODES # replaced by %23
-# DARKCOBRA ORIGINAL 
-# by @shivam_patel , fix nd edited by @danish_00
-# by #team dc
-
-# Kangers Keep Credits
-
-# Kepp Credits
+    shutil.rmtree(path)
+    os.remove("danish.jpg")
+    os.remove("shivam.jpg")
             
 
-            
-            
-
-@bot.on(admin_cmd(pattern=r"grey"))
-@bot.on(sudo_cmd(pattern=r"grey", allow_sudo=True))
-async def dc(event):
-    await event.edit("Stealing Color from this 😜")    
-    dc = await event.get_reply_message()
-    if isinstance(dc.media, MessageMediaPhoto):
-        img = await borg.download_media(dc.media, pathdc)
-    elif "image" in dc.media.document.mime_type.split("/"):
-        img = await borg.download_media(dc.media, pathdc)
-    else:
-        await event.edit("Reply To any Image only 😅😅")
+@bot.on(admin_cmd(pattern="rgif"))
+async def _(event):
+    if not event.reply_to_msg_id:
+        await event.edit("Reply to any media.")
         return
-    url = upload_file(img)
-    link = f"https://telegra.ph{url[0]}"
-    hehe = f"https://some-random-api.ml/canvas/greyscale?avatar={link}"
-    r = requests.get(hehe)
-    open("shivam.png", "wb").write(r.content)
-    hehe = "shivam.png"
-    await borg.send_file(
-        event.chat_id, hehe, caption="Ur Black nd White img here 🙃", reply_to=dc
-     )
-    for files in (hehe, img):
-        if files and os.path.exists(files):
-            os.remove(files)
+    reply = await event.get_reply_message()
+    download = await bot.download_media(reply.media, path)
+    img = cv2.VideoCapture(download)
+    ret, frame = img.read()
+    cv2.imwrite("danish.png", frame)
+    danish = Image.open("danish.png")
+    dark,python = danish.size
+    cobra = f"""ffmpeg -f lavfi -i color=c=ffffff00:s={dark}x{python}:d=10 -loop 1 -i danish.png -filter_complex "[1]rotate=angle=PI*t:fillcolor=none:ow='hypot(iw,ih)':oh=ow[fg];[0][fg]overlay=x=(W-w)/2:y=(H-h)/2:shortest=1:format=auto,format=yuv420p" -movflags +faststart danish.mp4 -y"""                 
+    await event.edit("```Processing ...```")
+    if event.reply_to_msg_id:
+        reply_to_id = event.reply_to_msg_id
+    process = await asyncio.create_subprocess_shell(
+        cobra, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE)
+    stdout, stderr = await process.communicate()
+    await event.edit("```Uploading...```")
+    await event.client.send_file(event.chat_id, "danish.mp4" , force_document=False, reply_to=event.reply_to_msg_id)
     await event.delete()
-    ##Made By Sh1vam  Donot KANG
-# ME MADE MORE THAN ONE AND MORE COMPLEX ONE WAS YT COMMENT 
-#I REMOVED COLOUR CAUSE ALL NEED TO REMEMBER HEX COLOUR CODES # replaced by %23
-# DARKCOBRA ORIGINAL 
-# by @shivam_patel , fix nd edited by @danish_00
-# by #team dc
-
-# Kangers Keep Credits
-
-# Kepp Credits
-    
-@bot.on(admin_cmd(pattern=r"blur"))
-@bot.on(sudo_cmd(pattern=r"blur", allow_sudo=True))
-async def dc(event):
-    await event.edit("Bluring Image🤓🤓")    
-    dc = await event.get_reply_message()
-    if isinstance(dc.media, MessageMediaPhoto):
-        img = await borg.download_media(dc.media, pathdc)
-    elif "image" in dc.media.document.mime_type.split("/"):
-        img = await borg.download_media(dc.media, pathdc)
-    else:
-        await event.edit("Reply To any Image only 😅😅")
-        return
-    url = upload_file(img)
-    link = f"https://telegra.ph{url[0]}"
-    hehe = f"https://some-random-api.ml/canvas/blur?avatar={link}"
-    r = requests.get(hehe)
-    open("shivam.png", "wb").write(r.content)
-    hehe = "shivam.png"
-    await borg.send_file(
-        event.chat_id, hehe, caption="Blured 🤓", reply_to=dc
-     )
-    for files in (hehe, img):
-        if files and os.path.exists(files):
-            os.remove(files)
-    await event.delete()
-    
-    
-@bot.on(admin_cmd(pattern=r"invert"))
-@bot.on(sudo_cmd(pattern=r"invert", allow_sudo=True))
-async def dc(event):
-    await event.edit("Inverting Image🤔🤔")    
-    dc = await event.get_reply_message()
-    if isinstance(dc.media, MessageMediaPhoto):
-        img = await borg.download_media(dc.media, pathdc)
-    elif "image" in dc.media.document.mime_type.split("/"):
-        img = await borg.download_media(dc.media, pathdc)
-    else:
-        await event.edit("Reply To any Image only 😅😅")
-        return
-    url = upload_file(img)
-    link = f"https://telegra.ph{url[0]}"
-    hehe = f"https://some-random-api.ml/canvas/invert?avatar={link}"
-    r = requests.get(hehe)
-    open("shivam.png", "wb").write(r.content)
-    hehe = "shivam.png"
-    await borg.send_file(
-        event.chat_id, hehe, caption="Hmm 🤔 try to invert again", reply_to=dc
-     )
-    for files in (hehe, img):
-        if files and os.path.exists(files):
-            os.remove(files)
-    await event.delete()
-   #Made By Sh1vam  Donot KANG
-# ME MADE MORE THAN ONE AND MORE COMPLEX ONE WAS YT COMMENT 
-#I REMOVED COLOUR CAUSE ALL NEED TO REMEMBER HEX COLOUR CODES # replaced by %23
-# DARKCOBRA ORIGINAL 
-# by @shivam_patel , fix nd edited by @danish_00
-# by #team dc
-
-# Kangers Keep Credits
-
-# Kepp Credits
-    
-@bot.on(admin_cmd(pattern=r"igrey"))
-@bot.on(sudo_cmd(pattern=r"igery", allow_sudo=True))
-async def dc(event):
-    await event.edit("Don't know what i'm doing 😛😜")    
-    dc = await event.get_reply_message()
-    if isinstance(dc.media, MessageMediaPhoto):
-        img = await borg.download_media(dc.media, pathdc)
-    elif "image" in dc.media.document.mime_type.split("/"):
-        img = await borg.download_media(dc.media, pathdc)
-    else:
-        await event.edit("Reply To any Image only 😅😅")
-        return
-    url = upload_file(img)
-    link = f"https://telegra.ph{url[0]}"
-    hehe = f"https://some-random-api.ml/canvas/invertgreyscale?avatar={link}"
-    r = requests.get(hehe)
-    open("shivam.png", "wb").write(r.content)
-    hehe = "shivam.png"
-    await borg.send_file(
-        event.chat_id, hehe, reply_to=dc
-     )
-    for files in (hehe, img):
-        if files and os.path.exists(files):
-            os.remove(files)
-    await event.delete()
-            
-          #Made By Sh1vam  Donot KANG
-# ME MADE MORE THAN ONE AND MORE COMPLEX ONE WAS YT COMMENT 
-#I REMOVED COLOUR CAUSE ALL NEED TO REMEMBER HEX COLOUR CODES # replaced by %23
-# DARKCOBRA ORIGINAL 
-# by @shivam_patel , fix nd edited by @danish_00
-# by #team dc
-
-# Kangers Keep Credits
-
-# Kepp Credits
-@bot.on(admin_cmd(pattern=r"bright"))
-@bot.on(sudo_cmd(pattern=r"bright", allow_sudo=True))
-async def dc(event):
-    await event.edit("Adding Brightness 😎")    
-    dc = await event.get_reply_message()
-    if isinstance(dc.media, MessageMediaPhoto):
-        img = await borg.download_media(dc.media, pathdc)
-    elif "image" in dc.media.document.mime_type.split("/"):
-        img = await borg.download_media(dc.media, pathdc)
-    else:
-        await event.edit("Reply To any Image only 😅😅")
-        return
-    url = upload_file(img)
-    link = f"https://telegra.ph{url[0]}"
-    hehe = f"https://some-random-api.ml/canvas/brightness?avatar={link}"
-    r = requests.get(hehe)
-    open("shivam.png", "wb").write(r.content)
-    hehe = "shivam.png"
-    await borg.send_file(
-        event.chat_id, hehe, caption="Brightness increased 😎😎", reply_to=dc
-     )
-    for files in (hehe, img):
-        if files and os.path.exists(files):
-            os.remove(files)
-    await event.delete()
-    
-    
+    shutil.rmtree(path)
+    os.remove("danish.mp4")
+    os.remove("danish.png")
 
             
 
-          #Made By Sh1vam  Donot KANG
-# ME MADE MORE THAN ONE AND MORE COMPLEX ONE WAS YT COMMENT 
-#I REMOVED COLOUR CAUSE ALL NEED TO REMEMBER HEX COLOUR CODES # replaced by %23
-# DARKCOBRA ORIGINAL 
-# by @shivam_patel , fix nd edited by @danish_00
-# by #team dc
-
-# Kangers Keep Credits
-
-# Kepp Credits
-@bot.on(admin_cmd(pattern=r"ytc"))
-@bot.on(sudo_cmd(pattern=r"ytc", allow_sudo=True))
+@bot.on(admin_cmd("grey"))
 async def hehe(event):
-    await event.edit("Lets make a utube comment 😁😁")
-    givenvar=event.text
-    text = givenvar[5:]
-    try:
-        global username, comment
-        username, comment= text.split(".")
-    except:
-        await event.edit("`.ytc username.comment reply  to image`")
-    await event.delete()
-    dc = await event.get_reply_message()
-    if isinstance(dc.media, MessageMediaPhoto):
-        img = await borg.download_media(dc.media, pathdc)
-    elif "image" in sed.media.document.mime_type.split("/"):
-        img = await borg.download_media(dc.media, pathd )
-    else:
-        await event.edit("Reply To Image")
+    if not event.reply_to_msg_id:
+        await event.edit("Reply to any Media.")
         return
-    url_s = upload_file(img)
-    imglink = f"https://telegra.ph{url_s[0]}"
-    nikal = f"https://some-random-api.ml/canvas/youtube-comment?avatar={imglink}&comment={comment}&username={username}"
-    r = requests.get(nikal)
-    open("shivam.png", "wb").write(r.content)
-    chutiya = "shivam.png"
-    await borg.send_file(
-        event.chat_id, chutiya, reply_to=dc
-    )
-    for files in (chutiya, img):
-        if files and os.path.exists(files):
-            os.remove(files)
-            
+    reply = await event.get_reply_message()
+    await event.edit('`Processing...`')
+    image = await bot.download_media(reply.media, path)
+    img = cv2.VideoCapture(image) 
+    ret, frame = img.read()
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY) 
+    cv2.imwrite("danish.jpg", gray)
+    await event.client.send_file(event.chat_id, "danish.jpg", force_document=False, reply_to=event.reply_to_msg_id)
     await event.delete()
+    shutil.rmtree(path)
+    os.remove("danish.jpg")
 
-       #Made By Sh1vam  Donot KANG
-# ME MADE MORE THAN ONE AND MORE COMPLEX ONE WAS YT COMMENT 
-#I REMOVED COLOUR CAUSE ALL NEED TO REMEMBER HEX COLOUR CODES # replaced by %23
-# DARKCOBRA ORIGINAL 
-# by @shivam_patel , fix nd edited by @danish_00
-# by #team dc
-
-# Kangers Keep Credits
-
-# Kepp Credits
-@bot.on(admin_cmd(pattern=r"glass"))
-@bot.on(sudo_cmd(pattern=r"glass", allow_sudo=True))
-async def dc(event):
-    await event.edit("Framing image under Glass 😁😁")    
-    dc = await event.get_reply_message()
-    if isinstance(dc.media, MessageMediaPhoto):
-        img = await borg.download_media(dc.media, pathdc)
-    elif "image" in dc.media.document.mime_type.split("/"):
-        img = await borg.download_media(dc.media, pathdc)
-    else:
-        await event.edit("Reply To any Image only 😅😅")
+    # api for adding color only....  
+DARKCOBRA = Config.DEEP_AI if Config.DEEP_AI else "quickstart-QUdJIGlzIGNvbWluZy4uLi4K"
+@borg.on(admin_cmd(pattern="color$", outgoing=True))
+async def _(event):
+    if not event.reply_to_msg_id:
+        await event.edit("Reply to any Media.")
         return
-    url = upload_file(img)
-    link = f"https://telegra.ph{url[0]}"
-    hehe = f"https://some-random-api.ml/canvas/glass?avatar={link}"
-    r = requests.get(hehe)
-    open("shivam.png", "wb").write(r.content)
-    hehe = "shivam.png"
-    await borg.send_file(
-        event.chat_id, hehe, caption="Wow Image Trapped Under the glass 😂", reply_to=dc
-     )
-    for files in (hehe, img):
-        if files and os.path.exists(files):
-            os.remove(files)
-    await event.delete()
-          #Made By Sh1vam  Donot KANG
-# ME MADE MORE THAN ONE AND MORE COMPLEX ONE WAS YT COMMENT 
-#I REMOVED COLOUR CAUSE ALL NEED TO REMEMBER HEX COLOUR CODES # replaced by %23
-# DARKCOBRA ORIGINAL 
-# by @shivam_patel , fix nd edited by @danish_00
-# by #team dc
-
-# Kangers Keep Credits
-
-# Kepp Credits
-            
-@bot.on(admin_cmd(pattern=r"blrpl"))
-@bot.on(sudo_cmd(pattern=r"blrpl", allow_sudo=True))
-async def dc(event):
-    await event.edit("Bluring Image🤓🤓")    
-    dc = await event.get_reply_message()
-    if isinstance(dc.media, MessageMediaPhoto):
-        img = await borg.download_media(dc.media, pathdc)
-    elif "image" in dc.media.document.mime_type.split("/"):
-        img = await borg.download_media(dc.media, pathdc)
-    else:
-        await event.edit("Reply To any Image only 😅😅")
-        return
-    url = upload_file(img)
-    link = f"https://telegra.ph{url[0]}"
-    hehe = f"https://some-random-api.ml/canvas/blurple?avatar={link}"
-    r = requests.get(hehe)
-    open("shivam.png", "wb").write(r.content)
-    hehe = "shivam.png"
-    await borg.send_file(
-        event.chat_id, hehe, reply_to=dc
-     )
-    for files in (hehe, img):
-        if files and os.path.exists(files):
-            os.remove(files)
+    reply = await event.get_reply_message()
+    await event.edit("`Coloring image 🎨🖌️...`")
+    image = await bot.download_media(reply.media, path)
+    img = cv2.VideoCapture(image) 
+    ret, frame = img.read()
+    cv2.imwrite("danish.jpg", frame)
+    r = requests.post(
+        "https://api.deepai.org/api/colorizer",
+        files={"image": open("danish.jpg", "rb")},
+        headers={"api-key": f"{DARKCOBRA}"})
+    os.remove("danish.jpg")
+    if "status" in r.json():
+        return await event.edit( r.json()["status"])
+    r_json = r.json()["output_url"]
+    pic_id = r.json()["id"]
+    link = f"https://api.deepai.org/job-view-file/{pic_id}/inputs/image.jpg"
+    result = f"{r_json}"
+    await bot.send_message(event.chat_id, file = result, reply_to=event.reply_to_msg_id)
     await event.delete()
     
-            
-        #Made By Sh1vam  Donot KANG
-# ME MADE MORE THAN ONE AND MORE COMPLEX ONE WAS YT COMMENT 
-#I REMOVED COLOUR CAUSE ALL NEED TO REMEMBER HEX COLOUR CODES # replaced by %23
-# DARKCOBRA ORIGINAL 
-# by @shivam_patel , fix nd edited by @danish_00
-# by #team dc
+   
+@bot.on(admin_cmd(pattern="circle", outgoing=True))
+async def shiv(event):
+    if not event.reply_to_msg_id:
+        await event.edit("Reply to any media.")
+        return
+    await event.edit("```Processing...```")
+    reply = await event.get_reply_message()
+    download = await bot.download_media(reply.media, path)
+    danish = cv2.VideoCapture(download) 
+    ret, frame = danish.read()
+    cv2.imwrite("danish.jpg", frame)
+    img=Image.open("danish.jpg").convert("RGB")
+    npImage=np.array(img)
+    h,w=img.size
+    alpha = Image.new('L', img.size,0)
+    draw = ImageDraw.Draw(alpha)
+    draw.pieslice([0,0,h,w],0,360,fill=255)
+    npAlpha=np.array(alpha)
+    npImage=np.dstack((npImage,npAlpha))
+    Image.fromarray(npImage).save('shivam.webp')
+    await event.client.send_file(event.chat_id, "shivam.webp", force_document=False, reply_to=event.reply_to_msg_id)
+    await event.delete()
+    shutil.rmtree(path)
+    os.remove("shivam.webp")
+    os.remove("danish.jpg")
 
-# Kangers Keep Credits
 
-# Kepp Credits
-
+@borg.on(admin_cmd(pattern="ftoon$"))
+async def _(event):
+    if not event.reply_to_msg_id:
+        await event.edit("Reply to any Media.")
+        return
+    reply = await event.get_reply_message()
+    await event.edit("```Toonifing face😜😝...```")
+    image = await bot.download_media(reply.media, path)
+    img = cv2.VideoCapture(image) 
+    ret, frame = img.read()
+    cv2.imwrite("danish.jpg", frame)
+    r = requests.post(
+        "https://api.deepai.org/api/toonify",
+        files={"image": open("danish.jpg", "rb")},
+        headers={"api-key": f"{DARKCOBRA}"})
+    os.remove("danish.jpg")
+    if "status" in r.json():
+        return await event.edit( r.json()["status"])
+    r_json = r.json()["output_url"]
+    pic_id = r.json()["id"]
+    link = f"https://api.deepai.org/job-view-file/{pic_id}/inputs/image.jpg"
+    result = f"{r_json}"
+    await event.edit("```Be sure to reply a image in which face is visible```")
+    await bot.send_message(event.chat_id, file = result, reply_to=event.reply_to_msg_id)
+    await event.delete()
 
 CMD_HELP.update(
     {
         "imagefun": "__**PLUGIN NAME :** Image Fun _\
-    \n\n📌** CMD ★** `.trig (reply to image)`\
+    \n\n📌** CMD ★** `.trig (reply to media)`\
     \n**USAGE   ★  **Makes a Triggered Gif\
-    \n\n📌** CMD ★** `.wst(reply to image)`\
-    \n**USAGE   ★  **Show A Wasted Image 😂😂\
-    \n\n📌** CMD ★** `.grey(reply to image)`\
+    \n\n📌** CMD ★** `.wst(reply to media)`\
+    \n**USAGE   ★  **Makes a Triggered Gif\
+    \n\n📌** CMD ★** `.rgif(reply to media)`\
+    \n**USAGE   ★  **Show A rotation gif. 😂😂\
+    \n\n📌** CMD ★** `.grey(reply to media)`\
     \n**USAGE   ★  **Convert Colour image to Black nd white\
-    \n\n📌** CMD ★** `.ytc (Name).(text)(reply to image)`\
-    \n**USAGE   ★  **Show A Youtube Comment of ur repled img and typed name. (note :- that dot . in middle is important)\
-    \n\n📌** CMD ★** `.invert`\
-    \n**USAGE   ★  **Create a Negative image to return it back to normal use .invert again\
-    \n\n📌** CMD ★** `.blur / .igrey /.bright / .glass / .blrpl` \
-    \ncheck them on ur own 😁😁\
-    \n(note:- it work only on images, u can use .stoi to convert a sticker info image then u can use😁😁)"
+    \n\n📌** CMD ★** `.color(reply to media)`\
+    \n**USAGE   ★  **Convert Black-White media to Colorfull.\
+    \n\n📌** CMD ★** `.circle(reply to media)`\
+    \n**USAGE   ★  **Make A circle sticker of that media.\
+    \n\n📌** CMD ★** `.ftoon(reply to media)`\
+    \n**USAGE   ★  **Makes faces look like 💩Toon💩."
+    
       
     }
-)
 
+
+    )#  Thanks for Coming 🤗🤗
+
+    
