@@ -55,16 +55,16 @@ async def _(event):
     userid = event.sender_id
     # packname = f"FRIDAY PACK"
     # packshortname = f"FRIDAY_{userid}_ns"  # format: Uni_Borg_userid
-    if userid == 1263617196:
-        packname = f"@StarkGang Packs 🎭"
-        packshortname = "StarkGangPack"
+    if userid == 1141839926:
+        packname = f"@Infinity_Bots Packs "
+        packshortname = "Infinity_Bots"
     else:
         packname = f"@{user.username} KangPack {pack}"
-        packshortname = f"FRIDAY_{userid}_Pack"
+        packshortname = f"Infinity_Bots_{userid}_Pack"
     await moods.edit("`This Sticker is Gonna Get Stolen.....`")
 
     is_a_s = is_it_animated_sticker(reply_message)
-    file_ext_ns_ion = "@FRIDAYOT.png"
+    file_ext_ns_ion = "@VirtualUserbot.png"
     file = await borg.download_file(reply_message.media)
     uploaded_sticker = None
     if is_a_s:
@@ -75,7 +75,7 @@ async def _(event):
             packshortname = "StarkGangisgreat"
         else:
             packname = f"@{user.username} KangPack {pack}"
-            packshortname = f"FRIDAY_{userid}"  # format: Uni_Borg_userid
+            packshortname = f"Infinity_Bots_{userid}"  # format: Uni_Borg_userid
     elif not is_message_image(reply_message):
         await moods.edit("Invalid message type")
         return
