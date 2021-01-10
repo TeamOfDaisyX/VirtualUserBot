@@ -61,6 +61,7 @@ youtube-search
 youtube-search-python
 covid
 scapy
+scipy
 password_strength
 pyjokes
 cryptocompare
