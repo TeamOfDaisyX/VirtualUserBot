@@ -143,7 +143,7 @@ if ENV:
         FBAN_GROUP = int(os.environ.get("FBAN_GROUP", False))
         PM_DATA = os.environ.get("PM_DATA", "ENABLE")
         DEEP_AI = os.environ.get("DEEP_AI", None)
-        TAG_LOG = os.environ.get("TAG_LOG", None)
+        TAG_LOG = os.environ.get("PRIVATE_GROUP_ID", None)
         ENABLE_ASSISTANTBOT = os.environ.get("ENABLE_ASSISTANTBOT", "ENABLE")
         TAG_FEATURE = os.environ.get("TAG_FEATURE", "DISABLE")
         JTM_CHANNEL_ID = int(os.environ.get("JTM_CHANNEL_ID", False))
