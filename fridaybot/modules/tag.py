@@ -19,7 +19,7 @@ from telethon import custom, events
 from telethon.tl.types import Channel
 from telethon.utils import get_display_name
 
-from fridaybot import Configs as config
+from fridaybot.Configs import config
      
 NEEDLOG = int(Config.TAG_LOG) if Config.TAG_LOG else (Var.TG_BOT_USER_NAME_BF_HER)
 if Config.TAG_LOG:
@@ -68,7 +68,7 @@ if Config.TAG_LOG:
 
         ammoca_message += f"{who_m} tagged you in [{where_m}]({message_link})"
         if NEEDTOLOG is not None:
-            await tgbot.send_message(
+            await borg.send_message(
                 entity=NEEDTOLOG,
                 message=ammoca_message,
                 link_preview=False,
