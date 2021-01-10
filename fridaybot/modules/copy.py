@@ -1,7 +1,7 @@
 # Original credits to Black Lightning
 
 from ..utils import admin_cmd
-from userbot import CMD_HELP
+from fridaybot import CMD_HELP
 
 
 @borg.on(lightning_cmd(pattern="copy"))
