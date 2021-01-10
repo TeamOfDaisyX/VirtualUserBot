@@ -54,8 +54,8 @@ pm_caption += "➣ **RDP**                      `Azureˢˢˡ`\n"
 pm_caption += "➣ **License**                [GNU GPLv3.0](github.com/inukaasith/virtualuserbot/blob/master/LICENSE)\n"
 pm_caption += "➣ **Copyright**             [@virtualuserbot](https://github.com/inukaasith/virtualuserbot)\n"
 pm_caption += "➣ **Check **                  `.stat`. \n\n"
-pm_caption += "[Contact Dev](https://t.me/inukaasith)"
-pm_caption += "[Contact Dev](https://t.me/Zzlll_lllzZ)"
+pm_caption += "[Contact Dev](https://t.me/inukaasith \n)"
+pm_caption += "[Contact Mod](https://t.me/Zzlll_lllzZ)"
 
 @friday.on(friday_on_cmd(pattern=r"alive"))
 @friday.on(sudo_cmd(pattern=r"alive", allow_sudo=True))
