@@ -4,11 +4,10 @@ import asyncio
 
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
+from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd, admin_cmd
 
-from ..utils import admin_cmd
 
-
-@borg.on(admin_cmd(pattern="purl ?(.*)", allow_sudo=True))
+@friday.on(admin_cmd(pattern=r"purl ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -37,7 +36,7 @@ async def _(event):
 
 
 
-@borg.on(admin_cmd(pattern="reader ?(.*)", allow_sudo=True))
+@friday.on(admin_cmd(pattern=r"reader ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -67,7 +66,8 @@ async def _(event):
         )
 
 
-@borg.on(admin_cmd(pattern="connecter ?(.*)", allow_sudo=True))
+
+@friday.on(admin_cmd(pattern=r"connector ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
