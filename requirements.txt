@@ -3,7 +3,6 @@ git+https://github.com/cher-nov/cryptg
 nospamplus
 pymediainfo
 quote
-aria2p
 python-magic
 pyseoanalyzer
 glitch_this
