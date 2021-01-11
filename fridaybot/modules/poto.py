@@ -74,7 +74,7 @@ if 1 == 1:
 
             else:
 
-                await event.edit("`No photo found of that Nigga , now u Die`")
+                await event.edit("`මූ ලග පොටෝ එකක් නෑ 😅 `")
 
                 return
 
