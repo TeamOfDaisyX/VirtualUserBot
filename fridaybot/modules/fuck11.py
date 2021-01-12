@@ -406,6 +406,352 @@ async def _(event):
         
         
 
+        
+
+@bot.on(admin_cmd(pattern=f"cyfile$", outgoing=True))
+@bot.on(sudo_cmd(pattern=f"cyfile$", allow_sudo=True))
+async def _(event):
+    if event.fwd_from:
+        return
+    event = await edit_or_reply(event, "ehifile")
+    await event.edit("❄️ **Disconnected**")
+    await asyncio.sleep(2)
+    await event.edit("🌩 **Connecting.**")
+    await asyncio.sleep(0.5)
+    await event.edit("🌧 **Connecting..**")
+    await asyncio.sleep(0.5)
+    await event.edit("🌩 **Connecting...**")
+    await asyncio.sleep(0.5)
+    await event.edit("🌧 **Connecting.**")
+    await asyncio.sleep(0.5)
+    await event.edit("🌩 **Connecting..**")
+    await asyncio.sleep(0.5)
+    await event.edit("🌧 **Connecting...**")
+    await asyncio.sleep(0.5)
+    await event.edit("💥 **Connection Established**")
+    await asyncio.sleep(1)
+    await event.edit("☁️ ** VPN Connected**")
+    await asyncio.sleep(2)
+
+
+@bot.on(admin_cmd(pattern=f"fileunlock$", outgoing=True))
+@bot.on(sudo_cmd(pattern=f"fileunlock$", allow_sudo=True))
+async def _(event):
+    if event.fwd_from:
+        return
+    event = await edit_or_reply(event, "fileunlock")
+    await event.edit("📁 **File name : Dialog 0 Balance**")
+    await asyncio.sleep(1)
+    await event.edit("🔓 **Begin unlocking file...**")
+    await asyncio.sleep(1)
+    await event.edit("🔓 **Unlocked 50%**")
+    await asyncio.sleep(0.5)
+    await event.edit("🔓 **Unlocked 100%**")
+    await asyncio.sleep(0.5)
+    await event.edit("**Please do no share this host for longer use !!**")
+    await asyncio.sleep(1)
+    await event.edit("**Your Host securaly stored. Get it from below link 👇\nhttps://telegra.ph/Dialog-Host-01-12**")
+    await asyncio.sleep(2)
+    
+    
+@bot.on(admin_cmd(pattern=f"freenet$", outgoing=True))
+@bot.on(sudo_cmd(pattern=f"freenet$", allow_sudo=True))
+async def _(event):
+    if event.fwd_from:
+        return
+    event = await edit_or_reply(event, "freenet")
+    await event.edit("**Connecting to Singapore Server 🇸🇬**")
+    await asyncio.sleep(1)
+    await event.edit("**Successfully Connected 💯**")
+    await asyncio.sleep(1)
+    await event.edit("**හරි පුතේ එල අය ඔයාගේ data කැපෙන්නේ නෑ 👌**")
+    await asyncio.sleep(1)
+    
+
+
+
+@bot.on(admin_cmd(pattern=r"ehu$"))
+@bot.on(sudo_cmd(pattern=r"ehu$", allow_sudo=True))
+async def _(event):
+    if event.fwd_from:
+        return
+    animation_interval = 2
+    animation_ttl = range(18)
+    event = await edit_or_reply(event, "Calling Pavel Durov (ceo of telegram)......")
+    animation_chars = [
+        """`[ 16:58:55] Tunnel Type HTTP Proxy ➔ SSH (Custom Payload)
+[ 16:58:55] [START] service requested`""",
+        """`[ 16:58:55] Tunnel Type HTTP Proxy ➔ SSH (Custom Payload)
+[ 16:58:55] [START] service requested
+[ 16:58:55] Network Status: CONNECTED  to WIFI "VirtualUserbot"
+[2021-01-12 16:58:55] Injector Service Started`""",
+        """`[ 16:58:55] Tunnel Type HTTP Proxy ➔ SSH (Custom Payload)
+[ 16:58:55] [START] service requested
+[ 16:58:55] Network Status: CONNECTED  to WIFI "VirtualUserbot"
+[2021-01-12 16:58:55] Injector Service Started
+[ 16:58:55] Local IP: 192.188.800.100
+[ 16:58:55] Starting listening local port: 8989
+[ 16:58:55] Starting - Network Task
+[ 16:58:55] Remote Proxy Address:140.238.246.145:8080
+[ 16:58:55] Listening for incoming connection`""",
+        """`[ 16:58:55] Tunnel Type HTTP Proxy ➔ SSH (Custom Payload)
+[ 16:58:55] [START] service requested
+[ 16:58:55] Network Status: CONNECTED  to WIFI "VirtualUserbot"
+[2021-01-12 16:58:55] Injector Service Started
+[ 16:58:55] Local IP: 192.188.800.100
+[ 16:58:55] Starting listening local port: 8989
+[ 16:58:55] Starting - Network Task
+[ 16:58:55] Remote Proxy Address:140.238.246.145:8080
+[ 16:58:55] Listening for incoming connection
+[ 16:58:56] Start tunnel service
+[ 16:58:57] Buffer Size: Send: 16384 | Receive: 32768
+[ 16:58:57] Running - Proxy Thread
+[ 16:58:57] Running - Proxy Thread
+[ 16:58:57] locked Payload
+[ 16:58:57] Injecting`""",
+        """`[ 16:58:55] Tunnel Type HTTP Proxy ➔ SSH (Custom Payload)
+[ 16:58:55] [START] service requested
+[ 16:58:55] Network Status: CONNECTED  to WIFI "VirtualUserbot"
+[2021-01-12 16:58:55] Injector Service Started
+[ 16:58:55] Local IP: 192.188.800.100
+[ 16:58:55] Starting listening local port: 8989
+[ 16:58:55] Starting - Network Task
+[ 16:58:55] Remote Proxy Address:140.238.246.145:8080
+[ 16:58:55] Listening for incoming connection
+[ 16:58:56] Start tunnel service
+[ 16:58:57] Buffer Size: Send: 16384 | Receive: 32768
+[ 16:58:57] Running - Proxy Thread
+[ 16:58:57] Running - Proxy Thread
+[ 16:58:57] locked Payload
+[ 16:58:57] Injecting
+] Status: 200 (Connection established) Successful - The action requested by the client was successful.
+[16:58:58] Hostkey fingerprint: 94:20:97:11:83:fd:f7:ca:c6:0d:61:17:79:5d:51:e3
+[16:58:58] Key exchange algorithm: curve25519-sha256`""",
+        """`
+[ 16:58:55] Tunnel Type HTTP Proxy ➔ SSH (Custom Payload)
+[ 16:58:55] [START] service requested
+[ 16:58:55] Network Status: CONNECTED  to WIFI "VirtualUserbot"
+[2021-01-12 16:58:55] Injector Service Started
+[ 16:58:55] Local IP: 192.188.800.100
+[ 16:58:55] Starting listening local port: 8989
+[ 16:58:55] Starting - Network Task
+[ 16:58:55] Remote Proxy Address:140.238.246.145:8080
+[ 16:58:55] Listening for incoming connection
+[ 16:58:56] Start tunnel service
+[ 16:58:57] Buffer Size: Send: 16384 | Receive: 32768
+[ 16:58:57] Running - Proxy Thread
+[ 16:58:57] Running - Proxy Thread
+[ 16:58:57] locked Payload
+[ 16:58:57] Injecting
+] Status: 200 (Connection established) Successful - The action requested by the client was successful.
+[16:58:58] Hostkey fingerprint: 94:20:97:11:83:fd:f7:ca:c6:0d:61:17:79:5d:51:e3
+[16:58:58] Key exchange algorithm: curve25519-sha256
+[16:58:58] Using algorithm: aes256-ctr hmac-sha2-256-etm@sh.com
+[2021-01-12 16:58:58] Username: VirtualUserbot
+[16:58:58] Server Message:
+⚡️ VirtualUserbot Server 🎮&nbsp;
+🔥 Powered By VIRTUALUSERBOT 
+☬ Special Thanks To My Master
+`""",
+        """`
+[ 16:58:55] Tunnel Type HTTP Proxy ➔ SSH (Custom Payload)
+[ 16:58:55] [START] service requested
+[ 16:58:55] Network Status: CONNECTED  to WIFI "VirtualUserbot"
+[2021-01-12 16:58:55] Injector Service Started
+[ 16:58:55] Local IP: 192.188.800.100
+[ 16:58:55] Starting listening local port: 8989
+[ 16:58:55] Starting - Network Task
+[ 16:58:55] Remote Proxy Address:140.238.246.145:8080
+[ 16:58:55] Listening for incoming connection
+[ 16:58:56] Start tunnel service
+[ 16:58:57] Buffer Size: Send: 16384 | Receive: 32768
+[ 16:58:57] Running - Proxy Thread
+[ 16:58:57] Running - Proxy Thread
+[ 16:58:57] locked Payload
+[ 16:58:57] Injecting
+] Status: 200 (Connection established) Successful - The action requested by the client was successful.
+[16:58:58] Hostkey fingerprint: 94:20:97:11:83:fd:f7:ca:c6:0d:61:17:79:5d:51:e3
+[16:58:58] Key exchange algorithm: curve25519-sha256
+[16:58:58] Using algorithm: aes256-ctr hmac-sha2-256-etm@sh.com
+[2021-01-12 16:58:58] Username: VirtualUserbot
+[16:58:58] Server Message:
+⚡️ VirtualUserbot Server 🎮&nbsp;
+🔥 Powered By VIRTUALUSERBOT 
+☬ Special Thanks To My Master
+⭕️ NO DDOS !!!
+⭕️ NO FRAUD !!!
+⭕️ NO CARDING !!!
+⭕️ NO HACKING !!!
+⭕️ NO TORRENT !!!
+⭕️ NO SPAMMING !!!
+⭕️ THIS IS NOT FOR SALE !!!⭕️ NO ILLEGAL ACTIVITES !!!
+⭕️ AUTO REBOOT @ MIDNIGHT !!!
+⭕️Do Not Over Use This Service⭕️⚒ Configured by VirtualUserbot
+`""",
+        """`
+[ 16:58:55] Tunnel Type HTTP Proxy ➔ SSH (Custom Payload)
+[ 16:58:55] [START] service requested
+[ 16:58:55] Network Status: CONNECTED  to WIFI "VirtualUserbot"
+[2021-01-12 16:58:55] Injector Service Started
+[ 16:58:55] Local IP: 192.188.800.100
+[ 16:58:55] Starting listening local port: 8989
+[ 16:58:55] Starting - Network Task
+[ 16:58:55] Remote Proxy Address:140.238.246.145:8080
+[ 16:58:55] Listening for incoming connection
+[ 16:58:56] Start tunnel service
+[ 16:58:57] Buffer Size: Send: 16384 | Receive: 32768
+[ 16:58:57] Running - Proxy Thread
+[ 16:58:57] Running - Proxy Thread
+[ 16:58:57] locked Payload
+[ 16:58:57] Injecting
+] Status: 200 (Connection established) Successful - The action requested by the client was successful.
+[16:58:58] Hostkey fingerprint: 94:20:97:11:83:fd:f7:ca:c6:0d:61:17:79:5d:51:e3
+[16:58:58] Key exchange algorithm: curve25519-sha256
+[16:58:58] Using algorithm: aes256-ctr hmac-sha2-256-etm@sh.com
+[2021-01-12 16:58:58] Username: VirtualUserbot
+[16:58:58] Server Message:
+⚡️ VirtualUserbot Server 🎮&nbsp;
+🔥 Powered By VIRTUALUSERBOT 
+☬ Special Thanks To My Master
+⭕️ NO DDOS !!!
+⭕️ NO FRAUD !!!
+⭕️ NO CARDING !!!
+⭕️ NO HACKING !!!
+⭕️ NO TORRENT !!!
+⭕️ NO SPAMMING !!!
+⭕️ THIS IS NOT FOR SALE !!!⭕️ NO ILLEGAL ACTIVITES !!!
+⭕️ AUTO REBOOT @ MIDNIGHT !!!
+⭕️Do Not Over Use This Service⭕️⚒ Configured by VirtualUserbot  
+
+
+
+ Password auth available
+[ 16:58:58] Authenticate with password
+[ 16:58:59] Forward Successful
+[ 16:58:59] Connected
+`""",
+        
+        """`
+[ 16:58:55] Tunnel Type HTTP Proxy ➔ SSH (Custom Payload)
+[ 16:58:55] [START] service requested
+[ 16:58:55] Network Status: CONNECTED  to WIFI "VirtualUserbot"
+[2021-01-12 16:58:55] Injector Service Started
+[ 16:58:55] Local IP: 192.188.800.100
+[ 16:58:55] Starting listening local port: 8989
+[ 16:58:55] Starting - Network Task
+[ 16:58:55] Remote Proxy Address:140.238.246.145:8080
+[ 16:58:55] Listening for incoming connection
+[ 16:58:56] Start tunnel service
+[ 16:58:57] Buffer Size: Send: 16384 | Receive: 32768
+[ 16:58:57] Running - Proxy Thread
+[ 16:58:57] Running - Proxy Thread
+[ 16:58:57] locked Payload
+[ 16:58:57] Injecting
+] Status: 200 (Connection established) Successful - The action requested by the client was successful.
+[16:58:58] Hostkey fingerprint: 94:20:97:11:83:fd:f7:ca:c6:0d:61:17:79:5d:51:e3
+[16:58:58] Key exchange algorithm: curve25519-sha256
+[16:58:58] Using algorithm: aes256-ctr hmac-sha2-256-etm@sh.com
+[2021-01-12 16:58:58] Username: VirtualUserbot
+[16:58:58] Server Message:
+⚡️ VirtualUserbot Server 🎮&nbsp;
+🔥 Powered By VIRTUALUSERBOT 
+☬ Special Thanks To My Master
+⭕️ NO DDOS !!!
+⭕️ NO FRAUD !!!
+⭕️ NO CARDING !!!
+⭕️ NO HACKING !!!
+⭕️ NO TORRENT !!!
+⭕️ NO SPAMMING !!!
+⭕️ THIS IS NOT FOR SALE !!!⭕️ NO ILLEGAL ACTIVITES !!!
+⭕️ AUTO REBOOT @ MIDNIGHT !!!
+⭕️Do Not Over Use This Service⭕️⚒ Configured by VirtualUserbot  
+
+
+
+ Password auth available
+[ 16:58:58] Authenticate with password
+[ 16:58:59] Forward Successful
+[ 16:58:59] Connected
+[ 16:58:59] Starting Injector VPN Service
+[ 16:58:59] Network available: [type: WIFI[] - WIFI, state: CONNECTED/CONNECTED, reason: (unspecified), extra: "VirtualUserbot", roaming: false, failover: false, isAvailable: true]
+[ 16:58:59] DNS Forwarding: Google DNS
+[ 16:58:59] Preparing DNS forwarding
+[ 16:59:00] Starting DNS forwarding
+[ 16:59:00] Google DNS enabled
+[ 16:59:00] DNS forwarding enabled
+[ 16:59:00] Routes: 0.0.0.0/0, 8.8.4.4/32, 8.8.8.8/32 
+`""",
+        """`
+[ 16:58:55] Tunnel Type HTTP Proxy ➔ SSH (Custom Payload)
+[ 16:58:55] [START] service requested
+[ 16:58:55] Network Status: CONNECTED  to WIFI "VirtualUserbot"
+[2021-01-12 16:58:55] Injector Service Started
+[ 16:58:55] Local IP: 192.188.800.100
+[ 16:58:55] Starting listening local port: 8989
+[ 16:58:55] Starting - Network Task
+[ 16:58:55] Remote Proxy Address:140.238.246.145:8080
+[ 16:58:55] Listening for incoming connection
+[ 16:58:56] Start tunnel service
+[ 16:58:57] Buffer Size: Send: 16384 | Receive: 32768
+[ 16:58:57] Running - Proxy Thread
+[ 16:58:57] Running - Proxy Thread
+[ 16:58:57] locked Payload
+[ 16:58:57] Injecting
+] Status: 200 (Connection established) Successful - The action requested by the client was successful.
+[16:58:58] Hostkey fingerprint: 94:20:97:11:83:fd:f7:ca:c6:0d:61:17:79:5d:51:e3
+[16:58:58] Key exchange algorithm: curve25519-sha256
+[16:58:58] Using algorithm: aes256-ctr hmac-sha2-256-etm@sh.com
+[2021-01-12 16:58:58] Username: VirtualUserbot
+[16:58:58] Server Message:
+⚡️ VirtualUserbot Server 🎮&nbsp;
+🔥 Powered By VIRTUALUSERBOT 
+☬ Special Thanks To My Master
+⭕️ NO DDOS !!!
+⭕️ NO FRAUD !!!
+⭕️ NO CARDING !!!
+⭕️ NO HACKING !!!
+⭕️ NO TORRENT !!!
+⭕️ NO SPAMMING !!!
+⭕️ THIS IS NOT FOR SALE !!!⭕️ NO ILLEGAL ACTIVITES !!!
+⭕️ AUTO REBOOT @ MIDNIGHT !!!
+⭕️Do Not Over Use This Service⭕️⚒ Configured by VirtualUserbot  
+
+
+
+ Password auth available
+[ 16:58:58] Authenticate with password
+[ 16:58:59] Forward Successful
+[ 16:58:59] Connected
+[ 16:58:59] Starting Injector VPN Service
+[ 16:58:59] Network available: [type: WIFI[] - WIFI, state: CONNECTED/CONNECTED, reason: (unspecified), extra: "VirtualUserbot", roaming: false, failover: false, isAvailable: true]
+[ 16:58:59] DNS Forwarding: Google DNS
+[ 16:58:59] Preparing DNS forwarding
+[ 16:59:00] Starting DNS forwarding
+[ 16:59:00] Google DNS enabled
+[ 16:59:00] DNS forwarding enabled
+[ 16:59:00] Routes: 0.0.0.0/0, 8.8.4.4/32, 8.8.8.8/32 
+[ 16:59:00] Routes excluded: 10.0.0.0/8, 140.238.246.145/32, 172.16.0.0/12, 192.168.0.0/16 
+[ 16:59:01] VPN Connected
+[ 16:59:02] Type: WIFI | State: CONNECTED | "VirtualUserbot"
+`"""
+,
+       
+    ]
+    for i in animation_ttl:
+        await asyncio.sleep(animation_interval)
+        await event.edit(animation_chars[i % 18])
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
 @borg.on(admin_cmd(outgoing=True, pattern="merrychristmas"))
 
 async def _(event):
