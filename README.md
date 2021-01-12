@@ -24,6 +24,15 @@
 
 # Deploy Guide
 
+<object width="425" height="350">
+  <param name="movie" value="https://www.youtube.com/watch?v=h_89Iya2uj0" />
+  <param name="wmode" value="transparent" />
+  <embed src="https://www.youtube.com/watch?v=h_89Iya2uj0"
+         type="application/x-shockwave-flash"
+         wmode="transparent" width="425" height="350" />
+</object>
+
+
 [![Everything Is AWESOME](https://yt-embed.herokuapp.com/embed?v=h_89Iya2uj0)](https://www.youtube.com/watch?v=h_89Iya2uj0-Y "Everything Is AWESOME")
 
 # ❤️ Support
