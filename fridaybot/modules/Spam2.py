@@ -14,8 +14,8 @@ from fridaybot import BOTLOG, BOTLOG_CHATID
 from ..utils import edit_or_reply, sudo_cmd
 from ..utils import admin_cmd as lightning_cmd
 
-@bot.on(lightning_cmd(pattern="spam (.*)"))
-@bot.on(sudo_cmd(pattern="spam (.*)", allow_sudo=True))
+@bot.on(lightning_cmd(pattern="tspam (.*)"))
+@bot.on(sudo_cmd(pattern="tspam (.*)", allow_sudo=True))
 async def spammer(e):
     if e.fwd_from:
         return
@@ -453,11 +453,11 @@ CMD_HELP.update(
         "spam": "**Plugin : **`spam`\
         \n\n**Syntax : **`.tspam <count> <text>`\
         \n**Function : **__ Floods text in the chat !!__\
-        \n\n**Syntax : **`.spam <count> reply to media`\
+        \n\n**Syntax : **`.tspam <count> reply to media`\
         \n**Function : **__Sends the replied media <count> times !!__\
         \nFor above two commands use `.bigspam` instead of spam for spamming more than 50 messages\
-        \n\n**Syntax : **`.cspam <text>`\
-        \n**Function : **__ Spam the text letter by letter.__\
+        \n\n**Syntax : **`.spam <count> <text>`\
+        \n**Function : **__ Spam the text.__\
         \n\n**Syntax : **`.wspam <text>`\
         \n**Function : **__ Spam the text word by word.__\
         \n\n**Syntax : **`.mspam \ <count> >reply to media> \`\
