@@ -21,6 +21,16 @@
 
 ``` Full credits mentioned at the bottom```
 # 
+
+# Deploy Guide
+
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/h_89Iya2uj0" 
+frameborder="0" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe>
+
+
 # ❤️ Support
 
 <a href="https://t.me/Infinity_Bots"><img src="https://img.shields.io/badge/Join-Telegram%20Channel-red.svg?logo=Telegram"></a>
