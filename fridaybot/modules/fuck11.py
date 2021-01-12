@@ -688,7 +688,7 @@ async def _(event):
  Password auth available
 [ 16:58:58] Authenticate with password
 [ 16:58:59] Forward Successful
-[ 16:58:59] Connected
+[ 16:58:00] Connected
 `""",
         
         """`
