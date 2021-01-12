@@ -24,7 +24,7 @@
 
 # Deploy Guide
 
-[![Everything Is AWESOME](https://yt-embed.herokuapp.com/embed?v=h_89Iya2uj0-Y)](https://www.youtube.com/watch?v=h_89Iya2uj0-Y "Everything Is AWESOME")
+[![Everything Is AWESOME](https://yt-embed.herokuapp.com/embed?v=h_89Iya2uj0)](https://www.youtube.com/watch?v=h_89Iya2uj0-Y "Everything Is AWESOME")
 
 # ❤️ Support
 
