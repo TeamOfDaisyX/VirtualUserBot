@@ -413,7 +413,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    event = await edit_or_reply(event, "ehifile")
+    event = await edit_or_reply(event, "cyfiles")
     await event.edit("❄️ **Disconnected**")
     await asyncio.sleep(2)
     await event.edit("🌩 **Connecting.**")
@@ -951,4 +951,4 @@ async def _(event):
         
         
 
-CMD_HELP.update({"Sinhala_Jokes": "\n**RUN STRINGS**\n.srun - Daisy's Run Strings to VirtualUserbot 😂..\n\n**Nothing to Say**\n.boobs\n.butts\n\n**Funny Animations.**\n.fuuk\n.sux\n.kiss\n.lovestory\n.gdbye\n.hbty\n.merrychristmas\n.bs\n\n**Frequently using quotes\n.hu - `කවුරුන් කෙසේ කීවද ඵරුස වචන භාවිතය ඔබේ අරක පණ නැති කරවයි!`\n.slo -  `පෝන් එක හිරවෙනවාද?? ගලක්මත තබා හොඳින් තලන්න නිසැක ප්‍රතිඵල`\n.hp - `හුත්තිගෙ පුතා`\n.kp - `කැරි පකයා`\n.sm - `එහෙම එවා නෑ පුතා.ඒ සෙලවෙන මනස`\n.fk - `පල හුත්තෝ යන්න. තෝ සමාජයට විහිලුවක් ඕයි`"})
+CMD_HELP.update({"Sinhala_Jokes": "\n**Config Fun**\n\n.freenet `- fun`\n.ehu `- Ehi file connecting`\n.cyfiles `- cyh connecting`\n\n**RUN STRINGS**\n.srun - Daisy's Run Strings to VirtualUserbot 😂..\n\n**Nothing to Say**\n.boobs\n.butts\n\n**Funny Animations.**\n.fuuk\n.sux\n.kiss\n.lovestory\n.gdbye\n.hbty\n.merrychristmas\n.bs\n\n**Frequently using quotes\n.hu - `කවුරුන් කෙසේ කීවද ඵරුස වචන භාවිතය ඔබේ අරක පණ නැති කරවයි!`\n.slo -  `පෝන් එක හිරවෙනවාද?? ගලක්මත තබා හොඳින් තලන්න නිසැක ප්‍රතිඵල`\n.hp - `හුත්තිගෙ පුතා`\n.kp - `කැරි පකයා`\n.sm - `එහෙම එවා නෑ පුතා.ඒ සෙලවෙන මනස`\n.fk - `පල හුත්තෝ යන්න. තෝ සමාජයට විහිලුවක් ඕයි`"})
