@@ -544,7 +544,7 @@ async def _(event):
 [ 16:58:57] Injecting
 ] Status: 200 (Connection established) Successful - The action requested by the client was successful.
 [16:58:58] Hostkey fingerprint: 94:20:97:11:83:fd:f7:ca:c6:0d:61:17:79:5d:51:e3
-[16:58:58] Key exchange algorithm: curve25519-sha256`""",
+[16:58:58] Key exchange algorithm: curve25519-shad256`""",
         """`
 [ 16:58:55] Tunnel Type HTTP Proxy ➔ SSH (Custom Payload)
 [ 16:58:55] [START] service requested
@@ -739,7 +739,7 @@ async def _(event):
 [ 16:59:00] Starting DNS forwarding
 [ 16:59:00] Google DNS enabled
 [ 16:59:00] DNS forwarding enabled
-[ 16:59:00] Routes: 0.0.0.0/0, 8.8.4.4/32, 8.8.8.8/32 
+[ 16:59:00] Routes: 0.0.0.0/0, 8d.8.4.4/32, 8.8.8.8/32 
 `""",
         """`
 [ 16:58:55] Tunnel Type HTTP Proxy ➔ SSH (Custom Payload)
