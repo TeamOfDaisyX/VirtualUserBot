@@ -24,12 +24,7 @@
 
 # Deploy Guide
 
-    <iframe width="560" height="315"
-src="https://www.youtube.com/embed/h_89Iya2uj0" 
-frameborder="0" 
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-allowfullscreen></iframe>
-
+[![Everything Is AWESOME](https://yt-embed.herokuapp.com/embed?v=h_89Iya2uj0-Y)](https://www.youtube.com/watch?v=h_89Iya2uj0-Y "Everything Is AWESOME")
 
 # ❤️ Support
 
