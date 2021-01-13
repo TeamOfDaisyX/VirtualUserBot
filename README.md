@@ -26,7 +26,7 @@
 
 # Deploy Guide
 
-[![Deploy Your VirtualUserbot](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=hMhcKxNi-vw-Y "VirtualUserbot")
+[![Deploy Your VirtualUserbot](https://telegra.ph/file/4e1364fb18f899ad47dec.png)](https://www.youtube.com/watch?v=hMhcKxNi-vw-)
 
 # ❤️ Support
 
