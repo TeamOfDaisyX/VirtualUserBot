@@ -22,6 +22,7 @@ if ENV:
         TMP_DOWNLOAD_DIRECTORY = os.environ.get(
             "TMP_DOWNLOAD_DIRECTORY", "./DOWNLOADS/"
         )
+        TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", None)
         # This is required for the speech to text module. Get your USERNAME from https://console.bluemix.net/docs/services/speech-to-text/getting-started.html
         IBM_WATSON_CRED_URL = os.environ.get("IBM_WATSON_CRED_URL", None)
         IBM_WATSON_CRED_PASSWORD = os.environ.get("IBM_WATSON_CRED_PASSWORD", None)
