@@ -85,18 +85,15 @@ async def _(event):
         return
     input_str = event.pattern_match.group(1)
     mone = await event.edit("Processing ...")
-    if not os.path.isdir(Var.dTEMP_DOWNLOAD_DIRECTORY):
-        os.makedirs(Var.dTEMP_DOWNLOAD_DIRECTORY)
+    if not os.path.isdir(Var.TEMP_DOWNLOAD_DIRECTORY):
+        os.makedirs(Var.TEMP_DOWNLOAD_DIRECTORY)
     if event.reply_to_msg_id:
         reply_message = await event.get_reply_message()
         try:
-            c_time = time.time()
+            
             downloaded_file_name = await borg.download_media(
                 reply_message,
-                Var.dTEMP_DOWNLOAD_DIRECTORY,
-                progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, mone, c_time, "trying to download")
-                ),
+                Var.TEMP_DOWNLOAD_DIRECTORY
             )
             directory_name = downloaded_file_name
             await event.edit("creating 7z archive, please wait..")
@@ -135,18 +132,15 @@ async def _(event):
         return
     input_str = event.pattern_match.group(1)
     mone = await event.edit("Processing ...")
-    if not os.path.isdir(Var.dTEMP_DOWNLOAD_DIRECTORY):
-        os.makedirs(Var.dTEMP_DOWNLOAD_DIRECTORY)
+    if not os.path.isdir(Var.TEMP_DOWNLOAD_DIRECTORY):
+        os.makedirs(Var.TEMP_DOWNLOAD_DIRECTORY)
     if event.reply_to_msg_id:
         reply_message = await event.get_reply_message()
         try:
-            c_time = time.time()
+            
             downloaded_file_name = await borg.download_media(
                 reply_message,
-                Var.dTEMP_DOWNLOAD_DIRECTORY,
-                progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, mone, c_time, "trying to download")
-                ),
+                Var.TEMP_DOWNLOAD_DIRECTORY
             )
             directory_name = downloaded_file_name
             await event.edit("Finish downloading to my local")
@@ -222,19 +216,16 @@ async def _(event):
     if event.fwd_from:
         return
     mone = await event.edit("Processing ...")
-    if not os.path.isdir(Var.dTEMP_DOWNLOAD_DIRECTORY):
-        os.makedirs(Var.dTEMP_DOWNLOAD_DIRECTORY)
+    if not os.path.isdir(Var.TEMP_DOWNLOAD_DIRECTORY):
+        os.makedirs(Var.TEMP_DOWNLOAD_DIRECTORY)
     if event.reply_to_msg_id:
         start = datetime.now()
         reply_message = await event.get_reply_message()
         try:
-            c_time = time.time()
+            
             downloaded_file_name = await borg.download_media(
                 reply_message,
-                Var.dTEMP_DOWNLOAD_DIRECTORY,
-                progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, mone, c_time, "trying to download")
-                ),
+                Var.TEMP_DOWNLOAD_DIRECTORY
             )
         except Exception as e:  # pylint:disable=C0103,W0703
             await mone.edit(str(e))
@@ -314,9 +305,9 @@ async def _(event):
         return
     mone = await event.edit("Processing ...")
     if not os.path.isdir(Var.dTEMP_DOWNLOAD_DIRECTORY):
-        os.makedirs(Var.dTEMP_DOWNLOAD_DIRECTORY)
-    extracted = Var.dTEMP_DOWNLOAD_DIRECTORY + "extracted/"
-    thumb_image_path = Var.dTEMP_DOWNLOAD_DIRECTORY + "/thumb_image.jpg"
+        os.makedirs(Var.TEMP_DOWNLOAD_DIRECTORY)
+    extracted = Var.TEMP_DOWNLOAD_DIRECTORY + "extracted/"
+    thumb_image_path = Var.TEMP_DOWNLOAD_DIRECTORY + "/thumb_image.jpg"
     if not os.path.isdir(extracted):
         os.makedirs(extracted)
     if event.reply_to_msg_id:
@@ -326,10 +317,7 @@ async def _(event):
             c_time = time.time()
             downloaded_file_name = await borg.download_media(
                 reply_message,
-                Var.dTEMP_DOWNLOAD_DIRECTORY,
-                progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, mone, c_time, "trying to download")
-                ),
+                Var.TEMP_DOWNLOAD_DIRECTORY
             )
         except Exception as e:  # pylint:disable=C0103,W0703
             await mone.edit(str(e))
