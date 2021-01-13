@@ -43,10 +43,7 @@ async def _(event):
             
             downloaded_file_name = await borg.download_media(
                 reply_message,
-                Var.TEMP_DOWNLOAD_DIRECTORY,
-                progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, mone, "trying to download")
-                ),
+                Var.TEMP_DOWNLOAD_DIRECTORY
             )
             directory_name = downloaded_file_name
             await event.edit("creating rar archive, please wait..")
