@@ -15,7 +15,7 @@ async def _(event):
         await event.edit("**Reply to any document.**")
         return
     reply_message = await event.get_reply_message()
-    chat = "@FiletolinkTGbot"
+    chat = "@MaxFile2LinkBot"
     reply_message.sender
     await event.edit("**Making public url...**")
     async with event.client.conversation(chat) as conv:
@@ -26,7 +26,7 @@ async def _(event):
             await event.client.forward_messages(chat, reply_message)
             response = await response
         except YouBlockedUserError:
-            await event.reply("Please unblock me @FiletolinkTGbot")
+            await event.reply("Please unblock me @MaxFile2LinkBot")
             return
         await event.delete()
         await event.client.send_message(
