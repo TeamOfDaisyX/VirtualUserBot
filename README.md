@@ -26,7 +26,7 @@
 
 # Deploy Guide
 <p align="left"><a href="https://youtu.be/hMhcKxNi-vw"><img src="https://telegra.ph/file/35c283a78116be8499da0.png" width="400"></a></p> 
-
+<a href="https://youtu.be/hMhcKxNi-vw"><img src="https://img.shields.io/badge/How%20To-Deploy-red.svg?logo=Youtube"></a>
 
 # ❤️ Support
 
@@ -100,16 +100,6 @@ To English =>
 
 # 
  
-
-
-## How to Deploy guide by Friday
-
-<a href="https://youtu.be/xfHcm_e92eQ"><img src="https://img.shields.io/badge/How%20To-Deploy-red.svg?logo=Youtube"></a>
-
-``` The Methord is also same for this. Just deploy bot from this repo ```
-
-
-# 
  
 
 #  🤴 After Deploying Steps
