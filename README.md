@@ -10,10 +10,12 @@
     <a href="https://github.com/inukaasith/virtualuserbot/network/members"><img src="https://img.shields.io/github/forks/inukaasith/virtualuserbot?label=Fork&style=flat-square&logo=github&color=F10070" alt="Fork" /></a>
 </p>
 
-<p align="center"><a href="https://t.me/Infinity_Bots"><img src="https://telegra.ph/file/4e1364fb18f899ad47dec.png" width="400"></a></p> 
+<p align="center"><a href="https://techwizardent.com/blog/twe_blog_userbot.php"><img src="https://telegra.ph/file/4e1364fb18f899ad47dec.png" width="400"></a></p> 
 
 
 ### Here is the Telegram VirtualUserbot. A Remix Of Userbots on github.. Credits To Thier Owners..
+
+# https://techwizardent.com/blog/twe_blog_userbot.php
 
 # 😍 Credits
 ### Cloned from [Friday Userbot](github.com/starkgang/fridayuserbot).. Full credits to Friday Developers 
@@ -24,16 +26,7 @@
 
 # Deploy Guide
 
-<object width="425" height="350">
-  <param name="movie" value="https://www.youtube.com/watch?v=h_89Iya2uj0" />
-  <param name="wmode" value="transparent" />
-  <embed src="https://www.youtube.com/watch?v=h_89Iya2uj0"
-         type="application/x-shockwave-flash"
-         wmode="transparent" width="425" height="350" />
-</object>
-
-
-[![Everything Is AWESOME](https://yt-embed.herokuapp.com/embed?v=h_89Iya2uj0)](https://www.youtube.com/watch?v=h_89Iya2uj0-Y "Everything Is AWESOME")
+[![Deploy Your VirtualUserbot](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=hMhcKxNi-vw-Y "VirtualUserbot")
 
 # ❤️ Support
 
