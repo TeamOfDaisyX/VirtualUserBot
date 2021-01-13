@@ -11,6 +11,7 @@ import tarfile
 import time
 import time as ti
 import zipfile
+import patoolib
 from datetime import datetime
 
 from hachoir.metadata import extractMetadata
