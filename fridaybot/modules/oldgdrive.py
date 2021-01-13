@@ -88,6 +88,7 @@ async def _(event):
             http = authorize(G_DRIVE_TOKEN_FILE, storage)
             f = open(G_DRIVE_TOKEN_FILE, "r")
             token_file_data = f.read()
+            event.edit('`Please check Log Group`')
             await event.client.send_message(
                 int(Var.PRIVATE_GROUP_ID),
                 "Please add Var AUTH_TOKEN_DATA with the following as the value:\n\n`"
