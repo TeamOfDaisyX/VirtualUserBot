@@ -1,4 +1,6 @@
 # Written By Inuka Asith for the VirtualUserbot
+# Exclusively written for VirtualUserbot 
+# Credits goes to bot providers
 
 import asyncio
 
