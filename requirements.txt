@@ -35,6 +35,7 @@ heroku3
 httplib2
 humanize
 lxml
+patool
 lyricsgenius
 oauth2client
 psycopg2-binary
