@@ -40,12 +40,12 @@ async def _(event):
     if event.reply_to_msg_id:
         reply_message = await event.get_reply_message()
         try:
-            c_time = ti.time()
+            
             downloaded_file_name = await borg.download_media(
                 reply_message,
                 Var.TEMP_DOWNLOAD_DIRECTORY,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, mone, c_time, "trying to download")
+                    progress(d, t, mone, "trying to download")
                 ),
             )
             directory_name = downloaded_file_name
