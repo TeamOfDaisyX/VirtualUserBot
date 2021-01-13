@@ -7,7 +7,7 @@ import asyncio
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd, admin_cmd
-
+from fridaybot import CMD_HELP
 
 @friday.on(admin_cmd(pattern=r"purl ?(.*)"))
 async def _(event):
