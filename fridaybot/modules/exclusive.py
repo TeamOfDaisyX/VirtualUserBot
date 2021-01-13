@@ -80,3 +80,15 @@ async def _(event):
     await event.edit("[Connected](https://t.me/missrose_bot)")
     await asyncio.sleep(3)
     await event.delete()
+    
+CMD_HELP.update(
+    {
+        "Exclusive": "**Exclusive**\
+\n**Syntax : **`.purl`\
+\n**Usage :** Get Public link of any file**\
+\n\n**Syntax : **`.reader`\
+\n**Usage :** Read any website with telegrams Instant view**\
+\n\n**Syntax : **`.connector`\
+\n**Usage :** Connect to the chat with Rose**"
+    }
+)
