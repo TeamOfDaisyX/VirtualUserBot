@@ -568,7 +568,7 @@ async def inline_id_handler(event: events.InlineQuery.Event):
     if event.query.user_id != bot.uid:
         resultm = builder.article(
             title="Not Allowded",
-            text=f"You Can't Use This Bot. \nDeploy VirtualUserbot To Get Your Own Assistant, Repo Link [Here](https://github.com/inukaasith/VirtualUserbot)",
+            text=f"You Can't Use This Bot. \nDeploy VirtualUserbot To Get Your Own Assistant, Repo Link [Here](https://github.com/inukaasith/virtualUserbot)",
         )
         await event.answer([resultm])
         return
@@ -640,59 +640,6 @@ async def inline_id_handler(event: events.InlineQuery.Event):
                     ],
                 )
             )
-    await event.answer(results)
-
-@tgbot.on(events.InlineQuery(pattern=r"yt (.*)"))
-async def inline_id_handler(event: events.InlineQuery.Event):
-    builder = event.builder
-    if event.query.user_id != bot.uid:
-        resultm = builder.article(
-            title="Not Allowded",
-            text=f"You Can't Use This Bot. \nDeploy VirtualUserbot To Get Your Own Assistant, Repo Link [Here](https://github.com/inukaasith/virtualuserbot)",
-        )
-        await event.answer([resultm])
-        return
-    testinput = event.pattern_match.group(1)
-    urllib.parse.quote_plus(testinput)
-    results = []
-    moi = YoutubeSearch(testinput, max_results=9).to_dict()
-    if not moi:
-        resultm = builder.article(
-            title="No Results Found.",
-            description="Check Your Spelling / Keyword",
-            text="**Please, Search Again With Correct Keyword, Thank you !**",
-            buttons=[
-                [Button.switch_inline("Search Again", query="yt ", same_peer=True)],
-            ],
-        )
-        await event.answer([resultm])
-        return
-    for moon in moi:
-        hmm = moon["id"]
-        mo = f"https://www.youtube.com/watch?v={hmm}"
-        kek = f"https://www.youtube.com/watch?v={hmm}"
-        stark_name = moon["title"]
-        stark_chnnl = moon["channel"]
-        total_stark = moon["duration"]
-        stark_views = moon["views"]
-        lol_desc = moon["long_desc"]
-        kekme = f"https://img.youtube.com/vi/{hmm}/hqdefault.jpg"
-        okayz = f"**Title :** `{stark_name}` \n**Link :** `{kek}` \n**Channel :** `{stark_chnnl}` \n**Views :** `{stark_views}` \n**Duration :** `{total_stark}`"
-        hmmkek = f"Video Name : {stark_name} \nChannel : {stark_chnnl} \nDuration : {total_stark} \nViews : {stark_views}"
-        results.append(
-            await event.builder.document(
-                file=kekme,
-                title=stark_name,
-                description=hmmkek,
-                text=okayz,
-                include_media=True,
-                buttons=[
-                [custom.Button.inline("Download Video - mp4", data=f"yt_vid_{mo}")],
-                [custom.Button.inline("Download Audio - mp3", data=f"yt_dla_{mo}")],
-                [Button.switch_inline("Search Again", query="yt ", same_peer=True)],
-                ]
-              )
-        )
     await event.answer(results)
 
 
