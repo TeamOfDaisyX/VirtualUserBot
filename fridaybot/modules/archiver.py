@@ -9,6 +9,7 @@ import os
 import shutil
 import tarfile
 import time
+import time as ti
 import zipfile
 from datetime import datetime
 
@@ -39,7 +40,7 @@ async def _(event):
     if event.reply_to_msg_id:
         reply_message = await event.get_reply_message()
         try:
-            c_time = time.time()
+            c_time = ti.time()
             downloaded_file_name = await borg.download_media(
                 reply_message,
                 Var.TEMP_DOWNLOAD_DIRECTORY,
