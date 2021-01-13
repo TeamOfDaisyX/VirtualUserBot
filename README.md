@@ -15,7 +15,7 @@
 
 ### Here is the Telegram VirtualUserbot. A Remix Of Userbots on github.. Credits To Thier Owners..
 
-# https://techwizardent.com/blog/twe_blog_userbot.php
+## [Visit Website](https://techwizardent.com/blog/twe_blog_userbot.php)
 
 # 😍 Credits
 ### Cloned from [Friday Userbot](github.com/starkgang/fridayuserbot).. Full credits to Friday Developers 
@@ -25,8 +25,8 @@
 # 
 
 # Deploy Guide
+<p align="left"><a href="https://youtu.be/hMhcKxNi-vw"><img src="https://telegra.ph/file/35c283a78116be8499da0.png" width="400"></a></p> 
 
-[![Deploy Your VirtualUserbot](https://telegra.ph/file/4e1364fb18f899ad47dec.png)](https://www.youtube.com/watch?v=hMhcKxNi-vw-)
 
 # ❤️ Support
 
