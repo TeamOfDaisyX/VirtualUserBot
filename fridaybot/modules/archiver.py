@@ -99,7 +99,7 @@ async def _(event):
             await event.edit("creating 7z archive, please wait..")
             # patoolib.create_archive(directory_name + '.7z',directory_name)
             patoolib.create_archive(
-                directory_name + ".7z", (directory_name, Var.dTEMP_DOWNLOAD_DIRECTORY)
+                directory_name + ".7z", (directory_name, Var.TEMP_DOWNLOAD_DIRECTORY)
             )
             # patoolib.create_archive("/content/21.yy Avrupa (1).pdf.zip",("/content/21.yy Avrupa (1).pdf","/content/"))
             await borg.send_file(
