@@ -1,11 +1,11 @@
+import re
 
 from geopy.geocoders import Nominatim
-from ..utils import admin_cmd
 from telethon.tl import types
-from fridaybot import CMD_HELP 
-import re
-import random
-from fridaybot import bot
+
+from fridaybot import CMD_HELP, bot
+
+from ..utils import admin_cmd
 
 
 @borg.on(admin_cmd(pattern="locate ?(.*)"))
@@ -29,12 +29,7 @@ async def gps(event):
         lon = geoloc.longitude
         lat = geoloc.latitude
         await reply_to_id.reply(
-            input_str,
-            file=types.InputMediaGeoPoint(
-                types.InputGeoPoint(
-                    lat, lon
-                )
-            )
+            input_str, file=types.InputMediaGeoPoint(types.InputGeoPoint(lat, lon))
         )
         await event.delete()
     else:
@@ -53,32 +48,32 @@ IF_EMOJI = re.compile(
     "\U0001F900-\U0001F9FF"  # Supplemental Symbols and Pictographs
     "\U0001FA00-\U0001FA6F"  # Chess Symbols
     "\U0001FA70-\U0001FAFF"  # Symbols and Pictographs Extended-A
-    "\U00002702-\U000027B0"  # Dingbats 
-    "]+")
+    "\U00002702-\U000027B0"  # Dingbats
+    "]+"
+)
+
 
 def deEmojify(inputString: str) -> str:
     """Remove emojis and other non-safe characters from string"""
-    return re.sub(IF_EMOJI, '', inputString)
+    return re.sub(IF_EMOJI, "", inputString)
+
 
 @borg.on(admin_cmd(pattern="map(?: |$)(.*)"))
-
 async def nope(doit):
     ok = doit.pattern_match.group(1)
     if not ok:
         if doit.is_reply:
-            what = (await doit.get_reply_message()).message
-        
+            (await doit.get_reply_message()).message
+
             return
-    mappy = await bot.inline_query(
-        "openmap_bot", f"{(deEmojify(ok))}")
-    await mappy[0].click(doit.chat_id,
-                            reply_to=doit.reply_to_msg_id,
-                            silent=True if doit.is_reply else False,
-                            hide_via=True)
+    mappy = await bot.inline_query("openmap_bot", f"{(deEmojify(ok))}")
+    await mappy[0].click(
+        doit.chat_id,
+        reply_to=doit.reply_to_msg_id,
+        silent=True if doit.is_reply else False,
+        hide_via=True,
+    )
     await doit.delete()
-
-
-
 
 
 CMD_HELP.update(

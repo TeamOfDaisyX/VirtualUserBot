@@ -2,17 +2,18 @@ import os
 import re
 import urllib
 from math import ceil
-from youtube_search import YoutubeSearch
 from re import findall
-from search_engine_parser import GoogleSearch
-from fridaybot.function import _ytdl
 from urllib.parse import quote
+
 import requests
-from telethon import Button, custom, events, functions
-from youtubesearchpython import VideosSearch
-from fridaybot import ALIVE_NAME, CMD_HELP, CMD_LIST, lang
-from fridaybot.modules import inlinestats
 from pornhub_api import PornhubApi
+from search_engine_parser import GoogleSearch
+from telethon import Button, custom, events, functions
+
+from fridaybot import ALIVE_NAME, CMD_HELP, CMD_LIST, lang
+from fridaybot.function import _ytdl
+from fridaybot.modules import inlinestats
+
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 if PMPERMIT_PIC is None:
     WARN_PIC = "https://telegra.ph/file/0e7a45ed44e17ce68d8cd.png"
@@ -22,6 +23,7 @@ LOG_CHAT = Config.PRIVATE_GROUP_ID
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "VirtualUserbot"
 
 if lang == "si":
+
     @tgbot.on(events.InlineQuery)
     async def inline_handler(event):
         builder = event.builder
@@ -65,7 +67,6 @@ if lang == "si":
             )
             await event.answer([result])
 
-
     @tgbot.on(
         events.callbackquery.CallbackQuery(  # pylint:disable=E0602
             data=re.compile(b"helpme_next\((.+?)\)")
@@ -80,7 +81,6 @@ if lang == "si":
         else:
             reply_popp_up_alert = "ඔය මොකද කරන්නෙ, මේක ඔයාගෙ නෙමේ!"
             await event.answer(reply_popp_up_alert, cache_time=0, alert=True)
-
 
     @tgbot.on(
         events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -99,7 +99,6 @@ if lang == "si":
             reply_pop_up_alert = "මොන පිස්සෙක්ද තෝ? උඹටම කියල බොටෙක් හදාගනිම්.!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-
     @tgbot.on(
         events.callbackquery.CallbackQuery(  # pylint:disable=E0602
             data=re.compile(b"us_plugin_(.*)")
@@ -112,7 +111,9 @@ if lang == "si":
             return
         plugin_name = event.data_match.group(1).decode("UTF-8")
         if plugin_name in CMD_HELP:
-            help_string = f"**🦹‍♀️ PLUGIN NAME 🦹‍♀️ :** `{plugin_name}` \n{CMD_HELP[plugin_name]}"
+            help_string = (
+                f"**🦹‍♀️ PLUGIN NAME 🦹‍♀️ :** `{plugin_name}` \n{CMD_HELP[plugin_name]}"
+            )
         reply_pop_up_alert = help_string
         reply_pop_up_alert += "\n\n**(C) @VirtualUserbot ** ".format(plugin_name)
         if len(reply_pop_up_alert) >= 4096:
@@ -133,7 +134,6 @@ if lang == "si":
                 buttons=[[custom.Button.inline("Go Back", data="backme")]],
             )
 
-
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"terminator")))
     async def rip(event):
         if event.query.user_id == bot.uid:
@@ -142,8 +142,6 @@ if lang == "si":
         else:
             txt = "You Can't View My Masters Stats"
             await event.answer(txt, alert=True)
-
-
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"yt_dla_(.*)")))
     async def rip(event):
@@ -154,8 +152,8 @@ if lang == "si":
             await event.answer(text, alert=True)
             return
         is_it = True
-        ok = await _ytdl(link_s, is_it, event, tgbot)
-        
+        await _ytdl(link_s, is_it, event, tgbot)
+
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"yt_vid_(.*)")))
     async def rip(event):
         yt_dl_data = event.data_match.group(1).decode("UTF-8")
@@ -165,9 +163,8 @@ if lang == "si":
             await event.answer(text, alert=True)
             return
         is_it = False
-        ok = await _ytdl(link_s, is_it, event, tgbot)
-        
-        
+        await _ytdl(link_s, is_it, event, tgbot)
+
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"ph_dl_(.*)")))
     async def rip(event):
         link_s = event.pattern_match.group(1)
@@ -175,9 +172,7 @@ if lang == "si":
             text = f"Please Get Your Own VirtualUserbot And Don't Waste My Resources."
             await event.answer(text, alert=True)
             return
-        ok = await _phdl(link_s, event, tgbot)
-
-
+        await _phdl(link_s, event, tgbot)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"dontspamnigga")))
     async def rip(event):
@@ -196,7 +191,6 @@ if lang == "si":
             f"ආයුබෝවන්, මෝඩ  [පකයා](tg://user?id={him_id}) තහන්ම් එකක් තෝරපු නිසා Block කරා",
         )
 
-
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"backme")))
     async def sed(event):
         if event.query.user_id != bot.uid:
@@ -209,7 +203,6 @@ if lang == "si":
         sed = f"""VirtualUserbot Modules Are Listed Here !\n
     For More Help or Support contact {DEFAULTUSER} \nCurrently Loaded Plugins: {len(CMD_LIST)}\nCurrently using Language - Sinhala (Sinhalese)"""
         await event.edit(message=sed, buttons=buttons)
-
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"whattalk")))
     async def rip(event):
@@ -227,7 +220,6 @@ if lang == "si":
             message=f"Hello, A [New User](tg://user?id={him_id}). Wants To Talk With You.",
             buttons=[Button.url("Contact Him", f"tg://user?id={him_id}")],
         )
-
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"askme")))
     async def rip(event):
@@ -254,7 +246,6 @@ if lang == "si":
             reply_pop_up_alert = "මොන පිස්සෙක්ද තෝ? උඹටම කියල බොටෙක් හදාගනිම්. "
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-
     def paginate_help(page_number, loaded_modules, prefix):
         number_of_rows = 8
         number_of_cols = 2
@@ -290,7 +281,9 @@ if lang == "si":
             ]
         return pairs
 
+
 else:
+
     @tgbot.on(events.InlineQuery)
     async def inline_handler(event):
         builder = event.builder
@@ -312,7 +305,11 @@ else:
                 text=f"**Showing Stats For {DEFAULTUSER}'s VirualUserbot** \nNote --> Only Owner Can Check This \n(C) @VirtualUserbot",
                 buttons=[
                     [custom.Button.inline("Show Stats ?", data="terminator")],
-                    [Button.url("Repo Here", "https://github.com/inukaasith/virtualuserbot")],
+                    [
+                        Button.url(
+                            "Repo Here", "https://github.com/inukaasith/virtualuserbot"
+                        )
+                    ],
                     [Button.url("Join Channel ❤️", "t.me/infinity_bots")],
                 ],
             )
@@ -334,7 +331,6 @@ else:
             )
             await event.answer([result])
 
-
     @tgbot.on(
         events.callbackquery.CallbackQuery(  # pylint:disable=E0602
             data=re.compile(b"helpme_next\((.+?)\)")
@@ -349,7 +345,6 @@ else:
         else:
             reply_popp_up_alert = "Please get your own Userbot, and don't use mine!"
             await event.answer(reply_popp_up_alert, cache_time=0, alert=True)
-
 
     @tgbot.on(
         events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -368,7 +363,6 @@ else:
             reply_pop_up_alert = "Please get your own Userbot, and don't use mine!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-
     @tgbot.on(
         events.callbackquery.CallbackQuery(  # pylint:disable=E0602
             data=re.compile(b"us_plugin_(.*)")
@@ -381,7 +375,9 @@ else:
             return
         plugin_name = event.data_match.group(1).decode("UTF-8")
         if plugin_name in CMD_HELP:
-            help_string = f"**🦹‍♀️ PLUGIN NAME 🦹‍♀️ :** `{plugin_name}` \n{CMD_HELP[plugin_name]}"
+            help_string = (
+                f"**🦹‍♀️ PLUGIN NAME 🦹‍♀️ :** `{plugin_name}` \n{CMD_HELP[plugin_name]}"
+            )
         reply_pop_up_alert = help_string
         reply_pop_up_alert += "\n\n**(C) @VirtualUserbot** ".format(plugin_name)
         if len(reply_pop_up_alert) >= 4096:
@@ -402,7 +398,6 @@ else:
                 buttons=[[custom.Button.inline("Go Back", data="backme")]],
             )
 
-
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"terminator")))
     async def rip(event):
         if event.query.user_id == bot.uid:
@@ -421,7 +416,7 @@ else:
             await event.answer(text, alert=True)
             return
         is_it = True
-        ok = await _ytdl(link_s, is_it, event, tgbot)
+        await _ytdl(link_s, is_it, event, tgbot)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"yt_vid_(.*)")))
     async def rip(event):
@@ -432,11 +427,8 @@ else:
             await event.answer(text, alert=True)
             return
         is_it = False
-        ok = await _ytdl(link_s, is_it, event, tgbot)
+        await _ytdl(link_s, is_it, event, tgbot)
 
-        
-        
-        
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"ph_dl_(.*)")))
     async def rip(event):
         link_s = event.pattern_match.group(1)
@@ -444,7 +436,7 @@ else:
             text = f"Please Get Your Own VirtualUserbot And Don't Waste My Resources."
             await event.answer(text, alert=True)
             return
-        ok = await _phdl(link_s, event, tgbot)
+        await _phdl(link_s, event, tgbot)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"dontspamnigga")))
     async def rip(event):
@@ -463,7 +455,6 @@ else:
             f"Hello, A Noob [Nibba](tg://user?id={him_id}) Selected Probhited Option, Therefore Blocked.",
         )
 
-
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"backme")))
     async def sed(event):
         if event.query.user_id != bot.uid:
@@ -476,7 +467,6 @@ else:
         sed = f"""VirtualUserbot Userbot Modules Are Listed Here !\n
     For More Help or Support contact {DEFAULTUSER} \nCurrently Loaded Plugins: {len(CMD_LIST)}\nCurrently using Language - English (Standard)"""
         await event.edit(message=sed, buttons=buttons)
-
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"whattalk")))
     async def rip(event):
@@ -494,7 +484,6 @@ else:
             message=f"Hello, A [New User](tg://user?id={him_id}). Wants To Talk With You.",
             buttons=[Button.url("Contact Him", f"tg://user?id={him_id}")],
         )
-
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"askme")))
     async def rip(event):
@@ -520,7 +509,6 @@ else:
         else:
             reply_pop_up_alert = "WTF are you Doing.. "
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-        
 
     def paginate_help(page_number, loaded_modules, prefix):
         number_of_rows = 8
@@ -556,11 +544,7 @@ else:
                 )
             ]
         return pairs
-    
-    
-    
-    
-    
+
 
 @tgbot.on(events.InlineQuery(pattern=r"torrent (.*)"))
 async def inline_id_handler(event: events.InlineQuery.Event):
@@ -643,7 +627,6 @@ async def inline_id_handler(event: events.InlineQuery.Event):
     await event.answer(results)
 
 
-
 @tgbot.on(events.InlineQuery(pattern=r"jm (.*)"))
 async def inline_id_handler(event: events.InlineQuery.Event):
     builder = event.builder
@@ -687,8 +670,7 @@ async def inline_id_handler(event: events.InlineQuery.Event):
         )
     await event.answer(results)
 
-    
-        
+
 @tgbot.on(events.InlineQuery(pattern=r"google (.*)"))
 async def inline_id_handler(event: events.InlineQuery.Event):
     builder = event.builder
@@ -708,11 +690,10 @@ async def inline_id_handler(event: events.InlineQuery.Event):
         match = match.replace("page=" + page[0], "")
     except IndexError:
         page = 1
-    
+
     search_args = (str(match), int(page))
     gsearch = GoogleSearch()
     gresults = await gsearch.async_search(*search_args)
-    msg = ""
     for i in range(len(gresults["links"])):
         try:
             title = gresults["titles"][i]
@@ -734,7 +715,8 @@ async def inline_id_handler(event: events.InlineQuery.Event):
         except IndexError:
             break
     await event.answer(results)
-    
+
+
 @tgbot.on(events.InlineQuery(pattern=r"ph (.*)"))
 async def inline_id_handler(event: events.InlineQuery.Event):
     builder = event.builder
@@ -748,16 +730,12 @@ async def inline_id_handler(event: events.InlineQuery.Event):
     results = []
     input_str = event.pattern_match.group(1)
     api = PornhubApi()
-    data = api.search.search(
-    input_str,
-    ordering="mostviewed"
-    )
+    data = api.search.search(input_str, ordering="mostviewed")
     ok = 1
-    oik = ""
     for vid in data.videos:
-      if ok <= 5:
-        lul_m = (f"**PORN-HUB SEARCH** \n**Video title :** `{vid.title}` \n**Video link :** `https://www.pornhub.com/view_video.php?viewkey={vid.video_id}`")
-        results.append(
+        if ok <= 5:
+            lul_m = f"**PORN-HUB SEARCH** \n**Video title :** `{vid.title}` \n**Video link :** `https://www.pornhub.com/view_video.php?viewkey={vid.video_id}`"
+            results.append(
                 await event.builder.article(
                     title=vid.title,
                     text=lul_m,
@@ -768,10 +746,11 @@ async def inline_id_handler(event: events.InlineQuery.Event):
                     ],
                 )
             )
-      else:
-        pass
+        else:
+            pass
     await event.answer(results)
-    
+
+
 @tgbot.on(events.InlineQuery(pattern=r"xkcd (.*)"))
 async def inline_id_handler(event: events.InlineQuery.Event):
     builder = event.builder
@@ -782,7 +761,6 @@ async def inline_id_handler(event: events.InlineQuery.Event):
         )
         await event.answer([resultm])
         return
-    results = []
     input_str = event.pattern_match.group(1)
     xkcd_id = None
     if input_str:
@@ -819,14 +797,8 @@ Month: {}
 Year: {}""".format(
             xkcd_link, safe_title, alt, day, month, year
         )
-        lul_k = builder.photo(
-            file=img,
-            text=output_str
-        )
+        lul_k = builder.photo(file=img, text=output_str)
         await event.answer([lul_k])
     else:
-        resultm = builder.article(
-            title="- No Results :/ -",
-            text=f"No Results Found !"
-        )
+        resultm = builder.article(title="- No Results :/ -", text=f"No Results Found !")
         await event.answer([resultm])

@@ -2,7 +2,6 @@
 Syntax: .whois @username/userid"""
 
 
-
 # Copyright (C) 2019 The Raphielscape Company LLC.
 #
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
@@ -286,9 +285,7 @@ async def ge(user, event):
         return None
     return user_obj
 
+
 CMD_HELP.update(
-    {
-        "whois": ".whois @username/userid"
-    "\nUsage: Get Telegram User Information. \n\n"
-    }
+    {"whois": ".whois @username/userid" "\nUsage: Get Telegram User Information. \n\n"}
 )

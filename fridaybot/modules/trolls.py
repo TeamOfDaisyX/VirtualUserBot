@@ -15,16 +15,18 @@ credits to @mrconfused and @sandy1709
 
 import base64
 import os
-import requests
 
+import requests
+from PIL import Image
 from telegraph import exceptions, upload_file
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
-import PIL.ImageOps
-from PIL import Image, ImageDraw, ImageFont
+from validators.url import url
+
 from fridaybot import *
 from fridaybot import CMD_HELP
-from ..utils import admin_cmd, sudo_cmd, edit_or_reply
-from validators.url import url
+
+from ..utils import admin_cmd, edit_or_reply, sudo_cmd
+
 
 async def trap(text1, text2, text3):
     r = requests.get(
@@ -41,6 +43,7 @@ async def trap(text1, text2, text3):
         img = img.convert("RGB")
     img.save("temp.jpg", "jpeg")
     return "temp.jpg"
+
 
 async def trash(text):
     r = requests.get(f"https://nekobot.xyz/api/imagegen?type=trash&url={text}").json()
@@ -87,7 +90,6 @@ async def phcomment(text1, text2, text3):
         img = img.convert("RGB")
     img.save("temp.jpg", "jpeg")
     return "temp.jpg"
-
 
 
 @bot.on(admin_cmd(pattern="threats(?: |$)(.*)"))
@@ -192,7 +194,7 @@ async def catbot(catmemes):
 @bot.on(sudo_cmd(pattern="ttrap(?: |$)(.*)", allow_sudo=True))
 async def catbot(catmemes):
     input_str = catmemes.pattern_match.group(1)
-    
+
     if "|" in input_str:
         text1, text2 = input_str.split("|")
     else:
@@ -251,7 +253,7 @@ async def catbot(catmemes):
 @bot.on(sudo_cmd(pattern="tphub(?: |$)(.*)", allow_sudo=True))
 async def catbot(catmemes):
     input_str = catmemes.pattern_match.group(1)
-    
+
     if "|" in input_str:
         username, text = input_str.split("|")
     else:

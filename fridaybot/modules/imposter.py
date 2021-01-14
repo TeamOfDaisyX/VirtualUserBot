@@ -8,6 +8,7 @@ Userbot plugin fot CatUserbot
 import asyncio
 
 from fridaybot import ALIVE_NAME, CMD_HELP
+
 from ..utils import admin_cmd, sudo_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "cat"

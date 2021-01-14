@@ -5,10 +5,11 @@ import os
 from telethon import events, functions
 from telethon.tl.functions.users import GetFullUserRequest
 
-from .sql_helper import pmpermit_sql as pmpermit_sql
 from fridaybot import ALIVE_NAME, CUSTOM_PMPERMIT, lang
 from fridaybot.Configs import Config
 from fridaybot.utils import friday_on_cmd
+
+from .sql_helper import pmpermit_sql as pmpermit_sql
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 if PMPERMIT_PIC is None:
@@ -28,8 +29,10 @@ CUSTOM_MIDDLE_PMP = (
     str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else f"Protection By {DEFAULTUSER} ❤️"
 )
 
-if lang == "si":  
-    USER_BOT_WARN_ZERO = "ඔයා මගේ මාස්ටර් ගෙ Inbox එකට Spam ගහන්න හදපු නිසා මම ඔයාව Block කරා"
+if lang == "si":
+    USER_BOT_WARN_ZERO = (
+        "ඔයා මගේ මාස්ටර් ගෙ Inbox එකට Spam ගහන්න හදපු නිසා මම ඔයාව Block කරා"
+    )
 else:
     USER_BOT_WARN_ZERO = "You Tried to Spam on my Master's Inbox.. So I Blocked you."
 
@@ -74,9 +77,7 @@ if Var.PRIVATE_GROUP_ID is not None:
         if event.is_private:
             if pmpermit_sql.is_approved(chat.id):
                 pmpermit_sql.disapprove(chat.id)
-            await event.edit(
-                    "Blocked [{}](tg://user?id={})".format(firstname, chat.id)
-                )
+            await event.edit("Blocked [{}](tg://user?id={})".format(firstname, chat.id))
             await event.client(functions.contacts.BlockRequest(chat.id))
 
     @borg.on(friday_on_cmd(pattern="(da|disapprove)"))

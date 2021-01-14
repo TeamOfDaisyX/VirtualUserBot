@@ -1,11 +1,11 @@
 import time
 from datetime import datetime
 
-from fridaybot import CMD_HELP, Lastupdate
-from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
-from fridaybot import lang
+from fridaybot import CMD_HELP, Lastupdate, lang
+from fridaybot.utils import edit_or_reply, friday_on_cmd
 
 if lang == "si":
+
     def get_readable_time(seconds: int) -> str:
         count = 0
         ping_time = ""
@@ -32,7 +32,6 @@ if lang == "si":
         ping_time += ":".join(time_list)
 
         return ping_time
-
 
     @friday.on(friday_on_cmd(pattern="ping$"))
     async def _(event):
@@ -46,8 +45,10 @@ if lang == "si":
         await starkislub.edit(
             f"**🙈වැඩ වැඩ මහත්තයෝ⚙🔧** \n **ᵐʸ ᶜᵘʳʳᵉⁿᵗ ᵖᶦⁿᵍʳᵃᵗᵉ**👇 \n \n ⚡️ `{ms}` \n ⚡️ `{uptime}`"
         )
+
+
 else:
-    
+
     def get_readable_time(seconds: int) -> str:
         count = 0
         ping_time = ""
@@ -75,7 +76,6 @@ else:
 
         return ping_time
 
-
     @friday.on(friday_on_cmd(pattern="ping$"))
     async def _(event):
         starkislub = await edit_or_reply(event, "`Pong !`")
@@ -87,7 +87,8 @@ else:
         uptime = get_readable_time((time.time() - Lastupdate))
         await starkislub.edit(
             f"**🙈I'm Online, Master ⚙🔧** \n **ᵐʸ ᶜᵘʳʳᵉⁿᵗ ᵖᶦⁿᵍʳᵃᵗᵉ**👇 \n \n ⚡️ `{ms}` \n ⚡️ `{uptime}`"
-        )    
+        )
+
 
 CMD_HELP.update(
     {

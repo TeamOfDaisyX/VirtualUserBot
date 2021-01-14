@@ -57,6 +57,7 @@ pm_caption += "➣ **Check **                   `.stat`. \n\n"
 pm_caption += "➣ **Contact Dev**             [Dev](https://t.me/InukaASiTH)\n"
 pm_caption += "➣ **Contact Mod**             [Mod](https://t.me/Zzlll_lllzZ)\n"
 
+
 @friday.on(friday_on_cmd(pattern=r"alive"))
 @friday.on(sudo_cmd(pattern=r"alive", allow_sudo=True))
 async def friday(alive):
