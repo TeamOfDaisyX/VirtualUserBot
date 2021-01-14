@@ -15,7 +15,7 @@
 
 ### Here is the Telegram VirtualUserbot. A Remix Of Userbots on github.. Credits To Thier Owners..
 
-## [Visit Website](https://techwizardent.com/blog/twe_blog_userbot.php)
+## [Visit Website ](https://techwizardent.com/blog/twe_blog_userbot.php)
 
 # 😍 Credits
 ### Cloned from [Friday Userbot](github.com/starkgang/fridayuserbot).. Full credits to Friday Developers 
@@ -24,8 +24,8 @@
 ``` Full credits mentioned at the bottom```
 # 
 
-# Deploy Guide
-<p align="left"><a href="https://youtu.be/hMhcKxNi-vw"><img src="https://telegra.ph/file/35c283a78116be8499da0.png" width="300"></a></p> 
+# 🧙‍♀️ Deploy Guide
+<p align="left"><ba href="https://youtu.be/hMhcKxNi-vw"><img src="https://telegra.ph/file/35c283a78116be8499da0.png" width="300"></a></p> 
 <a href="https://youtu.be/hMhcKxNi-vw"><img src="https://img.shields.io/badge/How%20To-Deploy-red.svg?logo=Youtube"></a>
 
 # ❤️ Support
@@ -199,7 +199,6 @@ published by the Free Software Foundation, either version 3 of the License, or
 Most of the Plugins Taken from this Project.. Made possible by this. Full Credits. Full Respect
 
 - DarkCobra 😍 - 
-
 Image Tools Plugins Copied from DC Project.. Credits to DC Team
 
 - CatUserbot - 
