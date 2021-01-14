@@ -199,7 +199,6 @@ published by the Free Software Foundation, either version 3 of the License, or
 # Full Credits
 
 - FridayUserBot ❤️ - 
-
 Most of the Plugins Taken from this Project.. Made possible by this. Full Credits. Full Respect
 
 - DarkCobra 😍 - 
