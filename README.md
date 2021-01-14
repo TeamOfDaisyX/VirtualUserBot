@@ -194,24 +194,24 @@ published by the Free Software Foundation, either version 3 of the License, or
 
 # Full Credits
 
-- FridayUserBot ❤️
+- FridayUserBot ❤️ - 
 
 Most of the Plugins Taken from this Project.. Made possible by this. Full Credits. Full Respect
 
-- DarkCobra 😍
+- DarkCobra 😍 - 
 
 Image Tools Plugins Copied from DC Project.. Credits to DC Team
 
-- CatUserbot
+- CatUserbot - 
 Internal Core Plugins taken.. Helped a lot to fix bugs in source.. Full respect
 
-- Uniborg
+- Uniborg - 
 Userbots Made possible. Credits
 
-- TeleBot
+- TeleBot - 
 Speed Boosted by the help of this source code.. Credits
 
-- Black Lightning
+- Black Lightning - 
 Got Fun tools from this.. Respect
 
 
