@@ -4,11 +4,11 @@ Available Commands:
 .tl LangaugeCode | text to translate"""
 
 import emoji
-from asyncio import sleep
-from fridaybot import CMD_HELP
 from googletrans import Translator
-from ..utils import admin_cmd, sudo_cmd
 
+from fridaybot import CMD_HELP
+
+from ..utils import admin_cmd
 
 
 @borg.on(admin_cmd("tl ?(.*)"))
@@ -38,13 +38,12 @@ async def _(event):
         # either here, or before translation
         output_str = """**Translated Successfully** from {} to {}
 {}""".format(
-            translated.src,
-            lan,
-            after_tr_text
+            translated.src, lan, after_tr_text
         )
         await event.edit(output_str)
     except Exception as exc:
         await event.edit(str(exc))
+
 
 CMD_HELP.update(
     {

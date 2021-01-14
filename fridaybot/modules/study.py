@@ -5,6 +5,7 @@ from telethon import events
 from telethon.tl import functions, types
 
 from fridaybot import ALIVE_NAME
+
 from ..utils import admin_cmd
 
 global USER_night  # pylint:disable=E0602

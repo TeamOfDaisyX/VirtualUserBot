@@ -9,25 +9,22 @@ import os
 import shutil
 import tarfile
 import time
-import time as ti
-import zipfile
-import patoolib
 from datetime import datetime
 
+import patoolib
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from telethon.tl.types import DocumentAttributeVideo
 
 from fridaybot import CMD_HELP
 from fridaybot.Configs import Config as Var
+
 from ..utils import admin_cmd, progress
 
 thumb_image_path = Var.TEMP_DOWNLOAD_DIRECTORY + "/thumb_image.jpg"
 extracted = Var.TEMP_DOWNLOAD_DIRECTORY + "extracted/"
 if not os.path.isdir(extracted):
     os.makedirs(extracted)
-
-
 
 
 @borg.on(admin_cmd(pattern=("rar ?(.*)")))
@@ -41,10 +38,9 @@ async def _(event):
     if event.reply_to_msg_id:
         reply_message = await event.get_reply_message()
         try:
-            
+
             downloaded_file_name = await borg.download_media(
-                reply_message,
-                Var.TEMP_DOWNLOAD_DIRECTORY
+                reply_message, Var.TEMP_DOWNLOAD_DIRECTORY
             )
             directory_name = downloaded_file_name
             await event.edit("creating rar archive, please wait..")
@@ -90,10 +86,9 @@ async def _(event):
     if event.reply_to_msg_id:
         reply_message = await event.get_reply_message()
         try:
-            
+
             downloaded_file_name = await borg.download_media(
-                reply_message,
-                Var.TEMP_DOWNLOAD_DIRECTORY
+                reply_message, Var.TEMP_DOWNLOAD_DIRECTORY
             )
             directory_name = downloaded_file_name
             await event.edit("creating 7z archive, please wait..")
@@ -137,10 +132,9 @@ async def _(event):
     if event.reply_to_msg_id:
         reply_message = await event.get_reply_message()
         try:
-            
+
             downloaded_file_name = await borg.download_media(
-                reply_message,
-                Var.TEMP_DOWNLOAD_DIRECTORY
+                reply_message, Var.TEMP_DOWNLOAD_DIRECTORY
             )
             directory_name = downloaded_file_name
             await event.edit("Finish downloading to my local")
@@ -209,8 +203,6 @@ async def create_archive(input_directory):
     return return_name
 
 
-
-
 @borg.on(admin_cmd(pattern="unrar"))
 async def _(event):
     if event.fwd_from:
@@ -222,10 +214,9 @@ async def _(event):
         start = datetime.now()
         reply_message = await event.get_reply_message()
         try:
-            
+
             downloaded_file_name = await borg.download_media(
-                reply_message,
-                Var.TEMP_DOWNLOAD_DIRECTORY
+                reply_message, Var.TEMP_DOWNLOAD_DIRECTORY
             )
         except Exception as e:  # pylint:disable=C0103,W0703
             await mone.edit(str(e))
@@ -316,8 +307,7 @@ async def _(event):
         try:
             c_time = time.time()
             downloaded_file_name = await borg.download_media(
-                reply_message,
-                Var.TEMP_DOWNLOAD_DIRECTORY
+                reply_message, Var.TEMP_DOWNLOAD_DIRECTORY
             )
         except Exception as e:  # pylint:disable=C0103,W0703
             await mone.edit(str(e))

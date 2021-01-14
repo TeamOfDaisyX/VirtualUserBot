@@ -42,7 +42,9 @@ if lang == "si":
         reason = event.pattern_match.group(1)
         if not USER_AFK:  # pylint:disable=E0602
             last_seen_status = await borg(  # pylint:disable=E0602
-                functions.account.GetPrivacyRequest(types.InputPrivacyKeyStatusTimestamp())
+                functions.account.GetPrivacyRequest(
+                    types.InputPrivacyKeyStatusTimestamp()
+                )
             )
             if isinstance(last_seen_status.rules, types.PrivacyValueAllowAll):
                 afk_time = datetime.datetime.now()  # pylint:disable=E0602
@@ -53,7 +55,9 @@ if lang == "si":
                     f"**මම දැන් Offline යනවා 👀.** \n__Offline යන්න හේතුව__ `{reason}`",
                 )
             else:
-                await borg.send_message(event.chat_id, f"**මම දැන් Busy ඒක නිසා Offline යනවා**.")
+                await borg.send_message(
+                    event.chat_id, f"**මම දැන් Busy ඒක නිසා Offline යනවා**."
+                )
             await asyncio.sleep(5)
             await event.delete()
             try:
@@ -63,7 +67,6 @@ if lang == "si":
                 )
             except Exception as e:  # pylint:disable=C0103,W0703
                 logger.warn(str(e))  # pylint:disable=E0602
-
 
     @friday.on(events.NewMessage(outgoing=True))  # pylint:disable=E0602
     async def set_not_afk(event):
@@ -102,7 +105,6 @@ if lang == "si":
             await shite.delete()
             USER_AFK = {}  # pylint:disable=E0602
             afk_time = None  # pylint:disable=E0602
-
 
     @friday.on(
         events.NewMessage(  # pylint:disable=E0602
@@ -169,9 +171,8 @@ if lang == "si":
                 await last_afk_message[event.chat_id].delete()  # pylint:disable=E0602
             last_afk_message[event.chat_id] = msg  # pylint:disable=E0602
 
-else:
-    
 
+else:
 
     @friday.on(
         events.NewMessage(pattern=r"\.afk ?(.*)", outgoing=True)
@@ -194,7 +195,9 @@ else:
         reason = event.pattern_match.group(1)
         if not USER_AFK:  # pylint:disable=E0602
             last_seen_status = await borg(  # pylint:disable=E0602
-                functions.account.GetPrivacyRequest(types.InputPrivacyKeyStatusTimestamp())
+                functions.account.GetPrivacyRequest(
+                    types.InputPrivacyKeyStatusTimestamp()
+                )
             )
             if isinstance(last_seen_status.rules, types.PrivacyValueAllowAll):
                 afk_time = datetime.datetime.now()  # pylint:disable=E0602
@@ -205,7 +208,9 @@ else:
                     f"**My Master Seems To Be Too Busy 👀.** \n__He Going Afk Because Of__ `{reason}`",
                 )
             else:
-                await borg.send_message(event.chat_id, f"**I Am Busy And I Am Going Afk**.")
+                await borg.send_message(
+                    event.chat_id, f"**I Am Busy And I Am Going Afk**."
+                )
             await asyncio.sleep(5)
             await event.delete()
             try:
@@ -215,7 +220,6 @@ else:
                 )
             except Exception as e:  # pylint:disable=C0103,W0703
                 logger.warn(str(e))  # pylint:disable=E0602
-
 
     @friday.on(events.NewMessage(outgoing=True))  # pylint:disable=E0602
     async def set_not_afk(event):
@@ -254,7 +258,6 @@ else:
             await shite.delete()
             USER_AFK = {}  # pylint:disable=E0602
             afk_time = None  # pylint:disable=E0602
-
 
     @friday.on(
         events.NewMessage(  # pylint:disable=E0602
@@ -320,7 +323,6 @@ else:
             if event.chat_id in last_afk_message:  # pylint:disable=E0602
                 await last_afk_message[event.chat_id].delete()  # pylint:disable=E0602
             last_afk_message[event.chat_id] = msg  # pylint:disable=E0602
-
 
 
 CMD_HELP.update(

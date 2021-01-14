@@ -27,7 +27,16 @@ from telethon.tl import functions, types
 from fridaybot.utils import friday_on_cmd
 
 COLORS = [
-    "#F07975", "#F49F69", "#F9C84A", "#8CC56E", "#6CC7DC", "#80C1FA", "#BCB3F9", "#E181AC"]
+    "#F07975",
+    "#F49F69",
+    "#F9C84A",
+    "#8CC56E",
+    "#6CC7DC",
+    "#80C1FA",
+    "#BCB3F9",
+    "#E181AC",
+]
+
 
 class Quote:
     async def process(msg, user, client, reply, replied=None):

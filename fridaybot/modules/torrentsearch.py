@@ -9,8 +9,10 @@ from datetime import datetime
 import cfscrape  # https://github.com/Anorov/cloudflare-scrape
 import requests
 from bs4 import BeautifulSoup as bs
+
 from fridaybot import CMD_HELP
-from ..utils import humanbytes, admin_cmd
+
+from ..utils import admin_cmd, humanbytes
 
 
 def dogbin(magnets):

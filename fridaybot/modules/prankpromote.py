@@ -1,14 +1,15 @@
 """Reply to a user to .promote them in the current chat"""
 import logging
-logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
-                    level=logging.WARNING)
-from telethon import events
-import asyncio
+
+logging.basicConfig(
+    format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s", level=logging.WARNING
+)
 from datetime import datetime
+
 from telethon.tl.functions.channels import EditAdminRequest
 from telethon.tl.types import ChatAdminRights
-from ..utils import admin_cmd
 
+from ..utils import admin_cmd
 
 """
 @borg.on(admin_cmd(pattern="promote ?(.*)"))
@@ -42,15 +43,14 @@ async def _(event):
         await event.edit("Successfully Promoted")
 """
 
+
 @borg.on(admin_cmd(pattern="prankpromote ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
-    start = datetime.now()
+    datetime.now()
     to_promote_id = None
-    rights = ChatAdminRights(
-        post_messages=True
-    )
+    rights = ChatAdminRights(post_messages=True)
     input_str = event.pattern_match.group(1)
     reply_msg_id = event.message.id
     if reply_msg_id:

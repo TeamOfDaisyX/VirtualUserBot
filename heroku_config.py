@@ -44,4 +44,3 @@ class Var(object):
 
 class Development(Var):
     LOGGER = True
-

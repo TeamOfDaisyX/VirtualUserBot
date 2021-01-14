@@ -1,4 +1,3 @@
-
 # Written to VirtualUserbot by Inuka Asith
 
 
@@ -9,10 +8,11 @@ import os
 from telethon import functions, types
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
-from fridaybot import CMD_HELP
-from fridaybot import BOTLOG, BOTLOG_CHATID
-from ..utils import edit_or_reply, sudo_cmd
+from fridaybot import BOTLOG, BOTLOG_CHATID, CMD_HELP
+
 from ..utils import admin_cmd as lightning_cmd
+from ..utils import edit_or_reply, sudo_cmd
+
 
 @bot.on(lightning_cmd(pattern="tspam (.*)"))
 @bot.on(sudo_cmd(pattern="tspam (.*)", allow_sudo=True))

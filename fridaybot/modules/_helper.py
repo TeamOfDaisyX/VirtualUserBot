@@ -1,6 +1,8 @@
-from fridaybot import CMD_LIST,ALIVE_NAME, lang
+from fridaybot import ALIVE_NAME, CMD_LIST, lang
+
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "VirtualUserbot"
-  
+
+
 @command(pattern="^.help ?(.*)")
 async def cmd_list(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):

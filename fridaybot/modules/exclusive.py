@@ -1,13 +1,15 @@
 # Written By Inuka Asith for the VirtualUserbot
-# Exclusively written for VirtualUserbot 
+# Exclusively written for VirtualUserbot
 # Credits goes to bot providers
 
 import asyncio
 
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd, admin_cmd
+
 from fridaybot import CMD_HELP
+from fridaybot.utils import admin_cmd
+
 
 @friday.on(admin_cmd(pattern=r"purl ?(.*)"))
 async def _(event):
@@ -34,8 +36,6 @@ async def _(event):
         await event.client.send_message(
             event.chat_id, response.message, reply_to=reply_message
         )
-
-
 
 
 @friday.on(admin_cmd(pattern=r"reader ?(.*)"))
@@ -68,7 +68,6 @@ async def _(event):
         )
 
 
-
 @friday.on(admin_cmd(pattern=r"connector ?(.*)"))
 async def _(event):
     if event.fwd_from:
@@ -80,7 +79,8 @@ async def _(event):
     await event.edit("[Connected](https://t.me/missrose_bot)")
     await asyncio.sleep(3)
     await event.delete()
-    
+
+
 CMD_HELP.update(
     {
         "Exclusive": "**Exclusive**\

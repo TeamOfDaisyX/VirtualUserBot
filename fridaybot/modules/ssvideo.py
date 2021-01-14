@@ -9,6 +9,7 @@ import os
 import time
 
 from telethon.tl.types import DocumentAttributeFilename
+
 from fridaybot import CMD_HELP, bot
 from fridaybot.events import register
 from fridaybot.function import progress
@@ -27,12 +28,17 @@ async def ssvideo(framecap):
             return await framecap.edit("`hey..dont put that much`")
     except BaseException:
         return await framecap.edit("`Please input number of frame!`")
-    if (reply_message.photo
-            or (DocumentAttributeFilename(file_name="AnimatedSticker.tgs")
-                in reply_message.media.document.attributes)
-            or (DocumentAttributeFilename(file_name="sticker.webp")
-                in reply_message.media.document.attributes)
-            ):
+    if (
+        reply_message.photo
+        or (
+            DocumentAttributeFilename(file_name="AnimatedSticker.tgs")
+            in reply_message.media.document.attributes
+        )
+        or (
+            DocumentAttributeFilename(file_name="sticker.webp")
+            in reply_message.media.document.attributes
+        )
+    ):
         return await framecap.edit("`Unsupported files!`")
     c_time = time.time()
     await framecap.edit("`Downloading media...`")
@@ -58,9 +64,10 @@ async def ssvideo(framecap):
     os.system("rm -rf *.png *.mp4")
 
 
-CMD_HELP.update({
-    "ssvideo":
-    "`.ssvideo` <grid>"
-    "\nUsage: Capture video frames by <grid> x <grid>."
-    "\n*max grid is 10."
-})
+CMD_HELP.update(
+    {
+        "ssvideo": "`.ssvideo` <grid>"
+        "\nUsage: Capture video frames by <grid> x <grid>."
+        "\n*max grid is 10."
+    }
+)

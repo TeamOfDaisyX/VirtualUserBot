@@ -152,9 +152,6 @@ async def apkr(event):
         await event.edit("Exception Occured:- " + str(err))
 
 
-
-        
-        
 CMD_HELP.update(
     {
         "app": ".app [app name]\
