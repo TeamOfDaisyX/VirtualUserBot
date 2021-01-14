@@ -25,7 +25,7 @@
 # 
 
 # Deploy Guide
-<p align="left"><a href="https://youtu.be/hMhcKxNi-vw"><img src="https://telegra.ph/file/35c283a78116be8499da0.png" width="400"></a></p> 
+<p align="left"><a href="https://youtu.be/hMhcKxNi-vw"><img src="https://telegra.ph/file/35c283a78116be8499da0.png" width="300"></a></p> 
 <a href="https://youtu.be/hMhcKxNi-vw"><img src="https://img.shields.io/badge/How%20To-Deploy-red.svg?logo=Youtube"></a>
 
 # ❤️ Support
@@ -203,19 +203,15 @@ Most of the Plugins Taken from this Project.. Made possible by this. Full Credit
 Image Tools Plugins Copied from DC Project.. Credits to DC Team
 
 - CatUserbot
-
 Internal Core Plugins taken.. Helped a lot to fix bugs in source.. Full respect
 
 - Uniborg
-
 Userbots Made possible. Credits
 
 - TeleBot
-
 Speed Boosted by the help of this source code.. Credits
 
 - Black Lightning
-
 Got Fun tools from this.. Respect
 
 
