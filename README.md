@@ -29,7 +29,9 @@ Complete guide on deploying VirtualUserbot to Heroku.
 
 <p align="left"><ba href="https://youtu.be/hMhcKxNi-vw"><img src="https://telegra.ph/file/35c283a78116be8499da0.png" width="300"></a></p> 
 <a href="https://youtu.be/hMhcKxNi-vw"><img src="https://img.shields.io/badge/How%20To-Deploy-red.svg?logo=Youtube"></a>
+
 ☆ Video by [TWE](techwizardent.com) ☆
+
 # ❤️ Support
 
 <a href="https://t.me/Infinity_Bots"><img src="https://img.shields.io/badge/Join-Telegram%20Channel-red.svg?logo=Telegram"></a>
