@@ -31,6 +31,6 @@ jobs:
           commit_message: 'pylint: auto fixes'
           commit_options: '--no-verify'
           repository: .
-          commit_user_name: Starkgangs
-          commit_user_email: Starkgangz@gmail.com
-          commit_author: Starkgangs <Starkgangz@gmail.com>
+          commit_user_name: InukaaAith
+          commit_user_email: inukaasith7@gmail.com
+          commit_author: InukaAsith <inukaasith7@gmail.com>
