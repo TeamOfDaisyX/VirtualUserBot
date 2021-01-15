@@ -6,10 +6,11 @@ import cfscrape  # https://github.com/Anorov/cloudflare-scrape
 import requests
 from bs4 import BeautifulSoup
 
-from ..utils import admin_cmd, humanbytes
 from fridaybot import pro
+
+from ..utils import admin_cmd, humanbytes
+
 if pro == True:
-    
 
     @borg.on(
         admin_cmd(pattern="movie (torrentz2\.eu|idop\.se) (.*)")  # pylint:disable=E0602
@@ -57,7 +58,6 @@ if pro == True:
             parse_mode="html",
         )
 
-
     def search_idop_se(search_query):
         r = []
         url = "https://idope.se/search/{}/".format(search_query)
@@ -81,7 +81,6 @@ if pro == True:
                 }
             )
         return r
-
 
     def search_torrentz_eu(search_query):
         r = []
