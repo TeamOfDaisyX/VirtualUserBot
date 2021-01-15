@@ -73,7 +73,6 @@ if pro == True:
                 parse_mode="html",
             )
 
-
     @bot.on(admin_cmd(pattern=r"savepwel ?(.*)"))
     @bot.on(sudo_cmd(pattern=r"savepwel ?(.*)", allow_sudo=True))
     async def save_welcome(event):
@@ -91,7 +90,10 @@ if pro == True:
                     \nThe following message is saved as the welcome note for the {event.chat.title}, Dont delete this message !!",
                 )
                 msg_o = await event.client.forward_messages(
-                    entity=BOTLOG_CHATID, messages=msg, from_peer=event.chat_id, silent=True
+                    entity=BOTLOG_CHATID,
+                    messages=msg,
+                    from_peer=event.chat_id,
+                    silent=True,
                 )
                 msg_id = msg_o.id
             else:
@@ -111,7 +113,6 @@ if pro == True:
             return await edit_or_reply(event, success.format("updated"))
         await edit_or_reply("Error while setting welcome in this group")
 
-
     @bot.on(admin_cmd(pattern="clearpwel$"))
     @bot.on(sudo_cmd(pattern="clearpwel$", allow_sudo=True))
     async def del_welcome(event):
@@ -121,7 +122,6 @@ if pro == True:
             await edit_or_reply(event, "`Welcome note deleted for this chat.`")
         else:
             await edit_or_reply(event, "`Do I have a welcome note here ?`")
-
 
     @bot.on(admin_cmd(pattern="listpwel$"))
     @bot.on(sudo_cmd(pattern="listpwel$", allow_sudo=True))
