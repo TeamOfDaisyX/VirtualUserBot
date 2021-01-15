@@ -41,7 +41,7 @@ async def _(event):
         await moods.edit("Reply to a photo to add to my personal sticker pack.")
         return
     reply_message = await event.get_reply_message()
-    sticker_emoji = "😎"
+    sticker_emoji = await get_sticker_emoji(event)
     input_str = event.pattern_match.group(1)
     if input_str:
         sticker_emoji = input_str
@@ -55,16 +55,16 @@ async def _(event):
     userid = event.sender_id
     # packname = f"FRIDAY PACK"
     # packshortname = f"FRIDAY_{userid}_ns"  # format: Uni_Borg_userid
-    if userid == 1141839926:
-        packname = f"@Infinity_Bots Packs "
-        packshortname = "Infinity_Bots"
+    if userid == 1263617196:
+        packname = f"@StarkGang Packs 🎭"
+        packshortname = "StarkGangPack"
     else:
         packname = f"@{user.username} KangPack {pack}"
-        packshortname = f"Infinity_Bots_{userid}_Pack"
+        packshortname = f"FRIDAY_{userid}_Pack"
     await moods.edit("`This Sticker is Gonna Get Stolen.....`")
 
     is_a_s = is_it_animated_sticker(reply_message)
-    file_ext_ns_ion = "@VirtualUserbot.png"
+    file_ext_ns_ion = "@FRIDAYOT.png"
     file = await borg.download_file(reply_message.media)
     uploaded_sticker = None
     if is_a_s:
@@ -75,7 +75,7 @@ async def _(event):
             packshortname = "StarkGangisgreat"
         else:
             packname = f"@{user.username} KangPack {pack}"
-            packshortname = f"Infinity_Bots_{userid}"  # format: Uni_Borg_userid
+            packshortname = f"FRIDAY_{userid}"  # format: Uni_Borg_userid
     elif not is_message_image(reply_message):
         await moods.edit("Invalid message type")
         return
@@ -447,6 +447,13 @@ def find_instance(items, class_or_tuple):
             return item
     return None
 
+async def get_sticker_emoji(event):
+    reply_message = await event.get_reply_message()
+    try:
+        final_emoji = reply_message.media.document.attributes[1].alt
+    except:
+        final_emoji = '😎'
+    return final_emoji
 
 def zipdir(path, ziph):
     # ziph is zipfile handle
