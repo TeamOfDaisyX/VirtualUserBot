@@ -122,7 +122,7 @@ if bool(ENV):
     # Default .alive name
     ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
     lang = os.environ.get("lang", "si")
-
+    pro = os.environ.get("pro", False)
     LESS_SPAMMY = os.environ.get("LESS_SPAMMY", True)
 
     # Time & Date - Country and Time Zone
