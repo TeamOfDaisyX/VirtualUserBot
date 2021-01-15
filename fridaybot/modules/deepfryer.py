@@ -29,18 +29,21 @@
 # SOFTWARE.
 """ Userbot module for frying stuff. ported by @NeoMatrix90 """
 
-import io
+import os
 from random import randint, uniform
-from fridaybot.function import convert_to_image, crop_vid, runcmd
-from fridaybot.utils import friday_on_cmd, sudo_cmd
+
 from PIL import Image, ImageEnhance, ImageOps
 from telethon.tl.types import DocumentAttributeFilename
 from uniborg.util import friday_on_cmd
+
 from fridaybot import CMD_HELP
-import os 
+from fridaybot.function import convert_to_image
+from fridaybot.utils import friday_on_cmd
+
 sedpath = "./starkgangz/"
 if not os.path.isdir(sedpath):
     os.makedirs(sedpath)
+
 
 @friday.on(friday_on_cmd(pattern="deepfry(?: |$)(.*)"))
 async def deepfryer(event):
@@ -64,7 +67,8 @@ async def deepfryer(event):
     ok = "./starkgangz/" + file_name
     await event.reply(file=ok)
     os.remove(ok)
-    
+
+
 async def deepfry(img: Image) -> Image:
     colours = (
         (randint(50, 200), randint(40, 170), randint(40, 190)),
