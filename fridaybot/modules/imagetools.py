@@ -12,21 +12,21 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
+import html
 import os
 from shutil import rmtree
+
 import cv2
 import numpy as np
 import requests
 from PIL import Image, ImageDraw, ImageFont
 from telegraph import upload_file
+from telethon.tl.functions.users import GetFullUserRequest
+
 from fridaybot import CMD_HELP
 from fridaybot.function import convert_to_image, crop_vid, runcmd
 from fridaybot.utils import friday_on_cmd, sudo_cmd
-import html
-from telethon.tl.functions.photos import GetUserPhotosRequest
-from telethon.tl.functions.users import GetFullUserRequest
-from telethon.tl.types import MessageEntityMentionName
-from telethon.utils import get_input_location
+
 sedpath = "./starkgangz/"
 if not os.path.isdir(sedpath):
     os.makedirs(sedpath)
@@ -45,7 +45,7 @@ async def hmm(event):
         "./resources/imgcolour/colouregex.prototxt",
         "./resources/imgcolour/colorization_release_v2.caffemodel",
     )
-    
+
     pts = np.load("./resources/imgcolour/pts_in_hull.npy")
     class8 = net.getLayerId("class8_ab")
     conv8 = net.getLayerId("conv8_313_rh")
@@ -182,7 +182,8 @@ async def lolmetrg(event):
     for files in (lolbruh, img):
         if files and os.path.exists(files):
             os.remove(files)
-            
+
+
 @friday.on(friday_on_cmd(pattern=r"geyuser"))
 @friday.on(sudo_cmd(pattern=r"geyuser", allow_sudo=True))
 async def lolmetrg(event):
@@ -195,13 +196,12 @@ async def lolmetrg(event):
     r = requests.get(lolul)
     open("geys.png", "wb").write(r.content)
     lolbruh = "geys.png"
-    await borg.send_file(
-        event.chat_id, lolbruh, caption="`You iz Gey.`", reply_to=sed
-    )
+    await borg.send_file(event.chat_id, lolbruh, caption="`You iz Gey.`", reply_to=sed)
     for files in (lolbruh, img):
         if files and os.path.exists(files):
             os.remove(files)
-            
+
+
 @friday.on(friday_on_cmd(pattern=r"pix"))
 @friday.on(sudo_cmd(pattern=r"pix", allow_sudo=True))
 async def lolmetrg(event):
@@ -221,6 +221,7 @@ async def lolmetrg(event):
         if files and os.path.exists(files):
             os.remove(files)
 
+
 @friday.on(friday_on_cmd(pattern=r"ytc"))
 @friday.on(sudo_cmd(pattern=r"ytc", allow_sudo=True))
 async def lolmetrg(event):
@@ -228,7 +229,7 @@ async def lolmetrg(event):
     sed = await event.get_reply_message()
     hmm_s = await borg(GetFullUserRequest(sed.sender_id))
     if not hmm_s.profile_photo:
-        imglink = 'https://telegra.ph/file/b9684cda357dfbe6f5748.jpg'
+        imglink = "https://telegra.ph/file/b9684cda357dfbe6f5748.jpg"
     elif hmm_s.profile_photo:
         img = await borg.download_media(hmm_s.profile_photo, sedpath)
         url_s = upload_file(img)
@@ -237,19 +238,18 @@ async def lolmetrg(event):
     if first_name is not None:
         first_name = first_name.replace("\u2060", "")
     if sed.text is None:
-        comment = 'Give Some Text'
+        comment = "Give Some Text"
     else:
         comment = sed.raw_text
     lolul = f"https://some-random-api.ml/canvas/youtube-comment?avatar={imglink}&username={first_name}&comment={comment}"
     r = requests.get(lolul)
     open("ytc.png", "wb").write(r.content)
     lolbruh = "ytc.png"
-    await borg.send_file(
-        event.chat_id, lolbruh, caption="`Hmm Nice.`", reply_to=sed
-    )
+    await borg.send_file(event.chat_id, lolbruh, caption="`Hmm Nice.`", reply_to=sed)
     for files in (lolbruh, img):
         if files and os.path.exists(files):
             os.remove(files)
+
 
 @friday.on(friday_on_cmd(pattern=r"jail"))
 @friday.on(sudo_cmd(pattern=r"jail", allow_sudo=True))
@@ -260,7 +260,7 @@ async def hmm(event):
     hmmu = await event.reply("hmm... Sending him to jail...🚶")
     await event.get_reply_message()
     img = await convert_to_image(event, borg)
-    sed = await event.get_reply_message()
+    await event.get_reply_message()
     img = await convert_to_image(event, borg)
     mon = "./resources/jail/hmm.png"
     foreground = Image.open(mon).convert("RGBA")
@@ -396,6 +396,8 @@ async def img(event):
         if files and os.path.exists(files):
             os.remove(files)
         event.delete()
+
+
 # Credits To These :
 # https://github.com/midnightmadwalk [TG: @MidnightMadwalk]
 # https://github.com/code-rgb [TG: @DeletedUser420]
@@ -452,7 +454,6 @@ async def spinshit(message):
     rmtree(path, ignore_errors=True)
 
 
-
 @friday.on(friday_on_cmd(pattern=r"lnews ?(.*)"))
 @friday.on(sudo_cmd(pattern=r"lnews ?(.*)", allow_sudo=True))
 async def hmm(event):
@@ -466,16 +467,16 @@ async def hmm(event):
     hmmu = await event.reply("hmm... Starting Live News Stream...🚶")
     await event.get_reply_message()
     img = await convert_to_image(event, borg)
-    sed = await event.get_reply_message()
+    await event.get_reply_message()
     img = await convert_to_image(event, borg)
     background = Image.open(img)
     newss = "./resources/live/news.png"
     foreground = Image.open(newss)
     im = background.resize((2800, 1500))
-    im.paste(foreground, (0,0), mask = foreground)
+    im.paste(foreground, (0, 0), mask=foreground)
     d1 = ImageDraw.Draw(im)
     myFont = ImageFont.truetype("./resources/live/font.ttf", 165)
-    d1.text((7, 1251), text, font=myFont, fill =(0, 0, 0))
+    d1.text((7, 1251), text, font=myFont, fill=(0, 0, 0))
 
     im.save("./starkgangz/livenews.png")
     file_name = "livenews.png"
@@ -485,8 +486,6 @@ async def hmm(event):
     for files in (ok, img):
         if files and os.path.exists(files):
             os.remove(files)
-
-
 
 
 CMD_HELP.update(
