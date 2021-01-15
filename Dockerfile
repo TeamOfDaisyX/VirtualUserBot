@@ -8,15 +8,12 @@ RUN apt-get install -y\
     coreutils \
     bash \
     bzip2 \
-    xrdp \
-    pulseaudio \ 
-    screen \
+    mpv \
     curl \
     tesseract-ocr \
     tesseract-ocr-eng \
     imagemagick \
     figlet \
-    mplayer \
     gcc \
     g++ \
     git \
