@@ -10,11 +10,11 @@ import cfscrape  # https://github.com/Anorov/cloudflare-scrape
 import requests
 from bs4 import BeautifulSoup as bs
 
-from fridaybot import CMD_HELP , pro
+from fridaybot import CMD_HELP, pro
 
 from ..utils import admin_cmd, humanbytes
+
 if pro == True:
-    
 
     def dogbin(magnets):
         counter = 0
@@ -27,7 +27,6 @@ if pro == True:
             urls.append(url)
             counter += 1
         return urls
-
 
     @bot.on(admin_cmd(pattern="tsearch ?(.*)"))
     async def tor_search(event):
@@ -102,7 +101,6 @@ if pro == True:
             counter += 1
         await event.edit(msg, link_preview=False)
 
-
     @bot.on(admin_cmd(pattern=r"movie (torrentz2\.eu|idop\.se) (.*)"))
     async def _(event):
         if event.fwd_from:
@@ -147,7 +145,6 @@ if pro == True:
             parse_mode="html",
         )
 
-
     def search_idop_se(search_query):
         r = []
         url = "https://idope.se/search/{}/".format(search_query)
@@ -171,7 +168,6 @@ if pro == True:
                 }
             )
         return r
-
 
     def search_torrentz_eu(search_query):
         r = []
