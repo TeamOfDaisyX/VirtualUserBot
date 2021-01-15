@@ -32,7 +32,7 @@ from telethon.tl.types import (
 )
 
 from fridaybot import BOTLOG, BOTLOG_CHATID, CMD_HELP
-from fridaybot.utils import admin_cmd, errors_handler, sudo_cmd
+from fridaybot.utils import admin_cmd, errors_handler
 
 # =================== CONSTANT ===================
 PP_TOO_SMOL = "`The image is too small`"
@@ -156,7 +156,9 @@ async def promote(promt):
     # Try to promote if current user is admin or creator
     try:
         await promt.client(EditAdminRequest(promt.chat_id, user.id, new_rights, rank))
-        await promt.edit(f"Sucessfully, Promoted [{user.first_name}](tg://user?id={user.id}) in {promt.chat.title}")
+        await promt.edit(
+            f"Sucessfully, Promoted [{user.first_name}](tg://user?id={user.id}) in {promt.chat.title}"
+        )
 
     # If Telethon spit BadRequestError, assume
     # we don't have Promote permission
@@ -214,7 +216,9 @@ async def demote(dmod):
     except BadRequestError:
         await dmod.edit(NO_PERM)
         return
-    await dmod.edit(f"Demoted, [{user.first_name}](tg://user?id={user.id}) in {dmod.chat.title} Sucessfully!")
+    await dmod.edit(
+        f"Demoted, [{user.first_name}](tg://user?id={user.id}) in {dmod.chat.title} Sucessfully!"
+    )
 
     # Announce to the logging group if we have demoted successfully
     if BOTLOG:
@@ -267,9 +271,13 @@ async def ban(bon):
     # is done gracefully
     # Shout out the ID, so that fedadmins can fban later
     if reason:
-        await bon.edit(f"Sucessfully, Banned [{user.first_name}](tg://user?id={user.id}) in {bon.chat.title} For Reason: {reason}")
+        await bon.edit(
+            f"Sucessfully, Banned [{user.first_name}](tg://user?id={user.id}) in {bon.chat.title} For Reason: {reason}"
+        )
     else:
-        await bon.edit(f"Sucessfully, Banned [{user.first_name}](tg://user?id={user.id}) in {bon.chat.title}")
+        await bon.edit(
+            f"Sucessfully, Banned [{user.first_name}](tg://user?id={user.id}) in {bon.chat.title}"
+        )
     # Announce to the logging group if we have banned the person
     # successfully!
     if BOTLOG:
@@ -308,7 +316,9 @@ async def nothanos(unbon):
 
     try:
         await unbon.client(EditBannedRequest(unbon.chat_id, user.id, UNBAN_RIGHTS))
-        await unbon.edit(f"Sucessfully, UnBanned, [{user.first_name}](tg://user?id={user.id}) in {unbon.chat.title}")
+        await unbon.edit(
+            f"Sucessfully, UnBanned, [{user.first_name}](tg://user?id={user.id}) in {unbon.chat.title}"
+        )
 
         if BOTLOG:
             await unbon.client.send_message(
@@ -490,7 +500,9 @@ async def pin(msg):
         await msg.edit(NO_PERM)
         return
 
-    await msg.edit(f"I Have Pinned This [Message](http://t.me/c/{msg.chat_id}/{to_pin})")
+    await msg.edit(
+        f"I Have Pinned This [Message](http://t.me/c/{msg.chat_id}/{to_pin})"
+    )
     user = await get_user_from_id(msg.from_id, msg)
 
     if BOTLOG:
@@ -537,7 +549,9 @@ async def kick(usr):
             f"I Have Kicked [{user.first_name}](tg://user?id={user.id}) from {usr.chat.title} For Reason : {reason}"
         )
     else:
-        await usr.edit(f"Kicked [{user.first_name}](tg://user?id={user.id}) from {usr.chat.title}")
+        await usr.edit(
+            f"Kicked [{user.first_name}](tg://user?id={user.id}) from {usr.chat.title}"
+        )
 
     if BOTLOG:
         await usr.client.send_message(
