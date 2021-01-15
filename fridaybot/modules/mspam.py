@@ -1,49 +1,51 @@
 # Written By Inuka Asith for VirtualUserbot
 
 from ..utils import admin_cmd
+from fridaybot import pro
 
+if pro == True:
 
-@bot.on(admin_cmd(pattern="mspam (.*)"))
-async def tiny_pic_spam(e):
+    @bot.on(admin_cmd(pattern="mspam (.*)"))
+    async def tiny_pic_spam(e):
 
-    sender = await e.get_sender()
-    me = await e.client.get_me()
+        sender = await e.get_sender()
+        me = await e.client.get_me()
 
-    if not sender.id == me.id and not FULL_SUDO:
+        if not sender.id == me.id and not FULL_SUDO:
 
-        return await e.reply("`Sorry sudo users cant access this command..`")
+            return await e.reply("`Sorry sudo users cant access this command..`")
 
-    try:
+        try:
 
-        await e.delete()
+            await e.delete()
 
-    except:
+        except:
 
-        pass
+            pass
 
-    try:
+        try:
 
-        counter = int(e.pattern_match.group(1).split(" ", 1)[0])
+            counter = int(e.pattern_match.group(1).split(" ", 1)[0])
 
-        reply_message = await e.get_reply_message()
+            reply_message = await e.get_reply_message()
 
-        if (
-            not reply_message
-            or not e.reply_to_msg_id
-            or not reply_message.media
-            or not reply_message.media
-        ):
+            if (
+                not reply_message
+                or not e.reply_to_msg_id
+                or not reply_message.media
+                or not reply_message.media
+            ):
 
-            return await e.edit("```Reply to a pic/sticker/gif/video message```")
+                return await e.edit("```Reply to a pic/sticker/gif/video message```")
 
-        message = reply_message.media
+            message = reply_message.media
 
-        for i in range(1, counter):
+            for i in range(1, counter):
 
-            await e.client.send_file(e.chat_id, message)
+                await e.client.send_file(e.chat_id, message)
 
-    except:
+        except:
 
-        return await e.reply(
-            f"**Error**\nUsage `!mspam <count> reply to a sticker/gif/photo/video`"
-        )
+            return await e.reply(
+                f"**Error**\nUsage `!mspam <count> reply to a sticker/gif/photo/video`"
+            )
