@@ -4,8 +4,9 @@ import requests
 from iplookup import iplookup
 from selenium import webdriver
 from youtube_search import YoutubeSearch
-from fridaybot.function import apk_dl
+
 from fridaybot import CMD_HELP
+from fridaybot.function import apk_dl
 from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 
 
@@ -26,19 +27,19 @@ async def _(event):
         file=imgpath,
         caption=f"**WEBSHOT OF** `{urlissed}` \n**Powered By @VirtualUserbot\nThanks to @FridayOT**",
     )
-    
-    
+
+
 @friday.on(friday_on_cmd(pattern="rmeme$"))
 @friday.on(sudo_cmd(pattern="rmeme$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
     await event.delete()
-    hmm_s = 'https://some-random-api.ml/meme'
+    hmm_s = "https://some-random-api.ml/meme"
     r = requests.get(url=hmm_s).json()
-    image_s = r['image']
-    await borg.send_file(event.chat_id, file=image_s, caption=r['caption'])
-    
+    image_s = r["image"]
+    await borg.send_file(event.chat_id, file=image_s, caption=r["caption"])
+
 
 @friday.on(friday_on_cmd(pattern="lp ?(.*)"))
 @friday.on(sudo_cmd(pattern="lp ?(.*)", allow_sudo=True))
@@ -168,7 +169,8 @@ async def _(event):
         await stark_result.edit(noob, parse_mode="HTML")
     except:
         await event.edit("Some Thing Went Wrong.")
-        
+
+
 @friday.on(friday_on_cmd(pattern="akd ?(.*)"))
 @friday.on(sudo_cmd(pattern="akd ?(.*)", allow_sudo=True))
 async def _(event):
@@ -176,7 +178,8 @@ async def _(event):
     if event.fwd_from:
         return
     pathz, name = await apk_dl(akkad, Config.TMP_DOWNLOAD_DIRECTORY, event)
-    await borg.send_file(event.chat_id, pathz, caption='Uploaded By @VirtualUserbot')
+    await borg.send_file(event.chat_id, pathz, caption="Uploaded By @VirtualUserbot")
+
 
 CMD_HELP.update(
     {
