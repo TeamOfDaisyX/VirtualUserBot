@@ -8,10 +8,12 @@ import urllib
 
 import requests
 
+from fridaybot import pro
+
 from ..utils import admin_cmd, sudo_cmd
 
-from fridaybot import pro
 if pro == True:
+
     @bot.on(admin_cmd("boobs$"))
     @bot.on(sudo_cmd(pattern="boobs$", allow_sudo=True))
     async def boobs(event):
@@ -27,7 +29,6 @@ if pro == True:
         os.remove(pic_loc)
         await event.delete()
         await a.delete()
-
 
     @bot.on(admin_cmd("butts$"))
     @bot.on(sudo_cmd(pattern="butts$", allow_sudo=True))
