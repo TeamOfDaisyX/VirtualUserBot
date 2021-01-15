@@ -41,7 +41,7 @@ async def _(event):
         await moods.edit("Reply to a photo to add to my personal sticker pack.")
         return
     reply_message = await event.get_reply_message()
-    sticker_emoji = "😎"
+    sticker_emoji = await get_sticker_emoji(event)
     input_str = event.pattern_match.group(1)
     if input_str:
         sticker_emoji = input_str
@@ -447,6 +447,13 @@ def find_instance(items, class_or_tuple):
             return item
     return None
 
+async def get_sticker_emoji(event):
+    reply_message = await event.get_reply_message()
+    try:
+        final_emoji = reply_message.media.document.attributes[1].alt
+    except:
+        final_emoji = '😎'
+    return final_emoji
 
 def zipdir(path, ziph):
     # ziph is zipfile handle
