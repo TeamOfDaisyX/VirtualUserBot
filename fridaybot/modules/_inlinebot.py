@@ -626,6 +626,7 @@ async def inline_id_handler(event: events.InlineQuery.Event):
             )
     await event.answer(results)
 
+
 @tgbot.on(events.InlineQuery(pattern=r"yt (.*)"))
 async def inline_id_handler(event: events.InlineQuery.Event):
     builder = event.builder
@@ -659,7 +660,7 @@ async def inline_id_handler(event: events.InlineQuery.Event):
         stark_chnnl = moon["channel"]
         total_stark = moon["duration"]
         stark_views = moon["views"]
-        lol_desc = moon["long_desc"]
+        moon["long_desc"]
         kekme = f"https://img.youtube.com/vi/{hmm}/hqdefault.jpg"
         okayz = f"**Title :** `{stark_name}` \n**Link :** `{kek}` \n**Channel :** `{stark_chnnl}` \n**Views :** `{stark_views}` \n**Duration :** `{total_stark}`"
         hmmkek = f"Video Name : {stark_name} \nChannel : {stark_chnnl} \nDuration : {total_stark} \nViews : {stark_views}"
@@ -671,16 +672,14 @@ async def inline_id_handler(event: events.InlineQuery.Event):
                 text=okayz,
                 include_media=True,
                 buttons=[
-                [custom.Button.inline("Download Video - mp4", data=f"yt_vid_{mo}")],
-                [custom.Button.inline("Download Audio - mp3", data=f"yt_dla_{mo}")],
-                [Button.switch_inline("Search Again", query="yt ", same_peer=True)],
-                ]
-              )
+                    [custom.Button.inline("Download Video - mp4", data=f"yt_vid_{mo}")],
+                    [custom.Button.inline("Download Audio - mp3", data=f"yt_dla_{mo}")],
+                    [Button.switch_inline("Search Again", query="yt ", same_peer=True)],
+                ],
+            )
         )
     await event.answer(results)
-    
-    
-    
+
 
 @tgbot.on(events.InlineQuery(pattern=r"jm (.*)"))
 async def inline_id_handler(event: events.InlineQuery.Event):
