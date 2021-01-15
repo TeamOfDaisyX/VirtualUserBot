@@ -6,8 +6,10 @@
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from ..utils import admin_cmd
 from fridaybot import pro
+
+from ..utils import admin_cmd
+
 if pro == True:
 
     @borg.on(admin_cmd(pattern="xnxx?(.*)"))
@@ -23,7 +25,9 @@ if pro == True:
                 response = conv.wait_event(
                     events.NewMessage(incoming=True, from_users=264121194)
                 )
-                await event.client.send_message(chat, "💋2016 Videolar🔞{}".format(input_str))
+                await event.client.send_message(
+                    chat, "💋2016 Videolar🔞{}".format(input_str)
+                )
                 response = await response
             except YouBlockedUserError:
                 await event.reply("```Unblock @SeXn1bot```")
@@ -33,7 +37,6 @@ if pro == True:
             else:
                 await event.delete()
                 await event.client.send_file(event.chat_id, response.message)
-
 
     @borg.on(admin_cmd(pattern="picx?(.*)"))
     async def _(event):
@@ -48,7 +51,9 @@ if pro == True:
                 response = conv.wait_event(
                     events.NewMessage(incoming=True, from_users=264121194)
                 )
-                await event.client.send_message(chat, "♨️Old photo👙{}".format(input_str))
+                await event.client.send_message(
+                    chat, "♨️Old photo👙{}".format(input_str)
+                )
                 response = await response
             except YouBlockedUserError:
                 await event.reply("```Unblock @SeXn1bot```")
@@ -58,7 +63,6 @@ if pro == True:
             else:
                 await event.delete()
                 await event.client.send_file(event.chat_id, response.message)
-
 
     @borg.on(admin_cmd(pattern="les?(.*)"))
     async def _(event):
