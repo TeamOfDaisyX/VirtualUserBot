@@ -13,6 +13,7 @@ RUN apt-get install -y\
     tesseract-ocr-eng \
     imagemagick \
     figlet \
+    mplayer \
     gcc \
     g++ \
     git \
