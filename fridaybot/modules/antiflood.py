@@ -7,13 +7,13 @@ from fridaybot import CMD_HELP, pro
 from fridaybot.modules.sql_helper import floodsql as sql
 
 from ..utils import admin_cmd
+
 if pro == True:
     CHAT_FLOOD = sql.__load_flood_settings()
     # warn mode for anti flood
     ANTI_FLOOD_WARN_MODE = ChatBannedRights(
         until_date=None, view_messages=None, send_messages=True
     )
-
 
     @borg.on(admin_cmd(incoming=True))
     async def _(event):
@@ -44,7 +44,8 @@ if pro == True:
             )
             await asyncio.sleep(10)
             await no_admin_privilege_message.edit(
-                "This is useless SPAM dude . stop this enjoy chat man ", link_preview=False
+                "This is useless SPAM dude . stop this enjoy chat man ",
+                link_preview=False,
             )
         else:
             await event.client.send_message(
@@ -56,7 +57,6 @@ if pro == True:
                 ),
                 reply_to=event.message.id,
             )
-
 
     @borg.on(admin_cmd(pattern="setflood (.*)"))
     async def _(event):
