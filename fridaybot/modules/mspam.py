@@ -1,7 +1,8 @@
 # Written By Inuka Asith for VirtualUserbot
 
-from ..utils import admin_cmd
 from fridaybot import pro
+
+from ..utils import admin_cmd
 
 if pro == True:
 
