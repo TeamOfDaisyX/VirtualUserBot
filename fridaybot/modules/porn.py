@@ -6,93 +6,93 @@
 #
 # 😂😂😂
 
-
+from fridaybot import pro
 import asyncio
 
 from ..utils import admin_cmd
 
+if pro == True:
+    @borg.on(admin_cmd(pattern="porn"))
+    async def _(event):  # @danish_00 original
 
-@borg.on(admin_cmd(pattern="porn"))
-async def _(event):  # @danish_00 original
+        if event.fwd_from:
 
-    if event.fwd_from:
+            return
 
-        return
+        animation_interval = 0.2
 
-    animation_interval = 0.2
+        animation_ttl = range(0, 8)
 
-    animation_ttl = range(0, 8)
+        await event.edit("`Connecting...`")
 
-    await event.edit("`Connecting...`")
+        animation_chars = [  # @danish_00 original
+            "P_",
+            "PO_",
+            "POR_",
+            "PORN_",
+            "PORNH_",
+            "PORNHU_",
+            "PORNHUB_",
+            "[PORNHUB](www.porn93.cc)👄👅💦💦",  # @danish_00 original
+        ]
 
-    animation_chars = [  # @danish_00 original
-        "P_",
-        "PO_",
-        "POR_",
-        "PORN_",
-        "PORNH_",
-        "PORNHU_",
-        "PORNHUB_",
-        "[PORNHUB](www.porn93.cc)👄👅💦💦",  # @danish_00 original
-    ]
+        for i in animation_ttl:
 
-    for i in animation_ttl:
+            await asyncio.sleep(animation_interval)
 
-        await asyncio.sleep(animation_interval)
-
-        await event.edit(animation_chars[i % 8])
-
-
-@borg.on(admin_cmd(pattern=r"xvideos"))
-async def _(event):
-
-    if event.fwd_from:  # @danish_00 original
-
-        return
-
-    animation_interval = 0.2
-
-    animation_ttl = range(0, 7)
-
-    await event.edit("`Connecting...`")
-
-    animation_chars = [
-        "X_",
-        "XV_",
-        "XVI_",
-        "XVID_",
-        "XVIDE_",
-        "XVIDEO_",
-        "[XVIDEOS](www.xvideos4.com)🖕👄💦💦",
-    ]  # @danish_00 original
-
-    for i in animation_ttl:
-
-        await asyncio.sleep(animation_interval)
-
-        await event.edit(animation_chars[i % 7])
+            await event.edit(animation_chars[i % 8])
 
 
-import asyncio
+    @borg.on(admin_cmd(pattern=r"xvideos"))
+    async def _(event):
+
+        if event.fwd_from:  # @danish_00 original
+
+            return
+
+        animation_interval = 0.2
+
+        animation_ttl = range(0, 7)
+
+        await event.edit("`Connecting...`")
+
+        animation_chars = [
+            "X_",
+            "XV_",
+            "XVI_",
+            "XVID_",
+            "XVIDE_",
+            "XVIDEO_",
+            "[XVIDEOS](www.xvideos4.com)🖕👄💦💦",
+        ]  # @danish_00 original
+
+        for i in animation_ttl:
+
+            await asyncio.sleep(animation_interval)
+
+            await event.edit(animation_chars[i % 7])
 
 
-@borg.on(admin_cmd(pattern=r"xnxx"))  # @danish_00 original
-async def _(event):
+    import asyncio
 
-    if event.fwd_from:
 
-        return
+    @borg.on(admin_cmd(pattern=r"xnxx"))  # @danish_00 original
+    async def _(event):
 
-    animation_interval = 0.2
+        if event.fwd_from:
 
-    animation_ttl = range(0, 5)
+            return
 
-    await event.edit("`Connecting...`")  # @danish_00 original
+        animation_interval = 0.2
 
-    animation_chars = ["X_", "XN_", "XNX_", "XNXX_", "[XNXX](www.xnxx.wapca.cc)👉🏻👌💦👄💦"]
-    # @danish_00 original
-    for i in animation_ttl:
+        animation_ttl = range(0, 5)
 
-        await asyncio.sleep(animation_interval)
+        await event.edit("`Connecting...`")  # @danish_00 original
 
-        await event.edit(animation_chars[i % 5])
+        animation_chars = ["X_", "XN_", "XNX_", "XNXX_", "[XNXX](www.xnxx.wapca.cc)👉🏻👌💦👄💦"]
+        # @danish_00 original
+        for i in animation_ttl:
+
+            await asyncio.sleep(animation_interval)
+
+            await event.edit(animation_chars[i % 5])
