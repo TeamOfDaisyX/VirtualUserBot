@@ -6,12 +6,14 @@
 #
 # 😂😂😂
 
-from fridaybot import pro
 import asyncio
+
+from fridaybot import pro
 
 from ..utils import admin_cmd
 
 if pro == True:
+
     @borg.on(admin_cmd(pattern="porn"))
     async def _(event):  # @danish_00 original
 
@@ -42,7 +44,6 @@ if pro == True:
 
             await event.edit(animation_chars[i % 8])
 
-
     @borg.on(admin_cmd(pattern=r"xvideos"))
     async def _(event):
 
@@ -72,9 +73,7 @@ if pro == True:
 
             await event.edit(animation_chars[i % 7])
 
-
     import asyncio
-
 
     @borg.on(admin_cmd(pattern=r"xnxx"))  # @danish_00 original
     async def _(event):
@@ -89,7 +88,13 @@ if pro == True:
 
         await event.edit("`Connecting...`")  # @danish_00 original
 
-        animation_chars = ["X_", "XN_", "XNX_", "XNXX_", "[XNXX](www.xnxx.wapca.cc)👉🏻👌💦👄💦"]
+        animation_chars = [
+            "X_",
+            "XN_",
+            "XNX_",
+            "XNXX_",
+            "[XNXX](www.xnxx.wapca.cc)👉🏻👌💦👄💦",
+        ]
         # @danish_00 original
         for i in animation_ttl:
 
