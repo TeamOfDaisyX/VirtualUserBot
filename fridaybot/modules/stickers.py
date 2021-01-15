@@ -447,13 +447,15 @@ def find_instance(items, class_or_tuple):
             return item
     return None
 
+
 async def get_sticker_emoji(event):
     reply_message = await event.get_reply_message()
     try:
         final_emoji = reply_message.media.document.attributes[1].alt
     except:
-        final_emoji = '😎'
+        final_emoji = "😎"
     return final_emoji
+
 
 def zipdir(path, ziph):
     # ziph is zipfile handle
