@@ -9,6 +9,7 @@ RUN apt-get install -y\
     bash \
     bzip2 \
     mpv \
+    pavucontrol \
     curl \
     tesseract-ocr \
     tesseract-ocr-eng \
