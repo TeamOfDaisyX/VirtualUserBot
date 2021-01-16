@@ -20,8 +20,8 @@ async def _(event):
     # if input_str == "Read This Telegraph Whole info here":
     await event.edit("Thanks")
     animation_chars = [
-        "Click here to Go to Telegraph",
-        "[Click Here For Guide](https://telegra.ph/FRIDAY-06-15)",
+        "Click here to Go to our Official Website",
+        "[Click Here For Guide](https://techwizardent.com/blog/twe_blog_userbot.php)",
     ]
 
     for i in animation_ttl:
@@ -33,7 +33,18 @@ async def _(event):
 CMD_HELP.update(
     {
         "VirtualUserbot": "**VirtualUserbot**\
-\n\n**Syntax : **`.virtualuserbot`\
-\n**Usage :** Gives you Friday guide (VirtualUserbot is a developed version of Friday Project)."
+\n\n** Congragulations **\
+\n ` You have Successfully installed the VirtualUserbot`\
+\n\n Now you can find all new features in Whats New\
+\n\n In this Help menu You can find all the available commands with .help\
+\n `If you need more plugins contact @InukaASiTH`\
+\n Updates Channel:  @Infinity_Bots\
+\n Bot Support: @InfinityJE\
+\n Developed By: @InukaASiTH for @Infinity_Bots\
+\n Supporters: @Kaveesha_Induwara ,@Zzlll_lllzZ , @ImJanindu, @dasun_pamod \
+\n\n ❤️ Project Cloned and Developed based on @FridayOT Project ❤️\
+\n `Full Respect to Friday Devs`\
+\n\n\n**Try : **`.virtualuserbot`\
+\n**For :** full VirtualUserbot's guide."
     }
 )
