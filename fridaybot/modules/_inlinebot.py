@@ -256,7 +256,7 @@ if lang == "si":
         helpable_modules = sorted(helpable_modules)
         modules = [
             custom.Button.inline(
-                "{} {} {}".format("🔥", x, "🔥"), data="us_plugin_{}".format(x)
+                "{} {} {}".format(Config.EMOJI_TO_DISPLAY_IN_HELP, x, Config.EMOJI_TO_DISPLAY_IN_HELP), data="us_plugin_{}".format(x)
             )
             for x in helpable_modules
         ]
@@ -520,7 +520,7 @@ else:
         helpable_modules = sorted(helpable_modules)
         modules = [
             custom.Button.inline(
-                "{} {} {}".format("🔥", x, "🔥"), data="us_plugin_{}".format(x)
+                "{} {} {}".format(Config.EMOJI_TO_DISPLAY_IN_HELP, x, Config.EMOJI_TO_DISPLAY_IN_HELP), data="us_plugin_{}".format(x)
             )
             for x in helpable_modules
         ]
