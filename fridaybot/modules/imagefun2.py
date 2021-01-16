@@ -196,7 +196,7 @@ async def hehe(event):
     #  kang with credits
 
 
-@bot.on(admin_cmd(pattern=r"ytc"))
+@bot.on(admin_cmd(pattern=r"yttc"))
 async def hehe(event):
     if not event.reply_to_msg_id:
         await event.reply("Reply to any Image.")
@@ -212,7 +212,7 @@ async def hehe(event):
         global username, comment
         username, comment = text.split(".")
     except:
-        await event.edit("`.ytc username.comment reply  to image`")
+        await event.edit("`.yttc username.comment reply  to image`")
     await event.edit("`Processing...`")
     url_s = upload_file("danish.png")
     imglink = f"https://telegra.ph{url_s[0]}"
