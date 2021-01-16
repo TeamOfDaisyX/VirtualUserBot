@@ -232,6 +232,8 @@ async def gn(event):
         event,
         "**පල හුත්තෝ යන්න 😂\n තෝ සමාජයට විහිළුවක් ඕයි 😒**",
     )
+
+
 @bot.on(admin_cmd(pattern="tah$"))
 @bot.on(sudo_cmd(pattern="tah$", allow_sudo=True))
 async def gn(event):
@@ -239,6 +241,7 @@ async def gn(event):
         event,
         "** ටහුකන්න අලංකාර 😐🤚**",
     )
+
 
 @bot.on(admin_cmd(pattern="bs$"))
 @bot.on(sudo_cmd(pattern="bs$", allow_sudo=True))
@@ -248,22 +251,24 @@ async def gn(event):
         "** Good Night 🌙 Bs ☸️ Jp ✝️Tc 😘Byee...👋👋👋👋 **",
     )
 
+
 @bot.on(admin_cmd(pattern="aks$"))
 @bot.on(sudo_cmd(pattern="aks$", allow_sudo=True))
 async def gn(event):
     await edit_or_reply(
         event,
-       "** අනියම් කාම සේවනය තරයේ හෙලා දකිමි 🙈 **",
+        "** අනියම් කාම සේවනය තරයේ හෙලා දකිමි 🙈 **",
     )
+
 
 @bot.on(admin_cmd(pattern="ja$"))
 @bot.on(sudo_cmd(pattern="ja$", allow_sudo=True))
 async def gn(event):
     await edit_or_reply(
         event,
-       "** ජීවිතය අනියතය..☹️ මරණය නියතය 🙏 මහනවීම සැපය 🙏**",
-    )    
-    
+        "** ජීවිතය අනියතය..☹️ මරණය නියතය 🙏 මහනවීම සැපය 🙏**",
+    )
+
 
 @bot.on(admin_cmd(pattern=f"srun$", outgoing=True))
 @bot.on(sudo_cmd(pattern="snun$", allow_sudo=True))
