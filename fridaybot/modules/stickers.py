@@ -9,8 +9,7 @@ import math
 import os
 import zipfile
 from collections import defaultdict
-from io import BytesIO
-from fridaybot.function import convert_to_image, crop_vid, runcmd
+
 from PIL import Image
 from telethon.errors import MessageNotModifiedError
 from telethon.errors.rpcerrorlist import StickersetInvalidError
@@ -23,6 +22,7 @@ from telethon.tl.types import (
 )
 
 from fridaybot import ALIVE_NAME, CMD_HELP
+from fridaybot.function import convert_to_image
 from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Who is this"
@@ -79,9 +79,7 @@ async def _(event):
 
     else:
         sticker = convert_to_image(event, borg)
-        uploaded_sticker = await borg.upload_file(
-           sticker, file_name=file_ext_ns_ion  
-        )            
+        uploaded_sticker = await borg.upload_file(sticker, file_name=file_ext_ns_ion)
 
     await moods.edit("`Inviting This Sticker To Your Pack 🚶`")
 
