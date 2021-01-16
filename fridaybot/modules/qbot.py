@@ -5,7 +5,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from fridaybot import bot
 
-from ..utils import admin_cmd, edit_or_reply
+from ..utils import admin_cmd
 
 
 @borg.on(admin_cmd(pattern=r"qubot(?: |$)(.*)"))
