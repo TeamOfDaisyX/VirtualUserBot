@@ -146,6 +146,7 @@ if ENV:
         DEEP_AI = os.environ.get("DEEP_AI", None)
         TAG_LOG = os.environ.get("TAG_LOG", None)
         ENABLE_ASSISTANTBOT = os.environ.get("ENABLE_ASSISTANTBOT", "ENABLE")
+        EMOJI_TO_DISPLAY_IN_HELP = os.environ.get("EMOJI_TO_DISPLAY_IN_HELP", "🔥")
         TAG_FEATURE = os.environ.get("TAG_FEATURE", "DISABLE")
         JTM_CHANNEL_ID = int(os.environ.get("JTM_CHANNEL_ID", False))
         JTM_CHANNEL_USERNAME = os.environ.get("JTM_CHANNEL_USERNAME", None)
