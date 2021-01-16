@@ -8,7 +8,7 @@ from fridaybot import bot
 from ..utils import admin_cmd
 
 
-@borg.on(admin_cmd(pattern=r"qbot(?: |$)(.*)"))
+@borg.on(admin_cmd(pattern=r"qubot(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
