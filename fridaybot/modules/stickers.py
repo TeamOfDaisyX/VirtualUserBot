@@ -10,7 +10,7 @@ import os
 import zipfile
 from collections import defaultdict
 from io import BytesIO
-
+from fridaybot.function import convert_to_image, crop_vid, runcmd
 from PIL import Image
 from telethon.errors import MessageNotModifiedError
 from telethon.errors.rpcerrorlist import StickersetInvalidError
@@ -76,16 +76,12 @@ async def _(event):
         else:
             packname = f"@{user.username} KangPack {pack}"
             packshortname = f"Infinity_Bots_{userid}"  # format: Uni_Borg_userid
-    elif not is_message_image(reply_message):
-        await moods.edit("Invalid message type")
-        return
+
     else:
-        with BytesIO(file) as mem_file, BytesIO() as sticker:
-            resize_image(mem_file, sticker)
-            sticker.seek(0)
-            uploaded_sticker = await borg.upload_file(
-                sticker, file_name=file_ext_ns_ion
-            )
+        sticker = convert_to_image(event, borg)
+        uploaded_sticker = await borg.upload_file(
+           sticker, file_name=file_ext_ns_ion  
+        )            
 
     await moods.edit("`Inviting This Sticker To Your Pack 🚶`")
 
