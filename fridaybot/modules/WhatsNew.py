@@ -2,7 +2,7 @@ from fridaybot import CMD_HELP
 
 CMD_HELP.update(
     {
-        "Whats New": """**Update 3.0 :** Change the Bot's Language
+        "Whats New": """**Update 3.0 :** VirtualUserbot New features
         Brings You the Most Stable Reliese ever.
         
         ** Pro Mode **
