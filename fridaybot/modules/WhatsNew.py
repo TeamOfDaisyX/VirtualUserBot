@@ -11,7 +11,7 @@ CMD_HELP.update(
         `.set var pro True` => To Be a Pro (It is Free.. Not resposible for Bans)
         
         ** Custom Emoji on Help **
-        `.set var EMOJI_TO_DISPLAY_IN_HELP <emoji>
+        `.set var EMOJI_TO_DISPLAY_IN_HELP <emoji>`
         
         ** New features as Exclusive Module **
         See yourself on help as `exclusive`
