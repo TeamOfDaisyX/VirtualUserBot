@@ -91,6 +91,6 @@ countryinfo
 emoji-country-flag
 langdetect
 fontTools
-PyDictionary
+googletrans
 beautifulsoup4
 bs4
