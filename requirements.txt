@@ -83,7 +83,7 @@ anime_downloader
 pandas
 pydub
 validators
-googletrans==3.1.0a0
+googletrans
 spamwatch
 nekos.py
 deep_translator
