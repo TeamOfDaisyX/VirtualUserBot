@@ -8,8 +8,6 @@ RUN apt-get install -y\
     coreutils \
     bash \
     bzip2 \
-    mpv \
-    pavucontrol \
     curl \
     tesseract-ocr \
     tesseract-ocr-eng \
