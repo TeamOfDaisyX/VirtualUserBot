@@ -1,5 +1,5 @@
 Pillow
-git+https://github.com/cher-nov/cryptg
+cryptg
 nospamplus
 pymediainfo
 quote
@@ -69,7 +69,7 @@ cryptocompare
 cryptosteganography
 faker
 apscheduler
-git+https://github.com/gleitz/howdoi
+cryptg
 pokedex.py
 PyProxyToolkit
 cairosvg
