@@ -83,7 +83,6 @@ pydub
 validators
 spamwatch
 nekos.py
-deep_translator
 pornhub-api
 countryinfo
 emoji-country-flag
