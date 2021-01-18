@@ -201,7 +201,7 @@ async def _(event):
     await moods.edit(
         f"`This Sticker Has Came To Your Pack.` \n**Check It Out** [Here](t.me/addstickers/{packshortname})"
     )
-    os.remove(sedpath + "/" + "@FridayOT.png")
+    os.remove(sedpath + "/" + "@VirtualUserbot.png")
 
 
 @friday.on(friday_on_cmd(pattern="packinfo"))
