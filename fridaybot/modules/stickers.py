@@ -9,8 +9,7 @@ import math
 import os
 import zipfile
 from collections import defaultdict
-from io import BytesIO
-from fridaybot.function import convert_to_image, crop_vid, runcmd
+
 from PIL import Image
 from telethon.errors import MessageNotModifiedError
 from telethon.errors.rpcerrorlist import StickersetInvalidError
@@ -23,6 +22,7 @@ from telethon.tl.types import (
 )
 
 from fridaybot import ALIVE_NAME, CMD_HELP
+from fridaybot.function import convert_to_image
 from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 
 sedpath = Config.TMP_DOWNLOAD_DIRECTORY
@@ -73,9 +73,7 @@ async def _(event):
         sticker = await convert_to_image(event, borg)
         resize_image(sticker)
         ok = sedpath + "/" + "@FridayOT.png"
-        uploaded_sticker = await borg.upload_file(
-            ok, file_name=file_ext_ns_ion
-        )
+        uploaded_sticker = await borg.upload_file(ok, file_name=file_ext_ns_ion)
         os.remove(sticker)
     await moods.edit("`Inviting This Sticker To Your Pack 🚶`")
     async with borg.conversation("@Stickers") as bot_conv:
@@ -433,13 +431,15 @@ def find_instance(items, class_or_tuple):
             return item
     return None
 
+
 async def get_sticker_emoji(event):
     reply_message = await event.get_reply_message()
     try:
         final_emoji = reply_message.media.document.attributes[1].alt
     except:
-        final_emoji = '😎'
+        final_emoji = "😎"
     return final_emoji
+
 
 def zipdir(path, ziph):
     # ziph is zipfile handle
