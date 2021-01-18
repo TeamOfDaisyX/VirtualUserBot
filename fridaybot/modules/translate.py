@@ -5,8 +5,9 @@ Available Commands:
 
 from deep_translator import GoogleTranslator
 from googletrans import LANGUAGES
+from google_trans_new import google_translator
 from langdetect import detect
-
+import requests
 from fridaybot import CMD_HELP
 from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 
@@ -28,12 +29,14 @@ async def _(event):
     else:
         await edit_or_reply(event, "`.tr LanguageCode` as reply to a message")
         return
+
     lan = lan.strip()
     try:
+        translator = google_translator()
+        translated = translator.translate(text ,lang_tgt=lan)
         lmao_bruh = text
         lmao = detect(text)
         after_tr_text = lmao
-        translated = GoogleTranslator(source="auto", target=lan).translate(lmao_bruh)
         source_lan = LANGUAGES[after_tr_text]
         transl_lan = LANGUAGES[lan]
         output_str = f"""**TRANSLATED SUCCESSFULLY**
@@ -41,6 +44,7 @@ async def _(event):
 `{text}`
 **Translation ({transl_lan})**:
 `{translated}`"""
+      
         if len(output_str) >= 4096:
             out_file = output_str
             url = "https://del.dog/documents"
@@ -50,9 +54,8 @@ async def _(event):
         else:
             starky = output_str
         await edit_or_reply(event, starky)
-    except Exception as exc:
-        await edit_or_reply(event, str(exc))
-
+    except Exception as e:
+      print(e)
 
 CMD_HELP.update(
     {
