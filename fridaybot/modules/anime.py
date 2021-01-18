@@ -1,8 +1,9 @@
 from anime_downloader.sites import get_anime_class
+from mal import Anime, AnimeSearch, Manga, MangaSearch
 
 from fridaybot import CMD_HELP
 from fridaybot.utils import admin_cmd
-from mal import AnimeSearch, Anime, MangaSearch, Manga
+
 
 @friday.on(admin_cmd(pattern="anime (.*)"))
 async def _(event):
@@ -12,19 +13,21 @@ async def _(event):
     ommhg = await event.reply("Searching For Anime.....")
     lmao = input_str.split(":", 1)
     try:
-       site = lmao[1]
+        site = lmao[1]
     except:
-       site = "animeonline360"
-       await event.reply("Please Provide Site Name From Next Time. Now Continuing With Default Site.")
+        site = "animeonline360"
+        await event.reply(
+            "Please Provide Site Name From Next Time. Now Continuing With Default Site."
+        )
 
     lol = lmao[0]
     why = site.lower()
 
     Twist = get_anime_class(why)
     try:
-       search = Twist.search(lol)
+        search = Twist.search(lol)
     except:
-       await ommhg.edit("Please Try Different Site. Given Site Is Down.")
+        await ommhg.edit("Please Try Different Site. Given Site Is Down.")
 
     title1 = search[0].title
     url1 = search[0].url
@@ -55,10 +58,10 @@ async def _(event):
     anime = Anime(ID)
     jp = ""
     for x in anime.genres:
-      jp += x + ";  "
+        jp += x + ";  "
     link = anime.image_url
     if link == None:
-      link = search.results[0].image_url
+        link = search.results[0].image_url
     By = f"""<u><b>Anime Information Gathered</b></u>
 <b>tlele:- {search.results[0].title}
 Mal ID:- {search.results[0].mal_id}
@@ -96,10 +99,10 @@ async def _(event):
     manga = Manga(ID)
     jp = ""
     for x in manga.genres:
-      jp += x + ";  "
+        jp += x + ";  "
     link = manga.image_url
     if link == None:
-      link = search.results[0].image_url
+        link = search.results[0].image_url
     By = f"""<u><b>manga Information Gathered</b></u>
 <b>tlele:- {search.results[0].title}
 Mal ID:- {search.results[0].mal_id}
@@ -124,8 +127,6 @@ favorites:- {manga.favorites}</b>
         silent=True,
     )
     await event.delete()
-
-
 
 
 CMD_HELP.update(
