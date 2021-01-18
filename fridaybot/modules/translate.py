@@ -3,11 +3,11 @@ Available Commands:
 .tr LanguageCode as reply to a message
 .tr LangaugeCode | text to translate"""
 
-from deep_translator import GoogleTranslator
-from googletrans import LANGUAGES
-from google_trans_new import google_translator
-from langdetect import detect
 import requests
+from google_trans_new import google_translator
+from googletrans import LANGUAGES
+from langdetect import detect
+
 from fridaybot import CMD_HELP
 from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 
@@ -33,8 +33,7 @@ async def _(event):
     lan = lan.strip()
     try:
         translator = google_translator()
-        translated = translator.translate(text ,lang_tgt=lan)
-        lmao_bruh = text
+        translated = translator.translate(text, lang_tgt=lan)
         lmao = detect(text)
         after_tr_text = lmao
         source_lan = LANGUAGES[after_tr_text]
@@ -44,7 +43,7 @@ async def _(event):
 `{text}`
 **Translation ({transl_lan})**:
 `{translated}`"""
-      
+
         if len(output_str) >= 4096:
             out_file = output_str
             url = "https://del.dog/documents"
@@ -55,7 +54,8 @@ async def _(event):
             starky = output_str
         await edit_or_reply(event, starky)
     except Exception as e:
-      print(e)
+        print(e)
+
 
 CMD_HELP.update(
     {
