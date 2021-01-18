@@ -66,6 +66,7 @@ covid
 scapy
 scipy
 faker
+mal-api
 password_strength
 pyjokes
 cryptocompare
