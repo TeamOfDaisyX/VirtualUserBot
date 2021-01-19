@@ -249,14 +249,14 @@ async def fetch_feds(event, borg):
             await event.edit(
                 "`Boss, You Real Peru. You Are Admin in So Many Feds. WoW!`"
             )
-            await asyncio.sleep(6)
+            await asyncio.sleep(2)
             await response.click(0)
             await asyncio.sleep(6)
             fedfile = await bot_conv.get_response()
-            await asyncio.sleep(3)
+            await asyncio.sleep(2)
             if fedfile.media:
-                downloaded_file_name = await borg.download_media(fedfile, "fedlist")
-                await asyncio.sleep(6)
+                downloaded_file_name = await borg.download_media(fedfile, "fedlist.txt")
+                await asyncio.sleep(1)
                 file = open(downloaded_file_name, "r")
                 lines = file.readlines()
                 for line in lines:
