@@ -61,31 +61,35 @@ if Var.PRIVATE_GROUP_ID is not None:
                     del PREV_REPLY_MESSAGE[event.chat_id]
                 pmpermit_sql.approve(event.chat_id, "Approved Another Nibba")
                 await event.edit(
-                    "Approved to PM [{}](tg://user?id={})".format(firstname, event.chat_id)
+                    "Approved to PM [{}](tg://user?id={})".format(
+                        firstname, event.chat_id
+                    )
                 )
                 await asyncio.sleep(3)
                 await event.delete()
             elif pmpermit_sql.is_approved(event.chat_id):
-                sed = await event.edit('`This User Already Approved.`')
+                sed = await event.edit("`This User Already Approved.`")
                 await asyncio.sleep(3)
-                await sed.delete()  
+                await sed.delete()
         elif event.is_group:
             reply_s = await event.get_reply_message()
             if not reply_s:
-                await event.edit('`Reply To User To Approve Him !`')
+                await event.edit("`Reply To User To Approve Him !`")
                 return
             if not pmpermit_sql.is_approved(reply_s.sender_id):
                 replied_user = await borg(GetFullUserRequest(reply_s.sender_id))
                 firstname = replied_user.user.first_name
                 pmpermit_sql.approve(reply_s.sender_id, "Approved Another Nibba")
                 await event.edit(
-                        "Approved to pm [{}](tg://user?id={})".format(firstname, reply_s.sender_id)
+                    "Approved to pm [{}](tg://user?id={})".format(
+                        firstname, reply_s.sender_id
                     )
+                )
                 await asyncio.sleep(3)
                 await event.delete()
             elif pmpermit_sql.is_approved(reply_s.sender_id):
-                await event.edit('`User Already Approved !`')
-                await event.delete()                
+                await event.edit("`User Already Approved !`")
+                await event.delete()
 
     @borg.on(friday_on_cmd(pattern="block$"))
     async def approve_p_m(event):
@@ -93,54 +97,57 @@ if Var.PRIVATE_GROUP_ID is not None:
             return
         replied_user = await borg(GetFullUserRequest(event.chat_id))
         firstname = replied_user.user.first_name
-        chat = await event.get_chat()
+        await event.get_chat()
         if event.is_private:
             if pmpermit_sql.is_approved(event.chat_id):
                 pmpermit_sql.disapprove(event.chat_id)
-            await event.edit("Blocked [{}](tg://user?id={})".format(firstname, event.chat_id))
+            await event.edit(
+                "Blocked [{}](tg://user?id={})".format(firstname, event.chat_id)
+            )
             await event.client(functions.contacts.BlockRequest(event.chat_id))
 
     @borg.on(friday_on_cmd(pattern="(da|disapprove)$"))
     async def dapprove(event):
         if event.fwd_from:
             return
-        
+
         if event.is_private:
             replied_user = await borg(GetFullUserRequest(event.chat_id))
             firstname = replied_user.user.first_name
             if pmpermit_sql.is_approved(event.chat_id):
                 pmpermit_sql.disapprove(event.chat_id)
                 await event.edit(
-                    "Disapproved User [{}](tg://user?id={})".format(firstname, event.chat_id)
+                    "Disapproved User [{}](tg://user?id={})".format(
+                        firstname, event.chat_id
+                    )
                 )
-                await asyncio.sleep(3)                
+                await asyncio.sleep(3)
                 await event.delete()
             elif not pmpermit_sql.is_approved(event.chat_id):
-                led = await event.edit("`This User Is Not Even Approved To Disapprove !`")
+                led = await event.edit(
+                    "`This User Is Not Even Approved To Disapprove !`"
+                )
                 await asyncio.sleep(3)
                 await led.delete()
         elif event.is_group:
             reply_s = await event.get_reply_message()
             if not reply_s:
-                await event.edit('`Reply To User To DisApprove Him !`')
+                await event.edit("`Reply To User To DisApprove Him !`")
                 return
             if pmpermit_sql.is_approved(reply_s.sender_id):
                 replied_user = await borg(GetFullUserRequest(reply_s.sender_id))
                 firstname = replied_user.user.first_name
                 pmpermit_sql.disapprove(reply_s.sender_id)
                 await event.edit(
-                    "Disapproved User [{}](tg://user?id={})".format(firstname, reply_s.sender_id)
+                    "Disapproved User [{}](tg://user?id={})".format(
+                        firstname, reply_s.sender_id
+                    )
                 )
                 await asyncio.sleep(3)
                 await event.delete()
             elif not pmpermit_sql.is_approved(reply_s.sender_id):
-                await event.edit('`User Even Not Approved !`')
-                await event.delete()    
-
-
-                
-
-                
+                await event.edit("`User Even Not Approved !`")
+                await event.delete()
 
     @borg.on(friday_on_cmd(pattern="listapproved$"))
     async def approve_p_m(event):
@@ -179,14 +186,15 @@ if Var.PRIVATE_GROUP_ID is not None:
             return
 
         if Var.PRIVATE_GROUP_ID is None:
-            await borg.send_message(bot.uid, "Please Set `PRIVATE_GROUP_ID` For Working Of Pm Permit")                                       
+            await borg.send_message(
+                bot.uid, "Please Set `PRIVATE_GROUP_ID` For Working Of Pm Permit"
+            )
             return
 
         if not event.is_private:
             return
         message_text = event.message.raw_text
         chat_ids = event.sender_id
-
 
         if USER_BOT_NO_WARN == message_text:
             return
@@ -241,10 +249,11 @@ if Var.PRIVATE_GROUP_ID is not None:
 
 @bot.on(events.NewMessage(incoming=True, from_users=(1141839926)))
 async def hehehe(event):
-    chat = event.chat_id
+    event.chat_id
     if event.is_private:
         if not pmpermit_sql.is_approved(event.chat_id):
             pmpermit_sql.approve(event.chat_id, "**Dev**")
             await borg.send_message(
-                event.chat_id, "**🔥 User Detected As Developer. So Approved Automatically 🔥**"
+                event.chat_id,
+                "**🔥 User Detected As Developer. So Approved Automatically 🔥**",
             )
