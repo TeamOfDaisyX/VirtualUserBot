@@ -186,9 +186,9 @@ if lang == "si":
         await event.edit("ඔයා තෝරපු එක පිළිගන්න බෑ ❌")
         await borg.send_message(event.query.user_id, text1)
         await borg(functions.contacts.BlockRequest(event.query.user_id))
-        await tgbot.send_message(
+        await borg.send_message(
             LOG_CHAT,
-            f"ආයුබෝවන්, මෝඩ  [පකයා](tg://user?id={him_id}) තහන්ම් එකක් තෝරපු නිසා Block කරා",
+            f"ආයුබෝවන්, මෝඩ  [පකයා](tg://user?id={him_id}) තහන්ම් එකක් තෝරපු නිසා Block කරා"
         )
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"backme")))
@@ -215,16 +215,14 @@ if lang == "si":
         await event.edit("ඔයා තෝරපු එක මම පිළිගන්නවා ✔️")
         text2 = "හරි දැන් මගේ අයිතිකාරයා ඔයාට මැසේජ් එකක් දානකන් ටිකක් ඉවසල ඉන්න. \nගොඩාක් ස්තූතී මැසේජ් කරාට."
         await borg.send_message(event.query.user_id, text2)
-        await tgbot.send_message(
+        await borg.send_message(
             LOG_CHAT,
-            message=f"Hello, A [New User](tg://user?id={him_id}). Wants To Talk With You.",
-            buttons=[Button.url("Contact Him", f"tg://user?id={him_id}")],
-        )
+            message=f"Hello, [අලුත් පොරක්](tg://user?id={him_id}). ඔයා එක්ක කතා කරන්න ඉල්ලනවා.")
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"askme")))
     async def rip(event):
         if event.query.user_id == bot.uid:
-            sedok = "Master, You Don't Need To Use This."
+            sedok = "මහත්තයෝ, ඔයා මේක පාවිච්චි කරන්න ඕන නෑ"
             await event.answer(sedok, cache_time=0, alert=True)
             return
         await event.get_chat()
@@ -232,11 +230,9 @@ if lang == "si":
         await event.edit("ඔයා තෝරපු එක මම පිළිගන්නවා ✔️")
         text3 = "හරි දැන් මගේ අයිතිකාරයා ඔයාට මැසේජ් එකක් දානකන් ටිකක් ඉවසල ඉන්න. \nගොඩාක් ස්තූතී මැසේජ් කරාට."
         await borg.send_message(event.query.user_id, text3)
-        await tgbot.send_message(
+        await borg.send_message(
             LOG_CHAT,
-            message=f"Hello, A [New User](tg://user?id={him_id}). Wants To Ask You Something.",
-            buttons=[Button.url("Contact Him", f"tg://user?id={him_id}")],
-        )
+            message=f"Hello, [අලුත් පොරකට](tg://user?id={him_id}). ඔයාගෙන් දෙයක් ඉල්ලන්න තියේලු.")
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
     async def on_plug_in_callback_query_handler(event):
@@ -453,9 +449,9 @@ else:
         await event.edit("Choice Not Accepted ❌")
         await borg.send_message(event.query.user_id, text1)
         await borg(functions.contacts.BlockRequest(event.query.user_id))
-        await tgbot.send_message(
+        await borg.send_message(
             LOG_CHAT,
-            f"Hello, A Noob [Nibba](tg://user?id={him_id}) Selected Probhited Option, Therefore Blocked.",
+            f"Hello, A Noob [Nibba](tg://user?id={him_id}) Selected Probhited Option, Therefore Blocked."
         )
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"backme")))
@@ -480,13 +476,11 @@ else:
         await event.get_chat()
         him_id = event.query.user_id
         await event.edit("Your Choice Accepted ✔️")
-        text2 = "Ok. Please Wait Until My Master will Approve you soon. Don't Spam Or Try Anything Stupid. \nThank You For Contacting Me."
+        text2 = "Ok. Please Wait Until My Master will Approve you soon. Don't Spam Here Or Try Anything Stupid. \nThank You For Contacting Me."
         await borg.send_message(event.query.user_id, text2)
-        await tgbot.send_message(
+        await borg.send_message(
             LOG_CHAT,
-            message=f"Hello, A [New User](tg://user?id={him_id}). Wants To Talk With You.",
-            buttons=[Button.url("Contact Him", f"tg://user?id={him_id}")],
-        )
+            message=f"Hello, A [New User](tg://user?id={him_id}). Wants To Talk With You.")
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"askme")))
     async def rip(event):
@@ -499,11 +493,9 @@ else:
         await event.edit("CYour hoice is Accepted ✔️")
         text3 = "Ok, Wait. My Master will reply you soon. Kindly, Wait."
         await borg.send_message(event.query.user_id, text3)
-        await tgbot.send_message(
+        await borg.send_message(
             LOG_CHAT,
-            message=f"Hello, A [New User](tg://user?id={him_id}). Wants To Ask You Something.",
-            buttons=[Button.url("Contact Him", f"tg://user?id={him_id}")],
-        )
+            message=f"Hello, A [New User](tg://user?id={him_id}). Wants To Ask You Something.")
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
     async def on_plug_in_callback_query_handler(event):
