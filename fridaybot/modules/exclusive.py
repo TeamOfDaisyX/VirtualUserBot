@@ -83,7 +83,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "Exclusive": "**Exclusive**\
+        "exclusive": "**Exclusive**\
 \n**Syntax : **`.purl`\
 \n**Usage :** Get Public link of any file**\
 \n\n**Syntax : **`.reader`\
