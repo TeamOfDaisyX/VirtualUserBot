@@ -10,7 +10,7 @@ from fridaybot import pro
 
 from ..utils import admin_cmd, humanbytes
 
-if pro == True:
+if pro == "True":
 
     @borg.on(
         admin_cmd(pattern="movie (torrentz2\.eu|idop\.se) (.*)")  # pylint:disable=E0602
