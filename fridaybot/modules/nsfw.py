@@ -20,7 +20,7 @@ from uniborg.util import friday_on_cmd
 from fridaybot import CMD_HELP, pro
 from fridaybot.utils import admin_cmd, friday_on_cmd, sudo_cmd
 
-if pro == True:
+if pro == "True":
 
     @friday.on(friday_on_cmd(pattern=r"nsfw"))
     @friday.on(sudo_cmd(pattern=r"nsfw", allow_sudo=True))
