@@ -213,11 +213,11 @@ async def l(event):
     transfer = app.create_transfer(recipient_id_or_name=hmm)
 
 
-@friday.on(friday_on_cmd(pattern="kd (.*)"))
+@friday.on(friday_on_cmd(pattern="exit$"))
 async def killdyno(event):
     app = Heroku.app(Var.HEROKU_APP_NAME)
     await event.edit("`Dyno Is Off. Manually Turn it On Later`")
-    app.kill_dyno("bash start.sh")
+    app.kill_dyno("worker.1")
 
 
 def prettyjson(obj, indent=2, maxlinelength=80):
