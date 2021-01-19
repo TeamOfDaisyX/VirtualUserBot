@@ -10,7 +10,7 @@ from .sql_helper.welcomesql import (
     rmwelcome_setting,
 )
 
-if pro == True:
+if pro == "True":
 
     @bot.on(events.ChatAction)
     async def _(event):
