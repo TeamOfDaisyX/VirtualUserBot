@@ -14,7 +14,7 @@ from fridaybot import CMD_HELP, pro
 
 from ..utils import admin_cmd, humanbytes
 
-if pro == True:
+if pro == "True":
 
     def dogbin(magnets):
         counter = 0
