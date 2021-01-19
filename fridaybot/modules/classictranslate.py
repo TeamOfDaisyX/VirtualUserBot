@@ -47,7 +47,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "Classic translate": ".tl <language code> <reply to text>"
+        "classic translate": ".tl <language code> <reply to text>"
         "\nUsage: reply any msg with .tr (language code) example .tr en / .tr hi\n\n"
         ".tl <language code> | <msg> "
         "\nUsage: translate text example .tr en|msg (note:- this | mark is important.\n\n"
