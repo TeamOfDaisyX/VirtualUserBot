@@ -91,7 +91,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "Netboost": "**Dialog and Mobitel**\
+        "netboost": "**Dialog and Mobitel**\
 \n\n**Syntax : **`.Dialog ` ,`.Mobitel`\
 \n**Usage :** Funny prank plugin."
     }
