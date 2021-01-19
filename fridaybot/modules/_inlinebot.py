@@ -188,7 +188,7 @@ if lang == "si":
         await borg(functions.contacts.BlockRequest(event.query.user_id))
         await borg.send_message(
             LOG_CHAT,
-            f"ආයුබෝවන්, මෝඩ  [පකයා](tg://user?id={him_id}) තහන්ම් එකක් තෝරපු නිසා Block කරා"
+            f"ආයුබෝවන්, මෝඩ  [පකයා](tg://user?id={him_id}) තහන්ම් එකක් තෝරපු නිසා Block කරා",
         )
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"backme")))
@@ -217,7 +217,8 @@ if lang == "si":
         await borg.send_message(event.query.user_id, text2)
         await borg.send_message(
             LOG_CHAT,
-            message=f"Hello, [අලුත් පොරක්](tg://user?id={him_id}). ඔයා එක්ක කතා කරන්න ඉල්ලනවා.")
+            message=f"Hello, [අලුත් පොරක්](tg://user?id={him_id}). ඔයා එක්ක කතා කරන්න ඉල්ලනවා.",
+        )
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"askme")))
     async def rip(event):
@@ -232,7 +233,8 @@ if lang == "si":
         await borg.send_message(event.query.user_id, text3)
         await borg.send_message(
             LOG_CHAT,
-            message=f"Hello, [අලුත් පොරකට](tg://user?id={him_id}). ඔයාගෙන් දෙයක් ඉල්ලන්න තියේලු.")
+            message=f"Hello, [අලුත් පොරකට](tg://user?id={him_id}). ඔයාගෙන් දෙයක් ඉල්ලන්න තියේලු.",
+        )
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
     async def on_plug_in_callback_query_handler(event):
@@ -451,7 +453,7 @@ else:
         await borg(functions.contacts.BlockRequest(event.query.user_id))
         await borg.send_message(
             LOG_CHAT,
-            f"Hello, A Noob [Nibba](tg://user?id={him_id}) Selected Probhited Option, Therefore Blocked."
+            f"Hello, A Noob [Nibba](tg://user?id={him_id}) Selected Probhited Option, Therefore Blocked.",
         )
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"backme")))
@@ -480,7 +482,8 @@ else:
         await borg.send_message(event.query.user_id, text2)
         await borg.send_message(
             LOG_CHAT,
-            message=f"Hello, A [New User](tg://user?id={him_id}). Wants To Talk With You.")
+            message=f"Hello, A [New User](tg://user?id={him_id}). Wants To Talk With You.",
+        )
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"askme")))
     async def rip(event):
@@ -495,7 +498,8 @@ else:
         await borg.send_message(event.query.user_id, text3)
         await borg.send_message(
             LOG_CHAT,
-            message=f"Hello, A [New User](tg://user?id={him_id}). Wants To Ask You Something.")
+            message=f"Hello, A [New User](tg://user?id={him_id}). Wants To Ask You Something.",
+        )
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
     async def on_plug_in_callback_query_handler(event):
