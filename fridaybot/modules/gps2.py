@@ -78,7 +78,7 @@ async def nope(doit):
 
 CMD_HELP.update(
     {
-        "Location finder": "__**PLUGIN NAME :** gps__\
+        "location finder": "__**PLUGIN NAME :** gps__\
     \n\n📌** CMD ★** `.locate <location>`\
     \n**USAGE   ★  **Finds your desired location using geopy...\
     \n\n📌** CMD ★** `.map <location>`\
