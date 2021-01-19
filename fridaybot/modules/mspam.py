@@ -4,7 +4,7 @@ from fridaybot import pro
 
 from ..utils import admin_cmd
 
-if pro == True:
+if pro == "True":
 
     @bot.on(admin_cmd(pattern="mspam (.*)"))
     async def tiny_pic_spam(e):
