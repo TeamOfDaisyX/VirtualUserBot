@@ -80,14 +80,14 @@ async def get_full_user(event):
         if previous_message.forward:
             replied_user = await event.client(
                 GetFullUserRequest(
-                    previous_message.forward.from_id
+                    previous_message.forward.sender_id
                     or previous_message.forward.channel_id
                 )
             )
             return replied_user, None
         else:
             replied_user = await event.client(
-                GetFullUserRequest(previous_message.from_id)
+                GetFullUserRequest(previous_message.sender_id)
             )
             return replied_user, None
     else:
@@ -152,12 +152,15 @@ async def gibinfo(event):
         reason = f"<i>True</i>"
     else:
         reason = f"<i>False</i>"
-    hmmyes = sclient.is_banned(lolu.user.id)
-    if hmmyes:
-        oki = f"""<i>True</i>
+    if sclient is None:
+        oki = "<i>Token Invalid</i>"
+    elif sclient:
+        hmmyes = sclient.is_banned(lolu.user.id)
+        if hmmyes:
+            oki = f"""<i>True</i>
 <b>~ Reason :</b> <i>{hmmyes.reason}</i>"""
-    else:
-        oki = "<i>False</i>"
+        else:
+            oki = "<i>False</i>"
     infomsg = (
         f"<b>Info Of</b> <a href=tg://user?id={lolu.user.id}>{lolu.user.first_name}</a>: \n"
         f"<b>- Username :</b> <i>{lolu.user.username}</i>\n"
