@@ -12,7 +12,7 @@ from fridaybot import pro
 
 from ..utils import admin_cmd, sudo_cmd
 
-if pro == True:
+if pro == "True":
 
     @bot.on(admin_cmd("boobs$"))
     @bot.on(sudo_cmd(pattern="boobs$", allow_sudo=True))
