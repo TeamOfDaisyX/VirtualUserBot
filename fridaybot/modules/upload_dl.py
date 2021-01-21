@@ -1,5 +1,4 @@
 # @UniBorg
-from urllib.parse import urlparse
 import asyncio
 import json
 import math
@@ -8,6 +7,7 @@ import subprocess
 import time
 from datetime import datetime
 from urllib.parse import urlparse
+
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from pySmartDL import SmartDL
@@ -358,7 +358,8 @@ async def uploadas(uas_event):
     else:
         await uas_event.edit("404: File Not Found")
 
-@borg.on(friday_on_cmd(pattern='smartdl ?(.*)'))
+
+@borg.on(friday_on_cmd(pattern="smartdl ?(.*)"))
 async def lul(event):
     input_str = event.pattern_match.group(1)
     mone = await event.edit("**Processing..**")
@@ -378,19 +379,22 @@ async def lul(event):
         now = time.time()
         diff = now - c_time
         percentage = downloader.get_progress() * 100
-        speed = downloader.get_speed()
-        elapsed_time = round(diff) * 1000
+        downloader.get_speed()
+        round(diff) * 1000
         progress_str = "[{0}{1}]\nProgress: {2}%".format(
-                ''.join(["▰" for i in range(math.floor(percentage / 5))]),
-                ''.join(["▱" for i in range(20 - math.floor(percentage / 5))]),
-        round(percentage, 2))
+            "".join(["▰" for i in range(math.floor(percentage / 5))]),
+            "".join(["▱" for i in range(20 - math.floor(percentage / 5))]),
+            round(percentage, 2),
+        )
         estimated_total_time = downloader.get_eta(human=True)
         try:
             current_message = f"trying to download\n"
             current_message += f"URL: {url}\n"
             current_message += f"File Name: {file_name}\n"
             current_message += f"{progress_str}\n"
-            current_message += f"{humanbytes(downloaded)} of {humanbytes(total_length)}\n"
+            current_message += (
+                f"{humanbytes(downloaded)} of {humanbytes(total_length)}\n"
+            )
             current_message += f"ETA: {estimated_total_time}"
             if round(diff % 10.00) == 0 and current_message != display_message:
                 await mone.edit(current_message)
@@ -401,28 +405,32 @@ async def lul(event):
     ms = (end - start).seconds
     if downloader.isSuccessful():
         c_time = time.time()
-        lul = await mone.edit("Downloaded to `{}` in {} seconds.".format(downloaded_file_name, ms))
-        await borg.send_file(event.chat_id,
-                        downloaded_file_name,
-                        caption=file_name,
-                        force_document=False,
-                        allow_cache=False,
-                        progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                            progress(
-                                d,
-                                t,
-                                event,
-                                c_time,
-                                "Uploading in Progress.......",
-                                downloaded_file_name,
-                            )
-                        ),
-                    )
+        lul = await mone.edit(
+            "Downloaded to `{}` in {} seconds.".format(downloaded_file_name, ms)
+        )
+        await borg.send_file(
+            event.chat_id,
+            downloaded_file_name,
+            caption=file_name,
+            force_document=False,
+            allow_cache=False,
+            progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
+                progress(
+                    d,
+                    t,
+                    event,
+                    c_time,
+                    "Uploading in Progress.......",
+                    downloaded_file_name,
+                )
+            ),
+        )
         await lul.delete()
         os.remove(downloaded_file_name)
     else:
         await mone.edit("Incorrect URL\n {}".format(input_str))
-    
+
+
 CMD_HELP.update(
     {
         "download": ".dl <link|filename> or reply to media\
