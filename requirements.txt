@@ -95,5 +95,6 @@ emoji-country-flag
 langdetect
 fontTools
 googletrans
+pdf2docx
 beautifulsoup4
 bs4
