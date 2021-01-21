@@ -4,12 +4,12 @@ import urllib
 from math import ceil
 from re import findall
 from urllib.parse import quote
-
+from youtube_search import YoutubeSearch
 import requests
 from pornhub_api import PornhubApi
 from search_engine_parser import GoogleSearch
 from telethon import Button, custom, events, functions
-
+from youtubesearchpython import VideosSearch
 from fridaybot import ALIVE_NAME, CMD_HELP, CMD_LIST, lang
 from fridaybot.function import _ytdl
 from fridaybot.modules import inlinestats
