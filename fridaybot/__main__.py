@@ -10,7 +10,7 @@ from fridaybot.Configs import Config
 from fridaybot.utils import load_module, start_assistant
 from var import Var
 
-sed = logging.getLogger("Friday")
+sed = logging.getLogger("VirtualUserbot")
 
 
 async def add_bot(bot_token):
