@@ -11,7 +11,7 @@ PyGithub
 pytesseract
 youtube-dl
 opencv-contrib-python
-telethon>=1.19
+telethon
 iplookup
 wget
 numpy
