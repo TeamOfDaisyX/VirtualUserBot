@@ -4,9 +4,9 @@
   "logo": "https://telegra.ph/file/4e1364fb18f899ad47dec.png",
   "keywords": [
     "telegram",
-    "fridaybot",
+    "virtualuserbot",
     "plugin",
-    "telegram-fridaybot",
+    "telegram-virtualuserbot",
     "productivity"
   ],
   "repository": "https://github.com/inukaasith/virtualuserbot",
@@ -20,7 +20,7 @@
     },
     "TEMP_DOWNLOAD_DIRECTORY": {
       "description": "Where downloaded files will go.",
-      "value": "./fridaybot/DOWNLOADS/",
+      "value": "./virtualuserbot/DOWNLOADS/",
       "required": false
     },
     "ALIVE_NAME": {
@@ -98,7 +98,7 @@
       "value": ""
     },
     "TG_BOT_USER_NAME_BF_HER": {
-      "description": "You Telegram Bot API Key Here. Needed For Help Module And Cbutton.",
+      "description": "You Telegram Bot Username Here. Needed For Help Module And Cbutton.",
       "value": ""
     },
     "DOWNLOAD_PFP_URL_CLOCK": {
