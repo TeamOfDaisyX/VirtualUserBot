@@ -29,7 +29,6 @@ else:
 
 from .Configs import Config
 
-
 Lastupdate = time.time()
 sedprint = logging.getLogger("WARNING")
 from var import Var
