@@ -1,6 +1,7 @@
+from telethon.events import ChatAction
+
 from virtualuserbot import bot, sclient
 from virtualuserbot.Configs import Config
-from telethon.events import ChatAction
 
 """Bans Spammers/Scammer At time Of Arrival 
 If You Add Him The Bot Won't Restrict."""

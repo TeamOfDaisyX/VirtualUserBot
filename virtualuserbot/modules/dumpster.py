@@ -1,8 +1,9 @@
 import asyncio
 
+from telethon.errors.rpcerrorlist import MessageIdInvalidError
+
 from virtualuserbot import CMD_HELP
 from virtualuserbot.utils import friday_on_cmd
-from telethon.errors.rpcerrorlist import MessageIdInvalidError
 
 
 @friday.on(friday_on_cmd(pattern="dump ?(.*)"))

@@ -1,11 +1,12 @@
 import asyncio
 
-from virtualuserbot import CMD_HELP
-from virtualuserbot.modules.sql_helper.mute_sql import is_muted, mute, unmute
-from virtualuserbot.utils import friday_on_cmd
 from telethon.events import ChatAction
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 from telethon.tl.types import MessageEntityMentionName
+
+from virtualuserbot import CMD_HELP
+from virtualuserbot.modules.sql_helper.mute_sql import is_muted, mute, unmute
+from virtualuserbot.utils import friday_on_cmd
 
 
 async def get_full_user(event):
@@ -97,7 +98,9 @@ async def gspider(virtualuserbot):
         ]
         for i in testvirtualuserbot:
             try:
-                await virtualuserbot.client.edit_permissions(i, user, view_messages=False)
+                await virtualuserbot.client.edit_permissions(
+                    i, user, view_messages=False
+                )
                 a += 1
                 await friday.edit(f"**GBANNED // Total Affected Chats **: `{a}`")
             except:
@@ -161,7 +164,9 @@ async def gspider(virtualuserbot):
         ]
         for i in testvirtualuserbot:
             try:
-                await virtualuserbot.client.edit_permissions(i, user, send_messages=True)
+                await virtualuserbot.client.edit_permissions(
+                    i, user, send_messages=True
+                )
                 a += 1
                 await friday.edit(f"**UNGBANNING // AFFECTED CHATS - {a} **")
             except:

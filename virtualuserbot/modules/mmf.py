@@ -14,9 +14,10 @@
 import os
 import textwrap
 
-from virtualuserbot.utils import friday_on_cmd
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import MessageMediaPhoto
+
+from virtualuserbot.utils import friday_on_cmd
 
 sedpath = Config.TMP_DOWNLOAD_DIRECTORY
 

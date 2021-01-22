@@ -1,8 +1,9 @@
 from re import findall
 
+from search_engine_parser import GoogleSearch
+
 from virtualuserbot import CMD_HELP
 from virtualuserbot.utils import register
-from search_engine_parser import GoogleSearch
 
 
 @register(outgoing=True, pattern=r"^\.gs (.*)")

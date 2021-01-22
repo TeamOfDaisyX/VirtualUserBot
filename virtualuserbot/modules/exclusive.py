@@ -4,10 +4,11 @@
 
 import asyncio
 
-from virtualuserbot import CMD_HELP
-from virtualuserbot.utils import admin_cmd
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
+
+from virtualuserbot import CMD_HELP
+from virtualuserbot.utils import admin_cmd
 
 
 @friday.on(admin_cmd(pattern=r"purl ?(.*)"))

@@ -1,3 +1,6 @@
+from telethon import events
+from telethon.utils import pack_bot_file_id
+
 from virtualuserbot import CMD_HELP
 from virtualuserbot.modules.sql_helper.welcome_sql import (
     add_welcome_setting,
@@ -5,8 +8,6 @@ from virtualuserbot.modules.sql_helper.welcome_sql import (
     rm_welcome_setting,
     update_previous_welcome,
 )
-from telethon import events
-from telethon.utils import pack_bot_file_id
 
 
 @bot.on(events.ChatAction())  # pylint:disable=E0602

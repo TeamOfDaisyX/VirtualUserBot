@@ -12,8 +12,9 @@ from datetime import datetime
 import aiohttp
 import magic
 import requests
-from virtualuserbot import CMD_HELP
 from uniborg.util import friday_on_cmd, progress
+
+from virtualuserbot import CMD_HELP
 
 
 @friday.on(friday_on_cmd(pattern="verystream ?(.*)", allow_sudo=True))

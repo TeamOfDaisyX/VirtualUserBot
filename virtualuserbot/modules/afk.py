@@ -4,9 +4,10 @@ import asyncio
 import datetime
 from datetime import datetime
 
-from virtualuserbot import CMD_HELP, lang
 from telethon import events
 from telethon.tl import functions, types
+
+from virtualuserbot import CMD_HELP, lang
 
 global USER_AFK  # pylint:disable=E0602
 global afk_time  # pylint:disable=E0602

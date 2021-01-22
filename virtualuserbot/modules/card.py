@@ -6,6 +6,7 @@
 # Card Generator
 ##############################
 from faker import Faker as dc
+
 from virtualuserbot import bot as cobra
 
 from ..utils import admin_cmd as hehe

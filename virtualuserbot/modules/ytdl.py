@@ -11,7 +11,6 @@ import math
 import os
 import time
 
-from virtualuserbot import CMD_HELP
 from telethon.tl.types import DocumentAttributeAudio
 from uniborg.util import edit_or_reply, friday_on_cmd, sudo_cmd
 from youtube_dl import YoutubeDL
@@ -25,6 +24,8 @@ from youtube_dl.utils import (
     UnavailableVideoError,
     XAttrMetadataError,
 )
+
+from virtualuserbot import CMD_HELP
 
 
 async def progress(current, total, event, start, type_of_ps, file_name=None):

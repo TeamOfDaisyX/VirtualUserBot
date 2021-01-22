@@ -1,7 +1,6 @@
+from var import Var
 from virtualuserbot import CMD_HELP
 from virtualuserbot.utils import friday_on_cmd
-
-from var import Var
 
 
 @friday.on(friday_on_cmd(pattern="stat$"))

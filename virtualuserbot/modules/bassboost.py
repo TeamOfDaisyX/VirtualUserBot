@@ -4,9 +4,10 @@ import math
 import os
 
 import numpy as np
-from virtualuserbot.utils import admin_cmd
 from pydub import AudioSegment
 from telethon import types
+
+from virtualuserbot.utils import admin_cmd
 
 
 @friday.on(admin_cmd(pattern="bassbost ?(.*)"))

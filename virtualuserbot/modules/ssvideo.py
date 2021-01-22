@@ -8,10 +8,11 @@ import asyncio
 import os
 import time
 
+from telethon.tl.types import DocumentAttributeFilename
+
 from virtualuserbot import CMD_HELP, bot
 from virtualuserbot.events import register
 from virtualuserbot.function import progress
-from telethon.tl.types import DocumentAttributeFilename
 
 
 @register(outgoing=True, pattern=r"^\.ssvideo(?: |$)(.*)")

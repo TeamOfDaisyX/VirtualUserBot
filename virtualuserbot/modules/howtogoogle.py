@@ -6,6 +6,7 @@ By @loxxi
 """
 
 import requests
+
 from virtualuserbot import CMD_HELP
 from virtualuserbot.utils import friday_on_cmd
 

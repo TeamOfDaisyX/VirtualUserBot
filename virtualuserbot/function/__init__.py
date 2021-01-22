@@ -16,7 +16,6 @@ import requests
 import telethon
 from bs4 import BeautifulSoup
 from bs4 import BeautifulSoup as bs
-from virtualuserbot.utils import load_module
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from pymediainfo import MediaInfo
@@ -37,6 +36,8 @@ from youtube_dl.utils import (
     UnavailableVideoError,
     XAttrMetadataError,
 )
+
+from virtualuserbot.utils import load_module
 
 BASE_URL = "https://isubtitles.org"
 import os
@@ -133,7 +134,9 @@ async def get_all_modules(event, borg, channel_id):
     await event.edit(f"**Found : {len_p} Plugins. Trying To Install**")
     for sed in a_plugins:
         try:
-            downloaded_file_name = await borg.download_media(sed, "virtualuserbot/modules/")
+            downloaded_file_name = await borg.download_media(
+                sed, "virtualuserbot/modules/"
+            )
             if "(" not in downloaded_file_name:
                 path1 = Path(downloaded_file_name)
                 shortname = path1.stem

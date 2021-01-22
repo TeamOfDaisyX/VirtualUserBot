@@ -1,7 +1,8 @@
 # Lots of lub to @r4v4n4 for gibing the base <3
-from virtualuserbot import CMD_HELP
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
+
+from virtualuserbot import CMD_HELP
 
 from ..utils import admin_cmd, edit_or_reply, sudo_cmd
 

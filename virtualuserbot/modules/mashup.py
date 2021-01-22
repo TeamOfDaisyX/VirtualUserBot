@@ -3,10 +3,11 @@
 video meme mashup:
 Syntax: .mashup <text>
 """
-from virtualuserbot import CMD_HELP
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from uniborg.util import friday_on_cmd
+
+from virtualuserbot import CMD_HELP
 
 
 @friday.on(friday_on_cmd(pattern="mashup ?(.*)"))

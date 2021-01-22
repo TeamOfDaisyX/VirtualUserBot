@@ -12,9 +12,10 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
+from quote import quote
+
 from virtualuserbot import CMD_HELP
 from virtualuserbot.utils import admin_cmd
-from quote import quote
 
 
 @friday.on(admin_cmd(pattern="qs (.*)"))

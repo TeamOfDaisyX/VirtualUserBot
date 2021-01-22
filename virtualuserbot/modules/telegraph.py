@@ -5,10 +5,11 @@ Available Commands:
 import os
 from datetime import datetime
 
-from virtualuserbot import CMD_HELP
-from virtualuserbot.utils import friday_on_cmd
 from PIL import Image
 from telegraph import Telegraph, exceptions, upload_file
+
+from virtualuserbot import CMD_HELP
+from virtualuserbot.utils import friday_on_cmd
 
 telegraph = Telegraph()
 r = telegraph.create_account(short_name=Config.TELEGRAPH_SHORT_NAME)

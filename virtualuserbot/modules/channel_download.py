@@ -7,8 +7,9 @@ By: @Zero_cool7870
 import os
 import subprocess
 
-from virtualuserbot import CMD_HELP
 from uniborg.util import friday_on_cmd
+
+from virtualuserbot import CMD_HELP
 
 
 @friday.on(friday_on_cmd(pattern="getc"))

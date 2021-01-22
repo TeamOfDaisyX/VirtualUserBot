@@ -9,6 +9,9 @@ Available Commands:
 import asyncio
 import re
 
+from telethon import utils
+from telethon.tl import types
+
 from virtualuserbot import CMD_HELP
 from virtualuserbot.modules.sql_helper.filter_sql import (
     add_filter,
@@ -17,8 +20,6 @@ from virtualuserbot.modules.sql_helper.filter_sql import (
     remove_filter,
 )
 from virtualuserbot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
-from telethon import utils
-from telethon.tl import types
 
 DELETE_TIMEOUT = 0
 TYPE_TEXT = 0

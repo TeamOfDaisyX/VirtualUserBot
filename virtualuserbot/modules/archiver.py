@@ -12,11 +12,12 @@ import time
 from datetime import datetime
 
 import patoolib
-from virtualuserbot import CMD_HELP
-from virtualuserbot.Configs import Config as Var
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from telethon.tl.types import DocumentAttributeVideo
+
+from virtualuserbot import CMD_HELP
+from virtualuserbot.Configs import Config as Var
 
 from ..utils import admin_cmd, progress
 

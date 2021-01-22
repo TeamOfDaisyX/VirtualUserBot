@@ -12,6 +12,7 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import requests
+
 from virtualuserbot.Configs import Config
 from virtualuserbot.utils import admin_cmd
 

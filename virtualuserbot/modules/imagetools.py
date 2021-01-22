@@ -19,12 +19,13 @@ from shutil import rmtree
 import cv2
 import numpy as np
 import requests
-from virtualuserbot import CMD_HELP
-from virtualuserbot.function import convert_to_image, crop_vid, runcmd
-from virtualuserbot.utils import friday_on_cmd, sudo_cmd
 from PIL import Image, ImageDraw, ImageFont
 from telegraph import upload_file
 from telethon.tl.functions.users import GetFullUserRequest
+
+from virtualuserbot import CMD_HELP
+from virtualuserbot.function import convert_to_image, crop_vid, runcmd
+from virtualuserbot.utils import friday_on_cmd, sudo_cmd
 
 sedpath = "./starkgangz/"
 if not os.path.isdir(sedpath):

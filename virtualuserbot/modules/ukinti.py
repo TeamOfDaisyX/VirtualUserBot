@@ -6,7 +6,6 @@ Available Options: d, y, m, w, o, q, r """
 import asyncio
 from time import sleep
 
-from virtualuserbot import CMD_HELP
 from telethon.tl import functions
 from telethon.tl.types import (
     ChannelParticipantsKicked,
@@ -19,6 +18,8 @@ from telethon.tl.types import (
     UserStatusRecently,
 )
 from uniborg.util import friday_on_cmd
+
+from virtualuserbot import CMD_HELP
 
 
 @friday.on(friday_on_cmd(pattern="unbanall ?(.*)"))

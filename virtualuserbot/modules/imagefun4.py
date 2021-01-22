@@ -8,8 +8,9 @@
 import os
 
 import cv2
-from virtualuserbot import bot
 from PIL import Image
+
+from virtualuserbot import bot
 
 from ..utils import admin_cmd
 

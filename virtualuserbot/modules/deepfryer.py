@@ -32,12 +32,13 @@
 import os
 from random import randint, uniform
 
-from virtualuserbot import CMD_HELP
-from virtualuserbot.function import convert_to_image
-from virtualuserbot.utils import friday_on_cmd
 from PIL import Image, ImageEnhance, ImageOps
 from telethon.tl.types import DocumentAttributeFilename
 from uniborg.util import friday_on_cmd
+
+from virtualuserbot import CMD_HELP
+from virtualuserbot.function import convert_to_image
+from virtualuserbot.utils import friday_on_cmd
 
 sedpath = "./starkgangz/"
 if not os.path.isdir(sedpath):

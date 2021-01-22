@@ -4,6 +4,9 @@ import logging
 import re
 from pathlib import Path
 
+from telethon import events
+
+from var import Var
 from virtualuserbot import CMD_LIST, LOAD_PLUG, SUDO_LIST, bot
 from virtualuserbot.Configs import Config
 from virtualuserbot.wraptools import (
@@ -13,9 +16,6 @@ from virtualuserbot.wraptools import (
     ignore_grp,
     ignore_pm,
 )
-from telethon import events
-
-from var import Var
 
 sedprint = logging.getLogger("PLUGINS")
 cmdhandler = Config.COMMAND_HAND_LER
@@ -263,8 +263,9 @@ import sys
 import traceback
 from time import gmtime, strftime
 
-from virtualuserbot import bot
 from telethon import events
+
+from virtualuserbot import bot
 
 
 def register(**args):

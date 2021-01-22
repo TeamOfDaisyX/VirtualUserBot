@@ -1,13 +1,14 @@
 """ Spotify / Deezer downloader plugin by @anubisxx | Syntax: .sdd link"""
 import asyncio
 
-from virtualuserbot import CMD_HELP
-from virtualuserbot.utils import friday_on_cmd
 from telethon.errors.rpcerrorlist import (
     UserAlreadyParticipantError,
     YouBlockedUserError,
 )
 from telethon.tl.functions.messages import ImportChatInviteRequest
+
+from virtualuserbot import CMD_HELP
+from virtualuserbot.utils import friday_on_cmd
 
 
 @friday.on(friday_on_cmd("sdd ?(.*)"))

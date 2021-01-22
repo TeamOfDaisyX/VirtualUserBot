@@ -15,11 +15,11 @@
 import functools
 import re
 
-from virtualuserbot import bot
-from virtualuserbot.Configs import Config
 from telethon import events
 
 from var import Var
+from virtualuserbot import bot
+from virtualuserbot.Configs import Config
 
 
 def ignore_fwd():

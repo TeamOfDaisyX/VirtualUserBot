@@ -1,5 +1,6 @@
-from virtualuserbot.modules.sql_helper import BASE, SESSION
 from sqlalchemy import Column, Numeric, UnicodeText
+
+from virtualuserbot.modules.sql_helper import BASE, SESSION
 
 
 class LydiaAI(BASE):

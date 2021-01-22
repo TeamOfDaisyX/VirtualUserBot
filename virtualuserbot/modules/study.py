@@ -1,9 +1,10 @@
 import asyncio
 import datetime
 
-from virtualuserbot import ALIVE_NAME
 from telethon import events
 from telethon.tl import functions, types
+
+from virtualuserbot import ALIVE_NAME
 
 from ..utils import admin_cmd
 

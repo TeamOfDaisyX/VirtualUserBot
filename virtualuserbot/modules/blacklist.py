@@ -8,9 +8,10 @@ Available Commands:
 .rmblacklist"""
 import re
 
+from telethon import events
+
 from virtualuserbot import CMD_HELP
 from virtualuserbot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
-from telethon import events
 
 from .sql_helper import blacklist_sql as sql
 

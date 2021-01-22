@@ -3,8 +3,9 @@ usage: .shout message
 originaly from : @corsicanu_bot
 """
 
-from virtualuserbot import CMD_HELP
 from telethon import events
+
+from virtualuserbot import CMD_HELP
 
 
 @friday.on(events.NewMessage(pattern=r"\.shout", outgoing=True))

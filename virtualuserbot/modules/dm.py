@@ -1,7 +1,8 @@
 # By @HeisenbergTheDanger and @xditya
 
-from virtualuserbot import CMD_HELP
 from telethon import *
+
+from virtualuserbot import CMD_HELP
 
 from ..utils import admin_cmd
 

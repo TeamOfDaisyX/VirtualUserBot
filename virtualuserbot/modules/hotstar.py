@@ -1,6 +1,7 @@
 import json
 
 import requests
+
 from virtualuserbot.utils import friday_on_cmd
 
 url = "https://api.hotstar.com/in/aadhar/v2/web/in/user/login"

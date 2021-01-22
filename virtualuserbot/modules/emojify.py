@@ -4,6 +4,7 @@ modified by  @mrconfused
 Userbot plugin for CatUserbot
 """
 import emoji
+
 from virtualuserbot import CMD_HELP
 from virtualuserbot.modules import fonts as emojify
 

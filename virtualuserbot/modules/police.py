@@ -1,7 +1,8 @@
 import asyncio
 
-from virtualuserbot import ALIVE_NAME, CMD_HELP
 from uniborg.util import friday_on_cmd
+
+from virtualuserbot import ALIVE_NAME, CMD_HELP
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Friday Userbot"
 

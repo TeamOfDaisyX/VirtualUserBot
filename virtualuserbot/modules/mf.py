@@ -1,8 +1,9 @@
 import sys
 
+from telethon import __version__, functions
+
 from virtualuserbot import CMD_HELP
 from virtualuserbot.utils import friday_on_cmd
-from telethon import __version__, functions
 
 
 @friday.on(friday_on_cmd(pattern="mf ?(.*)", allow_sudo=True))  # pylint:disable=E0602

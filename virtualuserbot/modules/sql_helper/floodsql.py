@@ -1,7 +1,8 @@
 import threading
 
-from virtualuserbot.modules.sql_helper import BASE, SESSION
 from sqlalchemy import Column, Integer, String
+
+from virtualuserbot.modules.sql_helper import BASE, SESSION
 
 DEF_COUNT = 0
 DEF_LIMIT = 0

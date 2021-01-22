@@ -6,10 +6,11 @@ usage:- .slap in reply to any message, or u gonna slap urself.
 
 import random
 
-from virtualuserbot import ALIVE_NAME, CMD_HELP
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from uniborg.util import friday_on_cmd
+
+from virtualuserbot import ALIVE_NAME, CMD_HELP
 
 SLAP_TEMPLATES = [
     "{user1} {hits} {user2} with a {item}.",

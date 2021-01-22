@@ -4,10 +4,10 @@
 # Test
 
 import requests
-from virtualuserbot import CMD_HELP
-from virtualuserbot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 
 from var import Var
+from virtualuserbot import CMD_HELP
+from virtualuserbot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 
 newslog = Var.NEWS_CHANNEL_ID
 

@@ -12,12 +12,12 @@ import asyncio
 import sys
 from os import environ, execle, path, remove
 
-from virtualuserbot import CMD_HELP
-from virtualuserbot.utils import friday_on_cmd
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
 from var import Var
+from virtualuserbot import CMD_HELP
+from virtualuserbot.utils import friday_on_cmd
 
 UPSTREAM_REPO_URL = Config.UPSTREAM_REPO
 UPSTREAM_REPO_BRANCH = "master"

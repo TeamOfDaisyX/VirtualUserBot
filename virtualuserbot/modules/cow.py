@@ -4,8 +4,9 @@ and may cmd would be added soon."""
 
 
 from cowpy import cow
-from virtualuserbot import CMD_HELP
 from telethon import events
+
+from virtualuserbot import CMD_HELP
 
 
 @friday.on(events.NewMessage(pattern=r"^.(\w+)say (.*)", outgoing=True))

@@ -2,9 +2,10 @@ import asyncio
 import time
 from collections import deque
 
+from telethon.tl.functions.channels import LeaveChannelRequest
+
 from virtualuserbot import CMD_HELP, bot
 from virtualuserbot.utils import friday_on_cmd
-from telethon.tl.functions.channels import LeaveChannelRequest
 
 
 @friday.on(friday_on_cmd("leave$"))

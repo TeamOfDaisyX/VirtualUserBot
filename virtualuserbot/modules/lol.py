@@ -7,8 +7,9 @@ cmd: .lol
 import asyncio
 import random
 
-from virtualuserbot import CMD_HELP
 from uniborg.util import friday_on_cmd
+
+from virtualuserbot import CMD_HELP
 
 
 @friday.on(friday_on_cmd(pattern=r"lol"))

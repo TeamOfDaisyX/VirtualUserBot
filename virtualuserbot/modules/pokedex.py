@@ -11,9 +11,10 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+from pokedex import pokedex
+
 from virtualuserbot import CMD_HELP
 from virtualuserbot.utils import admin_cmd
-from pokedex import pokedex
 
 
 @friday.on(admin_cmd(pattern="pokedex (.*)"))

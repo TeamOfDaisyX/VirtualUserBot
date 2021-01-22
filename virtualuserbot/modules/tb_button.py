@@ -2,8 +2,9 @@
 """
 import re
 
-from virtualuserbot.utils import friday_on_cmd
 from telethon import custom
+
+from virtualuserbot.utils import friday_on_cmd
 
 # regex obtained from: https://github.com/PaulSonOfLars/tgbot/blob/master/tg_bot/modules/helper_funcs/string_handling.py#L23
 BTN_URL_REGEX = re.compile(r"(\{([^\[]+?)\}\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")

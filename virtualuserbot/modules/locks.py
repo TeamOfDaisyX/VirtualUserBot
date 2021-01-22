@@ -3,9 +3,14 @@ Available Commands: .lock <option>, .unlock <option>, .locks
 API Options: msg, media, sticker, gif, gamee, ainline, gpoll, adduser, cpin, changeinfo
 DB Options: bots, commands, email, forward, url"""
 
-from virtualuserbot.modules.sql_helper.locks_sql import get_locks, is_locked, update_lock
-from virtualuserbot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 from telethon import events, functions, types
+
+from virtualuserbot.modules.sql_helper.locks_sql import (
+    get_locks,
+    is_locked,
+    update_lock,
+)
+from virtualuserbot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 
 
 @friday.on(friday_on_cmd("lock( (?P<target>\S+)|$)"))

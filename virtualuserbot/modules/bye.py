@@ -6,9 +6,10 @@
 """
 import time
 
+from telethon.tl.functions.channels import LeaveChannelRequest
+
 from virtualuserbot import CMD_HELP
 from virtualuserbot.utils import friday_on_cmd, sudo_cmd
-from telethon.tl.functions.channels import LeaveChannelRequest
 
 
 @friday.on(friday_on_cmd("bye"))

@@ -1,9 +1,10 @@
 # For @UniBorg
 # (c) Shrimadhav U K
 
-from virtualuserbot import CMD_HELP
 from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest
 from uniborg.util import friday_on_cmd
+
+from virtualuserbot import CMD_HELP
 
 
 @friday.on(friday_on_cmd("listmyusernames"))

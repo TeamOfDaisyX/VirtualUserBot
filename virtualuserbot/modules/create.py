@@ -2,9 +2,10 @@
 for bot credits to @pureindialover
 """
 
+from telethon.tl import functions
+
 from virtualuserbot import CMD_HELP
 from virtualuserbot.events import register
-from telethon.tl import functions
 
 
 @register(outgoing=True, pattern="^.create (b|g|c)(?: |$)(.*)")

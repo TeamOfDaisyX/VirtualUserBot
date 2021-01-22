@@ -10,7 +10,6 @@ import math
 import os
 import time
 
-from virtualuserbot.utils import progress
 from telethon.tl.types import DocumentAttributeAudio
 from uniborg.util import admin_cmd
 from youtube_dl import YoutubeDL
@@ -24,6 +23,8 @@ from youtube_dl.utils import (
     UnavailableVideoError,
     XAttrMetadataError,
 )
+
+from virtualuserbot.utils import progress
 
 try:
     from youtubesearchpython import SearchVideos

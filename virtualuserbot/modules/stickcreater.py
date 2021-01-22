@@ -8,10 +8,11 @@ import os
 import random
 import textwrap
 
-from virtualuserbot import CMD_HELP
-from virtualuserbot.utils import friday_on_cmd, sudo_cmd
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import InputMessagesFilterDocument
+
+from virtualuserbot import CMD_HELP
+from virtualuserbot.utils import friday_on_cmd, sudo_cmd
 
 # RegEx by https://t.me/c/1220993104/500653 ( @SnapDragon7410 )
 

@@ -1,5 +1,6 @@
-from virtualuserbot.modules.sql_helper import BASE, SESSION
 from sqlalchemy import Boolean, Column, String, UnicodeText
+
+from virtualuserbot.modules.sql_helper import BASE, SESSION
 
 
 class Pa(BASE):

@@ -15,10 +15,11 @@
 import secrets
 from random import *
 
-from virtualuserbot import CMD_HELP
-from virtualuserbot.utils import admin_cmd
 from password_strength import PasswordStats
 from uniborg.util import friday_on_cmd
+
+from virtualuserbot import CMD_HELP
+from virtualuserbot.utils import admin_cmd
 
 
 @friday.on(admin_cmd(pattern="passcheck (.*)"))

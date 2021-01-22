@@ -1,7 +1,6 @@
+from var import Var
 from virtualuserbot.Configs import Config
 from virtualuserbot.utils import friday_on_cmd
-
-from var import Var
 
 issudousing = Config.SUDO_USERS
 islogokay = Config.PRIVATE_GROUP_ID

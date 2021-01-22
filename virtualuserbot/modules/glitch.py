@@ -13,10 +13,11 @@
 
 import os
 
-from virtualuserbot import CMD_HELP
-from virtualuserbot.utils import friday_on_cmd, sudo_cmd
 from glitch_this import ImageGlitcher
 from telethon.tl.types import MessageMediaPhoto
+
+from virtualuserbot import CMD_HELP
+from virtualuserbot.utils import friday_on_cmd, sudo_cmd
 
 glitcher = ImageGlitcher()
 DURATION = 200  # Set this to however many centiseconds each frame should be visible for

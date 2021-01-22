@@ -5,9 +5,10 @@ Available Commands:
 
 import asyncio
 
-from virtualuserbot import CMD_HELP
 from telethon.tl.functions.users import GetFullUserRequest
 from uniborg.util import friday_on_cmd
+
+from virtualuserbot import CMD_HELP
 
 
 @friday.on(friday_on_cmd(pattern=r"hack"))

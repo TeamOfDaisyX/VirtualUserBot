@@ -15,10 +15,10 @@
 import os
 from pathlib import Path
 
-from virtualuserbot.utils import command, load_module
 from telethon.tl.types import InputMessagesFilterDocument
 
 from var import Var
+from virtualuserbot.utils import command, load_module
 
 
 @command(pattern="^.extdl", outgoing=True)

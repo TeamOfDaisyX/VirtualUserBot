@@ -9,12 +9,13 @@ import json
 from datetime import datetime
 
 import requests
-from virtualuserbot import CMD_HELP
-from virtualuserbot import OPEN_WEATHER_MAP_APPID as OWM_API
-from virtualuserbot.events import errors_handler, register
 from pytz import country_names as c_n
 from pytz import country_timezones as c_tz
 from pytz import timezone as tz
+
+from virtualuserbot import CMD_HELP
+from virtualuserbot import OPEN_WEATHER_MAP_APPID as OWM_API
+from virtualuserbot.events import errors_handler, register
 
 # ===== CONSTANT =====
 DEFCITY = "Ahmedabad"

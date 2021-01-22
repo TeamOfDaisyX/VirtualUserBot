@@ -1,7 +1,8 @@
 # pata nhi sir 👀👀👀👀
-from virtualuserbot import bot as danish_00
 from telethon import events, functions
 from telethon.errors.rpcerrorlist import YouBlockedUserError
+
+from virtualuserbot import bot as danish_00
 
 from ..utils import admin_cmd as danishehe
 

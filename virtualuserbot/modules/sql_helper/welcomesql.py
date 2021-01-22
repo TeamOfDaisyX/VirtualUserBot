@@ -1,5 +1,6 @@
-from virtualuserbot.modules.sql_helper import BASE, SESSION
 from sqlalchemy import BigInteger, Column, Numeric, String, UnicodeText
+
+from virtualuserbot.modules.sql_helper import BASE, SESSION
 
 
 class JoinWelcome(BASE):

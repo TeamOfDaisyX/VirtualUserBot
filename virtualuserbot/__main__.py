@@ -3,12 +3,12 @@ from pathlib import Path
 from sys import argv
 
 import telethon.utils
-from virtualuserbot import bot
-from virtualuserbot.Configs import Config
-from virtualuserbot.utils import load_module, start_assistant
 from telethon import TelegramClient
 
 from var import Var
+from virtualuserbot import bot
+from virtualuserbot.Configs import Config
+from virtualuserbot.utils import load_module, start_assistant
 
 sed = logging.getLogger("VirtualUserbot")
 

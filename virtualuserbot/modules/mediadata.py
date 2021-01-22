@@ -6,10 +6,11 @@ import os
 import shlex
 from typing import Tuple
 
+from telegraph import Telegraph
+
 from virtualuserbot import CMD_HELP
 from virtualuserbot.Configs import Config
 from virtualuserbot.utils import friday_on_cmd
-from telegraph import Telegraph
 
 telegraph = Telegraph()
 tgnoob = telegraph.create_account(short_name="Friday 🇮🇳")

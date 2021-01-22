@@ -15,8 +15,9 @@
 import json
 import urllib.request
 
-from virtualuserbot import CMD_HELP
 from uniborg.util import friday_on_cmd
+
+from virtualuserbot import CMD_HELP
 
 
 @friday.on(friday_on_cmd(pattern="iplookup (.*)"))

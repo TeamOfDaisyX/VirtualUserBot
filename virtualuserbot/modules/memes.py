@@ -18,12 +18,13 @@ from asyncio import wait
 
 import requests
 from cowpy import cow
-from virtualuserbot import CMD_HELP
-from virtualuserbot.utils import register
 from telethon import events
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from uniborg.util import friday_on_cmd
+
+from virtualuserbot import CMD_HELP
+from virtualuserbot.utils import register
 
 # ================= CONSTANT =================
 RENDISTR = [

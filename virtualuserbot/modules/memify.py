@@ -5,10 +5,11 @@ created by: @A_Dark_Princ3
 
 import asyncio
 
-from virtualuserbot import CMD_HELP
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.types import MessageMediaPhoto
 from uniborg.util import friday_on_cmd
+
+from virtualuserbot import CMD_HELP
 
 thumb_image_path = Config.TMP_DOWNLOAD_DIRECTORY + "/thumb_image.jpg"
 

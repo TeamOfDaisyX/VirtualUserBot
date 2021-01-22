@@ -1,7 +1,8 @@
 """ Whatever Plugin by Noobs of Telegram i.e. @pureindialover """
 
-from virtualuserbot import CMD_HELP
 from uniborg.util import friday_on_cmd
+
+from virtualuserbot import CMD_HELP
 
 
 @friday.on(friday_on_cmd(pattern=r"lmoon"))
