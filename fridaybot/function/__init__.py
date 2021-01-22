@@ -1,13 +1,30 @@
+import asyncio
+import json
+import math
+import os
+import re
+import shlex
+import subprocess
+import time
+import webbrowser
+from os.path import basename
+from pathlib import Path
+from typing import List, Optional, Tuple
+
+import hachoir
 import requests
+import telethon
 from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup as bs
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
-import hachoir
-import asyncio
-import os
-from pathlib import Path
-from fridaybot.utils import load_module
-from telethon.tl.types import DocumentAttributeAudio
+from pymediainfo import MediaInfo
+from telethon import Button, custom, events, functions
+from telethon.tl.types import (
+    DocumentAttributeAudio,
+    InputMessagesFilterDocument,
+    MessageMediaPhoto,
+)
 from youtube_dl import YoutubeDL
 from youtube_dl.utils import (
     ContentTooShortError,
@@ -19,31 +36,14 @@ from youtube_dl.utils import (
     UnavailableVideoError,
     XAttrMetadataError,
 )
-import asyncio
-import json
-import math
-import os
-import re
-import shlex
-import subprocess
-import time
-from os.path import basename
-from typing import List, Optional, Tuple
-import webbrowser
-from bs4 import BeautifulSoup
-import requests
-from bs4 import BeautifulSoup as bs
-import re
-from telethon.tl.types import InputMessagesFilterDocument
-import telethon
-from telethon import Button, custom, events, functions
-from pymediainfo import MediaInfo
-from telethon.tl.types import MessageMediaPhoto
+
+from fridaybot.utils import load_module
 
 BASE_URL = "https://isubtitles.org"
-from fridaybot.Configs import Config
-import zipfile
 import os
+import zipfile
+
+from fridaybot.Configs import Config
 
 sedpath = Config.TMP_DOWNLOAD_DIRECTORY
 from fridaybot import logging
@@ -67,7 +67,6 @@ async def runcmd(cmd: str) -> Tuple[str, str, int, int]:
         process.returncode,
         process.pid,
     )
-
 
 
 async def progress(current, total, event, start, type_of_ps, file_name=None):
@@ -111,6 +110,7 @@ def humanbytes(size):
         raised_to_pow += 1
     return str(round(size, 2)) + " " + dict_power_n[raised_to_pow] + "B"
 
+
 async def get_all_modules(event, borg, channel_id):
     await event.edit(f"Ìnstalling All Plugins from {channel_id}")
     try:
@@ -121,7 +121,9 @@ async def get_all_modules(event, borg, channel_id):
             search=".py",
         )
     except:
-        await event.edit("`Failed To Retrieve Modules. Please Check Channel Username / Id. Make Sure You Are On That Channel`")
+        await event.edit(
+            "`Failed To Retrieve Modules. Please Check Channel Username / Id. Make Sure You Are On That Channel`"
+        )
         return
     yesm = 0
     nom = 0
@@ -137,24 +139,30 @@ async def get_all_modules(event, borg, channel_id):
                 path1 = Path(downloaded_file_name)
                 shortname = path1.stem
                 load_module(shortname.replace(".py", ""))
-                await event.edit("**Installed :** `{}`".format(os.path.basename(downloaded_file_name)
-                                                              )
-                                )
+                await event.edit(
+                    "**Installed :** `{}`".format(
+                        os.path.basename(downloaded_file_name)
+                    )
+                )
             else:
                 nom += 1
-                await event.edit("**Failed to Install [PLugin Already Found] :** `{}`".format(os.path.basename(downloaded_file_name)
-                                                              )
-                                )
+                await event.edit(
+                    "**Failed to Install [PLugin Already Found] :** `{}`".format(
+                        os.path.basename(downloaded_file_name)
+                    )
+                )
                 os.remove(downloaded_file_name)
         except:
-                await event.edit("**Failed To Install :** `{}`".format(os.path.basename(downloaded_file_name)
-                                                              )
-                                )
-                os.remove(downloaded_file_name)
-                nom += 1
-                pass
+            await event.edit(
+                "**Failed To Install :** `{}`".format(
+                    os.path.basename(downloaded_file_name)
+                )
+            )
+            os.remove(downloaded_file_name)
+            nom += 1
     yesm = len_p - nom
     return yesm, nom, len_p
+
 
 def time_formatter(milliseconds: int) -> str:
     """Inputs time in milliseconds, to get beautified time,
@@ -164,11 +172,11 @@ def time_formatter(milliseconds: int) -> str:
     hours, minutes = divmod(minutes, 60)
     days, hours = divmod(hours, 24)
     tmp = (
-            ((str(days) + " day(s), ") if days else "")
-            + ((str(hours) + " hour(s), ") if hours else "")
-            + ((str(minutes) + " minute(s), ") if minutes else "")
-            + ((str(seconds) + " second(s), ") if seconds else "")
-            + ((str(milliseconds) + " millisecond(s), ") if milliseconds else "")
+        ((str(days) + " day(s), ") if days else "")
+        + ((str(hours) + " hour(s), ") if hours else "")
+        + ((str(minutes) + " minute(s), ") if minutes else "")
+        + ((str(seconds) + " second(s), ") if seconds else "")
+        + ((str(milliseconds) + " millisecond(s), ") if milliseconds else "")
     )
     return tmp[:-2]
 
@@ -178,14 +186,14 @@ def time_formatter(milliseconds: int) -> str:
 async def convert_to_image(event, borg):
     lmao = await event.get_reply_message()
     if not (
-            lmao.gif
-            or lmao.audio
-            or lmao.voice
-            or lmao.video
-            or lmao.video_note
-            or lmao.photo
-            or lmao.sticker
-            or lmao.media
+        lmao.gif
+        or lmao.audio
+        or lmao.voice
+        or lmao.video
+        or lmao.video_note
+        or lmao.photo
+        or lmao.sticker
+        or lmao.media
     ):
         await event.edit("`Format Not Supported.`")
         return
@@ -267,7 +275,7 @@ async def crop_vid(input_vid: str, final_path: str):
 
 # Thanks To Userge-X
 async def take_screen_shot(
-        video_file: str, duration: int, path: str = ""
+    video_file: str, duration: int, path: str = ""
 ) -> Optional[str]:
     """ take a screenshot """
     logger.info(
@@ -381,8 +389,8 @@ async def get_subtitles(imdb_id, borg, event):
             sub_name_tag = row.find("td", class_=None)
             sub_name = (
                 str(sub_name_tag.find("a").text)
-                    .replace("subtitle", "")
-                    .replace("\n", "")
+                .replace("subtitle", "")
+                .replace("\n", "")
             )
             sub = (sub_name, sub_link)
             subtitles.append(sub)
@@ -404,43 +412,51 @@ async def get_subtitles(imdb_id, borg, event):
 
 # Thanks To TechoAryan For Scarpping
 async def apk_dl(app_name, path, event):
-    await event.edit('`Searching, For Apk File. This May Take Time Depending On Your App Size`')
+    await event.edit(
+        "`Searching, For Apk File. This May Take Time Depending On Your App Size`"
+    )
     res = requests.get(f"https://m.apkpure.com/search?q={app_name}")
-    soup = BeautifulSoup(res.text, 'html.parser')
-    result = soup.select('.dd')
+    soup = BeautifulSoup(res.text, "html.parser")
+    result = soup.select(".dd")
     for link in result[:1]:
-        s_for_name = requests.get("https://m.apkpure.com" + link.get('href'))
-        sfn = BeautifulSoup(s_for_name.text, 'html.parser')
-        ttl = sfn.select_one('title').text
-        noneed = [' - APK Download']
+        s_for_name = requests.get("https://m.apkpure.com" + link.get("href"))
+        sfn = BeautifulSoup(s_for_name.text, "html.parser")
+        ttl = sfn.select_one("title").text
+        noneed = [" - APK Download"]
         for i in noneed:
-            name = ttl.replace(i, '')
-            res2 = requests.get("https://m.apkpure.com" + link.get('href') + "/download?from=details")
-            soup2 = BeautifulSoup(res2.text, 'html.parser')
-            result = soup2.select('.ga')
+            name = ttl.replace(i, "")
+            res2 = requests.get(
+                "https://m.apkpure.com" + link.get("href") + "/download?from=details"
+            )
+            soup2 = BeautifulSoup(res2.text, "html.parser")
+            result = soup2.select(".ga")
         for link in result:
-            dl_link = link.get('href')
+            dl_link = link.get("href")
             r = requests.get(dl_link)
-            with open(f"{path}/{name}@VirtualUserbot.apk", 'wb') as f:
+            with open(f"{path}/{name}@VirtualUserbot.apk", "wb") as f:
                 f.write(r.content)
-    await event.edit('`Apk, Downloaded. Let me Upload It here.`')
-    final_path = f'{path}/{name}@VirtualUserbot.apk'
+    await event.edit("`Apk, Downloaded. Let me Upload It here.`")
+    final_path = f"{path}/{name}@VirtualUserbot.apk"
     return final_path, name
+
 
 async def check_if_subbed(channel_id, event, bot):
     try:
-            result = await bot(
-                functions.channels.GetParticipantRequest(
-                    channel=channel_id, user_id=event.sender_id
-                )
+        result = await bot(
+            functions.channels.GetParticipantRequest(
+                channel=channel_id, user_id=event.sender_id
             )
-            if result.participant:
-                return True
+        )
+        if result.participant:
+            return True
     except telethon.errors.rpcerrorlist.UserNotParticipantError:
         return False
-    
+
+
 async def _ytdl(url, is_it, event, tgbot):
-    await event.edit("`Ok Downloading This Video / Audio - Please Wait.` \n**Powered By @VirtualUserbot**")
+    await event.edit(
+        "`Ok Downloading This Video / Audio - Please Wait.` \n**Powered By @VirtualUserbot**"
+    )
     if is_it:
         opts = {
             "format": "bestaudio",
@@ -497,13 +513,18 @@ async def _ytdl(url, is_it, event, tgbot):
             file=f"{ytdl_data['id']}.mp3",
             progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
                 progress(
-                    d, t, event, c_time, "**Uploading Audio To TG**", f"{ytdl_data['title']}.mp3"
+                    d,
+                    t,
+                    event,
+                    c_time,
+                    "**Uploading Audio To TG**",
+                    f"{ytdl_data['title']}.mp3",
                 )
             ),
         )
         await event.edit(
             file=lol_m,
-            text=f"{ytdl_data['title']} \n**Uploaded Using @VirtualUserbot**"
+            text=f"{ytdl_data['title']} \n**Uploaded Using @VirtualUserbot**",
         )
         os.remove(f"{ytdl_data['id']}.mp3")
     elif video:
@@ -516,12 +537,16 @@ async def _ytdl(url, is_it, event, tgbot):
             file=f"{ytdl_data['id']}.mp4",
             progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
                 progress(
-                    d, t, event, c_time, "**Uploading Video To TG**", f"{ytdl_data['title']}.mp4"
+                    d,
+                    t,
+                    event,
+                    c_time,
+                    "**Uploading Video To TG**",
+                    f"{ytdl_data['title']}.mp4",
                 )
             ),
         )
         await event.edit(
-            file=hmmo,
-            text=f"{ytdl_data['title']} \n**Uploaded Using @VirtualUserbot**"
+            file=hmmo, text=f"{ytdl_data['title']} \n**Uploaded Using @VirtualUserbot**"
         )
         os.remove(f"{ytdl_data['id']}.mp4")
