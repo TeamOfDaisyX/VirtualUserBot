@@ -1,10 +1,9 @@
 import asyncio
 import os
 from pathlib import Path
-
-from fridaybot import CMD_HELP
-from fridaybot.function import get_all_modules
 from fridaybot.utils import friday_on_cmd, load_module
+from fridaybot.function import get_all_modules
+from fridaybot import CMD_HELP
 
 DELETE_TIMEOUT = 5
 
@@ -25,7 +24,7 @@ async def install(event):
                 shortname = path1.stem
                 load_module(shortname.replace(".py", ""))
                 await event.edit(
-                    "VirtualUserbot Has Installed `{}` Sucessfully.".format(
+                    "VirtualUserbot Installed `{}` Sucessfully.".format(
                         os.path.basename(downloaded_file_name)
                     )
                 )
@@ -42,16 +41,12 @@ async def install(event):
     await asyncio.sleep(DELETE_TIMEOUT)
     await event.delete()
 
-
-@borg.on(friday_on_cmd(pattern="pl ?(.*)"))
+@borg.on(friday_on_cmd(pattern='pl ?(.*)'))
 async def _(event):
     lul = event.pattern_match.group(1)
     yesm, nope, total_p = await get_all_modules(event, borg, lul)
-    await event.edit(
-        f"Installed {yesm} PLugins. Failed To Install {nope} Plugins And There Were Total {total_p} Plugins"
-    )
-
-
+    await event.edit(f"Installed {yesm} PLugins. Failed To Install {nope} Plugins And There Were Total {total_p} Plugins")
+    
 CMD_HELP.update(
     {
         "install": "**Install**\
