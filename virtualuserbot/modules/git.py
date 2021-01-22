@@ -1,7 +1,8 @@
 import asyncio
 
-from virtualuserbot import CMD_HELP
 from telethon import events
+
+from virtualuserbot import CMD_HELP
 
 
 @borg.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
