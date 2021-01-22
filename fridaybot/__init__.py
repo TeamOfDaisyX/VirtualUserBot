@@ -28,7 +28,7 @@ else:
 
 
 from .Configs import Config
-from .function import fridayfunction as topfunc
+
 
 Lastupdate = time.time()
 sedprint = logging.getLogger("WARNING")
