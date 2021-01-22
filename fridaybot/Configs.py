@@ -145,6 +145,7 @@ if ENV:
         PM_DATA = os.environ.get("PM_DATA", "ENABLE")
         DEEP_AI = os.environ.get("DEEP_AI", None)
         TAG_LOG = os.environ.get("TAG_LOG", None)
+        DEEZER_ARL_TOKEN = os.environ.get("DEEZER_ARL_TOKEN", None)
         ENABLE_ASSISTANTBOT = os.environ.get("ENABLE_ASSISTANTBOT", "ENABLE")
         EMOJI_TO_DISPLAY_IN_HELP = os.environ.get("EMOJI_TO_DISPLAY_IN_HELP", "🔥")
         TAG_FEATURE = os.environ.get("TAG_FEATURE", "DISABLE")
