@@ -5,7 +5,6 @@ from time import time
 
 from coffeehouse.api import API
 from coffeehouse.lydia import LydiaAI
-
 from fridaybot import BOTLOG, BOTLOG_CHATID, CMD_HELP
 from fridaybot.modules.sql_helper.lydia_ai_sql import add_s, get_all_s, get_s, remove_s
 

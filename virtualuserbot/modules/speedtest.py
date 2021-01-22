@@ -4,7 +4,6 @@ Available Options: image, file, text"""
 from datetime import datetime
 
 import speedtest
-
 from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd
 

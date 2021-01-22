@@ -2,11 +2,10 @@
 # CREDITS: @WhySooSerious, @Sur_vivor
 import time
 
-from uniborg.util import friday_on_cmd, sudo_cmd
-
 from fridaybot import ALIVE_NAME, CMD_HELP, Lastupdate
 from fridaybot.Configs import Config
 from fridaybot.modules import currentversion
+from uniborg.util import friday_on_cmd, sudo_cmd
 
 
 # Functions

@@ -13,10 +13,9 @@ from subprocess import PIPE, Popen
 
 import requests
 from bs4 import BeautifulSoup
-from humanize import naturalsize
-
 from fridaybot import CMD_HELP
 from fridaybot.events import register
+from humanize import naturalsize
 
 
 def subprocess_run(cmd):

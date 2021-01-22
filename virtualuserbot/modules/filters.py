@@ -9,9 +9,6 @@ Available Commands:
 import asyncio
 import re
 
-from telethon import utils
-from telethon.tl import types
-
 from fridaybot import CMD_HELP
 from fridaybot.modules.sql_helper.filter_sql import (
     add_filter,
@@ -20,6 +17,8 @@ from fridaybot.modules.sql_helper.filter_sql import (
     remove_filter,
 )
 from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
+from telethon import utils
+from telethon.tl import types
 
 DELETE_TIMEOUT = 0
 TYPE_TEXT = 0

@@ -6,7 +6,6 @@
 import os
 
 import requests
-
 from fridaybot import ALIVE_NAME, CMD_HELP
 from fridaybot import bot
 from fridaybot import bot as borg

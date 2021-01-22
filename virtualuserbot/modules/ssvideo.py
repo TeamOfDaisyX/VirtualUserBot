@@ -8,11 +8,10 @@ import asyncio
 import os
 import time
 
-from telethon.tl.types import DocumentAttributeFilename
-
 from fridaybot import CMD_HELP, bot
 from fridaybot.events import register
 from fridaybot.function import progress
+from telethon.tl.types import DocumentAttributeFilename
 
 
 @register(outgoing=True, pattern=r"^\.ssvideo(?: |$)(.*)")

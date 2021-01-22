@@ -15,7 +15,6 @@
 import urllib.request
 
 from bs4 import BeautifulSoup
-
 from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd
 

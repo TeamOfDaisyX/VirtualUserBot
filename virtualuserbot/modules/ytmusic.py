@@ -2,11 +2,10 @@ import asyncio
 import os
 
 import wget
-from youtubesearchpython import SearchVideos
-
 from fridaybot import CMD_HELP
 from fridaybot.Configs import Config
 from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
+from youtubesearchpython import SearchVideos
 
 
 @friday.on(friday_on_cmd(pattern="ytmusic ?(.*)"))

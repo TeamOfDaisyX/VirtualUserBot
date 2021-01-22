@@ -16,6 +16,7 @@ import requests
 import telethon
 from bs4 import BeautifulSoup
 from bs4 import BeautifulSoup as bs
+from fridaybot.utils import load_module
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from pymediainfo import MediaInfo
@@ -36,8 +37,6 @@ from youtube_dl.utils import (
     UnavailableVideoError,
     XAttrMetadataError,
 )
-
-from fridaybot.utils import load_module
 
 BASE_URL = "https://isubtitles.org"
 import os

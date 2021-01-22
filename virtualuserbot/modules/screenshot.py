@@ -7,10 +7,9 @@ import traceback
 from datetime import datetime
 
 import requests
+from fridaybot import CMD_HELP
 from selenium import webdriver
 from validators.url import url
-
-from fridaybot import CMD_HELP
 
 from ..utils import admin_cmd, edit_or_reply, sudo_cmd
 

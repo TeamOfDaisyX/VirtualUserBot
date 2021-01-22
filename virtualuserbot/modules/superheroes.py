@@ -12,7 +12,6 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import requests
-
 from fridaybot.Configs import Config
 from fridaybot.utils import admin_cmd
 

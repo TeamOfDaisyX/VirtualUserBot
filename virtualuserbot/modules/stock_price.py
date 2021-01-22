@@ -1,8 +1,7 @@
 import requests
-from yahoo_fin import stock_info as si
-
 from fridaybot import CMD_HELP
 from fridaybot.utils import admin_cmd
+from yahoo_fin import stock_info as si
 
 
 @friday.on(admin_cmd(pattern="liveprice (.*)"))

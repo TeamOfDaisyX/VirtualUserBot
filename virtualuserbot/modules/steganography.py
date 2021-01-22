@@ -1,10 +1,9 @@
 import os
 
 from cryptosteganography import CryptoSteganography
-from telethon.tl.types import MessageMediaPhoto
-
 from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd, sudo_cmd
+from telethon.tl.types import MessageMediaPhoto
 
 sedpath = "./fridaydevs/"
 if not os.path.isdir(sedpath):

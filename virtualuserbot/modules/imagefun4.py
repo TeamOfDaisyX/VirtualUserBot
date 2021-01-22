@@ -8,9 +8,8 @@
 import os
 
 import cv2
-from PIL import Image
-
 from fridaybot import bot
+from PIL import Image
 
 from ..utils import admin_cmd
 

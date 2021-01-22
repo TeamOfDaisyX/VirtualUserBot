@@ -12,10 +12,9 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import pyjokes
-from howdoi import howdoi
-
 from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd
+from howdoi import howdoi
 
 
 @friday.on(friday_on_cmd(pattern=r"pjoke"))

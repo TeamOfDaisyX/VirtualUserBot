@@ -6,7 +6,6 @@ import io
 import time
 
 import aiohttp
-
 from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd
 

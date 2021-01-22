@@ -1,8 +1,7 @@
 """.admin Plugin for @UniBorg"""
-from telethon.tl.types import ChannelParticipantsAdmins
-
 from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd
+from telethon.tl.types import ChannelParticipantsAdmins
 
 
 @friday.on(friday_on_cmd("join"))

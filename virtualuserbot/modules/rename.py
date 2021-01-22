@@ -7,9 +7,8 @@ import os
 import time
 from datetime import datetime
 
-from uniborg.util import friday_on_cmd
-
 from fridaybot import CMD_HELP
+from uniborg.util import friday_on_cmd
 
 thumb_image_path = Config.TMP_DOWNLOAD_DIRECTORY + "/thumb_image.jpg"
 

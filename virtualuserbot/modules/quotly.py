@@ -21,13 +21,12 @@ import urllib
 
 import emoji
 from fontTools.ttLib import TTFont
+from fridaybot import CMD_HELP, bot
+from fridaybot.utils import friday_on_cmd
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl import functions, types
-
-from fridaybot import CMD_HELP, bot
-from fridaybot.utils import friday_on_cmd
 
 COLORS = [
     "#F07975",

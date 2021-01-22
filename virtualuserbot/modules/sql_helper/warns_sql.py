@@ -1,9 +1,8 @@
 import threading
 
+from fridaybot.modules.sql_helper import BASE, SESSION
 from sqlalchemy import Boolean, Column, Integer, String, UnicodeText, distinct, func
 from sqlalchemy.dialects import postgresql
-
-from fridaybot.modules.sql_helper import BASE, SESSION
 
 
 class Warns(BASE):

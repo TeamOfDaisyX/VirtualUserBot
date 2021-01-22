@@ -1,9 +1,8 @@
 """Get ID of any Telegram media, or any user
 Syntax: .get_id"""
-from telethon.utils import pack_bot_file_id
-
 from fridaybot import CMD_HELP
 from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
+from telethon.utils import pack_bot_file_id
 
 
 @friday.on(friday_on_cmd("get_id"))

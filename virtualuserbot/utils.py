@@ -4,8 +4,6 @@ import logging
 import re
 from pathlib import Path
 
-from telethon import events
-
 from fridaybot import CMD_LIST, LOAD_PLUG, SUDO_LIST, bot
 from fridaybot.Configs import Config
 from fridaybot.wraptools import (
@@ -15,6 +13,8 @@ from fridaybot.wraptools import (
     ignore_grp,
     ignore_pm,
 )
+from telethon import events
+
 from var import Var
 
 sedprint = logging.getLogger("PLUGINS")
@@ -263,9 +263,8 @@ import sys
 import traceback
 from time import gmtime, strftime
 
-from telethon import events
-
 from fridaybot import bot
+from telethon import events
 
 
 def register(**args):

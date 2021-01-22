@@ -16,7 +16,6 @@ import re
 
 import requests
 from bs4 import BeautifulSoup
-
 from fridaybot import CMD_HELP
 from fridaybot.utils import admin_cmd
 

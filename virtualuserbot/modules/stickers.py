@@ -10,6 +10,9 @@ import os
 import zipfile
 from collections import defaultdict
 
+from fridaybot import ALIVE_NAME, CMD_HELP
+from fridaybot.function import convert_to_image
+from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 from PIL import Image
 from telethon.errors import MessageNotModifiedError
 from telethon.errors.rpcerrorlist import StickersetInvalidError
@@ -20,10 +23,6 @@ from telethon.tl.types import (
     InputStickerSetShortName,
     MessageMediaPhoto,
 )
-
-from fridaybot import ALIVE_NAME, CMD_HELP
-from fridaybot.function import convert_to_image
-from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 
 sedpath = Config.TMP_DOWNLOAD_DIRECTORY
 if not os.path.isdir(sedpath):

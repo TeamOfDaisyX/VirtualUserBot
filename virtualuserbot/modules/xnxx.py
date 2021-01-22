@@ -3,10 +3,9 @@
 """
 
 
+from fridaybot import pro
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-
-from fridaybot import pro
 
 from ..utils import admin_cmd
 

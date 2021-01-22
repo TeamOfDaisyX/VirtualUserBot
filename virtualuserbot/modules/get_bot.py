@@ -1,9 +1,8 @@
 """ Get the Bots in any chat*
 Syntax: .get_bot"""
-from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantsBots
-
 from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd
+from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantsBots
 
 
 @friday.on(friday_on_cmd("get_bot ?(.*)"))

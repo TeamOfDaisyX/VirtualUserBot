@@ -1,12 +1,11 @@
 import asyncio
 
-from telethon.events import ChatAction
-from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
-from telethon.tl.types import MessageEntityMentionName
-
 from fridaybot import CMD_HELP
 from fridaybot.modules.sql_helper.mute_sql import is_muted, mute, unmute
 from fridaybot.utils import friday_on_cmd
+from telethon.events import ChatAction
+from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
+from telethon.tl.types import MessageEntityMentionName
 
 
 async def get_full_user(event):

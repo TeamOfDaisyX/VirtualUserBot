@@ -6,9 +6,6 @@ Available Commands:
 .snips
 .snipl
 .snipd"""
-from telethon import events, utils
-from telethon.tl import types
-
 from fridaybot import CMD_HELP
 from fridaybot.modules.sql_helper.snips_sql import (
     add_snip,
@@ -17,6 +14,8 @@ from fridaybot.modules.sql_helper.snips_sql import (
     remove_snip,
 )
 from fridaybot.utils import friday_on_cmd
+from telethon import events, utils
+from telethon.tl import types
 
 TYPE_TEXT = 0
 TYPE_PHOTO = 1

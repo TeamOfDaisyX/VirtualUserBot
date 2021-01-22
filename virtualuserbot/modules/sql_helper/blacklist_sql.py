@@ -1,8 +1,7 @@
 import threading
 
-from sqlalchemy import Column, String, UnicodeText, distinct, func
-
 from fridaybot.modules.sql_helper import BASE, SESSION
+from sqlalchemy import Column, String, UnicodeText, distinct, func
 
 
 class BlackListFilters(BASE):

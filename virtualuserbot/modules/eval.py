@@ -8,9 +8,8 @@ import io
 import sys
 import traceback
 
-from uniborg.util import edit_or_reply, friday_on_cmd, sudo_cmd
-
 from fridaybot import CMD_HELP
+from uniborg.util import edit_or_reply, friday_on_cmd, sudo_cmd
 
 
 @friday.on(friday_on_cmd("eval"))

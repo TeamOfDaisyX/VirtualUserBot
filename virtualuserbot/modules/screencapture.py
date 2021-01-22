@@ -4,7 +4,6 @@ Syntax: .screencapture <Website URL>"""
 import io
 
 import requests
-
 from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd
 

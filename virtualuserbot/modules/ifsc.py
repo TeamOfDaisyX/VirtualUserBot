@@ -12,9 +12,8 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import requests
-from uniborg.util import friday_on_cmd
-
 from fridaybot import CMD_HELP
+from uniborg.util import friday_on_cmd
 
 
 @friday.on(friday_on_cmd(pattern="ifsc (.*)"))

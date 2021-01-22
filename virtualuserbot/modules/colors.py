@@ -2,10 +2,9 @@
 Syntax: .color <color_code>"""
 import os
 
-from PIL import Image, ImageColor
-
 from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd
+from PIL import Image, ImageColor
 
 
 @friday.on(friday_on_cmd(pattern="color (.*)"))

@@ -10,9 +10,8 @@ import re
 
 import bs4
 import requests
-from uniborg.util import friday_on_cmd
-
 from fridaybot import CMD_HELP
+from uniborg.util import friday_on_cmd
 
 langi = "en"
 

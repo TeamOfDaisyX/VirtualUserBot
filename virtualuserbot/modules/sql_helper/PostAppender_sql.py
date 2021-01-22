@@ -1,6 +1,5 @@
-from sqlalchemy import Boolean, Column, String, UnicodeText
-
 from fridaybot.modules.sql_helper import BASE, SESSION
+from sqlalchemy import Boolean, Column, String, UnicodeText
 
 
 class Pa(BASE):

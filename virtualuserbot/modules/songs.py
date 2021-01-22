@@ -8,14 +8,13 @@ import asyncio
 import os
 import re
 
+from fridaybot import CMD_HELP, bot
 from telethon.errors.rpcerrorlist import (
     UserAlreadyParticipantError,
     YouBlockedUserError,
 )
 from telethon.tl.functions.messages import ImportChatInviteRequest
 from telethon.tl.types import InputMessagesFilterMusic
-
-from fridaybot import CMD_HELP, bot
 
 from ..utils import admin_cmd
 

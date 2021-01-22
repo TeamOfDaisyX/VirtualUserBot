@@ -8,14 +8,13 @@ import time
 from datetime import datetime
 from urllib.parse import urlparse
 
+from fridaybot import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
+from fridaybot.events import register
+from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from pySmartDL import SmartDL
 from telethon.tl.types import DocumentAttributeVideo
-
-from fridaybot import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
-from fridaybot.events import register
-from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 
 
 async def progress(current, total, event, start, type_of_ps, file_name=None):

@@ -1,8 +1,7 @@
 # By @HeisenbergTheDanger and @xditya
 
-from telethon import *
-
 from fridaybot import CMD_HELP
+from telethon import *
 
 from ..utils import admin_cmd
 

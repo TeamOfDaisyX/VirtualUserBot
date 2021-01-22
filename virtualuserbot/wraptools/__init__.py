@@ -15,10 +15,10 @@
 import functools
 import re
 
-from telethon import events
-
 from fridaybot import bot
 from fridaybot.Configs import Config
+from telethon import events
+
 from var import Var
 
 

@@ -7,10 +7,9 @@ import os
 import subprocess
 from datetime import datetime
 
-from gtts import gTTS
-
 from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd
+from gtts import gTTS
 
 
 @friday.on(friday_on_cmd(pattern="voice (.*)"))

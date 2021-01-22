@@ -5,7 +5,6 @@ from datetime import datetime
 import cfscrape  # https://github.com/Anorov/cloudflare-scrape
 import requests
 from bs4 import BeautifulSoup
-
 from fridaybot import pro
 
 from ..utils import admin_cmd, humanbytes

@@ -9,9 +9,8 @@ command .gott
 import asyncio
 import random
 
-from telethon import events
-
 from fridaybot import CMD_HELP
+from telethon import events
 
 
 @friday.on(events.NewMessage(pattern=r"\.gott", outgoing=True))

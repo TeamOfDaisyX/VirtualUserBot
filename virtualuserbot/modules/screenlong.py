@@ -5,10 +5,9 @@ import io
 import traceback
 from datetime import datetime
 
-from selenium import webdriver
-
 from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd
+from selenium import webdriver
 
 
 @friday.on(friday_on_cmd("screenlong (.*)"))

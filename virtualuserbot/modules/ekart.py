@@ -1,5 +1,4 @@
 import requests
-
 from fridaybot import CMD_HELP
 from fridaybot.utils import admin_cmd
 

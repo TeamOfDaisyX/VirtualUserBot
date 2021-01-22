@@ -1,7 +1,6 @@
-from telethon.events import ChatAction
-
 from fridaybot import bot, sclient
 from fridaybot.Configs import Config
+from telethon.events import ChatAction
 
 """Bans Spammers/Scammer At time Of Arrival 
 If You Add Him The Bot Won't Restrict."""

@@ -13,9 +13,8 @@ from os import remove
 from time import gmtime, strftime
 from traceback import format_exc
 
-from telethon import events
-
 from fridaybot import LOGSPAMMER, PRIVATE_GROUP_ID, bot
+from telethon import events
 
 
 def register(**args):

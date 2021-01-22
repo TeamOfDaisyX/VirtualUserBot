@@ -2,10 +2,9 @@
 for bot credits to @pureindialover
 """
 
-from telethon.tl import functions
-
 from fridaybot import CMD_HELP
 from fridaybot.events import register
+from telethon.tl import functions
 
 
 @register(outgoing=True, pattern="^.create (b|g|c)(?: |$)(.*)")

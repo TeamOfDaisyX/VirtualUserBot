@@ -8,9 +8,8 @@ from datetime import datetime
 
 import qrcode
 from bs4 import BeautifulSoup
-from uniborg.util import friday_on_cmd
-
 from fridaybot import CMD_HELP
+from uniborg.util import friday_on_cmd
 
 
 def progress(current, total):

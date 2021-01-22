@@ -1,7 +1,6 @@
 import os
 
 import PIL
-
 from fridaybot import bot
 from fridaybot import bot as borg
 from fridaybot.utils import admin_cmd

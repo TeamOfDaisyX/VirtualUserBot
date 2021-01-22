@@ -15,11 +15,10 @@
 import secrets
 from random import *
 
-from password_strength import PasswordStats
-from uniborg.util import friday_on_cmd
-
 from fridaybot import CMD_HELP
 from fridaybot.utils import admin_cmd
+from password_strength import PasswordStats
+from uniborg.util import friday_on_cmd
 
 
 @friday.on(admin_cmd(pattern="passcheck (.*)"))

@@ -9,7 +9,6 @@ from subprocess import PIPE
 from subprocess import run as runapp
 
 import pybase64
-
 from fridaybot import CMD_HELP
 from fridaybot.events import errors_handler, register
 

@@ -2,12 +2,11 @@ import asyncio
 import io
 import os
 
-from telethon import events, functions
-from telethon.tl.functions.users import GetFullUserRequest
-
 from fridaybot import ALIVE_NAME, CUSTOM_PMPERMIT, lang
 from fridaybot.Configs import Config
 from fridaybot.utils import friday_on_cmd
+from telethon import events, functions
+from telethon.tl.functions.users import GetFullUserRequest
 
 from .sql_helper import pmpermit_sql as pmpermit_sql
 

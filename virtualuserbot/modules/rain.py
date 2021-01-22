@@ -2,9 +2,8 @@
 import asyncio
 from collections import deque
 
-from telethon import events
-
 from fridaybot import CMD_HELP
+from telethon import events
 
 
 @friday.on(events.NewMessage(pattern=r"\.rain", outgoing=True))

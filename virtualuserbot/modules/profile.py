@@ -4,10 +4,9 @@
 .ppic"""
 import os
 
+from fridaybot import CMD_HELP
 from telethon.tl import functions
 from uniborg.util import friday_on_cmd
-
-from fridaybot import CMD_HELP
 
 
 @friday.on(friday_on_cmd(pattern="pbio (.*)"))  # pylint:disable=E0602

@@ -2,9 +2,8 @@
 
 
 Dont edit credits """
-from telethon.errors.rpcerrorlist import YouBlockedUserError
-
 from fridaybot import CMD_HELP
+from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from ..utils import admin_cmd
 

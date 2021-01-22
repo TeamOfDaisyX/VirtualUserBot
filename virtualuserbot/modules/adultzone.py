@@ -7,7 +7,6 @@ import os
 import urllib
 
 import requests
-
 from fridaybot import pro
 
 from ..utils import admin_cmd, sudo_cmd

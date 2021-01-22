@@ -1,9 +1,8 @@
 import os
 
-from pdf2docx import parse
-
 from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd
+from pdf2docx import parse
 
 if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
     os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)

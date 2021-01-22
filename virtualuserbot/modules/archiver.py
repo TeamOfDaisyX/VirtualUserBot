@@ -12,12 +12,11 @@ import time
 from datetime import datetime
 
 import patoolib
+from fridaybot import CMD_HELP
+from fridaybot.Configs import Config as Var
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from telethon.tl.types import DocumentAttributeVideo
-
-from fridaybot import CMD_HELP
-from fridaybot.Configs import Config as Var
 
 from ..utils import admin_cmd, progress
 

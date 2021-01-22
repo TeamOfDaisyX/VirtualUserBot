@@ -19,13 +19,12 @@ from shutil import rmtree
 import cv2
 import numpy as np
 import requests
-from PIL import Image, ImageDraw, ImageFont
-from telegraph import upload_file
-from telethon.tl.functions.users import GetFullUserRequest
-
 from fridaybot import CMD_HELP
 from fridaybot.function import convert_to_image, crop_vid, runcmd
 from fridaybot.utils import friday_on_cmd, sudo_cmd
+from PIL import Image, ImageDraw, ImageFont
+from telegraph import upload_file
+from telethon.tl.functions.users import GetFullUserRequest
 
 sedpath = "./starkgangz/"
 if not os.path.isdir(sedpath):

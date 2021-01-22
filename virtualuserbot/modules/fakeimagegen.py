@@ -15,7 +15,6 @@
 import os
 
 import requests
-
 from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd, sudo_cmd
 

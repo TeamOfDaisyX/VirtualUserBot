@@ -4,7 +4,6 @@ import os
 
 import heroku3
 import requests
-
 from fridaybot.function.heroku_helper import HerokuHelper
 from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 

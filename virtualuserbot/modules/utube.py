@@ -8,9 +8,8 @@
 import asyncio
 import re
 
-from telethon.errors.rpcerrorlist import YouBlockedUserError
-
 from fridaybot import CMD_HELP, bot
+from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from ..utils import admin_cmd, edit_or_reply
 

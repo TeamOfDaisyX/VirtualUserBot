@@ -10,10 +10,9 @@ from datetime import datetime
 
 import requests
 from bs4 import BeautifulSoup
-from google_images_download import google_images_download
-
 from fridaybot import CMD_HELP
 from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
+from google_images_download import google_images_download
 
 
 def progress(current, total):

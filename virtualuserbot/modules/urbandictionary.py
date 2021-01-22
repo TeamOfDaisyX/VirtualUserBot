@@ -4,7 +4,6 @@
 """Urban Dictionary
 Syntax: .ud Query"""
 import urbandict
-
 from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd
 

@@ -3,9 +3,6 @@ import random
 import re
 
 import requests
-from PIL import Image
-from validators.url import url
-
 from fridaybot import CMD_HELP, bot
 from fridaybot.tweet import (
     bhautweet,
@@ -16,6 +13,8 @@ from fridaybot.tweet import (
     sunnytweet,
 )
 from fridaybot.utils import admin_cmd
+from PIL import Image
+from validators.url import url
 
 EMOJI_PATTERN = re.compile(
     "["

@@ -4,11 +4,10 @@ import os
 import time
 
 import requests
-from uniborg.util import friday_on_cmd
-
 from fridaybot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
 from fridaybot.Configs import Config
 from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
+from uniborg.util import friday_on_cmd
 
 # from var import var
 

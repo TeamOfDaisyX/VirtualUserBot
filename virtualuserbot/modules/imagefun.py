@@ -12,11 +12,10 @@ import shutil
 import cv2
 import numpy as np
 import requests
-from PIL import Image, ImageDraw
-from telegraph import upload_file
-
 from fridaybot import CMD_HELP, bot
 from fridaybot.utils import admin_cmd
+from PIL import Image, ImageDraw
+from telegraph import upload_file
 
 path = "./dcobra/"
 if not os.path.isdir(path):

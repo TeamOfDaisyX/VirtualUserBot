@@ -1,10 +1,9 @@
 import asyncio
 import datetime
 
+from fridaybot import ALIVE_NAME
 from telethon import events
 from telethon.tl import functions, types
-
-from fridaybot import ALIVE_NAME
 
 from ..utils import admin_cmd
 

@@ -4,9 +4,8 @@
 
 """Check Account Restrictions
 .cr (.*)"""
-from telethon.tl.types import Channel, Chat, User
-
 from fridaybot.utils import friday_on_cmd
+from telethon.tl.types import Channel, Chat, User
 
 
 @borg.on(friday_on_cmd(pattern="cr (.*)"))

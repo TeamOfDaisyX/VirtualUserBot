@@ -8,10 +8,9 @@ import random
 from time import sleep
 from urllib.parse import quote_plus
 
+from fridaybot import CMD_HELP
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-
-from fridaybot import CMD_HELP
 
 from ..utils import admin_cmd
 

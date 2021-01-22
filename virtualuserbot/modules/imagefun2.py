@@ -8,9 +8,8 @@ import shutil
 
 import cv2
 import requests
-from telegraph import upload_file
-
 from fridaybot import bot
+from telegraph import upload_file
 
 from ..utils import admin_cmd
 

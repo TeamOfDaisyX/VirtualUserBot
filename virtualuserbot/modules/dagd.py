@@ -5,7 +5,6 @@ Available Commands:
 .url <long url>
 .unshort <short url>"""
 import requests
-
 from fridaybot.utils import friday_on_cmd
 
 

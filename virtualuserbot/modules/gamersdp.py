@@ -5,10 +5,9 @@ import re
 import urllib
 
 import requests
-from telethon.tl import functions
-
 from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd
+from telethon.tl import functions
 
 COLLECTION_STRINGZ = [
     "star-wars-wallpaper-1080p",
