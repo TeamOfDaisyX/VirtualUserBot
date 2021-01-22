@@ -5,6 +5,7 @@ nospamplus
 pymediainfo
 quote
 python-magic
+telethon-session-sqlalchemy
 pyseoanalyzer
 glitch_this
 PyGithub
