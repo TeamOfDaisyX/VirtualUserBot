@@ -8,6 +8,7 @@ from logging import DEBUG, INFO, basicConfig, getLogger
 
 import pylast
 import wget
+from alchemysession import AlchemySessionContainer
 from dotenv import load_dotenv
 from nospamplus.connect import Connect
 from pylast import LastFMNetwork, md5
@@ -16,17 +17,16 @@ from requests import get
 from telegraph import Telegraph, exceptions, upload_file
 from telethon import TelegramClient
 from telethon.sessions import StringSession
-from alchemysession import AlchemySessionContainer
+
+from fridaybot.modules.sql_helper import SESSION
+from var import Var
 
 from .Configs import Config
 from .function import fridayfunction as topfunc
-from var import Var
-from fridaybot.modules.sql_helper import SESSION
 
 Lastupdate = time.time()
 sedprint = logging.getLogger("WARNING")
 from var import Var
-
 
 CMD_LIST = {}
 CMD_HELP = {}
