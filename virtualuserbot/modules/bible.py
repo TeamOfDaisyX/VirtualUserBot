@@ -1,6 +1,6 @@
 import requests
-from fridaybot import CMD_HELP
-from fridaybot.utils import admin_cmd
+from virtualuserbot import CMD_HELP
+from virtualuserbot.utils import admin_cmd
 
 
 @friday.on(admin_cmd(pattern="bible (.*)"))

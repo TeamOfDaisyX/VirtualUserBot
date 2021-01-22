@@ -2,8 +2,8 @@ import asyncio
 import time
 from collections import deque
 
-from fridaybot import CMD_HELP, bot
-from fridaybot.utils import friday_on_cmd
+from virtualuserbot import CMD_HELP, bot
+from virtualuserbot.utils import friday_on_cmd
 from telethon.tl.functions.channels import LeaveChannelRequest
 
 
@@ -115,7 +115,7 @@ CMD_HELP.update({"fp": "Send face palm emoji."})
 CMD_HELP.update({"moon": "Bot will send a cool moon animation."})
 CMD_HELP.update({"clock": "Bot will send a cool clock animation."})
 CMD_HELP.update({"readme": "Reedme."})
-CMD_HELP.update({"source": "Gives the source of your fridaybot"})
+CMD_HELP.update({"source": "Gives the source of your virtualuserbot"})
 CMD_HELP.update({"myusernames": "List of Usernames owned by you."})
 CMD_HELP.update({"oof": "Same as ;__; but ooof"})
 CMD_HELP.update({"earth": "Sends Kensar Earth animation"})

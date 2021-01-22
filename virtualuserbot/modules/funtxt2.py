@@ -1,5 +1,5 @@
 import nekos
-from fridaybot import CMD_HELP
+from virtualuserbot import CMD_HELP
 
 from ..utils import admin_cmd, edit_or_reply, sudo_cmd
 

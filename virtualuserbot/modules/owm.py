@@ -9,9 +9,9 @@ import json
 from datetime import datetime
 
 import requests
-from fridaybot import CMD_HELP
-from fridaybot import OPEN_WEATHER_MAP_APPID as OWM_API
-from fridaybot.events import errors_handler, register
+from virtualuserbot import CMD_HELP
+from virtualuserbot import OPEN_WEATHER_MAP_APPID as OWM_API
+from virtualuserbot.events import errors_handler, register
 from pytz import country_names as c_n
 from pytz import country_timezones as c_tz
 from pytz import timezone as tz
@@ -140,7 +140,7 @@ async def get_weather(weather):
 @register(outgoing=True, pattern="^.setcity(?: |$)(.*)")
 @errors_handler
 async def set_default_city(city):
-    """ For .ctime command, change the default fridaybot country for date and time commands. """
+    """ For .ctime command, change the default virtualuserbot country for date and time commands. """
 
     if not OWM_API:
         await city.edit("`Get an API key from` https://openweathermap.org/ `first.`")

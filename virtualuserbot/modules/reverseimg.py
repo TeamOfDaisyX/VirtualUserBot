@@ -14,8 +14,8 @@ import urllib
 
 import requests
 from bs4 import BeautifulSoup
-from fridaybot import CMD_HELP, bot
-from fridaybot.utils import errors_handler, register
+from virtualuserbot import CMD_HELP, bot
+from virtualuserbot.utils import errors_handler, register
 from PIL import Image
 
 opener = urllib.request.build_opener()

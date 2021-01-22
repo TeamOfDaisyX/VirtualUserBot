@@ -15,15 +15,15 @@
 import io
 import os
 
-from fridaybot import CMD_HELP
-from fridaybot.Configs import Config
-from fridaybot.modules.sql_helper.broadcast_sql import (
+from virtualuserbot import CMD_HELP
+from virtualuserbot.Configs import Config
+from virtualuserbot.modules.sql_helper.broadcast_sql import (
     add_chnnl_in_db,
     already_added,
     get_all_chnnl,
     rm_channel,
 )
-from fridaybot.utils import friday_on_cmd
+from virtualuserbot.utils import friday_on_cmd
 
 loggy_grp = Config.PRIVATE_GROUP_ID
 

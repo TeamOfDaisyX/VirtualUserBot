@@ -1,9 +1,9 @@
 # @FridayoT
 
 import requests
-from fridaybot import CMD_HELP
-from fridaybot.function import apk_dl
-from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
+from virtualuserbot import CMD_HELP
+from virtualuserbot.function import apk_dl
+from virtualuserbot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 from iplookup import iplookup
 from selenium import webdriver
 from youtube_search import YoutubeSearch

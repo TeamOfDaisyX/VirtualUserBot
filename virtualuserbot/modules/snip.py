@@ -6,14 +6,14 @@ Available Commands:
 .snips
 .snipl
 .snipd"""
-from fridaybot import CMD_HELP
-from fridaybot.modules.sql_helper.snips_sql import (
+from virtualuserbot import CMD_HELP
+from virtualuserbot.modules.sql_helper.snips_sql import (
     add_snip,
     get_all_snips,
     get_snips,
     remove_snip,
 )
-from fridaybot.utils import friday_on_cmd
+from virtualuserbot.utils import friday_on_cmd
 from telethon import events, utils
 from telethon.tl import types
 

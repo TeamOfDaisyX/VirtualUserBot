@@ -1,7 +1,7 @@
 import asyncio
 import os
 
-from fridaybot import ALIVE_NAME, bot
+from virtualuserbot import ALIVE_NAME, bot
 
 from ..utils import admin_cmd
 

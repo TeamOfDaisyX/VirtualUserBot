@@ -12,8 +12,8 @@ import shutil
 import cv2
 import numpy as np
 import requests
-from fridaybot import CMD_HELP, bot
-from fridaybot.utils import admin_cmd
+from virtualuserbot import CMD_HELP, bot
+from virtualuserbot.utils import admin_cmd
 from PIL import Image, ImageDraw
 from telegraph import upload_file
 

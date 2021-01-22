@@ -10,9 +10,9 @@ import os
 import zipfile
 from collections import defaultdict
 
-from fridaybot import ALIVE_NAME, CMD_HELP
-from fridaybot.function import convert_to_image
-from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
+from virtualuserbot import ALIVE_NAME, CMD_HELP
+from virtualuserbot.function import convert_to_image
+from virtualuserbot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 from PIL import Image
 from telethon.errors import MessageNotModifiedError
 from telethon.errors.rpcerrorlist import StickersetInvalidError

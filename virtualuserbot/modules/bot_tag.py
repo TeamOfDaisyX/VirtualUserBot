@@ -12,7 +12,7 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 
-from fridaybot.Configs import Config
+from virtualuserbot.Configs import Config
 from telethon import custom, events
 from telethon.tl.types import Chat
 from telethon.utils import get_display_name

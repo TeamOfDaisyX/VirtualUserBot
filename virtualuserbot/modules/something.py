@@ -1,6 +1,6 @@
 """ Whatever Plugin by Noobs of Telegram i.e. @pureindialover """
 
-from fridaybot import CMD_HELP
+from virtualuserbot import CMD_HELP
 from uniborg.util import friday_on_cmd
 
 

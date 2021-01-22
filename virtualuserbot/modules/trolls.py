@@ -17,8 +17,8 @@ import base64
 import os
 
 import requests
-from fridaybot import *
-from fridaybot import CMD_HELP
+from virtualuserbot import *
+from virtualuserbot import CMD_HELP
 from PIL import Image
 from telegraph import exceptions, upload_file
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get

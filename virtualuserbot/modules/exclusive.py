@@ -4,8 +4,8 @@
 
 import asyncio
 
-from fridaybot import CMD_HELP
-from fridaybot.utils import admin_cmd
+from virtualuserbot import CMD_HELP
+from virtualuserbot.utils import admin_cmd
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 

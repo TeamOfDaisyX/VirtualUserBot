@@ -4,8 +4,8 @@ modified by  @mrconfused
 Userbot plugin for CatUserbot
 """
 import emoji
-from fridaybot import CMD_HELP
-from fridaybot.modules import fonts as emojify
+from virtualuserbot import CMD_HELP
+from virtualuserbot.modules import fonts as emojify
 
 from ..utils import admin_cmd, edit_or_reply, sudo_cmd
 

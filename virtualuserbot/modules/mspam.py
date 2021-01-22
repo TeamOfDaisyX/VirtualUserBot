@@ -1,6 +1,6 @@
 # Written By Inuka Asith for VirtualUserbot
 
-from fridaybot import pro
+from virtualuserbot import pro
 
 from ..utils import admin_cmd
 

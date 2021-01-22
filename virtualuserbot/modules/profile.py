@@ -4,7 +4,7 @@
 .ppic"""
 import os
 
-from fridaybot import CMD_HELP
+from virtualuserbot import CMD_HELP
 from telethon.tl import functions
 from uniborg.util import friday_on_cmd
 

@@ -1,6 +1,6 @@
 # By @HeisenbergTheDanger and @xditya
 
-from fridaybot import CMD_HELP
+from virtualuserbot import CMD_HELP
 from telethon import *
 
 from ..utils import admin_cmd

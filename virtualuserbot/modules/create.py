@@ -2,8 +2,8 @@
 for bot credits to @pureindialover
 """
 
-from fridaybot import CMD_HELP
-from fridaybot.events import register
+from virtualuserbot import CMD_HELP
+from virtualuserbot.events import register
 from telethon.tl import functions
 
 

@@ -5,7 +5,7 @@
 
 import re
 
-from fridaybot import bot
+from virtualuserbot import bot
 
 from ..utils import admin_cmd
 

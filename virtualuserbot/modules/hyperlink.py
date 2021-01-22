@@ -2,8 +2,8 @@
 # By Priyam Kalra
 # Syntax (.hl <link>)
 
-from fridaybot import CMD_HELP
-from fridaybot.utils import friday_on_cmd
+from virtualuserbot import CMD_HELP
+from virtualuserbot.utils import friday_on_cmd
 
 
 @friday.on(friday_on_cmd(pattern="hl ?(.*)"))

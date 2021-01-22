@@ -12,8 +12,8 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
-from fridaybot import ALIVE_NAME
-from fridaybot.modules import currentversion
+from virtualuserbot import ALIVE_NAME
+from virtualuserbot.modules import currentversion
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Unknown"
 PM_IMG = "https://telegra.ph/file/0e7a45ed44e17ce68d8cd.png"

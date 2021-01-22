@@ -7,7 +7,7 @@ Userbot plugin fot CatUserbot
 
 import asyncio
 
-from fridaybot import ALIVE_NAME, CMD_HELP
+from virtualuserbot import ALIVE_NAME, CMD_HELP
 
 from ..utils import admin_cmd, sudo_cmd
 

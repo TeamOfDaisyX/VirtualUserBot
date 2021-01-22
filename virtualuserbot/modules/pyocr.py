@@ -6,9 +6,9 @@ except ImportError:
 import os
 
 import pytesseract
-from fridaybot import CMD_HELP
-from fridaybot.Configs import Config
-from fridaybot.utils import friday_on_cmd
+from virtualuserbot import CMD_HELP
+from virtualuserbot.Configs import Config
+from virtualuserbot.utils import friday_on_cmd
 
 
 @friday.on(friday_on_cmd(pattern="read$"))

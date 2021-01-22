@@ -2,8 +2,8 @@
 import random
 import re
 
-from fridaybot import CMD_HELP
-from fridaybot.modules import fonts
+from virtualuserbot import CMD_HELP
+from virtualuserbot.modules import fonts
 
 from ..utils import admin_cmd, edit_or_reply, sudo_cmd
 

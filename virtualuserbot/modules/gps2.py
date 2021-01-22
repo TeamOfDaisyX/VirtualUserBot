@@ -1,6 +1,6 @@
 import re
 
-from fridaybot import CMD_HELP, bot
+from virtualuserbot import CMD_HELP, bot
 from geopy.geocoders import Nominatim
 from telethon.tl import types
 

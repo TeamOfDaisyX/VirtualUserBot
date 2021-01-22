@@ -17,15 +17,15 @@ import os
 import re
 
 import telethon
-from fridaybot import bot
-from fridaybot.Configs import Config
-from fridaybot.modules.sql_helper.blacklist_assistant import (
+from virtualuserbot import bot
+from virtualuserbot.Configs import Config
+from virtualuserbot.modules.sql_helper.blacklist_assistant import (
     add_nibba_in_db,
     is_he_added,
     removenibba,
 )
-from fridaybot.modules.sql_helper.botusers_sql import add_me_in_db, his_userid
-from fridaybot.modules.sql_helper.idadder_sql import (
+from virtualuserbot.modules.sql_helper.botusers_sql import add_me_in_db, his_userid
+from virtualuserbot.modules.sql_helper.idadder_sql import (
     add_usersid_in_db,
     already_added,
     get_all_users,

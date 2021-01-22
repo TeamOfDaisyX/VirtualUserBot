@@ -3,8 +3,8 @@ import random
 import re
 
 import requests
-from fridaybot import CMD_HELP, bot
-from fridaybot.tweet import (
+from virtualuserbot import CMD_HELP, bot
+from virtualuserbot.tweet import (
     bhautweet,
     johnnytweet,
     jtweet,
@@ -12,7 +12,7 @@ from fridaybot.tweet import (
     moditweet,
     sunnytweet,
 )
-from fridaybot.utils import admin_cmd
+from virtualuserbot.utils import admin_cmd
 from PIL import Image
 from validators.url import url
 

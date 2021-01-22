@@ -1,4 +1,4 @@
-from fridaybot import BOTLOG_CHATID, CMD_HELP, bot, pro
+from virtualuserbot import BOTLOG_CHATID, CMD_HELP, bot, pro
 from telethon import events
 
 from ..utils import admin_cmd, edit_or_reply, sudo_cmd

@@ -10,8 +10,8 @@
 from random import randint
 from time import sleep
 
-from fridaybot import CMD_HELP
-from fridaybot.events import register
+from virtualuserbot import CMD_HELP
+from virtualuserbot.events import register
 
 
 @register(outgoing=True, pattern="^.random")
@@ -31,7 +31,7 @@ async def randomise(items):
 
 @register(outgoing=True, pattern="^.sleep( [0-9]+)?$")
 async def sleepybot(time):
-    """ For .sleep command, let the fridaybot snooze for a few second. """
+    """ For .sleep command, let the virtualuserbot snooze for a few second. """
     message = time.text
     if not message[0].isalpha() and message[0] not in ("/", "#", "@", "!"):
         if " " not in time.pattern_match.group(1):

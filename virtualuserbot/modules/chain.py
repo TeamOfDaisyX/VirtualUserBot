@@ -2,7 +2,7 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
+from virtualuserbot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 from telethon.tl.functions.messages import SaveDraftRequest
 
 

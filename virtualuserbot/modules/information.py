@@ -1,7 +1,7 @@
 import html
 
-from fridaybot import CMD_HELP, sclient
-from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
+from virtualuserbot import CMD_HELP, sclient
+from virtualuserbot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName

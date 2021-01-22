@@ -8,7 +8,7 @@ import shutil
 
 import cv2
 import requests
-from fridaybot import bot
+from virtualuserbot import bot
 from telegraph import upload_file
 
 from ..utils import admin_cmd

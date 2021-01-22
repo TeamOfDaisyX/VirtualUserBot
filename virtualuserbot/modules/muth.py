@@ -4,7 +4,7 @@ Available Commands
 
 import asyncio
 
-from fridaybot import CMD_HELP
+from virtualuserbot import CMD_HELP
 from telethon import events
 
 

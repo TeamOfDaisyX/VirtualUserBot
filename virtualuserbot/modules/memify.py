@@ -5,7 +5,7 @@ created by: @A_Dark_Princ3
 
 import asyncio
 
-from fridaybot import CMD_HELP
+from virtualuserbot import CMD_HELP
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.types import MessageMediaPhoto
 from uniborg.util import friday_on_cmd

@@ -1,8 +1,8 @@
 import time
 from datetime import datetime
 
-from fridaybot import CMD_HELP, Lastupdate, lang
-from fridaybot.utils import edit_or_reply, friday_on_cmd
+from virtualuserbot import CMD_HELP, Lastupdate, lang
+from virtualuserbot.utils import edit_or_reply, friday_on_cmd
 
 if lang == "si":
 

@@ -1,1 +1,1 @@
-fridaybot: python -m fridaybot
+virtualuserbot: python -m virtualuserbot

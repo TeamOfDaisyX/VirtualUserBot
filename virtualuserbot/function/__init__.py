@@ -16,7 +16,7 @@ import requests
 import telethon
 from bs4 import BeautifulSoup
 from bs4 import BeautifulSoup as bs
-from fridaybot.utils import load_module
+from virtualuserbot.utils import load_module
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from pymediainfo import MediaInfo
@@ -42,10 +42,10 @@ BASE_URL = "https://isubtitles.org"
 import os
 import zipfile
 
-from fridaybot.Configs import Config
+from virtualuserbot.Configs import Config
 
 sedpath = Config.TMP_DOWNLOAD_DIRECTORY
-from fridaybot import logging
+from virtualuserbot import logging
 
 logger = logging.getLogger("[--WARNING--]")
 if not os.path.isdir(sedpath):
@@ -133,7 +133,7 @@ async def get_all_modules(event, borg, channel_id):
     await event.edit(f"**Found : {len_p} Plugins. Trying To Install**")
     for sed in a_plugins:
         try:
-            downloaded_file_name = await borg.download_media(sed, "fridaybot/modules/")
+            downloaded_file_name = await borg.download_media(sed, "virtualuserbot/modules/")
             if "(" not in downloaded_file_name:
                 path1 = Path(downloaded_file_name)
                 shortname = path1.stem

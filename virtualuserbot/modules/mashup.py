@@ -3,7 +3,7 @@
 video meme mashup:
 Syntax: .mashup <text>
 """
-from fridaybot import CMD_HELP
+from virtualuserbot import CMD_HELP
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from uniborg.util import friday_on_cmd

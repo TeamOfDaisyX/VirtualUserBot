@@ -6,9 +6,9 @@ from re import findall
 from urllib.parse import quote
 
 import requests
-from fridaybot import ALIVE_NAME, CMD_HELP, CMD_LIST, lang
-from fridaybot.function import _ytdl
-from fridaybot.modules import inlinestats
+from virtualuserbot import ALIVE_NAME, CMD_HELP, CMD_LIST, lang
+from virtualuserbot.function import _ytdl
+from virtualuserbot.modules import inlinestats
 from pornhub_api import PornhubApi
 from search_engine_parser import GoogleSearch
 from telethon import Button, custom, events, functions

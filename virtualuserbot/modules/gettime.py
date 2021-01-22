@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from fridaybot.utils import edit_or_reply, friday_on_cmd
+from virtualuserbot.utils import edit_or_reply, friday_on_cmd
 
 
 @friday.on(friday_on_cmd("gettime ?(.*)"))  # pylint:disable=E0602

@@ -4,7 +4,7 @@ and may cmd would be added soon."""
 
 
 from cowpy import cow
-from fridaybot import CMD_HELP
+from virtualuserbot import CMD_HELP
 from telethon import events
 
 

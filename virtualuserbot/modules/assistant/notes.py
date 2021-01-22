@@ -1,5 +1,5 @@
-from fridaybot.Configs import Config
-from fridaybot.modules.sql_helper.snips_sql import (
+from virtualuserbot.Configs import Config
+from virtualuserbot.modules.sql_helper.snips_sql import (
     add_snip,
     get_all_snips,
     get_snips,

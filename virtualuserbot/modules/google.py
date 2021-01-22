@@ -1,7 +1,7 @@
 from re import findall
 
-from fridaybot import CMD_HELP
-from fridaybot.utils import register
+from virtualuserbot import CMD_HELP
+from virtualuserbot.utils import register
 from search_engine_parser import GoogleSearch
 
 

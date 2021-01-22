@@ -2,7 +2,7 @@
 
 
 Dont edit credits """
-from fridaybot import CMD_HELP
+from virtualuserbot import CMD_HELP
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from ..utils import admin_cmd

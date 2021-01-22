@@ -1,5 +1,5 @@
-from fridaybot import bot, sclient
-from fridaybot.Configs import Config
+from virtualuserbot import bot, sclient
+from virtualuserbot.Configs import Config
 from telethon.events import ChatAction
 
 """Bans Spammers/Scammer At time Of Arrival 

@@ -4,7 +4,7 @@ import asyncio
 import datetime
 from datetime import datetime
 
-from fridaybot import CMD_HELP, lang
+from virtualuserbot import CMD_HELP, lang
 from telethon import events
 from telethon.tl import functions, types
 
@@ -125,7 +125,7 @@ if lang == "si":
         afk_since = "**a while ago**"
         current_message_text = event.message.message.lower()
         if "afk" in current_message_text:
-            # fridaybot's should not reply to other fridaybot's
+            # virtualuserbot's should not reply to other virtualuserbot's
             # https://core.telegram.org/bots/faq#why-doesn-39t-my-bot-see-messages-from-other-bots
             return False
         if USER_AFK and not (await event.get_sender()).bot:  # pylint:disable=E0602
@@ -278,7 +278,7 @@ else:
         afk_since = "**a while ago**"
         current_message_text = event.message.message.lower()
         if "afk" in current_message_text:
-            # fridaybot's should not reply to other fridaybot's
+            # virtualuserbot's should not reply to other virtualuserbot's
             # https://core.telegram.org/bots/faq#why-doesn-39t-my-bot-see-messages-from-other-bots
             return False
         if USER_AFK and not (await event.get_sender()).bot:  # pylint:disable=E0602

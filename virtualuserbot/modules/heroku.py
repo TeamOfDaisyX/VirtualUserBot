@@ -1,7 +1,7 @@
 # Copyright (C) 2020 Adek Maulana.
 # All rights reserved.
 """
-   Heroku manager for your fridaybot
+   Heroku manager for your virtualuserbot
 """
 
 import asyncio
@@ -10,8 +10,8 @@ import os
 
 import heroku3
 import requests
-from fridaybot import CMD_HELP
-from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
+from virtualuserbot import CMD_HELP
+from virtualuserbot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 from telegraph import Telegraph
 
 telegraph = Telegraph()

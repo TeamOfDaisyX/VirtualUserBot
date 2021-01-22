@@ -12,8 +12,8 @@ import asyncio
 import sys
 from os import environ, execle, path, remove
 
-from fridaybot import CMD_HELP
-from fridaybot.utils import friday_on_cmd
+from virtualuserbot import CMD_HELP
+from virtualuserbot.utils import friday_on_cmd
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
@@ -127,7 +127,7 @@ async def update(event, repo, ups_rem, ac_br):
         "**Soft Update Sucessfull, Please Wait For Some Time To Get This Process Completed.**"
     )
     # Spin a new instance of bot
-    args = [sys.executable, "-m", "fridaybot"]
+    args = [sys.executable, "-m", "virtualuserbot"]
     execle(sys.executable, *args, environ)
     return
 

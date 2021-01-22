@@ -4,9 +4,9 @@ import logging
 import re
 from pathlib import Path
 
-from fridaybot import CMD_LIST, LOAD_PLUG, SUDO_LIST, bot
-from fridaybot.Configs import Config
-from fridaybot.wraptools import (
+from virtualuserbot import CMD_LIST, LOAD_PLUG, SUDO_LIST, bot
+from virtualuserbot.Configs import Config
+from virtualuserbot.wraptools import (
     am_i_admin,
     ignore_bot,
     ignore_fwd,
@@ -98,11 +98,11 @@ def load_module(shortname):
         import sys
         from pathlib import Path
 
-        import fridaybot.modules
-        import fridaybot.utils
+        import virtualuserbot.modules
+        import virtualuserbot.utils
 
-        path = Path(f"fridaybot/modules/{shortname}.py")
-        name = "fridaybot.modules.{}".format(shortname)
+        path = Path(f"virtualuserbot/modules/{shortname}.py")
+        name = "virtualuserbot.modules.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
@@ -112,11 +112,11 @@ def load_module(shortname):
         import sys
         from pathlib import Path
 
-        import fridaybot.modules
-        import fridaybot.utils
+        import virtualuserbot.modules
+        import virtualuserbot.utils
 
-        path = Path(f"fridaybot/modules/{shortname}.py")
-        name = "fridaybot.modules.{}".format(shortname)
+        path = Path(f"virtualuserbot/modules/{shortname}.py")
+        name = "virtualuserbot.modules.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.bot = bot
@@ -125,12 +125,12 @@ def load_module(shortname):
         mod.command = command
         mod.logger = logging.getLogger(shortname)
         # support for uniborg
-        sys.modules["uniborg.util"] = fridaybot.utils
-        sys.modules["friday.util"] = fridaybot.utils
-        sys.modules["userbot.utils"] = fridaybot.utils
-        sys.modules["userbot.plugins"] = fridaybot.modules
-        sys.modules["plugins"] = fridaybot.modules
-        sys.modules["userbot"] = fridaybot
+        sys.modules["uniborg.util"] = virtualuserbot.utils
+        sys.modules["friday.util"] = virtualuserbot.utils
+        sys.modules["userbot.utils"] = virtualuserbot.utils
+        sys.modules["userbot.plugins"] = virtualuserbot.modules
+        sys.modules["plugins"] = virtualuserbot.modules
+        sys.modules["userbot"] = virtualuserbot
         mod.Config = Config
         mod.ignore_grp = ignore_grp()
         mod.ignore_pm = ignore_pm()
@@ -140,10 +140,10 @@ def load_module(shortname):
         mod.borg = bot
         mod.friday = bot
         # support for paperplaneextended
-        sys.modules["fridaybot.events"] = fridaybot.utils
+        sys.modules["virtualuserbot.events"] = virtualuserbot.utils
         spec.loader.exec_module(mod)
         # for imports
-        sys.modules["fridaybot.modules." + shortname] = mod
+        sys.modules["virtualuserbot.modules." + shortname] = mod
         sedprint.info("Successfully imported " + shortname)
 
 
@@ -155,7 +155,7 @@ def remove_plugin(shortname):
             del LOAD_PLUG[shortname]
 
         except:
-            name = f"fridaybot.modules.{shortname}"
+            name = f"virtualuserbot.modules.{shortname}"
 
             for i in reversed(range(len(bot._event_builders))):
                 ev, cb = bot._event_builders[i]
@@ -254,7 +254,7 @@ def friday_on_cmd(pattern=None, **args):
 
 
 """ Userbot module for managing events.
- One of the main components of the fridaybot. """
+ One of the main components of the virtualuserbot. """
 
 import asyncio
 import datetime
@@ -263,7 +263,7 @@ import sys
 import traceback
 from time import gmtime, strftime
 
-from fridaybot import bot
+from virtualuserbot import bot
 from telethon import events
 
 
@@ -655,8 +655,8 @@ def start_assistant(shortname):
         import sys
         from pathlib import Path
 
-        path = Path(f"fridaybot/modules/assistant/{shortname}.py")
-        name = "fridaybot.modules.assistant.{}".format(shortname)
+        path = Path(f"virtualuserbot/modules/assistant/{shortname}.py")
+        name = "virtualuserbot.modules.assistant.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
@@ -667,8 +667,8 @@ def start_assistant(shortname):
         import sys
         from pathlib import Path
 
-        path = Path(f"fridaybot/modules/assistant/{shortname}.py")
-        name = "fridaybot.modules.assistant.{}".format(shortname)
+        path = Path(f"virtualuserbot/modules/assistant/{shortname}.py")
+        name = "virtualuserbot.modules.assistant.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.tgbot = bot.tgbot
@@ -684,5 +684,5 @@ def start_assistant(shortname):
         mod.peru_only = peru_only()
         mod.only_pvt = only_pvt()
         spec.loader.exec_module(mod)
-        sys.modules["fridaybot.modules.assistant" + shortname] = mod
+        sys.modules["virtualuserbot.modules.assistant" + shortname] = mod
         sedprint.info("Assistant Has imported " + shortname)

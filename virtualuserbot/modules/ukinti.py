@@ -6,7 +6,7 @@ Available Options: d, y, m, w, o, q, r """
 import asyncio
 from time import sleep
 
-from fridaybot import CMD_HELP
+from virtualuserbot import CMD_HELP
 from telethon.tl import functions
 from telethon.tl.types import (
     ChannelParticipantsKicked,

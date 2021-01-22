@@ -15,8 +15,8 @@
 import functools
 import re
 
-from fridaybot import bot
-from fridaybot.Configs import Config
+from virtualuserbot import bot
+from virtualuserbot.Configs import Config
 from telethon import events
 
 from var import Var

@@ -6,8 +6,8 @@
 
 import os
 
-from fridaybot import CMD_HELP
-from fridaybot.utils import friday_on_cmd, sudo_cmd
+from virtualuserbot import CMD_HELP
+from virtualuserbot.utils import friday_on_cmd, sudo_cmd
 from pySmartDL import SmartDL
 
 STARK_HTTP = "https://api.proxyscrape.com/?request=getproxies&proxytype=http&timeout=10000&country=all&ssl=all&anonymity=all"

@@ -1,8 +1,8 @@
 import os
 
 from cryptosteganography import CryptoSteganography
-from fridaybot import CMD_HELP
-from fridaybot.utils import friday_on_cmd, sudo_cmd
+from virtualuserbot import CMD_HELP
+from virtualuserbot.utils import friday_on_cmd, sudo_cmd
 from telethon.tl.types import MessageMediaPhoto
 
 sedpath = "./fridaydevs/"

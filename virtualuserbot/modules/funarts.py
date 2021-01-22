@@ -1,4 +1,4 @@
-from fridaybot import CMD_HELP
+from virtualuserbot import CMD_HELP
 from telethon.tl.types import ChannelParticipantsAdmins
 
 from ..utils import admin_cmd, sudo_cmd

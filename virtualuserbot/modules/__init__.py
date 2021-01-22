@@ -1,5 +1,5 @@
-from fridaybot.Configs import Config
-from fridaybot.utils import friday_on_cmd
+from virtualuserbot.Configs import Config
+from virtualuserbot.utils import friday_on_cmd
 
 from var import Var
 

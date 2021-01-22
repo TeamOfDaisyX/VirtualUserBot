@@ -15,8 +15,8 @@
 import secrets
 from random import *
 
-from fridaybot import CMD_HELP
-from fridaybot.utils import admin_cmd
+from virtualuserbot import CMD_HELP
+from virtualuserbot.utils import admin_cmd
 from password_strength import PasswordStats
 from uniborg.util import friday_on_cmd
 

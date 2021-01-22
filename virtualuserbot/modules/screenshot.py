@@ -7,7 +7,7 @@ import traceback
 from datetime import datetime
 
 import requests
-from fridaybot import CMD_HELP
+from virtualuserbot import CMD_HELP
 from selenium import webdriver
 from validators.url import url
 

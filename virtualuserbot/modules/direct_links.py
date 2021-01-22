@@ -13,8 +13,8 @@ from subprocess import PIPE, Popen
 
 import requests
 from bs4 import BeautifulSoup
-from fridaybot import CMD_HELP
-from fridaybot.events import register
+from virtualuserbot import CMD_HELP
+from virtualuserbot.events import register
 from humanize import naturalsize
 
 

@@ -2,9 +2,9 @@ import asyncio
 import io
 import os
 
-from fridaybot import ALIVE_NAME, CUSTOM_PMPERMIT, lang
-from fridaybot.Configs import Config
-from fridaybot.utils import friday_on_cmd
+from virtualuserbot import ALIVE_NAME, CUSTOM_PMPERMIT, lang
+from virtualuserbot.Configs import Config
+from virtualuserbot.utils import friday_on_cmd
 from telethon import events, functions
 from telethon.tl.functions.users import GetFullUserRequest
 

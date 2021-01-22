@@ -2,9 +2,9 @@ import asyncio
 import os
 
 import wget
-from fridaybot import CMD_HELP
-from fridaybot.Configs import Config
-from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
+from virtualuserbot import CMD_HELP
+from virtualuserbot.Configs import Config
+from virtualuserbot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 from youtubesearchpython import SearchVideos
 
 

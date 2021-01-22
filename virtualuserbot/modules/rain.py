@@ -2,7 +2,7 @@
 import asyncio
 from collections import deque
 
-from fridaybot import CMD_HELP
+from virtualuserbot import CMD_HELP
 from telethon import events
 
 

@@ -8,9 +8,9 @@ import asyncio
 import os
 import time
 
-from fridaybot import CMD_HELP, bot
-from fridaybot.events import register
-from fridaybot.function import progress
+from virtualuserbot import CMD_HELP, bot
+from virtualuserbot.events import register
+from virtualuserbot.function import progress
 from telethon.tl.types import DocumentAttributeFilename
 
 

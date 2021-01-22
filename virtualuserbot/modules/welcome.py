@@ -1,5 +1,5 @@
-from fridaybot import CMD_HELP
-from fridaybot.modules.sql_helper.welcome_sql import (
+from virtualuserbot import CMD_HELP
+from virtualuserbot.modules.sql_helper.welcome_sql import (
     add_welcome_setting,
     get_current_welcome_settings,
     rm_welcome_setting,

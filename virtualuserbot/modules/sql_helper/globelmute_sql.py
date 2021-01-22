@@ -1,7 +1,7 @@
 # From Javes 05 Userbot ( For Gmute Plugin ) For Test ( I know I have it already but Wait Let Me Do Test )
 
 try:
-    from fridaybot.modules.sql_helper import BASE, SESSION
+    from virtualuserbot.modules.sql_helper import BASE, SESSION
 except ImportError:
     raise AttributeError
 

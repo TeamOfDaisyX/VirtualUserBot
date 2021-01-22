@@ -1,9 +1,9 @@
 import os
 
 import PIL
-from fridaybot import bot
-from fridaybot import bot as borg
-from fridaybot.utils import admin_cmd
+from virtualuserbot import bot
+from virtualuserbot import bot as borg
+from virtualuserbot.utils import admin_cmd
 
 from ..utils import admin_cmd
 

@@ -9,7 +9,7 @@ import os
 from asyncio import create_subprocess_exec as asyncrunapp
 from asyncio.subprocess import PIPE as asyncPIPE
 
-from fridaybot import CMD_HELP
+from virtualuserbot import CMD_HELP
 
 from ..utils import admin_cmd, edit_or_reply, sudo_cmd
 

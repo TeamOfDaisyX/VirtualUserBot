@@ -3,7 +3,7 @@
 """
 
 
-from fridaybot import pro
+from virtualuserbot import pro
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 

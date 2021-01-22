@@ -15,8 +15,8 @@
 import os
 
 import requests
-from fridaybot import CMD_HELP
-from fridaybot.utils import friday_on_cmd, sudo_cmd
+from virtualuserbot import CMD_HELP
+from virtualuserbot.utils import friday_on_cmd, sudo_cmd
 
 
 # hmm
@@ -36,7 +36,7 @@ async def _(event):
     fole = "FRIDAYOT.jpg"
     await borg.send_file(event.chat_id, fole, caption=captin)
     await event.delete()
-    os.system("rm /root/fridaybot/FRIDAYOT.jpg ")
+    os.system("rm /root/virtualuserbot/FRIDAYOT.jpg ")
 
 
 CMD_HELP.update(

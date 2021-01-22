@@ -1,7 +1,7 @@
 import os.path
 
-from fridaybot import CMD_HELP
-from fridaybot.utils import friday_on_cmd, sudo_cmd
+from virtualuserbot import CMD_HELP
+from virtualuserbot.utils import friday_on_cmd, sudo_cmd
 
 sedpath = "./chsaiujwal/"
 if not os.path.isdir(sedpath):

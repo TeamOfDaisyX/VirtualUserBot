@@ -15,7 +15,7 @@
 import os
 from pathlib import Path
 
-from fridaybot.utils import command, load_module
+from virtualuserbot.utils import command, load_module
 from telethon.tl.types import InputMessagesFilterDocument
 
 from var import Var
@@ -33,7 +33,7 @@ async def install(event):
     for ixo in total_doxx:
         mxo = documentss[ixo].id
         downloaded_file_name = await event.client.download_media(
-            await borg.get_messages(chat, ids=mxo), "fridaybot/modules/"
+            await borg.get_messages(chat, ids=mxo), "virtualuserbot/modules/"
         )
         if "(" not in downloaded_file_name:
             path1 = Path(downloaded_file_name)

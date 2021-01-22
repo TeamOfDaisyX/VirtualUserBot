@@ -21,7 +21,7 @@ import urllib
 
 import emoji
 from fontTools.ttLib import TTFont
-from fridaybot.utils import friday_on_cmd
+from virtualuserbot.utils import friday_on_cmd
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 from telethon.tl import functions, types
 

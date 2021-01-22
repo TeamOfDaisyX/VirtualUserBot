@@ -1,6 +1,6 @@
 from anime_downloader.sites import get_anime_class
-from fridaybot import CMD_HELP
-from fridaybot.utils import admin_cmd
+from virtualuserbot import CMD_HELP
+from virtualuserbot.utils import admin_cmd
 from mal import Anime, AnimeSearch, Manga, MangaSearch
 
 

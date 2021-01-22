@@ -8,7 +8,7 @@ import asyncio
 import os
 import re
 
-from fridaybot import CMD_HELP, bot
+from virtualuserbot import CMD_HELP, bot
 from telethon.errors.rpcerrorlist import (
     UserAlreadyParticipantError,
     YouBlockedUserError,

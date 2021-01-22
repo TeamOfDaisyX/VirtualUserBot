@@ -4,7 +4,7 @@
 import os
 
 import requests
-from fridaybot import CMD_HELP
+from virtualuserbot import CMD_HELP
 
 from ..utils import admin_cmd, sudo_cmd
 

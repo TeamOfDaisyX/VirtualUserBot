@@ -1,7 +1,7 @@
 import asyncio
 import datetime
 
-from fridaybot import ALIVE_NAME
+from virtualuserbot import ALIVE_NAME
 from telethon import events
 from telethon.tl import functions, types
 

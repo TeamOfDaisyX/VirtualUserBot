@@ -4,7 +4,7 @@
 
 """Check Account Restrictions
 .cr (.*)"""
-from fridaybot.utils import friday_on_cmd
+from virtualuserbot.utils import friday_on_cmd
 from telethon.tl.types import Channel, Chat, User
 
 

@@ -1,6 +1,6 @@
-from fridaybot import CMD_HELP
-from fridaybot.modules.sql_helper import warns_sql as sql
-from fridaybot.utils import friday_on_cmd
+from virtualuserbot import CMD_HELP
+from virtualuserbot.modules.sql_helper import warns_sql as sql
+from virtualuserbot.utils import friday_on_cmd
 
 
 @friday.on(friday_on_cmd(pattern="warn(?: |$)(.*)"))

@@ -1,6 +1,6 @@
 """.admin Plugin for @UniBorg"""
-from fridaybot import CMD_HELP
-from fridaybot.utils import friday_on_cmd
+from virtualuserbot import CMD_HELP
+from virtualuserbot.utils import friday_on_cmd
 from telethon.tl.types import ChannelParticipantsAdmins
 
 

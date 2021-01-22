@@ -8,9 +8,9 @@ import time
 from datetime import datetime
 from urllib.parse import urlparse
 
-from fridaybot import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
-from fridaybot.events import register
-from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
+from virtualuserbot import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
+from virtualuserbot.events import register
+from virtualuserbot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from pySmartDL import SmartDL
@@ -194,7 +194,7 @@ async def upload(u_event):
     """ For .upload command, allows you to upload a file from the VirtualUserbot's server """
     await u_event.edit("Processing ...")
     input_str = u_event.pattern_match.group(1)
-    if input_str in ("fridaybot.session", "config.env"):
+    if input_str in ("virtualuserbot.session", "config.env"):
         await u_event.edit("`That's a dangerous operation! Not Permitted!`")
         return
     if os.path.exists(input_str):

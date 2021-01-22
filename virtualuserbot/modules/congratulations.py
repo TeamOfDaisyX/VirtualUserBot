@@ -1,6 +1,6 @@
 import random
 
-from fridaybot import CMD_HELP
+from virtualuserbot import CMD_HELP
 from uniborg.util import edit_or_reply, friday_on_cmd, sudo_cmd
 
 RUNSREACTS = [

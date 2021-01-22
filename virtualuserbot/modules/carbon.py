@@ -10,8 +10,8 @@ import random
 from time import sleep
 from urllib.parse import quote_plus
 
-from fridaybot import CHROME_DRIVER, CMD_HELP, GOOGLE_CHROME_BIN
-from fridaybot.utils import register
+from virtualuserbot import CHROME_DRIVER, CMD_HELP, GOOGLE_CHROME_BIN
+from virtualuserbot.utils import register
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys

@@ -1,9 +1,9 @@
-from fridaybot.modules.sql_helper.channel_sticker_sql import (
+from virtualuserbot.modules.sql_helper.channel_sticker_sql import (
     add_new_data_in_db,
     is_data_indb,
     remove_datas,
 )
-from fridaybot.utils import admin_cmd
+from virtualuserbot.utils import admin_cmd
 from telethon import events
 from telethon.utils import pack_bot_file_id
 

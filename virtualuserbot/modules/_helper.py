@@ -1,5 +1,5 @@
-from fridaybot import ALIVE_NAME, CMD_LIST, lang
-from fridaybot.utils import friday_on_cmd
+from virtualuserbot import ALIVE_NAME, CMD_LIST, lang
+from virtualuserbot.utils import friday_on_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "VirtualUserbot"
 

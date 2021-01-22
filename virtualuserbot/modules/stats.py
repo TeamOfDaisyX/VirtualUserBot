@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from fridaybot import CMD_HELP, bot
+from virtualuserbot import CMD_HELP, bot
 from telethon.tl.types import Channel, Chat, User
 from uniborg.util import friday_on_cmd
 

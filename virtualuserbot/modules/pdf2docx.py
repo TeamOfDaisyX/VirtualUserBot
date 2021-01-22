@@ -1,7 +1,7 @@
 import os
 
-from fridaybot import CMD_HELP
-from fridaybot.utils import friday_on_cmd
+from virtualuserbot import CMD_HELP
+from virtualuserbot.utils import friday_on_cmd
 from pdf2docx import parse
 
 if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
@@ -18,7 +18,7 @@ async def hmm(event):
     starky = await borg.download_media(lol.media, Config.TMP_DOWNLOAD_DIRECTORY)
     await event.edit("hmm... Please Wait..")
     pdf_file = starky
-    docx_file = "./fridaybot/DOWNLOADS/Infinity_Bots.docx"
+    docx_file = "./virtualuserbot/DOWNLOADS/Infinity_Bots.docx"
     parse(pdf_file, docx_file, start=0, end=None)
     await borg.send_file(
         event.chat_id,

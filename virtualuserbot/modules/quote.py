@@ -12,8 +12,8 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
-from fridaybot import CMD_HELP
-from fridaybot.utils import admin_cmd
+from virtualuserbot import CMD_HELP
+from virtualuserbot.utils import admin_cmd
 from quote import quote
 
 

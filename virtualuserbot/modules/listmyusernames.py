@@ -1,7 +1,7 @@
 # For @UniBorg
 # (c) Shrimadhav U K
 
-from fridaybot import CMD_HELP
+from virtualuserbot import CMD_HELP
 from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest
 from uniborg.util import friday_on_cmd
 

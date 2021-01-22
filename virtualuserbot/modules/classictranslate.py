@@ -4,7 +4,7 @@ Available Commands:
 .tl LangaugeCode | text to translate"""
 
 import emoji
-from fridaybot import CMD_HELP
+from virtualuserbot import CMD_HELP
 from googletrans import Translator
 
 from ..utils import admin_cmd

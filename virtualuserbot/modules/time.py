@@ -5,8 +5,8 @@ import asyncio
 import os
 from datetime import datetime
 
-from fridaybot import CMD_HELP
-from fridaybot.utils import friday_on_cmd
+from virtualuserbot import CMD_HELP
+from virtualuserbot.utils import friday_on_cmd
 from PIL import Image, ImageDraw, ImageFont
 
 FONT_FILE_TO_USE = "Fonts/digital.ttf"

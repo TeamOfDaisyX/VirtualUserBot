@@ -154,7 +154,7 @@ virtualenv -p /usr/bin/python3 venv
 pip install -r requirements.txt
 # Create local_config.py with variables as given below
 # Start Bot 
-python3 -m fridaybot
+python3 -m virtualuserbot
 ```
 
 

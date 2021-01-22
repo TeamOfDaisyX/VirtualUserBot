@@ -3,9 +3,9 @@ from pathlib import Path
 from sys import argv
 
 import telethon.utils
-from fridaybot import bot
-from fridaybot.Configs import Config
-from fridaybot.utils import load_module, start_assistant
+from virtualuserbot import bot
+from virtualuserbot.Configs import Config
+from virtualuserbot.utils import load_module, start_assistant
 from telethon import TelegramClient
 
 from var import Var
@@ -34,7 +34,7 @@ else:
 
 import glob
 
-path = "fridaybot/modules/*.py"
+path = "virtualuserbot/modules/*.py"
 files = glob.glob(path)
 for name in files:
     with open(name) as f:
@@ -43,7 +43,7 @@ for name in files:
         load_module(shortname.replace(".py", ""))
 
 if Config.ENABLE_ASSISTANTBOT == "ENABLE":
-    path = "fridaybot/modules/assistant/*.py"
+    path = "virtualuserbot/modules/assistant/*.py"
     files = glob.glob(path)
     for name in files:
         with open(name) as f:

@@ -4,7 +4,7 @@ from re import sub
 from sys import setrecursionlimit
 from urllib import parse
 
-from fridaybot import (
+from virtualuserbot import (
     BIO_PREFIX,
     BOTLOG,
     BOTLOG_CHATID,
@@ -14,7 +14,7 @@ from fridaybot import (
     bot,
     lastfm,
 )
-from fridaybot.events import register
+from virtualuserbot.events import register
 from pylast import User, WSError
 from telethon.errors import AboutTooLongError
 from telethon.errors.rpcerrorlist import FloodWaitError

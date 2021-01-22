@@ -9,8 +9,8 @@ Userbot module to help you manage a group
 from asyncio import sleep
 from os import remove
 
-from fridaybot import BOTLOG, BOTLOG_CHATID, CMD_HELP
-from fridaybot.utils import admin_cmd, errors_handler
+from virtualuserbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
+from virtualuserbot.utils import admin_cmd, errors_handler
 from telethon.errors import (
     BadRequestError,
     ChatAdminRequiredError,

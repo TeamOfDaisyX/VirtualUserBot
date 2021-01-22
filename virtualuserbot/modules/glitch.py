@@ -13,8 +13,8 @@
 
 import os
 
-from fridaybot import CMD_HELP
-from fridaybot.utils import friday_on_cmd, sudo_cmd
+from virtualuserbot import CMD_HELP
+from virtualuserbot.utils import friday_on_cmd, sudo_cmd
 from glitch_this import ImageGlitcher
 from telethon.tl.types import MessageMediaPhoto
 

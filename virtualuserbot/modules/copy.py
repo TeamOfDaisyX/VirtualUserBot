@@ -1,6 +1,6 @@
 # Original credits to Black Lightning
 
-from fridaybot import CMD_HELP
+from virtualuserbot import CMD_HELP
 
 from ..utils import admin_cmd
 

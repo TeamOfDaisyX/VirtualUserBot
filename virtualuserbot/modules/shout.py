@@ -3,7 +3,7 @@ usage: .shout message
 originaly from : @corsicanu_bot
 """
 
-from fridaybot import CMD_HELP
+from virtualuserbot import CMD_HELP
 from telethon import events
 
 

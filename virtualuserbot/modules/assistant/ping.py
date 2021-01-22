@@ -15,7 +15,7 @@
 import time
 from datetime import datetime
 
-from fridaybot import Lastupdate
+from virtualuserbot import Lastupdate
 
 
 def get_readable_time(seconds: int) -> str:

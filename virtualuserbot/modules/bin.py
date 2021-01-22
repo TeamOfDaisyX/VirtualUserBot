@@ -1,5 +1,5 @@
 # pata nhi sir 👀👀👀👀
-from fridaybot import bot as danish_00
+from virtualuserbot import bot as danish_00
 from telethon import events, functions
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 

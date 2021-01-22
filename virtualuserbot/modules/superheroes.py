@@ -12,8 +12,8 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import requests
-from fridaybot.Configs import Config
-from fridaybot.utils import admin_cmd
+from virtualuserbot.Configs import Config
+from virtualuserbot.utils import admin_cmd
 
 
 @friday.on(admin_cmd(pattern="hero (.*)"))

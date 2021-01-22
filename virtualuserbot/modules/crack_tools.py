@@ -1,8 +1,8 @@
 import os
 
 import requests
-from fridaybot import CMD_HELP
-from fridaybot.utils import admin_cmd, friday_on_cmd
+from virtualuserbot import CMD_HELP
+from virtualuserbot.utils import admin_cmd, friday_on_cmd
 from uniborg.util import friday_on_cmd
 
 data = {

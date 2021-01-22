@@ -3,7 +3,7 @@
 # team cobra
 from asyncio import sleep
 
-from fridaybot import bot
+from virtualuserbot import bot
 from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import ChatBannedRights
 

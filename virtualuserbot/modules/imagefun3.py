@@ -11,7 +11,7 @@ import shutil
 
 import cv2
 import numpy as np
-from fridaybot import CMD_HELP, bot
+from virtualuserbot import CMD_HELP, bot
 from PIL import Image
 
 from ..utils import admin_cmd

@@ -1,7 +1,7 @@
 import asyncio
 
-from fridaybot import CMD_HELP, pro
-from fridaybot.modules.sql_helper import floodsql as sql
+from virtualuserbot import CMD_HELP, pro
+from virtualuserbot.modules.sql_helper import floodsql as sql
 from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import ChatBannedRights
 

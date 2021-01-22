@@ -7,8 +7,8 @@
 
 from asyncio import sleep
 
-from fridaybot import BOTLOG, BOTLOG_CHATID, CMD_HELP
-from fridaybot.utils import errors_handler, register
+from virtualuserbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
+from virtualuserbot.utils import errors_handler, register
 from telethon.errors import rpcbaseerrors
 
 

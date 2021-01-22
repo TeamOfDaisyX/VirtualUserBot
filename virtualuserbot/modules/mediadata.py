@@ -6,9 +6,9 @@ import os
 import shlex
 from typing import Tuple
 
-from fridaybot import CMD_HELP
-from fridaybot.Configs import Config
-from fridaybot.utils import friday_on_cmd
+from virtualuserbot import CMD_HELP
+from virtualuserbot.Configs import Config
+from virtualuserbot.utils import friday_on_cmd
 from telegraph import Telegraph
 
 telegraph = Telegraph()

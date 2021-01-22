@@ -12,8 +12,8 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import pyjokes
-from fridaybot import CMD_HELP
-from fridaybot.utils import friday_on_cmd
+from virtualuserbot import CMD_HELP
+from virtualuserbot.utils import friday_on_cmd
 from howdoi import howdoi
 
 

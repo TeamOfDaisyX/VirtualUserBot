@@ -1,6 +1,6 @@
 # corona virus stats for catuserbot
 from covid import Covid
-from fridaybot import CMD_HELP
+from virtualuserbot import CMD_HELP
 
 from ..utils import admin_cmd, edit_or_reply, sudo_cmd
 

@@ -12,7 +12,7 @@ import shutil
 import time
 from datetime import datetime
 
-from fridaybot import CMD_HELP
+from virtualuserbot import CMD_HELP
 from PIL import Image, ImageDraw, ImageFont
 from pySmartDL import SmartDL
 from telethon.errors import FloodWaitError
@@ -45,12 +45,12 @@ async def autopic(event):
     if event.fwd_from:
         return
     global AUTOPICSTART
-    downloaded_file_name = "fridaybot/original_pic.png"
+    downloaded_file_name = "virtualuserbot/original_pic.png"
     downloader = SmartDL(
         Var.DOWNLOAD_PFP_URL_CLOCK, downloaded_file_name, progress_bar=False
     )
     downloader.start(blocking=False)
-    photo = "fridaybot/photo_pfp.png"
+    photo = "virtualuserbot/photo_pfp.png"
     while not downloader.isFinished():
         pass
     input_str = event.pattern_match.group(1)
@@ -92,13 +92,13 @@ async def main(event):
     if event.fwd_from:
         return
     global DIGITALPICSTART
-    poto = "fridaybot/poto_pfp.png"
+    poto = "virtualuserbot/poto_pfp.png"
     cat = str(
         base64.b64decode(
             "aHR0cHM6Ly90ZWxlZ3JhLnBoL2ZpbGUvYWVhZWJlMzNiMWYzOTg4YTBiNjkwLmpwZw=="
         )
     )[2:51]
-    downloaded_file_name = "fridaybot/original_pic.png"
+    downloaded_file_name = "virtualuserbot/original_pic.png"
     downloader = SmartDL(cat, downloaded_file_name, progress_bar=False)
     downloader.start(blocking=False)
     if DIGITALPICSTART:
@@ -134,12 +134,12 @@ async def autopic(event):
     if event.fwd_from:
         return
     global BLOOMSTART
-    downloaded_file_name = "fridaybot/original_pic.png"
+    downloaded_file_name = "virtualuserbot/original_pic.png"
     downloader = SmartDL(
         Config.DOWNLOAD_PFP_URL_CLOCK, downloaded_file_name, progress_bar=True
     )
     downloader.start(blocking=False)
-    photo = "fridaybot/photo_pfp.png"
+    photo = "virtualuserbot/photo_pfp.png"
     while not downloader.isFinished():
         pass
     if BLOOMSTART:

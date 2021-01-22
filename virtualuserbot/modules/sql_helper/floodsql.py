@@ -1,6 +1,6 @@
 import threading
 
-from fridaybot.modules.sql_helper import BASE, SESSION
+from virtualuserbot.modules.sql_helper import BASE, SESSION
 from sqlalchemy import Column, Integer, String
 
 DEF_COUNT = 0

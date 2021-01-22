@@ -13,7 +13,7 @@ import asyncio
 import random
 from asyncio import sleep
 
-from fridaybot import CMD_HELP, bot
+from virtualuserbot import CMD_HELP, bot
 
 from ..utils import admin_cmd, edit_or_reply, sudo_cmd
 
@@ -277,7 +277,7 @@ async def runstrings(event):
     await edit_or_reply(event, txt)
 
 
-from fridaybot import CMD_HELP
+from virtualuserbot import CMD_HELP
 
 
 @bot.on(admin_cmd("newyear"))

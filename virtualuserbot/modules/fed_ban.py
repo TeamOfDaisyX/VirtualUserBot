@@ -1,13 +1,13 @@
 import asyncio
 
-from fridaybot.function import fetch_feds
-from fridaybot.modules.sql_helper.feds_sql import (
+from virtualuserbot.function import fetch_feds
+from virtualuserbot.modules.sql_helper.feds_sql import (
     add_fed,
     get_all_feds,
     is_fed_indb,
     rmfed,
 )
-from fridaybot.utils import friday_on_cmd
+from virtualuserbot.utils import friday_on_cmd
 
 chnnl_grp = Config.FBAN_GROUP
 

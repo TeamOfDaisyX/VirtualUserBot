@@ -4,7 +4,7 @@ import math
 import os
 
 import numpy as np
-from fridaybot.utils import admin_cmd
+from virtualuserbot.utils import admin_cmd
 from pydub import AudioSegment
 from telethon import types
 

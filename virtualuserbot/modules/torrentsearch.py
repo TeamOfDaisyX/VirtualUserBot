@@ -9,7 +9,7 @@ from datetime import datetime
 import cfscrape  # https://github.com/Anorov/cloudflare-scrape
 import requests
 from bs4 import BeautifulSoup as bs
-from fridaybot import CMD_HELP, pro
+from virtualuserbot import CMD_HELP, pro
 
 from ..utils import admin_cmd, humanbytes
 

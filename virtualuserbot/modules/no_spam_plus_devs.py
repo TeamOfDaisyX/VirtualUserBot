@@ -1,7 +1,7 @@
 import secrets
 
-from fridaybot import sclient
-from fridaybot.utils import admin_cmd
+from virtualuserbot import sclient
+from virtualuserbot.utils import admin_cmd
 
 json_codes = {
     "nsX01": "Pornography - High Risk",

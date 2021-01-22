@@ -9,14 +9,14 @@ Available Commands:
 import asyncio
 import re
 
-from fridaybot import CMD_HELP
-from fridaybot.modules.sql_helper.filter_sql import (
+from virtualuserbot import CMD_HELP
+from virtualuserbot.modules.sql_helper.filter_sql import (
     add_filter,
     get_all_filters,
     remove_all_filters,
     remove_filter,
 )
-from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
+from virtualuserbot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 from telethon import utils
 from telethon.tl import types
 
@@ -36,7 +36,7 @@ async def on_snip(event):
     name = event.raw_text
     if event.chat_id in last_triggered_filters:
         if name in last_triggered_filters[event.chat_id]:
-            # avoid fridaybot spam
+            # avoid virtualuserbot spam
             # "I demand rights for us bots, we are equal to you humans." -Henri Koivuneva (t.me/UserbotTesting/2698)
             return False
     snips = get_all_filters(event.chat_id)

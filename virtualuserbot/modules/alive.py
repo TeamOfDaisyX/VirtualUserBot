@@ -1,10 +1,10 @@
-"""Check if fridaybot alive. If you change these, you become the gayest gay such that even the gay world will disown you."""
+"""Check if virtualuserbot alive. If you change these, you become the gayest gay such that even the gay world will disown you."""
 # CREDITS: @WhySooSerious, @Sur_vivor
 import time
 
-from fridaybot import ALIVE_NAME, CMD_HELP, Lastupdate
-from fridaybot.Configs import Config
-from fridaybot.modules import currentversion
+from virtualuserbot import ALIVE_NAME, CMD_HELP, Lastupdate
+from virtualuserbot.Configs import Config
+from virtualuserbot.modules import currentversion
 from uniborg.util import friday_on_cmd, sudo_cmd
 
 

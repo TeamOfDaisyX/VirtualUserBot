@@ -10,7 +10,7 @@ import math
 import os
 import time
 
-from fridaybot.utils import progress
+from virtualuserbot.utils import progress
 from telethon.tl.types import DocumentAttributeAudio
 from uniborg.util import admin_cmd
 from youtube_dl import YoutubeDL

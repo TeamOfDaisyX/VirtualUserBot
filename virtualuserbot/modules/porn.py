@@ -8,7 +8,7 @@
 
 import asyncio
 
-from fridaybot import pro
+from virtualuserbot import pro
 
 from ..utils import admin_cmd
 

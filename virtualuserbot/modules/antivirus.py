@@ -1,5 +1,5 @@
 # Lots of lub to @r4v4n4 for gibing the base <3
-from fridaybot import CMD_HELP
+from virtualuserbot import CMD_HELP
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 

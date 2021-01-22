@@ -1,14 +1,14 @@
 """Invite the user(s) to the current chat
 Syntax: .invite <User(s)>"""
 
-from fridaybot.utils import friday_on_cmd
+from virtualuserbot.utils import friday_on_cmd
 from telethon import functions
 
 """Invite the user(s) to the current chat
 Syntax: .invite <User(s)>"""
 
-from fridaybot import CMD_HELP
-from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
+from virtualuserbot import CMD_HELP
+from virtualuserbot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 from telethon import functions
 
 

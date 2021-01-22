@@ -2,7 +2,7 @@
 """
 import re
 
-from fridaybot.utils import friday_on_cmd
+from virtualuserbot.utils import friday_on_cmd
 from telethon import custom
 
 # regex obtained from: https://github.com/PaulSonOfLars/tgbot/blob/master/tg_bot/modules/helper_funcs/string_handling.py#L23

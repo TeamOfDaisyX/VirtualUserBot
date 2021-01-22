@@ -1,7 +1,7 @@
 import sys
 
-from fridaybot import CMD_HELP
-from fridaybot.utils import friday_on_cmd
+from virtualuserbot import CMD_HELP
+from virtualuserbot.utils import friday_on_cmd
 from telethon import __version__, functions
 
 

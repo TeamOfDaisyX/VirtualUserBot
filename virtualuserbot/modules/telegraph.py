@@ -5,8 +5,8 @@ Available Commands:
 import os
 from datetime import datetime
 
-from fridaybot import CMD_HELP
-from fridaybot.utils import friday_on_cmd
+from virtualuserbot import CMD_HELP
+from virtualuserbot.utils import friday_on_cmd
 from PIL import Image
 from telegraph import Telegraph, exceptions, upload_file
 
