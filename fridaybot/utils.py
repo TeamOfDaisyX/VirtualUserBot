@@ -16,6 +16,7 @@ from fridaybot.wraptools import (
     ignore_pm,
 )
 from var import Var
+from fridaybot.function import strings as _tr
 
 sedprint = logging.getLogger("PLUGINS")
 cmdhandler = Config.COMMAND_HAND_LER
@@ -123,6 +124,7 @@ def load_module(shortname):
         mod.tgbot = bot.tgbot
         mod.Var = Var
         mod.command = command
+        mod._tr = _tr        
         mod.logger = logging.getLogger(shortname)
         # support for uniborg
         sys.modules["uniborg.util"] = fridaybot.utils
