@@ -97,7 +97,7 @@ if lang == "si":
                     event.chat_id,
                     "Please set `PRIVATE_GROUP_ID` "
                     + "for the proper functioning of afk functionality "
-                    + "Please Seek Support in @FridayOT\n\n `{}`".format(str(e)),
+                    + "Please Seek Support in @InfinityJE\n\n `{}`".format(str(e)),
                     reply_to=event.message.id,
                     silent=True,
                 )
@@ -250,7 +250,7 @@ else:
                     event.chat_id,
                     "Please set `PRIVATE_GROUP_ID` "
                     + "for the proper functioning of afk functionality "
-                    + "Please Seek Support in @FridayOT\n\n `{}`".format(str(e)),
+                    + "Please Seek Support in @InfinityJE\n\n `{}`".format(str(e)),
                     reply_to=event.message.id,
                     silent=True,
                 )
@@ -312,12 +312,7 @@ else:
                 else:
                     f"`{int(seconds)}s` **ago**"
             msg = None
-            message_to_reply = (
-                f"**My Boss is Afk**  \n**AFKT** : `{total_afk_time}`\n**Reason** : `{reason}`"
-                + f"\n\nHe Will Reply To You Soon!"
-                if reason
-                else f"**My Master is Afk**\n AFK : `{total_afk_time}` He Will Comeback Soon"
-            )
+            message_to_reply = (f"I Am **Offline** Right Now. \n**Last Seen :** `{total_afk_time}`\n**Reason** : `{reason}`" if reason else f"I Am **Offline** Right Now. \n**Last Seen :** `{total_afk_time}`")
             msg = await event.reply(message_to_reply)
             await asyncio.sleep(5)
             if event.chat_id in last_afk_message:  # pylint:disable=E0602
