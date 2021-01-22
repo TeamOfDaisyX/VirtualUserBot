@@ -1,9 +1,8 @@
 from fridaybot import ALIVE_NAME, CMD_LIST, lang
-
+from fridaybot.utils import friday_on_cmd
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "VirtualUserbot"
 
-
-@command(pattern="^.help ?(.*)")
+borg.on(friday_on_cmd(pattern="help ?(.*)")
 async def cmd_list(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         tgbotusername = Var.TG_BOT_USER_NAME_BF_HER
