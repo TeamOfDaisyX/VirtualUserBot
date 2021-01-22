@@ -131,6 +131,8 @@ def load_module(shortname):
         sys.modules["friday.util"] = fridaybot.utils
         sys.modules["userbot.utils"] = fridaybot.utils
         sys.modules["userbot.plugins"] = fridaybot.modules
+        sys.modules["plugins"] = fridaybot.modules
+        sys.modules["userbot"] = fridaybot
         mod.Config = Config
         mod.ignore_grp = ignore_grp()
         mod.ignore_pm = ignore_pm()
