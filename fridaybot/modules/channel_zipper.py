@@ -11,9 +11,10 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-import shutil
 import os
+import shutil
 import uuid
+
 from fridaybot.utils import friday_on_cmd
 
 
@@ -33,7 +34,9 @@ async def starky(event):
     try:
         chnnl_msgs = await borg.get_messages(chnnl, limit=3000)
     except:
-        await event.edit("**Unable To fetch Messages !** \n`Please, Check Channel Details And IF THere Are Any Media :/`")
+        await event.edit(
+            "**Unable To fetch Messages !** \n`Please, Check Channel Details And IF THere Are Any Media :/`"
+        )
         return
     total = int(chnnl_msgs.total)
     await event.edit(f"**Downloading {total} Media/Messages**")
@@ -45,15 +48,21 @@ async def starky(event):
             text_count += 1
             f = open(f"{dir}{chnnl}.txt", "a")
             f.write(f"{d.raw_text} \n\n")
-    await event.edit(f"**Total Media :** `{total}` \n**Downloaded Media :** `{media_count}` \n**Total Texts Appended :** `{text_count}` \n**Now Zipping Files.**")
+    await event.edit(
+        f"**Total Media :** `{total}` \n**Downloaded Media :** `{media_count}` \n**Total Texts Appended :** `{text_count}` \n**Now Zipping Files.**"
+    )
     shutil.make_archive(f"{chnnl}", "zip", dir)
-    tf = await event.edit(f"**Total Media :** `{total}` \n**Downloaded Media :** `{media_count}` \n**Total Texts Appended :** `{text_count}` \n**Uploading Zip**")
-    await borg.send_file(event.chat_id, f"{chnnl}.zip", caption=f"**Total Media :** `{total}` \n**Downloaded Media :** `{media_count}` \n**Total Texts Appended :** `{text_count}`")
+    tf = await event.edit(
+        f"**Total Media :** `{total}` \n**Downloaded Media :** `{media_count}` \n**Total Texts Appended :** `{text_count}` \n**Uploading Zip**"
+    )
+    await borg.send_file(
+        event.chat_id,
+        f"{chnnl}.zip",
+        caption=f"**Total Media :** `{total}` \n**Downloaded Media :** `{media_count}` \n**Total Texts Appended :** `{text_count}`",
+    )
     await tf.delete()
     os.remove(f"{chnnl}.zip")
     shutil.rmtree(dir)
-            
-
 
 
 CMD_HELP.update(
