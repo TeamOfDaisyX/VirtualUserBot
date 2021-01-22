@@ -8,7 +8,6 @@ from telethon import events
 
 from fridaybot import CMD_LIST, LOAD_PLUG, SUDO_LIST, bot
 from fridaybot.Configs import Config
-from fridaybot.function import strings as _tr
 from fridaybot.wraptools import (
     am_i_admin,
     ignore_bot,
@@ -17,7 +16,6 @@ from fridaybot.wraptools import (
     ignore_pm,
 )
 from var import Var
-
 sedprint = logging.getLogger("PLUGINS")
 cmdhandler = Config.COMMAND_HAND_LER
 bothandler = Config.BOT_HANDLER
@@ -124,7 +122,6 @@ def load_module(shortname):
         mod.tgbot = bot.tgbot
         mod.Var = Var
         mod.command = command
-        mod._tr = _tr
         mod.logger = logging.getLogger(shortname)
         # support for uniborg
         sys.modules["uniborg.util"] = fridaybot.utils
