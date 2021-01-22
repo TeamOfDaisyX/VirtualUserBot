@@ -49,3 +49,4 @@ CMD_HELP.update(
 \n\n**Syntax : **`.p2dcl <channel username>`\
 \n**Usage :** Converts All The Pdf's From Channel Into Docx."
     }
+)
