@@ -16,22 +16,16 @@ from requests import get
 from telegraph import Telegraph, exceptions, upload_file
 from telethon import TelegramClient
 from telethon.sessions import StringSession
-
-from var import Var
+from alchemysession import AlchemySessionContainer
 
 from .Configs import Config
 from .function import fridayfunction as topfunc
+from var import Var
+from fridaybot.modules.sql_helper import SESSION
 
 Lastupdate = time.time()
 sedprint = logging.getLogger("WARNING")
 from var import Var
-
-if Var.STRING_SESSION:
-    session_name = str(Var.STRING_SESSION)
-    bot = TelegramClient(StringSession(session_name), Var.APP_ID, Var.API_HASH)
-else:
-    session_name = "startup"
-    bot = TelegramClient(session_name, Var.APP_ID, Var.API_HASH)
 
 
 CMD_LIST = {}
