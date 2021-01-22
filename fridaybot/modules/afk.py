@@ -312,7 +312,11 @@ else:
                 else:
                     f"`{int(seconds)}s` **ago**"
             msg = None
-            message_to_reply = (f"I Am **Offline** Right Now. \n**Last Seen :** `{total_afk_time}`\n**Reason** : `{reason}`" if reason else f"I Am **Offline** Right Now. \n**Last Seen :** `{total_afk_time}`")
+            message_to_reply = (
+                f"I Am **Offline** Right Now. \n**Last Seen :** `{total_afk_time}`\n**Reason** : `{reason}`"
+                if reason
+                else f"I Am **Offline** Right Now. \n**Last Seen :** `{total_afk_time}`"
+            )
             msg = await event.reply(message_to_reply)
             await asyncio.sleep(5)
             if event.chat_id in last_afk_message:  # pylint:disable=E0602
