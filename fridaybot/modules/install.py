@@ -1,7 +1,7 @@
 import asyncio
 import os
 from pathlib import Path
-
+from fridaybot.function import get_all_modules
 from fridaybot import CMD_HELP
 from fridaybot.utils import friday_on_cmd, load_module
 
@@ -40,6 +40,13 @@ async def install(event):
             os.remove(downloaded_file_name)
     await asyncio.sleep(DELETE_TIMEOUT)
     await event.delete()
+    
+@borg.on(friday_on_cmd(pattern='pl ?(.*)'))
+async def _(event):
+    lul = event.pattern_match.group(1)
+    yesm, nope, total_p = await get_all_modules(event, borg, lul)
+    await event.edit(f"Installed {yesm} PLugins. Failed To Install {nope} Plugins And There Were Total {total_p} Plugins")
+
 
 
 CMD_HELP.update(
