@@ -53,7 +53,7 @@ pm_caption += f"➣ **My Boss**                {DEFAULTUSER} \n"
 pm_caption += "➣ **RDP**                        `Azureˢˢˡ`\n"
 pm_caption += "➣ **License**                  [GNU GPLv3.0](github.com/inukaasith/virtualuserbot/blob/master/LICENSE)\n"
 pm_caption += "➣ **Copyright**             [@virtualuserbot](https://github.com/inukaasith/virtualuserbot)\n"
-pm_caption += "➣ **Check **                   `.stat`. \n\n"
+pm_caption += "➣ **Check **                   `.stat`.\n"
 pm_caption += "➣ **Contact Dev**             [Dev](https://t.me/InukaASiTH)\n"
 pm_caption += "➣ **Contact Mod**             [Mod](https://t.me/Zzlll_lllzZ)\n"
 
