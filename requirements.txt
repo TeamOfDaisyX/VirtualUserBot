@@ -22,7 +22,7 @@ bs4
 coffeehouse
 cowpy
 nltk
-emoji
+emoji==0.6.0
 gTTS-token>=1.1.3
 gTTS>=2.0.1
 geopy
