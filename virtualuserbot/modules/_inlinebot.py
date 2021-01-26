@@ -12,7 +12,7 @@ from telethon import Button, custom, events, functions
 from telethon.tl.types import InputWebDocument
 from youtube_search import YoutubeSearch
 
-from virtualuserbot import ALIVE_NAME, CMD_HELP, CMD_LIST
+from virtualuserbot import ALIVE_NAME, CMD_HELP, CMD_LIST, lang
 from virtualuserbot.function import _ytdl
 from virtualuserbot.modules import inlinestats
 
