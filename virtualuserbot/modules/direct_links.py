@@ -11,6 +11,7 @@ import urllib.parse
 from random import choice
 from subprocess import PIPE, Popen
 
+from virtualuserbot.utils import friday_on_cmd
 import requests
 from bs4 import BeautifulSoup
 from humanize import naturalsize
@@ -42,7 +43,7 @@ def subprocess_run(cmd):
     return talk
 
 
-@register(outgoing=True, pattern=r"^\.direct(?: |$)([\s\S]*)")
+@friday.on(friday_on_cmd(pattern=r"direct(?: |$)([\s\S]*)"))
 async def direct_link_generator(request):
     """ direct links generator """
     await request.edit("`Processing...`")
