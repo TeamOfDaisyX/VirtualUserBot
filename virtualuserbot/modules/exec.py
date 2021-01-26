@@ -2,8 +2,11 @@ import io
 import sys
 import traceback
 
+from virtualuserbot.utils import friday_on_cmd
 
-@command(pattern="^.exec")
+
+
+@friday.on(friday_on_cmd(pattern="exec"))
 async def _(event):
     if event.fwd_from:
         return
