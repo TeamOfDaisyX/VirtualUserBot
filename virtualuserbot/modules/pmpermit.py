@@ -43,7 +43,8 @@ USER_BOT_NO_WARN = (
     f"`My Master {DEFAULTUSER} is Busy Right Now !` \n"
     "**I Request You To Choose A Reason You Have Came For** 👀 \n\n"
     f"**{CUSTOM_MIDDLE_PMP}**"
-)if PM_ON_OFF != "DISABLE":
+)
+if PM_ON_OFF != "DISABLE":
     @borg.on(events.NewMessage(outgoing=True))
     async def auto_approve_for_out_going(event):
         if event.fwd_from:
