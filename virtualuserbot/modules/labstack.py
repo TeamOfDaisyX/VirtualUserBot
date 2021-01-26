@@ -15,11 +15,11 @@ import json
 #   limitations under the License.
 import os
 import subprocess
-
+from virtualuserbot.utils import admin_cmd
 import requests
 
 
-@command(pattern="^.labstack ?(.*)")
+@friday.on(admin_cmd(pattern="labstack ?(.*)")
 async def labstack(event):
     if event.fwd_from:
         return
