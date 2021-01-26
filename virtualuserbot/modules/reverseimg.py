@@ -16,7 +16,7 @@ import requests
 from bs4 import BeautifulSoup
 from PIL import Image
 
-from virtualuserbot import CMD_HELP, bot
+from virtualuserbot import CMD_HELP, bot, friday_on_cmd
 from virtualuserbot.utils import errors_handler, register
 
 opener = urllib.request.build_opener()
@@ -24,7 +24,7 @@ useragent = "Mozilla/5.0 (Linux; Android 9; SM-G960F Build/PPR1.180610.011; wv) 
 opener.addheaders = [("User-agent", useragent)]
 
 
-@register(outgoing=True, pattern=r"^.reverse(?: |$)(\d*)")
+@friday.on(friday_on_cmd(pattern=r"reverse(?: |$)(\d*)"))
 @errors_handler
 async def okgoogle(img):
     """ For .reverse command, Google search images and stickers. """
