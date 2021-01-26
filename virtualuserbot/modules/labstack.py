@@ -11,7 +11,7 @@
 #   limitations under the License.
 import os
 import subprocess
-from fridaybot.utils import admin_cmd
+from virtualuserbot.utils import admin_cmd
 import requests
 import json
 
