@@ -1,11 +1,11 @@
-from fridaybot import CMD_HELP
-from fridaybot.modules.sql_helper.welcome_sql import (
+from virtualuserbot import CMD_HELP
+from virtualuserbot.modules.sql_helper.welcome_sql import (
     add_welcome_setting,
     get_current_welcome_settings,
     rm_welcome_setting,
     update_previous_welcome,
 )
-from fridaybot.utils import friday_on_cmd
+from virtualuserbot.utils import friday_on_cmd
 from telethon import events
 from telethon.utils import pack_bot_file_id
 
