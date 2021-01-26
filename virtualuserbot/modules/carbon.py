@@ -13,7 +13,7 @@ from urllib.parse import quote_plus
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
-
+from virtualuserbot.utils import friday_on_cmd
 from virtualuserbot import CHROME_DRIVER, CMD_HELP, GOOGLE_CHROME_BIN
 from virtualuserbot.utils import register
 
@@ -21,7 +21,7 @@ CARBONLANG = "auto"
 LANG = "en"
 
 
-@register(outgoing=True, pattern="^.carbon")
+@friday.on(friday_on_cmd(pattern="carbon"))
 async def carbon_api(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
 
