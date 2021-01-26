@@ -868,7 +868,7 @@ async def inline_id_handler(event):
     if event.query.user_id != bot.uid:
         resultm = builder.article(
             title="- Not Allowded -",
-            text=f"You Can't Use This Bot. \nDeploy Friday To Get Your Own Assistant, Repo Link [Here](https://github.com/StarkGang/FridayUserbot)",
+            text=f"You Can't Use This Bot. \nDeploy VirtualUserbot To Get Your Own Assistant, Repo Link [Here](https://github.com/inukaasith/virtualuserbot)",
         )
         await event.answer([resultm])
         return
