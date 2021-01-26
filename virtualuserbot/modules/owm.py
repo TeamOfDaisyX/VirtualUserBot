@@ -139,7 +139,7 @@ async def get_weather(weather):
 
 @friday.on(friday_on_cmd(pattern="setcity(?: |$)(.*)"))
 async def set_default_city(city):
-    """ For .ctime command, change the default fridaybot country for date and time commands. """
+    """ For .ctime command, change the default virtualuserbot country for date and time commands. """
 
     if not OWM_API:
         await city.edit("`Get an API key from` https://openweathermap.org/ `first.`")
