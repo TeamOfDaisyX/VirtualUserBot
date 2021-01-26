@@ -2,20 +2,22 @@
 .pbio <Bio>
 .pname <Name>
 .ppic"""
-import os
 import asyncio
+import os
+
+from telethon import functions
 from telethon.tl import functions
 from uniborg.util import friday_on_cmd
+
 from virtualuserbot import CMD_HELP
-from telethon import functions, types 
 
 
 @friday.on(friday_on_cmd(pattern="a2c(?: |$)(.*)"))
 async def _(event):
-    hmmk = event.pattern_match.group(1)
+    event.pattern_match.group(1)
     if event.reply_to_msg_id:
         hmm = await event.get_reply_message()
-        id_s = hmm.sender_id    
+        id_s = hmm.sender_id
     elif event.pattern_match.group(1):
         id_s = event.pattern_match.group(1)
     elif event.is_private:
@@ -25,15 +27,18 @@ async def _(event):
         sed_m = " "
     else:
         sed_m = user_s.last_name
-    await event.client(functions.contacts.AddContactRequest(
-        id=id_s, 
-        first_name=user_s.first_name, 
-        last_name=sed_m, 
-        phone='123456', 
-        add_phone_privacy_exception=True)) 
+    await event.client(
+        functions.contacts.AddContactRequest(
+            id=id_s,
+            first_name=user_s.first_name,
+            last_name=sed_m,
+            phone="123456",
+            add_phone_privacy_exception=True,
+        )
+    )
     star = await event.edit("**Added To Contacts SucessFully**")
     await asyncio.sleep(3)
-    await star.delete()   
+    await star.delete()
 
 
 @friday.on(friday_on_cmd(pattern="pbio (.*)"))  # pylint:disable=E0602
