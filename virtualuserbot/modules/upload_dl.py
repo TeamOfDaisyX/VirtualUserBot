@@ -14,7 +14,6 @@ from pySmartDL import SmartDL
 from telethon.tl.types import DocumentAttributeVideo
 
 from virtualuserbot import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
-from virtualuserbot.events import register
 from virtualuserbot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 
 

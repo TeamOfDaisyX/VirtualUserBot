@@ -11,13 +11,12 @@ import urllib.parse
 from random import choice
 from subprocess import PIPE, Popen
 
-from virtualuserbot.utils import friday_on_cmd
 import requests
 from bs4 import BeautifulSoup
 from humanize import naturalsize
 
 from virtualuserbot import CMD_HELP
-from virtualuserbot.events import register
+from virtualuserbot.utils import friday_on_cmd
 
 
 def subprocess_run(cmd):

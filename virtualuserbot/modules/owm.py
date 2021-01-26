@@ -12,10 +12,10 @@ import requests
 from pytz import country_names as c_n
 from pytz import country_timezones as c_tz
 from pytz import timezone as tz
-from virtualuserbot.utils import friday_on_cmd
+
 from virtualuserbot import CMD_HELP
 from virtualuserbot import OPEN_WEATHER_MAP_APPID as OWM_API
-from virtualuserbot.events import errors_handler, register
+from virtualuserbot.utils import friday_on_cmd
 
 # ===== CONSTANT =====
 DEFCITY = "Ahmedabad"
