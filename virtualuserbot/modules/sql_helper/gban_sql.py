@@ -13,6 +13,7 @@
 
 
 from sqlalchemy import Column, String, UnicodeText
+
 from virtualuserbot.modules.sql_helper import BASE, SESSION
 
 
@@ -41,7 +42,8 @@ def gban_data(user_id: int):
         return int(s__.user_id), s__.reason
     finally:
         SESSION.close()
-        
+
+
 def is_gbanned(user_id: int):
     try:
         s__ = SESSION.query(Gban).get(str(user_id))
@@ -50,9 +52,9 @@ def is_gbanned(user_id: int):
     finally:
         SESSION.close()
 
+
 def ungban_user(user_id):
     ungbanner = SESSION.query(Gban).get(str(user_id))
     if ungbanner:
         SESSION.delete(ungbanner)
         SESSION.commit()
-        

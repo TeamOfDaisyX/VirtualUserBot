@@ -13,38 +13,17 @@
 
 import asyncio
 
-from telethon.events import ChatAction
-from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
+from telethon.events import ChatAction, NewMessage
 from telethon.tl.types import MessageEntityMentionName
+
 from virtualuserbot import CMD_HELP
-from virtualuserbot.modules.sql_helper.mute_sql import is_muted, mute, unmute
-from virtualuserbot.utils import friday_on_cmd
 from virtualuserbot.function import get_all_admin_chats, is_admin
 from virtualuserbot.modules.sql_helper import gban_sql
-from telethon.events import ChatAction, NewMessage
-from telethon.tl.types import (
-    ChannelParticipantsAdmins,
-    ChatAdminRights,
-    ChatBannedRights,
-    MessageEntityMentionName,
-    MessageMediaPhoto,
-)
-from telethon.errors import (
-    BadRequestError,
-    ChatAdminRequiredError,
-    ImageProcessFailedError,
-    PhotoCropSizeSmallError,
-    UserAdminInvalidError,
-)
-from telethon.errors.rpcerrorlist import MessageTooLongError, UserIdInvalidError
-from telethon.tl.functions.channels import (
-    EditAdminRequest,
-    EditBannedRequest,
-    EditPhotoRequest,
-)
+from virtualuserbot.modules.sql_helper.mute_sql import is_muted, mute, unmute
+from virtualuserbot.utils import friday_on_cmd
 
 
-@friday.on(friday_on_cmd(pattern='gban(?: |$)(.*)'))
+@friday.on(friday_on_cmd(pattern="gban(?: |$)(.*)"))
 async def gbun(event):
     await event.edit("**GBanning User**")
     sucess = 0
@@ -61,25 +40,33 @@ async def gbun(event):
         await event.edit("**I Can't Gban You Master :(**")
         return
     if gban_sql.is_gbanned(user.id):
-        await event.edit("**This User Is Already Gbanned. No Point In Gbanning Him Again !**")
+        await event.edit(
+            "**This User Is Already Gbanned. No Point In Gbanning Him Again !**"
+        )
         return
     gban_sql.gban_user(user.id, hmm_r)
     chat_s = await get_all_admin_chats(event)
     if len(chat_s) == 0:
-        await event.edit("**You Need To Be Admin In Atleast 1 Group To Perform this Action**")
+        await event.edit(
+            "**You Need To Be Admin In Atleast 1 Group To Perform this Action**"
+        )
         return
     len_s = len(chat_s)
-    await event.edit(f"**GBanning !** [{user.first_name}](tg://user?id={user.id}) **in {len_s} Chats!**")
+    await event.edit(
+        f"**GBanning !** [{user.first_name}](tg://user?id={user.id}) **in {len_s} Chats!**"
+    )
     for stark_s in chat_s:
         try:
-          await event.client.edit_permissions(stark_s, user.id, view_messages=False)
-          sucess += 1
+            await event.client.edit_permissions(stark_s, user.id, view_messages=False)
+            sucess += 1
         except:
-          bad += 0
-    await event.edit(f"**GBanned !**[{user.first_name}](tg://user?id={user.id}) **in {sucess} Chats!**")
-    
-          	
-@friday.on(friday_on_cmd(pattern='ungban(?: |$)(.*)'))
+            bad += 0
+    await event.edit(
+        f"**GBanned !**[{user.first_name}](tg://user?id={user.id}) **in {sucess} Chats!**"
+    )
+
+
+@friday.on(friday_on_cmd(pattern="ungban(?: |$)(.*)"))
 async def ungbun(event):
     await event.edit("**Un-GBanning User**")
     sucess = 0
@@ -97,17 +84,24 @@ async def ungbun(event):
     gban_sql.ungban_user(user.id)
     chat_s = await get_all_admin_chats(event)
     if len(chat_s) == 0:
-        await event.edit("**You Need To Be Admin In Atleast 1 Group To Perform this Action**")
+        await event.edit(
+            "**You Need To Be Admin In Atleast 1 Group To Perform this Action**"
+        )
         return
     len_s = len(chat_s)
-    await event.edit(f"**Un-GBanning !** [{user.first_name}](tg://user?id={user.id}) **in {len_s} Chats!**")
+    await event.edit(
+        f"**Un-GBanning !** [{user.first_name}](tg://user?id={user.id}) **in {len_s} Chats!**"
+    )
     for stark_s in chat_s:
         try:
-          await event.client.edit_permissions(stark_s, user.id, view_messages=True)
-          sucess += 1
+            await event.client.edit_permissions(stark_s, user.id, view_messages=True)
+            sucess += 1
         except:
-          bad += 0
-    await event.edit(f"**Un-GBanned !**[{user.first_name}](tg://user?id={user.id}) **in {sucess} Chats!**")
+            bad += 0
+    await event.edit(
+        f"**Un-GBanned !**[{user.first_name}](tg://user?id={user.id}) **in {sucess} Chats!**"
+    )
+
 
 @friday.on(ChatAction)
 async def starky(event):
@@ -117,11 +111,16 @@ async def starky(event):
             sadly = await event.get_user()
             if gban_sql.is_gbanned(sadly.id):
                 try:
-                    await event.client.edit_permissions(event.chat_id, sadly.id, view_messages=False)
-                    await event.reply(f"**#GBanned-User** \nUserID : {sadly.id} \nReason : {gban_sql.is_gbanned(sadly.id)}")
+                    await event.client.edit_permissions(
+                        event.chat_id, sadly.id, view_messages=False
+                    )
+                    await event.reply(
+                        f"**#GBanned-User** \nUserID : {sadly.id} \nReason : {gban_sql.is_gbanned(sadly.id)}"
+                    )
                 except:
                     pass
-                
+
+
 @friday.on(NewMessage)
 async def mi(event):
     sed = event.sender_id
@@ -131,10 +130,13 @@ async def mi(event):
     if await is_admin(event, hmm.id):
         if gban_sql.is_gbanned(sed):
             try:
-                await event.client.edit_permissions(event.chat_id, sed, view_messages=False)
+                await event.client.edit_permissions(
+                    event.chat_id, sed, view_messages=False
+                )
             except:
                 pass
-            
+
+
 async def get_user_from_event(event):
     """ Get the user from argument or replied message. """
     args = event.pattern_match.group(1).split(" ", 1)
@@ -162,7 +164,7 @@ async def get_user_from_event(event):
                 user_id = probable_user_mention_entity.user_id
                 user_obj = await event.client.get_entity(user_id)
                 return user_obj
-        
+
         try:
             user_obj = await event.client.get_entity(user)
         except (TypeError, ValueError) as err:
@@ -190,7 +192,6 @@ async def get_user_sender_id(user, event):
         return None
 
     return user_obj
-
 
 
 @friday.on(friday_on_cmd(pattern=r"gmute ?(\d+)?"))
