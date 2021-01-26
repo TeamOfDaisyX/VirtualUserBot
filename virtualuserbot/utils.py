@@ -560,10 +560,8 @@ def only_pro():
         @functools.wraps(func)
         async def wrapper(event):
             kek = list(Config.SUDO_USERS)
-            mm = bot.uid
-            if event.sender_id == mm:
-                await func(event)
-            elif event.sender_id == kek:
+            kek.append(bot.uid)
+            if event.sender_id in kek:
                 await func(event)
             else:
                 await event.reply("Only Owners, Sudo Users Can Use This Command.")
@@ -621,10 +619,8 @@ def peru_only():
         @functools.wraps(func)
         async def wrapper(event):
             kek = list(Config.SUDO_USERS)
-            mm = bot.uid
-            if event.sender_id == mm:
-                await func(event)
-            elif event.sender_id == kek:
+            kek.append(bot.uid)
+            if event.sender_id in kek:
                 await func(event)
             else:
                 pass
@@ -632,6 +628,7 @@ def peru_only():
         return wrapper
 
     return decorator
+
 
 
 def only_pvt():
