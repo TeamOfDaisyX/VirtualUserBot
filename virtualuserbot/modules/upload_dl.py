@@ -104,7 +104,7 @@ async def download(target_file):
         await friday.edit("Reply to a message to download to my local server.")
 
 
-@register(pattern=r".uploadir (.*)", outgoing=True)
+@friday.on(friday_on_cmd(pattern=r"uploadir (.*)"))
 async def uploadir(udir_event):
     """ For .uploadir command, allows you to upload everything from a folder in the server"""
     input_str = udir_event.pattern_match.group(1)
@@ -190,7 +190,7 @@ async def uploadir(udir_event):
         await udir_event.edit("404: Directory Not Found")
 
 
-@register(pattern=r".upload (.*)", outgoing=True)
+@friday.on(friday_on_cmd(pattern=r"upload (.*)"))
 async def upload(u_event):
     """ For .upload command, allows you to upload a file from the VirtualUserbot's server """
     await u_event.edit("Processing ...")
@@ -266,7 +266,7 @@ def extract_w_h(file):
         return width, height
 
 
-@register(pattern=r".uploadas(stream|vn|all) (.*)", outgoing=True)
+@friday.on(friday_on_cmd(pattern=r"uploadas(stream|vn|all) (.*)"))
 async def uploadas(uas_event):
     """ For .uploadas command, allows you to specify some arguments for upload. """
     await uas_event.edit("Processing ...")
