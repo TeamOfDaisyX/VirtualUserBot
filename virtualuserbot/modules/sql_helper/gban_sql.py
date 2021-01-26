@@ -13,7 +13,7 @@
 
 
 from sqlalchemy import Column, String, UnicodeText
-from fridaybot.modules.sql_helper import BASE, SESSION
+from virtualuserbot.modules.sql_helper import BASE, SESSION
 
 
 class Gban(BASE):
