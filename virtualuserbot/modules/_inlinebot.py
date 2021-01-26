@@ -1,21 +1,20 @@
 import os
 import re
 import urllib
-import json
 from math import ceil
 from re import findall
-from youtube_search import YoutubeSearch
-from search_engine_parser import GoogleSearch
-from virtualuserbot.function import _ytdl, fetch_json
 from urllib.parse import quote
+
 import requests
-from telethon import Button, custom, events, functions
-from youtubesearchpython import VideosSearch
-from virtualuserbot import ALIVE_NAME, CMD_HELP, CMD_LIST
-from virtualuserbot.modules import inlinestats
 from pornhub_api import PornhubApi
-from telethon.tl.types import BotInlineResult, InputBotInlineMessageMediaAuto, DocumentAttributeImageSize, InputWebDocument, InputBotInlineResult
-from telethon.tl.functions.messages import SetInlineBotResultsRequest
+from search_engine_parser import GoogleSearch
+from telethon import Button, custom, events, functions
+from telethon.tl.types import InputWebDocument
+from youtube_search import YoutubeSearch
+
+from virtualuserbot import ALIVE_NAME, CMD_HELP, CMD_LIST
+from virtualuserbot.function import _ytdl
+from virtualuserbot.modules import inlinestats
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 if PMPERMIT_PIC is None:
@@ -861,8 +860,8 @@ Year: {}""".format(
     else:
         resultm = builder.article(title="- No Results :/ -", text=f"No Results Found !")
         await event.answer([resultm])
-        
-        
+
+
 @tgbot.on(events.InlineQuery(pattern=r"deezer ?(.*)"))
 async def inline_id_handler(event):
     builder = event.builder
@@ -877,24 +876,24 @@ async def inline_id_handler(event):
     input_str = event.pattern_match.group(1)
     link = f"https://api.deezer.com/search?q={input_str}&limit=7"
     dato = requests.get(url=link).json()
-    #data_s = json.loads(data_s)
+    # data_s = json.loads(data_s)
     for match in dato.get("data"):
-            hmm_m = (f"Title : {match['title']} \nLink : {match['link']} \nDuration : {match['duration']} seconds \nBy : {match['artist']['name']}")
-            results.append(
-                await event.builder.article(
-                    title=match["title"],
-                    text=hmm_m,
-                    description=f"Artist: {match['artist']['name']}\nAlbum: {match['album']['title']}",
-                    thumb=InputWebDocument(
-                        url=match["album"]["cover_medium"],
-                        size=0,
-                        mime_type="image/jpeg",
-                        attributes=[],
-                    ),
+        hmm_m = f"Title : {match['title']} \nLink : {match['link']} \nDuration : {match['duration']} seconds \nBy : {match['artist']['name']}"
+        results.append(
+            await event.builder.article(
+                title=match["title"],
+                text=hmm_m,
+                description=f"Artist: {match['artist']['name']}\nAlbum: {match['album']['title']}",
+                thumb=InputWebDocument(
+                    url=match["album"]["cover_medium"],
+                    size=0,
+                    mime_type="image/jpeg",
+                    attributes=[],
                 ),
-            )
+            ),
+        )
     if results:
         try:
             await event.answer(results)
         except TypeError:
-            pass        
+            pass
