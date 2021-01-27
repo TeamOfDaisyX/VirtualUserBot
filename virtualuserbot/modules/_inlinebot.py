@@ -155,6 +155,18 @@ if lang == "si":
             return
         is_it = True
         await _ytdl(link_s, is_it, event, tgbot)
+        
+ 
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"deezer_dl_(.*)")))
+    async def rip(event):
+        sun = event.data_match.group(1).decode("UTF-8")
+
+        if event.query.user_id != bot.uid:
+            text = f"Please Get Your Own Friday And Don't Waste My Resources"
+            await event.answer(text, alert=True)
+            return
+        ok = await _deezer_dl(sun, event, tgbot)
+       
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"yt_vid_(.*)")))
     async def rip(event):
@@ -420,6 +432,18 @@ else:
             return
         is_it = True
         await _ytdl(link_s, is_it, event, tgbot)
+        
+
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"deezer_dl_(.*)")))
+    async def rip(event):
+        sun = event.data_match.group(1).decode("UTF-8")
+
+        if event.query.user_id != bot.uid:
+            text = f"Please Get Your Own Friday And Don't Waste My Resources"
+            await event.answer(text, alert=True)
+            return
+        ok = await _deezer_dl(sun, event, tgbot)
+        
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"yt_vid_(.*)")))
     async def rip(event):
@@ -868,7 +892,7 @@ async def inline_id_handler(event):
     if event.query.user_id != bot.uid:
         resultm = builder.article(
             title="- Not Allowded -",
-            text=f"You Can't Use This Bot. \nDeploy VirtualUserbot To Get Your Own Assistant, Repo Link [Here](https://github.com/inukaasith/virtualuserbot)",
+            text=f"You Can't Use This Bot. \nDeploy Friday To Get Your Own Assistant, Repo Link [Here](https://github.com/StarkGang/FridayUserbot)",
         )
         await event.answer([resultm])
         return
@@ -876,22 +900,22 @@ async def inline_id_handler(event):
     input_str = event.pattern_match.group(1)
     link = f"https://api.deezer.com/search?q={input_str}&limit=7"
     dato = requests.get(url=link).json()
-    # data_s = json.loads(data_s)
+    #data_s = json.loads(data_s)
     for match in dato.get("data"):
-        hmm_m = f"Title : {match['title']} \nLink : {match['link']} \nDuration : {match['duration']} seconds \nBy : {match['artist']['name']}"
-        results.append(
-            await event.builder.article(
-                title=match["title"],
-                text=hmm_m,
-                description=f"Artist: {match['artist']['name']}\nAlbum: {match['album']['title']}",
-                thumb=InputWebDocument(
-                    url=match["album"]["cover_medium"],
-                    size=0,
-                    mime_type="image/jpeg",
-                    attributes=[],
+            urlp = match.get("link")
+            hmm_m = (f"Title : {match['title']} \nLink : {match['link']} \nDuration : {match['duration']} seconds \nBy : {match['artist']['name']}")
+            results.append(
+                await event.builder.document(
+                    file=match["album"]["cover_medium"],
+                    title=match["title"],
+                    text=hmm_m,
+                    description=f"Artist: {match['artist']['name']}\nAlbum: {match['album']['title']}",
+                    buttons=[
+                       [custom.Button.inline("Download Audio - mp3", data=f"deezer_dl_{match['title']}")],
+                       [Button.switch_inline("Search Again", query="deezer ", same_peer=True)],
+                    ]
                 ),
-            ),
-        )
+            )
     if results:
         try:
             await event.answer(results)
