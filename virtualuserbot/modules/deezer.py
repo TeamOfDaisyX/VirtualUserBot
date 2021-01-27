@@ -1,14 +1,15 @@
-from virtualuserbot import CMD_HELP
-from virtualuserbot.utils import friday_on_cmd
-from virtualuserbot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 import asyncio
 import math
-from virtualuserbot.function.FastTelethon import upload_file
-import time
-from telethon.tl.types import DocumentAttributeAudio
 import os
+import time
+
 import requests
 import wget
+from telethon.tl.types import DocumentAttributeAudio
+
+from virtualuserbot.function.FastTelethon import upload_file
+from virtualuserbot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
+
 
 async def progress(current, total, event, start, type_of_ps, file_name=None):
     """Generic progress_callback for uploads and downloads."""
@@ -34,7 +35,6 @@ async def progress(current, total, event, start, type_of_ps, file_name=None):
             try:
                 await event.edit(
                     "{}\n**File Name:** `{}`\n{}".format(type_of_ps, file_name, tmp)
-                    
                 )
             except:
                 pass
@@ -43,7 +43,6 @@ async def progress(current, total, event, start, type_of_ps, file_name=None):
                 await event.edit("{}\n{}".format(type_of_ps, tmp))
             except:
                 pass
-
 
 
 def humanbytes(size):
@@ -79,7 +78,6 @@ def time_formatter(milliseconds: int) -> str:
     return tmp[:-2]
 
 
-
 @friday.on(friday_on_cmd(pattern="deezer ?(.*)"))
 @friday.on(sudo_cmd(pattern="deezer ?(.*)", allow_sudo=True))
 async def _(event):
@@ -90,21 +88,21 @@ async def _(event):
     ommhg = await edit_or_reply(event, "Searching For The Song 🧐🔍")
     dato = requests.get(url=link).json()
     match = dato.get("data")
-    urlhp= (match[0])
+    urlhp = match[0]
     urlp = urlhp.get("link")
     thums = urlhp["album"]["cover_medium"]
     thum_f = wget.download(thums, out=Config.TMP_DOWNLOAD_DIRECTORY)
     polu = urlhp.get("artist")
     replo = urlp[29:]
     urlp = f"https://starkapi.herokuapp.com/deezer/{replo}"
-    
+
     datto = requests.get(url=urlp).json()
     mus = datto.get("url")
-    sname = f'''{urlhp.get("title")}.mp3'''
+    sname = f"""{urlhp.get("title")}.mp3"""
     doc = requests.get(mus)
     await ommhg.edit("Please Wait, I Am Downloading Thr Song. 😁😄")
-    with open(sname, 'wb') as f:
-      f.write(doc.content)
+    with open(sname, "wb") as f:
+        f.write(doc.content)
     car = f"""
 **Song Name :** {urlhp.get("title")}
 **Duration :** {urlhp.get('duration')} Seconds
@@ -114,33 +112,28 @@ Get Your Friday From @FridayOT"""
     await ommhg.edit("Song Downloaded.  Waiting To Upload. 🥳🤗")
     c_time = time.time()
     uploaded_file = await upload_file(
-        	file_name=str(urlhp.get("title"))+".mp3",
-            client=borg,
-            file=open(sname, 'rb'),
-            progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                progress(
-                    d, t, event, c_time, "Uploading..", sname
-                )
-            ),
-        )
+        file_name=str(urlhp.get("title")) + ".mp3",
+        client=borg,
+        file=open(sname, "rb"),
+        progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
+            progress(d, t, event, c_time, "Uploading..", sname)
+        ),
+    )
     await event.client.send_file(
-            event.chat_id,
-            uploaded_file,
-            supports_streaming=True,
-            caption=car,
-            thumb=thum_f,
-            attributes=[
-                DocumentAttributeAudio(
-                    duration=int(urlhp.get('duration')),
-                    title=str(urlhp.get("title")),
-                    performer=str(polu.get("name")),
-                )
-                
-            ],
-        )
-    
-    
-    
+        event.chat_id,
+        uploaded_file,
+        supports_streaming=True,
+        caption=car,
+        thumb=thum_f,
+        attributes=[
+            DocumentAttributeAudio(
+                duration=int(urlhp.get("duration")),
+                title=str(urlhp.get("title")),
+                performer=str(polu.get("name")),
+            )
+        ],
+    )
+
     os.remove(sname)
     os.remove(thum_f)
     await event.delete()
