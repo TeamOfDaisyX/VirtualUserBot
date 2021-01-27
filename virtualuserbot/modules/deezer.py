@@ -3,7 +3,7 @@ from virtualuserbot.utils import friday_on_cmd
 from virtualuserbot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 import asyncio
 import math
-from fridaybot.function.FastTelethon import upload_file
+from virtualuserbot.function.FastTelethon import upload_file
 import time
 from telethon.tl.types import DocumentAttributeAudio
 import os
