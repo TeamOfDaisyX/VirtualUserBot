@@ -12,6 +12,8 @@ if ENV:
         LOCATION = os.environ.get("LOCATION", None)
         ALIVE_TEXT = os.environ.get("ALIVE_TEXT", None)
         OPEN_WEATHER_MAP_APPID = os.environ.get("OPEN_WEATHER_MAP_APPID", None)
+        STRING_SESSION_2 = os.environ.get("STRING_SESSION_2", None)
+        STRING_SESSION_3 = os.environ.get("STRING_SESSION_3", None)
         # Get your own ACCESS_KEY from http://api.screenshotlayer.com/api/capture
         SCREEN_SHOT_LAYER_ACCESS_KEY = os.environ.get(
             "SCREEN_SHOT_LAYER_ACCESS_KEY", None
