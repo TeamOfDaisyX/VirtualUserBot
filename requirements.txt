@@ -2,8 +2,6 @@ Pillow
 google-trans-new
 cryptg
 nospamplus
-deethon
-deezloader
 pymediainfo
 quote
 python-magic
