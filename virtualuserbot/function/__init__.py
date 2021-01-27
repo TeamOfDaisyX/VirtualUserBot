@@ -596,6 +596,50 @@ async def _ytdl(url, is_it, event, tgbot):
         )
         os.remove(f"{ytdl_data['id']}.mp4")
 
+async def _deezer_dl(word, event, tgbot):
+    await event.edit("`Ok Downloading This Audio - Please Wait.` \n**Powered By @VirtualUserbot**")
+    link = f"https://api.deezer.com/search?q={word}&limit=1"
+    dato = requests.get(url=link).json()
+    match = dato.get("data")
+    urlhp= (match[0])
+    urlp = urlhp.get("link")
+    polu = urlhp.get("artist")
+    replo = urlp[29:]
+    urlp = f"https://starkapi.herokuapp.com/deezer/{replo}"
+    datto = requests.get(url=urlp).json()
+    mus = datto.get("url")
+    thums = urlhp["album"]["cover_medium"]
+    sname = f'''{urlhp.get("title")}.mp3'''
+    doc = requests.get(mus)
+    with open(sname, 'wb') as f:
+      f.write(doc.content)
+    car = f"""
+**Song Name :** {urlhp.get("title")}
+**Duration :** {urlhp.get('duration')} Seconds
+**Artist :** {polu.get("name")}
+Music Downloaded And Uploaded By VirtualUserbot
+Get Your VirtualUserbot From @VirtualUserbot"""
+    await event.edit("Song Downloaded.  Waiting To Upload. 🥳🤗")
+    c_time = time.time()
+    uploaded_file = await upload_file(
+        	file_name=sname,
+            client=tgbot,
+            file=open(sname, 'rb'),
+            progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
+                progress(
+                    d, t, event, c_time, "Uploading..", sname
+                )
+            ),
+        )
+    
+    await event.edit(
+            file=uploaded_file,
+            text=f"""{urlhp.get("title")} \n**Uploaded Using @VirtualUserbot**"""
+    )
+    os.remove(sname)
+
+
+
 
 async def get_all_admin_chats(event):
     lul_stark = []
