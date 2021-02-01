@@ -22,14 +22,18 @@
 #### Special thanks To Friday Bot And Dark Cobra Bot a lot
 ##### ♡ Friday is the best userbot ♡ ~ This is just a remodification.. Original work was done by them
 ## The story beyond (☆ Information about original owners ☆)
-This bot was initially cloned and modified by me for suit my requirements.
-Then many Sri Lankans asked for the source code of this bot
-That's why we made this code open
-Most of the plugins in this was kanged from FridayUserbot and many others
+● This bot was initially cloned and modified by us for suit our requirements.
+Then many Sri Lankans asked for the source code of this bot. 
+That's why we made this code as a independent one.
+ 
+● Most of the plugins in this was kanged from FridayUserbot and many others..
 So, all respect and credits goes to them
-Also original owners of modules mentioned at the top of every module.
+
+● Also original owners of modules mentioned at the top of every module.
+
 ``` Full credits mentioned at the bottom```
-If you are not from Sri Lanka I recommend you to use the [Friday Userbot](github.com/starkgang/fridayuserbot). It is more better than other userbots
+
+◇ If you are not from Sri Lanka I recommend you to use the [Friday Userbot](github.com/starkgang/fridayuserbot). It is more better than other userbots
 
 # 
 
