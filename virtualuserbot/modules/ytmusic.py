@@ -34,11 +34,11 @@ from youtube_dl.utils import (
     UnavailableVideoError,
     XAttrMetadataError,
 )
-from fridaybot.function import progress, humanbytes, time_formatter
-from fridaybot.function.FastTelethon import upload_file
-from fridaybot import CMD_HELP
-from fridaybot.Configs import Config
-from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
+from virtualuserbot.function import progress, humanbytes, time_formatter
+from virtualuserbot.function.FastTelethon import upload_file
+from virtualuserbot import CMD_HELP
+from virtualuserbot.Configs import Config
+from virtualuserbot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 
 
 @friday.on(friday_on_cmd(pattern="ytmusic ?(.*)"))
