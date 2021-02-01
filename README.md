@@ -18,10 +18,19 @@
 ## [Visit Website ](https://techwizardent.com/blog/twe_blog_userbot.php)
 
 # 😍 Credits
-### Cloned from [Friday Userbot](github.com/starkgang/fridayuserbot).. Full credits to Friday Developers 
-#### Special thanks To Friday And Dark Cobra Bot a lot
-
+### Cloned from [Friday Userbot](github.com/starkgang/fridayuserbot) on 28/01/2021.. Full credits to Friday Developers 
+#### Special thanks To Friday Bot And Dark Cobra Bot a lot
+##### ♡ Friday is the best userbot ♡ ~ This is just a remodification.. Original work was done by them
+## The story beyond (☆ Information about original owners ☆)
+This bot was initially cloned and modified by me for suit my requirements.
+Then many Sri Lankans asked for the source code of this bot
+That's why we made this code open
+Most of the plugins in this was kanged from FridayUserbot and many others
+So, all respect and credits goes to them
+Also original owners of modules mentioned at the top of every module.
 ``` Full credits mentioned at the bottom```
+If you are not from Sri Lanka I recommend you to use the [Friday Userbot](github.com/starkgang/fridayuserbot). It is more better than other userbots
+
 # 
 
 # 🧙‍♀️ Deploy Guide
@@ -46,7 +55,7 @@ Complete guide on deploying VirtualUserbot to Heroku.
     <img src="https://img.shields.io/github/stars/inukaasith/virtualuserbot?style=social">
   </a>
 </p>
-
+### Also show some support to the base project [Friday Userbot](github.com/starkgang/fridayuserbot)
 
 # 🕵️‍♀️ Before You Go 
 
@@ -200,6 +209,7 @@ published by the Free Software Foundation, either version 3 of the License, or
 
 - FridayUserBot ❤️ - 
 Most of the Plugins Taken from this Project.. Made possible by this. Full Credits. Full Respect
+Best userbot ever
 
 - DarkCobra 😍 - 
 Image Tools Plugins Copied from DC Project.. Credits to DC Team
