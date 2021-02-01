@@ -1,21 +1,21 @@
 # @UniBorg
-from urllib.parse import urlparse
 import asyncio
 import json
 import math
-import requests
 import os
 import subprocess
 import time
 from datetime import datetime
 from urllib.parse import urlparse
+
+import requests
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from pySmartDL import SmartDL
 from telethon.tl.types import DocumentAttributeVideo
-from virtualuserbot.function.FastTelethon import upload_file
+
 from virtualuserbot import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
-from virtualuserbot.events import register
+from virtualuserbot.function.FastTelethon import upload_file
 from virtualuserbot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 
 
@@ -43,7 +43,6 @@ async def progress(current, total, event, start, type_of_ps, file_name=None):
             try:
                 await event.edit(
                     "{}\n**File Name:** `{}`\n{}".format(type_of_ps, file_name, tmp)
-                    
                 )
             except:
                 pass
@@ -106,18 +105,18 @@ async def download(target_file):
     try:
         c_time = time.time()
         downloaded_file_name = await target_file.client.download_media(
-                await target_file.get_reply_message(),
-                TEMP_DOWNLOAD_DIRECTORY,
-                progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, target_file, c_time, "Downloading This Media...")
-                ),
-            )
+            await target_file.get_reply_message(),
+            TEMP_DOWNLOAD_DIRECTORY,
+            progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
+                progress(d, t, target_file, c_time, "Downloading This Media...")
+            ),
+        )
     except Exception as e:  # pylint:disable=C0103,W0703
         await friday.edit(str(e))
     else:
         await friday.edit(
-                "Downloaded to `{}` successfully !!".format(downloaded_file_name)
-            )
+            "Downloaded to `{}` successfully !!".format(downloaded_file_name)
+        )
 
 
 @friday.on(friday_on_cmd(pattern=r"uploadir (.*)"))
@@ -380,7 +379,8 @@ async def uploadas(uas_event):
     else:
         await uas_event.edit("404: File Not Found")
 
-@borg.on(friday_on_cmd(pattern='smartdl'))
+
+@borg.on(friday_on_cmd(pattern="smartdl"))
 async def lul(event):
     if event.fwd_from:
         return
@@ -402,19 +402,22 @@ async def lul(event):
         now = time.time()
         diff = now - c_time
         percentage = downloader.get_progress() * 100
-        speed = downloader.get_speed()
-        elapsed_time = round(diff) * 1000
+        downloader.get_speed()
+        round(diff) * 1000
         progress_str = "[{0}{1}]\nProgress: {2}%".format(
-                ''.join(["▰" for i in range(math.floor(percentage / 5))]),
-                ''.join(["▱" for i in range(20 - math.floor(percentage / 5))]),
-        round(percentage, 2))
+            "".join(["▰" for i in range(math.floor(percentage / 5))]),
+            "".join(["▱" for i in range(20 - math.floor(percentage / 5))]),
+            round(percentage, 2),
+        )
         estimated_total_time = downloader.get_eta(human=True)
         try:
             current_message = f"trying to download\n"
             current_message += f"URL: {url}\n"
             current_message += f"File Name: {file_name}\n"
             current_message += f"{progress_str}\n"
-            current_message += f"{humanbytes(downloaded)} of {humanbytes(total_length)}\n"
+            current_message += (
+                f"{humanbytes(downloaded)} of {humanbytes(total_length)}\n"
+            )
             current_message += f"ETA: {estimated_total_time}"
             if round(diff % 10.00) == 0 and current_message != display_message:
                 await mone.edit(current_message)
@@ -425,46 +428,48 @@ async def lul(event):
     ms = (end - start).seconds
     if downloader.isSuccessful():
         c_time = time.time()
-        lul = await mone.edit("Downloaded to `{}` in {} seconds.".format(downloaded_file_name, ms))
+        lul = await mone.edit(
+            "Downloaded to `{}` in {} seconds.".format(downloaded_file_name, ms)
+        )
         lol_m = await upload_file(
             file_name=file_name,
             client=borg,
-            file=open(downloaded_file_name, 'rb'),
+            file=open(downloaded_file_name, "rb"),
             progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
                 progress(
                     d, t, event, c_time, "Uploading This File.", downloaded_file_name
                 )
             ),
         )
-        await borg.send_file(event.chat_id,
-                        lol_m,
-                        caption=file_name,
-                        force_document=False,
-                        allow_cache=False,
-                    )
+        await borg.send_file(
+            event.chat_id,
+            lol_m,
+            caption=file_name,
+            force_document=False,
+            allow_cache=False,
+        )
         await lul.delete()
         os.remove(downloaded_file_name)
     else:
         await mone.edit("Incorrect URL\n {}".format(input_str))
-    
+
+
 @friday.on(friday_on_cmd(pattern="zeelink"))
 async def lol_kangers(event):
     input_str = event.raw_text.split(" ", maxsplit=1)[1]
-    if 'zee' in input_str:
+    if "zee" in input_str:
         url = "http://devsexpo.me/zee/"
-        sed = {
-        'url': input_str
-        }
+        sed = {"url": input_str}
         lmao = requests.get(url=url, headers=sed).json()
     else:
         await event.edit("Only Zee Videos Supported.")
         return
-    if lmao['success'] is False:
-        await event.edit("Task Failed Due To " + str(lmao['error']))
+    if lmao["success"] is False:
+        await event.edit("Task Failed Due To " + str(lmao["error"]))
         return
-    await event.edit("Direct Link Fetched \nURL : " + str(lmao['url']))
-        
-        
+    await event.edit("Direct Link Fetched \nURL : " + str(lmao["url"]))
+
+
 CMD_HELP.update(
     {
         "download": ".dl <link|filename> or reply to media\

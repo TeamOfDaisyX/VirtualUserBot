@@ -140,6 +140,7 @@ async def vypr(event):
     )
     os.remove("hits.txt")
 
+
 @friday.on(friday_on_cmd(pattern="combogen"))
 async def byekanger(event):
     url = "http://devsexpo.me/combogen/"

@@ -13,31 +13,18 @@
 
 import asyncio
 import os
-
-import wget
-from youtubesearchpython import SearchVideos
-import asyncio
-import math
-import os
 import time
 
+import wget
 from telethon.tl.types import DocumentAttributeAudio
 from uniborg.util import edit_or_reply, friday_on_cmd, sudo_cmd
 from youtube_dl import YoutubeDL
-from youtube_dl.utils import (
-    ContentTooShortError,
-    DownloadError,
-    ExtractorError,
-    GeoRestrictedError,
-    MaxDownloadsReached,
-    PostProcessingError,
-    UnavailableVideoError,
-    XAttrMetadataError,
-)
-from virtualuserbot.function import progress, humanbytes, time_formatter
-from virtualuserbot.function.FastTelethon import upload_file
+from youtubesearchpython import SearchVideos
+
 from virtualuserbot import CMD_HELP
 from virtualuserbot.Configs import Config
+from virtualuserbot.function import progress
+from virtualuserbot.function.FastTelethon import upload_file
 from virtualuserbot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 
 
@@ -65,24 +52,24 @@ async def _(event):
     url = mo
     sedlyf = wget.download(kekme, out=path)
     opts = {
-            "format": "bestaudio",
-            "addmetadata": True,
-            "key": "FFmpegMetadata",
-            "writethumbnail": True,
-            "prefer_ffmpeg": True,
-            "geo_bypass": True,
-            "nocheckcertificate": True,
-            "postprocessors": [
-                {
-                    "key": "FFmpegExtractAudio",
-                    "preferredcodec": "mp3",
-                    "preferredquality": "480",
-                }
-            ],
-            "outtmpl": "%(title)s.mp3",
-            "quiet": True,
-            "logtostderr": False,
-        }
+        "format": "bestaudio",
+        "addmetadata": True,
+        "key": "FFmpegMetadata",
+        "writethumbnail": True,
+        "prefer_ffmpeg": True,
+        "geo_bypass": True,
+        "nocheckcertificate": True,
+        "postprocessors": [
+            {
+                "key": "FFmpegExtractAudio",
+                "preferredcodec": "mp3",
+                "preferredquality": "480",
+            }
+        ],
+        "outtmpl": "%(title)s.mp3",
+        "quiet": True,
+        "logtostderr": False,
+    }
     try:
         with YoutubeDL(opts) as ytdl:
             ytdl_data = ytdl.extract_info(url)
@@ -93,15 +80,13 @@ async def _(event):
     c_time = time.time()
     file_stark = f"{ytdl_data['title']}.mp3"
     lol_m = await upload_file(
-            file_name=file_stark,
-            client=borg,
-            file=open(file_stark, 'rb'),
-            progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                progress(
-                    d, t, event, c_time, "Uploading Your Song!", file_stark
-                )
-            ),
-        )
+        file_name=file_stark,
+        client=borg,
+        file=open(file_stark, "rb"),
+        progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
+            progress(d, t, event, c_time, "Uploading Your Song!", file_stark)
+        ),
+    )
     capy = f"**Song Name ➠** `{thum}` \n**Requested For ➠** `{urlissed}` \n**Channel ➠** `{thums}` \n**Link ➠** `{mo}`"
     await event.delete()
     await borg.send_file(
@@ -112,18 +97,19 @@ async def _(event):
         caption=capy,
         thumb=sedlyf,
         attributes=[
-                DocumentAttributeAudio(
-                    duration=int(ytdl_data["duration"]),
-                    title=str(ytdl_data["title"]),
-                    performer=str(ytdl_data["uploader"]),
-                )
-            ],
+            DocumentAttributeAudio(
+                duration=int(ytdl_data["duration"]),
+                title=str(ytdl_data["title"]),
+                performer=str(ytdl_data["uploader"]),
+            )
+        ],
         supports_streaming=True,
     )
     for files in (sedlyf, file_stark):
         if files and os.path.exists(files):
             os.remove(files)
-            
+
+
 @friday.on(friday_on_cmd(pattern="utubevid ?(.*)"))
 @friday.on(sudo_cmd(pattern="utubevid ?(.*)", allow_sudo=True))
 async def _(event):
@@ -148,19 +134,17 @@ async def _(event):
     url = mo
     sedlyf = wget.download(kekme, out=path)
     opts = {
-            "format": "best",
-            "addmetadata": True,
-            "key": "FFmpegMetadata",
-            "prefer_ffmpeg": True,
-            "geo_bypass": True,
-            "nocheckcertificate": True,
-            "postprocessors": [
-                {"key": "FFmpegVideoConvertor", "preferedformat": "mp4"}
-            ],
-            "outtmpl": "%(title)s.mp4",
-            "logtostderr": False,
-            "quiet": True,
-        }
+        "format": "best",
+        "addmetadata": True,
+        "key": "FFmpegMetadata",
+        "prefer_ffmpeg": True,
+        "geo_bypass": True,
+        "nocheckcertificate": True,
+        "postprocessors": [{"key": "FFmpegVideoConvertor", "preferedformat": "mp4"}],
+        "outtmpl": "%(title)s.mp4",
+        "logtostderr": False,
+        "quiet": True,
+    }
     try:
         with YoutubeDL(opts) as ytdl:
             ytdl_data = ytdl.extract_info(url)
@@ -170,15 +154,13 @@ async def _(event):
     c_time = time.time()
     file_stark = f"{ytdl_data['title']}.mp4"
     lol_m = await upload_file(
-            file_name=file_stark,
-            client=borg,
-            file=open(file_stark, 'rb'),
-            progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                progress(
-                    d, t, event, c_time, "Uploading Your Video!", file_stark
-                )
-            ),
-        )
+        file_name=file_stark,
+        client=borg,
+        file=open(file_stark, "rb"),
+        progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
+            progress(d, t, event, c_time, "Uploading Your Video!", file_stark)
+        ),
+    )
     capy = f"**Video Name ➠** `{thum}` \n**Requested For ➠** `{urlissed}` \n**Channel ➠** `{thums}` \n**Link ➠** `{mo}`"
     await event.delete()
     await borg.send_file(
@@ -189,17 +171,16 @@ async def _(event):
         caption=capy,
         thumb=sedlyf,
         attributes=[
-                DocumentAttributeAudio(
-                    duration=int(ytdl_data["duration"]),
-                )
-            ],
+            DocumentAttributeAudio(
+                duration=int(ytdl_data["duration"]),
+            )
+        ],
         supports_streaming=True,
     )
     for files in (sedlyf, file_stark):
         if files and os.path.exists(files):
             os.remove(files)
 
-            
 
 CMD_HELP.update(
     {
