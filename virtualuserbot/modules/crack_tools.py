@@ -140,6 +140,17 @@ async def vypr(event):
     )
     os.remove("hits.txt")
 
+@friday.on(friday_on_cmd(pattern="combogen"))
+async def byekanger(event):
+    url = "http://devsexpo.me/combogen/"
+    sed = requests.get(url=url).json()
+    sedjson = f"""<b>ComBo Generated</b>
+<b>Email :</b> <code>{sed['email']}</code>
+<b>Password :</b> <code>{sed['pass']}</code>
+<b>Combo :</b> <code>{sed['combo']}</code>
+"""
+    await event.edit(sedjson, parse_mode="HTML")
+
 
 @friday.on(friday_on_cmd(pattern="cvx$"))
 async def vortex(event):
