@@ -2,7 +2,7 @@
 
 
 <h1 align="center"><b> Virtual-USERBOT 🇱🇰  </b></h1>
-<h4 align="center">A Powerful, Smart And Simple Userbot with 300+ Plugins <br> ... The Userbot Remix ...</h4>
+<h4 align="center">A Powerful, Smart And Simple Userbot with 300+ Plugins <br> ... Remodied Friday for Sri Lanka ...</h4>
 
 <p align="center">
     <a href="https://github.com/inukaasith/virtualuserbot/commits/master"><img src="https://img.shields.io/github/last-commit/inukaasith/virtualuserbot/master?label=Last%20Commit&style=flat-square&logo=github&color=F10070" alt="Commit" /></a>
@@ -13,7 +13,7 @@
 <p align="center"><a href="https://techwizardent.com/blog/twe_blog_userbot.php"><img src="https://telegra.ph/file/4e1364fb18f899ad47dec.png" width="400"></a></p> 
 
 
-### Here is the Telegram VirtualUserbot. A Remix Of Userbots on github.. Credits To Thier Owners..
+### Here is the Telegram VirtualUserbot. A Remodified version of Friday Userbot for Sri Lanka. Credits To Thier Owners..
 
 [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Inukaasith/virtualuserbot)
 
