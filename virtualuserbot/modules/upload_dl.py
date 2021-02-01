@@ -13,10 +13,10 @@ from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from pySmartDL import SmartDL
 from telethon.tl.types import DocumentAttributeVideo
-from fridaybot.function.FastTelethon import upload_file
-from fridaybot import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
-from fridaybot.events import register
-from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
+from virtualuserbot.function.FastTelethon import upload_file
+from virtualuserbot import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
+from virtualuserbot.events import register
+from virtualuserbot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 
 
 async def progress(current, total, event, start, type_of_ps, file_name=None):
@@ -93,7 +93,7 @@ async def download(target_file):
     if target_file.fwd_from:
         return
     friday = await edit_or_reply(target_file, "`Processing ...`")
-    await friday.edit("Processing using fridaybot server ( ◜‿◝ )♡")
+    await friday.edit("Processing using virtualuserbot server ( ◜‿◝ )♡")
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
         os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
     if not target_file.reply_to_msg_id:
@@ -212,10 +212,10 @@ async def uploadir(udir_event):
 async def upload(u_event):
     if u_event.fwd_from:
         return
-    """ For .upload command, allows you to upload a file from the fridaybot's server """
+    """ For .upload command, allows you to upload a file from the virtualuserbot's server """
     await u_event.edit("Processing ...")
     input_str = u_event.pattern_match.group(1)
-    if input_str in ("fridaybot.session", "config.env"):
+    if input_str in ("virtualuserbot.session", "config.env"):
         await u_event.edit("`That's a dangerous operation! Not Permitted!`")
         return
     if os.path.exists(input_str):
