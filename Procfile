@@ -1,1 +1,1 @@
-virtualuserbot: python -m virtualuserbot
+worker: python3 virtualbotmain.py
