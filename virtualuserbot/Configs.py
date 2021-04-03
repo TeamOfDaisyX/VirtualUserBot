@@ -162,7 +162,7 @@ if ENV:
         GPLINKS_API_KEY = os.environ.get("GPLINKS_API_KEY", None)
         OPEN_LOAD_KEY = os.environ.get("OPEN_LOAD_KEY", None)
         UPSTREAM_REPO = os.environ.get(
-            "UPSTREAM_REPO", "https://github.com/DevsExpo/FridayUserbot"
+            "UPSTREAM_REPO", "https://github.com/inukaasith/virtualuserbot"
         )
         ALIVE_IMAGE = os.environ.get(
             "ALIVE_IMAGE", "https://telegra.ph/file/4e1364fb18f899ad47dec.png"
