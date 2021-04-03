@@ -3,10 +3,10 @@ import os
 import sys
 
 import git
-
+from git import Repo
+from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 from virtualuserbot.config import Config
-
-from ..utils import lightning_cmd
+from ..utils import friday_on_cmd as lightning_cmd
 
 # -- Constants -- #
 IS_SELECTED_DIFFERENT_BRANCH = (
@@ -16,9 +16,7 @@ IS_SELECTED_DIFFERENT_BRANCH = (
     "please check out to an official branch, and re-start the updater."
 )
 OFFICIAL_UPSTREAM_REPO = Config.UPSTREAM_REPO
-BOT_IS_UP_TO_DATE = (
-    "Yaour userbot >> is up-to-date<< \nIt is recommended to use @FridayOT."
-)
+BOT_IS_UP_TO_DATE = "Yaour userbot >> is up-to-date<< \nIt is recommended to use @FridayOT."
 NEW_BOT_UP_DATE_FOUND = (
     "New Update Found For {branch_name}\n"
     "ChangeLog: \n\n{changelog}\n"
@@ -34,7 +32,6 @@ NO_HEROKU_APP_CFGD = "no heroku application found, but a key given? 😕 "
 HEROKU_GIT_REF_SPEC = "HEAD:refs/heads/master"
 RESTARTING_APP = "`Re-starting heroku application`"
 # -- Constants End -- #
-
 
 @borg.on(lightning_cmd("update", outgoing=True))
 async def updater(message):
@@ -70,9 +67,7 @@ async def updater(message):
     )
 
     if not changelog:
-        await message.edit(
-            "`No Update AvaiLAbLe if still you want to check just restart bot`"
-        )
+        await message.edit("`No Update AvaiLAbLe if still you want to check just restart bot`")
         return
     if message.text[8:] != "now":
         message_one = NEW_BOT_UP_DATE_FOUND.format(
@@ -89,7 +84,7 @@ async def updater(message):
             os.remove("change.log")
         else:
             await message.edit(message_one)
-        await message.respond(f"Do `.update now` to update userbot")
+        await message.respond(f'Do `.update now` to update userbot')
         return
     temp_upstream_remote.fetch(active_branch_name)
     repo.git.reset("--hard", "FETCH_HEAD")
