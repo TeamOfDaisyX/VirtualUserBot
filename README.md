@@ -15,8 +15,8 @@
 
 ### BASED ON FRIDAY v7. 
 
-### FRIDAY USERBOT v8 AVAILABLE BY NOW. A POWERFUL AND SECURE USERBOT BUILD FROM SCRATCH
-### github.com/devsexpo/fridayuserbot
+### BTW FRIDAY USERBOT v8 AVAILABLE BY NOW. A POWERFUL AND SECURE USERBOT BUILD FROM SCRATCH
+### https://github.com/devsexpo/fridayuserbot
 
 [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Inukaasith/virtualuserbot)
 
