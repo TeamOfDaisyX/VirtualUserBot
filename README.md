@@ -17,7 +17,7 @@
 
 [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Inukaasith/virtualuserbot)
 
-## HEROKU ERROR FIXED. BTW UNMAINTAINED
+## HEROKU ERROR FIXED. HEROKU OPTIMIZED
 
 # 😍 Credits
 ### Cloned from [Friday Userbot](github.com/starkgang/fridayuserbot) on 28/01/2021.. Full credits to Friday Developers 
