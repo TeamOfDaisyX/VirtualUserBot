@@ -13,29 +13,26 @@
 <p align="center"><a href="https://techwizardent.com/blog/twe_blog_userbot.php"><img src="https://telegra.ph/file/4e1364fb18f899ad47dec.png" width="400"></a></p> 
 
 
-### Here is the Telegram VirtualUserbot. A Remodified version of Friday Userbot for Sri Lanka. Credits To Thier Owners..
+### BASED ON FRIDAY v7. IT IS RECOMMENDED TO USE FRIDAY USERBOT INSTEAD OF THIS
 
 [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Inukaasith/virtualuserbot)
 
-## HEROKU ERROR FIXED. HEROKU OPTIMIZED
+## HEROKU ERROR FIXED. BTW USE FRIDAY INSTEAD
 
 # 😍 Credits
 ### Cloned from [Friday Userbot](github.com/starkgang/fridayuserbot) on 28/01/2021.. Full credits to Friday Developers 
 #### Special thanks To Friday Bot And Dark Cobra Bot a lot
 ##### ♡ Friday is the best userbot ♡ ~ This is just a remodification.. Original work was done by them
-## The story beyond (☆ Information about original owners ☆)
-● This bot was initially cloned and modified by us for suit our requirements.
-Then many Sri Lankans asked for the source code of this bot. 
-That's why we made this code as a independent one.
+
  
-● Most of the plugins in this was kanged from FridayUserbot and many others..
+● Most of the plugins in this are developed FridayUserbot and many others..
 So, all respect and credits goes to them
 
 ● Also original owners of modules mentioned at the top of every module.
 
 ``` Full credits mentioned at the bottom```
 
-◇ If you are not from Sri Lanka I recommend you to use the [Friday Userbot](github.com/starkgang/fridayuserbot). It is more better than other userbots
+◇ It is recommend you to use the [Friday Userbot](github.com/starkgang/fridayuserbot). It is more better than other userbots
 
 # 
 
