@@ -4,7 +4,7 @@ import sys
 
 import git
 
-from virtualuserbot.config import Config
+from virtualuserbot.Configs import Config
 
 from ..utils import friday_on_cmd as lightning_cmd
 
