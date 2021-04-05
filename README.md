@@ -13,7 +13,10 @@
 <p align="center"><a href="https://techwizardent.com/blog/twe_blog_userbot.php"><img src="https://telegra.ph/file/4e1364fb18f899ad47dec.png" width="400"></a></p> 
 
 
-### BASED ON FRIDAY v7. IT IS RECOMMENDED TO USE FRIDAY USERBOT INSTEAD OF THIS
+### BASED ON FRIDAY v7. 
+
+### FRIDAY USERBOT v8 AVAILABLE BY NOW. A POWERFUL AND SECURE USERBOT BUILD FROM SCRATCH
+### github.com/devsexpo/fridayuserbot
 
 [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Inukaasith/virtualuserbot)
 
