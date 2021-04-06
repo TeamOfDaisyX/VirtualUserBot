@@ -5,9 +5,9 @@
 <h4 align="center">A Powerful, Smart And Simple Userbot with 300+ Plugins <br> ... Remodied Friday for Sri Lanka ...</h4>
 
 <p align="center">
-    <a href="https://github.com/Infinity-bots/virtualuserbot/commits/master"><img src="https://img.shields.io/github/last-commit/inukaasith/virtualuserbot/master?label=Last%20Commit&style=flat-square&logo=github&color=F10070" alt="Commit" /></a>
-    <a href="https://github.com/Infinity-bots/virtualuserbot/stargazers"><img src="https://img.shields.io/github/stars/inukaasith/virtualuserbot?label=Stars&style=flat-square&logo=github&color=F10070" alt="Stars" /></a>
-    <a href="https://github.com/Infinity-bots/virtualuserbot/network/members"><img src="https://img.shields.io/github/forks/inukaasith/virtualuserbot?label=Fork&style=flat-square&logo=github&color=F10070" alt="Fork" /></a>
+    <a href="https://github.com/Infinity-bots/virtualuserbot/commits/master"><img src="https://img.shields.io/github/last-commit/infinity-bots/virtualuserbot/master?label=Last%20Commit&style=flat-square&logo=github&color=F10070" alt="Commit" /></a>
+    <a href="https://github.com/Infinity-bots/virtualuserbot/stargazers"><img src="https://img.shields.io/github/stars/infinity-bots/virtualuserbot?label=Stars&style=flat-square&logo=github&color=F10070" alt="Stars" /></a>
+    <a href="https://github.com/Infinity-bots/virtualuserbot/network/members"><img src="https://img.shields.io/github/forks/infinity-bots/virtualuserbot?label=Fork&style=flat-square&logo=github&color=F10070" alt="Fork" /></a>
 </p>
 
 <p align="center"><a href="https://techwizardent.com/blog/twe_blog_userbot.php"><img src="https://telegra.ph/file/4e1364fb18f899ad47dec.png" width="400"></a></p> 
