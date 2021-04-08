@@ -16,6 +16,7 @@ telethon
 iplookup
 wget
 numpy
+pytest
 pyshorteners
 aiohttp
 bs4
