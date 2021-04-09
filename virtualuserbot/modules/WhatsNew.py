@@ -17,7 +17,7 @@ CMD_HELP.update(
         ** New qbot **
         `.qbot` to create quotes
         
-        ** Plus More **
+        ** Plus More Features **
         PM Protection done right. Translation also done right
         
         ** Many Bug Fixes **       
