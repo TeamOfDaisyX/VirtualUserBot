@@ -1,8 +1,6 @@
 from telethon.tl.functions.phone import CreateGroupCallRequest as startvc
 from telethon.tl.functions.phone import DiscardGroupCallRequest as stopvc
-from telethon.tl.functions.phone import InviteToGroupCallRequest as invitetovc
 
-from virtualuserbot import CMD_HELP
 from virtualuserbot.events import register
 
 
@@ -16,6 +14,7 @@ def user_list(l, n):
     for i in range(0, len(l), n):
         yield l[i : i + n]
 
+
 @register(outgoing=True, pattern=r"^\.joinvc (.*)")
 async def _(event):
     try:
@@ -23,7 +22,8 @@ async def _(event):
         await event.edit(event, "`Voice Chat Started...`")
     except Exception as ex:
         await event.edit(event, f"`{str(ex)}`")
-        
+
+
 @register(outgoing=True, pattern=r"^\.stopvc (.*)")
 async def _(event):
     try:

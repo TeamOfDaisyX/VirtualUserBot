@@ -23,7 +23,7 @@ DEFCITY = "Ahmedabad"
 
 # ====================
 async def get_tz(con):
-    """ Get time zone of the given country. """
+    """Get time zone of the given country."""
     """ Credits: @aragon12 and @zakaryan2004. """
     for c_code in c_n:
         if con == c_n[c_code]:
@@ -37,7 +37,7 @@ async def get_tz(con):
 
 @friday.on(friday_on_cmd(pattern="weather(?: |$)(.*)"))
 async def get_weather(weather):
-    """ For .weather command, gets the current weather of a city. """
+    """For .weather command, gets the current weather of a city."""
 
     if not OWM_API:
         await weather.edit("`Get an API key from` https://openweathermap.org/ `first.`")
@@ -139,7 +139,7 @@ async def get_weather(weather):
 
 @friday.on(friday_on_cmd(pattern="setcity(?: |$)(.*)"))
 async def set_default_city(city):
-    """ For .ctime command, change the default virtualuserbot country for date and time commands. """
+    """For .ctime command, change the default virtualuserbot country for date and time commands."""
 
     if not OWM_API:
         await city.edit("`Get an API key from` https://openweathermap.org/ `first.`")
