@@ -6,13 +6,14 @@ from time import time
 from coffeehouse.api import API
 from coffeehouse.lydia import LydiaAI
 
-from ..utils import admin_cmd, edit_or_reply, sudo_cmd
 from fridaybot import BOTLOG, BOTLOG_CHATID, CMD_HELP
 from fridaybot.modules.sql_helper.lydia_ai_sql import add_s, get_all_s, get_s, remove_s
-api_key = '503b19aacccbc9f78351964f420a6580fd16f840e0701b0232dc117b4e59e96421a5bc15c5819be1e6e7622fd792adf0eb3646e47cb585ebb56c01e9ffde4d15'
+
+from ..utils import admin_cmd, edit_or_reply, sudo_cmd
+
+api_key = "503b19aacccbc9f78351964f420a6580fd16f840e0701b0232dc117b4e59e96421a5bc15c5819be1e6e7622fd792adf0eb3646e47cb585ebb56c01e9ffde4d15"
 coffeehouse_api = API(api_key)
 lydia = LydiaAI(coffeehouse_api)
-
 
 
 @bot.on(admin_cmd(pattern="(en|re|li)ai$", outgoing=True))
@@ -20,7 +21,7 @@ lydia = LydiaAI(coffeehouse_api)
 async def lydia_disable_enable(event):
     if event.fwd_from:
         return
-    
+
     catevent = await edit_or_reply(event, "`.....`")
     input_str = event.pattern_match.group(1)
     if event.reply_to_msg_id is not None:
@@ -99,7 +100,7 @@ async def lydia_disable_enable(event):
 async def on_new_message(event):
     if event.chat_id in Config.UB_BLACK_LIST_CHAT:
         return
-    
+
     reply = await event.get_reply_message()
     if reply is not None and reply.sender_id != bot.uid:
         return

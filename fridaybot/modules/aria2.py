@@ -7,21 +7,20 @@
 # Asena UserBot - Yusuf Usta
 #
 
-import aria2p
 from asyncio import sleep
 from os import system
-from fridaybot import LOGS, CMD_HELP
-from telethon import events
-from uniborg.util import 
+
+import aria2p
 from requests import get
+from telethon import events
+
+from fridaybot import CMD_HELP, LOGS
 from fridaybot.utils import register
-
-
 
 # Gelişmiş indirme hızları için en iyi trackerları çağırır, bunun için K-E-N-W-A-Y'e teşekkürler.
 trackers_list = get(
-    'https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_best.txt'
-).text.replace('\n\n', ',')
+    "https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_best.txt"
+).text.replace("\n\n", ",")
 trackers = f"[{trackers_list}]"
 
 cmd = f"aria2c \
@@ -42,8 +41,7 @@ cmd = f"aria2c \
 
 aria2_is_running = system(cmd)
 
-aria2 = aria2p.API(aria2p.Client(host="http://localhost", port=6800,
-                                 secret=""))
+aria2 = aria2p.API(aria2p.Client(host="http://localhost", port=6800, secret=""))
 
 
 @register(outgoing=True, pattern="^.amag(?: |$)(.*)")
@@ -68,10 +66,9 @@ async def torrent_download(event):
     torrent_file_path = event.pattern_match.group(1)
     # Torrent'i kuyruğa ekler.
     try:
-        download = aria2.add_torrent(torrent_file_path,
-                                     uris=None,
-                                     options=None,
-                                     position=None)
+        download = aria2.add_torrent(
+            torrent_file_path, uris=None, options=None, position=None
+        )
     except Exception as e:
         await event.edit(str(e))
         return
@@ -104,7 +101,9 @@ async def remove_all(event):
         aria2.purge_all()
     except:
         pass
-    if not removed:  # Eğer API False olarak dönerse sistem vasıtasıyla kaldırılmaya çalışılır.
+    if (
+        not removed
+    ):  # Eğer API False olarak dönerse sistem vasıtasıyla kaldırılmaya çalışılır.
         system("aria2p remove-all")
     await event.edit("`Tüm indirilenler başarıyla temizlendi.`")
 
@@ -132,19 +131,31 @@ async def show_all(event):
     downloads = aria2.get_downloads()
     msg = ""
     for download in downloads:
-        msg = msg + "Dosya: `" + str(download.name) + "`\nHız: " + str(
-            download.download_speed_string()) + "\nİşlem: " + str(
-                download.progress_string()) + "\nToplam Boyut: " + str(
-                    download.total_length_string()) + "\nDurum: " + str(
-                        download.status) + "\nTahmini bitiş:  " + str(
-                            download.eta_string()) + "\n\n"
+        msg = (
+            msg
+            + "Dosya: `"
+            + str(download.name)
+            + "`\nHız: "
+            + str(download.download_speed_string())
+            + "\nİşlem: "
+            + str(download.progress_string())
+            + "\nToplam Boyut: "
+            + str(download.total_length_string())
+            + "\nDurum: "
+            + str(download.status)
+            + "\nTahmini bitiş:  "
+            + str(download.eta_string())
+            + "\n\n"
+        )
     if len(msg) <= 4096:
         await event.edit("`Devam eden indirmeler: `\n" + msg)
         await sleep(5)
         await event.delete()
     else:
-        await event.edit("`Çıktı çok büyük, bu sebepten dolayı dosya olarak gönderiliyor...`")
-        with open(output, 'w') as f:
+        await event.edit(
+            "`Çıktı çok büyük, bu sebepten dolayı dosya olarak gönderiliyor...`"
+        )
+        with open(output, "w") as f:
             f.write(msg)
         await sleep(2)
         await event.delete()
@@ -189,8 +200,7 @@ async def check_progress_for_dl(gid, event, previous):
             file = aria2.get_download(gid)
             complete = file.is_complete
             if complete:
-                await event.edit(f"Dosya başarıyla indirdi: `{file.name}`"
-                                 )
+                await event.edit(f"Dosya başarıyla indirdi: `{file.name}`")
                 return False
         except Exception as e:
             if " not found" in str(e) or "'file'" in str(e):
@@ -201,5 +211,7 @@ async def check_progress_for_dl(gid, event, previous):
             elif " depth exceeded" in str(e):
                 file.remove(force=True)
                 await event.edit(
-                    "İndirme otomatik olarak iptal edildi:\n`{}`\nTorrent ya da link ölü."
-                    .format(file.name))
+                    "İndirme otomatik olarak iptal edildi:\n`{}`\nTorrent ya da link ölü.".format(
+                        file.name
+                    )
+                )

@@ -46,8 +46,8 @@ async def _(event):
     else:
         await event.edit("U Dumb. Reply to User 🤷")
 
-        
-@friday.on(friday_on_cmd(pattern=r"thack"))        
+
+@friday.on(friday_on_cmd(pattern=r"thack"))
 async def _(event):
     if event.fwd_from:
         return
@@ -57,7 +57,7 @@ async def _(event):
         idd = reply_message.sender_id
         if idd == 1035034432:
             await event.edit("This is My Master\nI can't hack my master's Account")
-            
+
         else:
             event = await event.edit("Hacking..")
             animation_chars = [
@@ -80,7 +80,9 @@ async def _(event):
                 await event.edit(animation_chars[i % 11])
     else:
         await event.edit("No User is Defined\n Can't hack account")
-@friday.on(friday_on_cmd(pattern=r"whack")) 
+
+
+@friday.on(friday_on_cmd(pattern=r"whack"))
 async def _(event):
     if event.fwd_from:
         return
@@ -107,8 +109,7 @@ async def _(event):
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 15])
-       
-        
+
 
 CMD_HELP.update(
     {
@@ -119,6 +120,5 @@ CMD_HELP.update(
 \n**Function : **__shows an animation of hacking progess bar__\
 \n\n**Syntax : **`.wahack reply to a person`\
 \n**Function : **__shows an animation of whatsapp account hacking to a replied person__"
-
     }
 )

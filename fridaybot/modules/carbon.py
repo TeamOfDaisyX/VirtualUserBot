@@ -25,7 +25,7 @@ LANG = "en"
 async def carbon_api(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
 
-        """ A Wrapper for carbon.now.sh """
+        """A Wrapper for carbon.now.sh"""
         await e.edit("`Processing..`")
         CARBON = "https://carbon.now.sh/?l={lang}&code={code}"
         global CARBONLANG
