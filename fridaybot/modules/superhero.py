@@ -13,17 +13,8 @@
 
 import requests
 
-from uniborg.util import friday_on_cmd
-
-import html
-
-from telethon.tl.functions.photos import GetUserPhotosRequest
-from telethon.tl.functions.users import GetFullUserRequest
-from telethon.tl.types import MessageEntityMentionName
-from telethon.utils import get_input_location
 from fridaybot.Configs import Config
-from fridaybot import CMD_HELP, sclient
-from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd, admin_cmd
+from fridaybot.utils import admin_cmd
 
 
 @friday.on(admin_cmd(pattern="hero (.*)"))
@@ -34,15 +25,17 @@ async def _(event):
     url = "https://superhero-search.p.rapidapi.com/"
     querystring = {"hero": input_str}
     if Config.SUPERHERO_API_KEY is None:
-      await event.edit("Need to get an API key from https://rapidapi.com/jakash1997/api/superhero-search\nModule stopping!")
-      return
+        await event.edit(
+            "Need to get an API key from https://rapidapi.com/jakash1997/api/superhero-search\nModule stopping!"
+        )
+        return
     await event.edit("Processing Your Request.")
     inputo = Config.SUPERHERO_API_KEY
 
     headers = {
-      'x-rapidapi-key': inputo,
-      'x-rapidapi-host': "superhero-search.p.rapidapi.com"
-      }
+        "x-rapidapi-key": inputo,
+        "x-rapidapi-host": "superhero-search.p.rapidapi.com",
+    }
 
     response = requests.request("GET", url, headers=headers, params=querystring)
     a = response.json()
@@ -70,17 +63,15 @@ async def _(event):
     eye = str(f.get("eyeColor"))
     hair = str(f.get("hairColor"))
     bio = a.get("biography")
-    #Hey Kanger, Don't you dare Kamg this.
+    # Hey Kanger, Don't you dare Kamg this.
 
     fullName = str(bio.get("fullName"))
     ego = str(bio.get("alterEgos"))
     aliase = bio.get("aliases")
     sedo = ""
-    #Messi Is The Best.
+    # Messi Is The Best.
     for messi in aliase:
-	    sedo += messi + "   "
-	    
-	  
+        sedo += messi + "   "
 
     PoB = str(bio.get("placeOfBirth"))
     sed = str(sedo)
@@ -90,7 +81,7 @@ async def _(event):
     alignment = str(bio.get("alignment"))
 
     imoge = a.get("images")
-    res = list(imoge.keys())[3] 
+    res = list(imoge.keys())[3]
     linke = str(res)
     link = str(imoge.get(linke))
     fcb = input_str.upper()

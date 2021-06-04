@@ -12,23 +12,27 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
-import requests
-from fridaybot import CMD_HELP
-from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
 import os
-#hmm
+
+import requests
+
+from fridaybot import CMD_HELP
+from fridaybot.utils import friday_on_cmd, sudo_cmd
+
+
+# hmm
 @friday.on(friday_on_cmd(pattern="picgen"))
 @friday.on(sudo_cmd(pattern="picgen", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
-    
+
     url = "https://thispersondoesnotexist.com/image"
     response = requests.get(url)
     if response.status_code == 200:
-      with open("FRIDAYOT.jpg", 'wb') as f:
-        f.write(response.content)
-    
+        with open("FRIDAYOT.jpg", "wb") as f:
+            f.write(response.content)
+
     captin = f"Fake Image By VirtualUserbot.\nGet Your Own Superpowers From [VirtualUserbot](github.com/inukaasith/virtualuserbot)."
     fole = "FRIDAYOT.jpg"
     await borg.send_file(event.chat_id, fole, caption=captin)

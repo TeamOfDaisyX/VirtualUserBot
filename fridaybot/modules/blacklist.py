@@ -10,9 +10,10 @@ import re
 
 from telethon import events
 
-from .sql_helper import blacklist_sql as sql
 from fridaybot import CMD_HELP
 from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
+
+from .sql_helper import blacklist_sql as sql
 
 
 @friday.on(events.NewMessage(incoming=True))

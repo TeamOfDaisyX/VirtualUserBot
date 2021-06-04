@@ -8,8 +8,8 @@ from logging import DEBUG, INFO, basicConfig, getLogger
 
 import pylast
 import wget
-from nospamplus.connect import Connect
 from dotenv import load_dotenv
+from nospamplus.connect import Connect
 from pylast import LastFMNetwork, md5
 from pySmartDL import SmartDL
 from requests import get

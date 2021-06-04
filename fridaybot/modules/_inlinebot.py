@@ -3,15 +3,18 @@ import re
 import urllib
 from math import ceil
 from re import findall
-from search_engine_parser import GoogleSearch
-from fridaybot.function import _ytdl
 from urllib.parse import quote
+
 import requests
+from pornhub_api import PornhubApi
+from search_engine_parser import GoogleSearch
 from telethon import Button, custom, events, functions
 from youtubesearchpython import VideosSearch
+
 from fridaybot import ALIVE_NAME, CMD_HELP, CMD_LIST
+from fridaybot.function import _ytdl
 from fridaybot.modules import inlinestats
-from pornhub_api import PornhubApi
+
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 if PMPERMIT_PIC is None:
     WARN_PIC = "https://telegra.ph/file/53aed76a90e38779161b1.jpg"
@@ -141,7 +144,8 @@ async def rip(event):
     else:
         txt = "You Can't View My Masters Stats"
         await event.answer(txt, alert=True)
-        
+
+
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"yt_dl_(.*)")))
 async def rip(event):
     yt_dl_data = event.data_match.group(1).decode("UTF-8")
@@ -151,8 +155,9 @@ async def rip(event):
         await event.answer(text, alert=True)
         return
     is_it = True
-    ok = await _ytdl(link_s, is_it, event, tgbot)
-    
+    await _ytdl(link_s, is_it, event, tgbot)
+
+
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"ph_dl_(.*)")))
 async def rip(event):
     link_s = event.pattern_match.group(1)
@@ -160,8 +165,9 @@ async def rip(event):
         text = f"Please Get Your Own Friday And Don't Waste My Resources."
         await event.answer(text, alert=True)
         return
-    ok = await _phdl(link_s, event, tgbot)
-    
+    await _phdl(link_s, event, tgbot)
+
+
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"dontspamnigga")))
 async def rip(event):
     if event.query.user_id == bot.uid:
@@ -359,7 +365,7 @@ async def inline_id_handler(event: events.InlineQuery.Event):
     testinput = event.pattern_match.group(1)
     urllib.parse.quote_plus(testinput)
     results = []
-    search = VideosSearch(f"{testinput}", limit = 20)
+    search = VideosSearch(f"{testinput}", limit=20)
     mi = search.result()
     moi = mi["result"]
     fk = 0
@@ -382,7 +388,7 @@ async def inline_id_handler(event: events.InlineQuery.Event):
         td = mio["duration"]
         kk = moi[fk]
         tw = kk["viewCount"]["text"]
-        fk = fk+1
+        fk = fk + 1
         kekme = f"https://img.youtube.com/vi/{fridayz}/hqdefault.jpg"
         okayz = f"**Title :** `{thum}` \n**Link :** `{mo}` \n**Channel :** `{thums}` \n**Views :** `{tw}` \n**Duration :** `{td}`"
         hmmkek = f"Channel : {thums} \nDuration : {td} \nViews : {tw}"
@@ -391,10 +397,10 @@ async def inline_id_handler(event: events.InlineQuery.Event):
                 file=kekme,
                 text=okayz,
                 buttons=[
-                [custom.Button.inline("Download Test", data=f"yt_dl_{mo}")],
-                [Button.switch_inline("Search Again", query="yt ", same_peer=True)],
-                ]
-              )
+                    [custom.Button.inline("Download Test", data=f"yt_dl_{mo}")],
+                    [Button.switch_inline("Search Again", query="yt ", same_peer=True)],
+                ],
+            )
         )
     await event.answer(results)
 
@@ -473,7 +479,8 @@ async def inline_handler(event):
             ],
         )
         await event.answer([resulte])
-        
+
+
 @tgbot.on(events.InlineQuery(pattern=r"google (.*)"))
 async def inline_id_handler(event: events.InlineQuery.Event):
     builder = event.builder
@@ -493,11 +500,10 @@ async def inline_id_handler(event: events.InlineQuery.Event):
         match = match.replace("page=" + page[0], "")
     except IndexError:
         page = 1
-    
+
     search_args = (str(match), int(page))
     gsearch = GoogleSearch()
     gresults = await gsearch.async_search(*search_args)
-    msg = ""
     for i in range(len(gresults["links"])):
         try:
             title = gresults["titles"][i]
@@ -519,7 +525,8 @@ async def inline_id_handler(event: events.InlineQuery.Event):
         except IndexError:
             break
     await event.answer(results)
-    
+
+
 @tgbot.on(events.InlineQuery(pattern=r"ph (.*)"))
 async def inline_id_handler(event: events.InlineQuery.Event):
     builder = event.builder
@@ -533,16 +540,12 @@ async def inline_id_handler(event: events.InlineQuery.Event):
     results = []
     input_str = event.pattern_match.group(1)
     api = PornhubApi()
-    data = api.search.search(
-    input_str,
-    ordering="mostviewed"
-    )
+    data = api.search.search(input_str, ordering="mostviewed")
     ok = 1
-    oik = ""
     for vid in data.videos:
-      if ok <= 5:
-        lul_m = (f"**PORN-HUB SEARCH** \n**Video title :** `{vid.title}` \n**Video link :** `https://www.pornhub.com/view_video.php?viewkey={vid.video_id}`")
-        results.append(
+        if ok <= 5:
+            lul_m = f"**PORN-HUB SEARCH** \n**Video title :** `{vid.title}` \n**Video link :** `https://www.pornhub.com/view_video.php?viewkey={vid.video_id}`"
+            results.append(
                 await event.builder.article(
                     title=vid.title,
                     text=lul_m,
@@ -553,10 +556,11 @@ async def inline_id_handler(event: events.InlineQuery.Event):
                     ],
                 )
             )
-      else:
-        pass
+        else:
+            pass
     await event.answer(results)
-    
+
+
 @tgbot.on(events.InlineQuery(pattern=r"xkcd (.*)"))
 async def inline_id_handler(event: events.InlineQuery.Event):
     builder = event.builder
@@ -567,7 +571,6 @@ async def inline_id_handler(event: events.InlineQuery.Event):
         )
         await event.answer([resultm])
         return
-    results = []
     input_str = event.pattern_match.group(1)
     xkcd_id = None
     if input_str:
@@ -604,14 +607,8 @@ Month: {}
 Year: {}""".format(
             xkcd_link, safe_title, alt, day, month, year
         )
-        lul_k = builder.photo(
-            file=img,
-            text=output_str
-        )
+        lul_k = builder.photo(file=img, text=output_str)
         await event.answer([lul_k])
     else:
-        resultm = builder.article(
-            title="- No Results :/ -",
-            text=f"No Results Found !"
-        )
+        resultm = builder.article(title="- No Results :/ -", text=f"No Results Found !")
         await event.answer([resultm])

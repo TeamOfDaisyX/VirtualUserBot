@@ -1,6 +1,7 @@
+from fridaybot import CMD_HELP
 from fridaybot.modules.sql_helper import warns_sql as sql
 from fridaybot.utils import friday_on_cmd
-from fridaybot import CMD_HELP
+
 
 @friday.on(friday_on_cmd(pattern="warn(?: |$)(.*)"))
 async def _s(event):
@@ -121,7 +122,7 @@ async def m_(event):
 
 
 async def get_user_from_event(event):
-    """ Get the user from argument or replied message. """
+    """Get the user from argument or replied message."""
     args = event.pattern_match.group(1).split(" ", 1)
     extra = None
     if event.reply_to_msg_id:
@@ -167,7 +168,6 @@ async def get_user_from_id(user, event):
         return None
 
     return user_obj
-
 
 
 CMD_HELP.update(

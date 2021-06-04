@@ -1,36 +1,39 @@
-# plugin made by @hellboi_atul bug fixes by @Mrconfused 
+# plugin made by @hellboi_atul bug fixes by @Mrconfused
 # Copyright (C) DARK COBRA 2020.
 # if you change these lines you are gay...bc fuck off!
 # leechers stay away😑...if you use this code without credit...u gay bitch fuck off...!
 
 
-
-import re
-import random
-from fridaybot import bot, CMD_HELP
-from telethon.errors.rpcerrorlist import YouBlockedUserError
-from ..utils import admin_cmd
 import asyncio
-from telethon.tl.functions.messages import ImportChatInviteRequest
-from telethon.errors.rpcerrorlist import UserAlreadyParticipantError
-from telethon.tl.types import InputMessagesFilterMusic
 import os
+import re
+
+from telethon.errors.rpcerrorlist import (
+    UserAlreadyParticipantError,
+    YouBlockedUserError,
+)
+from telethon.tl.functions.messages import ImportChatInviteRequest
+from telethon.tl.types import InputMessagesFilterMusic
+
+from fridaybot import CMD_HELP, bot
+
+from ..utils import admin_cmd
+
 try:
- import subprocess
+    pass
 except:
- os.system("pip install instantmusic")
- 
+    os.system("pip install instantmusic")
 
 
 os.system("rm -rf *.mp3")
 
 
 def bruh(name):
-    
-    os.system("instantmusic -q -s "+name)
-    
 
-#@register(outgoing=True, pattern="^.netease(?: |$)(.*)")
+    os.system("instantmusic -q -s " + name)
+
+
+# @register(outgoing=True, pattern="^.netease(?: |$)(.*)")
 @borg.on(admin_cmd("songs ?(.*)"))
 async def WooMai(netase):
     if netase.fwd_from:
@@ -40,32 +43,35 @@ async def WooMai(netase):
     link = f"/netease {song}"
     await netase.edit("```Getting Your Music```")
     async with bot.conversation(chat) as conv:
-          await asyncio.sleep(2)
-          await netase.edit("`Downloading...Please wait`")
-          try:
-              msg = await conv.send_message(link)
-              response = await conv.get_response()
-              respond = await conv.get_response()
-              """ - don't spam notif - """
-              await bot.send_read_acknowledge(conv.chat_id)
-          except YouBlockedUserError:
-              await netase.edit("```Please unblock @WooMaiBot and try again```")
-              return
-          await netase.edit("`Sending Your Music...weit!😎`")
-          await asyncio.sleep(3)
-          await bot.send_file(netase.chat_id, respond)
-    await netase.client.delete_messages(conv.chat_id,
-                                       [msg.id, response.id, respond.id])
+        await asyncio.sleep(2)
+        await netase.edit("`Downloading...Please wait`")
+        try:
+            msg = await conv.send_message(link)
+            response = await conv.get_response()
+            respond = await conv.get_response()
+            """ - don't spam notif - """
+            await bot.send_read_acknowledge(conv.chat_id)
+        except YouBlockedUserError:
+            await netase.edit("```Please unblock @WooMaiBot and try again```")
+            return
+        await netase.edit("`Sending Your Music...weit!😎`")
+        await asyncio.sleep(3)
+        await bot.send_file(netase.chat_id, respond)
+    await netase.client.delete_messages(conv.chat_id, [msg.id, response.id, respond.id])
     await netase.delete()
+
 
 @borg.on(admin_cmd("song ?(.*)"))
 async def _(event):
     try:
-       await event.client(ImportChatInviteRequest('DdR2SUvJPBouSW4QlbJU4g'))
+        await event.client(ImportChatInviteRequest("DdR2SUvJPBouSW4QlbJU4g"))
     except UserAlreadyParticipantError:
         pass
     except:
-        await event.reply("You need to join [this](https://t.me/joinchat/DdR2SUvJPBouSW4QlbJU4g) group for this module to work.", link_preview=False)
+        await event.reply(
+            "You need to join [this](https://t.me/joinchat/DdR2SUvJPBouSW4QlbJU4g) group for this module to work.",
+            link_preview=False,
+        )
         return
     args = event.pattern_match.group(1)
     if not args:
@@ -75,11 +81,13 @@ async def _(event):
     current_chat = event.chat_id
     current_msg = event.id
     try:
-       async for event in event.client.iter_messages(chat, search=args, limit=1, filter=InputMessagesFilterMusic):
-                    await event.client.send_file(current_chat, event, caption=event.message)
+        async for event in event.client.iter_messages(
+            chat, search=args, limit=1, filter=InputMessagesFilterMusic
+        ):
+            await event.client.send_file(current_chat, event, caption=event.message)
     except:
-             await event.reply("`Song not found.`")
-             return
+        await event.reply("`Song not found.`")
+        return
     await event.client.delete_messages(current_chat, current_msg)
 
 
@@ -95,16 +103,17 @@ IF_EMOJI = re.compile(
     "\U0001F900-\U0001F9FF"  # Supplemental Symbols and Pictographs
     "\U0001FA00-\U0001FA6F"  # Chess Symbols
     "\U0001FA70-\U0001FAFF"  # Symbols and Pictographs Extended-A
-    "\U00002702-\U000027B0"  # Dingbats 
-    "]+")
+    "\U00002702-\U000027B0"  # Dingbats
+    "]+"
+)
+
 
 def deEmojify(inputString: str) -> str:
     """Remove emojis and other non-safe characters from string"""
-    return re.sub(IF_EMOJI, '', inputString)
+    return re.sub(IF_EMOJI, "", inputString)
 
 
 @borg.on(admin_cmd(pattern="sptfy ?(.*)"))
-
 async def FindMusicPleaseBot(gaana):
 
     song = gaana.pattern_match.group(1)
@@ -125,7 +134,7 @@ async def FindMusicPleaseBot(gaana):
 
         try:
 
-            msg = await conv.send_message(song)
+            await conv.send_message(song)
 
             response = await conv.get_response()
 
@@ -135,13 +144,15 @@ async def FindMusicPleaseBot(gaana):
 
                 return await gaana.edit(f"Sorry, can't find {song}")
 
-            respond = await conv.get_response()
+            await conv.get_response()
 
             cobra = await conv.get_response()
 
         except YouBlockedUserError:
 
-            await gaana.edit("```Please unblock``` @FindmusicpleaseBot``` and try again```")
+            await gaana.edit(
+                "```Please unblock``` @FindmusicpleaseBot``` and try again```"
+            )
 
             return
 
@@ -155,24 +166,26 @@ async def FindMusicPleaseBot(gaana):
 
 
 @borg.on(admin_cmd(pattern="deez(?: |$)(.*)"))
-
 async def nope(doit):
     ok = doit.pattern_match.group(1)
     if not ok:
         if doit.is_reply:
-            what = (await doit.get_reply_message()).message
+            (await doit.get_reply_message()).message
         else:
-            await doit.edit("`Sir please give some query to search and download it for you..!`")
+            await doit.edit(
+                "`Sir please give some query to search and download it for you..!`"
+            )
             return
-    sticcers = await bot.inline_query(
-        "DeezerMusicBot", f"{(deEmojify(ok))}")
-    await sticcers[0].click(doit.chat_id,
-                            reply_to=doit.reply_to_msg_id,
-                            silent=True if doit.is_reply else False,
-                            hide_via=True)
+    sticcers = await bot.inline_query("DeezerMusicBot", f"{(deEmojify(ok))}")
+    await sticcers[0].click(
+        doit.chat_id,
+        reply_to=doit.reply_to_msg_id,
+        silent=True if doit.is_reply else False,
+        hide_via=True,
+    )
     await doit.delete()
-    
-    
+
+
 @borg.on(admin_cmd(pattern="gaana ?(.*)"))
 async def FindMusicPleaseBot(gaana):
 
@@ -194,7 +207,7 @@ async def FindMusicPleaseBot(gaana):
 
         try:
 
-            msg = await conv.send_message(song)
+            await conv.send_message(song)
 
             response = await conv.get_response()
 
@@ -204,13 +217,15 @@ async def FindMusicPleaseBot(gaana):
 
                 return await gaana.edit(f"Sorry, can't find {song}")
 
-            respond = await conv.get_response()
+            await conv.get_response()
 
             cobra = await conv.get_response()
 
         except YouBlockedUserError:
 
-            await gaana.edit("```Please unblock``` @FindmusicpleaseBot``` and try again```")
+            await gaana.edit(
+                "```Please unblock``` @FindmusicpleaseBot``` and try again```"
+            )
 
             return
 
@@ -222,7 +237,6 @@ async def FindMusicPleaseBot(gaana):
 
     await gaana.delete()
 
-    
 
 CMD_HELP.update(
     {

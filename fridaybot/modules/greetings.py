@@ -1,34 +1,31 @@
 import random
 
-from ..utils import admin_cmd, edit_or_reply, sudo_cmd
 from fridaybot import CMD_HELP
 
+from ..utils import admin_cmd, edit_or_reply, sudo_cmd
+
 GDMORNING = (
-    
-    
     "May this morning offer you new hope for life! May you be happy and enjoy every moment of it. Good morning!",
     "A new day has come with so many new opportunities for you. Grab them all and make the best out of your day. Here’s me wishing you a good morning!",
     "Welcome this beautiful morning with a smile on your face. I hope you’ll have a great day today. Wishing you a very good morning!",
     "Mornings come with a blank canvas. Paint it as you like and call it a day. Wake up now and start creating your perfect day. Good morning!",
     "Wake up like the sun every morning and light up the world your awesomeness. You have so many great things to achieve today. Good morning!",
-        
 )
 GDNIGHT = (
-    
     "Have a very, good night, friend! You are wonderful!",
     "Friend, you do not hesitate to get things done! Take tonight to relax and do more, tomorrow!",
     "Rest soundly tonight, friend!",
     "Good night to a friend who is the best! Get your forty winks!",
-    "Let there be no troubles, dear friend! Have a Good Night!"
-    
-	 
+    "Let there be no troubles, dear friend! Have a Good Night!",
 )
 
-GDNOON=(
+GDNOON = (
     "Good afternoon!",
     "Forget about yesterday, think about tommorow.. The victory will be yours.",
-    "Do what you have to do right now.. Good Afternoon."
+    "Do what you have to do right now.. Good Afternoon.",
 )
+
+
 @bot.on(admin_cmd(pattern=f"gm$", outgoing=True))
 @bot.on(sudo_cmd(pattern="gm$", allow_sudo=True))
 async def morning(morning):

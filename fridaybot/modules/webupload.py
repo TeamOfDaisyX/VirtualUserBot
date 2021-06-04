@@ -1,11 +1,16 @@
 # credits: SNAPDRAGON (@s_n_a_p_s)
 import asyncio
 import time
-from fridaybot.utils import friday_on_cmd
+
 from fridaybot import CMD_HELP
+from fridaybot.utils import friday_on_cmd
 
 
-@borg.on(friday_on_cmd(pattern="^.webupload ?(.+?|) (?:--)(anonfiles|transfer|filebin|anonymousfiles|megaupload|bayfiles|ninja)"))
+@borg.on(
+    friday_on_cmd(
+        pattern="^.webupload ?(.+?|) (?:--)(anonfiles|transfer|filebin|anonymousfiles|megaupload|bayfiles|ninja)"
+    )
+)
 async def _(event):
     if event.fwd_from:
         return

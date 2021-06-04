@@ -10,8 +10,9 @@ import requests
 from selenium import webdriver
 from validators.url import url
 
-from ..utils import admin_cmd, edit_or_reply, sudo_cmd
 from fridaybot import CMD_HELP
+
+from ..utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
 @bot.on(admin_cmd(pattern="ss (.*)"))

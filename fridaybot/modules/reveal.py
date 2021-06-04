@@ -7,7 +7,8 @@
 import os
 
 from fridaybot import CMD_HELP
-from ..utils import admin_cmd, sudo_cmd
+
+from ..utils import admin_cmd
 
 
 @bot.on(admin_cmd(pattern=r"reveal", outgoing=True))
