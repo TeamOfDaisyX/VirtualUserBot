@@ -6,6 +6,7 @@ from math import ceil
 import requests
 from telethon import Button, custom, events, functions
 from youtubesearchpython import VideosSearch
+
 from fridaybot import ALIVE_NAME, CMD_HELP, CMD_LIST
 from fridaybot.modules import inlinestats
 
@@ -207,6 +208,7 @@ async def rip(event):
         buttons=[Button.url("Contact Him", f"tg://user?id={him_id}")],
     )
 
+
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
 async def on_plug_in_callback_query_handler(event):
     if event.query.user_id == bot.uid:
@@ -214,7 +216,7 @@ async def on_plug_in_callback_query_handler(event):
     else:
         reply_pop_up_alert = "මොන පිස්සෙක්ද තෝ? උඹටම කියල බොටෙක් හදාගනිම්. "
         await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-    
+
 
 def paginate_help(page_number, loaded_modules, prefix):
     number_of_rows = 8
@@ -250,6 +252,7 @@ def paginate_help(page_number, loaded_modules, prefix):
             )
         ]
     return pairs
+
 
 @tgbot.on(events.InlineQuery(pattern=r"torrent (.*)"))
 async def inline_id_handler(event: events.InlineQuery.Event):
@@ -345,7 +348,7 @@ async def inline_id_handler(event: events.InlineQuery.Event):
     testinput = event.pattern_match.group(1)
     urllib.parse.quote_plus(testinput)
     results = []
-    search = VideosSearch(f"{testinput}", limit = 20)
+    search = VideosSearch(f"{testinput}", limit=20)
     mi = search.result()
     moi = mi["result"]
     fk = 0
@@ -368,7 +371,7 @@ async def inline_id_handler(event: events.InlineQuery.Event):
         td = mio["duration"]
         kk = moi[fk]
         tw = kk["viewCount"]["text"]
-        fk = fk+1
+        fk = fk + 1
         kekme = f"https://img.youtube.com/vi/{fridayz}/hqdefault.jpg"
         okayz = f"**Title :** `{thum}` \n**Link :** `{mo}` \n**Channel :** `{thums}` \n**Views :** `{tw}` \n**Duration :** `{td}`"
         hmmkek = f"Channel : {thums} \nDuration : {td} \nViews : {tw}"

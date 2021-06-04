@@ -16,6 +16,7 @@ from PIL import Image, ImageDraw, ImageFont
 from pySmartDL import SmartDL
 from telethon.errors import FloodWaitError
 from telethon.tl import functions
+
 from fridaybot import CMD_HELP
 
 AUTONAME = os.environ.get("AUTONAME", None)

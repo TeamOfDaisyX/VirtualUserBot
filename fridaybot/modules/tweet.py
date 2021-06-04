@@ -1,21 +1,20 @@
 import os
-import re
-import requests
-from validators.url import url
-from asyncio import sleep
-from random import choice, getrandbits, randint
 import random
-import time
-from telethon import events
-from fridaybot import bot
-from collections import deque
-import sys
-import html
-import json
-from PIL import Image, ImageEnhance, ImageOps
+import re
+
+import requests
+from PIL import Image
+from validators.url import url
+
 from fridaybot import CMD_HELP, bot
-from fridaybot.events import register
-from fridaybot.tweet import moditweet, johnnytweet, sunnytweet, bhautweet, jtweet, miatweet
+from fridaybot.tweet import (
+    bhautweet,
+    johnnytweet,
+    jtweet,
+    miatweet,
+    moditweet,
+    sunnytweet,
+)
 from fridaybot.utils import admin_cmd
 
 EMOJI_PATTERN = re.compile(
@@ -70,11 +69,6 @@ async def changemymind(text):
     return "gpx.webp"
 
 
-
-
-
-
-
 async def tweets(text1, text2):
     r = requests.get(
         f"https://nekobot.xyz/api/imagegen?type=tweet&text={text1}&username={text2}"
@@ -98,7 +92,7 @@ async def purge():
         pass
 
 
-#@register(outgoing=True, pattern=r"^\.trump(?: |$)(.*)")
+# @register(outgoing=True, pattern=r"^\.trump(?: |$)(.*)")
 @borg.on(admin_cmd(outgoing=True, pattern="trump ?(.*)"))
 async def trump(event):
     text = event.pattern_match.group(1)
@@ -119,9 +113,9 @@ async def trump(event):
     await event.delete()
     await purge()
 
-#@register(outgoing=True, pattern=r"^\.johnny(?: |$)(.*)")
-@borg.on(admin_cmd(outgoing=True, pattern="johnny ?(.*)"))
 
+# @register(outgoing=True, pattern=r"^\.johnny(?: |$)(.*)")
+@borg.on(admin_cmd(outgoing=True, pattern="johnny ?(.*)"))
 async def johnny(event):
     text = event.pattern_match.group(1)
     text = re.sub("&", "", text)
@@ -141,7 +135,8 @@ async def johnny(event):
     await event.delete()
     await purge()
 
-#@register(outgoing=True, pattern=r"^\.bhau(?: |$)(.*)")
+
+# @register(outgoing=True, pattern=r"^\.bhau(?: |$)(.*)")
 @borg.on(admin_cmd(outgoing=True, pattern="bhau ?(.*)"))
 async def bhau(event):
     text = event.pattern_match.group(1)
@@ -163,7 +158,7 @@ async def bhau(event):
     await purge()
 
 
-#@register(outgoing=True, pattern=r"^\.sunny(?: |$)(.*)")
+# @register(outgoing=True, pattern=r"^\.sunny(?: |$)(.*)")
 @borg.on(admin_cmd(outgoing=True, pattern="sunny ?(.*)"))
 async def sunny(event):
     text = event.pattern_match.group(1)
@@ -184,7 +179,8 @@ async def sunny(event):
     await event.delete()
     await purge()
 
-#@register(outgoing=True, pattern=r"^\.joker(?: |$)(.*)")
+
+# @register(outgoing=True, pattern=r"^\.joker(?: |$)(.*)")
 @borg.on(admin_cmd(outgoing=True, pattern="joker ?(.*)"))
 async def j(event):
     text = event.pattern_match.group(1)
@@ -205,7 +201,8 @@ async def j(event):
     await event.delete()
     await purge()
 
-#@register(outgoing=True, pattern=r"^\.modi(?: |$)(.*)")
+
+# @register(outgoing=True, pattern=r"^\.modi(?: |$)(.*)")
 @borg.on(admin_cmd(outgoing=True, pattern="modi ?(.*)"))
 async def modi(event):
     text = event.pattern_match.group(1)
@@ -226,9 +223,8 @@ async def modi(event):
     await event.delete()
     await purge()
 
-   
-   
-#@register(outgoing=True, pattern=r"^\.mia(?: |$)(.*)")
+
+# @register(outgoing=True, pattern=r"^\.mia(?: |$)(.*)")
 @borg.on(admin_cmd(outgoing=True, pattern="mia ?(.*)"))
 async def mia(event):
     text = event.pattern_match.group(1)
@@ -249,7 +245,8 @@ async def mia(event):
     await event.delete()
     await purge()
 
-#@register(outgoing=True, pattern=r"^\.cmm(?: |$)(.*)")
+
+# @register(outgoing=True, pattern=r"^\.cmm(?: |$)(.*)")
 @borg.on(admin_cmd(outgoing=True, pattern="cmm ?(.*)"))
 async def cmm(event):
     text = event.pattern_match.group(1)
@@ -271,12 +268,11 @@ async def cmm(event):
     await purge()
 
 
-
-#@register(outgoing=True, pattern="^.type(?: |$)(.*)")
+# @register(outgoing=True, pattern="^.type(?: |$)(.*)")
 @borg.on(admin_cmd(outgoing=True, pattern="type ?(.*)"))
 async def type(animu):
-#"""Generate random waifu sticker with the text!"""
-     
+    # """Generate random waifu sticker with the text!"""
+
     text = animu.pattern_match.group(1)
     if not text:
         if animu.is_reply:
@@ -284,21 +280,48 @@ async def type(animu):
         else:
             await animu.answer("`No text given.`")
             return
-    animus = [1, 2, 3, 4, 5, 6, 8, 7, 10, 11, 13, 22, 34, 35, 36, 37, 43, 44, 45, 52, 53]
+    animus = [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        7,
+        10,
+        11,
+        13,
+        22,
+        34,
+        35,
+        36,
+        37,
+        43,
+        44,
+        45,
+        52,
+        53,
+    ]
     sticcers = await bot.inline_query(
-        "stickerizerbot", f"#{random.choice(animus)}{(deEmojify(text))}")
-    await sticcers[0].click(animu.chat_id,
-                            reply_to=animu.reply_to_msg_id,
-                            silent=True if animu.is_reply else False,
-                            hide_via=True)
+        "stickerizerbot", f"#{random.choice(animus)}{(deEmojify(text))}"
+    )
+    await sticcers[0].click(
+        animu.chat_id,
+        reply_to=animu.reply_to_msg_id,
+        silent=True if animu.is_reply else False,
+        hide_via=True,
+    )
     await animu.delete()
 
-#@register(outgoing=True, pattern="^.waifu(?: |$)(.*)")
+
+# @register(outgoing=True, pattern="^.waifu(?: |$)(.*)")
+
 
 @borg.on(admin_cmd(outgoing=True, pattern="waifu ?(.*)"))
 async def waifu(danish):
-#"""Generate random waifu sticker with the text!"""
-     
+    # """Generate random waifu sticker with the text!"""
+
     text = danish.pattern_match.group(1)
     if not text:
         if danish.is_reply:
@@ -306,17 +329,20 @@ async def waifu(danish):
         else:
             await danish.answer("`No text given.`")
             return
-    king = [ 32, 33, 37, 40, 41, 42, 58, 20]
+    king = [32, 33, 37, 40, 41, 42, 58, 20]
     sticcers = await bot.inline_query(
-        "stickerizerbot", f"#{random.choice(king)}{(deEmojify(text))}")
-    await sticcers[0].click(danish.chat_id,
-                            reply_to=danish.reply_to_msg_id,
-                            silent=True if danish.is_reply else False,
-                            hide_via=True)
+        "stickerizerbot", f"#{random.choice(king)}{(deEmojify(text))}"
+    )
+    await sticcers[0].click(
+        danish.chat_id,
+        reply_to=danish.reply_to_msg_id,
+        silent=True if danish.is_reply else False,
+        hide_via=True,
+    )
     await danish.delete()
-    
 
-#@register(outgoing=True, pattern=r"\.tweet(?: |$)(.*)")
+
+# @register(outgoing=True, pattern=r"\.tweet(?: |$)(.*)")
 @borg.on(admin_cmd(outgoing=True, pattern="tweet ?(.*)"))
 async def tweet(event):
     text = event.pattern_match.group(1)
@@ -348,7 +374,7 @@ async def tweet(event):
 
 @borg.on(admin_cmd(pattern="tweetme(?: |$)(.*)"))
 async def tweetme(okie):
-#"""Creates random anime sticker!"""
+    # """Creates random anime sticker!"""
     what = okie.pattern_match.group(1)
     if not what:
         if okie.is_reply:
@@ -356,16 +382,18 @@ async def tweetme(okie):
         else:
             await okie.edit("`Tweets must contain some text, pero!`")
             return
-    sticcers = await bot.inline_query(
-        "TwitterStatusBot", f"{(deEmojify(what))}")
-    await sticcers[0].click(okie.chat_id,
-                            reply_to=okie.reply_to_msg_id,
-                            silent=True if okie.is_reply else False,
-                            hide_via=True)
+    sticcers = await bot.inline_query("TwitterStatusBot", f"{(deEmojify(what))}")
+    await sticcers[0].click(
+        okie.chat_id,
+        reply_to=okie.reply_to_msg_id,
+        silent=True if okie.is_reply else False,
+        hide_via=True,
+    )
     await okie.delete()
 
-CMD_HELP.update({
-    
+
+CMD_HELP.update(
+    {
         "tweet": ".tweet <username>.<tweet>"
         "\nUsage Create tweet with custom username.\n\n"
         ".trump <tweet>"

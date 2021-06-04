@@ -4,8 +4,11 @@
 
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
+
 from fridaybot import CMD_HELP
+
 from ..utils import admin_cmd, sudo_cmd
+
 
 @bot.on(admin_cmd(pattern="firmware(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="firmware(?: |$)(.*)", allow_sudo=True))
