@@ -14,11 +14,13 @@
 
 import os
 from shutil import rmtree
+
 import cv2
 import numpy as np
 import requests
 from PIL import Image, ImageDraw, ImageFont
 from telegraph import upload_file
+
 from fridaybot import CMD_HELP
 from fridaybot.function import convert_to_image, crop_vid, runcmd
 from fridaybot.utils import friday_on_cmd, sudo_cmd
@@ -41,7 +43,7 @@ async def hmm(event):
         "./resources/imgcolour/colouregex.prototxt",
         "./resources/imgcolour/colorization_release_v2.caffemodel",
     )
-    
+
     pts = np.load("./resources/imgcolour/pts_in_hull.npy")
     class8 = net.getLayerId("class8_ab")
     conv8 = net.getLayerId("conv8_313_rh")
@@ -322,6 +324,8 @@ async def img(event):
     for files in (ok, img):
         if files and os.path.exists(files):
             os.remove(files)
+
+
 # Credits To These :
 # https://github.com/midnightmadwalk [TG: @MidnightMadwalk]
 # https://github.com/code-rgb [TG: @DeletedUser420]

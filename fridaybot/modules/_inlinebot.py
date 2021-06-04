@@ -208,6 +208,7 @@ async def rip(event):
         buttons=[Button.url("Contact Him", f"tg://user?id={him_id}")],
     )
 
+
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
 async def on_plug_in_callback_query_handler(event):
     if event.query.user_id == bot.uid:
@@ -215,6 +216,7 @@ async def on_plug_in_callback_query_handler(event):
     else:
         reply_pop_up_alert = "මොන පිස්සෙක්ද තෝ? උඹටම කියල බොටෙක් හදාගනිම්. "
         await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
 
 def paginate_help(page_number, loaded_modules, prefix):
     number_of_rows = 8

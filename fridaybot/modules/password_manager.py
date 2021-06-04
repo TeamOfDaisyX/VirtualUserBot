@@ -1,16 +1,11 @@
 import os.path
+
 from fridaybot import CMD_HELP
-from fridaybot.utils import edit_or_reply, friday_on_cmd, sudo_cmd
-from asyncio import wait
-from telethon import events
-import zipfile
-
-
+from fridaybot.utils import friday_on_cmd, sudo_cmd
 
 sedpath = "./chsaiujwal/"
 if not os.path.isdir(sedpath):
     os.makedirs(sedpath)
-
 
 
 @friday.on(friday_on_cmd("savepass ?(.*)"))
@@ -18,24 +13,21 @@ if not os.path.isdir(sedpath):
 async def _(event):
     if event.fwd_from:
         return
-    file_name = "buffer.zip"
     input_str = event.pattern_match.group(1)
     ujwal = input_str.split(":")
-    usermail = (ujwal[0])
-    passwd = (ujwal[1])
-    webo = (ujwal[2])
+    usermail = ujwal[0]
+    passwd = ujwal[1]
+    webo = ujwal[2]
     if os.path.exists("./chsaiujwal/info.pablo"):
-      file = open("./chsaiujwal/info.pablo", 'a')
+        file = open("./chsaiujwal/info.pablo", "a")
     else:
-        file = open("./chsaiujwal/info.pablo", 'x')
+        file = open("./chsaiujwal/info.pablo", "x")
         file.close()
-        file = open("./chsaiujwal/info.pablo", 'a')
-        
-        
+        file = open("./chsaiujwal/info.pablo", "a")
+
     userName = usermail
     password = passwd
     website = webo
-
 
     usrnm = "UserName: " + userName + "\n"
     pwd = "Password: " + password + "\n"
@@ -49,20 +41,22 @@ async def _(event):
     file.write("\n")
     file.close
     await event.edit(
-      f"<b><u>Password Saved Successfully</b></u>", parse_mode="HTML",)
-
+        f"<b><u>Password Saved Successfully</b></u>",
+        parse_mode="HTML",
+    )
 
 
 @friday.on(friday_on_cmd(pattern=r"viewpass"))
 async def hi(event):
     if event.fwd_from:
         return
-    file = open('./chsaiujwal/info.pablo', 'r')
+    file = open("./chsaiujwal/info.pablo", "r")
     content = file.read()
     file.close()
     await event.edit(
-      f"<b><u>Here are your Saved Passwords</u></b>\n<code>{content}</code>", parse_mode="HTML",)
-
+        f"<b><u>Here are your Saved Passwords</u></b>\n<code>{content}</code>",
+        parse_mode="HTML",
+    )
 
 
 CMD_HELP.update(

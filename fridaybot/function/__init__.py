@@ -27,7 +27,7 @@ if not os.path.isdir(sedpath):
 
 # Thanks To Userge-X
 async def runcmd(cmd: str) -> Tuple[str, str, int, int]:
-    """ run command in terminal """
+    """run command in terminal"""
     args = shlex.split(cmd)
     process = await asyncio.create_subprocess_exec(
         *args, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
@@ -195,7 +195,7 @@ async def crop_vid(input_vid: str, final_path: str):
 async def take_screen_shot(
     video_file: str, duration: int, path: str = ""
 ) -> Optional[str]:
-    """ take a screenshot """
+    """take a screenshot"""
     logger.info(
         "[[[Extracting a frame from %s ||| Video duration => %s]]]",
         video_file,
@@ -312,4 +312,3 @@ async def get_subtitles(imdb_id, borg, event):
     final_paths = sedpath + f"{selected_sub_name}.zip"
     namez = selected_sub_name
     return final_paths, namez, subtitles[0]["sub_link"]
-
