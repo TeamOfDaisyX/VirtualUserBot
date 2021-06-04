@@ -1,10 +1,7 @@
-import os
-import re
-import urllib.request
-import PIL.ImageOps
 import requests
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image
 from validators.url import url
+
 
 async def moditweet(text):
     r = requests.get(
@@ -35,6 +32,7 @@ async def sunnytweet(text):
     img.save("hehe.webp", "webp")
     return "hehe.webp"
 
+
 async def johnnytweet(text):
     r = requests.get(
         f"https://nekobot.xyz/api/imagegen?type=tweet&text={text}&username=johnnysins"
@@ -48,6 +46,7 @@ async def johnnytweet(text):
     img = Image.open("hehe.png").convert("RGB")
     img.save("hehe.webp", "webp")
     return "hehe.webp"
+
 
 async def bhautweet(text):
     r = requests.get(
@@ -63,6 +62,7 @@ async def bhautweet(text):
     img.save("hoho.webp", "webp")
     return "hoho.webp"
 
+
 async def jtweet(text):
     r = requests.get(
         f"https://nekobot.xyz/api/imagegen?type=tweet&text={text}&username=the_joker"
@@ -76,6 +76,7 @@ async def jtweet(text):
     img = Image.open("hoho.png").convert("RGB")
     img.save("hoho.webp", "webp")
     return "hoho.webp"
+
 
 async def miatweet(text):
     r = requests.get(

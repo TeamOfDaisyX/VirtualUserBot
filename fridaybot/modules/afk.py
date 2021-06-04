@@ -52,7 +52,9 @@ async def _(event):
                 f"**මම දැන් Offline යනවා 👀.** \n__Offline යන්න හේතුව__ `{reason}`",
             )
         else:
-            await borg.send_message(event.chat_id, f"**මම දැන් Busy ඒක නිසා Offline යනවා**.")
+            await borg.send_message(
+                event.chat_id, f"**මම දැන් Busy ඒක නිසා Offline යනවා**."
+            )
         await asyncio.sleep(5)
         await event.delete()
         try:

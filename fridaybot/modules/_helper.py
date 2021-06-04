@@ -1,5 +1,7 @@
-from fridaybot import CMD_LIST,ALIVE_NAME
+from fridaybot import ALIVE_NAME, CMD_LIST
+
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "VirtualUserbot"
+
 
 @command(pattern="^.help ?(.*)")
 async def cmd_list(event):

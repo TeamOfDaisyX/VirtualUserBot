@@ -1,7 +1,8 @@
 import asyncio
 
-from ..utils import admin_cmd, edit_or_reply, sudo_cmd
 from fridaybot import ALIVE_NAME, CMD_HELP
+
+from ..utils import admin_cmd, edit_or_reply, sudo_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "cat"
 
@@ -57,8 +58,6 @@ async def _(event):
         await event.edit(animation_chars[i % 10])
     await asyncio.sleep(animation_interval)
     await event.delete()
-
-
 
 
 @bot.on(admin_cmd(pattern=f"human$", outgoing=True))

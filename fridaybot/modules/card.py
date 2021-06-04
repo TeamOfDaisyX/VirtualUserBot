@@ -1,4 +1,4 @@
-# Original By 
+# Original By
 # @THE_B_LACK_HAT
 # @danish_00
 # For #Cobra
@@ -6,8 +6,12 @@
 # Card Generator
 ##############################
 from faker import Faker as dc
-from ..utils import admin_cmd as hehe
+
 from fridaybot import bot as cobra
+
+from ..utils import admin_cmd as hehe
+
+
 @cobra.on(hehe("card"))
 async def _cobra(dark):
     cyber = dc()

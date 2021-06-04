@@ -48,7 +48,7 @@ async def img_sampler(event):
     )
     shutil.rmtree(os.path.dirname(os.path.abspath(lst[0])))
     await event.delete()
-    
+
     query = queryo + "ultra hd wallpaper"
     lim = findall(r"lim=\d+", query)
     # lim = event.pattern_match.group(1)
