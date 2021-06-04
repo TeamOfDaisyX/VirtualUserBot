@@ -1,8 +1,10 @@
 # corona virus stats for catuserbot
 from covid import Covid
-from telethon import events
-from ..utils import admin_cmd, edit_or_reply, sudo_cmd
+
 from fridaybot import CMD_HELP
+
+from ..utils import admin_cmd, edit_or_reply, sudo_cmd
+
 
 @bot.on(admin_cmd(pattern="covid(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="covid(?: |$)(.*)", allow_sudo=True))
@@ -33,8 +35,6 @@ async def corona(event):
             "<b>Corona Virus Info of {}:\n{}</b>".format(country, data),
             parse_mode="html",
         )
-    
-    
 
 
 CMD_HELP.update(

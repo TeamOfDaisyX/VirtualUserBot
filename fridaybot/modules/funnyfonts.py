@@ -2,9 +2,10 @@
 import random
 import re
 
-from ..utils import admin_cmd, edit_or_reply, sudo_cmd
 from fridaybot import CMD_HELP
 from fridaybot.modules import fonts
+
+from ..utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
 @bot.on(admin_cmd(pattern="str(?: |$)(.*)"))

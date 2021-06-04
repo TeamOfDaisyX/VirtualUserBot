@@ -1,7 +1,8 @@
 from telethon.tl.types import ChannelParticipantsAdmins
 
-from ..utils import admin_cmd, sudo_cmd
 from fridaybot import CMD_HELP
+
+from ..utils import admin_cmd, sudo_cmd
 
 
 @bot.on(admin_cmd(pattern="join$"))
