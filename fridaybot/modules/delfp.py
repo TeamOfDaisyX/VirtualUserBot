@@ -6,7 +6,7 @@ from uniborg.util import edit_or_reply, friday_on_cmd, sudo_cmd
 @friday.on(friday_on_cmd(pattern="delpfp ?(.*)"))
 @friday.on(sudo_cmd(pattern="delpfp ?(.*)", allow_sudo=True))
 async def remove_profilepic(delpfp):
-    """ For .delpfp command, delete your current profile picture in Telegram. """
+    """For .delpfp command, delete your current profile picture in Telegram."""
     group = delpfp.text[8:]
     if group == "all":
         lim = 0

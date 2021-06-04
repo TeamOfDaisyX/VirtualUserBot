@@ -266,7 +266,7 @@ from fridaybot import bot
 
 
 def register(**args):
-    """ Register a new event. """
+    """Register a new event."""
     args["func"] = lambda e: e.via_bot_id is None
 
     stack = inspect.stack()
